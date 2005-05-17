@@ -99,7 +99,7 @@ public class InstallSchemaTask extends Task {
 			rows = new FileWriter( projectHome + "/install/config/rows.sql" );
 
 			JDBCStreamWriter rdbms  = new JDBCStreamWriter( conn );
-			MetadataPopulator mp    = new MetadataPopulator( rows, db, dbVendor, tablespace );
+			MetadataPopulator mp    = new MetadataPopulator( rows, db, dbVendor);
 
 			dbWriter.write( ddl, db );
 			dbWriter.write( rdbms, db );
