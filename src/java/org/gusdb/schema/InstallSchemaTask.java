@@ -22,20 +22,20 @@ import org.apache.commons.logging.LogFactory;
 import org.apache.tools.ant.BuildException;
 import org.apache.tools.ant.Task;
 
-import org.gusdb.dba.model.Database;
-import org.gusdb.dba.model.Schema;
-import org.gusdb.dba.model.Table;
-import org.gusdb.dba.model.GusTable;
-import org.gusdb.dba.model.Index;
-import org.gusdb.dba.reader.XMLReader
+import org.gusdb.dbadmin.model.Database;
+import org.gusdb.dbadmin.model.Schema;
+import org.gusdb.dbadmin.model.Table;
+import org.gusdb.dbadmin.model.GusTable;
+import org.gusdb.dbadmin.model.Index;
+import org.gusdb.dbadmin.reader.XMLReader
 ;
-import org.gusdb.dba.util.GusClassHierarchyConverter;
-import org.gusdb.dba.util.JDBCStreamWriter;
-import org.gusdb.dba.util.MetadataPopulator;
+import org.gusdb.dbadmin.util.GusClassHierarchyConverter;
+import org.gusdb.dbadmin.util.JDBCStreamWriter;
+import org.gusdb.dbadmin.util.MetadataPopulator;
 
-import org.gusdb.dba.writer.PostgresWriter;
-import org.gusdb.dba.writer.OracleWriter;
-import org.gusdb.dba.writer.SchemaWriter;
+import org.gusdb.dbadmin.writer.PostgresWriter;
+import org.gusdb.dbadmin.writer.OracleWriter;
+import org.gusdb.dbadmin.writer.SchemaWriter;
 
 
 /**
