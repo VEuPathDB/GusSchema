@@ -2576,7 +2576,7 @@
 						<column id="DoTS/AssemblySNP/NUM_NUC_2" name="NUM_NUC_2" nullable="true" length="8" precision="0" type="NUMBER"/>
 						<column id="DoTS/AssemblySNP/NUM_NUC_3" name="NUM_NUC_3" nullable="true" length="8" precision="0" type="NUMBER"/>
 						<column id="DoTS/AssemblySNP/NUM_NUC_4" name="NUM_NUC_4" nullable="true" length="8" precision="0" type="NUMBER"/>
-						<column id="DoTS/AssemblySNP/FRACTION_NUC_1" name="FRACTION_NUC_1" nullable="false" length="22" precision="0" type="FLOAT"/>
+						<column id="DoTS/AssemblySNP/FRAction_NUC_1" name="FRAction_NUC_1" nullable="false" length="22" precision="0" type="FLOAT"/>
 						<column id="DoTS/AssemblySNP/NUM_DISTINCT_ACGT" name="NUM_DISTINCT_ACGT" nullable="false" length="1" precision="0" type="NUMBER"/>
 						<column id="DoTS/AssemblySNP/ASSEMBLY_DEPTH" name="ASSEMBLY_DEPTH" nullable="false" length="5" precision="0" type="NUMBER"/>
 						<column id="DoTS/AssemblySNP/ASSEMBLY_POSITION" name="ASSEMBLY_POSITION" nullable="false" length="8" precision="0" type="NUMBER"/>
@@ -4004,26 +4004,26 @@
 				</table>
 				<table id="DoTS/EffectorActionType" name="EffectorActionType" housekeeping="true" versioned="true" tablespace="USERS" updatable="true">
 					<columns>
-						<column id="DoTS/EffectorActionType/EFFECTOR_ACTION_TYPE_ID" name="EFFECTOR_ACTION_TYPE_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
+						<column id="DoTS/EffectorActionType/EFFECTOR_Action_TYPE_ID" name="EFFECTOR_Action_TYPE_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
 						<column id="DoTS/EffectorActionType/NAME" name="NAME" nullable="false" length="80" precision="0" type="STRING"/>
 						<column id="DoTS/EffectorActionType/DESCRIPTION" name="DESCRIPTION" nullable="true" length="255" precision="0" type="STRING"/>
 						<column id="DoTS/EffectorActionType/EXTERNAL_DATABASE_RELEASE_ID" name="EXTERNAL_DATABASE_RELEASE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
 						<column id="DoTS/EffectorActionType/SOURCE_ID" name="SOURCE_ID" nullable="true" length="32" precision="0" type="STRING"/>
 					</columns>
 					<indexes>
-						<index name="EFFECTORACTIONTYPE_IND01" tablespace="USERS" type="NORMAL">
+						<index name="EFFECTORActionTYPE_IND01" tablespace="USERS" type="NORMAL">
 							<columns>
 								<column idref="DoTS/EffectorActionType/EXTERNAL_DATABASE_RELEASE_ID"/>
 							</columns>
 						</index>
-						<index name="PK_EFFECTORACTIONTYPE" tablespace="USERS" type="NORMAL">
+						<index name="PK_EFFECTORActionTYPE" tablespace="USERS" type="NORMAL">
 							<columns>
-								<column idref="DoTS/EffectorActionType/EFFECTOR_ACTION_TYPE_ID"/>
+								<column idref="DoTS/EffectorActionType/EFFECTOR_Action_TYPE_ID"/>
 							</columns>
 						</index>
 					</indexes>
 					<constraints>
-						<constraint name="EFFECTORACTIONTYPE_FK01" type="FOREIGN KEY">
+						<constraint name="EFFECTORActionTYPE_FK01" type="FOREIGN KEY">
 							<constrainedColumns>
 								<column idref="DoTS/EffectorActionType/EXTERNAL_DATABASE_RELEASE_ID"/>
 							</constrainedColumns>
@@ -4032,9 +4032,9 @@
 								<column idref="SRes/ExternalDatabaseRelease/EXTERNAL_DATABASE_RELEASE_ID"/>
 							</referencedColumns>
 						</constraint>
-						<constraint name="PK_EFFECTORACTIONTYPE" type="PRIMARY KEY">
+						<constraint name="PK_EFFECTORActionTYPE" type="PRIMARY KEY">
 							<constrainedColumns>
-								<column idref="DoTS/EffectorActionType/EFFECTOR_ACTION_TYPE_ID"/>
+								<column idref="DoTS/EffectorActionType/EFFECTOR_Action_TYPE_ID"/>
 							</constrainedColumns>
 						</constraint>
 					</constraints>
@@ -5836,9 +5836,9 @@
 				</table>
 				<table id="DoTS/Interaction" name="Interaction" housekeeping="true" versioned="true" tablespace="USERS" updatable="true">
 					<columns>
-						<column id="DoTS/Interaction/INTERACTION_ID" name="INTERACTION_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-						<column id="DoTS/Interaction/INTERACTION_TYPE_ID" name="INTERACTION_TYPE_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
-						<column id="DoTS/Interaction/EFFECTOR_ACTION_TYPE_ID" name="EFFECTOR_ACTION_TYPE_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
+						<column id="DoTS/Interaction/INTERAction_ID" name="INTERAction_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+						<column id="DoTS/Interaction/INTERAction_TYPE_ID" name="INTERAction_TYPE_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
+						<column id="DoTS/Interaction/EFFECTOR_Action_TYPE_ID" name="EFFECTOR_Action_TYPE_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
 						<column id="DoTS/Interaction/EFFECTOR_ROW_SET_ID" name="EFFECTOR_ROW_SET_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
 						<column id="DoTS/Interaction/TARGET_ROW_SET_ID" name="TARGET_ROW_SET_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
 						<column id="DoTS/Interaction/HAS_DIRECTION" name="HAS_DIRECTION" nullable="false" length="1" precision="0" type="NUMBER"/>
@@ -5848,62 +5848,62 @@
 						<column id="DoTS/Interaction/REVIEW_STATUS_ID" name="REVIEW_STATUS_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
 					</columns>
 					<indexes>
-						<index name="INTERACTION_IND01" tablespace="USERS" type="NORMAL">
+						<index name="INTERAction_IND01" tablespace="USERS" type="NORMAL">
 							<columns>
-								<column idref="DoTS/Interaction/INTERACTION_TYPE_ID"/>
+								<column idref="DoTS/Interaction/INTERAction_TYPE_ID"/>
 							</columns>
 						</index>
-						<index name="INTERACTION_IND02" tablespace="USERS" type="NORMAL">
+						<index name="INTERAction_IND02" tablespace="USERS" type="NORMAL">
 							<columns>
-								<column idref="DoTS/Interaction/EFFECTOR_ACTION_TYPE_ID"/>
+								<column idref="DoTS/Interaction/EFFECTOR_Action_TYPE_ID"/>
 							</columns>
 						</index>
-						<index name="INTERACTION_IND03" tablespace="USERS" type="NORMAL">
+						<index name="INTERAction_IND03" tablespace="USERS" type="NORMAL">
 							<columns>
 								<column idref="DoTS/Interaction/EFFECTOR_ROW_SET_ID"/>
 							</columns>
 						</index>
-						<index name="INTERACTION_IND04" tablespace="USERS" type="NORMAL">
+						<index name="INTERAction_IND04" tablespace="USERS" type="NORMAL">
 							<columns>
 								<column idref="DoTS/Interaction/TARGET_ROW_SET_ID"/>
 							</columns>
 						</index>
-						<index name="INTERACTION_IND05" tablespace="USERS" type="NORMAL">
+						<index name="INTERAction_IND05" tablespace="USERS" type="NORMAL">
 							<columns>
 								<column idref="DoTS/Interaction/EXTERNAL_DATABASE_RELEASE_ID"/>
 							</columns>
 						</index>
-						<index name="INTERACTION_IND06" tablespace="USERS" type="NORMAL">
+						<index name="INTERAction_IND06" tablespace="USERS" type="NORMAL">
 							<columns>
 								<column idref="DoTS/Interaction/REVIEW_STATUS_ID"/>
 							</columns>
 						</index>
-						<index name="PK_INTERACTION" tablespace="USERS" type="NORMAL">
+						<index name="PK_INTERAction" tablespace="USERS" type="NORMAL">
 							<columns>
-								<column idref="DoTS/Interaction/INTERACTION_ID"/>
+								<column idref="DoTS/Interaction/INTERAction_ID"/>
 							</columns>
 						</index>
 					</indexes>
 					<constraints>
-						<constraint name="INTERACTION_FK01" type="FOREIGN KEY">
+						<constraint name="INTERAction_FK01" type="FOREIGN KEY">
 							<constrainedColumns>
-								<column idref="DoTS/Interaction/INTERACTION_TYPE_ID"/>
+								<column idref="DoTS/Interaction/INTERAction_TYPE_ID"/>
 							</constrainedColumns>
 							<referencedTable idref="DoTS/InteractionType"/>
 							<referencedColumns>
-								<column idref="DoTS/InteractionType/INTERACTION_TYPE_ID"/>
+								<column idref="DoTS/InteractionType/INTERAction_TYPE_ID"/>
 							</referencedColumns>
 						</constraint>
-						<constraint name="INTERACTION_FK02" type="FOREIGN KEY">
+						<constraint name="INTERAction_FK02" type="FOREIGN KEY">
 							<constrainedColumns>
-								<column idref="DoTS/Interaction/EFFECTOR_ACTION_TYPE_ID"/>
+								<column idref="DoTS/Interaction/EFFECTOR_Action_TYPE_ID"/>
 							</constrainedColumns>
 							<referencedTable idref="DoTS/EffectorActionType"/>
 							<referencedColumns>
-								<column idref="DoTS/EffectorActionType/EFFECTOR_ACTION_TYPE_ID"/>
+								<column idref="DoTS/EffectorActionType/EFFECTOR_Action_TYPE_ID"/>
 							</referencedColumns>
 						</constraint>
-						<constraint name="INTERACTION_FK03" type="FOREIGN KEY">
+						<constraint name="INTERAction_FK03" type="FOREIGN KEY">
 							<constrainedColumns>
 								<column idref="DoTS/Interaction/EFFECTOR_ROW_SET_ID"/>
 							</constrainedColumns>
@@ -5912,7 +5912,7 @@
 								<column idref="DoTS/RowSet/ROW_SET_ID"/>
 							</referencedColumns>
 						</constraint>
-						<constraint name="INTERACTION_FK04" type="FOREIGN KEY">
+						<constraint name="INTERAction_FK04" type="FOREIGN KEY">
 							<constrainedColumns>
 								<column idref="DoTS/Interaction/TARGET_ROW_SET_ID"/>
 							</constrainedColumns>
@@ -5921,7 +5921,7 @@
 								<column idref="DoTS/RowSet/ROW_SET_ID"/>
 							</referencedColumns>
 						</constraint>
-						<constraint name="INTERACTION_FK05" type="FOREIGN KEY">
+						<constraint name="INTERAction_FK05" type="FOREIGN KEY">
 							<constrainedColumns>
 								<column idref="DoTS/Interaction/EXTERNAL_DATABASE_RELEASE_ID"/>
 							</constrainedColumns>
@@ -5930,7 +5930,7 @@
 								<column idref="SRes/ExternalDatabaseRelease/EXTERNAL_DATABASE_RELEASE_ID"/>
 							</referencedColumns>
 						</constraint>
-						<constraint name="INTERACTION_FK06" type="FOREIGN KEY">
+						<constraint name="INTERAction_FK06" type="FOREIGN KEY">
 							<constrainedColumns>
 								<column idref="DoTS/Interaction/REVIEW_STATUS_ID"/>
 							</constrainedColumns>
@@ -5939,105 +5939,105 @@
 								<column idref="SRes/ReviewStatus/REVIEW_STATUS_ID"/>
 							</referencedColumns>
 						</constraint>
-						<constraint name="PK_INTERACTION" type="PRIMARY KEY">
+						<constraint name="PK_INTERAction" type="PRIMARY KEY">
 							<constrainedColumns>
-								<column idref="DoTS/Interaction/INTERACTION_ID"/>
+								<column idref="DoTS/Interaction/INTERAction_ID"/>
 							</constrainedColumns>
 						</constraint>
 					</constraints>
 				</table>
 				<table id="DoTS/InteractionInteractionLOE" name="InteractionInteractionLOE" housekeeping="true" versioned="true" tablespace="USERS" updatable="true">
 					<columns>
-						<column id="DoTS/InteractionInteractionLOE/INTERACTION_INTERACTION_LOE_ID" name="INTERACTION_INTERACTION_LOE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-						<column id="DoTS/InteractionInteractionLOE/INTERACTION_ID" name="INTERACTION_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-						<column id="DoTS/InteractionInteractionLOE/INTERACTION_LOE_ID" name="INTERACTION_LOE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+						<column id="DoTS/InteractionInteractionLOE/INTERAction_INTERAction_LOE_ID" name="INTERAction_INTERAction_LOE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+						<column id="DoTS/InteractionInteractionLOE/INTERAction_ID" name="INTERAction_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+						<column id="DoTS/InteractionInteractionLOE/INTERAction_LOE_ID" name="INTERAction_LOE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
 					</columns>
 					<indexes>
-						<index name="INTERACTIONINTERACTLOE_IND01" tablespace="USERS" type="NORMAL">
+						<index name="INTERActionINTERACTLOE_IND01" tablespace="USERS" type="NORMAL">
 							<columns>
-								<column idref="DoTS/InteractionInteractionLOE/INTERACTION_ID"/>
+								<column idref="DoTS/InteractionInteractionLOE/INTERAction_ID"/>
 							</columns>
 						</index>
-						<index name="INTERACTIONINTERACTLOE_IND02" tablespace="USERS" type="NORMAL">
+						<index name="INTERActionINTERACTLOE_IND02" tablespace="USERS" type="NORMAL">
 							<columns>
-								<column idref="DoTS/InteractionInteractionLOE/INTERACTION_LOE_ID"/>
+								<column idref="DoTS/InteractionInteractionLOE/INTERAction_LOE_ID"/>
 							</columns>
 						</index>
-						<index name="PK_INTERACTIONINTERACTIONLOE" tablespace="USERS" type="NORMAL">
+						<index name="PK_INTERActionINTERActionLOE" tablespace="USERS" type="NORMAL">
 							<columns>
-								<column idref="DoTS/InteractionInteractionLOE/INTERACTION_INTERACTION_LOE_ID"/>
+								<column idref="DoTS/InteractionInteractionLOE/INTERAction_INTERAction_LOE_ID"/>
 							</columns>
 						</index>
 					</indexes>
 					<constraints>
-						<constraint name="INTERACTIONINTERACTIONLOE_FK01" type="FOREIGN KEY">
+						<constraint name="INTERActionINTERActionLOE_FK01" type="FOREIGN KEY">
 							<constrainedColumns>
-								<column idref="DoTS/InteractionInteractionLOE/INTERACTION_ID"/>
+								<column idref="DoTS/InteractionInteractionLOE/INTERAction_ID"/>
 							</constrainedColumns>
 							<referencedTable idref="DoTS/Interaction"/>
 							<referencedColumns>
-								<column idref="DoTS/Interaction/INTERACTION_ID"/>
+								<column idref="DoTS/Interaction/INTERAction_ID"/>
 							</referencedColumns>
 						</constraint>
-						<constraint name="INTERACTIONINTERACTIONLOE_FK02" type="FOREIGN KEY">
+						<constraint name="INTERActionINTERActionLOE_FK02" type="FOREIGN KEY">
 							<constrainedColumns>
-								<column idref="DoTS/InteractionInteractionLOE/INTERACTION_LOE_ID"/>
+								<column idref="DoTS/InteractionInteractionLOE/INTERAction_LOE_ID"/>
 							</constrainedColumns>
 							<referencedTable idref="DoTS/InteractionLOE"/>
 							<referencedColumns>
-								<column idref="DoTS/InteractionLOE/INTERACTION_LOE_ID"/>
+								<column idref="DoTS/InteractionLOE/INTERAction_LOE_ID"/>
 							</referencedColumns>
 						</constraint>
-						<constraint name="PK_INTERACTIONINTERACTIONLOE" type="PRIMARY KEY">
+						<constraint name="PK_INTERActionINTERActionLOE" type="PRIMARY KEY">
 							<constrainedColumns>
-								<column idref="DoTS/InteractionInteractionLOE/INTERACTION_INTERACTION_LOE_ID"/>
+								<column idref="DoTS/InteractionInteractionLOE/INTERAction_INTERAction_LOE_ID"/>
 							</constrainedColumns>
 						</constraint>
 					</constraints>
 				</table>
 				<table id="DoTS/InteractionLOE" name="InteractionLOE" housekeeping="true" versioned="true" tablespace="USERS" updatable="true">
 					<columns>
-						<column id="DoTS/InteractionLOE/INTERACTION_LOE_ID" name="INTERACTION_LOE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+						<column id="DoTS/InteractionLOE/INTERAction_LOE_ID" name="INTERAction_LOE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
 						<column id="DoTS/InteractionLOE/NAME" name="NAME" nullable="false" length="80" precision="0" type="STRING"/>
 						<column id="DoTS/InteractionLOE/DESCRIPTION" name="DESCRIPTION" nullable="true" length="255" precision="0" type="STRING"/>
 					</columns>
 					<indexes>
-						<index name="PK_INTERACTIONLOE" tablespace="USERS" type="NORMAL">
+						<index name="PK_INTERActionLOE" tablespace="USERS" type="NORMAL">
 							<columns>
-								<column idref="DoTS/InteractionLOE/INTERACTION_LOE_ID"/>
+								<column idref="DoTS/InteractionLOE/INTERAction_LOE_ID"/>
 							</columns>
 						</index>
 					</indexes>
 					<constraints>
-						<constraint name="PK_INTERACTIONLOE" type="PRIMARY KEY">
+						<constraint name="PK_INTERActionLOE" type="PRIMARY KEY">
 							<constrainedColumns>
-								<column idref="DoTS/InteractionLOE/INTERACTION_LOE_ID"/>
+								<column idref="DoTS/InteractionLOE/INTERAction_LOE_ID"/>
 							</constrainedColumns>
 						</constraint>
 					</constraints>
 				</table>
 				<table id="DoTS/InteractionType" name="InteractionType" housekeeping="true" versioned="true" tablespace="USERS" updatable="true">
 					<columns>
-						<column id="DoTS/InteractionType/INTERACTION_TYPE_ID" name="INTERACTION_TYPE_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
+						<column id="DoTS/InteractionType/INTERAction_TYPE_ID" name="INTERAction_TYPE_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
 						<column id="DoTS/InteractionType/NAME" name="NAME" nullable="false" length="80" precision="0" type="STRING"/>
 						<column id="DoTS/InteractionType/DESCRIPTION" name="DESCRIPTION" nullable="true" length="255" precision="0" type="STRING"/>
 						<column id="DoTS/InteractionType/EXTERNAL_DATABASE_RELEASE_ID" name="EXTERNAL_DATABASE_RELEASE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
 						<column id="DoTS/InteractionType/SOURCE_ID" name="SOURCE_ID" nullable="true" length="32" precision="0" type="STRING"/>
 					</columns>
 					<indexes>
-						<index name="INTERACTIONTYPE_IND01" tablespace="USERS" type="NORMAL">
+						<index name="INTERActionTYPE_IND01" tablespace="USERS" type="NORMAL">
 							<columns>
 								<column idref="DoTS/InteractionType/EXTERNAL_DATABASE_RELEASE_ID"/>
 							</columns>
 						</index>
-						<index name="PK_INTERACTIONTYPE" tablespace="USERS" type="NORMAL">
+						<index name="PK_INTERActionTYPE" tablespace="USERS" type="NORMAL">
 							<columns>
-								<column idref="DoTS/InteractionType/INTERACTION_TYPE_ID"/>
+								<column idref="DoTS/InteractionType/INTERAction_TYPE_ID"/>
 							</columns>
 						</index>
 					</indexes>
 					<constraints>
-						<constraint name="INTERACTIONTYPE_FK01" type="FOREIGN KEY">
+						<constraint name="INTERActionTYPE_FK01" type="FOREIGN KEY">
 							<constrainedColumns>
 								<column idref="DoTS/InteractionType/EXTERNAL_DATABASE_RELEASE_ID"/>
 							</constrainedColumns>
@@ -6046,9 +6046,9 @@
 								<column idref="SRes/ExternalDatabaseRelease/EXTERNAL_DATABASE_RELEASE_ID"/>
 							</referencedColumns>
 						</constraint>
-						<constraint name="PK_INTERACTIONTYPE" type="PRIMARY KEY">
+						<constraint name="PK_INTERActionTYPE" type="PRIMARY KEY">
 							<constrainedColumns>
-								<column idref="DoTS/InteractionType/INTERACTION_TYPE_ID"/>
+								<column idref="DoTS/InteractionType/INTERAction_TYPE_ID"/>
 							</constrainedColumns>
 						</constraint>
 					</constraints>
@@ -8310,29 +8310,29 @@
 				</table>
 				<table id="DoTS/PathwayInteraction" name="PathwayInteraction" housekeeping="true" versioned="true" tablespace="USERS" updatable="true">
 					<columns>
-						<column id="DoTS/PathwayInteraction/PATHWAY_INTERACTION_ID" name="PATHWAY_INTERACTION_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+						<column id="DoTS/PathwayInteraction/PATHWAY_INTERAction_ID" name="PATHWAY_INTERAction_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
 						<column id="DoTS/PathwayInteraction/PATHWAY_ID" name="PATHWAY_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-						<column id="DoTS/PathwayInteraction/INTERACTION_ID" name="INTERACTION_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+						<column id="DoTS/PathwayInteraction/INTERAction_ID" name="INTERAction_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
 					</columns>
 					<indexes>
-						<index name="PATHWAYINTERACTION_IND01" tablespace="USERS" type="NORMAL">
+						<index name="PATHWAYINTERAction_IND01" tablespace="USERS" type="NORMAL">
 							<columns>
 								<column idref="DoTS/PathwayInteraction/PATHWAY_ID"/>
 							</columns>
 						</index>
-						<index name="PATHWAYINTERACTION_IND02" tablespace="USERS" type="NORMAL">
+						<index name="PATHWAYINTERAction_IND02" tablespace="USERS" type="NORMAL">
 							<columns>
-								<column idref="DoTS/PathwayInteraction/INTERACTION_ID"/>
+								<column idref="DoTS/PathwayInteraction/INTERAction_ID"/>
 							</columns>
 						</index>
-						<index name="PK_PATHWAYINTERACTION" tablespace="USERS" type="NORMAL">
+						<index name="PK_PATHWAYINTERAction" tablespace="USERS" type="NORMAL">
 							<columns>
-								<column idref="DoTS/PathwayInteraction/PATHWAY_INTERACTION_ID"/>
+								<column idref="DoTS/PathwayInteraction/PATHWAY_INTERAction_ID"/>
 							</columns>
 						</index>
 					</indexes>
 					<constraints>
-						<constraint name="PATHWAYINTERACTION_FK04" type="FOREIGN KEY">
+						<constraint name="PATHWAYINTERAction_FK04" type="FOREIGN KEY">
 							<constrainedColumns>
 								<column idref="DoTS/PathwayInteraction/PATHWAY_ID"/>
 							</constrainedColumns>
@@ -8341,18 +8341,18 @@
 								<column idref="DoTS/Pathway/PATHWAY_ID"/>
 							</referencedColumns>
 						</constraint>
-						<constraint name="PATHWAYINTERACTION_FK06" type="FOREIGN KEY">
+						<constraint name="PATHWAYINTERAction_FK06" type="FOREIGN KEY">
 							<constrainedColumns>
-								<column idref="DoTS/PathwayInteraction/INTERACTION_ID"/>
+								<column idref="DoTS/PathwayInteraction/INTERAction_ID"/>
 							</constrainedColumns>
 							<referencedTable idref="DoTS/Interaction"/>
 							<referencedColumns>
-								<column idref="DoTS/Interaction/INTERACTION_ID"/>
+								<column idref="DoTS/Interaction/INTERAction_ID"/>
 							</referencedColumns>
 						</constraint>
-						<constraint name="PK_PATHWAYINTERACTION" type="PRIMARY KEY">
+						<constraint name="PK_PATHWAYINTERAction" type="PRIMARY KEY">
 							<constrainedColumns>
-								<column idref="DoTS/PathwayInteraction/PATHWAY_INTERACTION_ID"/>
+								<column idref="DoTS/PathwayInteraction/PATHWAY_INTERAction_ID"/>
 							</constrainedColumns>
 						</constraint>
 					</constraints>
@@ -10750,13 +10750,13 @@
 						<column id="PROT/Acquisition/URI" name="URI" nullable="true" length="255" precision="0" type="STRING"/>
 					</columns>
 					<subclasses>
-						<subclass id="PROT/Acquisition/MZSCAN" name="MZSCAN" versioned="true" tablespace="USERS" updatable="true">
+						<subclass id="PROT/Acquisition/MZScan" name="MZScan" versioned="true" tablespace="USERS" updatable="true">
 							<columns>
-								<column id="PROT/MZSCAN/SCAN_NUM" name="SCAN_NUM" nullable="true" length="12" precision="0" type="NUMBER"/>
-								<column id="PROT/MZSCAN/MSLEVL" name="MSLEVL" nullable="true" length="12" precision="0" type="NUMBER"/>
-								<column id="PROT/MZSCAN/PEAK_COUNT" name="PEAK_COUNT" nullable="true" length="12" precision="0" type="NUMBER"/>
-								<column id="PROT/MZSCAN/POLARITY" name="POLARITY" nullable="true" length="100" precision="0" type="STRING"/>
-								<column id="PROT/MZSCAN/SCAN_TYPE" name="SCAN_TYPE" nullable="true" length="100" precision="0" type="STRING"/>
+								<column id="PROT/MZScan/SCAN_NUM" name="SCAN_NUM" nullable="true" length="12" precision="0" type="NUMBER"/>
+								<column id="PROT/MZScan/MSLEVL" name="MSLEVL" nullable="true" length="12" precision="0" type="NUMBER"/>
+								<column id="PROT/MZScan/PEAK_COUNT" name="PEAK_COUNT" nullable="true" length="12" precision="0" type="NUMBER"/>
+								<column id="PROT/MZScan/POLARITY" name="POLARITY" nullable="true" length="100" precision="0" type="STRING"/>
+								<column id="PROT/MZScan/SCAN_TYPE" name="SCAN_TYPE" nullable="true" length="100" precision="0" type="STRING"/>
 							</columns>
 						</subclass>
 					</subclasses>
@@ -10809,7 +10809,7 @@
 						<column id="PROT/Assay/DESCRIPTION" name="DESCRIPTION" nullable="true" length="500" precision="0" type="STRING"/>
 					</columns>
 					<subclasses>
-						<subclass id="PROT/Assay/MZRUN" name="MZRUN" versioned="true" tablespace="USERS" updatable="true">
+						<subclass id="PROT/Assay/MZRun" name="MZRun" versioned="true" tablespace="USERS" updatable="true">
 						</subclass>
 					</subclasses>
 					<indexes>
@@ -10938,9 +10938,9 @@
 						<column id="PROT/ElementResult/SUBCLASS_VIEW" name="SUBCLASS_VIEW" nullable="false" length="27" precision="0" type="STRING"/>
 					</columns>
 					<subclasses>
-						<subclass id="PROT/ElementResult/MZPEAKRESULT" name="MZPEAKRESULT" versioned="true" tablespace="USERS" updatable="true">
+						<subclass id="PROT/ElementResult/MZPeakResult" name="MZPeakResult" versioned="true" tablespace="USERS" updatable="true">
 							<columns>
-								<column id="PROT/MZPEAKRESULT/BASE64PEAK" name="BASE64PEAK" nullable="true" length="0" precision="0" type="CLOB"/>
+								<column id="PROT/MZPeakResult/BASE64PEAK" name="BASE64PEAK" nullable="true" length="0" precision="0" type="CLOB"/>
 							</columns>
 						</subclass>
 					</subclasses>
@@ -10978,13 +10978,13 @@
 						<column id="PROT/Feature/SOURCE_ID" name="SOURCE_ID" nullable="true" length="50" precision="0" type="STRING"/>
 					</columns>
 					<subclasses>
-						<subclass id="PROT/Feature/MALDISPOT" name="MALDISPOT" versioned="true" tablespace="USERS" updatable="true">
+						<subclass id="PROT/Feature/MALDISpot" name="MALDISpot" versioned="true" tablespace="USERS" updatable="true">
 							<columns>
-								<column id="PROT/MALDISPOT/SPOT_IDENTIFIER" name="SPOT_IDENTIFIER" nullable="true" length="100" precision="0" type="STRING"/>
-								<column id="PROT/MALDISPOT/X_POSITION" name="X_POSITION" nullable="true" length="12" precision="5" type="NUMBER"/>
-								<column id="PROT/MALDISPOT/Y_POSITION" name="Y_POSITION" nullable="true" length="12" precision="5" type="NUMBER"/>
-								<column id="PROT/MALDISPOT/DIAMETER" name="DIAMETER" nullable="true" length="100" precision="0" type="STRING"/>
-								<column id="PROT/MALDISPOT/MATRIX_TYPE_ID" name="MATRIX_TYPE_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
+								<column id="PROT/MALDISpot/SPOT_IDENTIFIER" name="SPOT_IDENTIFIER" nullable="true" length="100" precision="0" type="STRING"/>
+								<column id="PROT/MALDISpot/X_POSITION" name="X_POSITION" nullable="true" length="12" precision="5" type="NUMBER"/>
+								<column id="PROT/MALDISpot/Y_POSITION" name="Y_POSITION" nullable="true" length="12" precision="5" type="NUMBER"/>
+								<column id="PROT/MALDISpot/DIAMETER" name="DIAMETER" nullable="true" length="100" precision="0" type="STRING"/>
+								<column id="PROT/MALDISpot/MATRIX_TYPE_ID" name="MATRIX_TYPE_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
 							</columns>
 						</subclass>
 					</subclasses>
@@ -11062,16 +11062,16 @@
 						<column id="PROT/FeatureSet/PROTOCOL_INSTANCE_ID" name="PROTOCOL_INSTANCE_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
 					</columns>
 					<subclasses>
-						<subclass id="PROT/FeatureSet/MALDIPLATE" name="MALDIPLATE" versioned="true" tablespace="USERS" updatable="true">
+						<subclass id="PROT/FeatureSet/MALDIPlate" name="MALDIPlate" versioned="true" tablespace="USERS" updatable="true">
 							<columns>
-								<column id="PROT/MALDIPLATE/PLATE_IDENTIFIER" name="PLATE_IDENTIFIER" nullable="true" length="100" precision="0" type="STRING"/>
-								<column id="PROT/MALDIPLATE/NUM_SPOT_X" name="NUM_SPOT_X" nullable="true" length="12" precision="0" type="NUMBER"/>
-								<column id="PROT/MALDIPLATE/NUM_SPOT_Y" name="NUM_SPOT_Y" nullable="true" length="12" precision="0" type="NUMBER"/>
-								<column id="PROT/MALDIPLATE/MANUFACTURER_ID" name="MANUFACTURER_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
-								<column id="PROT/MALDIPLATE/FIRST_SPOT_ID" name="FIRST_SPOT_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
-								<column id="PROT/MALDIPLATE/SECOND_SPOT_ID" name="SECOND_SPOT_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
-								<column id="PROT/MALDIPLATE/MODEL_TYPE_ID" name="MODEL_TYPE_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
-								<column id="PROT/MALDIPLATE/SPOTTING_PATTERN_TYPE_ID" name="SPOTTING_PATTERN_TYPE_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
+								<column id="PROT/MALDIPlate/PLATE_IDENTIFIER" name="PLATE_IDENTIFIER" nullable="true" length="100" precision="0" type="STRING"/>
+								<column id="PROT/MALDIPlate/NUM_SPOT_X" name="NUM_SPOT_X" nullable="true" length="12" precision="0" type="NUMBER"/>
+								<column id="PROT/MALDIPlate/NUM_SPOT_Y" name="NUM_SPOT_Y" nullable="true" length="12" precision="0" type="NUMBER"/>
+								<column id="PROT/MALDIPlate/MANUFACTURER_ID" name="MANUFACTURER_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
+								<column id="PROT/MALDIPlate/FIRST_SPOT_ID" name="FIRST_SPOT_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
+								<column id="PROT/MALDIPlate/SECOND_SPOT_ID" name="SECOND_SPOT_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
+								<column id="PROT/MALDIPlate/MODEL_TYPE_ID" name="MODEL_TYPE_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
+								<column id="PROT/MALDIPlate/SPOTTING_PATTERN_TYPE_ID" name="SPOTTING_PATTERN_TYPE_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
 							</columns>
 						</subclass>
 					</subclasses>
@@ -11273,24 +11273,24 @@
 						<column id="PROT/Parameterizable/DESCRIPTION" name="DESCRIPTION" nullable="true" length="4000" precision="0" type="STRING"/>
 					</columns>
 					<subclasses>
-						<subclass id="PROT/Parameterizable/ACTION" name="ACTION" versioned="true" tablespace="USERS" updatable="true">
+						<subclass id="PROT/Parameterizable/Action" name="Action" versioned="true" tablespace="USERS" updatable="true">
 							<columns>
-								<column id="PROT/ACTION/ORDINAL" name="ORDINAL" nullable="true" length="5" precision="0" type="NUMBER"/>
-								<column id="PROT/ACTION/CHILD_PROTOCOL_ID" name="CHILD_PROTOCOL_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
-								<column id="PROT/ACTION/TEXT" name="TEXT" nullable="true" length="4000" precision="0" type="STRING"/>
+								<column id="PROT/Action/ORDINAL" name="ORDINAL" nullable="true" length="5" precision="0" type="NUMBER"/>
+								<column id="PROT/Action/CHILD_PROTOCOL_ID" name="CHILD_PROTOCOL_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
+								<column id="PROT/Action/TEXT" name="TEXT" nullable="true" length="4000" precision="0" type="STRING"/>
 							</columns>
 						</subclass>
-						<subclass id="PROT/Parameterizable/HARDWARE" name="HARDWARE" versioned="true" tablespace="USERS" updatable="true">
+						<subclass id="PROT/Parameterizable/Hardware" name="Hardware" versioned="true" tablespace="USERS" updatable="true">
 							<columns>
-								<column id="PROT/HARDWARE/VERSION" name="VERSION" nullable="true" length="255" precision="0" type="STRING"/>
-								<column id="PROT/HARDWARE/SERIAL_NUMBER" name="SERIAL_NUMBER" nullable="true" length="255" precision="0" type="STRING"/>
+								<column id="PROT/Hardware/VERSION" name="VERSION" nullable="true" length="255" precision="0" type="STRING"/>
+								<column id="PROT/Hardware/SERIAL_NUMBER" name="SERIAL_NUMBER" nullable="true" length="255" precision="0" type="STRING"/>
 							</columns>
 						</subclass>
 						<subclass id="PROT/Parameterizable/Protocol" name="Protocol" versioned="true" tablespace="USERS" updatable="true">
 						</subclass>
-						<subclass id="PROT/Parameterizable/SOFTWARE" name="SOFTWARE" versioned="true" tablespace="USERS" updatable="true">
+						<subclass id="PROT/Parameterizable/Software" name="Software" versioned="true" tablespace="USERS" updatable="true">
 							<columns>
-								<column id="PROT/SOFTWARE/VERSION" name="VERSION" nullable="true" length="255" precision="0" type="STRING"/>
+								<column id="PROT/Software/VERSION" name="VERSION" nullable="true" length="255" precision="0" type="STRING"/>
 							</columns>
 						</subclass>
 					</subclasses>
@@ -11328,9 +11328,9 @@
 						<column id="PROT/ParameterizableInstance/DEVIATION" name="DEVIATION" nullable="true" length="500" precision="0" type="STRING"/>
 					</columns>
 					<subclasses>
-						<subclass id="PROT/ParameterizableInstance/ACTIONINSTANCE" name="ACTIONINSTANCE" versioned="true" tablespace="USERS" updatable="true">
+						<subclass id="PROT/ParameterizableInstance/ActionInstance" name="ActionInstance" versioned="true" tablespace="USERS" updatable="true">
 						</subclass>
-						<subclass id="PROT/ParameterizableInstance/PROTOCOLINSTANCE" name="PROTOCOLINSTANCE" versioned="true" tablespace="USERS" updatable="true">
+						<subclass id="PROT/ParameterizableInstance/ProtocolInstance" name="ProtocolInstance" versioned="true" tablespace="USERS" updatable="true">
 						</subclass>
 					</subclasses>
 					<indexes>
@@ -11383,22 +11383,22 @@
 						<column id="PROT/ParameterizableLink/CHILD_PRMZ_ID" name="CHILD_PRMZ_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
 					</columns>
 					<subclasses>
-						<subclass id="PROT/ParameterizableLink/PROTOCOLACTION" name="PROTOCOLACTION" versioned="true" tablespace="USERS" updatable="true">
+						<subclass id="PROT/ParameterizableLink/ProtocolAction" name="ProtocolAction" versioned="true" tablespace="USERS" updatable="true">
 							<columns>
-								<column id="PROT/PROTOCOLACTION/PROTOCOL_ID" name="PROTOCOL_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-								<column id="PROT/PROTOCOLACTION/ACTION_ID" name="ACTION_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+								<column id="PROT/ProtocolAction/PROTOCOL_ID" name="PROTOCOL_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+								<column id="PROT/ProtocolAction/Action_ID" name="Action_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
 							</columns>
 						</subclass>
-						<subclass id="PROT/ParameterizableLink/PROTOCOLHARDWARE" name="PROTOCOLHARDWARE" versioned="true" tablespace="USERS" updatable="true">
+						<subclass id="PROT/ParameterizableLink/ProtocolHardware" name="ProtocolHardware" versioned="true" tablespace="USERS" updatable="true">
 							<columns>
-								<column id="PROT/PROTOCOLHARDWARE/PROTOCOL_ID" name="PROTOCOL_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-								<column id="PROT/PROTOCOLHARDWARE/HARDWARE_ID" name="HARDWARE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+								<column id="PROT/ProtocolHardware/PROTOCOL_ID" name="PROTOCOL_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+								<column id="PROT/ProtocolHardware/Hardware_ID" name="Hardware_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
 							</columns>
 						</subclass>
-						<subclass id="PROT/ParameterizableLink/PROTOCOLSOFTWARE" name="PROTOCOLSOFTWARE" versioned="true" tablespace="USERS" updatable="true">
+						<subclass id="PROT/ParameterizableLink/ProtocolSoftware" name="ProtocolSoftware" versioned="true" tablespace="USERS" updatable="true">
 							<columns>
-								<column id="PROT/PROTOCOLSOFTWARE/PROTOCOL_ID" name="PROTOCOL_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-								<column id="PROT/PROTOCOLSOFTWARE/SOFTWARE_ID" name="SOFTWARE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+								<column id="PROT/ProtocolSoftware/PROTOCOL_ID" name="PROTOCOL_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+								<column id="PROT/ProtocolSoftware/Software_ID" name="Software_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
 							</columns>
 						</subclass>
 					</subclasses>
@@ -11476,7 +11476,7 @@
 						<column id="PROT/Quantification/DESCRIPTION" name="DESCRIPTION" nullable="true" length="500" precision="0" type="STRING"/>
 					</columns>
 					<subclasses>
-						<subclass id="PROT/Quantification/MZPEAK" name="MZPEAK" versioned="true" tablespace="USERS" updatable="true">
+						<subclass id="PROT/Quantification/MZPeak" name="MZPeak" versioned="true" tablespace="USERS" updatable="true">
 						</subclass>
 					</subclasses>
 					<indexes>
@@ -12241,11 +12241,11 @@
 								<column id="RAD/ArrayStatTwoConditions/SIGNIFICANCE" name="SIGNIFICANCE" nullable="true" length="10" precision="0" type="STRING"/>
 							</columns>
 						</subclass>
-						<subclass id="RAD/AnalysisResult/DataTransformationRESULT" name="DataTransformationRESULT" versioned="true" tablespace="USERS" updatable="true">
+						<subclass id="RAD/AnalysisResult/DataTransformationResult" name="DataTransformationResult" versioned="true" tablespace="USERS" updatable="true">
 							<columns>
-								<column id="RAD/DataTransformationRESULT/FLOAT_VALUE" name="FLOAT_VALUE" nullable="true" length="126" precision="0" type="FLOAT"/>
-								<column id="RAD/DataTransformationRESULT/INT_VALUE" name="INT_VALUE" nullable="true" length="8" precision="0" type="NUMBER"/>
-								<column id="RAD/DataTransformationRESULT/STRING_VALUE" name="STRING_VALUE" nullable="true" length="200" precision="0" type="STRING"/>
+								<column id="RAD/DataTransformationResult/FLOAT_VALUE" name="FLOAT_VALUE" nullable="true" length="126" precision="0" type="FLOAT"/>
+								<column id="RAD/DataTransformationResult/INT_VALUE" name="INT_VALUE" nullable="true" length="8" precision="0" type="NUMBER"/>
+								<column id="RAD/DataTransformationResult/STRING_VALUE" name="STRING_VALUE" nullable="true" length="200" precision="0" type="STRING"/>
 							</columns>
 						</subclass>
 						<subclass id="RAD/AnalysisResult/HQSpecificity" name="HQSpecificity" versioned="true" tablespace="USERS" updatable="true">
@@ -12271,12 +12271,12 @@
 								<column id="RAD/SAM/FOLD_CHANGE" name="FOLD_CHANGE" nullable="true" length="126" precision="0" type="FLOAT"/>
 							</columns>
 						</subclass>
-						<subclass id="RAD/AnalysisResult/SPLICEARRAYANALYSISRESULT" name="SPLICEARRAYANALYSISRESULT" versioned="true" tablespace="USERS" updatable="true">
+						<subclass id="RAD/AnalysisResult/SpliceArrayAnalysisResult" name="SpliceArrayAnalysisResult" versioned="true" tablespace="USERS" updatable="true">
 							<columns>
-								<column id="RAD/SPLICEARRAYANALYSISRESULT/CHANNEL1" name="CHANNEL1" nullable="true" length="126" precision="0" type="FLOAT"/>
-								<column id="RAD/SPLICEARRAYANALYSISRESULT/CHANNEL2" name="CHANNEL2" nullable="true" length="126" precision="0" type="FLOAT"/>
-								<column id="RAD/SPLICEARRAYANALYSISRESULT/MEAN_LOG_RATIO" name="MEAN_LOG_RATIO" nullable="true" length="126" precision="0" type="FLOAT"/>
-								<column id="RAD/SPLICEARRAYANALYSISRESULT/RATIO_ERROR" name="RATIO_ERROR" nullable="true" length="126" precision="0" type="FLOAT"/>
+								<column id="RAD/SpliceArrayAnalysisResult/CHANNEL1" name="CHANNEL1" nullable="true" length="126" precision="0" type="FLOAT"/>
+								<column id="RAD/SpliceArrayAnalysisResult/CHANNEL2" name="CHANNEL2" nullable="true" length="126" precision="0" type="FLOAT"/>
+								<column id="RAD/SpliceArrayAnalysisResult/MEAN_LOG_RATIO" name="MEAN_LOG_RATIO" nullable="true" length="126" precision="0" type="FLOAT"/>
+								<column id="RAD/SpliceArrayAnalysisResult/RATIO_ERROR" name="RATIO_ERROR" nullable="true" length="126" precision="0" type="FLOAT"/>
 							</columns>
 						</subclass>
 					</subclasses>
@@ -12881,15 +12881,15 @@
 								<column id="RAD/MOIDResult/LOG_P" name="LOG_P" nullable="true" length="126" precision="0" type="FLOAT"/>
 							</columns>
 						</subclass>
-						<subclass id="RAD/CompositeElementResult/PROBEPROFILER" name="PROBEPROFILER" versioned="true" tablespace="USERS" updatable="true">
+						<subclass id="RAD/CompositeElementResult/ProbeProfiler" name="ProbeProfiler" versioned="true" tablespace="USERS" updatable="true">
 							<columns>
-								<column id="RAD/PROBEPROFILER/E_SCORE" name="E_SCORE" nullable="true" length="126" precision="0" type="FLOAT"/>
-								<column id="RAD/PROBEPROFILER/SD" name="SD" nullable="true" length="126" precision="0" type="FLOAT"/>
-								<column id="RAD/PROBEPROFILER/SD_LOG" name="SD_LOG" nullable="true" length="126" precision="0" type="FLOAT"/>
-								<column id="RAD/PROBEPROFILER/P_VALUE" name="P_VALUE" nullable="true" length="126" precision="0" type="FLOAT"/>
-								<column id="RAD/PROBEPROFILER/PP_USED" name="PP_USED" nullable="true" length="5" precision="0" type="NUMBER"/>
-								<column id="RAD/PROBEPROFILER/PP_NOT_USED" name="PP_NOT_USED" nullable="true" length="5" precision="0" type="NUMBER"/>
-								<column id="RAD/PROBEPROFILER/PP_SATURATED" name="PP_SATURATED" nullable="true" length="5" precision="0" type="NUMBER"/>
+								<column id="RAD/ProbeProfiler/E_SCORE" name="E_SCORE" nullable="true" length="126" precision="0" type="FLOAT"/>
+								<column id="RAD/ProbeProfiler/SD" name="SD" nullable="true" length="126" precision="0" type="FLOAT"/>
+								<column id="RAD/ProbeProfiler/SD_LOG" name="SD_LOG" nullable="true" length="126" precision="0" type="FLOAT"/>
+								<column id="RAD/ProbeProfiler/P_VALUE" name="P_VALUE" nullable="true" length="126" precision="0" type="FLOAT"/>
+								<column id="RAD/ProbeProfiler/PP_USED" name="PP_USED" nullable="true" length="5" precision="0" type="NUMBER"/>
+								<column id="RAD/ProbeProfiler/PP_NOT_USED" name="PP_NOT_USED" nullable="true" length="5" precision="0" type="NUMBER"/>
+								<column id="RAD/ProbeProfiler/PP_SATURATED" name="PP_SATURATED" nullable="true" length="5" precision="0" type="NUMBER"/>
 							</columns>
 						</subclass>
 						<subclass id="RAD/CompositeElementResult/RMAExpress" name="RMAExpress" versioned="true" tablespace="USERS" updatable="true">
@@ -13206,36 +13206,36 @@
 						<column id="RAD/ElementResult/QUANTIFICATION_ID" name="QUANTIFICATION_ID" nullable="false" length="8" precision="0" type="NUMBER"/>
 					</columns>
 					<subclasses>
-						<subclass id="RAD/ElementResult/AGILENTELEMENTRESULT" name="AGILENTELEMENTRESULT" versioned="true" tablespace="USERS" updatable="true">
+						<subclass id="RAD/ElementResult/AgilentElementResult" name="AgilentElementResult" versioned="true" tablespace="USERS" updatable="true">
 							<columns>
-								<column id="RAD/AGILENTELEMENTRESULT/MEAN_SIGNAL" name="MEAN_SIGNAL" nullable="true" length="126" precision="0" type="FLOAT"/>
-								<column id="RAD/AGILENTELEMENTRESULT/BG_MEAN_SIGNAL" name="BG_MEAN_SIGNAL" nullable="true" length="126" precision="0" type="FLOAT"/>
-								<column id="RAD/AGILENTELEMENTRESULT/PIX_SDEV" name="PIX_SDEV" nullable="true" length="126" precision="0" type="FLOAT"/>
-								<column id="RAD/AGILENTELEMENTRESULT/BG_PIX_SDEV" name="BG_PIX_SDEV" nullable="true" length="126" precision="0" type="FLOAT"/>
-								<column id="RAD/AGILENTELEMENTRESULT/MEDIAN_SIGNAL" name="MEDIAN_SIGNAL" nullable="true" length="126" precision="0" type="FLOAT"/>
-								<column id="RAD/AGILENTELEMENTRESULT/BG_MEDIAN_SIGNAL" name="BG_MEDIAN_SIGNAL" nullable="true" length="126" precision="0" type="FLOAT"/>
-								<column id="RAD/AGILENTELEMENTRESULT/POSITION_X" name="POSITION_X" nullable="true" length="126" precision="0" type="FLOAT"/>
-								<column id="RAD/AGILENTELEMENTRESULT/POSITION_Y" name="POSITION_Y" nullable="true" length="126" precision="0" type="FLOAT"/>
-								<column id="RAD/AGILENTELEMENTRESULT/SPOT_RADIUS_X" name="SPOT_RADIUS_X" nullable="true" length="126" precision="0" type="FLOAT"/>
-								<column id="RAD/AGILENTELEMENTRESULT/SPOT_RADIUS_Y" name="SPOT_RADIUS_Y" nullable="true" length="126" precision="0" type="FLOAT"/>
-								<column id="RAD/AGILENTELEMENTRESULT/PIX_CORRELATION" name="PIX_CORRELATION" nullable="true" length="126" precision="0" type="FLOAT"/>
-								<column id="RAD/AGILENTELEMENTRESULT/BG_PIX_CORRELATION" name="BG_PIX_CORRELATION" nullable="true" length="126" precision="0" type="FLOAT"/>
-								<column id="RAD/AGILENTELEMENTRESULT/P_VAL_FEAT_EQ_BG" name="P_VAL_FEAT_EQ_BG" nullable="true" length="126" precision="0" type="FLOAT"/>
-								<column id="RAD/AGILENTELEMENTRESULT/IS_FOUND" name="IS_FOUND" nullable="true" length="3" precision="0" type="NUMBER"/>
-								<column id="RAD/AGILENTELEMENTRESULT/IS_SATURATED" name="IS_SATURATED" nullable="true" length="3" precision="0" type="NUMBER"/>
-								<column id="RAD/AGILENTELEMENTRESULT/IS_FEAT_NON_UNIF_OL" name="IS_FEAT_NON_UNIF_OL" nullable="true" length="3" precision="0" type="NUMBER"/>
-								<column id="RAD/AGILENTELEMENTRESULT/IS_BG_NON_UNIF_OL" name="IS_BG_NON_UNIF_OL" nullable="true" length="5" precision="0" type="NUMBER"/>
-								<column id="RAD/AGILENTELEMENTRESULT/IS_FEAT_POPN_OL" name="IS_FEAT_POPN_OL" nullable="true" length="5" precision="0" type="NUMBER"/>
-								<column id="RAD/AGILENTELEMENTRESULT/IS_BG_POPN_OL" name="IS_BG_POPN_OL" nullable="true" length="5" precision="0" type="NUMBER"/>
-								<column id="RAD/AGILENTELEMENTRESULT/IS_MANUAL_FLAG" name="IS_MANUAL_FLAG" nullable="true" length="12" precision="0" type="NUMBER"/>
-								<column id="RAD/AGILENTELEMENTRESULT/IS_POS_AND_SIGNIF" name="IS_POS_AND_SIGNIF" nullable="true" length="12" precision="0" type="NUMBER"/>
-								<column id="RAD/AGILENTELEMENTRESULT/IS_WELL_ABOVE_BG" name="IS_WELL_ABOVE_BG" nullable="true" length="12" precision="0" type="NUMBER"/>
-								<column id="RAD/AGILENTELEMENTRESULT/IS_USED_BG_ADJUST" name="IS_USED_BG_ADJUST" nullable="true" length="12" precision="0" type="NUMBER"/>
-								<column id="RAD/AGILENTELEMENTRESULT/NUM_PIX_OL_HI" name="NUM_PIX_OL_HI" nullable="true" length="12" precision="0" type="NUMBER"/>
-								<column id="RAD/AGILENTELEMENTRESULT/NUM_PIX_OL_LO" name="NUM_PIX_OL_LO" nullable="true" length="12" precision="0" type="NUMBER"/>
-								<column id="RAD/AGILENTELEMENTRESULT/NUM_PIX" name="NUM_PIX" nullable="true" length="12" precision="0" type="NUMBER"/>
-								<column id="RAD/AGILENTELEMENTRESULT/BG_NUM_PIX" name="BG_NUM_PIX" nullable="true" length="12" precision="0" type="NUMBER"/>
-								<column id="RAD/AGILENTELEMENTRESULT/NUM_SAT_PIX" name="NUM_SAT_PIX" nullable="true" length="12" precision="0" type="NUMBER"/>
+								<column id="RAD/AgilentElementResult/MEAN_SIGNAL" name="MEAN_SIGNAL" nullable="true" length="126" precision="0" type="FLOAT"/>
+								<column id="RAD/AgilentElementResult/BG_MEAN_SIGNAL" name="BG_MEAN_SIGNAL" nullable="true" length="126" precision="0" type="FLOAT"/>
+								<column id="RAD/AgilentElementResult/PIX_SDEV" name="PIX_SDEV" nullable="true" length="126" precision="0" type="FLOAT"/>
+								<column id="RAD/AgilentElementResult/BG_PIX_SDEV" name="BG_PIX_SDEV" nullable="true" length="126" precision="0" type="FLOAT"/>
+								<column id="RAD/AgilentElementResult/MEDIAN_SIGNAL" name="MEDIAN_SIGNAL" nullable="true" length="126" precision="0" type="FLOAT"/>
+								<column id="RAD/AgilentElementResult/BG_MEDIAN_SIGNAL" name="BG_MEDIAN_SIGNAL" nullable="true" length="126" precision="0" type="FLOAT"/>
+								<column id="RAD/AgilentElementResult/POSITION_X" name="POSITION_X" nullable="true" length="126" precision="0" type="FLOAT"/>
+								<column id="RAD/AgilentElementResult/POSITION_Y" name="POSITION_Y" nullable="true" length="126" precision="0" type="FLOAT"/>
+								<column id="RAD/AgilentElementResult/SPOT_RADIUS_X" name="SPOT_RADIUS_X" nullable="true" length="126" precision="0" type="FLOAT"/>
+								<column id="RAD/AgilentElementResult/SPOT_RADIUS_Y" name="SPOT_RADIUS_Y" nullable="true" length="126" precision="0" type="FLOAT"/>
+								<column id="RAD/AgilentElementResult/PIX_CORRELATION" name="PIX_CORRELATION" nullable="true" length="126" precision="0" type="FLOAT"/>
+								<column id="RAD/AgilentElementResult/BG_PIX_CORRELATION" name="BG_PIX_CORRELATION" nullable="true" length="126" precision="0" type="FLOAT"/>
+								<column id="RAD/AgilentElementResult/P_VAL_FEAT_EQ_BG" name="P_VAL_FEAT_EQ_BG" nullable="true" length="126" precision="0" type="FLOAT"/>
+								<column id="RAD/AgilentElementResult/IS_FOUND" name="IS_FOUND" nullable="true" length="3" precision="0" type="NUMBER"/>
+								<column id="RAD/AgilentElementResult/IS_SATURATED" name="IS_SATURATED" nullable="true" length="3" precision="0" type="NUMBER"/>
+								<column id="RAD/AgilentElementResult/IS_FEAT_NON_UNIF_OL" name="IS_FEAT_NON_UNIF_OL" nullable="true" length="3" precision="0" type="NUMBER"/>
+								<column id="RAD/AgilentElementResult/IS_BG_NON_UNIF_OL" name="IS_BG_NON_UNIF_OL" nullable="true" length="5" precision="0" type="NUMBER"/>
+								<column id="RAD/AgilentElementResult/IS_FEAT_POPN_OL" name="IS_FEAT_POPN_OL" nullable="true" length="5" precision="0" type="NUMBER"/>
+								<column id="RAD/AgilentElementResult/IS_BG_POPN_OL" name="IS_BG_POPN_OL" nullable="true" length="5" precision="0" type="NUMBER"/>
+								<column id="RAD/AgilentElementResult/IS_MANUAL_FLAG" name="IS_MANUAL_FLAG" nullable="true" length="12" precision="0" type="NUMBER"/>
+								<column id="RAD/AgilentElementResult/IS_POS_AND_SIGNIF" name="IS_POS_AND_SIGNIF" nullable="true" length="12" precision="0" type="NUMBER"/>
+								<column id="RAD/AgilentElementResult/IS_WELL_ABOVE_BG" name="IS_WELL_ABOVE_BG" nullable="true" length="12" precision="0" type="NUMBER"/>
+								<column id="RAD/AgilentElementResult/IS_USED_BG_ADJUST" name="IS_USED_BG_ADJUST" nullable="true" length="12" precision="0" type="NUMBER"/>
+								<column id="RAD/AgilentElementResult/NUM_PIX_OL_HI" name="NUM_PIX_OL_HI" nullable="true" length="12" precision="0" type="NUMBER"/>
+								<column id="RAD/AgilentElementResult/NUM_PIX_OL_LO" name="NUM_PIX_OL_LO" nullable="true" length="12" precision="0" type="NUMBER"/>
+								<column id="RAD/AgilentElementResult/NUM_PIX" name="NUM_PIX" nullable="true" length="12" precision="0" type="NUMBER"/>
+								<column id="RAD/AgilentElementResult/BG_NUM_PIX" name="BG_NUM_PIX" nullable="true" length="12" precision="0" type="NUMBER"/>
+								<column id="RAD/AgilentElementResult/NUM_SAT_PIX" name="NUM_SAT_PIX" nullable="true" length="12" precision="0" type="NUMBER"/>
 							</columns>
 						</subclass>
 						<subclass id="RAD/ElementResult/AffymetrixCEL" name="AffymetrixCEL" versioned="true" tablespace="USERS" updatable="true">
@@ -13296,31 +13296,31 @@
 								<column id="RAD/GenePixElementResult/CIRCULARITY" name="CIRCULARITY" nullable="true" length="126" precision="0" type="FLOAT"/>
 							</columns>
 						</subclass>
-						<subclass id="RAD/ElementResult/QUANTARRAYELEMENTRESULT" name="QUANTARRAYELEMENTRESULT" versioned="true" tablespace="USERS" updatable="true">
+						<subclass id="RAD/ElementResult/QuantArrayElementResult" name="QuantArrayElementResult" versioned="true" tablespace="USERS" updatable="true">
 							<columns>
-								<column id="RAD/QUANTARRAYELEMENTRESULT/INTENSITY" name="INTENSITY" nullable="true" length="126" precision="0" type="FLOAT"/>
-								<column id="RAD/QUANTARRAYELEMENTRESULT/BACKGROUND" name="BACKGROUND" nullable="true" length="126" precision="0" type="FLOAT"/>
-								<column id="RAD/QUANTARRAYELEMENTRESULT/INTENSITY_SDEV" name="INTENSITY_SDEV" nullable="true" length="126" precision="0" type="FLOAT"/>
-								<column id="RAD/QUANTARRAYELEMENTRESULT/BACKGROUND_SDEV" name="BACKGROUND_SDEV" nullable="true" length="126" precision="0" type="FLOAT"/>
-								<column id="RAD/QUANTARRAYELEMENTRESULT/X_LOCATION" name="X_LOCATION" nullable="true" length="126" precision="0" type="FLOAT"/>
-								<column id="RAD/QUANTARRAYELEMENTRESULT/Y_LOCATION" name="Y_LOCATION" nullable="true" length="126" precision="0" type="FLOAT"/>
-								<column id="RAD/QUANTARRAYELEMENTRESULT/DIAMETER" name="DIAMETER" nullable="true" length="126" precision="0" type="FLOAT"/>
-								<column id="RAD/QUANTARRAYELEMENTRESULT/AREA" name="AREA" nullable="true" length="126" precision="0" type="FLOAT"/>
-								<column id="RAD/QUANTARRAYELEMENTRESULT/FOOTPRINT" name="FOOTPRINT" nullable="true" length="126" precision="0" type="FLOAT"/>
-								<column id="RAD/QUANTARRAYELEMENTRESULT/CIRCULARITY" name="CIRCULARITY" nullable="true" length="126" precision="0" type="FLOAT"/>
-								<column id="RAD/QUANTARRAYELEMENTRESULT/SPOT_UNIFORMITY" name="SPOT_UNIFORMITY" nullable="true" length="126" precision="0" type="FLOAT"/>
-								<column id="RAD/QUANTARRAYELEMENTRESULT/BKG_UNIFORMITY" name="BKG_UNIFORMITY" nullable="true" length="126" precision="0" type="FLOAT"/>
-								<column id="RAD/QUANTARRAYELEMENTRESULT/SN_RATIO" name="SN_RATIO" nullable="true" length="126" precision="0" type="FLOAT"/>
-								<column id="RAD/QUANTARRAYELEMENTRESULT/CONFIDENCE" name="CONFIDENCE" nullable="true" length="126" precision="0" type="FLOAT"/>
-								<column id="RAD/QUANTARRAYELEMENTRESULT/DIAMETER_FILTER" name="DIAMETER_FILTER" nullable="true" length="3" precision="0" type="NUMBER"/>
-								<column id="RAD/QUANTARRAYELEMENTRESULT/AREA_FILTER" name="AREA_FILTER" nullable="true" length="3" precision="0" type="NUMBER"/>
-								<column id="RAD/QUANTARRAYELEMENTRESULT/FOOTPRINT_FILTER" name="FOOTPRINT_FILTER" nullable="true" length="3" precision="0" type="NUMBER"/>
-								<column id="RAD/QUANTARRAYELEMENTRESULT/CIRCULARITY_FILTER" name="CIRCULARITY_FILTER" nullable="true" length="5" precision="0" type="NUMBER"/>
-								<column id="RAD/QUANTARRAYELEMENTRESULT/SPOT_UNIFORMITY_FILTER" name="SPOT_UNIFORMITY_FILTER" nullable="true" length="5" precision="0" type="NUMBER"/>
-								<column id="RAD/QUANTARRAYELEMENTRESULT/BKG_UNIFORMITY_FILTER" name="BKG_UNIFORMITY_FILTER" nullable="true" length="5" precision="0" type="NUMBER"/>
-								<column id="RAD/QUANTARRAYELEMENTRESULT/SN_RATIO_FILTER" name="SN_RATIO_FILTER" nullable="true" length="12" precision="0" type="NUMBER"/>
-								<column id="RAD/QUANTARRAYELEMENTRESULT/REPLICATE_FILTER" name="REPLICATE_FILTER" nullable="true" length="12" precision="0" type="NUMBER"/>
-								<column id="RAD/QUANTARRAYELEMENTRESULT/IGNORE_FILTER" name="IGNORE_FILTER" nullable="true" length="12" precision="0" type="NUMBER"/>
+								<column id="RAD/QuantArrayElementResult/INTENSITY" name="INTENSITY" nullable="true" length="126" precision="0" type="FLOAT"/>
+								<column id="RAD/QuantArrayElementResult/BACKGROUND" name="BACKGROUND" nullable="true" length="126" precision="0" type="FLOAT"/>
+								<column id="RAD/QuantArrayElementResult/INTENSITY_SDEV" name="INTENSITY_SDEV" nullable="true" length="126" precision="0" type="FLOAT"/>
+								<column id="RAD/QuantArrayElementResult/BACKGROUND_SDEV" name="BACKGROUND_SDEV" nullable="true" length="126" precision="0" type="FLOAT"/>
+								<column id="RAD/QuantArrayElementResult/X_LOCATION" name="X_LOCATION" nullable="true" length="126" precision="0" type="FLOAT"/>
+								<column id="RAD/QuantArrayElementResult/Y_LOCATION" name="Y_LOCATION" nullable="true" length="126" precision="0" type="FLOAT"/>
+								<column id="RAD/QuantArrayElementResult/DIAMETER" name="DIAMETER" nullable="true" length="126" precision="0" type="FLOAT"/>
+								<column id="RAD/QuantArrayElementResult/AREA" name="AREA" nullable="true" length="126" precision="0" type="FLOAT"/>
+								<column id="RAD/QuantArrayElementResult/FOOTPRINT" name="FOOTPRINT" nullable="true" length="126" precision="0" type="FLOAT"/>
+								<column id="RAD/QuantArrayElementResult/CIRCULARITY" name="CIRCULARITY" nullable="true" length="126" precision="0" type="FLOAT"/>
+								<column id="RAD/QuantArrayElementResult/SPOT_UNIFORMITY" name="SPOT_UNIFORMITY" nullable="true" length="126" precision="0" type="FLOAT"/>
+								<column id="RAD/QuantArrayElementResult/BKG_UNIFORMITY" name="BKG_UNIFORMITY" nullable="true" length="126" precision="0" type="FLOAT"/>
+								<column id="RAD/QuantArrayElementResult/SN_RATIO" name="SN_RATIO" nullable="true" length="126" precision="0" type="FLOAT"/>
+								<column id="RAD/QuantArrayElementResult/CONFIDENCE" name="CONFIDENCE" nullable="true" length="126" precision="0" type="FLOAT"/>
+								<column id="RAD/QuantArrayElementResult/DIAMETER_FILTER" name="DIAMETER_FILTER" nullable="true" length="3" precision="0" type="NUMBER"/>
+								<column id="RAD/QuantArrayElementResult/AREA_FILTER" name="AREA_FILTER" nullable="true" length="3" precision="0" type="NUMBER"/>
+								<column id="RAD/QuantArrayElementResult/FOOTPRINT_FILTER" name="FOOTPRINT_FILTER" nullable="true" length="3" precision="0" type="NUMBER"/>
+								<column id="RAD/QuantArrayElementResult/CIRCULARITY_FILTER" name="CIRCULARITY_FILTER" nullable="true" length="5" precision="0" type="NUMBER"/>
+								<column id="RAD/QuantArrayElementResult/SPOT_UNIFORMITY_FILTER" name="SPOT_UNIFORMITY_FILTER" nullable="true" length="5" precision="0" type="NUMBER"/>
+								<column id="RAD/QuantArrayElementResult/BKG_UNIFORMITY_FILTER" name="BKG_UNIFORMITY_FILTER" nullable="true" length="5" precision="0" type="NUMBER"/>
+								<column id="RAD/QuantArrayElementResult/SN_RATIO_FILTER" name="SN_RATIO_FILTER" nullable="true" length="12" precision="0" type="NUMBER"/>
+								<column id="RAD/QuantArrayElementResult/REPLICATE_FILTER" name="REPLICATE_FILTER" nullable="true" length="12" precision="0" type="NUMBER"/>
+								<column id="RAD/QuantArrayElementResult/IGNORE_FILTER" name="IGNORE_FILTER" nullable="true" length="12" precision="0" type="NUMBER"/>
 							</columns>
 						</subclass>
 						<subclass id="RAD/ElementResult/ScanAlyzeElementResult" name="ScanAlyzeElementResult" versioned="true" tablespace="USERS" updatable="true">
@@ -13733,16 +13733,16 @@
 					<columns>
 						<column id="RAD/Protocol/PROTOCOL_ID" name="PROTOCOL_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
 						<column id="RAD/Protocol/PROTOCOL_TYPE_ID" name="PROTOCOL_TYPE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-						<column id="RAD/Protocol/SOFTWARE_TYPE_ID" name="SOFTWARE_TYPE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
-						<column id="RAD/Protocol/HARDWARE_TYPE_ID" name="HARDWARE_TYPE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
+						<column id="RAD/Protocol/Software_TYPE_ID" name="Software_TYPE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
+						<column id="RAD/Protocol/Hardware_TYPE_ID" name="Hardware_TYPE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
 						<column id="RAD/Protocol/BIBLIOGRAPHIC_REFERENCE_ID" name="BIBLIOGRAPHIC_REFERENCE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
 						<column id="RAD/Protocol/EXTERNAL_DATABASE_RELEASE_ID" name="EXTERNAL_DATABASE_RELEASE_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
 						<column id="RAD/Protocol/SOURCE_ID" name="SOURCE_ID" nullable="true" length="100" precision="0" type="STRING"/>
 						<column id="RAD/Protocol/NAME" name="NAME" nullable="false" length="100" precision="0" type="STRING"/>
 						<column id="RAD/Protocol/URI" name="URI" nullable="true" length="100" precision="0" type="STRING"/>
 						<column id="RAD/Protocol/PROTOCOL_DESCRIPTION" name="PROTOCOL_DESCRIPTION" nullable="true" length="4000" precision="0" type="STRING"/>
-						<column id="RAD/Protocol/HARDWARE_DESCRIPTION" name="HARDWARE_DESCRIPTION" nullable="true" length="500" precision="0" type="STRING"/>
-						<column id="RAD/Protocol/SOFTWARE_DESCRIPTION" name="SOFTWARE_DESCRIPTION" nullable="true" length="500" precision="0" type="STRING"/>
+						<column id="RAD/Protocol/Hardware_DESCRIPTION" name="Hardware_DESCRIPTION" nullable="true" length="500" precision="0" type="STRING"/>
+						<column id="RAD/Protocol/Software_DESCRIPTION" name="Software_DESCRIPTION" nullable="true" length="500" precision="0" type="STRING"/>
 					</columns>
 					<indexes>
 						<index name="PK_PROTOCOL" tablespace="USERS" type="NORMAL">
@@ -13757,12 +13757,12 @@
 						</index>
 						<index name="PROTOCOL_IND02" tablespace="USERS" type="NORMAL">
 							<columns>
-								<column idref="RAD/Protocol/SOFTWARE_TYPE_ID"/>
+								<column idref="RAD/Protocol/Software_TYPE_ID"/>
 							</columns>
 						</index>
 						<index name="PROTOCOL_IND03" tablespace="USERS" type="NORMAL">
 							<columns>
-								<column idref="RAD/Protocol/HARDWARE_TYPE_ID"/>
+								<column idref="RAD/Protocol/Hardware_TYPE_ID"/>
 							</columns>
 						</index>
 					</indexes>
@@ -13778,7 +13778,7 @@
 						</constraint>
 						<constraint name="FK_PROTOCOL_HDWTYPE_OE" type="FOREIGN KEY">
 							<constrainedColumns>
-								<column idref="RAD/Protocol/HARDWARE_TYPE_ID"/>
+								<column idref="RAD/Protocol/Hardware_TYPE_ID"/>
 							</constrainedColumns>
 							<referencedTable idref="Study/OntologyEntry"/>
 							<referencedColumns>
@@ -13796,7 +13796,7 @@
 						</constraint>
 						<constraint name="FK_PROTOCOL_SFWTYPE_OE" type="FOREIGN KEY">
 							<constrainedColumns>
-								<column idref="RAD/Protocol/SOFTWARE_TYPE_ID"/>
+								<column idref="RAD/Protocol/Software_TYPE_ID"/>
 							</constrainedColumns>
 							<referencedTable idref="Study/OntologyEntry"/>
 							<referencedColumns>
