@@ -768,6 +768,11 @@
 								<column idref="DoTS/AASequence/AA_SEQUENCE_ID"/>
 							</referencedColumns>
 						</constraint>
+						<constraint name="AAENTRY_SOURCE_ID_UQ" type="UNIQUE">
+							<constrainedColumns>
+								<column idref="DoTS/AAEntry/SOURCE_ID"/>
+							</constrainedColumns>
+						</constraint>
 						<constraint name="PK_AAENTRY" type="PRIMARY KEY">
 							<constrainedColumns>
 								<column idref="DoTS/AAEntry/AA_ENTRY_ID"/>
@@ -3223,6 +3228,11 @@
 						<constraint name="PK_COMMENTNAME" type="PRIMARY KEY">
 							<constrainedColumns>
 								<column idref="DoTS/CommentName/COMMENT_NAME_ID"/>
+							</constrainedColumns>
+						</constraint>
+						<constraint name="COMMENTNAME_NAME_UQ" type="UNIQUE">
+							<constrainedColumns>
+								<column idref="DoTS/CommentName/NAME"/>
 							</constrainedColumns>
 						</constraint>
 					</constraints>
@@ -6512,6 +6522,11 @@
 								<column idref="DoTS/NASequence/NA_SEQUENCE_ID"/>
 							</referencedColumns>
 						</constraint>
+						<constraint name="NAENTRY_SOURCE_ID_UQ" type="UNIQUE">
+							<constrainedColumns>
+								<column idref="DoTS/NAEntry/SOURCE_ID"/>
+							</constrainedColumns>
+						</constraint>
 						<constraint name="PK_NAENTRY" type="PRIMARY KEY">
 							<constrainedColumns>
 								<column idref="DoTS/NAEntry/NA_ENTRY_ID"/>
@@ -8392,6 +8407,12 @@
 						<constraint name="PK_PFAMENTRY" type="PRIMARY KEY">
 							<constrainedColumns>
 								<column idref="DoTS/PfamEntry/PFAM_ENTRY_ID"/>
+							</constrainedColumns>
+						</constraint>
+						<constraint name="PFAMENTRY_UQ1" type="UNIQUE">
+							<constrainedColumns>
+								<column idref="DoTS/PfamEntry/ACCESSION"/>
+								<column idref="DoTS/PfamEntry/RELEASE"/>
 							</constrainedColumns>
 						</constraint>
 					</constraints>
@@ -11739,6 +11760,12 @@
 								<column idref="SRes/Contact/CONTACT_ID"/>
 							</referencedColumns>
 						</constraint>
+						<constraint name="ARRAYDESIGN_UQ1" type="UNIQUE">
+							<constrainedColumns>
+								<column idref="RAD/ArrayDesign/NAME"/>
+								<column idref="RAD/ArrayDesign/VERSION"/>
+							</constrainedColumns>
+						</constraint>
 						<constraint name="FK_ARRAY_EXTDB" type="FOREIGN KEY">
 							<constrainedColumns>
 								<column idref="RAD/ArrayDesign/EXTERNAL_DATABASE_RELEASE_ID"/>
@@ -11917,6 +11944,12 @@
 						</index>
 					</indexes>
 					<constraints>
+						<constraint name="ASSAYANALYSIS_UQ1" type="UNIQUE">
+							<constrainedColumns>
+								<column idref="RAD/AssayAnalysis/ANALYSIS_ID"/>
+								<column idref="RAD/AssayAnalysis/ASSAY_ID"/>
+							</constrainedColumns>
+						</constraint>
 						<constraint name="FK_AssayAnalysis_ANALYSIS" type="FOREIGN KEY">
 							<constrainedColumns>
 								<column idref="RAD/AssayAnalysis/ANALYSIS_ID"/>
@@ -12057,6 +12090,12 @@
 						<constraint name="PK_ACQUISITIONPARAM" type="PRIMARY KEY">
 							<constrainedColumns>
 								<column idref="RAD/AcquisitionParam/ACQUISITION_PARAM_ID"/>
+							</constrainedColumns>
+						</constraint>
+						<constraint name="ACQUISITIONPARAM_UQ1" type="UNIQUE">
+							<constrainedColumns>
+								<column idref="RAD/AcquisitionParam/ACQUISITION_ID"/>
+								<column idref="RAD/AcquisitionParam/NAME"/>
 							</constrainedColumns>
 						</constraint>
 					</constraints>
@@ -13650,6 +13689,12 @@
 								<column idref="RAD/Protocol/PROTOCOL_ID"/>
 							</referencedColumns>
 						</constraint>
+						<constraint name="ProtocolStep_UQ1" type="UNIQUE">
+							<constrainedColumns>
+								<column idref="RAD/ProtocolStep/PARENT_PROTOCOL_ID"/>
+								<column idref="RAD/ProtocolStep/CHILD_PROTOCOL_ID"/>
+							</constrainedColumns>
+						</constraint>
 						<constraint name="FK_ProtocolStep_PARENTPROTOCOL" type="FOREIGN KEY">
 							<constrainedColumns>
 								<column idref="RAD/ProtocolStep/PARENT_PROTOCOL_ID"/>
@@ -13697,7 +13742,7 @@
 								<column idref="RAD/ProjectLink/TABLE_ID"/>
 							</columns>
 						</index>
-						<index name="PROJECTLINK_IND03" tablespace="USERS" type="NORMAL">
+						<index name="PROJECfTLINK_IND03" tablespace="USERS" type="NORMAL">
 							<columns>
 								<column idref="RAD/ProjectLink/ROW_ID"/>
 							</columns>
@@ -13712,6 +13757,13 @@
 							<referencedColumns>
 								<column idref="Core/ProjectInfo/PROJECT_ID"/>
 							</referencedColumns>
+						</constraint>
+						<constraint name="PROJECT_LINK_UQ1" type="UNIQUE">
+							<constrainedColumns>
+								<column idref="RAD/ProjectLink/PROJECT_ID"/>
+								<column idref="RAD/ProjectLink/TABLE_ID"/>
+								<column idref="RAD/ProjectLink/ROW_ID"/>
+							</constrainedColumns>
 						</constraint>
 						<constraint name="FK_PROJLINK_TABLEINFO" type="FOREIGN KEY">
 							<constrainedColumns>
@@ -14045,6 +14097,12 @@
 						</index>
 					</indexes>
 					<constraints>
+						<constraint name="QUANTPARAM_UQ1" type="UNIQUE">
+							<constrainedColumns>
+								<column idref="RAD/QuantificationParam/QUANTIFICATION_ID"/>
+								<column idref="RAD/QuantificationParam/NAME"/>
+							</constrainedColumns>
+						</constraint>
 						<constraint name="FK_QUANTPARAM_PRTPRM" type="FOREIGN KEY">
 							<constrainedColumns>
 								<column idref="RAD/QuantificationParam/PROTOCOL_PARAM_ID"/>
@@ -14911,6 +14969,11 @@
 						</index>
 					</indexes>
 					<constraints>
+						<constraint name="CONTACT_NAME_UQ" type="UNIQUE">
+							<constrainedColumns>
+								<column idref="SRes/Contact/NAME"/>
+							</constrainedColumns>
+						</constraint>
 						<constraint name="CONTACT_FK03" type="FOREIGN KEY">
 							<constrainedColumns>
 								<column idref="SRes/Contact/AFFILIATION_ID"/>
@@ -16577,6 +16640,12 @@
 								<column idref="Study/OntologyEntry/ONTOLOGY_ENTRY_ID"/>
 							</referencedColumns>
 						</constraint>
+						<constraint name="STUDY_ONTOLOGYENTRY_UQ1" type="UNIQUE">
+							<constrainedColumns>
+								<column idref="Study/OntologyEntry/CATEGORY"/>
+								<column idref="Study/OntologyEntry/VALUE"/>
+							</constrainedColumns>
+						</constraint>
 						<constraint name="FK_ONTOLOGYENTRY_TABLEINFO" type="FOREIGN KEY">
 							<constrainedColumns>
 								<column idref="Study/OntologyEntry/TABLE_ID"/>
@@ -16627,6 +16696,12 @@
 						</index>
 					</indexes>
 					<constraints>
+						<constraint name="STUDY_DESIGN_UQ1" type="UNIQUE">
+							<constrainedColumns>
+								<column idref="Study/StudyDesign/STUDY_ID"/>
+								<column idref="Study/StudyDesign/NAME"/>
+							</constrainedColumns>
+						</constraint>
 						<constraint name="FK_STDYDES_STDY" type="FOREIGN KEY">
 							<constrainedColumns>
 								<column idref="Study/StudyDesign/STUDY_ID"/>
@@ -16755,6 +16830,12 @@
 						</index>
 					</indexes>
 					<constraints>
+						<constraint name="STUDY_FACTOR_UQ1" type="UNIQUE">
+							<constrainedColumns>
+								<column idref="Study/StudyFactor/STUDY_DESIGN_ID"/>
+								<column idref="Study/StudyFactor/NAME"/>
+							</constrainedColumns>
+						</constraint>
 						<constraint name="FK_STDYFCTR_ONTO" type="FOREIGN KEY">
 							<constrainedColumns>
 								<column idref="Study/StudyFactor/STUDY_FACTOR_TYPE_ID"/>
@@ -16818,6 +16899,11 @@
 						</index>
 					</indexes>
 					<constraints>
+						<constraint name="STUDY_NAME_UQ" type="UNIQUE">
+							<constrainedColumns>
+								<column idref="Study/Study/NAME"/>
+							</constrainedColumns>
+						</constraint>
 						<constraint name="FK_STUDY_BIBREF" type="FOREIGN KEY">
 							<constrainedColumns>
 								<column idref="Study/Study/BIBLIOGRAPHIC_REFERENCE_ID"/>
