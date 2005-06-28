@@ -16191,7 +16191,7 @@
 						<column id="SRes/SequenceOntology/SO_VERSION" name="SO_VERSION" nullable="false" length="255" precision="0" type="STRING"/>
 						<column id="SRes/SequenceOntology/SO_CVS_VERSION" name="SO_CVS_VERSION" nullable="false" length="10" precision="0" type="STRING"/>
 						<column id="SRes/SequenceOntology/TERM_NAME" name="TERM_NAME" nullable="false" length="255" precision="0" type="STRING"/>
-						<column id="SRes/SequenceOntology/DEFINITION" name="DEFINITION" nullable="false" length="1000" precision="0" type="STRING"/>
+						<column id="SRes/SequenceOntology/DEFINITION" name="DEFINITION" nullable="false" length="2000" precision="0" type="STRING"/>
 					</columns>
 					<indexes>
 						<index name="PK_SEQUENCEONTOLOGY" tablespace="USERS" type="NORMAL">
