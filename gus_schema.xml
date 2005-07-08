@@ -14870,7 +14870,7 @@
 						<column id="SRes/BibliographicReference/VOLUME" name="VOLUME" nullable="true" length="100" precision="0" type="STRING"/>
 						<column id="SRes/BibliographicReference/ISSUE" name="ISSUE" nullable="true" length="100" precision="0" type="STRING"/>
 						<column id="SRes/BibliographicReference/PAGES" name="PAGES" nullable="true" length="100" precision="0" type="STRING"/>
-						<column id="SRes/BibliographicReference/URI" name="URI" nullable="true" length="100" precision="0" type="STRING"/>
+						<column id="SRes/BibliographicReference/URI" name="URI" nullable="true" length="250" precision="0" type="STRING"/>
 						<column id="SRes/BibliographicReference/EXTERNAL_DATABASE_RELEASE_ID" name="EXTERNAL_DATABASE_RELEASE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
 						<column id="SRes/BibliographicReference/SOURCE_ID" name="SOURCE_ID" nullable="true" length="50" precision="0" type="STRING"/>
 						<column id="SRes/BibliographicReference/CONTACT_ID" name="CONTACT_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
