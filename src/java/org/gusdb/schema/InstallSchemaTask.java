@@ -126,7 +126,6 @@ public class InstallSchemaTask extends Task {
 
 	private void convertSubclasses( Database db ) {
 		Collection superClasses  = new HashSet();
-		Collection newTables     = new HashSet();
 
 		for ( Iterator i = db.getSchemas().iterator(); i.hasNext();  ) {
 		Schema schema  = (Schema) i.next();
