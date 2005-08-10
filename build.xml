@@ -1,0 +1,57 @@
+<project name="GusSchema" default="Installation" basedir=".">
+
+  <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+  <!-- oooooooooooooooooooooooooo  Dependencies  oooooooooooooooooooooooooo -->
+  <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+
+  <target name="GUS/DBAdmin-Installation">
+    <ant antfile="../GUS/build.xml" target="GUS/DBAdmin-Installation">
+      <property name="project" value="GUS"/>
+      <property name="Component" value="DBAdmin"/>
+      <property name="version" value="3.5"/>
+    </ant>
+  </target>
+
+  <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+  <!-- oooooooooooooooooooooooooo  Installation  oooooooooooooooooooooooooo -->
+  <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+
+  <target name="GusSchema-Installation" depends="GusSchema/Definition-Installation">
+    <ant target="defaultProjectInstall"/>
+  </target>
+
+  <!-- ooooooooooooooooooooooo  Install Components  ooooooooooooooooooooooo -->
+
+  <target name="GusSchema/Definition-Installation" depends="ProjectTree">
+    <ant target="defaultComponentInstall">
+      <property name="project" value="GusSchema"/>
+      <property name="component" value="Definition"/>
+    </ant>
+  </target>
+
+  <target name="InstallSchema" depends="ProjectTree,GUS/DBAdmin-Installation"
+                                                     if="installDBSchema">
+    <taskdef name="InstallSchema" classname="org.gusdb.util.InstallSchemaTask">
+      <classpath>
+           <pathelement path="${projectsDir}/GUS/DBAdmin/classes"/>
+                   <pathelement path="${projectsDir}/install"/>
+           <fileset dir="${targetDir}/lib/java/">
+             <include name="*.jar"/>
+           </fileset>
+      </classpath>
+    </taskdef>
+    <InstallSchema projectHome="${projectsDir}"
+                   schema="${projectsDir}/GusSchema/Definition/config/gus_schema.xml"/>
+  </target>
+
+  <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+  <!-- oooooooooooooooooooooooooo  ProjectTree  ooooooooooooooooooooooooooo -->
+  <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
+
+  <target name="ProjectTree" if="${checkout}">
+    <ant target="projectCheckOut"/>
+  </target>  
+
+</project>
+
+
