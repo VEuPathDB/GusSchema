@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<organization>
+        <supercategory name="Sequence and Features">
+            <category name="NA Sequence"/>
+            <category name="AA Sequence"/>
+            <category name="NA Sequence Features"/>
+            <category name="AA Sequence Features"/>
+            <category name="Feature Relations"/>
+            <category name="GenBank Sequence Record"/>
+            <category name="Similarity"/>
+            <category name="Assembly"/>
+            <category name="Motifs"/>
+        </supercategory>
+        <supercategory name="Function">
+            <category name="Central Dogma"/>
+            <category name="Paralog and Family"/>
+            <category name="Sequence Ortholog, Paralog, Family"/>
+            <category name="AA Ortholog"/>
+            <category name="Mapping"/>
+            <category name="Clones"/>
+            <category name="Interaction"/>
+            <category name="GO Association"/>
+            <category name="Variation"/>
+            <category name="Raw Mass Spectrometry Results"/>
+            <category name="Protein Identification (From Mass Spec Analysis)"/>
+        </supercategory>
+        <supercategory name="Transrciption Regulation">
+            <category name="Regulation Framework"/>
+            <category name="Regulatory Moieties"/>
+            <category name="Regulatory Activities"/>
+            <category name="Comments"/>
+            <category name="Models"/>
+            <category name="Multinomial Models"/>
+            <category name="Families of Similar Models"/>
+            <category name="Occam's Razor"/>
+            <category name="High Volume Genome Annotation"/>
+            <category name="Training Sets"/>
+        </supercategory>
+        <supercategory name="Experiment">
+            <category name="Protocols"/>
+            <category name="Data Transformations and Analyses"/>
+            <category name="Learning Models"/>
+            <category name="Model-based Regulatory Feature Prediction"/>
+            <category name="Bounded Collection Grammars"/>
+            <category name="Platform"/>
+            <category name="Assay"/>
+            <category name="Quantified Data"/>
+            <category name="Experimental Design"/>
+            <category name="Biomaterials"/>
+            <category name="(Mixed) Ontologies"/>
+            <category name="Integrity"/>
+        </supercategory>
+        <supercategory name="Provenance">
+            <category name="Algorithm"/>
+            <category name="External Database"/>
+            <category name="Bibliographic"/>
+            <category name="Evidence"/>
+        </supercategory>
+        <supercategory name="Vocabularies">
+            <category name="Anatomy Vocabulary"/>
+            <category name="Gene Ontology"/>
+            <category name="Enzymes Vocabulary"/>
+            <category name="Taxon Vocabulary"/>
+            <category name="Developmental Stage Vocabulary"/>
+            <category name="Disease Vocabulary"/>
+            <category name="Genetic Code Vocabulary"/>
+            <category name="MGED Ontology"/>
+            <category name="Mutagens Vocabulary"/>
+            <category name="Phenotype Vocabulary"/>
+            <category name="Sequence Ontology"/>
+            <category name="Repeat Types Vocabulary"/>
+            <category name="Sequence Types Vocabulary"/>
+        </supercategory>
+        <supercategory name="Administration">
+            <category name="Meta Info"/>
+            <category name="Administration"/>
+            <category name="Misc Applications"/>
+            <category name="Text Search"/>
+        </supercategory>
+</organization>
