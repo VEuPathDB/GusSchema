@@ -24,7 +24,7 @@
             <category name="Raw Mass Spectrometry Results"/>
             <category name="Protein Identification (From Mass Spec Analysis)"/>
         </supercategory>
-        <supercategory name="Transrciption Regulation">
+        <supercategory name="Transcription Regulation">
             <category name="Regulation Framework"/>
             <category name="Regulatory Moieties"/>
             <category name="Regulatory Activities"/>
