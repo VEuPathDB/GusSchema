@@ -16,7 +16,8 @@
   <!-- oooooooooooooooooooooooooo  Installation  oooooooooooooooooooooooooo -->
   <!-- oooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooooo -->
 
-  <target name="GusSchema-Installation" depends="GusSchema/Definition-Installation">
+  <target name="GusSchema-Installation" depends="GusSchema/Definition-Installation,
+                                                 InstallSchema">
     <ant target="defaultProjectInstall"/>
   </target>
 
@@ -31,7 +32,7 @@
 
   <target name="InstallSchema" depends="ProjectTree,GUS/DBAdmin-Installation"
                                                      if="installDBSchema">
-    <taskdef name="InstallSchema" classname="org.gusdb.util.InstallSchemaTask">
+    <taskdef name="InstallSchema" classname="org.gusdb.dbadmin.util.InstallSchemaTask">
       <classpath>
            <pathelement path="${projectsDir}/GUS/DBAdmin/classes"/>
                    <pathelement path="${projectsDir}/install"/>
