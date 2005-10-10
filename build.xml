@@ -39,6 +39,9 @@
            <fileset dir="${targetDir}/lib/java/">
              <include name="*.jar"/>
            </fileset>
+           <fileset dir="${targetDir}/lib/java/db_driver">
+             <include name="*.jar"/>
+           </fileset>
       </classpath>
     </taskdef>
     <InstallSchema projectHome="${projectsDir}"
