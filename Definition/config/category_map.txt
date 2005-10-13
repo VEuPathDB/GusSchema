@@ -1,0 +1,541 @@
+NA Sequence,DoTS,Assembly
+NA Sequence,DoTS,DbRefNASequence
+NA Sequence,DoTS,ExternalNASequence
+NA Sequence,DoTS,GenomicSequence
+NA Sequence,DoTS,NASequence
+NA Sequence,DoTS,SequencePiece
+NA Sequence,DoTS,SplicedNASequence
+NA Sequence,DoTS,VirtualSequence
+AA Sequence,DoTS,AASequence
+AA Sequence,DoTS,ExternalAASequence
+AA Sequence,DoTS,TranslatedAASequence
+AA Sequence,DoTS,TrivialTranslation
+AA Sequence,DoTS,MotifAASequence
+AA Sequence,DoTS,NRDBEntry
+AA Sequence,DoTS,PfamEntry
+AA Sequence,DoTS,DBRefPfamEntry
+NA Sequence Features,DoTS,AlleleFeature
+NA Sequence Features,DoTS,BindingSiteFeature
+NA Sequence Features,DoTS,ChromosomeElementFeature
+NA Sequence Features,DoTS,CollectionNAFeature
+NA Sequence Features,DoTS,DNARegulatory
+NA Sequence Features,DoTS,DNAStructure
+NA Sequence Features,DoTS,ExonFeature
+NA Sequence Features,DoTS,GeneFeature
+NA Sequence Features,DoTS,HexamerFeature
+NA Sequence Features,DoTS,Immunoglobulin
+NA Sequence Features,DoTS,InflectionPointFeature
+NA Sequence Features,DoTS,IntronFeature
+NA Sequence Features,DoTS,LowComplexityNAFeature
+NA Sequence Features,DoTS,Miscellaneous
+NA Sequence Features,DoTS,NAFeatureImp
+NA Sequence Features,DoTS,NAFeature
+NA Sequence Features,DoTS,PolyAFeature
+NA Sequence Features,DoTS,PromoterFeature
+NA Sequence Features,DoTS,ProteinFeature
+NA Sequence Features,DoTS,Repeats
+NA Sequence Features,DoTS,ReplicationOriginFeature
+NA Sequence Features,DoTS,RestrictionFragmentFeature
+NA Sequence Features,DoTS,RNAFeature
+NA Sequence Features,DoTS,RNARegulatoryFeature
+NA Sequence Features,DoTS,RNAStructure
+NA Sequence Features,DoTS,RNAType
+NA Sequence Features,DoTS,SAGETagFeature
+NA Sequence Features,DoTS,ScaffoldGapFeature
+NA Sequence Features,DoTS,SeqVariation
+NA Sequence Features,DoTS,Source
+NA Sequence Features,DoTS,SpliceSiteFeature
+NA Sequence Features,DoTS,STS
+NA Sequence Features,DoTS,TandemRepeatFeature
+NA Sequence Features,DoTS,Transcript
+NA Sequence Features,DoTS,UTRFeature
+NA Sequence Features,DoTS,TransposableElement
+AA Sequence Features,DoTS,AAFeature
+AA Sequence Features,DoTS,AAFeatureImp
+AA Sequence Features,DoTS,AASeqVariation
+AA Sequence Features,DoTS,DomainFeature
+AA Sequence Features,DoTS,EpitopeFeature
+AA Sequence Features,DoTS,LowComplexityAAFeature
+AA Sequence Features,DoTS,MassSpecFeature
+AA Sequence Features,DoTS,PlasmoAPFeature
+AA Sequence Features,DoTS,PostTranslationalModFeature
+AA Sequence Features,DoTS,PredictedAAFeature
+AA Sequence Features,DoTS,RepeatRegionAAFeature
+AA Sequence Features,DoTS,SecondaryStructureAAFeature
+AA Sequence Features,DoTS,SignalPeptideFeature
+AA Sequence Features,DoTS,TertiaryStructureAAFeature
+AA Sequence Features,DoTS,TranslatedAAFeature
+AA Sequence Features,DoTS,TranslatedAAFeatSeg
+AA Sequence Features,DoTS,PostTranslationalModFeature
+AA Sequence Features,DoTS,SecondaryStructureAAFeature
+AA Sequence Features,DoTS,RepeatRegionAAFeature
+Feature Relations,DoTS,AALocation
+Feature Relations,DoTS,DbRefNAFeature
+Feature Relations,DoTS,ExonLocation
+Feature Relations,DoTS,FeatureName
+Feature Relations,DoTS,GeneFeatureSAGETagLink
+Feature Relations,DoTS,NAFeatureComment
+Feature Relations,DoTS,NAFeatureRelationship
+Feature Relations,DoTS,NAFeatRelationshipType
+Feature Relations,DoTS,NALocation
+Feature Relations,DoTS,RNAFeatureExon
+GenBank Sequence Record,DoTS,AAComment
+GenBank Sequence Record,DoTS,AAEntry
+GenBank Sequence Record,DoTS,AAGene
+GenBank Sequence Record,DoTS,AAGeneSynonym
+GenBank Sequence Record,DoTS,AASequenceKeyword
+GenBank Sequence Record,DoTS,AASequenceOrganelle
+GenBank Sequence Record,DoTS,AASequenceTaxon
+GenBank Sequence Record,DoTS,AASequenceRef
+GenBank Sequence Record,DoTS,NAComment
+GenBank Sequence Record,DoTS,NAEntry
+GenBank Sequence Record,DoTS,NAGene
+GenBank Sequence Record,DoTS,NAPrimaryTranscript
+GenBank Sequence Record,DoTS,NAProtein
+GenBank Sequence Record,DoTS,NASeqCytoLocation
+GenBank Sequence Record,DoTS,Keyword
+GenBank Sequence Record,DoTS,NAFeatureNAGene
+GenBank Sequence Record,DoTS,NAFeatureNAProtein
+GenBank Sequence Record,DoTS,NAFeatureNAPT
+GenBank Sequence Record,DoTS,NASequenceKeyword
+GenBank Sequence Record,DoTS,NASequenceOrganelle
+GenBank Sequence Record,DoTS,NASequenceRef
+GenBank Sequence Record,DoTS,Organelle
+GenBank Sequence Record,DoTS,CommentName
+GenBank Sequence Record,DoTS,SecondaryAccs
+Similarity,DoTS,Similarity
+Similarity,DoTS,SimilaritySpan
+Similarity,DoTS,BlatAlignmentQuality
+Similarity,DoTS,BlatAlignment
+Similarity,DoTS,ConsistentAlignment
+Assembly,DoTS,AssemblyAnatomyPercent
+Assembly,DoTS,AssemblySequence
+Assembly,DoTS,AssemblySequenceSNP
+Assembly,DoTS,AssemblySNP
+Assembly,DoTS,MergeSplit
+Assembly,DoTS,GeneTrapAssembly
+Motifs,DoTS,MotifRejectionReason
+Motifs,DoTS,Motif
+Motifs,DoTS,RejectedMotif
+Central Dogma,DoTS,Gene
+Central Dogma,DoTS,GeneCategory
+Central Dogma,DoTS,GeneChromosomalLocation
+Central Dogma,DoTS,GeneInstance
+Central Dogma,DoTS,GeneInstanceCategory
+Central Dogma,DoTS,GeneSynonym
+Central Dogma,DoTS,Protein
+Central Dogma,DoTS,ProteinCategory
+Central Dogma,DoTS,ProteinInstance
+Central Dogma,DoTS,ProteinInstanceCategory
+Central Dogma,DoTS,ProteinProperty
+Central Dogma,DoTS,ProteinPropertyType
+Central Dogma,DoTS,ProteinProteinCategory
+Central Dogma,DoTS,ProteinSynonym
+Central Dogma,DoTS,RNA
+Central Dogma,DoTS,RNAAnatomy
+Central Dogma,DoTS,RNAAnatomyLOE
+Central Dogma,DoTS,RNACategory
+Central Dogma,DoTS,RNAIConstruct
+Central Dogma,DoTS,RNAInstance
+Central Dogma,DoTS,RNAInstanceCategory
+Central Dogma,DoTS,RNAIPhenotype
+Central Dogma,DoTS,RNARNACategory
+Central Dogma,DoTS,RNASecondaryStructure
+Paralog and Family,DoTS,AAFamilyExperiment
+Paralog and Family,DoTS,AAParalogExperiment
+Paralog and Family,DoTS,AAParalogGroup
+Paralog and Family,DoTS,AASequenceFamily
+Paralog and Family,DoTS,AASequenceGroupFamily
+Paralog and Family,DoTS,InParalogExperiment
+Paralog and Family,DoTS,InParalogGroup
+Paralog and Family,DoTS,OrthologExperiment
+Paralog and Family,DoTS,OrthologGroup
+Paralog and Family,DoTS,OutParalogExperiment
+Paralog and Family,DoTS,OutParalogGroup
+Paralog and Family,DoTS,SeqGroupExperiment
+Paralog and Family,DoTS,SeqGroupExperimentImp
+Paralog and Family,DoTS,SequenceFamilyExperiment
+Paralog and Family,DoTS,SequenceFamily
+Paralog and Family,DoTS,SequenceGroupFamily
+Paralog and Family,DoTS,SequenceGroupImp
+Paralog and Family,DoTS,SequenceGroup
+Paralog and Family,DoTS,SequenceSequenceGroup
+AA Ortholog,DoTS,BestSimilarityPair
+AA Ortholog,DoTS,AAOrthologExperiment
+AA Ortholog,DoTS,AAOrthologGroup
+AA Ortholog,DoTS,AASeqGroupExperimentImp
+AA Ortholog,DoTS,AASeqGroupExperiment
+AA Ortholog,DoTS,AASequenceGroupImp
+AA Ortholog,DoTS,AASequenceGroup
+AA Ortholog,DoTS,AASequenceSequenceGroup
+Phylogenetic Profile,DoTS,PhylogeneticProfile
+Phylogenetic Profile,DoTS,PhylogeneticProfileSet
+Phylogenetic Profile,DoTS,PhylogeneticProfileMember
+Phylogenetic Profile,DoTS,MutualInformationScore
+Mapping,DoTS,FingerprintClone
+Mapping,DoTS,FingerprintCloneContig
+Mapping,DoTS,FingerprintCloneMarker
+Mapping,DoTS,FingerprintContig
+Mapping,DoTS,FingerprintMap
+Mapping,DoTS,RHMap
+Mapping,DoTS,RHMarker
+Mapping,DoTS,RHMapMarker
+Mapping,DoTS,OpticalMapAlignment
+Mapping,DoTS,OpticalMapAlignmentSpan
+Mapping,DoTS,OpticalMapFragment
+Mapping,DoTS,EPCR
+Mapping,DoTS,EndSequencePairMap
+Mapping,DoTS,MicroSatelliteMap
+Clones,DoTS,EST
+Clones,DoTS,AnatomyLibrary
+Clones,DoTS,AnatomyLOE
+Clones,DoTS,CloneInSet
+Clones,DoTS,Clone
+Clones,DoTS,CloneSet
+Clones,DoTS,Library
+Clones,DoTS,DevStageLibrary
+Interaction,DoTS,InteractionInteractionLOE
+Interaction,DoTS,InteractionLOE
+Interaction,DoTS,Interaction
+Interaction,DoTS,InteractionType
+Interaction,DoTS,PathwayInteraction
+Interaction,DoTS,Pathway
+Interaction,DoTS,EffectorActionType
+Interaction,DoTS,RowSetMember
+Interaction,DoTS,RowSet
+Interaction,DoTS,Complex
+Interaction,DoTS,ComplexAnatomy
+Interaction,DoTS,ComplexComponent
+Interaction,DoTS,ComplexType
+GO Association,DoTS,GOAssociationInstanceLOE
+GO Association,DoTS,GOAssociationInstance
+GO Association,DoTS,GOAssociation
+GO Association,DoTS,GOAssocInstEvidCode
+Variation,DoTS,Complementation
+Variation,DoTS,AlleleComplementation
+Variation,DoTS,AlleleInstance
+Variation,DoTS,AllelePhenotype
+Variation,DoTS,AllelePhenotypeClass
+Variation,DoTS,Allele
+Regulation Framework,TESS,MoietyImp
+Regulation Framework,TESS,ActivityImp
+Regulation Framework,TESS,Footprint
+Regulation Framework,TESS,ModelImp
+Regulatory Moieties,TESS,MoietyImp
+Regulatory Moieties,TESS,Moiety
+Regulatory Moieties,TESS,MoietyComplex
+Regulatory Moieties,TESS,MoietyHeteroDimer
+Regulatory Moieties,TESS,MoietyMember
+Regulatory Moieties,TESS,MoietyMonomer
+Regulatory Moieties,TESS,MoietyMultimer
+Regulatory Moieties,TESS,MoietySynonym
+Regulatory Moieties,TESS,MoietyInstance
+Regulatory Activities,TESS,ActivityImp
+Regulatory Activities,TESS,Activity
+Regulatory Activities,TESS,ActivityConditions
+Regulatory Activities,TESS,ActivityGeneRegulation
+Regulatory Activities,TESS,ActivityInferenceSource
+Regulatory Activities,TESS,ActivityModel
+Regulatory Activities,TESS,ActivityProteinDnaBinding
+Regulatory Activities,RAD3,OntologyEntry
+Regulatory Activities,SRes,GoTerm
+Comments,TESS,Note
+Models,TESS,ModelImp
+Models,TESS,Model
+Models,TESS,ModelMarkovChain
+Models,TESS,ModelResult
+Models,TESS,ModelSbcgGrammar
+Models,TESS,MarkovChainObs
+Models,TESS,MultinomialLabel
+Models,TESS,MultinomialLabelSet
+Models,TESS,MultinomialObservation
+Models,TESS,MultinomialObservationSet
+Models,TESS,ParameterGroup
+Models,TESS,ParameterSubgroup
+Models,TESS,ParameterValue
+Multinomial Models,TESS,MultinomialLabel
+Multinomial Models,TESS,MultinomialLabelSet
+Multinomial Models,TESS,MultinomialObservation
+Multinomial Models,TESS,MultinomialObservationSet
+Families of Similar Models,TESS,ModelFamily
+Families of Similar Models,TESS,ModelFamilyAnalysis
+Families of Similar Models,TESS,ModelSimilarity
+Families of Similar Models,TESS,ModelFamilyMember
+Families of Similar Models,TESS,ModelFamilyAnalysisProtocolParam
+Families of Similar Models,TESS,ModelFamilyAnalysisQcParam
+Families of Similar Models,TESS,PredecessorGraph
+Families of Similar Models,TESS,PredecessorGraphRelation
+High Volume Genome Annotation,TESS,ArchipelagoOfInterest
+High Volume Genome Annotation,TESS,IslandOfInterest
+High Volume Genome Annotation,TESS,RegionOfInterest
+High Volume Genome Annotation,TESS,PredictedBindingSite
+Training Sets,TESS,TrainingSet
+Training Sets,TESS,TrainingSetParameter
+Training Sets,TESS,Footprint
+Training Sets,TESS,NaFeatureImp
+Training Sets,TESS,TrainingSetMember
+Training Sets,TESS,TrainingSetProcotolParam
+Training Sets,TESS,TrainingSetQcParam
+Learning Models,TESS,Analysis
+Learning Models,TESS,AnalysisInput
+Learning Models,TESS,LogicalGroup
+Learning Models,TESS,LogicalGroupLink
+Learning Models,TESS,ModelImp
+Learning Models,TESS,ModelResult
+Learning Models,TESS,ParameterGroup
+Learning Models,TESS,ParameterSubgroup
+Learning Models,TESS,ParameterValue
+Learning Models,TESS,PerformanceSummary
+Learning Models,TESS,ModelParameterValue
+Learning Models,TESS,ModelImp
+Learning Models,TESS,PredictionResult
+Learning Models,TESS,Analysis
+Learning Models,TESS,ParserItem
+Learning Models,TESS,ParserItemEdgeType
+Learning Models,TESS,ParserItemLink
+Bounded Collection Grammars,TESS,SbcgAnnotationFilter
+Bounded Collection Grammars,TESS,SbcgAnnotationFilterTerm
+Bounded Collection Grammars,TESS,SbcgAnnotationGuide
+Bounded Collection Grammars,TESS,SbcgComparisonType
+Bounded Collection Grammars,TESS,SbcgNonterminal
+Bounded Collection Grammars,TESS,SbcgPathTermRelationType
+Bounded Collection Grammars,TESS,SbcgProduction
+Bounded Collection Grammars,TESS,SbcgProductionType
+Bounded Collection Grammars,TESS,SbcgRecogConsensusString
+Bounded Collection Grammars,TESS,SbcgRecogGap
+Bounded Collection Grammars,TESS,SbcgRecogMultiObs
+Bounded Collection Grammars,TESS,SbcgRecogPathExpression
+Bounded Collection Grammars,TESS,SbcgRecogPosition
+Bounded Collection Grammars,TESS,SbcgRecogString
+Bounded Collection Grammars,TESS,SbcgRecogWeightMatrix
+Bounded Collection Grammars,TESS,SbcgRecognition
+Bounded Collection Grammars,TESS,SbcgRecognitionImp
+Bounded Collection Grammars,TESS,SbcgRhsTerm
+Bounded Collection Grammars,TESS,SbcgStream
+Bounded Collection Grammars,TESS,SbcgStreamParameter
+Protocols,RAD,LabelMethod
+Protocols,RAD,Protocol
+Protocols,RAD,ProtocolParam
+Protocols,RAD,ProtocolQCParam
+Protocols,RAD,ProtocolStep
+Protocols,TESS,Protocol
+Protocols,TESS,ProtocolStep
+Protocols,TESS,ProtocolParam
+Protocols,TESS,ProtocolQcParam
+Protocols,TESS,FootprintMethodProtocol
+Protocols,TESS,TrainingSetProcotolParam
+Protocols,TESS,TrainingSetQcParam
+Protocols,TESS,AnalysisProcotolParam
+Protocols,TESS,AnalysisQcParam
+Protocols,TESS,ModelFamilyAnalysisProcotolParam
+Protocols,TESS,ModelFamilyAnalysisQcParam
+Protocols,PROT,Parameterizable
+Protocols,PROT,ParameterizableLink
+Protocols,PROT,ParameterizableInstance
+Protocols,PROT,Parameter
+Protocols,PROT,ParameterInstance
+Protocols,PROT,Protocol
+Protocols,PROT,Action
+Protocols,PROT,Software
+Protocols,PROT,Hardware
+Protocols,PROT,ProtocolAction
+Protocols,PROT,ProtocolHardware
+Protocols,PROT,ProtocolSoftware
+Protocols,PROT,ProtocolInstance
+Protocols,PROT,ActionInstance
+Raw Mass Spectrometry Results,Prot,MZRun
+Raw Mass Spectrometry Results,Prot,MZScan
+Raw Mass Spectrometry Results,Prot,MZPeak
+Raw Mass Spectrometry Results,Prot,MZPeakResult
+Raw Mass Spectrometry Results,DoTS,MassSpecSummary
+Raw Mass Spectrometry Results,Prot,Quantification
+Data Transformations and Analyses,RAD,Analysis
+Data Transformations and Analyses,RAD,AnalysisInput
+Data Transformations and Analyses,RAD,AnalysisParam
+Data Transformations and Analyses,RAD,AnalysisQCParam
+Data Transformations and Analyses,RAD,AnalysisResult
+Data Transformations and Analyses,RAD,AnalysisResultImp
+Data Transformations and Analyses,RAD,ArrayStatTwoConditions
+Data Transformations and Analyses,RAD,AssayAnalysis
+Data Transformations and Analyses,RAD,DataTransformationResult
+Data Transformations and Analyses,RAD,HQSpecificity
+Data Transformations and Analyses,RAD,LogicalGroup
+Data Transformations and Analyses,RAD,LogicalGroupLink
+Data Transformations and Analyses,RAD,SAM
+Data Transformations and Analyses,RAD,SpliceArrayAnalysisResult
+Data Transformations and Analyses,TESS,Analysis
+Data Transformations and Analyses,TESS,AnalysisInput
+Data Transformations and Analyses,TESS,LogicalGroup
+Data Transformations and Analyses,TESS,LogicalGroupLink
+Data Transformations and Analyses,TESS,ModelResult
+Data Transformations and Analyses,TESS,PredictionResult
+Data Transformations and Analyses,PROT,DataTransformation
+Platform,RAD,ArrayDesign
+Platform,RAD,ArrayDesignAnnotation
+Platform,RAD,ArrayDesignGroup
+Platform,RAD,ArrayDesignGroupLink
+Platform,RAD,CompositeElement
+Platform,RAD,CompositeElementAnnotation
+Platform,RAD,CompositeElementImp
+Platform,RAD,Control
+Platform,RAD,Element
+Platform,RAD,ElementAnnotation
+Platform,RAD,ElementImp
+Platform,RAD,SAGETag
+Platform,RAD,SAGETagMapping
+Platform,RAD,ShortOligo
+Platform,RAD,ShortOligoFamily
+Platform,RAD,Spot
+Platform,RAD,SpotFamily
+Platform,PROT,Feature
+Platform,PROT,FeatureInput
+Platform,PROT,FeatureSet
+Platform,PROT,FSGAnnotation
+Platform,PROT,MALDIPlate
+Platform,PROT,MALDISpot
+Assay,RAD,Assay
+Assay,RAD,AssayControl
+Assay,RAD,AssayParam
+Assay,RAD,Acquisition
+Assay,RAD,AcquisitionParam
+Assay,RAD,RelatedAcquisition
+Assay,RAD,Quantification
+Assay,RAD,QuantificationParam
+Assay,RAD,RelatedQuantification
+Assay,PROT,Assay
+Assay,PROT,AssayAnnotation
+Assay,PROT,AssayChain
+Assay,PROT,AssayParentFile
+Assay,PROT,AssayInput
+Assay,PROT,AssayProduct
+Assay,PROT,Acquisition
+Assay,PROT,AcquisitionChain
+Assay,PROT,AcquisitionChannel
+Assay,PROT,AcquisitionQuantification
+Assay,PROT,Quantification
+Assay,PROT,MZRun
+Assay,PROT,MZScan
+Assay,PROT,ParentFile
+Quantified Data,RAD,AffymetrixCEL
+Quantified Data,RAD,AffymetrixMAS4
+Quantified Data,RAD,AffymetrixMAS5
+Quantified Data,RAD,AgilentElementResult
+Quantified Data,RAD,ArrayVisionElementResult
+Quantified Data,RAD,CompositeElementResult
+Quantified Data,RAD,CompositeElementResultImp
+Quantified Data,RAD,ElementResult
+Quantified Data,RAD,ElementResultImp
+Quantified Data,RAD,GEMToolsElementResult
+Quantified Data,RAD,GenePixElementResult
+Quantified Data,RAD,MOIDResult
+Quantified Data,RAD,ProbeProfiler
+Quantified Data,RAD,QuantArrayElementResult
+Quantified Data,RAD,RMAExpress
+Quantified Data,RAD,SAGETagResult
+Quantified Data,RAD,ScanAlyzeElementResult
+Quantified Data,RAD,SpotElementResult
+Quantified Data,PROT,ElementResult
+Quantified Data,PROT,MZPeak
+Quantified Data,PROT,MZPeakResult
+Experimental Design,RAD,StudyAssay
+Experimental Design,RAD,StudyDesignAssay
+Experimental Design,RAD,StudyFactorValue
+Experimental Design,Study,StudyBioMaterial
+Experimental Design,Study,Study
+Experimental Design,Study,StudyDesign
+Experimental Design,Study,StudyDesignDescription
+Experimental Design,Study,StudyDesignType
+Experimental Design,Study,StudyFactor
+Experimental Design,PROT,StudyAssay
+Experimental Design,PROT,StudyBioMaterial
+Experimental Design,PROT,StudyDesignAssay
+Experimental Design,PROT,StudyFactorValue
+Biomaterials,RAD,AssayBioMaterial
+Biomaterials,RAD,AssayLabeledExtract
+Biomaterials,RAD,BioMaterialMeasurement
+Biomaterials,RAD,Treatment
+Biomaterials,RAD,TreatmentParam
+Biomaterials,Study,BMCRelationship
+Biomaterials,Study,BioMaterialCharacteristic
+Biomaterials,Study,BioMaterialImp
+Biomaterials,Study,BioSample
+Biomaterials,Study,BioSource
+Biomaterials,Study,LabeledExtract
+Biomaterials,PROT,BioMaterialMeasurement
+Integrity,RAD,IntegrityStatInput
+Integrity,RAD,IntegrityStatistic
+External Database,SRes,ExternalDatabaseEntry
+External Database,SRes,ExternalDatabaseKeyword
+External Database,SRes,ExternalDatabaseLink
+External Database,SRes,ExternalDatabaseRelease
+External Database,SRes,ExternalDatabase
+External Database,SRes,DbRef
+Bibliographic,SRes,Abstract
+Bibliographic,SRes,Author
+Bibliographic,SRes,BibliographicReference
+Bibliographic,SRes,BibRefAuthor
+Bibliographic,SRes,BibRefType
+Bibliographic,SRes,Reference
+Bibliographic,SRes,Contact
+Bibliographic,SRes,SequenceReference
+Bibliographic,DoTS,Attribution
+Evidence,DoTS,Evidence
+Evidence,SRes,ReviewStatus
+Evidence,DoTS,Comments
+SAEL Vocabulary,Sres,SAEL
+SAEL Vocabulary,Sres,AnatomySAEL
+Anatomy Vocabulary,SRes,AnatomyLineage
+Anatomy Vocabulary,SRes,Anatomy
+Anatomy Vocabulary,SRes,Lineage
+Anatomy Vocabulary,DoTS,IsExpressed
+Gene Ontology,SRes,GOEvidenceCode
+Gene Ontology,SRes,GORelationship
+Gene Ontology,SRes,GORelationshipType
+Gene Ontology,SRes,GOSynonym
+Gene Ontology,SRes,GOTerm
+Generic Ontology,SRes,OntologyTerm
+Generic Ontology,SRes,OntologyTermType
+Generic Ontology,SRes,OntologyRelationship
+Generic Ontology,SRes,OntologyRelationshipType
+Enzymes Vocabulary,SRes,ECPathwayEnzymeClass
+Enzymes Vocabulary,SRes,ECPathway
+Enzymes Vocabulary,SRes,EnzymeClassAttribute
+Enzymes Vocabulary,SRes,EnzymeClass
+Enzymes Vocabulary,DoTS,AASequenceEnzymeClass
+Taxon Vocabulary,SRes,TaxonName
+Taxon Vocabulary,SRes,Taxon
+Developmental Stage Vocabulary,SRes,DevelopmentalStage
+Disease Vocabulary,SRes,Disease
+Genetic Code Vocabulary,SRes,GeneticCode
+General Ontology,SRes,OntologyRelationshipType
+General Ontology,SRes,OntologyTermType
+General Ontology,Study,OntologyEntry
+Mutagens Vocabulary,SRes,Mutagen
+Phenotype Vocabulary,SRes,PATOAttribute
+Phenotype Vocabulary,SRes,PhenotypeClass
+Phenotype Vocabulary,SRes,Phenotype
+Sequence Ontology,SRes,SequenceOntology
+Repeat Types Vocabulary,DoTS,RepeatType
+Sequence Types Vocabulary,DoTS,SequenceType
+Text Search,DoTS,IndexWordLink
+Text Search,DoTS,IndexWord
+Algorithm,Core,AlgorithmImplementation
+Algorithm,Core,AlgorithmInvocation
+Algorithm,Core,AlgorithmParamKey
+Algorithm,Core,AlgorithmParamKeyType
+Algorithm,Core,AlgorithmParam
+Algorithm,Core,Algorithm
+Meta Info,Core,DatabaseDocumentation
+Meta Info,Core,TableCategory
+Meta Info,Core,TableInfo
+Meta Info,Core,DatabaseInfo
+Administration,Core,GroupInfo
+Administration,Core,Machine
+Administration,Core,ProjectInfo
+Administration,Core,UserGroup
+Administration,Core,UserInfo
+Administration,Core,UserProject
+Administration,DoTS,ProjectLink
+Administration,RAD,ProjectLink
+Misc Applications,DoTS,GeneFeatureSeqOverlap
+Misc Applications,DoTS,AAMotifGoTermRule
