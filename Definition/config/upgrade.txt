@@ -1,0 +1,489 @@
+
+
+-- Bug 94
+alter table core.groupinfo modify group_id number(4);
+alter table corever.groupinfover modify group_id number(4); 
+
+-- Bug 28
+
+alter table sres.sequenceontology modify definition varchar2(4000);
+alter table sresver.sequenceontologyver modify definition varchar2(4000);
+
+-- Bug 126
+
+CREATE table DoTS.AAFeatureDbRef (
+  aa_feature_db_ref_id  NUMBER(12)   NOT NULL,
+  aa_feature_id  NUMBER(10)    NOT NULL,
+  db_ref_id  NUMBER(10)    NOT NULL,
+  modification_date   DATE   NOT NULL,
+  user_read   NUMBER(1)   NOT NULL,
+  user_write   NUMBER(1)   NOT NULL,
+  group_read   NUMBER(1)   NOT NULL,
+  group_write   NUMBER(1)   NOT NULL,
+  other_read   NUMBER(1)   NOT NULL,
+  other_write   NUMBER(1)   NOT NULL,
+  row_user_id   NUMBER(12)   NOT NULL,
+  row_group_id   NUMBER(4)   NOT NULL,
+  row_project_id   NUMBER(4)   NOT NULL,
+  row_alg_invocation_id   NUMBER(12)   NOT NULL
+);
+
+alter table dots.aafeaturedbref add constraint AAFEATUREDBREF_PK
+primary key (aa_feature_db_ref_id);
+
+create sequence dots.aafeaturedbref_sq;
+
+alter table dots.aafeaturedbref add constraint AAFEATDBREF_AAFEA
+foreign key (aa_feature_id) references dots.aafeatureimp (aa_feature_id);
+
+alter table dots.aafeaturedbref add constraint aafeatdbref_dbref
+foreign key (db_ref_id) references sres.dbref (db_ref_id);
+
+CREATE table DoTSVer.AAFeatureDbRefVer (
+  aa_feature_db_ref_id  NUMBER(12)   NOT NULL,
+  aa_feature_id  NUMBER(10)    NOT NULL,
+  db_ref_id  NUMBER(10)    NOT NULL,
+  modification_date   DATE   NOT NULL,
+  user_read   NUMBER(1)   NOT NULL,
+  user_write   NUMBER(1)   NOT NULL,
+  group_read   NUMBER(1)   NOT NULL,
+  group_write   NUMBER(1)   NOT NULL,
+  other_read   NUMBER(1)   NOT NULL,
+  other_write   NUMBER(1)   NOT NULL,
+  row_user_id   NUMBER(12)   NOT NULL,
+  row_group_id   NUMBER(4)   NOT NULL,
+  row_project_id   NUMBER(4)   NOT NULL,
+  row_alg_invocation_id   NUMBER(12)   NOT NULL,
+  VERSION_ALG_INVOCATION_ID number(12) not null,
+  VERSION_DATE date not null,
+  VERSION_TRANSACTION_ID number(12) not null
+);
+
+alter table dotsver.AAFeatureDbRefVer add constraint
+AAFeatureDbRefVer_pk primary key (aa_feature_db_ref_id, modification_date);
+
+-- Bug 153
+
+create view dots.TransMembraneAAFeature as
+        select  aa_feature_id,
+                aa_sequence_id,
+                feature_name_id,
+                parent_id,
+                na_feature_id,
+                subclass_view,
+                sequence_ontology_id,
+                description,
+                pfam_entry_id,
+                motif_aa_sequence_id,
+                repeat_type_id,
+                external_database_release_id,
+                source_id,
+                prediction_algorithm_id,
+                is_predicted,
+                review_status_id,
+                number1 as length,
+                string1 as expected_aa,
+                string2 as first_60,
+                number2 as predicted_helices,
+                number3 as topology,
+		modification_date,
+		user_read,
+		user_write,
+		group_read,
+		group_write,
+		other_read,
+		other_write,
+		row_user_id,
+		row_group_id,
+		row_project_id,
+		row_alg_invocation_id
+        from DoTS.AaFeatureImp;
+
+create view dotsver.TransMembraneAAFeaturever as
+        select  aa_feature_id,
+                aa_sequence_id,
+                feature_name_id,
+                parent_id,
+                na_feature_id,
+                subclass_view,
+                sequence_ontology_id,
+                description,
+                pfam_entry_id,
+                motif_aa_sequence_id,
+                repeat_type_id,
+                external_database_release_id,
+                source_id,
+                prediction_algorithm_id,
+                is_predicted,
+                review_status_id,
+                number1 as length,
+                string1 as expected_aa,
+                string2 as first_60,
+                number2 as predicted_helices,
+                number3 as topology,
+		modification_date,
+		user_read,
+		user_write,
+		group_read,
+		group_write,
+		other_read,
+		other_write,
+		row_user_id,
+		row_group_id,
+		row_project_id,
+		row_alg_invocation_id,
+		version_alg_invocation_id,
+		version_date,
+		version_transaction_id
+        from DoTSver.AaFeatureImpver;
+
+-- Bug 93
+
+CREATE table RAD.ElementDbRef (
+element_db_ref_id  NUMBER(12)   NOT NULL,
+element_id  NUMBER(10)    NOT NULL,
+db_ref_id  NUMBER(10)    NOT NULL,
+modification_date   DATE   NOT NULL,
+user_read   NUMBER(1)   NOT NULL,
+user_write   NUMBER(1)   NOT NULL,
+group_read   NUMBER(1)   NOT NULL,
+group_write   NUMBER(1)   NOT NULL,
+other_read   NUMBER(1)   NOT NULL,
+other_write   NUMBER(1)   NOT NULL,
+row_user_id   NUMBER(12)   NOT NULL,
+row_group_id   NUMBER(4)   NOT NULL,
+row_project_id   NUMBER(4)   NOT NULL,
+row_alg_invocation_id   NUMBER(12)   NOT NULL
+);
+
+create sequence rad.ElementDbRef_sq;
+
+alter table rad.elementdbref add constraint ElementDBRef_PK primary
+key (element_db_ref_id);
+
+ALTER TABLE RAD.ElementDbRef
+  ADD CONSTRAINT ELEMENT_DBREF_ELEMENT_FK FOREIGN KEY (element_id) 
+  REFERENCES RAD.ElementImp (element_id);
+
+ALTER TABLE RAD.ElementDbRef
+  ADD CONSTRAINT ELE_DBREF_DBREF_FK FOREIGN KEY (db_ref_id) 
+  REFERENCES SRes.DbRef (db_ref_id);
+
+CREATE table RADver.ElementDbRefver (
+element_db_ref_id  NUMBER(12)   NOT NULL,
+element_id  NUMBER(10)    NOT NULL,
+db_ref_id  NUMBER(10)    NOT NULL,
+modification_date   DATE   NOT NULL,
+user_read   NUMBER(1)   NOT NULL,
+user_write   NUMBER(1)   NOT NULL,
+group_read   NUMBER(1)   NOT NULL,
+group_write   NUMBER(1)   NOT NULL,
+other_read   NUMBER(1)   NOT NULL,
+other_write   NUMBER(1)   NOT NULL,
+row_user_id   NUMBER(12)   NOT NULL,
+row_group_id   NUMBER(4)   NOT NULL,
+row_project_id   NUMBER(4)   NOT NULL,
+row_alg_invocation_id   NUMBER(12)   NOT NULL,
+VERSION_ALG_INVOCATION_ID number(12) not null,
+VERSION_DATE date not null,
+VERSION_TRANSACTION_ID number(12) not null 
+);
+
+alter table radver.elementdbrefver add constraint ElementDBRefVer_PK primary
+key (element_db_ref_id, modification_date);      
+
+CREATE table RAD.CompositeElementDbRef(
+composite_element_db_ref_id  NUMBER(12)   NOT NULL,
+composite_element_id  NUMBER(10)    NOT NULL,
+db_ref_id  NUMBER(10)    NOT NULL,
+modification_date   DATE   NOT NULL,
+user_read   NUMBER(1)   NOT NULL,
+user_write   NUMBER(1)   NOT NULL,
+group_read   NUMBER(1)   NOT NULL,
+group_write   NUMBER(1)   NOT NULL,
+other_read   NUMBER(1)   NOT NULL,
+other_write   NUMBER(1)   NOT NULL,
+row_user_id   NUMBER(12)   NOT NULL,
+row_group_id   NUMBER(4)   NOT NULL,
+row_project_id   NUMBER(4)   NOT NULL,
+row_alg_invocation_id   NUMBER(12)   NOT NULL
+);
+
+create sequence rad.CompositeElementDbRef_sq;
+
+alter table rad.CompositeElementDbRef add constraint
+CompositeElementDbRef_Pk primary key (composite_element_db_ref_id);
+
+ALTER TABLE RAD.CompositeElementDbRef
+  ADD CONSTRAINT CMPELE_DBREF_CMPELE_FK FOREIGN KEY
+(composite_element_id) 
+  REFERENCES RAD.CompositeElementImp (composite_element_id);
+
+ALTER TABLE RAD.CompositeElementDbRef
+  ADD CONSTRAINT CMPELE_DBREF_DBREF_FK FOREIGN KEY (db_ref_id) 
+  REFERENCES SRes.DbRef (db_ref_id);
+
+CREATE table RADver.CompositeElementDbRefver(
+composite_element_db_ref_id  NUMBER(12)   NOT NULL,
+composite_element_id  NUMBER(10)    NOT NULL,
+db_ref_id  NUMBER(10)    NOT NULL,
+modification_date   DATE   NOT NULL,
+user_read   NUMBER(1)   NOT NULL,
+user_write   NUMBER(1)   NOT NULL,
+group_read   NUMBER(1)   NOT NULL,
+group_write   NUMBER(1)   NOT NULL,
+other_read   NUMBER(1)   NOT NULL,
+other_write   NUMBER(1)   NOT NULL,
+row_user_id   NUMBER(12)   NOT NULL,
+row_group_id   NUMBER(4)   NOT NULL,
+row_project_id   NUMBER(4)   NOT NULL,
+row_alg_invocation_id   NUMBER(12)   NOT NULL,
+VERSION_ALG_INVOCATION_ID number(12) not null,
+VERSION_DATE date not null,
+VERSION_TRANSACTION_ID number(12) not null 
+);
+
+alter table radver.CompositeElementDbRefver add constraint
+CompositeElementDbRefver primary key ( composite_element_db_ref_id, modification_date);
+
+CREATE table RAD.ElementNASequence (
+element_na_sequence_id  NUMBER(12)   NOT NULL,
+element_id  NUMBER(10)    NOT NULL,
+na_sequence_id  NUMBER(10)    NOT NULL,
+modification_date   DATE   NOT NULL,
+user_read   NUMBER(1)   NOT NULL,
+user_write   NUMBER(1)   NOT NULL,
+group_read   NUMBER(1)   NOT NULL,
+group_write   NUMBER(1)   NOT NULL,
+other_read   NUMBER(1)   NOT NULL,
+other_write   NUMBER(1)   NOT NULL,
+row_user_id   NUMBER(12)   NOT NULL,
+row_group_id   NUMBER(4)   NOT NULL,
+row_project_id   NUMBER(4)   NOT NULL,
+row_alg_invocation_id   NUMBER(12)   NOT NULL
+);
+
+create sequence rad.ElementNASequence_sq;
+
+alter table RAD.ElementNASequence add constraint ElementNASequence
+primary key (element_na_sequence_id);
+
+ALTER TABLE RAD.ElementNASequence
+  ADD CONSTRAINT ELEMENT_NASEQUENCE_ELEMENT_FK FOREIGN KEY
+  (element_id) 
+  REFERENCES RAD.ElementImp (element_id);
+
+ALTER TABLE RAD.ElementNASequence
+  ADD CONSTRAINT ele_naseq_naseq_FK FOREIGN KEY (na_sequence_id) 
+  REFERENCES DoTS.NASequenceImp (na_sequence_id);
+
+
+CREATE table RADver.ElementNASequencever (
+element_na_sequence_id  NUMBER(12)   NOT NULL,
+element_id  NUMBER(10)    NOT NULL,
+na_sequence_id  NUMBER(10)    NOT NULL,
+modification_date   DATE   NOT NULL,
+user_read   NUMBER(1)   NOT NULL,
+user_write   NUMBER(1)   NOT NULL,
+group_read   NUMBER(1)   NOT NULL,
+group_write   NUMBER(1)   NOT NULL,
+other_read   NUMBER(1)   NOT NULL,
+other_write   NUMBER(1)   NOT NULL,
+row_user_id   NUMBER(12)   NOT NULL,
+row_group_id   NUMBER(4)   NOT NULL,
+row_project_id   NUMBER(4)   NOT NULL,
+row_alg_invocation_id   NUMBER(12)   NOT NULL,
+VERSION_ALG_INVOCATION_ID number(12) not null,
+VERSION_DATE date not null,
+VERSION_TRANSACTION_ID number(12) not null 
+);
+
+alter table radver.ElementNASequencever add constraint
+ElementNASequencever_pk primary key (element_na_sequence_id, modification_date);
+
+CREATE table RAD.CompositeElementNASequence(
+composite_element_na_seq_id  NUMBER(12)   NOT NULL,
+composite_element_id  NUMBER(10)    NOT NULL,
+na_sequence_id  NUMBER(10)    NOT NULL,
+modification_date   DATE   NOT NULL,
+user_read   NUMBER(1)   NOT NULL,
+user_write   NUMBER(1)   NOT NULL,
+group_read   NUMBER(1)   NOT NULL,
+group_write   NUMBER(1)   NOT NULL,
+other_read   NUMBER(1)   NOT NULL,
+other_write   NUMBER(1)   NOT NULL,
+row_user_id   NUMBER(12)   NOT NULL,
+row_group_id   NUMBER(4)   NOT NULL,
+row_project_id   NUMBER(4)   NOT NULL,
+row_alg_invocation_id   NUMBER(12)   NOT NULL
+);
+
+create sequence rad.CompositeElementNASequence_sq;
+
+alter table rad.CompositeElementNASequence add constraint
+CompositeElementNASeq_pk primary key
+(composite_element_na_seq_id);
+
+ALTER TABLE RAD.CompositeElementNASequence
+  ADD CONSTRAINT CMPELE_NASEQUENCE__CMPELE_FK FOREIGN KEY
+(composite_element_id) 
+  REFERENCES RAD.CompositeElementImp (composite_element_id);
+
+ALTER TABLE RAD.CompositeElementNASequence
+  ADD CONSTRAINT CMPELE_NASEQ_NASEQ_FK FOREIGN KEY
+(na_sequence_id) 
+  REFERENCES DoTS.NASequenceImp (na_sequence_id);
+
+CREATE table RADver.CompositeElementNASequencever(
+composite_element_na_seq_id  NUMBER(12)   NOT NULL,
+composite_element_id  NUMBER(10)    NOT NULL,
+na_sequence_id  NUMBER(10)    NOT NULL,
+modification_date   DATE   NOT NULL,
+user_read   NUMBER(1)   NOT NULL,
+user_write   NUMBER(1)   NOT NULL,
+group_read   NUMBER(1)   NOT NULL,
+group_write   NUMBER(1)   NOT NULL,
+other_read   NUMBER(1)   NOT NULL,
+other_write   NUMBER(1)   NOT NULL,
+row_user_id   NUMBER(12)   NOT NULL,
+row_group_id   NUMBER(4)   NOT NULL,
+row_project_id   NUMBER(4)   NOT NULL,
+row_alg_invocation_id   NUMBER(12)   NOT NULL,
+VERSION_ALG_INVOCATION_ID number(12) not null,
+VERSION_DATE date not null,
+VERSION_TRANSACTION_ID number(12) not null    
+);
+
+alter table  RADver.CompositeElementNASequencever add constraint
+CompositeElementNASeqver_pk primary Key
+(composite_element_na_seq_id , modification_date);
+
+-- Bug 95
+
+CREATE TABLE DoTS.AAFeatureComment (
+         AA_Feature_COMMENT_ID NUMBER(10,0)  NOT NULL,
+         AA_Feature_ID NUMBER(10,0)  NOT NULL,
+         COMMENT_NAME_ID number(10,0),
+         COMMENT_STRING CLOB NOT NULL,
+         MODIFICATION_DATE DATE NOT NULL,
+         USER_READ NUMBER(1,0)  NOT NULL,
+         USER_WRITE NUMBER(1,0)  NOT NULL,
+         GROUP_READ NUMBER(1,0)  NOT NULL,
+         GROUP_WRITE NUMBER(1,0)  NOT NULL,
+         OTHER_READ NUMBER(1,0)  NOT NULL,
+         OTHER_WRITE NUMBER(1,0)  NOT NULL,
+         ROW_USER_ID NUMBER(12,0)  NOT NULL,
+         ROW_GROUP_ID NUMBER(4,0)  NOT NULL,
+         ROW_PROJECT_ID NUMBER(4,0)  NOT NULL,
+         ROW_ALG_INVOCATION_ID NUMBER(12,0)  NOT NULL);
+
+create sequence dots.AAFeatureComment_sq;
+
+alter table  DoTS.AAFeatureComment add constraint AAFeatureComment_pk
+primary key (AA_Feature_COMMENT_ID );
+
+ALTER TABLE DOTS.AAFeatureComment ADD CONSTRAINT AAFeatureComment_FK 
+FOREIGN KEY (COMMENT_NAME_ID) REFERENCES DOTS.CommentName
+(COMMENT_NAME_ID);
+
+CREATE TABLE DoTSver.AAFeatureCommentver (
+         AA_Feature_COMMENT_ID NUMBER(10,0)  NOT NULL,
+         AA_Feature_ID NUMBER(10,0)  NOT NULL,
+         COMMENT_NAME_ID number(10,0),
+         COMMENT_STRING CLOB NOT NULL,
+         MODIFICATION_DATE DATE NOT NULL,
+         USER_READ NUMBER(1,0)  NOT NULL,
+         USER_WRITE NUMBER(1,0)  NOT NULL,
+         GROUP_READ NUMBER(1,0)  NOT NULL,
+         GROUP_WRITE NUMBER(1,0)  NOT NULL,
+         OTHER_READ NUMBER(1,0)  NOT NULL,
+         OTHER_WRITE NUMBER(1,0)  NOT NULL,
+         ROW_USER_ID NUMBER(12,0)  NOT NULL,
+         ROW_GROUP_ID NUMBER(4,0)  NOT NULL,
+         ROW_PROJECT_ID NUMBER(4,0)  NOT NULL,
+         ROW_ALG_INVOCATION_ID NUMBER(12,0)  NOT NULL,
+VERSION_ALG_INVOCATION_ID number(12) not null,
+VERSION_DATE date not null,
+VERSION_TRANSACTION_ID number(12) not null ); 
+
+alter table  DoTSver.AAFeatureCommentver add constraint
+AAFeatureCommentver_pk primary key ( AA_Feature_COMMENT_ID,
+modification_date);
+
+-- Bug 129
+
+create view Dots.GeneticMarker as 
+SELECT NA_Feature_ID as na_feature_id,
+NA_SEQUENCE_ID as na_sequence_id,
+SUBCLASS_VIEW as subclass_view,
+NAME as name,
+SEQUENCE_ONTOLOGY_ID as sequence_ontology_id,
+PARENT_ID as parent_id,
+EXTERNAL_DATABASE_RELEASE_ID as external_database_release_id,
+SOURCE_ID as source_id,
+PREDICTION_ALGORITHM_ID as prediction_algorithm_id,
+IS_PREDICTED as is_predicted,
+REVIEW_STATUS_ID as review_status_id,
+STRING2 as marker_name,
+STRING3 as type,
+STRING4 as linkage_group,
+NUMBER1 as ncbi_tax_id,
+STRING9 as strain,
+MODIFICATION_DATE as modification_date,
+USER_READ as user_read,
+USER_WRITE as user_write,
+GROUP_READ as group_read,
+GROUP_WRITE as group_write,
+OTHER_READ as other_read,
+OTHER_WRITE as other_write,
+ROW_USER_ID as row_user_id,
+ROW_GROUP_ID as row_group_id,
+ROW_PROJECT_ID as row_project_id,
+ROW_ALG_INVOCATION_ID as row_alg_invocation_id
+FROM DoTS.NAFeatureImp WHERE subclass_view='GeneticMarker';
+
+create view Dotsver.GeneticMarkerver as
+SELECT NA_Feature_ID as na_feature_id,
+NA_SEQUENCE_ID as na_sequence_id,
+SUBCLASS_VIEW as subclass_view,
+NAME as name,
+SEQUENCE_ONTOLOGY_ID as sequence_ontology_id,
+PARENT_ID as parent_id,
+EXTERNAL_DATABASE_RELEASE_ID as external_database_release_id,
+SOURCE_ID as source_id,
+PREDICTION_ALGORITHM_ID as prediction_algorithm_id,
+IS_PREDICTED as is_predicted,
+REVIEW_STATUS_ID as review_status_id,
+STRING2 as marker_name,
+STRING3 as type,
+STRING4 as linkage_group,
+NUMBER1 as ncbi_tax_id,
+STRING9 as strain,
+MODIFICATION_DATE as modification_date,
+USER_READ as user_read,
+USER_WRITE as user_write,
+GROUP_READ as group_read,
+GROUP_WRITE as group_write,
+OTHER_READ as other_read,
+OTHER_WRITE as other_write,
+ROW_USER_ID as row_user_id,
+ROW_GROUP_ID as row_group_id,
+ROW_PROJECT_ID as row_project_id,
+ROW_ALG_INVOCATION_ID as row_alg_invocation_id,
+version_alg_invocation_id,
+version_date,
+version_transaction_id
+FROM DoTSver.NAFeatureImpver WHERE subclass_view='GeneticMarker';
+
+-- Bug 53
+
+alter table dots.nasequenceimp modify sequence_version null;
+alter table dotsver.nasequenceimpver modify sequence_version null;
+
+-- Bug 162
+
+alter table Dots.SECONDARYACCS modify (SECONDARY_ACCS VARCHAR2(20));
+alter table DotsVer.SECONDARYACCSVer modify (SECONDARY_ACCS
+VARCHAR2(20));
+
+
