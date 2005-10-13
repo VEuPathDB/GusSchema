@@ -301,7 +301,7 @@ row_alg_invocation_id   NUMBER(12)   NOT NULL
 
 create sequence rad.ElementNASequence_sq;
 
-alter table RAD.ElementNASequence add constraint ElementNASequence
+alter table RAD.ElementNASequence add constraint ElementNASequence_PK
 primary key (element_na_sequence_id);
 
 ALTER TABLE RAD.ElementNASequence

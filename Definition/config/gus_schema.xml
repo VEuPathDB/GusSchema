@@ -13437,7 +13437,7 @@
 						<column id="RAD/ELEMENTNASEQUENCE/NA_SEQUENCE_ID" name="NA_SEQUENCE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
 					</columns>
 					<indexes>
-						<index name="ELEMENTNASEQUENCE" tablespace="USERS" type="NORMAL">
+						<index name="ELEMENTNASEQUENCE_PK" tablespace="USERS" type="NORMAL">
 							<columns>
 								<column idref="RAD/ELEMENTNASEQUENCE/ELEMENT_NA_SEQUENCE_ID"/>
 							</columns>
@@ -13462,7 +13462,7 @@
 								<column idref="RAD/Element/ELEMENT_ID"/>
 							</referencedColumns>
 						</constraint>
-						<constraint name="ELEMENTNASEQUENCE" type="PRIMARY KEY">
+						<constraint name="ELEMENTNASEQUENCE_PK" type="PRIMARY KEY">
 							<constrainedColumns>
 								<column idref="RAD/ELEMENTNASEQUENCE/ELEMENT_NA_SEQUENCE_ID"/>
 							</constrainedColumns>
