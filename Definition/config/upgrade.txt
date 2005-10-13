@@ -1,8 +1,35 @@
+--------------------------------------------------------------------------;
+----
+----  GUS Schema Upgrade Instructions
+----
+----  $Id$
+----
+----  From 3.5 to 3.5.1
+----
+--------------------------------------------------------------------------;
+
+---- Overview
+
+-- This file contains instructions for upgrading GUS between the revisions
+-- listed above.  Patches (i.e. changes to the most minor revision number)
+-- these changes will be backwards compatible.  That is, they will only 
+-- involve precision changes and additions of indexes or tables.  Full 
+-- releases (i.e. changes to the two major revision numbers) may involve
+-- changes that are not backwards compatible.  That is, they may contain
+-- column additions or removals, table deletions, constraint additions, and
+-- so on.
+
+-- The SQL in this file is formatted for Oracle.  PostgreSQL users may need
+-- to make slight modifications.
 
 
 -- Bug 94
+
 alter table core.groupinfo modify group_id number(4);
 alter table corever.groupinfover modify group_id number(4); 
+
+alter table core.usergroup modify group_id number(4);
+alter table corever.usergroupver modify group_id number(4);
 
 -- Bug 28
 
@@ -10,6 +37,9 @@ alter table sres.sequenceontology modify definition varchar2(4000);
 alter table sresver.sequenceontologyver modify definition varchar2(4000);
 
 -- Bug 126
+
+-- NOTE:  Entries for these (and any new) tables/views will also need to be
+-- made in Core.TableInfo
 
 CREATE table DoTS.AAFeatureDbRef (
   aa_feature_db_ref_id  NUMBER(12)   NOT NULL,
@@ -28,7 +58,7 @@ CREATE table DoTS.AAFeatureDbRef (
   row_alg_invocation_id   NUMBER(12)   NOT NULL
 );
 
-alter table dots.aafeaturedbref add constraint AAFEATUREDBREF_PK
+alter table dots.aafeaturedbref add constraint AAFEATUREDBREF_PK 
 primary key (aa_feature_db_ref_id);
 
 create sequence dots.aafeaturedbref_sq;
@@ -63,6 +93,9 @@ alter table dotsver.AAFeatureDbRefVer add constraint
 AAFeatureDbRefVer_pk primary key (aa_feature_db_ref_id, modification_date);
 
 -- Bug 153
+
+-- NOTE:  Entries for these (and any new) tables/views will also need to be
+-- made in Core.TableInfo
 
 create view dots.TransMembraneAAFeature as
         select  aa_feature_id,
@@ -138,6 +171,9 @@ create view dotsver.TransMembraneAAFeaturever as
         from DoTSver.AaFeatureImpver;
 
 -- Bug 93
+
+-- NOTE:  Entries for these (and any new) tables/views will also need to be
+-- made in Core.TableInfo
 
 CREATE table RAD.ElementDbRef (
 element_db_ref_id  NUMBER(12)   NOT NULL,
@@ -360,6 +396,12 @@ CompositeElementNASeqver_pk primary Key
 
 -- Bug 95
 
+-- NOTE:  Entries for these (and any new) tables/views will also need to be
+-- made in Core.TableInfo
+
+-- NOTE:  This bug has additional components that will be addressed in a later
+-- release.
+
 CREATE TABLE DoTS.AAFeatureComment (
          AA_Feature_COMMENT_ID NUMBER(10,0)  NOT NULL,
          AA_Feature_ID NUMBER(10,0)  NOT NULL,
@@ -411,6 +453,9 @@ AAFeatureCommentver_pk primary key ( AA_Feature_COMMENT_ID,
 modification_date);
 
 -- Bug 129
+
+-- NOTE:  Entries for these (and any new) tables/views will also need to be
+-- made in Core.TableInfo
 
 create view Dots.GeneticMarker as 
 SELECT NA_Feature_ID as na_feature_id,
@@ -486,4 +531,5 @@ alter table Dots.SECONDARYACCS modify (SECONDARY_ACCS VARCHAR2(20));
 alter table DotsVer.SECONDARYACCSVer modify (SECONDARY_ACCS
 VARCHAR2(20));
 
+--- END OF CHANGES
 
