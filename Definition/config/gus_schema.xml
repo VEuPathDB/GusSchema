@@ -971,6 +971,15 @@
 								<column id="DoTS/TranslatedAAFeature/IS_REVERSED" name="IS_REVERSED" nullable="true" length="12" precision="0" type="NUMBER"/>
 							</columns>
 						</subclass>
+						<subclass id="DoTS/AAFeature/TransMembraneAAFeature" name="TransMembraneAAFeature" versioned="true" tablespace="USERS" categoryRef="AA Sequence Features" updatable="true">
+						       <columns>
+						               <column id="DoTS/TransMembraneAAFeature/LENGTH" name="LENGTH" nullable="true" length="12" precision="0" type="NUMBER"/>
+							       <column id="DoTS/TransMembraneAAFeature/EXPECTED_AA" name="EXPECTED_AA" nullable="true" length="4000" precision="0" type="STRING"/>
+							       <column id="DoTS/TransMembraneAAFeature/FIRST_60" name="FIRST_60" nullable="true" length="4000" precision="0" type="STRING"/>
+						               <column id="DoTS/TransMembraneAAFeature/PREDICTED_HELICES" name="PREDICTED_HELICES" nullable="true" length="12" precision="0" type="NUMBER"/>
+						               <column id="DoTS/TransMembraneAAFeature/TOPOLOGY" name="TOPOLOGY" nullable="true" length="12" precision="0" type="NUMBER"/>
+						       </columns>
+						 </subclass>
 					</subclasses>
 					<indexes>
 						<index name="AAFEATUREIMP_IND01" tablespace="USERS" type="NORMAL">
