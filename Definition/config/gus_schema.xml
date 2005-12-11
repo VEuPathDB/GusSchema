@@ -15366,6 +15366,7 @@
 						<column id="SRes/Disease/LEVEL_3" name="LEVEL_3" nullable="true" length="255" precision="0" type="STRING"/>
 						<column id="SRes/Disease/LEVEL_4" name="LEVEL_4" nullable="true" length="255" precision="0" type="STRING"/>
 						<column id="SRes/Disease/LEVEL_5" name="LEVEL_5" nullable="true" length="255" precision="0" type="STRING"/>
+						<column id="SRes/Disease/HIER_LEVEL" name="HIER_LEVEL" nullable="false" length="3" precision="0" type="NUMBER"/>
 					</columns>
 					<indexes>
 						<index name="DISEASE_IND01" tablespace="USERS" type="NORMAL">
