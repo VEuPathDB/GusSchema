@@ -11258,7 +11258,7 @@
 						<column id="PROT/Parameter/UNIT_TYPE_ID" name="UNIT_TYPE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
 						<column id="PROT/Parameter/NAME" name="NAME" nullable="false" length="100" precision="0" type="STRING"/>
 						<column id="PROT/Parameter/VALUE" name="VALUE" nullable="true" length="100" precision="0" type="STRING"/>
-						<column id="PROT/Parameter/VALUE_CLASS_OE_ID" name="VALUE_CLASS_OE_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
+						<column id="PROT/Parameter/VALUE_CLASS_OE_ID" name="VALUE_CLASS_OE_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
 					</columns>
 					<indexes>
 						<index name="PK_PARAMETER" tablespace="USERS" type="NORMAL">
@@ -11317,7 +11317,7 @@
 						<column id="PROT/ParameterInstance/PARAMETERIZABLE_INSTANCE_ID" name="PARAMETERIZABLE_INSTANCE_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
 						<column id="PROT/ParameterInstance/PARAMETER_ID" name="PARAMETER_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
 						<column id="PROT/ParameterInstance/VALUE" name="VALUE" nullable="false" length="100" precision="0" type="STRING"/>
-						<column id="PROT/ParameterInstance/VALUE_ONTOLOGY_ENTRY_ID" name="VALUE_ONTOLOGY_ENTRY_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
+						<column id="PROT/ParameterInstance/VALUE_ONTOLOGY_ENTRY_ID" name="VALUE_ONTOLOGY_ENTRY_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
 					</columns>
 					<indexes>
 						<index name="PK_PARAMETERINSTANCE" tablespace="USERS" type="NORMAL">
