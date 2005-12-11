@@ -15252,6 +15252,7 @@
 						<column id="SRes/DbRef/CHROMOSOME" name="CHROMOSOME" nullable="true" length="2" precision="0" type="STRING"/>
 						<column id="SRes/DbRef/CENTIMORGANS" name="CENTIMORGANS" nullable="true" length="22" precision="0" type="NUMBER"/>
 						<column id="SRes/DbRef/REMARK" name="REMARK" nullable="true" length="4000" precision="0" type="STRING"/>
+						<column id="SRes/DbRef/TAXON_ID" name="TAXON_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
 					</columns>
 					<indexes>
 						<index name="DBREF_IND01" tablespace="USERS" type="NORMAL">
@@ -15285,6 +15286,15 @@
 							<referencedTable idref="SRes/ExternalDatabaseRelease"/>
 							<referencedColumns>
 								<column idref="SRes/ExternalDatabaseRelease/EXTERNAL_DATABASE_RELEASE_ID"/>
+							</referencedColumns>
+						</constraint>
+						<constraint name="DBREF_FK03" type="FOREIGN_KEY">
+							<constrainedColumns>
+								<column idref="SRes/DbRef/TAXON_ID"/>
+							</constrainedColumns>
+							<referencedTable idref="SRes/Taxon"/>
+							<referencedColumns>
+								<column idref="SRes/Taxon/TAXON_ID"/>
 							</referencedColumns>
 						</constraint>
 						<constraint name="PK_DBREF" type="PRIMARY_KEY">
