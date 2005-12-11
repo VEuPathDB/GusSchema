@@ -3151,6 +3151,9 @@
 						<column id="DoTS/Clone/MGI_ID" name="MGI_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
 						<column id="DoTS/Clone/DBEST_LENGTH" name="DBEST_LENGTH" nullable="true" length="12" precision="0" type="NUMBER"/>
 						<column id="DoTS/Clone/WASHU_LENGTH" name="WASHU_LENGTH" nullable="true" length="12" precision="0" type="NUMBER"/>
+						<column id="DoTS/Clone/DBEST_PLATE" name="DBEST_PLATE" nullable="true" length="32" precision="0" type="STRING"/>
+						<column id="DoTS/Clone/DBEST_ROW" name="DBEST_ROW" nullable="true" length="32" precision="0" type="STRING"/>
+						<column id="DoTS/Clone/DBEST_COLUMN" name="DBEST_COLUMN" nullable="true" length="32" precision="0" type="STRING"/>
 					</columns>
 					<indexes>
 						<index name="CLONE_IND01" tablespace="USERS" type="NORMAL">
@@ -4125,7 +4128,7 @@
 						<column id="DoTS/EST/LIBRARY_ID" name="LIBRARY_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
 						<column id="DoTS/EST/CONTACT_ID" name="CONTACT_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
 						<column id="DoTS/EST/DBEST_ID_EST" name="DBEST_ID_EST" nullable="true" length="12" precision="0" type="NUMBER"/>
-						<column id="DoTS/EST/WASHU_ID" name="WASHU_ID" nullable="true" length="67" precision="0" type="STRING"/>
+						<column id="DoTS/EST/EST_ID" name="EST_ID" nullable="true" length="67" precision="0" type="STRING"/>
 						<column id="DoTS/EST/ACCESSION" name="ACCESSION" nullable="true" length="20" precision="0" type="STRING"/>
 						<column id="DoTS/EST/P_END" name="P_END" nullable="true" length="1" precision="0" type="CHARACTER"/>
 						<column id="DoTS/EST/QUALITY_START" name="QUALITY_START" nullable="false" length="12" precision="0" type="NUMBER"/>
@@ -4135,7 +4138,7 @@
 						<column id="DoTS/EST/POSSIBLY_REVERSED" name="POSSIBLY_REVERSED" nullable="false" length="1" precision="0" type="NUMBER"/>
 						<column id="DoTS/EST/PUTATIVE_FULL_LENGTH_READ" name="PUTATIVE_FULL_LENGTH_READ" nullable="false" length="1" precision="0" type="NUMBER"/>
 						<column id="DoTS/EST/TRACE_POOR_QUALITY" name="TRACE_POOR_QUALITY" nullable="false" length="1" precision="0" type="NUMBER"/>
-						<column id="DoTS/EST/POLYA_SIGNAL" name="POLYA_SIGNAL" nullable="true" length="1" precision="0" type="NUMBER"/>
+						<column id="DoTS/EST/POLYA_TAIL" name="POLYA_TAIL" nullable="true" length="1" precision="0" type="NUMBER"/>
 					</columns>
 					<indexes>
 						<index name="EST_IND01" tablespace="USERS" type="NORMAL">
