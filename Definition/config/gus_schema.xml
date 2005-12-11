@@ -13095,9 +13095,9 @@
 								<column id="RAD/ProbeProfiler/PP_SATURATED" name="PP_SATURATED" nullable="true" length="12" precision="0" type="NUMBER"/>
 							</columns>
 						</subclass>
-						<subclass id="RAD/CompositeElementResult/RMAExpress" name="RMAExpress" versioned="true" tablespace="USERS" categoryRef="Quantified Data" updatable="true">
+						<subclass id="RAD/CompositeElementResult/RMA" name="RMA" versioned="true" tablespace="USERS" categoryRef="Quantified Data" updatable="true">
 							<columns>
-								<column id="RAD/RMAExpress/RMA_EXPRESSION_MEASURE" name="RMA_EXPRESSION_MEASURE" nullable="true" length="126" precision="0" type="FLOAT"/>
+								<column id="RAD/RMA/RMA_EXPRESSION_MEASURE" name="RMA_EXPRESSION_MEASURE" nullable="true" length="126" precision="0" type="FLOAT"/>
 							</columns>
 						</subclass>
 						<subclass id="RAD/CompositeElementResult/SAGETagResult" name="SAGETagResult" versioned="true" tablespace="USERS" categoryRef="Quantified Data" updatable="true">
