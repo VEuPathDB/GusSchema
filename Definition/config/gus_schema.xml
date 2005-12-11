@@ -16336,7 +16336,7 @@
 						<column id="SRes/Reference/DB_REF_ID" name="DB_REF_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
 						<column id="SRes/Reference/POSITION" name="POSITION" nullable="true" length="100" precision="0" type="STRING"/>
 						<column id="SRes/Reference/REMARK" name="REMARK" nullable="true" length="100" precision="0" type="STRING"/>
-						<column id="SRes/Reference/AUTHOR" name="AUTHOR" nullable="true" length="1000" precision="0" type="STRING"/>
+						<column id="SRes/Reference/AUTHOR" name="AUTHOR" nullable="true" length="4000" precision="0" type="STRING"/>
 						<column id="SRes/Reference/TITLE" name="TITLE" nullable="true" length="1000" precision="0" type="STRING"/>
 						<column id="SRes/Reference/JOURNAL_OR_BOOK_NAME" name="JOURNAL_OR_BOOK_NAME" nullable="true" length="1000" precision="0" type="STRING"/>
 						<column id="SRes/Reference/JOURNAL_VOL" name="JOURNAL_VOL" nullable="true" length="50" precision="0" type="STRING"/>
