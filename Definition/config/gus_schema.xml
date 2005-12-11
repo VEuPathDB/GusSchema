@@ -15245,9 +15245,7 @@
 						<column id="SRes/DbRef/DB_REF_ID" name="DB_REF_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
 						<column id="SRes/DbRef/EXTERNAL_DATABASE_RELEASE_ID" name="EXTERNAL_DATABASE_RELEASE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
 						<column id="SRes/DbRef/PRIMARY_IDENTIFIER" name="PRIMARY_IDENTIFIER" nullable="true" length="100" precision="0" type="STRING"/>
-						<column id="SRes/DbRef/LOWERCASE_PRIMARY_IDENTIFIER" name="LOWERCASE_PRIMARY_IDENTIFIER" nullable="true" length="100" precision="0" type="STRING"/>
 						<column id="SRes/DbRef/SECONDARY_IDENTIFIER" name="SECONDARY_IDENTIFIER" nullable="true" length="50" precision="0" type="STRING"/>
-						<column id="SRes/DbRef/LOWERCASE_SECONDARY_IDENTIFIER" name="LOWERCASE_SECONDARY_IDENTIFIER" nullable="true" length="100" precision="0" type="STRING"/>
 						<column id="SRes/DbRef/GENE_SYMBOL" name="GENE_SYMBOL" nullable="true" length="50" precision="0" type="STRING"/>
 						<column id="SRes/DbRef/CHROMOSOME" name="CHROMOSOME" nullable="true" length="2" precision="0" type="STRING"/>
 						<column id="SRes/DbRef/CENTIMORGANS" name="CENTIMORGANS" nullable="true" length="22" precision="0" type="NUMBER"/>
@@ -15264,12 +15262,6 @@
 							<columns>
 								<column idref="SRes/DbRef/EXTERNAL_DATABASE_RELEASE_ID"/>
 								<column idref="SRes/DbRef/PRIMARY_IDENTIFIER"/>
-							</columns>
-						</index>
-						<index name="DBREF_IND03" tablespace="USERS" type="NORMAL">
-							<columns>
-								<column idref="SRes/DbRef/EXTERNAL_DATABASE_RELEASE_ID"/>
-								<column idref="SRes/DbRef/LOWERCASE_PRIMARY_IDENTIFIER"/>
 							</columns>
 						</index>
 						<index name="PK_DBREF" tablespace="USERS" type="NORMAL">
