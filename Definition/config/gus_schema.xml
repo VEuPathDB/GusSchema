@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<database name="null">
+<database name="null" version="3.6" patchLevel="0">
 	<schemas>
 		<schema name="Core">
  			<tables>
@@ -4128,7 +4128,7 @@
 						<column id="DoTS/EST/LIBRARY_ID" name="LIBRARY_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
 						<column id="DoTS/EST/CONTACT_ID" name="CONTACT_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
 						<column id="DoTS/EST/DBEST_ID_EST" name="DBEST_ID_EST" nullable="true" length="12" precision="0" type="NUMBER"/>
-						<column id="DoTS/EST/EST_ID" name="EST_ID" nullable="true" length="67" precision="0" type="STRING"/>
+						<column id="DoTS/EST/EST_UID" name="EST_UID" nullable="true" length="67" precision="0" type="STRING"/>
 						<column id="DoTS/EST/ACCESSION" name="ACCESSION" nullable="true" length="20" precision="0" type="STRING"/>
 						<column id="DoTS/EST/P_END" name="P_END" nullable="true" length="1" precision="0" type="CHARACTER"/>
 						<column id="DoTS/EST/QUALITY_START" name="QUALITY_START" nullable="false" length="12" precision="0" type="NUMBER"/>
