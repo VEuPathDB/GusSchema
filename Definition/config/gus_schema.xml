@@ -72,7 +72,7 @@
 						<column id="Core/AlgorithmInvocation/END_TIME" name="END_TIME" nullable="false" length="0" precision="0" type="DATE"/>
 						<column id="Core/AlgorithmInvocation/CPUS_USED" name="CPUS_USED" nullable="true" length="5" precision="0" type="NUMBER"/>
 						<column id="Core/AlgorithmInvocation/CPU_TIME" name="CPU_TIME" nullable="true" length="126" precision="0" type="FLOAT"/>
-						<column id="Core/AlgorithmInvocation/RESULT" name="RESULT" nullable="false" length="255" precision="0" type="STRING"/>
+						<column id="Core/AlgorithmInvocation/RESULT" name="RESULT" nullable="false" length="350" precision="0" type="STRING"/>
 						<column id="Core/AlgorithmInvocation/COMMENT_STRING" name="COMMENT_STRING" nullable="true" length="255" precision="0" type="STRING"/>
 					</columns>
 					<indexes>
