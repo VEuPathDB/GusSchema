@@ -13578,6 +13578,8 @@
 								<column id="RAD/GenePixElementResult/FLAG" name="FLAG" nullable="true" length="12" precision="0" type="NUMBER"/>
 								<column id="RAD/GenePixElementResult/AUTOFLAG" name="AUTOFLAG" nullable="true" length="12" precision="0" type="NUMBER"/>
 								<column id="RAD/GenePixElementResult/CIRCULARITY" name="CIRCULARITY" nullable="true" length="126" precision="0" type="FLOAT"/>
+								<column id="RAD/GenePixElementResult/X" name="X" nullable="true" length="12" precision="0" type="NUMBER"/>
+								<column id="RAD/GenePixElementResult/Y" name="Y" nullable="true" length="12" precision="0" type="NUMBER"/>
 							</columns>
 						</subclass>
 						<subclass id="RAD/ElementResult/QuantArrayElementResult" name="QuantArrayElementResult" versioned="true" tablespace="USERS" categoryRef="Quantified Data" updatable="true">
