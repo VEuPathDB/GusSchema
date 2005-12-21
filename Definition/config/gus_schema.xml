@@ -3802,34 +3802,34 @@
 						</constraint>
 					</constraints>
 				</table>
-				<table id="DoTS/DbRefNAFeature" name="DbRefNAFeature" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="Feature Relations" updatable="true">
+				<table id="DoTS/NaFeatureDbRef" name="NaFeatureDbRef" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="Feature Relations" updatable="true">
 					<columns>
-						<column id="DoTS/DbRefNAFeature/DB_REF_NA_FEATURE_ID" name="DB_REF_NA_FEATURE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-						<column id="DoTS/DbRefNAFeature/NA_FEATURE_ID" name="NA_FEATURE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-						<column id="DoTS/DbRefNAFeature/DB_REF_ID" name="DB_REF_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+						<column id="DoTS/NaFeatureDbRef/DB_REF_NA_FEATURE_ID" name="DB_REF_NA_FEATURE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+						<column id="DoTS/NaFeatureDbRef/NA_FEATURE_ID" name="NA_FEATURE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+						<column id="DoTS/NaFeatureDbRef/DB_REF_ID" name="DB_REF_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
 					</columns>
 					<indexes>
 						<index name="DBREFNAFEATURE_IND01" tablespace="USERS" type="NORMAL">
 							<columns>
-								<column idref="DoTS/DbRefNAFeature/NA_FEATURE_ID"/>
-								<column idref="DoTS/DbRefNAFeature/DB_REF_ID"/>
+								<column idref="DoTS/NaFeatureDbRef/NA_FEATURE_ID"/>
+								<column idref="DoTS/NaFeatureDbRef/DB_REF_ID"/>
 							</columns>
 						</index>
 						<index name="DBREFNAFEATURE_IND02" tablespace="USERS" type="NORMAL">
 							<columns>
-								<column idref="DoTS/DbRefNAFeature/DB_REF_ID"/>
+								<column idref="DoTS/NaFeatureDbRef/DB_REF_ID"/>
 							</columns>
 						</index>
 						<index name="PK_DBREFNAFEATURE" tablespace="USERS" type="NORMAL">
 							<columns>
-								<column idref="DoTS/DbRefNAFeature/DB_REF_NA_FEATURE_ID"/>
+								<column idref="DoTS/NaFeatureDbRef/DB_REF_NA_FEATURE_ID"/>
 							</columns>
 						</index>
 					</indexes>
 					<constraints>
 						<constraint name="DBREFNAFEATURE_FK04" type="FOREIGN_KEY">
 							<constrainedColumns>
-								<column idref="DoTS/DbRefNAFeature/DB_REF_ID"/>
+								<column idref="DoTS/NaFeatureDbRef/DB_REF_ID"/>
 							</constrainedColumns>
 							<referencedTable idref="SRes/DbRef"/>
 							<referencedColumns>
@@ -3838,7 +3838,7 @@
 						</constraint>
 						<constraint name="DBREFNAFEATURE_FK05" type="FOREIGN_KEY">
 							<constrainedColumns>
-								<column idref="DoTS/DbRefNAFeature/NA_FEATURE_ID"/>
+								<column idref="DoTS/NaFeatureDbRef/NA_FEATURE_ID"/>
 							</constrainedColumns>
 							<referencedTable idref="DoTS/NAFeature"/>
 							<referencedColumns>
@@ -3847,44 +3847,44 @@
 						</constraint>
 						<constraint name="PK_DBREFNAFEATURE" type="PRIMARY_KEY">
 							<constrainedColumns>
-								<column idref="DoTS/DbRefNAFeature/DB_REF_NA_FEATURE_ID"/>
+								<column idref="DoTS/NaFeatureDbRef/DB_REF_NA_FEATURE_ID"/>
 							</constrainedColumns>
 						</constraint>
 					</constraints>
 				</table>
-				<table id="DoTS/DbRefNASequence" name="DbRefNASequence" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="NA Sequence" updatable="true">
+				<table id="DoTS/NaSequenceDbRef" name="NaSequenceDbRef" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="NA Sequence" updatable="true">
 					<columns>
-						<column id="DoTS/DbRefNASequence/DB_REF_NA_SEQUENCE_ID" name="DB_REF_NA_SEQUENCE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-						<column id="DoTS/DbRefNASequence/NA_SEQUENCE_ID" name="NA_SEQUENCE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-						<column id="DoTS/DbRefNASequence/DB_REF_ID" name="DB_REF_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+						<column id="DoTS/NaSequenceDbRef/DB_REF_NA_SEQUENCE_ID" name="DB_REF_NA_SEQUENCE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+						<column id="DoTS/NaSequenceDbRef/NA_SEQUENCE_ID" name="NA_SEQUENCE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+						<column id="DoTS/NaSequenceDbRef/DB_REF_ID" name="DB_REF_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
 					</columns>
 					<indexes>
 						<index name="DBREFNASEQUENCE_IND01" tablespace="USERS" type="NORMAL">
 							<columns>
-								<column idref="DoTS/DbRefNASequence/NA_SEQUENCE_ID"/>
+								<column idref="DoTS/NaSequenceDbRef/NA_SEQUENCE_ID"/>
 							</columns>
 						</index>
 						<index name="DBREFNASEQUENCE_IND02" tablespace="USERS" type="NORMAL">
 							<columns>
-								<column idref="DoTS/DbRefNASequence/DB_REF_ID"/>
+								<column idref="DoTS/NaSequenceDbRef/DB_REF_ID"/>
 							</columns>
 						</index>
 						<index name="DBREFNASEQUENCE_IND03" tablespace="USERS" type="NORMAL">
 							<columns>
-								<column idref="DoTS/DbRefNASequence/DB_REF_ID"/>
-								<column idref="DoTS/DbRefNASequence/NA_SEQUENCE_ID"/>
+								<column idref="DoTS/NaSequenceDbRef/DB_REF_ID"/>
+								<column idref="DoTS/NaSequenceDbRef/NA_SEQUENCE_ID"/>
 							</columns>
 						</index>
 						<index name="PK_DBREFNASEQUENCE" tablespace="USERS" type="NORMAL">
 							<columns>
-								<column idref="DoTS/DbRefNASequence/DB_REF_NA_SEQUENCE_ID"/>
+								<column idref="DoTS/NaSequenceDbRef/DB_REF_NA_SEQUENCE_ID"/>
 							</columns>
 						</index>
 					</indexes>
 					<constraints>
 						<constraint name="DBREFNASEQUENCE_FK04" type="FOREIGN_KEY">
 							<constrainedColumns>
-								<column idref="DoTS/DbRefNASequence/DB_REF_ID"/>
+								<column idref="DoTS/NaSequenceDbRef/DB_REF_ID"/>
 							</constrainedColumns>
 							<referencedTable idref="SRes/DbRef"/>
 							<referencedColumns>
@@ -3893,7 +3893,7 @@
 						</constraint>
 						<constraint name="DBREFNASEQUENCE_FK05" type="FOREIGN_KEY">
 							<constrainedColumns>
-								<column idref="DoTS/DbRefNASequence/NA_SEQUENCE_ID"/>
+								<column idref="DoTS/NaSequenceDbRef/NA_SEQUENCE_ID"/>
 							</constrainedColumns>
 							<referencedTable idref="DoTS/NASequence"/>
 							<referencedColumns>
@@ -3902,7 +3902,7 @@
 						</constraint>
 						<constraint name="PK_DBREFNASEQUENCE" type="PRIMARY_KEY">
 							<constrainedColumns>
-								<column idref="DoTS/DbRefNASequence/DB_REF_NA_SEQUENCE_ID"/>
+								<column idref="DoTS/NaSequenceDbRef/DB_REF_NA_SEQUENCE_ID"/>
 							</constrainedColumns>
 						</constraint>
 					</constraints>
