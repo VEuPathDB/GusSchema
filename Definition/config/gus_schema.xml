@@ -372,6 +372,80 @@
 						</constraint>
 					</constraints>
 				</table>
+				<table id="Core/Evidence" name="Evidence" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="Evidence" updatable="true">
+					<columns>
+						<column id="Core/Evidence/EVIDENCE_ID" name="EVIDENCE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+						<column id="Core/Evidence/TARGET_TABLE_ID" name="TARGET_TABLE_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
+						<column id="Core/Evidence/TARGET_ID" name="TARGET_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+						<column id="Core/Evidence/FACT_TABLE_ID" name="FACT_TABLE_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
+						<column id="Core/Evidence/FACT_ID" name="FACT_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+						<column id="Core/Evidence/ATTRIBUTE_NAME" name="ATTRIBUTE_NAME" nullable="true" length="30" precision="0" type="STRING"/>
+						<column id="Core/Evidence/EVIDENCE_GROUP_ID" name="EVIDENCE_GROUP_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
+						<column id="Core/Evidence/BEST_EVIDENCE" name="BEST_EVIDENCE" nullable="false" length="1" precision="0" type="NUMBER"/>
+					</columns>
+					<indexes>
+						<index name="EVIDENCE_IND01" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="Core/Evidence/FACT_ID"/>
+								<column idref="Core/Evidence/FACT_TABLE_ID"/>
+							</columns>
+						</index>
+						<index name="EVIDENCE_IND02" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="Core/Evidence/TARGET_ID"/>
+								<column idref="Core/Evidence/TARGET_TABLE_ID"/>
+							</columns>
+						</index>
+						<index name="EVIDENCE_IND03" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="Core/Evidence/FACT_TABLE_ID"/>
+								<column idref="Core/Evidence/TARGET_TABLE_ID"/>
+							</columns>
+						</index>
+						<index name="EVIDENCE_IND04" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="Core/Evidence/TARGET_TABLE_ID"/>
+							</columns>
+						</index>
+						<index name="EVIDENCE_IND05" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="Core/Evidence/FACT_TABLE_ID"/>
+								<column idref="Core/Evidence/TARGET_TABLE_ID"/>
+								<column idref="Core/Evidence/FACT_ID"/>
+							</columns>
+						</index>
+						<index name="PK_EVIDENCE" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="Core/Evidence/EVIDENCE_ID"/>
+							</columns>
+						</index>
+					</indexes>
+					<constraints>
+						<constraint name="EVIDENCE_FK04" type="FOREIGN_KEY">
+							<constrainedColumns>
+								<column idref="Core/Evidence/FACT_TABLE_ID"/>
+							</constrainedColumns>
+							<referencedTable idref="Core/TableInfo"/>
+							<referencedColumns>
+								<column idref="Core/TableInfo/TABLE_ID"/>
+							</referencedColumns>
+						</constraint>
+						<constraint name="EVIDENCE_FK05" type="FOREIGN_KEY">
+							<constrainedColumns>
+								<column idref="Core/Evidence/TARGET_TABLE_ID"/>
+							</constrainedColumns>
+							<referencedTable idref="Core/TableInfo"/>
+							<referencedColumns>
+								<column idref="Core/TableInfo/TABLE_ID"/>
+							</referencedColumns>
+						</constraint>
+						<constraint name="PK_EVIDENCE" type="PRIMARY_KEY">
+							<constrainedColumns>
+								<column idref="Core/Evidence/EVIDENCE_ID"/>
+							</constrainedColumns>
+						</constraint>
+					</constraints>
+				</table>
 				<table id="Core/GroupInfo" name="GroupInfo" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="Administration" updatable="true">
 					<columns>
 						<column id="Core/GroupInfo/GROUP_ID" name="GROUP_ID" nullable="false" length="4" precision="0" type="NUMBER"/>
@@ -4217,80 +4291,6 @@
 						<constraint name="PK_EST" type="PRIMARY_KEY">
 							<constrainedColumns>
 								<column idref="DoTS/EST/EST_ID"/>
-							</constrainedColumns>
-						</constraint>
-					</constraints>
-				</table>
-				<table id="DoTS/Evidence" name="Evidence" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="Evidence" updatable="true">
-					<columns>
-						<column id="DoTS/Evidence/EVIDENCE_ID" name="EVIDENCE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-						<column id="DoTS/Evidence/TARGET_TABLE_ID" name="TARGET_TABLE_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
-						<column id="DoTS/Evidence/TARGET_ID" name="TARGET_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-						<column id="DoTS/Evidence/FACT_TABLE_ID" name="FACT_TABLE_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
-						<column id="DoTS/Evidence/FACT_ID" name="FACT_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-						<column id="DoTS/Evidence/ATTRIBUTE_NAME" name="ATTRIBUTE_NAME" nullable="true" length="30" precision="0" type="STRING"/>
-						<column id="DoTS/Evidence/EVIDENCE_GROUP_ID" name="EVIDENCE_GROUP_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
-						<column id="DoTS/Evidence/BEST_EVIDENCE" name="BEST_EVIDENCE" nullable="false" length="1" precision="0" type="NUMBER"/>
-					</columns>
-					<indexes>
-						<index name="EVIDENCE_IND01" tablespace="USERS" type="NORMAL">
-							<columns>
-								<column idref="DoTS/Evidence/FACT_ID"/>
-								<column idref="DoTS/Evidence/FACT_TABLE_ID"/>
-							</columns>
-						</index>
-						<index name="EVIDENCE_IND02" tablespace="USERS" type="NORMAL">
-							<columns>
-								<column idref="DoTS/Evidence/TARGET_ID"/>
-								<column idref="DoTS/Evidence/TARGET_TABLE_ID"/>
-							</columns>
-						</index>
-						<index name="EVIDENCE_IND03" tablespace="USERS" type="NORMAL">
-							<columns>
-								<column idref="DoTS/Evidence/FACT_TABLE_ID"/>
-								<column idref="DoTS/Evidence/TARGET_TABLE_ID"/>
-							</columns>
-						</index>
-						<index name="EVIDENCE_IND04" tablespace="USERS" type="NORMAL">
-							<columns>
-								<column idref="DoTS/Evidence/TARGET_TABLE_ID"/>
-							</columns>
-						</index>
-						<index name="EVIDENCE_IND05" tablespace="USERS" type="NORMAL">
-							<columns>
-								<column idref="DoTS/Evidence/FACT_TABLE_ID"/>
-								<column idref="DoTS/Evidence/TARGET_TABLE_ID"/>
-								<column idref="DoTS/Evidence/FACT_ID"/>
-							</columns>
-						</index>
-						<index name="PK_EVIDENCE" tablespace="USERS" type="NORMAL">
-							<columns>
-								<column idref="DoTS/Evidence/EVIDENCE_ID"/>
-							</columns>
-						</index>
-					</indexes>
-					<constraints>
-						<constraint name="EVIDENCE_FK04" type="FOREIGN_KEY">
-							<constrainedColumns>
-								<column idref="DoTS/Evidence/FACT_TABLE_ID"/>
-							</constrainedColumns>
-							<referencedTable idref="Core/TableInfo"/>
-							<referencedColumns>
-								<column idref="Core/TableInfo/TABLE_ID"/>
-							</referencedColumns>
-						</constraint>
-						<constraint name="EVIDENCE_FK05" type="FOREIGN_KEY">
-							<constrainedColumns>
-								<column idref="DoTS/Evidence/TARGET_TABLE_ID"/>
-							</constrainedColumns>
-							<referencedTable idref="Core/TableInfo"/>
-							<referencedColumns>
-								<column idref="Core/TableInfo/TABLE_ID"/>
-							</referencedColumns>
-						</constraint>
-						<constraint name="PK_EVIDENCE" type="PRIMARY_KEY">
-							<constrainedColumns>
-								<column idref="DoTS/Evidence/EVIDENCE_ID"/>
 							</constrainedColumns>
 						</constraint>
 					</constraints>
