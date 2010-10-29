@@ -72,7 +72,7 @@
 						<column id="Core/AlgorithmInvocation/END_TIME" name="END_TIME" nullable="false" length="0" precision="0" type="DATE"/>
 						<column id="Core/AlgorithmInvocation/CPUS_USED" name="CPUS_USED" nullable="true" length="5" precision="0" type="NUMBER"/>
 						<column id="Core/AlgorithmInvocation/CPU_TIME" name="CPU_TIME" nullable="true" length="126" precision="0" type="FLOAT"/>
-						<column id="Core/AlgorithmInvocation/RESULT" name="RESULT" nullable="false" length="255" precision="0" type="STRING"/>
+						<column id="Core/AlgorithmInvocation/RESULT" name="RESULT" nullable="false" length="350" precision="0" type="STRING"/>
 						<column id="Core/AlgorithmInvocation/COMMENT_STRING" name="COMMENT_STRING" nullable="true" length="255" precision="0" type="STRING"/>
 					</columns>
 					<indexes>
@@ -108,7 +108,7 @@
 					<columns>
 						<column id="Core/AlgorithmParam/ALGORITHM_PARAM_ID" name="ALGORITHM_PARAM_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
 						<column id="Core/AlgorithmParam/ALGORITHM_PARAM_KEY_ID" name="ALGORITHM_PARAM_KEY_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
-						<column id="Core/AlgorithmParam/STRING_VALUE" name="STRING_VALUE" nullable="true" length="1000" precision="0" type="STRING"/>
+						<column id="Core/AlgorithmParam/STRING_VALUE" name="STRING_VALUE" nullable="true" length="3000" precision="0" type="STRING"/>
 						<column id="Core/AlgorithmParam/FLOAT_VALUE" name="FLOAT_VALUE" nullable="true" length="126" precision="0" type="FLOAT"/>
 						<column id="Core/AlgorithmParam/INT_VALUE" name="INT_VALUE" nullable="true" length="12" precision="0" type="NUMBER"/>
 						<column id="Core/AlgorithmParam/BOOLEAN_VALUE" name="BOOLEAN_VALUE" nullable="true" length="1" precision="0" type="NUMBER"/>
@@ -244,6 +244,18 @@
 					<indexes>
 						<index name="ANALYSISALGORITHM_PK" tablespace="USERS" type="NORMAL">
 							<columns>
+								<column idref="Core/AnalysisAlgorithm/ANALYSIS_ALGORITHM_ID"/>
+							</columns>
+						</index>
+						<index name="ANALYSISALGORITHM_R01" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="Core/AnalysisAlgorithm/TABLE_ID"/>
+								<column idref="Core/AnalysisAlgorithm/ANALYSIS_ALGORITHM_ID"/>
+							</columns>
+						</index>
+						<index name="ANALYSISALGORITHM_R02" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="Core/AnalysisAlgorithm/ALGORITHM_INVOCATION_ID"/>
 								<column idref="Core/AnalysisAlgorithm/ANALYSIS_ALGORITHM_ID"/>
 							</columns>
 						</index>
@@ -992,6 +1004,13 @@
 								<column idref="DoTS/AAFeature/FEATURE_NAME_ID"/>
 							</columns>
 						</index>
+						<index name="AAFEATUREIMP_IND03" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="DoTS/AAFeature/SUBCLASS_VIEW"/>
+								<column idref="DoTS/AAFeature/PARENT_ID"/>
+								<column idref="DoTS/AAFeature/AA_FEATURE_ID"/>
+							</columns>
+						</index>
 						<index name="AAFEATUREIMP_IND04" tablespace="USERS" type="NORMAL">
 							<columns>
 								<column idref="DoTS/AAFeature/NA_FEATURE_ID"/>
@@ -1000,6 +1019,13 @@
 						<index name="AAFEATUREIMP_IND05" tablespace="USERS" type="NORMAL">
 							<columns>
 								<column idref="DoTS/AAFeature/SUBCLASS_VIEW"/>
+							</columns>
+						</index>
+						<index name="AAFEATUREIMP_IND06" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="DoTS/AAFeature/SUBCLASS_VIEW"/>
+								<column idref="DoTS/AAFeature/SOURCE_ID"/>
+								<column idref="DoTS/AAFeature/AA_FEATURE_ID"/>
 							</columns>
 						</index>
 						<index name="AAFEATUREIMP_IND07" tablespace="USERS" type="NORMAL">
@@ -1161,24 +1187,30 @@
 						</constraint>
 					</constraints>
 				</table>
-				<table id="DoTS/AAFEATURECOMMENT" name="AAFEATURECOMMENT" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="null" updatable="true">
+				<table id="DoTS/AAFeatureComment" name="AAFeatureComment" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="null" updatable="true">
 					<columns>
-						<column id="DoTS/AAFEATURECOMMENT/AA_FEATURE_COMMENT_ID" name="AA_FEATURE_COMMENT_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-						<column id="DoTS/AAFEATURECOMMENT/AA_FEATURE_ID" name="AA_FEATURE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-						<column id="DoTS/AAFEATURECOMMENT/COMMENT_NAME_ID" name="COMMENT_NAME_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
-						<column id="DoTS/AAFEATURECOMMENT/COMMENT_STRING" name="COMMENT_STRING" nullable="false" length="0" precision="0" type="CLOB"/>
+						<column id="DoTS/AAFeatureComment/AA_FEATURE_COMMENT_ID" name="AA_FEATURE_COMMENT_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+						<column id="DoTS/AAFeatureComment/AA_FEATURE_ID" name="AA_FEATURE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+						<column id="DoTS/AAFeatureComment/COMMENT_NAME_ID" name="COMMENT_NAME_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
+						<column id="DoTS/AAFeatureComment/COMMENT_STRING" name="COMMENT_STRING" nullable="false" length="0" precision="0" type="CLOB"/>
 					</columns>
 					<indexes>
 						<index name="AAFEATURECOMMENT_PK" tablespace="USERS" type="NORMAL">
 							<columns>
-								<column idref="DoTS/AAFEATURECOMMENT/AA_FEATURE_COMMENT_ID"/>
+								<column idref="DoTS/AAFeatureComment/AA_FEATURE_COMMENT_ID"/>
+							</columns>
+						</index>
+						<index name="AAFEATURECOMMENT_R01" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="DoTS/AAFeatureComment/COMMENT_NAME_ID"/>
+								<column idref="DoTS/AAFeatureComment/AA_FEATURE_COMMENT_ID"/>
 							</columns>
 						</index>
 					</indexes>
 					<constraints>
 						<constraint name="AAFEATURECOMMENT_FK" type="FOREIGN_KEY">
 							<constrainedColumns>
-								<column idref="DoTS/AAFEATURECOMMENT/COMMENT_NAME_ID"/>
+								<column idref="DoTS/AAFeatureComment/COMMENT_NAME_ID"/>
 							</constrainedColumns>
 							<referencedTable idref="DoTS/CommentName"/>
 							<referencedColumns>
@@ -1187,28 +1219,40 @@
 						</constraint>
 						<constraint name="AAFEATURECOMMENT_PK" type="PRIMARY_KEY">
 							<constrainedColumns>
-								<column idref="DoTS/AAFEATURECOMMENT/AA_FEATURE_COMMENT_ID"/>
+								<column idref="DoTS/AAFeatureComment/AA_FEATURE_COMMENT_ID"/>
 							</constrainedColumns>
 						</constraint>
 					</constraints>
 				</table>
-				<table id="DoTS/AAFEATUREDBREF" name="AAFEATUREDBREF" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="null" updatable="true">
+				<table id="DoTS/AAFeatureDbRef" name="AAFeatureDbRef" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="null" updatable="true">
 					<columns>
-						<column id="DoTS/AAFEATUREDBREF/AA_FEATURE_DB_REF_ID" name="AA_FEATURE_DB_REF_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
-						<column id="DoTS/AAFEATUREDBREF/AA_FEATURE_ID" name="AA_FEATURE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-						<column id="DoTS/AAFEATUREDBREF/DB_REF_ID" name="DB_REF_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+						<column id="DoTS/AAFeatureDbRef/AA_FEATURE_DB_REF_ID" name="AA_FEATURE_DB_REF_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
+						<column id="DoTS/AAFeatureDbRef/AA_FEATURE_ID" name="AA_FEATURE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+						<column id="DoTS/AAFeatureDbRef/DB_REF_ID" name="DB_REF_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
 					</columns>
 					<indexes>
 						<index name="AAFEATUREDBREF_PK" tablespace="USERS" type="NORMAL">
 							<columns>
-								<column idref="DoTS/AAFEATUREDBREF/AA_FEATURE_DB_REF_ID"/>
+								<column idref="DoTS/AAFeatureDbRef/AA_FEATURE_DB_REF_ID"/>
+							</columns>
+						</index>
+						<index name="AAFEATUREDBREF_R02" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="DoTS/AAFeatureDbRef/DB_REF_ID"/>
+								<column idref="DoTS/AAFeatureDbRef/AA_FEATURE_DB_REF_ID"/>
+							</columns>
+						</index>
+						<index name="AAFEATUREDBREF_R03" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="DoTS/AAFeatureDbRef/AA_FEATURE_ID"/>
+								<column idref="DoTS/AAFeatureDbRef/AA_FEATURE_DB_REF_ID"/>
 							</columns>
 						</index>
 					</indexes>
 					<constraints>
 						<constraint name="AAFEATDBREF_AAFEA" type="FOREIGN_KEY">
 							<constrainedColumns>
-								<column idref="DoTS/AAFEATUREDBREF/AA_FEATURE_ID"/>
+								<column idref="DoTS/AAFeatureDbRef/AA_FEATURE_ID"/>
 							</constrainedColumns>
 							<referencedTable idref="DoTS/AAFeature"/>
 							<referencedColumns>
@@ -1217,7 +1261,7 @@
 						</constraint>
 						<constraint name="AAFEATDBREF_DBREF" type="FOREIGN_KEY">
 							<constrainedColumns>
-								<column idref="DoTS/AAFEATUREDBREF/DB_REF_ID"/>
+								<column idref="DoTS/AAFeatureDbRef/DB_REF_ID"/>
 							</constrainedColumns>
 							<referencedTable idref="SRes/DbRef"/>
 							<referencedColumns>
@@ -1226,7 +1270,7 @@
 						</constraint>
 						<constraint name="AAFEATUREDBREF_PK" type="PRIMARY_KEY">
 							<constrainedColumns>
-								<column idref="DoTS/AAFEATUREDBREF/AA_FEATURE_DB_REF_ID"/>
+								<column idref="DoTS/AAFeatureDbRef/AA_FEATURE_DB_REF_ID"/>
 							</constrainedColumns>
 						</constraint>
 					</constraints>
@@ -1601,9 +1645,17 @@
 						</subclass>
 					</subclasses>
 					<indexes>
+						<index name="AASEQUENCEIMP_IND01" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="DoTS/AASequence/SUBCLASS_VIEW"/>
+								<column idref="DoTS/AASequence/TAXON_ID"/>
+								<column idref="DoTS/AASequence/AA_SEQUENCE_ID"/>
+							</columns>
+						</index>
 						<index name="AASEQUENCEIMP_IND02" tablespace="USERS" type="NORMAL">
 							<columns>
 								<column idref="DoTS/AASequence/EXTERNAL_DATABASE_RELEASE_ID"/>
+								<column idref="DoTS/AASequence/SUBCLASS_VIEW"/>
 							</columns>
 						</index>
 						<index name="AASEQUENCEIMP_IND03" tablespace="USERS" type="NORMAL">
@@ -1627,6 +1679,24 @@
 						</index>
 						<index name="PK_AASEQUENCEIMP" tablespace="USERS" type="NORMAL">
 							<columns>
+								<column idref="DoTS/AASequence/AA_SEQUENCE_ID"/>
+							</columns>
+						</index>
+						<index name="AASEQUENCE_R06" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="DoTS/AASequence/SEQUENCE_TYPE_ID"/>
+								<column idref="DoTS/AASequence/AA_SEQUENCE_ID"/>
+							</columns>
+						</index>
+						<index name="AASEQUENCE_R07" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="DoTS/AASequence/TAXON_ID"/>
+								<column idref="DoTS/AASequence/AA_SEQUENCE_ID"/>
+							</columns>
+						</index>
+						<index name="AASEQUENCE_R08" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="DoTS/AASequence/SEQUENCE_ONTOLOGY_ID"/>
 								<column idref="DoTS/AASequence/AA_SEQUENCE_ID"/>
 							</columns>
 						</index>
@@ -1748,11 +1818,6 @@
 								<column idref="DoTS/AASequenceEnzymeClass/AA_SEQUENCE_ID"/>
 							</columns>
 						</index>
-						<index name="AASEQUENCEENZYMECLASS_EC" tablespace="USERS" type="NORMAL">
-							<columns>
-								<column idref="DoTS/AASequenceEnzymeClass/ENZYME_CLASS_ID"/>
-							</columns>
-						</index>
 						<index name="AASEQUENCEENZYMECLASS_IND01" tablespace="USERS" type="NORMAL">
 							<columns>
 								<column idref="DoTS/AASequenceEnzymeClass/REVIEW_STATUS_ID"/>
@@ -1760,6 +1825,18 @@
 						</index>
 						<index name="PK_AASEQUENCEENZYMECLASS" tablespace="USERS" type="NORMAL">
 							<columns>
+								<column idref="DoTS/AASequenceEnzymeClass/AA_SEQUENCE_ENZYME_CLASS_ID"/>
+							</columns>
+						</index>
+						<index name="AASEQUENCEENZYMECLASS_R04" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="DoTS/AASequenceEnzymeClass/ENZYME_CLASS_ID"/>
+								<column idref="DoTS/AASequenceEnzymeClass/AA_SEQUENCE_ENZYME_CLASS_ID"/>
+							</columns>
+						</index>
+						<index name="AASEQUENCEENZYMECLASS_R05" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="DoTS/AASequenceEnzymeClass/EC_ASSIGNMENT_CONTACT_ID"/>
 								<column idref="DoTS/AASequenceEnzymeClass/AA_SEQUENCE_ENZYME_CLASS_ID"/>
 							</columns>
 						</index>
@@ -3029,6 +3106,12 @@
 								<column idref="DoTS/BLATAlignment/BLAT_ALIGNMENT_ID"/>
 							</columns>
 						</index>
+						<index name="BLATALIGNMENT_R09" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="DoTS/BLATAlignment/BLAT_ALIGNMENT_QUALITY_ID"/>
+								<column idref="DoTS/BLATAlignment/BLAT_ALIGNMENT_ID"/>
+							</columns>
+						</index>
 					</indexes>
 					<constraints>
 						<constraint name="BLATALIGNMENT_FK01" type="FOREIGN_KEY">
@@ -3775,6 +3858,57 @@
 						</constraint>
 					</constraints>
 				</table>
+				<table id="DoTS/DbRefAAFeature" name="DbRefAAFeature" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="Feature Relations" updatable="true">
+					<columns>
+						<column id="DoTS/DbRefAAFeature/DB_REF_AA_FEATURE_ID" name="DB_REF_AA_FEATURE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+						<column id="DoTS/DbRefAAFeature/AA_FEATURE_ID" name="AA_FEATURE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+						<column id="DoTS/DbRefAAFeature/DB_REF_ID" name="DB_REF_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+					</columns>
+					<indexes>
+						<index name="DBREFAAFEATURE_IND01" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="DoTS/DbRefAAFeature/AA_FEATURE_ID"/>
+								<column idref="DoTS/DbRefAAFeature/DB_REF_ID"/>
+							</columns>
+						</index>
+						<index name="DBREFAAFEATURE_IND02" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="DoTS/DbRefAAFeature/DB_REF_ID"/>
+								<column idref="DoTS/DbRefAAFeature/AA_FEATURE_ID"/>
+							</columns>
+						</index>
+						<index name="PK_DBREFAAFEATURE" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="DoTS/DbRefAAFeature/DB_REF_AA_FEATURE_ID"/>
+							</columns>
+						</index>
+					</indexes>
+					<constraints>
+						<constraint name="DBREFAAFEATURE_FK04" type="FOREIGN_KEY">
+							<constrainedColumns>
+								<column idref="DoTS/DbRefAAFeature/DB_REF_ID"/>
+							</constrainedColumns>
+							<referencedTable idref="SRes/DbRef"/>
+							<referencedColumns>
+								<column idref="SRes/DbRef/DB_REF_ID"/>
+							</referencedColumns>
+						</constraint>
+						<constraint name="DBREFAAFEATURE_FK05" type="FOREIGN_KEY">
+							<constrainedColumns>
+								<column idref="DoTS/DbRefAAFeature/AA_FEATURE_ID"/>
+							</constrainedColumns>
+							<referencedTable idref="DoTS/AAFeature"/>
+							<referencedColumns>
+								<column idref="DoTS/AAFeature/AA_FEATURE_ID"/>
+							</referencedColumns>
+						</constraint>
+						<constraint name="PK_DBREFAAFEATURE" type="PRIMARY_KEY">
+							<constrainedColumns>
+								<column idref="DoTS/DbRefAAFeature/DB_REF_AA_FEATURE_ID"/>
+							</constrainedColumns>
+						</constraint>
+					</constraints>
+				</table>
 				<table id="DoTS/DbRefNASequence" name="DbRefNASequence" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="NA Sequence" updatable="true">
 					<columns>
 						<column id="DoTS/DbRefNASequence/DB_REF_NA_SEQUENCE_ID" name="DB_REF_NA_SEQUENCE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
@@ -3888,6 +4022,18 @@
 					<indexes>
 						<index name="PK_DEVSTAGELIBRARY" tablespace="USERS" type="NORMAL">
 							<columns>
+								<column idref="DoTS/DevStageLibrary/DEV_STAGE_LIBRARY_ID"/>
+							</columns>
+						</index>
+						<index name="DEVSTAGELIBRARY_R03" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="DoTS/DevStageLibrary/DEVELOPMENTAL_STAGE_ID"/>
+								<column idref="DoTS/DevStageLibrary/DEV_STAGE_LIBRARY_ID"/>
+							</columns>
+						</index>
+						<index name="DEVSTAGELIBRARY_R04" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="DoTS/DevStageLibrary/LIBRARY_ID"/>
 								<column idref="DoTS/DevStageLibrary/DEV_STAGE_LIBRARY_ID"/>
 							</columns>
 						</index>
@@ -4820,6 +4966,12 @@
 						</index>
 						<index name="PK_GENE" tablespace="USERS" type="NORMAL">
 							<columns>
+								<column idref="DoTS/Gene/GENE_ID"/>
+							</columns>
+						</index>
+						<index name="GENE_R05" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="DoTS/Gene/SEQUENCE_ONTOLOGY_ID"/>
 								<column idref="DoTS/Gene/GENE_ID"/>
 							</columns>
 						</index>
@@ -6511,6 +6663,18 @@
 								<column idref="DoTS/MutualInformationScore/MUTUAL_INFORMATION_SCORE_ID"/>
 							</columns>
 						</index>
+						<index name="MUTUALINFORMATIONSCORE_R06" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="DoTS/MutualInformationScore/PRIMARY_PROFILE_ID"/>
+								<column idref="DoTS/MutualInformationScore/MUTUAL_INFORMATION_SCORE_ID"/>
+							</columns>
+						</index>
+						<index name="MUTUALINFORMATIONSCORE_R07" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="DoTS/MutualInformationScore/SECONDARY_PROFILE_ID"/>
+								<column idref="DoTS/MutualInformationScore/MUTUAL_INFORMATION_SCORE_ID"/>
+							</columns>
+						</index>
 					</indexes>
 					<constraints>
 						<constraint name="MUTUALINFORMATIONSCORE_FK01" type="FOREIGN_KEY">
@@ -6968,9 +7132,10 @@
 								<column id="DoTS/SeqVariation/NUM" name="NUM" nullable="true" length="4000" precision="0" type="STRING"/>
 								<column id="DoTS/SeqVariation/USEDIN" name="USEDIN" nullable="true" length="4000" precision="0" type="STRING"/>
 								<column id="DoTS/SeqVariation/MOD_BASE" name="MOD_BASE" nullable="true" length="4000" precision="0" type="STRING"/>
-								<column id="DoTS/SeqVariation/IS_PARTIAL" name="IS_PARTIAL" nullable="true" length="12" precision="0" type="NUMBER"/>
+								<column id="DoTS/SeqVariation/IS_PARTIAL" name="IS_PARTIAL" nullable="true" length="1" precision="0" type="NUMBER"/>
 								<column id="DoTS/SeqVariation/FREQUENCY" name="FREQUENCY" nullable="true" length="126" precision="0" type="FLOAT"/>
 								<column id="DoTS/SeqVariation/ALLELE" name="ALLELE" nullable="true" length="4000" precision="0" type="STRING"/>
+								<column id="DoTS/SeqVariation/MATCHES_REFERENCE" name="MATCHES_REFERENCE" nullable="true" length="1" precision="0" type="NUMBER"/>
 							</columns>
 						</subclass>
 						<subclass id="DoTS/NAFeature/Source" name="Source" versioned="true" tablespace="USERS" categoryRef="NA Sequence Features" updatable="true">
@@ -7079,17 +7244,106 @@
 								<column id="DoTS/Transcript/USEDIN" name="USEDIN" nullable="true" length="4000" precision="0" type="STRING"/>
 								<column id="DoTS/Transcript/IS_PARTIAL" name="IS_PARTIAL" nullable="true" length="12" precision="0" type="NUMBER"/>
 								<column id="DoTS/Transcript/IS_PSEUDO" name="IS_PSEUDO" nullable="true" length="12" precision="0" type="NUMBER"/>
+								<column id="DoTS/Transcript/ANTICODON" name="ANTICODON" nullable="true" length="40" precision="0" type="STRING"/>
 							</columns>
 						</subclass>
 						<subclass id="DoTS/NAFeature/TransposableElement" name="TransposableElement" versioned="true" tablespace="USERS" categoryRef="NA Sequence Features" updatable="true">
 						</subclass>
 						<subclass id="DoTS/NAFeature/UTRFeature" name="UTRFeature" versioned="true" tablespace="USERS" categoryRef="NA Sequence Features" updatable="true">
 						</subclass>
+						<subclass id="DoTS/NAFeature/IsolateFeature" name="IsolateFeature" versioned="true" tablespace="USERS" categoryRef="NA Sequence Features" updatable="true">
+								<column id="DoTS/IsolateFeature/GENE_TYPE" name="GENE_TYPE" nullable="true" length="4000" precision="0" type="STRING"/>
+								<column id="DoTS/IsolateFeature/CONFIRMED_BY_SIMILARITY" name="CONFIRMED_BY_SIMILARITY" nullable="true" length="12" precision="0" type="NUMBER"/>
+								<column id="DoTS/IsolateFeature/PREDICTION_NUMBER" name="PREDICTION_NUMBER" nullable="true" length="12" precision="0" type="NUMBER"/>
+								<column id="DoTS/IsolateFeature/NUMBER_OF_EXONS" name="NUMBER_OF_EXONS" nullable="true" length="12" precision="0" type="NUMBER"/>
+								<column id="DoTS/IsolateFeature/HAS_INITIAL_EXON" name="HAS_INITIAL_EXON" nullable="true" length="1" precision="0" type="NUMBER"/>
+								<column id="DoTS/IsolateFeature/HAS_FINAL_EXON" name="HAS_FINAL_EXON" nullable="true" length="1" precision="0" type="NUMBER"/>
+								<column id="DoTS/IsolateFeature/SCORE" name="SCORE" nullable="true" length="126" precision="0" type="FLOAT"/>
+								<column id="DoTS/IsolateFeature/SECONDARY_SCORE" name="SECONDARY_SCORE" nullable="true" length="126" precision="0" type="FLOAT"/>
+								<column id="DoTS/IsolateFeature/IS_PSEUDO" name="IS_PSEUDO" nullable="true" length="1" precision="0" type="NUMBER"/>
+								<column id="DoTS/IsolateFeature/IS_PARTIAL" name="IS_PARTIAL" nullable="true" length="1" precision="0" type="NUMBER"/>
+								<column id="DoTS/IsolateFeature/ALLELE" name="ALLELE" nullable="true" length="80" precision="0" type="STRING"/>
+								<column id="DoTS/IsolateFeature/CITATION" name="CITATION" nullable="true" length="20" precision="0" type="STRING"/>
+								<column id="DoTS/IsolateFeature/EVIDENCE" name="EVIDENCE" nullable="true" length="80" precision="0" type="STRING"/>
+								<column id="DoTS/IsolateFeature/FUNCTION" name="FUNCTION" nullable="true" length="400" precision="0" type="STRING"/>
+								<column id="DoTS/IsolateFeature/GENE" name="GENE" nullable="true" length="80" precision="0" type="STRING"/>
+								<column id="DoTS/IsolateFeature/LABEL" name="LABEL" nullable="true" length="20" precision="0" type="STRING"/>
+								<column id="DoTS/IsolateFeature/MAP" name="MAP" nullable="true" length="40" precision="0" type="STRING"/>
+								<column id="DoTS/IsolateFeature/PHENOTYPE" name="PHENOTYPE" nullable="true" length="80" precision="0" type="STRING"/>
+								<column id="DoTS/IsolateFeature/PRODUCT" name="PRODUCT" nullable="true" length="120" precision="0" type="STRING"/>
+								<column id="DoTS/IsolateFeature/STANDARD_NAME" name="STANDARD_NAME" nullable="true" length="100" precision="0" type="STRING"/>
+								<column id="DoTS/IsolateFeature/USEDIN" name="USEDIN" nullable="true" length="40" precision="0" type="STRING"/>
+								<column id="DoTS/IsolateFeature/PRODUCT_ALIAS" name="PRODUCT_ALIAS" nullable="true" length="40" precision="0" type="STRING"/>
+						</subclass>
+						<subclass id="DoTS/NAFeature/IsolateSource" name="IsolateSource" versioned="true" tablespace="USERS" categoryRef="NA Sequence Features" updatable="true">
+								<column id="DoTS/IsolateSource/CELL_LINE" name="CELL_LINE" nullable="true" length="40" precision="0" type="STRING"/>
+								<column id="DoTS/IsolateSource/CELL_TYPE" name="CELL_TYPE" nullable="true" length="60" precision="0" type="STRING"/>
+								<column id="DoTS/IsolateSource/CHROMOPLAST" name="CHROMOPLAST" nullable="true" length="20" precision="0" type="STRING"/>
+								<column id="DoTS/IsolateSource/CHROMOSOME" name="CHROMOSOME" nullable="true" length="60" precision="0" type="STRING"/>
+								<column id="DoTS/IsolateSource/CLONE" name="CLONE" nullable="true" length="120" precision="0" type="STRING"/>
+								<column id="DoTS/IsolateSource/CLONE_LIB" name="CLONE_LIB" nullable="true" length="200" precision="0" type="STRING"/>
+								<column id="DoTS/IsolateSource/COUNTRY" name="COUNTRY" nullable="true" length="80" precision="0" type="STRING"/>
+								<column id="DoTS/IsolateSource/ISOLATION_SOURCE" name="ISOLATION_SOURCE" nullable="true" length="150" precision="0" type="STRING"/>
+								<column id="DoTS/IsolateSource/NOTE" name="NOTE" nullable="true" length="400" precision="0" type="STRING"/>
+								<column id="DoTS/IsolateSource/PCR_PRIMERS" name="PCR_PRIMERS" nullable="true" length="400" precision="0" type="STRING"/>
+								<column id="DoTS/IsolateSource/ALLELE" name="ALLELE" nullable="true" length="20" precision="0" type="STRING"/>
+								<column id="DoTS/IsolateSource/COLLECTION_DATE" name="COLLECTION_DATE" nullable="true" length="20" precision="0" type="STRING"/>
+								<column id="DoTS/IsolateSource/COLLECTED_BY" name="COLLECTED_BY" nullable="true" length="40" precision="0" type="STRING"/>
+								<column id="DoTS/IsolateSource/ISOLATE" name="ISOLATE" nullable="true" length="120" precision="0" type="STRING"/>
+								<column id="DoTS/IsolateSource/DEV_STAGE" name="DEV_STAGE" nullable="true" length="80" precision="0" type="STRING"/>
+								<column id="DoTS/IsolateSource/LAB_HOST" name="LAB_HOST" nullable="true" length="80" precision="0" type="STRING"/>
+								<column id="DoTS/IsolateSource/ORGANELLE" name="ORGANELLE" nullable="true" length="30" precision="0" type="STRING"/>
+								<column id="DoTS/IsolateSource/POP_VARIANT" name="POP_VARIANT" nullable="true" length="40" precision="0" type="STRING"/>
+								<column id="DoTS/IsolateSource/TISSUE_TYPE" name="TISSUE_TYPE" nullable="true" length="40" precision="0" type="STRING"/>
+								<column id="DoTS/IsolateSource/HAPLOTYPE" name="HAPLOTYPE" nullable="true" length="20" precision="0" type="STRING"/>
+								<column id="DoTS/IsolateSource/SPECIFIC_HOST" name="SPECIFIC_HOST" nullable="true" length="80" precision="0" type="STRING"/>
+								<column id="DoTS/IsolateSource/STRAIN" name="STRAIN" nullable="true" length="120" precision="0" type="STRING"/>
+								<column id="DoTS/IsolateSource/SUB_CLONE" name="SUB_CLONE" nullable="true" length="20" precision="0" type="STRING"/>
+								<column id="DoTS/IsolateSource/SUB_SPECIES" name="SUB_SPECIES" nullable="true" length="20" precision="0" type="STRING"/>
+								<column id="DoTS/IsolateSource/SUB_STRAIN" name="SUB_STRAIN" nullable="true" length="20" precision="0" type="STRING"/>
+								<column id="DoTS/IsolateSource/SEROTYPE" name="SEROTYPE" nullable="true" length="12" precision="0" type="STRING"/>
+								<column id="DoTS/IsolateSource/VIRION" name="VIRION" nullable="true" length="20" precision="0" type="STRING"/>
+								<column id="DoTS/IsolateSource/ENVIRONMENTAL_SAMPLE" name="ENVIRONMENTAL_SAMPLE" nullable="true" length="20" precision="0" type="STRING"/>
+								<column id="DoTS/IsolateSource/MOL_TYPE" name="MOL_TYPE" nullable="true" length="30" precision="0" type="STRING"/>
+								<column id="DoTS/IsolateSource/ORGANISM" name="ORGANISM" nullable="true" length="80" precision="0" type="STRING"/>
+								<column id="DoTS/IsolateSource/IS_REFERENCE" name="IS_REFERENCE" nullable="true" length="1" precision="0" type="NUMBER"/>
+						</subclass>
+						<subclass id="DoTS/NAFeature/SnpFeature" name="SnpFeature" versioned="true" tablespace="USERS" categoryRef="NA Sequence Features" updatable="true">
+								<column id="DoTS/SnpFeature/DESCRIPTION" name="DESCRIPTION" nullable="true" length="80" precision="0" type="STRING"/>
+								<column id="DoTS/SnpFeature/REFERENCE_NA" name="REFERENCE_NA" nullable="true" length="50" precision="0" type="STRING"/>
+								<column id="DoTS/SnpFeature/REFERENCE_STRAIN" name="REFERENCE_STRAIN" nullable="true" length="20" precision="0" type="STRING"/>
+								<column id="DoTS/SnpFeature/ORGANISM" name="ORGANISM" nullable="true" length="40" precision="0" type="STRING"/>
+								<column id="DoTS/SnpFeature/REFERENCE_AA" name="REFERENCE_AA" nullable="true" length="20" precision="0" type="STRING"/>
+								<column id="DoTS/SnpFeature/MAJOR_ALLELE" name="MAJOR_ALLELE" nullable="true" length="40" precision="0" type="STRING"/>
+								<column id="DoTS/SnpFeature/MAJOR_PRODUCT" name="MAJOR_PRODUCT" nullable="true" length="20" precision="0" type="STRING"/>
+								<column id="DoTS/SnpFeature/MINOR_ALLELE" name="MINOR_ALLELE" nullable="true" length="20" precision="0" type="STRING"/>
+								<column id="DoTS/SnpFeature/MINOR_PRODUCT" name="MINOR_PRODUCT" nullable="true" length="20" precision="0" type="STRING"/>
+								<column id="DoTS/SnpFeature/STRAINS" name="STRAINS" nullable="true" length="4000" precision="0" type="STRING"/>
+								<column id="DoTS/SnpFeature/STRAINS_REVCOMP" name="STRAINS_REVCOMP" nullable="true" length="4000" precision="0" type="STRING"/>
+								<column id="DoTS/SnpFeature/IS_CODING" name="IS_CODING" nullable="true" length="1" precision="0" type="NUMBER"/>
+								<column id="DoTS/SnpFeature/POSITION_IN_CDS" name="POSITION_IN_CDS" nullable="true" length="4" precision="0" type="NUMBER"/>
+								<column id="DoTS/SnpFeature/MINOR_ALLELE_COUNT" name="MINOR_ALLELE_COUNT" nullable="true" length="3" precision="0" type="NUMBER"/>
+								<column id="DoTS/SnpFeature/POSITION_IN_PROTEIN" name="POSITION_IN_PROTEIN" nullable="true" length="4" precision="0" type="NUMBER"/>
+								<column id="DoTS/SnpFeature/HAS_NONSYNONYMOUS_ALLELE" name="HAS_NONSYNONYMOUS_ALLELE" nullable="true" length="1" precision="0" type="NUMBER"/>
+								<column id="DoTS/SnpFeature/MAJOR_ALLELE_COUNT" name="MAJOR_ALLELE_COUNT" nullable="true" length="3" precision="0" type="NUMBER"/>
+						</subclass>
+						<subclass id="DoTS/NAFeature/ArrayElementFeature" name="ArrayElementFeature" versioned="true" tablespace="USERS" categoryRef="NA Sequence Features" updatable="true">
+								<column id="DoTS/ArrayElementFeature/DESCRIPTION" name="DESCRIPTION" nullable="true" length="200" precision="0" type="STRING"/>
+								<column id="DoTS/ArrayElementFeature/PROBE_SET" name="PROBE_SET" nullable="true" length="80" precision="0" type="STRING"/>
+								<column id="DoTS/ArrayElementFeature/PROBE_COUNT" name="PROBE_COUNT" nullable="true" length="6" precision="0" type="NUMBER"/>
+						</subclass>
 					</subclasses>
 					<indexes>
 						<index name="NAFEATUREIMP_IND01" tablespace="USERS" type="NORMAL">
 							<columns>
 								<column idref="DoTS/NAFeature/NA_SEQUENCE_ID"/>
+							</columns>
+						</index>
+						<index name="NAFEATUREIMP_IND02" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="DoTS/NAFeature/SUBCLASS_VIEW"/>
+								<column idref="DoTS/NAFeature/PARENT_ID"/>
+								<column idref="DoTS/NAFeature/NA_FEATURE_ID"/>
 							</columns>
 						</index>
 						<index name="NAFEATUREIMP_IND03" tablespace="USERS" type="NORMAL">
@@ -7105,6 +7359,13 @@
 						<index name="NAFEATUREIMP_IND05" tablespace="USERS" type="NORMAL">
 							<columns>
 								<column idref="DoTS/NAFeature/EXTERNAL_DATABASE_RELEASE_ID"/>
+							</columns>
+						</index>
+						<index name="NAFEATUREIMP_IND06" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="DoTS/NAFeature/SUBCLASS_VIEW"/>
+								<column idref="DoTS/NAFeature/SOURCE_ID"/>
+								<column idref="DoTS/NAFeature/NA_FEATURE_ID"/>
 							</columns>
 						</index>
 						<index name="NAFEATUREIMP_IND08" tablespace="USERS" type="NORMAL">
@@ -7651,6 +7912,7 @@
 						<column id="DoTS/NASequence/SOURCE_NA_SEQUENCE_ID" name="SOURCE_NA_SEQUENCE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
 						<column id="DoTS/NASequence/SEQUENCE_PIECE_ID" name="SEQUENCE_PIECE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
 						<column id="DoTS/NASequence/SEQUENCING_CENTER_CONTACT_ID" name="SEQUENCING_CENTER_CONTACT_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
+						<column id="DoTS/NASequence/SOURCE_ID" name="SOURCE_ID" nullable="true" length="80" precision="0" type="STRING"/>
 					</columns>
 					<subclasses>
 						<subclass id="DoTS/NASequence/Assembly" name="Assembly" versioned="true" tablespace="USERS" categoryRef="NA Sequence" updatable="true">
@@ -7666,7 +7928,6 @@
 						</subclass>
 						<subclass id="DoTS/NASequence/ExternalNASequence" name="ExternalNASequence" versioned="true" tablespace="USERS" categoryRef="NA Sequence" updatable="true">
 							<columns>
-								<column id="DoTS/ExternalNASequence/SOURCE_ID" name="SOURCE_ID" nullable="true" length="255" precision="0" type="STRING"/>
 								<column id="DoTS/ExternalNASequence/SECONDARY_IDENTIFIER" name="SECONDARY_IDENTIFIER" nullable="true" length="255" precision="0" type="STRING"/>
 								<column id="DoTS/ExternalNASequence/NAME" name="NAME" nullable="true" length="255" precision="0" type="STRING"/>
 								<column id="DoTS/ExternalNASequence/CHROMOSOME" name="CHROMOSOME" nullable="true" length="255" precision="0" type="STRING"/>
@@ -7675,7 +7936,6 @@
 						</subclass>
 						<subclass id="DoTS/NASequence/SplicedNASequence" name="SplicedNASequence" versioned="true" tablespace="USERS" categoryRef="NA Sequence" updatable="true">
 							<columns>
-								<column id="DoTS/SplicedNASequence/SOURCE_ID" name="SOURCE_ID" nullable="true" length="255" precision="0" type="STRING"/>
 								<column id="DoTS/SplicedNASequence/SECONDARY_IDENTIFIER" name="SECONDARY_IDENTIFIER" nullable="true" length="255" precision="0" type="STRING"/>
 								<column id="DoTS/SplicedNASequence/NAME" name="NAME" nullable="true" length="255" precision="0" type="STRING"/>
 							</columns>
@@ -7683,7 +7943,6 @@
 						<subclass id="DoTS/NASequence/VirtualSequence" name="VirtualSequence" versioned="true" tablespace="USERS" categoryRef="NA Sequence" updatable="true">
 							<columns>
 								<column id="DoTS/VirtualSequence/CONFIDENCE" name="CONFIDENCE" nullable="true" length="255" precision="0" type="STRING"/>
-								<column id="DoTS/VirtualSequence/SOURCE_ID" name="SOURCE_ID" nullable="true" length="255" precision="0" type="STRING"/>
 								<column id="DoTS/VirtualSequence/SECONDARY_IDENTIFIER" name="SECONDARY_IDENTIFIER" nullable="true" length="255" precision="0" type="STRING"/>
 								<column id="DoTS/VirtualSequence/CHROMOSOME" name="CHROMOSOME" nullable="true" length="255" precision="0" type="STRING"/>
 								<column id="DoTS/VirtualSequence/CHROMOSOME_ORDER_NUM" name="CHROMOSOME_ORDER_NUM" nullable="true" length="12" precision="0" type="NUMBER"/>
@@ -7736,6 +7995,18 @@
 						</index>
 						<index name="PK_NASEQUENCEIMP" tablespace="USERS" type="NORMAL">
 							<columns>
+								<column idref="DoTS/NASequence/NA_SEQUENCE_ID"/>
+							</columns>
+						</index>
+						<index name="NASEQUENCE_R08" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="DoTS/NASequence/SEQUENCE_ONTOLOGY_ID"/>
+								<column idref="DoTS/NASequence/NA_SEQUENCE_ID"/>
+							</columns>
+						</index>
+						<index name="NASEQUENCE_R09" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="DoTS/NASequence/SOURCE_NA_SEQUENCE_ID"/>
 								<column idref="DoTS/NASequence/NA_SEQUENCE_ID"/>
 							</columns>
 						</index>
@@ -8416,6 +8687,18 @@
 								<column idref="DoTS/PhylogeneticProfile/PHYLOGENETIC_PROFILE_ID"/>
 							</columns>
 						</index>
+						<index name="PHYLOGENETICPROFILE_R00" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="DoTS/PhylogeneticProfile/PHYLOGENETIC_PROFILE_SET_ID"/>
+								<column idref="DoTS/PhylogeneticProfile/PHYLOGENETIC_PROFILE_ID"/>
+							</columns>
+						</index>
+						<index name="PHYLOGENETICPROFILE_R01" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="DoTS/PhylogeneticProfile/NA_FEATURE_ID"/>
+								<column idref="DoTS/PhylogeneticProfile/PHYLOGENETIC_PROFILE_ID"/>
+							</columns>
+						</index>
 					</indexes>
 					<constraints>
 						<constraint name="PHYLOGENETICPROFILE_FK01" type="FOREIGN_KEY">
@@ -8456,6 +8739,12 @@
 								<column idref="DoTS/PhylogeneticProfileMember/PHYLOGENETIC_PROFILE_MEMBER_ID"/>
 							</columns>
 						</index>
+						<index name="PHYLOGENETICPROFILEMEMBER_R02" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="DoTS/PhylogeneticProfileMember/TAXON_ID"/>
+								<column idref="DoTS/PhylogeneticProfileMember/PHYLOGENETIC_PROFILE_MEMBER_ID"/>
+							</columns>
+						</index>
 					</indexes>
 					<constraints>
 						<constraint name="PHYLOGENETICPROFILEMEMBER_FK01" type="FOREIGN_KEY">
@@ -8483,6 +8772,12 @@
 					<indexes>
 						<index name="PK_PHYLOGENETICPROFILESET" tablespace="USERS" type="NORMAL">
 							<columns>
+								<column idref="DoTS/PhylogeneticProfileSet/PHYLOGENETIC_PROFILE_SET_ID"/>
+							</columns>
+						</index>
+						<index name="PHYLOGENETICPROFILESET_R03" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="DoTS/PhylogeneticProfileSet/PRED_ALG_INVOCATION_ID"/>
 								<column idref="DoTS/PhylogeneticProfileSet/PHYLOGENETIC_PROFILE_SET_ID"/>
 							</columns>
 						</index>
@@ -8587,6 +8882,12 @@
 						<index name="PROTEIN_IND03" tablespace="USERS" type="NORMAL">
 							<columns>
 								<column idref="DoTS/Protein/REVIEW_STATUS_ID"/>
+							</columns>
+						</index>
+						<index name="PROTEIN_R04" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="DoTS/Protein/SEQUENCE_ONTOLOGY_ID"/>
+								<column idref="DoTS/Protein/PROTEIN_ID"/>
 							</columns>
 						</index>
 					</indexes>
@@ -8993,6 +9294,24 @@
 								<column idref="DoTS/RejectedMotif/EXTERNAL_DATABASE_ID"/>
 							</columns>
 						</index>
+						<index name="REJECTEDMOTIF_R05" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="DoTS/RejectedMotif/EXTERNAL_DATABASE_RELEASE_ID"/>
+								<column idref="DoTS/RejectedMotif/REJECTED_MOTIF_ID"/>
+							</columns>
+						</index>
+						<index name="REJECTEDMOTIF_R06" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="DoTS/RejectedMotif/EXTERNAL_DATABASE_ID"/>
+								<column idref="DoTS/RejectedMotif/REJECTED_MOTIF_ID"/>
+							</columns>
+						</index>
+						<index name="REJECTEDMOTIF_R07" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="DoTS/RejectedMotif/MOTIF_REJECTION_REASON_ID"/>
+								<column idref="DoTS/RejectedMotif/REJECTED_MOTIF_ID"/>
+							</columns>
+						</index>
 					</indexes>
 					<constraints>
 						<constraint name="PK_REJECTEDMOTIF" type="PRIMARY_KEY">
@@ -9297,6 +9616,12 @@
 						<index name="RNA_IND02" tablespace="USERS" type="NORMAL">
 							<columns>
 								<column idref="DoTS/RNA/GENE_ID"/>
+							</columns>
+						</index>
+						<index name="RNA_R08" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="DoTS/RNA/SEQUENCE_ONTOLOGY_ID"/>
+								<column idref="DoTS/RNA/RNA_ID"/>
 							</columns>
 						</index>
 					</indexes>
@@ -9929,6 +10254,18 @@
 								<column idref="DoTS/SecondaryStructure/SECONDARY_STRUCTURE_ID"/>
 							</columns>
 						</index>
+						<index name="SECONDARYSTRUCTURE_R00" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="DoTS/SecondaryStructure/PRED_ALG_INVOCATION_ID"/>
+								<column idref="DoTS/SecondaryStructure/SECONDARY_STRUCTURE_ID"/>
+							</columns>
+						</index>
+						<index name="SECONDARYSTRUCTURE_R09" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="DoTS/SecondaryStructure/AA_SEQUENCE_ID"/>
+								<column idref="DoTS/SecondaryStructure/SECONDARY_STRUCTURE_ID"/>
+							</columns>
+						</index>
 					</indexes>
 					<constraints>
 						<constraint name="AA_SEQUENCE_FK" type="FOREIGN_KEY">
@@ -9962,10 +10299,17 @@
 						<column id="DoTS/SecondaryStructureCall/SECONDARY_STRUCTURE_ID" name="SECONDARY_STRUCTURE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
 						<column id="DoTS/SecondaryStructureCall/STRUCTURE_TYPE" name="STRUCTURE_TYPE" nullable="false" length="1" precision="0" type="STRING"/>
 						<column id="DoTS/SecondaryStructureCall/CALL_CONFIDENCE" name="CALL_CONFIDENCE" nullable="true" length="0" precision="0" type="CLOB"/>
+						<column id="DoTS/SecondaryStructureCall/PERCENTAGE" name="PERCENTAGE" nullable="false" length="3" precision="0" type="NUMBER"/>
 					</columns>
 					<indexes>
 						<index name="PK_SECONDARYSTRUCTURECALL" tablespace="USERS" type="NORMAL">
 							<columns>
+								<column idref="DoTS/SecondaryStructureCall/SECONDARY_STRUCTURE_CALL_ID"/>
+							</columns>
+						</index>
+						<index name="SECONDARYSTRUCTURECALL_IND01" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="DoTS/SecondaryStructureCall/SECONDARY_STRUCTURE_ID"/>
 								<column idref="DoTS/SecondaryStructureCall/SECONDARY_STRUCTURE_CALL_ID"/>
 							</columns>
 						</index>
@@ -10399,6 +10743,14 @@
 								<column idref="DoTS/Similarity/SIMILARITY_ID"/>
 							</columns>
 						</index>
+						<index name="SIMILARITY_IND01" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="DoTS/Similarity/QUERY_ID"/>
+								<column idref="DoTS/Similarity/PVALUE_EXP"/>
+								<column idref="DoTS/Similarity/PVALUE_MANT"/>
+								<column idref="DoTS/Similarity/SUBJECT_ID"/>
+							</columns>
+						</index>
 						<index name="SIMILARITY_IND03" tablespace="USERS" type="NORMAL">
 							<columns>
 								<column idref="DoTS/Similarity/SUBJECT_TABLE_ID"/>
@@ -10571,6 +10923,18 @@
 								<column idref="PROT/Acquisition/ACQUISITION_ID"/>
 							</columns>
 						</index>
+						<index name="ACQUISITION_R04" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="PROT/Acquisition/PROTOCOL_INSTANCE_ID"/>
+								<column idref="PROT/Acquisition/ACQUISITION_ID"/>
+							</columns>
+						</index>
+						<index name="ACQUISITION_R05" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="PROT/Acquisition/ASSAY_ID"/>
+								<column idref="PROT/Acquisition/ACQUISITION_ID"/>
+							</columns>
+						</index>
 					</indexes>
 					<constraints>
 						<constraint name="FK_ACQ_REF_ASSAY" type="FOREIGN_KEY">
@@ -10607,6 +10971,18 @@
 					<indexes>
 						<index name="ACQUISITIONCHAIN_PK" tablespace="USERS" type="NORMAL">
 							<columns>
+								<column idref="PROT/AcquisitionChain/ACQUISITION_CHAIN_ID"/>
+							</columns>
+						</index>
+						<index name="ACQUISITIONCHAIN_R00" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="PROT/AcquisitionChain/CHILD_ACQUISITION_ID"/>
+								<column idref="PROT/AcquisitionChain/ACQUISITION_CHAIN_ID"/>
+							</columns>
+						</index>
+						<index name="ACQUISITIONCHAIN_R01" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="PROT/AcquisitionChain/PARENT_ACQUISITION_ID"/>
 								<column idref="PROT/AcquisitionChain/ACQUISITION_CHAIN_ID"/>
 							</columns>
 						</index>
@@ -10649,6 +11025,18 @@
 								<column idref="PROT/AcquisitionChannel/ACQUISITION_CHANNEL_ID"/>
 							</columns>
 						</index>
+						<index name="ACQUISITIONCHANNEL_R02" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="PROT/AcquisitionChannel/ACQUISITION_ID"/>
+								<column idref="PROT/AcquisitionChannel/ACQUISITION_CHANNEL_ID"/>
+							</columns>
+						</index>
+						<index name="ACQUISITIONCHANNEL_R03" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="PROT/AcquisitionChannel/ONTOLOGY_ENTRY_ID"/>
+								<column idref="PROT/AcquisitionChannel/ACQUISITION_CHANNEL_ID"/>
+							</columns>
+						</index>
 					</indexes>
 					<constraints>
 						<constraint name="ACQUSITION_FK" type="FOREIGN_KEY">
@@ -10685,6 +11073,18 @@
 					<indexes>
 						<index name="PK_ACQUISITIONQUANTIFICATION" tablespace="USERS" type="NORMAL">
 							<columns>
+								<column idref="PROT/AcquisitionQuantification/ACQUISITION_QUANTIFICATION_ID"/>
+							</columns>
+						</index>
+						<index name="ACQUISITIONQUANTIFICATION_R06" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="PROT/AcquisitionQuantification/QUANTIFICATION_ID"/>
+								<column idref="PROT/AcquisitionQuantification/ACQUISITION_QUANTIFICATION_ID"/>
+							</columns>
+						</index>
+						<index name="ACQUISITIONQUANTIFICATION_R07" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="PROT/AcquisitionQuantification/ACQUISITION_ID"/>
 								<column idref="PROT/AcquisitionQuantification/ACQUISITION_QUANTIFICATION_ID"/>
 							</columns>
 						</index>
@@ -10737,6 +11137,18 @@
 					<indexes>
 						<index name="PK_ASSAYIMP" tablespace="USERS" type="NORMAL">
 							<columns>
+								<column idref="PROT/Assay/ASSAY_ID"/>
+							</columns>
+						</index>
+						<index name="ASSAY_R00" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="PROT/Assay/FEATURE_SET_ID"/>
+								<column idref="PROT/Assay/ASSAY_ID"/>
+							</columns>
+						</index>
+						<index name="ASSAY_R01" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="PROT/Assay/ASSAY_TYPE_ID"/>
 								<column idref="PROT/Assay/ASSAY_ID"/>
 							</columns>
 						</index>
@@ -10801,6 +11213,18 @@
 								<column idref="PROT/AssayChain/ASSAY_CHAIN_ID"/>
 							</columns>
 						</index>
+						<index name="ASSAYCHAIN_R08" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="PROT/AssayChain/SOURCE_ASSAY_ID"/>
+								<column idref="PROT/AssayChain/ASSAY_CHAIN_ID"/>
+							</columns>
+						</index>
+						<index name="ASSAYCHAIN_R09" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="PROT/AssayChain/TARGET_ASSAY_ID"/>
+								<column idref="PROT/AssayChain/ASSAY_CHAIN_ID"/>
+							</columns>
+						</index>
 					</indexes>
 					<constraints>
 						<constraint name="FK_ASSAYCHA_REF_ASSAY_S" type="FOREIGN_KEY">
@@ -10837,6 +11261,18 @@
 					<indexes>
 						<index name="PK_ASSAYINPUT" tablespace="USERS" type="NORMAL">
 							<columns>
+								<column idref="PROT/AssayInput/ASSAY_INPUT_ID"/>
+							</columns>
+						</index>
+						<index name="ASSAYINPUT_R02" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="PROT/AssayInput/BIO_MATERIAL_MEASUREMENT_ID"/>
+								<column idref="PROT/AssayInput/ASSAY_INPUT_ID"/>
+							</columns>
+						</index>
+						<index name="ASSAYINPUT_R03" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="PROT/AssayInput/ASSAY_ID"/>
 								<column idref="PROT/AssayInput/ASSAY_INPUT_ID"/>
 							</columns>
 						</index>
@@ -10880,6 +11316,12 @@
 								<column idref="PROT/AssayParentFile/ASSAY_PARENT_FILE_ID"/>
 							</columns>
 						</index>
+						<index name="ASSAYPARENTFILE_R04" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="PROT/AssayParentFile/PARENT_FILE_ID"/>
+								<column idref="PROT/AssayParentFile/ASSAY_PARENT_FILE_ID"/>
+							</columns>
+						</index>
 					</indexes>
 					<constraints>
 						<constraint name="ASSAYPARENTFILE_PK" type="PRIMARY_KEY">
@@ -10908,6 +11350,24 @@
 					<indexes>
 						<index name="PK_ASSAYPRODUCT" tablespace="USERS" type="NORMAL">
 							<columns>
+								<column idref="PROT/AssayProduct/ASSAY_PRODUCT_ID"/>
+							</columns>
+						</index>
+						<index name="ASSAYPRODUCT_R05" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="PROT/AssayProduct/FEATURE_ID"/>
+								<column idref="PROT/AssayProduct/ASSAY_PRODUCT_ID"/>
+							</columns>
+						</index>
+						<index name="ASSAYPRODUCT_R06" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="PROT/AssayProduct/BIO_MATERIAL_MEASUREMENT_ID"/>
+								<column idref="PROT/AssayProduct/ASSAY_PRODUCT_ID"/>
+							</columns>
+						</index>
+						<index name="ASSAYPRODUCT_R07" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="PROT/AssayProduct/ASSAY_ID"/>
 								<column idref="PROT/AssayProduct/ASSAY_PRODUCT_ID"/>
 							</columns>
 						</index>
@@ -11006,6 +11466,18 @@
 								<column idref="PROT/DataTransformation/DATA_TRANSFORMATION_IO_ID"/>
 							</columns>
 						</index>
+						<index name="DATATRANSFORMATION_R08" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="PROT/DataTransformation/INPUT_QUANTIFICATION_ID"/>
+								<column idref="PROT/DataTransformation/DATA_TRANSFORMATION_IO_ID"/>
+							</columns>
+						</index>
+						<index name="DATATRANSFORMATION_R09" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="PROT/DataTransformation/QUANTIFICATION_ID"/>
+								<column idref="PROT/DataTransformation/DATA_TRANSFORMATION_IO_ID"/>
+							</columns>
+						</index>
 					</indexes>
 					<constraints>
 						<constraint name="FK_DATATRAN_REF_QUANT_I" type="FOREIGN_KEY">
@@ -11049,6 +11521,12 @@
 					<indexes>
 						<index name="PK_ELEMENTRESULTIMP" tablespace="USERS" type="NORMAL">
 							<columns>
+								<column idref="PROT/ElementResult/ELEMENT_RESULT_ID"/>
+							</columns>
+						</index>
+						<index name="ELEMENTRESULT_R00" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="PROT/ElementResult/QUANTIFICATION_ID"/>
 								<column idref="PROT/ElementResult/ELEMENT_RESULT_ID"/>
 							</columns>
 						</index>
@@ -11096,6 +11574,12 @@
 								<column idref="PROT/Feature/FEATURE_ID"/>
 							</columns>
 						</index>
+						<index name="FEATURE_R01" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="PROT/Feature/FEATURE_SET_ID"/>
+								<column idref="PROT/Feature/FEATURE_ID"/>
+							</columns>
+						</index>
 					</indexes>
 					<constraints>
 						<constraint name="FK_FT_REF_FTS" type="FOREIGN_KEY">
@@ -11123,6 +11607,18 @@
 					<indexes>
 						<index name="PK_FEATUREINPUT" tablespace="USERS" type="NORMAL">
 							<columns>
+								<column idref="PROT/FeatureInput/FEATURE_INPUT_ID"/>
+							</columns>
+						</index>
+						<index name="FEATUREINPUT_R02" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="PROT/FeatureInput/FEATURE_ID"/>
+								<column idref="PROT/FeatureInput/FEATURE_INPUT_ID"/>
+							</columns>
+						</index>
+						<index name="FEATUREINPUT_R03" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="PROT/FeatureInput/ACQUISITION_ID"/>
 								<column idref="PROT/FeatureInput/FEATURE_INPUT_ID"/>
 							</columns>
 						</index>
@@ -11183,6 +11679,24 @@
 								<column idref="PROT/FeatureSet/FEATURE_SET_ID"/>
 							</columns>
 						</index>
+						<index name="FEATURESET_R04" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="PROT/FeatureSet/PROTOCOL_INSTANCE_ID"/>
+								<column idref="PROT/FeatureSet/FEATURE_SET_ID"/>
+							</columns>
+						</index>
+						<index name="FEATURESET_R05" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="PROT/FeatureSet/SURFACE_TYPE_ID"/>
+								<column idref="PROT/FeatureSet/FEATURE_SET_ID"/>
+							</columns>
+						</index>
+						<index name="FEATURESET_R06" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="PROT/FeatureSet/TECHNOLOGY_TYPE_ID"/>
+								<column idref="PROT/FeatureSet/FEATURE_SET_ID"/>
+							</columns>
+						</index>
 					</indexes>
 					<constraints>
 						<constraint name="FK_FTS_PROT_INS" type="FOREIGN_KEY">
@@ -11232,6 +11746,12 @@
 								<column idref="PROT/FSGAnnotation/FSG_ANNOTATION_ID"/>
 							</columns>
 						</index>
+						<index name="FSGANNOTATION_R07" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="PROT/FSGAnnotation/FEATURE_SET_ID"/>
+								<column idref="PROT/FSGAnnotation/FSG_ANNOTATION_ID"/>
+							</columns>
+						</index>
 					</indexes>
 					<constraints>
 						<constraint name="FK_FSGANNOT_REF_FTS" type="FOREIGN_KEY">
@@ -11263,6 +11783,30 @@
 					<indexes>
 						<index name="PK_PARAMETER" tablespace="USERS" type="NORMAL">
 							<columns>
+								<column idref="PROT/Parameter/PARAMETER_ID"/>
+							</columns>
+						</index>
+						<index name="PARAMETER_R00" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="PROT/Parameter/UNIT_TYPE_ID"/>
+								<column idref="PROT/Parameter/PARAMETER_ID"/>
+							</columns>
+						</index>
+						<index name="PARAMETER_R01" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="PROT/Parameter/VALUE_CLASS_OE_ID"/>
+								<column idref="PROT/Parameter/PARAMETER_ID"/>
+							</columns>
+						</index>
+						<index name="PARAMETER_R08" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="PROT/Parameter/PARAMETERIZABLE_ID"/>
+								<column idref="PROT/Parameter/PARAMETER_ID"/>
+							</columns>
+						</index>
+						<index name="PARAMETER_R09" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="PROT/Parameter/DATA_TYPE_ID"/>
 								<column idref="PROT/Parameter/PARAMETER_ID"/>
 							</columns>
 						</index>
@@ -11322,6 +11866,24 @@
 					<indexes>
 						<index name="PK_PARAMETERINSTANCE" tablespace="USERS" type="NORMAL">
 							<columns>
+								<column idref="PROT/ParameterInstance/PARAMETER_INSTANCE_ID"/>
+							</columns>
+						</index>
+						<index name="PARAMETERINSTANCE_R02" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="PROT/ParameterInstance/PARAMETERIZABLE_INSTANCE_ID"/>
+								<column idref="PROT/ParameterInstance/PARAMETER_INSTANCE_ID"/>
+							</columns>
+						</index>
+						<index name="PARAMETERINSTANCE_R03" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="PROT/ParameterInstance/PARAMETER_ID"/>
+								<column idref="PROT/ParameterInstance/PARAMETER_INSTANCE_ID"/>
+							</columns>
+						</index>
+						<index name="PARAMETERINSTANCE_R04" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="PROT/ParameterInstance/VALUE_ONTOLOGY_ENTRY_ID"/>
 								<column idref="PROT/ParameterInstance/PARAMETER_INSTANCE_ID"/>
 							</columns>
 						</index>
@@ -11402,6 +11964,24 @@
 								<column idref="PROT/Parameterizable/PARAMETERIZABLE_ID"/>
 							</columns>
 						</index>
+						<index name="PARAMETERIZABLE_R05" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="PROT/Parameterizable/CHILD_PRMZ_ID"/>
+								<column idref="PROT/Parameterizable/PARAMETERIZABLE_ID"/>
+							</columns>
+						</index>
+						<index name="PARAMETERIZABLE_R04" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="PROT/Parameterizable/EXTERNAL_DATABASE_RELEASE_ID"/>
+								<column idref="PROT/Parameterizable/PARAMETERIZABLE_ID"/>
+							</columns>
+						</index>
+						<index name="PARAMETERIZABLE_R03" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="PROT/Parameterizable/BIBLIOGRAPHIC_REFERENCE_ID"/>
+								<column idref="PROT/Parameterizable/PARAMETERIZABLE_ID"/>
+							</columns>
+						</index>
 					</indexes>
 					<constraints>
 						<constraint name="FK_PRMZ_REF_CHILDPROT" type="FOREIGN_KEY">
@@ -11438,6 +12018,24 @@
 					<indexes>
 						<index name="PK_PARAMETERIZABLEINSTANCEIMP" tablespace="USERS" type="NORMAL">
 							<columns>
+								<column idref="PROT/ParameterizableInstance/PARAMETERIZABLE_INSTANCE_ID"/>
+							</columns>
+						</index>
+						<index name="PARAMETERIZABLEINSTANCE_R06" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="PROT/ParameterizableInstance/CHILD_PI_ID"/>
+								<column idref="PROT/ParameterizableInstance/PARAMETERIZABLE_INSTANCE_ID"/>
+							</columns>
+						</index>
+						<index name="PARAMETERIZABLEINSTANCE_R07" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="PROT/ParameterizableInstance/PARENT_PI_ID"/>
+								<column idref="PROT/ParameterizableInstance/PARAMETERIZABLE_INSTANCE_ID"/>
+							</columns>
+						</index>
+						<index name="PARAMETERIZABLEINSTANCE_R08" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="PROT/ParameterizableInstance/PARAMETERIZABLE_ID"/>
 								<column idref="PROT/ParameterizableInstance/PARAMETERIZABLE_INSTANCE_ID"/>
 							</columns>
 						</index>
@@ -11510,6 +12108,18 @@
 								<column idref="PROT/ParameterizableLink/PARAMETERIZABLE_LINK_ID"/>
 							</columns>
 						</index>
+						<index name="PARAMETERIZABLELINK_R00" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="PROT/ParameterizableLink/PARENT_PRMZ_ID"/>
+								<column idref="PROT/ParameterizableLink/PARAMETERIZABLE_LINK_ID"/>
+							</columns>
+						</index>
+						<index name="PARAMETERIZABLELINK_R09" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="PROT/ParameterizableLink/CHILD_PRMZ_ID"/>
+								<column idref="PROT/ParameterizableLink/PARAMETERIZABLE_LINK_ID"/>
+							</columns>
+						</index>
 					</indexes>
 					<constraints>
 						<constraint name="FK_PRMZLNK_REF_CHILDPRMZ" type="FOREIGN_KEY">
@@ -11549,6 +12159,12 @@
 								<column idref="PROT/ParentFile/PARENT_FILE_ID"/>
 							</columns>
 						</index>
+						<index name="PARENTFILE_R01" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="PROT/ParentFile/PARENT_FILE_TYPE_ID"/>
+								<column idref="PROT/ParentFile/PARENT_FILE_ID"/>
+							</columns>
+						</index>
 					</indexes>
 					<constraints>
 						<constraint name="PARENTFILE_PK" type="PRIMARY_KEY">
@@ -11584,6 +12200,12 @@
 					<indexes>
 						<index name="PK_QUANTIFICATIONIMP" tablespace="USERS" type="NORMAL">
 							<columns>
+								<column idref="PROT/Quantification/QUANTIFICATION_ID"/>
+							</columns>
+						</index>
+						<index name="QUANTIFICATION_R02" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="PROT/Quantification/PROTOCOL_INSTANCE_ID"/>
 								<column idref="PROT/Quantification/QUANTIFICATION_ID"/>
 							</columns>
 						</index>
@@ -11751,6 +12373,30 @@
 								<column idref="PROT/StudyFactorValue/STUDY_FACTOR_VALUE_ID"/>
 							</columns>
 						</index>
+						<index name="STUDYFACTORVALUE_R02" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="PROT/StudyFactorValue/VALUE_ONTOLOGY_ENTRY_ID"/>
+								<column idref="PROT/StudyFactorValue/STUDY_FACTOR_VALUE_ID"/>
+							</columns>
+						</index>
+						<index name="STUDYFACTORVALUE_R03" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="PROT/StudyFactorValue/ASSAY_ID"/>
+								<column idref="PROT/StudyFactorValue/STUDY_FACTOR_VALUE_ID"/>
+							</columns>
+						</index>
+						<index name="STUDYFACTORVALUE_R04" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="PROT/StudyFactorValue/STUDY_FACTOR_ID"/>
+								<column idref="PROT/StudyFactorValue/STUDY_FACTOR_VALUE_ID"/>
+							</columns>
+						</index>
+						<index name="STUDYFACTORVALUE_R08" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="PROT/StudyFactorValue/MEASUREMENT_UNIT_TYPE_ID"/>
+								<column idref="PROT/StudyFactorValue/STUDY_FACTOR_VALUE_ID"/>
+							</columns>
+						</index>
 					</indexes>
 					<constraints>
 						<constraint name="FK_SFV_REF_ASSAY" type="FOREIGN_KEY">
@@ -11892,6 +12538,12 @@
 								<column idref="RAD/AcquisitionParam/ACQUISITION_PARAM_ID"/>
 							</columns>
 						</index>
+						<index name="ACQUISITIONPARAM_R06" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="RAD/AcquisitionParam/PROTOCOL_PARAM_ID"/>
+								<column idref="RAD/AcquisitionParam/ACQUISITION_PARAM_ID"/>
+							</columns>
+						</index>
 					</indexes>
 					<constraints>
 						<constraint name="ACQUISITIONPARAM_UQ1" type="UNIQUE">
@@ -11931,10 +12583,23 @@
 						<column id="RAD/Analysis/OPERATOR_ID" name="OPERATOR_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
 						<column id="RAD/Analysis/PROTOCOL_ID" name="PROTOCOL_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
 						<column id="RAD/Analysis/ANALYSIS_DATE" name="ANALYSIS_DATE" nullable="true" length="0" precision="0" type="DATE"/>
+						<column id="RAD/Analysis/VALUE" name="NAME" nullable="false" length="200" precision="0" type="STRING"/>
 					</columns>
 					<indexes>
 						<index name="PK_ANALYSIS" tablespace="USERS" type="NORMAL">
 							<columns>
+								<column idref="RAD/Analysis/ANALYSIS_ID"/>
+							</columns>
+						</index>
+						<index name="ANALYSIS_R00" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="RAD/Analysis/PROTOCOL_ID"/>
+								<column idref="RAD/Analysis/ANALYSIS_ID"/>
+							</columns>
+						</index>
+						<index name="ANALYSIS_R07" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="RAD/Analysis/OPERATOR_ID"/>
 								<column idref="RAD/Analysis/ANALYSIS_ID"/>
 							</columns>
 						</index>
@@ -11974,6 +12639,18 @@
 					<indexes>
 						<index name="PK_ANALYSISINPUT" tablespace="USERS" type="NORMAL">
 							<columns>
+								<column idref="RAD/AnalysisInput/ANALYSIS_INPUT_ID"/>
+							</columns>
+						</index>
+						<index name="ANALYSISINPUT_R01" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="RAD/AnalysisInput/LOGICAL_GROUP_ID"/>
+								<column idref="RAD/AnalysisInput/ANALYSIS_INPUT_ID"/>
+							</columns>
+						</index>
+						<index name="ANALYSISINPUT_R02" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="RAD/AnalysisInput/ANALYSIS_ID"/>
 								<column idref="RAD/AnalysisInput/ANALYSIS_INPUT_ID"/>
 							</columns>
 						</index>
@@ -12017,6 +12694,18 @@
 								<column idref="RAD/AnalysisParam/ANALYSIS_PARAM_ID"/>
 							</columns>
 						</index>
+						<index name="ANALYSISPARAM_R03" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="RAD/AnalysisParam/PROTOCOL_PARAM_ID"/>
+								<column idref="RAD/AnalysisParam/ANALYSIS_PARAM_ID"/>
+							</columns>
+						</index>
+						<index name="ANALYSISPARAM_R04" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="RAD/AnalysisParam/ANALYSIS_ID"/>
+								<column idref="RAD/AnalysisParam/ANALYSIS_PARAM_ID"/>
+							</columns>
+						</index>
 					</indexes>
 					<constraints>
 						<constraint name="FK_ANALYSISPARAM_ANL" type="FOREIGN_KEY">
@@ -12054,6 +12743,18 @@
 					<indexes>
 						<index name="PK_ANALYSISQCPARAM" tablespace="USERS" type="NORMAL">
 							<columns>
+								<column idref="RAD/AnalysisQCParam/ANALYSIS_QC_PARAM_ID"/>
+							</columns>
+						</index>
+						<index name="ANALYSISQCPARAM_R05" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="RAD/AnalysisQCParam/PROTOCOL_QC_PARAM_ID"/>
+								<column idref="RAD/AnalysisQCParam/ANALYSIS_QC_PARAM_ID"/>
+							</columns>
+						</index>
+						<index name="ANALYSISQCPARAM_R06" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="RAD/AnalysisQCParam/ANALYSIS_ID"/>
 								<column idref="RAD/AnalysisQCParam/ANALYSIS_QC_PARAM_ID"/>
 							</columns>
 						</index>
@@ -12143,6 +12844,20 @@
 								<column id="RAD/SpliceArrayAnalysisResult/RATIO_ERROR" name="RATIO_ERROR" nullable="true" length="126" precision="0" type="FLOAT"/>
 							</columns>
 						</subclass>
+						<subclass id="RAD/AnalysisResult/DifferentialExpression" name="DifferentialExpression" versioned="true" tablespace="USERS" categoryRef="Data Transformations and Analyses" updatable="true">
+							<columns>
+								<column id="RAD/DifferentialExpression/FOLD_CHANGE" name="FOLD_CHANGE" nullable="true" length="126" precision="0" type="FLOAT"/>
+								<column id="RAD/DifferentialExpression/CONFIDENCE" name="CONFIDENCE" nullable="true" length="126" precision="0" type="FLOAT"/>
+							</columns>
+						</subclass>
+						<subclass id="RAD/AnalysisResult/ExpressionProfile" name="ExpressionProfile" versioned="true" tablespace="USERS" categoryRef="Data Transformations and Analyses" updatable="true">
+							<columns>
+								<column id="RAD/ExpressionProfile/MEAN" name="MEAN" nullable="true" length="126" precision="0" type="FLOAT"/>
+								<column id="RAD/ExpressionProfile/STD_ERR" name="STD_ERR" nullable="true" length="126" precision="0" type="FLOAT"/>
+								<column id="RAD/ExpressionProfile/STD_DEV" name="STD_DEV" nullable="true" length="126" precision="0" type="FLOAT"/>
+								<column id="RAD/ExpressionProfile/PERCENTILE" name="PERCENTILE" nullable="true" length="126" precision="0" type="FLOAT"/>
+							</columns>
+						</subclass>
 					</subclasses>
 					<indexes>
 						<index name="ANALYSISRESULTIMP_IND01" tablespace="USERS" type="NORMAL">
@@ -12196,8 +12911,8 @@
 				<table id="RAD/ArrayDesign" name="ArrayDesign" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="Platform" updatable="true">
 					<columns>
 						<column id="RAD/ArrayDesign/ARRAY_DESIGN_ID" name="ARRAY_DESIGN_ID" nullable="false" length="4" precision="0" type="NUMBER"/>
-						<column id="RAD/ArrayDesign/MANUFACTURER_ID" name="MANUFACTURER_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
-						<column id="RAD/ArrayDesign/TECHNOLOGY_TYPE_ID" name="TECHNOLOGY_TYPE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+						<column id="RAD/ArrayDesign/MANUFACTURER_ID" name="MANUFACTURER_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
+						<column id="RAD/ArrayDesign/TECHNOLOGY_TYPE_ID" name="TECHNOLOGY_TYPE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
 						<column id="RAD/ArrayDesign/SUBSTRATE_TYPE_ID" name="SUBSTRATE_TYPE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
 						<column id="RAD/ArrayDesign/PROTOCOL_ID" name="PROTOCOL_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
 						<column id="RAD/ArrayDesign/EXTERNAL_DATABASE_RELEASE_ID" name="EXTERNAL_DATABASE_RELEASE_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
@@ -12225,6 +12940,42 @@
 						</index>
 						<index name="PK_REPORTER_ARRAY" tablespace="USERS" type="NORMAL">
 							<columns>
+								<column idref="RAD/ArrayDesign/ARRAY_DESIGN_ID"/>
+							</columns>
+						</index>
+						<index name="ARRAYDESIGN_R00" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="RAD/ArrayDesign/EXTERNAL_DATABASE_RELEASE_ID"/>
+								<column idref="RAD/ArrayDesign/ARRAY_DESIGN_ID"/>
+							</columns>
+						</index>
+						<index name="ARRAYDESIGN_R01" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="RAD/ArrayDesign/MANUFACTURER_ID"/>
+								<column idref="RAD/ArrayDesign/ARRAY_DESIGN_ID"/>
+							</columns>
+						</index>
+						<index name="ARRAYDESIGN_R02" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="RAD/ArrayDesign/PROTOCOL_ID"/>
+								<column idref="RAD/ArrayDesign/ARRAY_DESIGN_ID"/>
+							</columns>
+						</index>
+						<index name="ARRAYDESIGN_R07" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="RAD/ArrayDesign/TECHNOLOGY_TYPE_ID"/>
+								<column idref="RAD/ArrayDesign/ARRAY_DESIGN_ID"/>
+							</columns>
+						</index>
+						<index name="ARRAYDESIGN_R08" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="RAD/ArrayDesign/SUBSTRATE_TYPE_ID"/>
+								<column idref="RAD/ArrayDesign/ARRAY_DESIGN_ID"/>
+							</columns>
+						</index>
+						<index name="ARRAYDESIGN_R09" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="RAD/ArrayDesign/SURFACE_TYPE_ID"/>
 								<column idref="RAD/ArrayDesign/ARRAY_DESIGN_ID"/>
 							</columns>
 						</index>
@@ -12511,6 +13262,12 @@
 								<column idref="RAD/AssayAnalysis/ASSAY_ANALYSIS_ID"/>
 							</columns>
 						</index>
+						<index name="ASSAYANALYSIS_R03" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="RAD/AssayAnalysis/ANALYSIS_ID"/>
+								<column idref="RAD/AssayAnalysis/ASSAY_ANALYSIS_ID"/>
+							</columns>
+						</index>
 					</indexes>
 					<constraints>
 						<constraint name="ASSAYANALYSIS_UQ1" type="UNIQUE">
@@ -12614,6 +13371,12 @@
 						</index>
 						<index name="PK_ASSAYCONTROL" tablespace="USERS" type="NORMAL">
 							<columns>
+								<column idref="RAD/AssayControl/ASSAY_CONTROL_ID"/>
+							</columns>
+						</index>
+						<index name="ASSAYCONTROL_R04" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="RAD/AssayControl/UNIT_TYPE_ID"/>
 								<column idref="RAD/AssayControl/ASSAY_CONTROL_ID"/>
 							</columns>
 						</index>
@@ -12970,23 +13733,35 @@
 						</constraint>
 					</constraints>
 				</table>
-				<table id="RAD/COMPOSITEELEMENTDBREF" name="COMPOSITEELEMENTDBREF" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="null" updatable="true">
+				<table id="RAD/CompositeElementDbRef" name="CompositeElementDbRef" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="null" updatable="true">
 					<columns>
-						<column id="RAD/COMPOSITEELEMENTDBREF/COMPOSITE_ELEMENT_DB_REF_ID" name="COMPOSITE_ELEMENT_DB_REF_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
-						<column id="RAD/COMPOSITEELEMENTDBREF/COMPOSITE_ELEMENT_ID" name="COMPOSITE_ELEMENT_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-						<column id="RAD/COMPOSITEELEMENTDBREF/DB_REF_ID" name="DB_REF_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+						<column id="RAD/CompositeElementDbRef/COMPOSITE_ELEMENT_DB_REF_ID" name="COMPOSITE_ELEMENT_DB_REF_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
+						<column id="RAD/CompositeElementDbRef/COMPOSITE_ELEMENT_ID" name="COMPOSITE_ELEMENT_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+						<column id="RAD/CompositeElementDbRef/DB_REF_ID" name="DB_REF_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
 					</columns>
 					<indexes>
 						<index name="COMPOSITEELEMENTDBREF_PK" tablespace="USERS" type="NORMAL">
 							<columns>
-								<column idref="RAD/COMPOSITEELEMENTDBREF/COMPOSITE_ELEMENT_DB_REF_ID"/>
+								<column idref="RAD/CompositeElementDbRef/COMPOSITE_ELEMENT_DB_REF_ID"/>
+							</columns>
+						</index>
+						<index name="COMPOSITEELEMENTDBREF_R05" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="RAD/CompositeElementDbRef/DB_REF_ID"/>
+								<column idref="RAD/CompositeElementDbRef/COMPOSITE_ELEMENT_DB_REF_ID"/>
+							</columns>
+						</index>
+						<index name="COMPOSITEELEMENTDBREF_R06" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="RAD/CompositeElementDbRef/COMPOSITE_ELEMENT_ID"/>
+								<column idref="RAD/CompositeElementDbRef/COMPOSITE_ELEMENT_DB_REF_ID"/>
 							</columns>
 						</index>
 					</indexes>
 					<constraints>
 						<constraint name="CMPELE_DBREF_CMPELE_FK" type="FOREIGN_KEY">
 							<constrainedColumns>
-								<column idref="RAD/COMPOSITEELEMENTDBREF/COMPOSITE_ELEMENT_ID"/>
+								<column idref="RAD/CompositeElementDbRef/COMPOSITE_ELEMENT_ID"/>
 							</constrainedColumns>
 							<referencedTable idref="RAD/CompositeElement"/>
 							<referencedColumns>
@@ -12995,7 +13770,7 @@
 						</constraint>
 						<constraint name="CMPELE_DBREF_DBREF_FK" type="FOREIGN_KEY">
 							<constrainedColumns>
-								<column idref="RAD/COMPOSITEELEMENTDBREF/DB_REF_ID"/>
+								<column idref="RAD/CompositeElementDbRef/DB_REF_ID"/>
 							</constrainedColumns>
 							<referencedTable idref="SRes/DbRef"/>
 							<referencedColumns>
@@ -13004,28 +13779,40 @@
 						</constraint>
 						<constraint name="COMPOSITEELEMENTDBREF_PK" type="PRIMARY_KEY">
 							<constrainedColumns>
-								<column idref="RAD/COMPOSITEELEMENTDBREF/COMPOSITE_ELEMENT_DB_REF_ID"/>
+								<column idref="RAD/CompositeElementDbRef/COMPOSITE_ELEMENT_DB_REF_ID"/>
 							</constrainedColumns>
 						</constraint>
 					</constraints>
 				</table>
-				<table id="RAD/COMPOSITEELEMENTNASEQUENCE" name="COMPOSITEELEMENTNASEQUENCE" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="null" updatable="true">
+				<table id="RAD/CompositeElementNaSequence" name="CompositeElementNaSequence" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="null" updatable="true">
 					<columns>
-						<column id="RAD/COMPOSITEELEMENTNASEQUENCE/COMPOSITE_ELEMENT_NA_SEQ_ID" name="COMPOSITE_ELEMENT_NA_SEQ_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
-						<column id="RAD/COMPOSITEELEMENTNASEQUENCE/COMPOSITE_ELEMENT_ID" name="COMPOSITE_ELEMENT_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-						<column id="RAD/COMPOSITEELEMENTNASEQUENCE/NA_SEQUENCE_ID" name="NA_SEQUENCE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+						<column id="RAD/CompositeElementNaSequence/COMPOSITE_ELEMENT_NA_SEQ_ID" name="COMPOSITE_ELEMENT_NA_SEQ_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
+						<column id="RAD/CompositeElementNaSequence/COMPOSITE_ELEMENT_ID" name="COMPOSITE_ELEMENT_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+						<column id="RAD/CompositeElementNaSequence/NA_SEQUENCE_ID" name="NA_SEQUENCE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
 					</columns>
 					<indexes>
 						<index name="COMPOSITEELEMENTNASEQ_PK" tablespace="USERS" type="NORMAL">
 							<columns>
-								<column idref="RAD/COMPOSITEELEMENTNASEQUENCE/COMPOSITE_ELEMENT_NA_SEQ_ID"/>
+								<column idref="RAD/CompositeElementNaSequence/COMPOSITE_ELEMENT_NA_SEQ_ID"/>
+							</columns>
+						</index>
+						<index name="COMPOSITEELEMENTNASEQUENCE_R07" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="RAD/CompositeElementNASequence/COMPOSITE_ELEMENT_ID"/>
+								<column idref="RAD/CompositeElementNASequence/COMPOSITE_ELEMENT_NA_SEQ_ID"/>
+							</columns>
+						</index>
+						<index name="COMPOSITEELEMENTNASEQUENCE_R08" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="RAD/CompositeElementNASequence/NA_SEQUENCE_ID"/>
+								<column idref="RAD/CompositeElementNASequence/COMPOSITE_ELEMENT_NA_SEQ_ID"/>
 							</columns>
 						</index>
 					</indexes>
 					<constraints>
 						<constraint name="CMPELE_NASEQ_NASEQ_FK" type="FOREIGN_KEY">
 							<constrainedColumns>
-								<column idref="RAD/COMPOSITEELEMENTNASEQUENCE/NA_SEQUENCE_ID"/>
+								<column idref="RAD/CompositeElementNaSequence/NA_SEQUENCE_ID"/>
 							</constrainedColumns>
 							<referencedTable idref="DoTS/NASequence"/>
 							<referencedColumns>
@@ -13034,7 +13821,7 @@
 						</constraint>
 						<constraint name="CMPELE_NASEQUENCE__CMPELE_FK" type="FOREIGN_KEY">
 							<constrainedColumns>
-								<column idref="RAD/COMPOSITEELEMENTNASEQUENCE/COMPOSITE_ELEMENT_ID"/>
+								<column idref="RAD/CompositeElementNaSequence/COMPOSITE_ELEMENT_ID"/>
 							</constrainedColumns>
 							<referencedTable idref="RAD/CompositeElement"/>
 							<referencedColumns>
@@ -13043,7 +13830,7 @@
 						</constraint>
 						<constraint name="COMPOSITEELEMENTNASEQ_PK" type="PRIMARY_KEY">
 							<constrainedColumns>
-								<column idref="RAD/COMPOSITEELEMENTNASEQUENCE/COMPOSITE_ELEMENT_NA_SEQ_ID"/>
+								<column idref="RAD/CompositeElementNaSequence/COMPOSITE_ELEMENT_NA_SEQ_ID"/>
 							</constrainedColumns>
 						</constraint>
 					</constraints>
@@ -13179,6 +13966,12 @@
 								<column idref="RAD/Control/CONTROL_ID"/>
 							</columns>
 						</index>
+						<index name="CONTROL_R09" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="RAD/Control/UNIT_TYPE_ID"/>
+								<column idref="RAD/Control/CONTROL_ID"/>
+							</columns>
+						</index>
 					</indexes>
 					<constraints>
 						<constraint name="FK_CONTRL_TABLEINFO" type="FOREIGN_KEY">
@@ -13291,6 +14084,18 @@
 								<column idref="RAD/Element/EXTERNAL_DATABASE_RELEASE_ID"/>
 							</columns>
 						</index>
+						<index name="ELEMENT_R02" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="RAD/Element/PHYSICAL_BIOSEQUENCE_TYPE_ID"/>
+								<column idref="RAD/Element/ELEMENT_ID"/>
+							</columns>
+						</index>
+						<index name="ELEMENT_R03" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="RAD/Element/POLYMER_TYPE_ID"/>
+								<column idref="RAD/Element/ELEMENT_ID"/>
+							</columns>
+						</index>
 					</indexes>
 					<constraints>
 						<constraint name="DESIGN_ELEMENT_TYPE_SOE_FK" type="FOREIGN_KEY">
@@ -13400,23 +14205,35 @@
 						</constraint>
 					</constraints>
 				</table>
-				<table id="RAD/ELEMENTDBREF" name="ELEMENTDBREF" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="null" updatable="true">
+				<table id="RAD/ElementDbRef" name="ElementDbRef" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="null" updatable="true">
 					<columns>
-						<column id="RAD/ELEMENTDBREF/ELEMENT_DB_REF_ID" name="ELEMENT_DB_REF_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
-						<column id="RAD/ELEMENTDBREF/ELEMENT_ID" name="ELEMENT_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-						<column id="RAD/ELEMENTDBREF/DB_REF_ID" name="DB_REF_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+						<column id="RAD/ElementDbRef/ELEMENT_DB_REF_ID" name="ELEMENT_DB_REF_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
+						<column id="RAD/ElementDbRef/ELEMENT_ID" name="ELEMENT_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+						<column id="RAD/ElementDbRef/DB_REF_ID" name="DB_REF_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
 					</columns>
 					<indexes>
 						<index name="ELEMENTDBREF_PK" tablespace="USERS" type="NORMAL">
 							<columns>
-								<column idref="RAD/ELEMENTDBREF/ELEMENT_DB_REF_ID"/>
+								<column idref="RAD/ElementDbRef/ELEMENT_DB_REF_ID"/>
+							</columns>
+						</index>
+						<index name="ELEMENTDBREF_R00" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="RAD/ElementDbRef/DB_REF_ID"/>
+								<column idref="RAD/ElementDbRef/ELEMENT_DB_REF_ID"/>
+							</columns>
+						</index>
+						<index name="ELEMENTDBREF_R01" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="RAD/ElementDbRef/ELEMENT_ID"/>
+								<column idref="RAD/ElementDbRef/ELEMENT_DB_REF_ID"/>
 							</columns>
 						</index>
 					</indexes>
 					<constraints>
 						<constraint name="ELE_DBREF_DBREF_FK" type="FOREIGN_KEY">
 							<constrainedColumns>
-								<column idref="RAD/ELEMENTDBREF/DB_REF_ID"/>
+								<column idref="RAD/ElementDbRef/DB_REF_ID"/>
 							</constrainedColumns>
 							<referencedTable idref="SRes/DbRef"/>
 							<referencedColumns>
@@ -13425,7 +14242,7 @@
 						</constraint>
 						<constraint name="ELEMENT_DBREF_ELEMENT_FK" type="FOREIGN_KEY">
 							<constrainedColumns>
-								<column idref="RAD/ELEMENTDBREF/ELEMENT_ID"/>
+								<column idref="RAD/ElementDbRef/ELEMENT_ID"/>
 							</constrainedColumns>
 							<referencedTable idref="RAD/Element"/>
 							<referencedColumns>
@@ -13434,28 +14251,40 @@
 						</constraint>
 						<constraint name="ELEMENTDBREF_PK" type="PRIMARY_KEY">
 							<constrainedColumns>
-								<column idref="RAD/ELEMENTDBREF/ELEMENT_DB_REF_ID"/>
+								<column idref="RAD/ElementDbRef/ELEMENT_DB_REF_ID"/>
 							</constrainedColumns>
 						</constraint>
 					</constraints>
 				</table>
-				<table id="RAD/ELEMENTNASEQUENCE" name="ELEMENTNASEQUENCE" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="null" updatable="true">
+				<table id="RAD/ElementNASequence" name="ElementNASequence" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="null" updatable="true">
 					<columns>
-						<column id="RAD/ELEMENTNASEQUENCE/ELEMENT_NA_SEQUENCE_ID" name="ELEMENT_NA_SEQUENCE_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
-						<column id="RAD/ELEMENTNASEQUENCE/ELEMENT_ID" name="ELEMENT_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-						<column id="RAD/ELEMENTNASEQUENCE/NA_SEQUENCE_ID" name="NA_SEQUENCE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+						<column id="RAD/ElementNASequence/ELEMENT_NA_SEQUENCE_ID" name="ELEMENT_NA_SEQUENCE_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
+						<column id="RAD/ElementNASequence/ELEMENT_ID" name="ELEMENT_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+						<column id="RAD/ElementNASequence/NA_SEQUENCE_ID" name="NA_SEQUENCE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
 					</columns>
 					<indexes>
-						<index name="ELEMENTNASEQUENCE_PK" tablespace="USERS" type="NORMAL">
+						<index name="ElementNASequence_PK" tablespace="USERS" type="NORMAL">
 							<columns>
-								<column idref="RAD/ELEMENTNASEQUENCE/ELEMENT_NA_SEQUENCE_ID"/>
+								<column idref="RAD/ElementNASequence/ELEMENT_NA_SEQUENCE_ID"/>
+							</columns>
+						</index>
+						<index name="ELEMENTNASEQUENCE_R04" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="RAD/ElementNASequence/ELEMENT_ID"/>
+								<column idref="RAD/ElementNASequence/ELEMENT_NA_SEQUENCE_ID"/>
+							</columns>
+						</index>
+						<index name="ELEMENTNASEQUENCE_R05" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="RAD/ElementNASequence/NA_SEQUENCE_ID"/>
+								<column idref="RAD/ElementNASequence/ELEMENT_NA_SEQUENCE_ID"/>
 							</columns>
 						</index>
 					</indexes>
 					<constraints>
 						<constraint name="ELE_NASEQ_NASEQ_FK" type="FOREIGN_KEY">
 							<constrainedColumns>
-								<column idref="RAD/ELEMENTNASEQUENCE/NA_SEQUENCE_ID"/>
+								<column idref="RAD/ElementNASequence/NA_SEQUENCE_ID"/>
 							</constrainedColumns>
 							<referencedTable idref="DoTS/NASequence"/>
 							<referencedColumns>
@@ -13464,7 +14293,7 @@
 						</constraint>
 						<constraint name="ELEMENT_NASEQUENCE_ELEMENT_FK" type="FOREIGN_KEY">
 							<constrainedColumns>
-								<column idref="RAD/ELEMENTNASEQUENCE/ELEMENT_ID"/>
+								<column idref="RAD/ElementNASequence/ELEMENT_ID"/>
 							</constrainedColumns>
 							<referencedTable idref="RAD/Element"/>
 							<referencedColumns>
@@ -13473,7 +14302,7 @@
 						</constraint>
 						<constraint name="ELEMENTNASEQUENCE_PK" type="PRIMARY_KEY">
 							<constrainedColumns>
-								<column idref="RAD/ELEMENTNASEQUENCE/ELEMENT_NA_SEQUENCE_ID"/>
+								<column idref="RAD/ElementNASequence/ELEMENT_NA_SEQUENCE_ID"/>
 							</constrainedColumns>
 						</constraint>
 					</constraints>
@@ -13677,6 +14506,12 @@
 								<column idref="RAD/ElementResult/ELEMENT_RESULT_ID"/>
 							</columns>
 						</index>
+						<index name="ELEMENTRESULT_R06" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="RAD/ElementResult/QUANTIFICATION_ID"/>
+								<column idref="RAD/ElementResult/ELEMENT_RESULT_ID"/>
+							</columns>
+						</index>
 					</indexes>
 					<constraints>
 						<constraint name="FK_ELEMENTRES_SFR" type="FOREIGN_KEY">
@@ -13874,6 +14709,18 @@
 								<column idref="RAD/LogicalGroupLink/LOGICAL_GROUP_LINK_ID"/>
 							</columns>
 						</index>
+						<index name="LOGICALGROUPLINK_R07" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="RAD/LogicalGroupLink/LOGICAL_GROUP_ID"/>
+								<column idref="RAD/LogicalGroupLink/LOGICAL_GROUP_LINK_ID"/>
+							</columns>
+						</index>
+						<index name="LOGICALGROUPLINK_R08" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="RAD/LogicalGroupLink/TABLE_ID"/>
+								<column idref="RAD/LogicalGroupLink/LOGICAL_GROUP_LINK_ID"/>
+							</columns>
+						</index>
 					</indexes>
 					<constraints>
 						<constraint name="FK_LOGICALGROUPLINK_LG" type="FOREIGN_KEY">
@@ -14005,6 +14852,18 @@
 						<index name="PROTOCOL_IND03" tablespace="USERS" type="NORMAL">
 							<columns>
 								<column idref="RAD/Protocol/HARDWARE_TYPE_ID"/>
+							</columns>
+						</index>
+						<index name="PROTOCOL_R00" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="RAD/Protocol/BIBLIOGRAPHIC_REFERENCE_ID"/>
+								<column idref="RAD/Protocol/PROTOCOL_ID"/>
+							</columns>
+						</index>
+						<index name="PROTOCOL_R09" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="RAD/Protocol/EXTERNAL_DATABASE_RELEASE_ID"/>
+								<column idref="RAD/Protocol/PROTOCOL_ID"/>
 							</columns>
 						</index>
 					</indexes>
@@ -14142,6 +15001,24 @@
 								<column idref="RAD/ProtocolQCParam/PROTOCOL_QC_PARAM_ID"/>
 							</columns>
 						</index>
+						<index name="PROTOCOLQCPARAM_R01" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="RAD/ProtocolQCParam/DATA_TYPE_ID"/>
+								<column idref="RAD/ProtocolQCParam/PROTOCOL_QC_PARAM_ID"/>
+							</columns>
+						</index>
+						<index name="PROTOCOLQCPARAM_R02" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="RAD/ProtocolQCParam/UNIT_TYPE_ID"/>
+								<column idref="RAD/ProtocolQCParam/PROTOCOL_QC_PARAM_ID"/>
+							</columns>
+						</index>
+						<index name="PROTOCOLQCPARAM_R03" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="RAD/ProtocolQCParam/PROTOCOL_ID"/>
+								<column idref="RAD/ProtocolQCParam/PROTOCOL_QC_PARAM_ID"/>
+							</columns>
+						</index>
 					</indexes>
 					<constraints>
 						<constraint name="FK_PROTOCOLQCPARAM_ONTO1" type="FOREIGN_KEY">
@@ -14195,6 +15072,12 @@
 							<columns>
 								<column idref="RAD/ProtocolStep/PARENT_PROTOCOL_ID"/>
 								<column idref="RAD/ProtocolStep/CHILD_PROTOCOL_ID"/>
+							</columns>
+						</index>
+						<index name="PROTOCOLSTEP_R04" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="RAD/ProtocolStep/CHILD_PROTOCOL_ID"/>
+								<column idref="RAD/ProtocolStep/PROTOCOL_STEP_ID"/>
 							</columns>
 						</index>
 					</indexes>
@@ -14335,6 +15218,12 @@
 							<columns>
 								<column idref="RAD/QuantificationParam/QUANTIFICATION_ID"/>
 								<column idref="RAD/QuantificationParam/NAME"/>
+							</columns>
+						</index>
+						<index name="QUANTIFICATIONPARAM_R05" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="RAD/QuantificationParam/PROTOCOL_PARAM_ID"/>
+								<column idref="RAD/QuantificationParam/QUANTIFICATION_PARAM_ID"/>
 							</columns>
 						</index>
 					</indexes>
@@ -14636,6 +15525,18 @@
 					<indexes>
 						<index name="PK_STUDYFACTORVALUE" tablespace="USERS" type="NORMAL">
 							<columns>
+								<column idref="RAD/StudyFactorValue/STUDY_FACTOR_VALUE_ID"/>
+							</columns>
+						</index>
+						<index name="STUDYFACTORVALUE_R13" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="RAD/StudyFactorValue/CHANNEL_ID"/>
+								<column idref="RAD/StudyFactorValue/STUDY_FACTOR_VALUE_ID"/>
+							</columns>
+						</index>
+						<index name="STUDYFACTORVALUE_R14" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="RAD/StudyFactorValue/MEASUREMENT_UNIT_OE_ID"/>
 								<column idref="RAD/StudyFactorValue/STUDY_FACTOR_VALUE_ID"/>
 							</columns>
 						</index>
@@ -14961,6 +15862,18 @@
 								<column idref="SRes/AnatomySAEL/ANATOMY_SAEL_ID"/>
 							</columns>
 						</index>
+						<index name="ANATOMYSAEL_R07" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="SRes/AnatomySAEL/SAEL_ID"/>
+								<column idref="SRes/AnatomySAEL/ANATOMY_SAEL_ID"/>
+							</columns>
+						</index>
+						<index name="ANATOMYSAEL_R08" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="SRes/AnatomySAEL/ANATOMY_ID"/>
+								<column idref="SRes/AnatomySAEL/ANATOMY_SAEL_ID"/>
+							</columns>
+						</index>
 					</indexes>
 					<constraints>
 						<constraint name="FK_ANATOMY" type="FOREIGN_KEY">
@@ -15041,6 +15954,12 @@
 						</index>
 						<index name="PK_BIBLIOGRAPHICREFERENCE" tablespace="USERS" type="NORMAL">
 							<columns>
+								<column idref="SRes/BibliographicReference/BIBLIOGRAPHIC_REFERENCE_ID"/>
+							</columns>
+						</index>
+						<index name="BIBLIOGRAPHICREFERENCE_R09" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="SRes/BibliographicReference/EXTERNAL_DATABASE_RELEASE_ID"/>
 								<column idref="SRes/BibliographicReference/BIBLIOGRAPHIC_REFERENCE_ID"/>
 							</columns>
 						</index>
@@ -15246,7 +16165,7 @@
 						<column id="SRes/DbRef/EXTERNAL_DATABASE_RELEASE_ID" name="EXTERNAL_DATABASE_RELEASE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
 						<column id="SRes/DbRef/PRIMARY_IDENTIFIER" name="PRIMARY_IDENTIFIER" nullable="true" length="100" precision="0" type="STRING"/>
 						<column id="SRes/DbRef/LOWERCASE_PRIMARY_IDENTIFIER" name="LOWERCASE_PRIMARY_IDENTIFIER" nullable="true" length="100" precision="0" type="STRING"/>
-						<column id="SRes/DbRef/SECONDARY_IDENTIFIER" name="SECONDARY_IDENTIFIER" nullable="true" length="50" precision="0" type="STRING"/>
+						<column id="SRes/DbRef/SECONDARY_IDENTIFIER" name="SECONDARY_IDENTIFIER" nullable="true" length="100" precision="0" type="STRING"/>
 						<column id="SRes/DbRef/LOWERCASE_SECONDARY_IDENTIFIER" name="LOWERCASE_SECONDARY_IDENTIFIER" nullable="true" length="100" precision="0" type="STRING"/>
 						<column id="SRes/DbRef/GENE_SYMBOL" name="GENE_SYMBOL" nullable="true" length="50" precision="0" type="STRING"/>
 						<column id="SRes/DbRef/CHROMOSOME" name="CHROMOSOME" nullable="true" length="2" precision="0" type="STRING"/>
@@ -15766,8 +16685,8 @@
 				<table id="SRes/GOEvidenceCode" name="GOEvidenceCode" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="Gene Ontology" updatable="true">
 					<columns>
 						<column id="SRes/GOEvidenceCode/GO_EVIDENCE_CODE_ID" name="GO_EVIDENCE_CODE_ID" nullable="false" length="3" precision="0" type="NUMBER"/>
-						<column id="SRes/GOEvidenceCode/NAME" name="NAME" nullable="false" length="3" precision="0" type="STRING"/>
-						<column id="SRes/GOEvidenceCode/DESCRIPTION" name="DESCRIPTION" nullable="true" length="1000" precision="0" type="STRING"/>
+						<column id="SRes/GOEvidenceCode/NAME" name="NAME" nullable="false" length="5" precision="0" type="STRING"/>
+						<column id="SRes/GOEvidenceCode/DESCRIPTION" name="DESCRIPTION" nullable="true" length="1500" precision="0" type="STRING"/>
 					</columns>
 					<indexes>
 						<index name="GOEVIDENCECODE_PK" tablespace="USERS" type="NORMAL">
@@ -15876,7 +16795,7 @@
 						<column id="SRes/GOSynonym/EXTERNAL_DATABASE_RELEASE_ID" name="EXTERNAL_DATABASE_RELEASE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
 						<column id="SRes/GOSynonym/SOURCE_ID" name="SOURCE_ID" nullable="true" length="32" precision="0" type="STRING"/>
 						<column id="SRes/GOSynonym/GO_TERM_ID" name="GO_TERM_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-						<column id="SRes/GOSynonym/TEXT" name="TEXT" nullable="false" length="255" precision="0" type="STRING"/>
+						<column id="SRes/GOSynonym/TEXT" name="TEXT" nullable="false" length="1000" precision="0" type="STRING"/>
 					</columns>
 					<indexes>
 						<index name="GOSYNONYM_IND01" tablespace="USERS" type="NORMAL">
@@ -16406,6 +17325,12 @@
 								<column idref="SRes/SAEL/SAEL_ID"/>
 							</columns>
 						</index>
+						<index name="SAEL_R00" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="SRes/SAEL/EXTERNAL_DATABASE_RELEASE_ID"/>
+								<column idref="SRes/SAEL/SAEL_ID"/>
+							</columns>
+						</index>
 					</indexes>
 					<constraints>
 						<constraint name="PK_SAEL" type="PRIMARY_KEY">
@@ -16437,6 +17362,12 @@
 					<indexes>
 						<index name="PK_SEQUENCEONTOLOGY" tablespace="USERS" type="NORMAL">
 							<columns>
+								<column idref="SRes/SequenceOntology/SEQUENCE_ONTOLOGY_ID"/>
+							</columns>
+						</index>
+						<index name="SEQUENCEONTOLOGY_IND01" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="SRes/SequenceOntology/TERM_NAME"/>
 								<column idref="SRes/SequenceOntology/SEQUENCE_ONTOLOGY_ID"/>
 							</columns>
 						</index>
@@ -16789,6 +17720,24 @@
 					<indexes>
 						<index name="PK_BMCRELATIONSHIP" tablespace="USERS" type="NORMAL">
 							<columns>
+								<column idref="Study/BMCRelationship/BMC_RELATIONSHIP_ID"/>
+							</columns>
+						</index>
+						<index name="BMCRELATIONSHIP_R01" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="Study/BMCRelationship/OBJECT_BMC_ID"/>
+								<column idref="Study/BMCRelationship/BMC_RELATIONSHIP_ID"/>
+							</columns>
+						</index>
+						<index name="BMCRELATIONSHIP_R02" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="Study/BMCRelationship/PREDICATE_BMC_ID"/>
+								<column idref="Study/BMCRelationship/BMC_RELATIONSHIP_ID"/>
+							</columns>
+						</index>
+						<index name="BMCRELATIONSHIP_R03" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="Study/BMCRelationship/SUBJECT_BMC_ID"/>
 								<column idref="Study/BMCRelationship/BMC_RELATIONSHIP_ID"/>
 							</columns>
 						</index>
@@ -17520,6 +18469,7 @@
 						<index name="ANALYSIS_IND03" tablespace="USERS" type="NORMAL">
 							<columns>
 								<column idref="TESS/Analysis/PROTOCOL_ID"/>
+								<column idref="TESS/Analysis/ANALYSIS_ID"/>
 							</columns>
 						</index>
 						<index name="ANALYSIS_IND04" tablespace="USERS" type="NORMAL">
@@ -17608,6 +18558,12 @@
 					<indexes>
 						<index name="PK_ARCHIPELAGOOFINTEREST" tablespace="USERS" type="NORMAL">
 							<columns>
+								<column idref="TESS/ArchipelagoOfInterest/ARCHIPELAGO_OF_INTEREST_ID"/>
+							</columns>
+						</index>
+						<index name="ARCHIPELAGOOFINTEREST_R08" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="TESS/ArchipelagoOfInterest/EXTERNAL_DATABASE_RELEASE_ID"/>
 								<column idref="TESS/ArchipelagoOfInterest/ARCHIPELAGO_OF_INTEREST_ID"/>
 							</columns>
 						</index>
@@ -17749,6 +18705,12 @@
 								<column idref="TESS/IslandOfInterest/ISLAND_OF_INTEREST_ID"/>
 							</columns>
 						</index>
+						<index name="ISLANDOFINTEREST_R09" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="TESS/IslandOfInterest/ARCHIPELAGO_OF_INTEREST_ID"/>
+								<column idref="TESS/IslandOfInterest/ISLAND_OF_INTEREST_ID"/>
+							</columns>
+						</index>
 					</indexes>
 					<constraints>
 						<constraint name="ISLANDOFINTEREST_FK01" type="FOREIGN_KEY">
@@ -17776,6 +18738,18 @@
 					<indexes>
 						<index name="PK_MARKOVCHAINOBS" tablespace="USERS" type="NORMAL">
 							<columns>
+								<column idref="TESS/MarkovChainObs/MARKOV_CHAIN_OBS_ID"/>
+							</columns>
+						</index>
+						<index name="MARKOVCHAINOBS_R00" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="TESS/MarkovChainObs/MULTINOMIAL_OBSERVATION_SET_ID"/>
+								<column idref="TESS/MarkovChainObs/MARKOV_CHAIN_OBS_ID"/>
+							</columns>
+						</index>
+						<index name="MARKOVCHAINOBS_R01" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="TESS/MarkovChainObs/MODEL_ID"/>
 								<column idref="TESS/MarkovChainObs/MARKOV_CHAIN_OBS_ID"/>
 							</columns>
 						</index>
@@ -18318,6 +19292,12 @@
 								<column idref="TESS/MultinomialObservation/MULTINOMIAL_OBS_ID"/>
 							</columns>
 						</index>
+						<index name="MULTINOMIALOBSERVATION_R02" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="TESS/MultinomialObservation/MULTINOMIAL_OBS_SET_ID"/>
+								<column idref="TESS/MultinomialObservation/MULTINOMIAL_OBS_ID"/>
+							</columns>
+						</index>
 					</indexes>
 					<constraints>
 						<constraint name="MULTINOMIALOBSERVATION_FK01" type="FOREIGN_KEY">
@@ -18350,6 +19330,12 @@
 					<indexes>
 						<index name="PK_MULTINOMIALOBSERVATIONSET" tablespace="USERS" type="NORMAL">
 							<columns>
+								<column idref="TESS/MultinomialObservationSet/MULTINOMIAL_OBS_SET_ID"/>
+							</columns>
+						</index>
+						<index name="MULTINOMIALOBSERVATIONSET_R03" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="TESS/MultinomialObservationSet/MULTINOMIAL_LABEL_SET_ID"/>
 								<column idref="TESS/MultinomialObservationSet/MULTINOMIAL_OBS_SET_ID"/>
 							</columns>
 						</index>
@@ -18830,6 +19816,18 @@
 								<column idref="TESS/RegionOfInterest/REGION_OF_INTEREST_ID"/>
 							</columns>
 						</index>
+						<index name="REGIONOFINTEREST_R04" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="TESS/RegionOfInterest/ISLAND_OF_INTEREST_ID"/>
+								<column idref="TESS/RegionOfInterest/REGION_OF_INTEREST_ID"/>
+							</columns>
+						</index>
+						<index name="REGIONOFINTEREST_R05" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="TESS/RegionOfInterest/NA_FEATURE_ID"/>
+								<column idref="TESS/RegionOfInterest/REGION_OF_INTEREST_ID"/>
+							</columns>
+						</index>
 					</indexes>
 					<constraints>
 						<constraint name="PK_REGIONOFINTEREST" type="PRIMARY_KEY">
@@ -19219,6 +20217,12 @@
 					<indexes>
 						<index name="PK_SBCGRECOGMULTIOBS" tablespace="USERS" type="NORMAL">
 							<columns>
+								<column idref="TESS/SbcgRecogMultiObs/SBCG_RECOG_MULTI_OBS_ID"/>
+							</columns>
+						</index>
+						<index name="SBCGRECOGMULTIOBS_R06" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="TESS/SbcgRecogMultiObs/SBCG_RECOGNITION_ID"/>
 								<column idref="TESS/SbcgRecogMultiObs/SBCG_RECOG_MULTI_OBS_ID"/>
 							</columns>
 						</index>
