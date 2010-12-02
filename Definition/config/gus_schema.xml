@@ -7252,6 +7252,7 @@
 						<subclass id="DoTS/NAFeature/UTRFeature" name="UTRFeature" versioned="true" tablespace="USERS" categoryRef="NA Sequence Features" updatable="true">
 						</subclass>
 						<subclass id="DoTS/NAFeature/IsolateFeature" name="IsolateFeature" versioned="true" tablespace="USERS" categoryRef="NA Sequence Features" updatable="true">
+							<columns>
 								<column id="DoTS/IsolateFeature/GENE_TYPE" name="GENE_TYPE" nullable="true" length="4000" precision="0" type="STRING"/>
 								<column id="DoTS/IsolateFeature/CONFIRMED_BY_SIMILARITY" name="CONFIRMED_BY_SIMILARITY" nullable="true" length="12" precision="0" type="NUMBER"/>
 								<column id="DoTS/IsolateFeature/PREDICTION_NUMBER" name="PREDICTION_NUMBER" nullable="true" length="12" precision="0" type="NUMBER"/>
@@ -7274,8 +7275,10 @@
 								<column id="DoTS/IsolateFeature/STANDARD_NAME" name="STANDARD_NAME" nullable="true" length="100" precision="0" type="STRING"/>
 								<column id="DoTS/IsolateFeature/USEDIN" name="USEDIN" nullable="true" length="40" precision="0" type="STRING"/>
 								<column id="DoTS/IsolateFeature/PRODUCT_ALIAS" name="PRODUCT_ALIAS" nullable="true" length="40" precision="0" type="STRING"/>
+							</columns>
 						</subclass>
 						<subclass id="DoTS/NAFeature/IsolateSource" name="IsolateSource" versioned="true" tablespace="USERS" categoryRef="NA Sequence Features" updatable="true">
+							<columns>
 								<column id="DoTS/IsolateSource/CELL_LINE" name="CELL_LINE" nullable="true" length="40" precision="0" type="STRING"/>
 								<column id="DoTS/IsolateSource/CELL_TYPE" name="CELL_TYPE" nullable="true" length="60" precision="0" type="STRING"/>
 								<column id="DoTS/IsolateSource/CHROMOPLAST" name="CHROMOPLAST" nullable="true" length="20" precision="0" type="STRING"/>
@@ -7307,8 +7310,10 @@
 								<column id="DoTS/IsolateSource/MOL_TYPE" name="MOL_TYPE" nullable="true" length="30" precision="0" type="STRING"/>
 								<column id="DoTS/IsolateSource/ORGANISM" name="ORGANISM" nullable="true" length="80" precision="0" type="STRING"/>
 								<column id="DoTS/IsolateSource/IS_REFERENCE" name="IS_REFERENCE" nullable="true" length="1" precision="0" type="NUMBER"/>
+							</columns>
 						</subclass>
 						<subclass id="DoTS/NAFeature/SnpFeature" name="SnpFeature" versioned="true" tablespace="USERS" categoryRef="NA Sequence Features" updatable="true">
+							<columns>
 								<column id="DoTS/SnpFeature/DESCRIPTION" name="DESCRIPTION" nullable="true" length="80" precision="0" type="STRING"/>
 								<column id="DoTS/SnpFeature/REFERENCE_NA" name="REFERENCE_NA" nullable="true" length="50" precision="0" type="STRING"/>
 								<column id="DoTS/SnpFeature/REFERENCE_STRAIN" name="REFERENCE_STRAIN" nullable="true" length="20" precision="0" type="STRING"/>
@@ -7326,11 +7331,14 @@
 								<column id="DoTS/SnpFeature/POSITION_IN_PROTEIN" name="POSITION_IN_PROTEIN" nullable="true" length="4" precision="0" type="NUMBER"/>
 								<column id="DoTS/SnpFeature/HAS_NONSYNONYMOUS_ALLELE" name="HAS_NONSYNONYMOUS_ALLELE" nullable="true" length="1" precision="0" type="NUMBER"/>
 								<column id="DoTS/SnpFeature/MAJOR_ALLELE_COUNT" name="MAJOR_ALLELE_COUNT" nullable="true" length="3" precision="0" type="NUMBER"/>
+							</columns>
 						</subclass>
 						<subclass id="DoTS/NAFeature/ArrayElementFeature" name="ArrayElementFeature" versioned="true" tablespace="USERS" categoryRef="NA Sequence Features" updatable="true">
+							<columns>
 								<column id="DoTS/ArrayElementFeature/DESCRIPTION" name="DESCRIPTION" nullable="true" length="200" precision="0" type="STRING"/>
 								<column id="DoTS/ArrayElementFeature/PROBE_SET" name="PROBE_SET" nullable="true" length="80" precision="0" type="STRING"/>
 								<column id="DoTS/ArrayElementFeature/PROBE_COUNT" name="PROBE_COUNT" nullable="true" length="6" precision="0" type="NUMBER"/>
+							</columns>
 						</subclass>
 					</subclasses>
 					<indexes>
