@@ -8,7 +8,7 @@
     <ant antfile="../GUS/build.xml" target="GUS/DBAdmin-Installation">
       <property name="project" value="GUS"/>
       <property name="Component" value="DBAdmin"/>
-      <property name="version" value="3.5"/>
+      <property name="version" value="3.6"/>
     </ant>
   </target>
   
