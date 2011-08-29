@@ -11369,6 +11369,15 @@
                         <column idref="SRes/Taxon/TAXON_ID"/>
                      </referencedColumns>
                   </constraint>
+                 <constraint name="FK_OT_OTT" type="FOREIGN_KEY">
+                     <constrainedColumns>
+                        <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_TYPE_ID"/>
+                     </constrainedColumns>
+                     <referencedTable idref="SRes/OntologyTermType"/>
+                     <referencedColumns>
+                        <column idref="SRes/OntologyTermType/ONTOLOGY_TERM_TYPE_ID"/>
+                     </referencedColumns>
+                  </constraint>
                </constraints>
             </table>
             <table id="SRes/OntologyTermType" name="OntologyTermType" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="General Ontology" updatable="true">
