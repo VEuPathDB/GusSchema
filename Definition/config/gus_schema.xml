@@ -11581,7 +11581,7 @@
                   <column id="SRes/Pathway/PATHWAY_ID" name="PATHWAY_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
                   <column id="SRes/Pathway/NAME" name="NAME" nullable="false" length="150" precision="0" type="STRING"/>
                   <column id="SRes/Pathway/DESCRIPTION" name="DESCRIPTION" nullable="true" length="255" precision="0" type="STRING"/>
-                  <column id="SRes/Pathway/EXTERNAL_DATABASE_RELEASE_ID" name="EXTERNAL_DATABASE_RELEASE_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
+                  <column id="SRes/Pathway/EXTERNAL_DATABASE_RELEASE_ID" name="EXTERNAL_DATABASE_RELEASE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="SRes/Pathway/SOURCE_ID" name="SOURCE_ID" nullable="false" length="50" precision="0" type="STRING"/>
                   <column id="SRes/Pathway/URL" name="URL" nullable="false" length="255" precision="0" type="STRING"/>
                </columns>
@@ -11823,61 +11823,13 @@
                   </constraint>
                </constraints>
             </table>
-            <table id="Study/InvestigationBibRef" name="InvestigationBibRef" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Experimental Design" updatable="true">
-               <columns>
-                  <column id="Study/InvestigationBibRef/INVESTIGATION_BIB_REF_ID" name="INVESTIGATION_BIB_REF_ID" nullable="false" length="4" precision="0" type="NUMBER"/>
-                  <column id="Study/InvestigationBibRef/INVESTIGATION_ID" name="INVESTIGATION_ID" nullable="false" length="4" precision="0" type="NUMBER"/>                
-                  <column id="Study/InvestigationBibRef/BIBLIOGRAPHIC_REFERENCE_ID" name="BIBLIOGRAPHIC_REFERENCE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-               </columns>
-               <indexes>
-                  <index name="PK_INVBIBREF" tablespace="USERS" type="NORMAL">
-                     <columns>
-                        <column idref="Study/InvestigationBibRef/INVESTIGATION_BIB_REF_ID"/>
-                     </columns>
-                  </index>
-                  <index name="INVBIBREF_IND01" tablespace="USERS" type="NORMAL">
-                     <columns>
-                        <column idref="Study/InvestigationBibRef/INVESTIGATION_ID"/>
-                     </columns>
-                  </index>
-                  <index name="INVBIBREF_IND02" tablespace="USERS" type="NORMAL">
-                     <columns>
-                        <column idref="Study/InvestigationBibRef/BIBLIOGRAPHIC_REFERENCE_ID"/>
-                     </columns>
-                  </index>
-               </indexes>
-               <constraints>
-                  <constraint name="PK_INVBIBREF" type="PRIMARY_KEY">
-                     <constrainedColumns>
-                        <column idref="Study/InvestigationBibRef/INVESTIGATION_BIB_REF_ID"/>
-                     </constrainedColumns>
-                  </constraint>
-                  <constraint name="FK_INVBIBREF_INVESTIGATION" type="FOREIGN_KEY">
-                     <constrainedColumns>
-                        <column idref="Study/InvestigationBibRef/INVESTIGATION_ID"/>
-                     </constrainedColumns>
-                     <referencedTable idref="Study/Investigation"/>
-                     <referencedColumns>
-                        <column idref="Study/Investigation/INVESTIGATION_ID"/>
-                     </referencedColumns>
-                  </constraint>
-                  <constraint name="FK_INVBIBREF_BIBREF" type="FOREIGN_KEY">
-                     <constrainedColumns>
-                        <column idref="Study/InvestigationBibRef/BIBLIOGRAPHIC_REFERENCE_ID"/>
-                     </constrainedColumns>
-                     <referencedTable idref="SRes/BibliographicReference"/>
-                     <referencedColumns>
-                        <column idref="SRes/BibliographicReference/BIBLIOGRAPHIC_REFERENCE_ID"/>
-                     </referencedColumns>
-                  </constraint>
-            </table>
             <table id="Study/Study" name="Study" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Experimental Design" updatable="true">
                <columns>
                   <column id="Study/Study/STUDY_ID" name="STUDY_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
                   <column id="Study/Study/INVESTIGATION_ID" name="INVESTIGATION_ID" nullable="false" length="4" precision="0" type="NUMBER"/>
                   <column id="Study/Study/NAME" name="NAME" nullable="false" length="200" precision="0" type="STRING"/>
                   <column id="Study/Study/DESCRIPTION" name="DESCRIPTION" nullable="true" length="4000" precision="0" type="STRING"/>
-                  <column id="Study/Study/EXTERNAL_DATABASE_RELEASE_ID" name="EXTERNAL_DATABASE_RELEASE_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
+                  <column id="Study/Study/EXTERNAL_DATABASE_RELEASE_ID" name="EXTERNAL_DATABASE_RELEASE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="Study/Study/SOURCE_ID" name="SOURCE_ID" nullable="true" length="100" precision="0" type="STRING"/>
                </columns>
                <indexes>
@@ -11932,6 +11884,54 @@
                      </constrainedColumns>
                   </constraint>
                </constraints>
+            </table>
+            <table id="Study/StudyBibRef" name="StudyBibRef" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Experimental Design" updatable="true">
+               <columns>
+                  <column id="Study/StudyBibRef/STUDY_BIB_REF_ID" name="STUDY_BIB_REF_ID" nullable="false" length="4" precision="0" type="NUMBER"/>
+                  <column id="Study/StudyBibRef/STUDY_ID" name="STUDY_ID" nullable="false" length="5" precision="0" type="NUMBER"/>                
+                  <column id="Study/StudyBibRef/BIBLIOGRAPHIC_REFERENCE_ID" name="BIBLIOGRAPHIC_REFERENCE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+               </columns>
+               <indexes>
+                  <index name="PK_STUDYBIBREF" tablespace="USERS" type="NORMAL">
+                     <columns>
+                        <column idref="Study/StudyBibRef/STUDY_BIB_REF_ID"/>
+                     </columns>
+                  </index>
+                  <index name="STUDYBIBREF_IND01" tablespace="USERS" type="NORMAL">
+                     <columns>
+                        <column idref="Study/StudyBibRef/STUDY_ID"/>
+                     </columns>
+                  </index>
+                  <index name="STUDYBIBREF_IND02" tablespace="USERS" type="NORMAL">
+                     <columns>
+                        <column idref="Study/StudyBibRef/BIBLIOGRAPHIC_REFERENCE_ID"/>
+                     </columns>
+                  </index>
+               </indexes>
+               <constraints>
+                  <constraint name="PK_STUDYBIBREF" type="PRIMARY_KEY">
+                     <constrainedColumns>
+                        <column idref="Study/StudyBibRef/STUDY_BIB_REF_ID"/>
+                     </constrainedColumns>
+                  </constraint>
+                  <constraint name="FK_STUDYBIBREF_STUDY" type="FOREIGN_KEY">
+                     <constrainedColumns>
+                        <column idref="Study/StudyBibRef/STUDY_ID"/>
+                     </constrainedColumns>
+                     <referencedTable idref="Study/Study"/>
+                     <referencedColumns>
+                        <column idref="Study/Study/STUDY_ID"/>
+                     </referencedColumns>
+                  </constraint>
+                  <constraint name="FK_STUDYBIBREF_BIBREF" type="FOREIGN_KEY">
+                     <constrainedColumns>
+                        <column idref="Study/StudyBibRef/BIBLIOGRAPHIC_REFERENCE_ID"/>
+                     </constrainedColumns>
+                     <referencedTable idref="SRes/BibliographicReference"/>
+                     <referencedColumns>
+                        <column idref="SRes/BibliographicReference/BIBLIOGRAPHIC_REFERENCE_ID"/>
+                     </referencedColumns>
+                  </constraint>
             </table>
             <table id="Study/StudyDesign" name="StudyDesign" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Experimental Design" updatable="true">
                <columns>
@@ -12045,7 +12045,7 @@
                    <column id="Study/ProtocolAppNode/NAME" name="NAME" nullable="false" length="200" precision="0" type="STRING"/>
                   <column id="Study/ProtocolAppNode/DESCRIPTION" name="DESCRIPTION" nullable="true" length="1000" precision="0" type="STRING"/>
                   <column id="Study/ProtocolAppNode/uri" name="URI" nullable="true" length="300" precision="0" type="STRING"/>
-                  <column id="Study/ProtocolAppNode/EXTERNAL_DATABASE_RELEASE_ID" name="EXTERNAL_DATABASE_RELEASE_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
+                  <column id="Study/ProtocolAppNode/EXTERNAL_DATABASE_RELEASE_ID" name="EXTERNAL_DATABASE_RELEASE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="Study/ProtocolAppNode/SOURCE_ID" name="SOURCE_ID" nullable="true" length="100" precision="0" type="STRING"/>
                   <column id="Study/ProtocolAppNode/SUBTYPE_ID" name="TYPE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                </columns>
@@ -12296,7 +12296,7 @@
                   <column id="Study/Protocol/DESCRIPTION" name="PROTOCOL_DESCRIPTION" nullable="true" length="4000" precision="0" type="STRING"/>
                   <column id="Study/Protocol/PROTOCOL_TYPE_ID" name="PROTOCOL_TYPE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="Study/Protocol/BIBLIOGRAPHIC_REFERENCE_ID" name="BIBLIOGRAPHIC_REFERENCE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
-                  <column id="Study/Protocol/EXTERNAL_DATABASE_RELEASE_ID" name="EXTERNAL_DATABASE_RELEASE_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
+                  <column id="Study/Protocol/EXTERNAL_DATABASE_RELEASE_ID" name="EXTERNAL_DATABASE_RELEASE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="Study/Protocol/SOURCE_ID" name="SOURCE_ID" nullable="true" length="100" precision="0" type="STRING"/>
                   <column id="Study/Protocol/URI" name="URI" nullable="true" length="300" precision="0" type="STRING"/>
                </columns>
@@ -12711,7 +12711,7 @@
                   </constraint>
                   <constraint name="FK_OUTPUT_PAN" type="FOREIGN_KEY">
                      <constrainedColumns>
-                        <column idref="Study/Input/PROTOCOL_APP_NODE_ID"/>
+                        <column idref="Study/Output/PROTOCOL_APP_NODE_ID"/>
                      </constrainedColumns>
                      <referencedTable idref="Study/ProtocolAppNode/">
                      <referencedColumns>
