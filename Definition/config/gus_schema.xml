@@ -12757,8 +12757,8 @@
             <table id="Platform/ReporterSet" name="ReporterSet" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Platform" updatable="true">
                <columns>
                   <column id="Platform/ReporterSet/REPORTER_SET_ID" name="REPORTER_SET_ID" nullable="false" length="4" precision="0" type="NUMBER"/>
-                  <column id="Platform/ReporterSet/SUBCLASS_VIEW" name="SUBCLASS_VIEW" nullable="true" length="30" precision="0" type="STRING"/>                 
-                  <column id="Platform/ReporterSet/REPORTER_SET_GROUP_ID" name="REPORTER_SET_GROUP_ID" nullable="false" length="3" precision="0" type="NUMBER"/>
+                  <column id="Platform/ReporterSet/SUBCLASS_VIEW" name="SUBCLASS_VIEW" nullable="false" length="30" precision="0" type="STRING"/>                 
+                  <column id="Platform/ReporterSet/REPORTER_SET_GROUP_ID" name="REPORTER_SET_GROUP_ID" nullable="true" length="3" precision="0" type="NUMBER"/>
                  <column id="Platform/ReporterSet/NAME" name="NAME" nullable="false" length="100" precision="0" type="STRING"/>
                   <column id="Platform/ReporterSet/VERSION" name="VERSION" nullable="true" length="20" precision="0" type="STRING"/>
                   <column id="Platform/ReporterSet/DESCRIPTION" name="DESCRIPTION" nullable="true" length="2000" precision="0" type="STRING"/>
