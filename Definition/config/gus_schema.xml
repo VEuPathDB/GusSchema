@@ -13164,10 +13164,10 @@
                   <column id="Model/ModelContext/NAME" name="NAME" nullable="false" length="50" precision="0" type="STRING"/>
                   <column id="Model/ModelContext/DESCRIPTION" name="DESCRIPTION" nullable="true" length="250" precision="0" type="STRING"/>
                   <column id="Model/ModelContext/ANATOMY_ID" name="ANATOMY_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
-                  <column id="Model/ModelContext/BIOLOGICAL_PROCESS_TABLE_ID" name="BIOLOGICAL_PROCESS_TABLE_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
-                  <column id="Model/ModelContext/BIOLOGICAL_PROCESS_ROW_ID" name="BIOLOGICAL_PROCESS_ROW_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
-                  <column id="Model/ModelContext/DEVELOPMENTAL_STAGE_START_ID" name="DEVELOPMENTAL_STAGE_START_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-                  <column id="Model/ModelContext/DEVELOPMENTAL_STAGE_END_ID" name="DEVELOPMENTAL_STAGE_END_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+                  <column id="Model/ModelContext/BIOLOGICAL_PROCESS_TABLE_ID" name="BIOLOGICAL_PROCESS_TABLE_ID" nullable="true" length="5" precision="0" type="NUMBER"/>
+                  <column id="Model/ModelContext/BIOLOGICAL_PROCESS_ROW_ID" name="BIOLOGICAL_PROCESS_ROW_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
+                  <column id="Model/ModelContext/DEVELOPMENTAL_STAGE_START_ID" name="DEVELOPMENTAL_STAGE_START_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
+                  <column id="Model/ModelContext/DEVELOPMENTAL_STAGE_END_ID" name="DEVELOPMENTAL_STAGE_END_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                </columns>
                <indexes>
                   <index name="PK_MODELCONTEXT" tablespace="USERS" type="NORMAL">
@@ -13293,7 +13293,7 @@
                   <column id="Model/NetworkRelationship/NETWORK_RELATIONSHIP_ID" name="NETWORK_RELATIONSHIP_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
                   <column id="Model/NetworkRelationship/NODE_ID" name="NODE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="Model/NetworkRelationship/ASSOCIATED_NODE_ID" name="ASSOCIATED_NODE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
-                  <column id="Model/NetworkRelationship/WEIGHT" name="WEIGHT" nullable="true" length="126" precision="0" type="FLOAT"/>
+                  <column id="Model/NetworkRelationship/WEIGHT" name="WEIGHT" nullable="true" length="12" precision="0" type="FLOAT"/>
                 </columns>
                <indexes>
                   <index name="PK_NETWORKREL" tablespace="USERS" type="NORMAL">
@@ -13400,11 +13400,11 @@
                   <column id="Model/NetworkRelEvidence/FACT_TABLE_ID" name="FACT_TABLE_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
                   <column id="Model/NetworkRelEvidence/FACT_ROW_ID" name="FACT_ROW_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
                   <column id="Model/NetworkRelEvidence/CATEGORY_ID" name="CATEGORY_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
-                  <column id="Model/NetworkRelEvidence/FDR" name="FDR" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Model/NetworkRelEvidence/P_VALUE" name="P_VALUE" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Model/NetworkRelEvidence/SCORE1" name="SCORE1" nullable="true" length="126" precision="0" type="FLOAT"/>
+                  <column id="Model/NetworkRelEvidence/FDR" name="FDR" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Model/NetworkRelEvidence/P_VALUE" name="P_VALUE" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Model/NetworkRelEvidence/SCORE1" name="SCORE1" nullable="true" length="12" precision="0" type="FLOAT"/>
                   <column id="Model/NetworkRelEvidence/SCORE1_TYPE_ID" name="SCORE1_TYPE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
-                  <column id="Model/NetworkRelEvidence/SCORE2" name="SCORE2" nullable="true" length="126" precision="0" type="FLOAT"/>
+                  <column id="Model/NetworkRelEvidence/SCORE2" name="SCORE2" nullable="true" length="12" precision="0" type="FLOAT"/>
                   <column id="Model/NetworkRelEvidence/SCORE2_TYPE_ID" name="SCORE2_TYPE__ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="Model/NetworkRelEvidence/TEXT_EVIDENCE" name="TEXT_EVIDENCe" nullable="true" length="250" precision="0" type="STRING"/>
                   <column id="Model/NetworkRelEvidence/GENOMIC_LOCATION" name="GENOMIC_LOCATION" nullable="true" length="50" precision="0" type="STRING"/>
@@ -13456,7 +13456,7 @@
                         <column idref="Model/NetworkRelEvidence/NETWORK_REL_EVIDENCE_ID"/>
                      </constrainedColumns>
                   </constraint>
-                 <constraint name="FK_NETWORKRELTYPE_NETWORKRELCTX" type="FOREIGN_KEY">
+                 <constraint name="FK_NETWORKRELEVIDENCE_NETWORKRELCTX" type="FOREIGN_KEY">
                      <constrainedColumns>
                         <column idref="Model/NetworkRelEvidence/NETWORK_REL_CONTEXT_ID"/>
                      </constrainedColumns>
@@ -13465,7 +13465,7 @@
                         <column idref="Model/NetworkRelContext/NETWORK_REL_CONTEXT_ID"/>
                      </referencedColumns>
                   </constraint>
-                  <constraint name="FK_NETWORKRELTYPE_OT1" type="FOREIGN_KEY">
+                  <constraint name="FK_NETWORKRELEVIDENCE_OT1" type="FOREIGN_KEY">
                      <constrainedColumns>
                         <column idref="Model/NetworkRelEvidence/EVIDENCE_CODE_ID"/>
                      </constrainedColumns>
@@ -13474,7 +13474,7 @@
                         <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
                      </referencedColumns>
                   </constraint>
-                  <constraint name="FK_NETWORKRELTYPE_TABLE" type="FOREIGN_KEY">
+                  <constraint name="FK_NETWORKRELEVIDENCE_TABLE" type="FOREIGN_KEY">
                      <constrainedColumns>
                         <column idref="Model/NetworkRelEvidence/FACT_TABLE_ID"/>
                      </constrainedColumns>
@@ -13483,9 +13483,27 @@
                         <column idref="Core/TableInfo/TABLE_ID"/>
                      </referencedColumns>
                   </constraint>
-                  <constraint name="FK_NETWORKRELTYPE_OT2" type="FOREIGN_KEY">
+                  <constraint name="FK_NETWORKRELEVIDENCE_OT2" type="FOREIGN_KEY">
                      <constrainedColumns>
                         <column idref="Model/NetworkRelEvidence/CATEGORY_ID"/>
+                     </constrainedColumns>
+                     <referencedTable idref="SRes/OntologyTerm"/>
+                     <referencedColumns>
+                        <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
+                     </referencedColumns>
+                  </constraint>
+                  <constraint name="FK_NETWORKRELEVIDENCE_OT3" type="FOREIGN_KEY">
+                     <constrainedColumns>
+                        <column idref="Model/NetworkRelEvidence/SCORE1_TYPE_ID"/>
+                     </constrainedColumns>
+                     <referencedTable idref="SRes/OntologyTerm"/>
+                     <referencedColumns>
+                        <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
+                     </referencedColumns>
+                  </constraint>
+                  <constraint name="FK_NETWORKRELEVIDENCE_OT4" type="FOREIGN_KEY">
+                     <constrainedColumns>
+                        <column idref="Model/NetworkRelEvidence/SCORE2_TYPE_ID"/>
                      </constrainedColumns>
                      <referencedTable idref="SRes/OntologyTerm"/>
                      <referencedColumns>
@@ -13498,9 +13516,9 @@
                <columns>
                   <column id="Model/NetworkRelContext/NETWORK_REL_CONTEXT_ID" name="NETWORK_REL_CONTEXT_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
                   <column id="Model/NetworkRelContext/NETWORK_RELATIONSHIP_ID" name="NETWORK_RELATIONSHIP_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
-                  <column id="Model/NetworkRelContext/NETWORK_RELATIONSHIP_TYPE_ID" name="NETWORK_RELATIONSHIP_TYPE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+                  <column id="Model/NetworkRelContext/NETWORK_RELATIONSHIP_TYPE_ID" name="NETWORK_RELATIONSHIP_TYPE_ID" nullable="false" length="11" precision="0" type="NUMBER"/>
                   <column id="Model/NetworkRelContext/NETWORK_CONTEXT_ID" name="NETWORK_CONTEXT_ID" nullable="false" length="3" precision="0" type="NUMBER"/>
-                  <column id="Model/NetworkRelContext/WEIGHT" name="WEIGHT" nullable="true" length="126" precision="0" type="FLOAT"/>
+                  <column id="Model/NetworkRelContext/WEIGHT" name="WEIGHT" nullable="true" length="12" precision="0" type="FLOAT"/>
                <column id="Model/NetworkRelContext/SOURCE_NODE" name="SOURCE_NODE" nullable="true" length="1" precision="0" type="NUMBER"/>
                 </columns>
                <indexes>
@@ -13574,8 +13592,8 @@
             <table id="Model/NetworkRelContextLink" name="NetworkRelContextLink" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Model" updatable="true">
                <columns>
                   <column id="Model/NetworkRelContextLink/NETWORK_RC_LINK_ID" name="NETWORK_RC_LINK_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
-                  <column id="Model/NetworkRelContextLink/NETWORK_ID" name="NAME" nullable="false" length="10" precision="0" type="NUMBER"/>
-                  <column id="Model/NetworkRelContextLink/NETWORK_REL_CONTEXT_ID" name="NETWORK_REL_CONTEXT_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+                  <column id="Model/NetworkRelContextLink/NETWORK_ID" name="NETWORK_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+                  <column id="Model/NetworkRelContextLink/NETWORK_REL_CONTEXT_ID" name="NETWORK_REL_CONTEXT_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
                 </columns>
                <indexes>
                   <index name="PK_NETWORKRELCTXLINK" tablespace="USERS" type="NORMAL">
