@@ -11772,63 +11772,13 @@
       </schema>
       <schema name="Study">
          <tables> 
-            <table id="Study/Investigation" name="Investigation" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Experimental Design" updatable="true">
-               <columns>
-                  <column id="Study/Investigation/INVESTIGATION_ID" name="INVESTIGATION_ID" nullable="false" length="4" precision="0" type="NUMBER"/>
-                  <column id="Study/Investigation/NAME" name="NAME" nullable="false" length="200" precision="0" type="STRING"/>
-                  <column id="Study/Investigation/DESCRIPTION" name="DESCRIPTION" nullable="true" length="4000" precision="0" type="STRING"/>
-                  <column id="Study/Investigation/CONTACT_ID" name="CONTACT_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
-               </columns>
-               <indexes>
-                  <index name="PK_INVESTIGATION" tablespace="USERS" type="NORMAL">
-                     <columns>
-                        <column idref="Study/Investigation/INVESTIGATION_ID"/>
-                     </columns>
-                  </index>
-                  <index name="INVESTIGATION_AK01" tablespace="USERS" type="NORMAL">
-                     <columns>
-                        <column idref="Study/Investigation/NAME"/>
-                     </columns>
-                  </index>
-                  <index name="INVESTIGATION_IND01" tablespace="USERS" type="NORMAL">
-                     <columns>
-                        <column idref="Study/Investigation/INVESTIGATION_ID"/>
-                     </columns>
-                  </index>
-                  <index name="INVESTIGATION_IND02" tablespace="USERS" type="NORMAL">
-                     <columns>
-                        <column idref="Study/Investigation/CONTACT_ID"/>
-                     </columns>
-                  </index>
-               </indexes>
-               <constraints>
-                  <constraint name="PK_INVESTIGATION" type="PRIMARY_KEY">
-                     <constrainedColumns>
-                        <column idref="Study/Investigation/INVESTIGATION_ID"/>
-                     </constrainedColumns>
-                  </constraint>
-                  <constraint name="FK_INVESTIGATION_CONTACT" type="FOREIGN_KEY">
-                     <constrainedColumns>
-                        <column idref="Study/Investigation/CONTACT_ID"/>
-                     </constrainedColumns>
-                     <referencedTable idref="SRes/Contact"/>
-                     <referencedColumns>
-                        <column idref="SRes/Contact/CONTACT_ID"/>
-                     </referencedColumns>
-                  </constraint>
-                  <constraint name="INVESTIGATION_NAME_UQ" type="UNIQUE">
-                     <constrainedColumns>
-                        <column idref="Study/Investigation/NAME"/>
-                     </constrainedColumns>
-                  </constraint>
-               </constraints>
-            </table>
             <table id="Study/Study" name="Study" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Experimental Design" updatable="true">
                <columns>
                   <column id="Study/Study/STUDY_ID" name="STUDY_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
-                  <column id="Study/Study/INVESTIGATION_ID" name="INVESTIGATION_ID" nullable="false" length="4" precision="0" type="NUMBER"/>
+                  <column id="Study/Study/INVESTIGATION_ID" name="INVESTIGATION_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
                   <column id="Study/Study/NAME" name="NAME" nullable="false" length="200" precision="0" type="STRING"/>
                   <column id="Study/Study/DESCRIPTION" name="DESCRIPTION" nullable="true" length="4000" precision="0" type="STRING"/>
+                  <column id="Study/Study/CONTACT_ID" name="CONTACT_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
                   <column id="Study/Study/EXTERNAL_DATABASE_RELEASE_ID" name="EXTERNAL_DATABASE_RELEASE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="Study/Study/SOURCE_ID" name="SOURCE_ID" nullable="true" length="100" precision="0" type="STRING"/>
                </columns>
@@ -11848,7 +11798,12 @@
                         <column idref="Study/Study/INVESTIGATION_ID"/>
                      </columns>
                   </index>
-                  <index name="STUDY_IND02" tablespace="USERS" type="NORMAL">
+                 <index name="STUDY_IND02" tablespace="USERS" type="NORMAL">
+                     <columns>
+                        <column idref="Study/Study/CONTACT_ID"/>
+                     </columns>
+                  </index>
+                  <index name="STUDY_IND03" tablespace="USERS" type="NORMAL">
                      <columns>
                         <column idref="Study/Study/EXTERNAL_DATABASE_RELEASE_ID"/>
                      </columns>
@@ -11864,9 +11819,18 @@
                      <constrainedColumns>
                         <column idref="Study/Study/INVESTIGATION_ID"/>
                      </constrainedColumns>
-                     <referencedTable idref="Study/Investigation"/>
+                     <referencedTable idref="Study/Study"/>
                      <referencedColumns>
-                        <column idref="Study/Investigation/INVESTIGATION_ID"/>
+                        <column idref="Study/Study/STUDY_ID"/>
+                     </referencedColumns>
+                  </constraint>
+                 <constraint name="FK_STUDY_CONTACT" type="FOREIGN_KEY">
+                     <constrainedColumns>
+                        <column idref="Study/Study/CONTACT_ID"/>
+                     </constrainedColumns>
+                     <referencedTable idref="SRes/Contact"/>
+                     <referencedColumns>
+                        <column idref="SRes/Contact/CONTACT_ID"/>
                      </referencedColumns>
                   </constraint>
                   <constraint name="FK_STUDY_EXTDBRLS" type="FOREIGN_KEY">
