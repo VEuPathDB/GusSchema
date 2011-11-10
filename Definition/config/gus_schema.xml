@@ -71,7 +71,7 @@
                   <column id="Core/AlgorithmInvocation/START_TIME" name="START_TIME" nullable="false" length="0" precision="0" type="DATE"/>
                   <column id="Core/AlgorithmInvocation/END_TIME" name="END_TIME" nullable="false" length="0" precision="0" type="DATE"/>
                   <column id="Core/AlgorithmInvocation/CPUS_USED" name="CPUS_USED" nullable="true" length="5" precision="0" type="NUMBER"/>
-                  <column id="Core/AlgorithmInvocation/CPU_TIME" name="CPU_TIME" nullable="true" length="126" precision="0" type="FLOAT"/>
+                  <column id="Core/AlgorithmInvocation/CPU_TIME" name="CPU_TIME" nullable="true" length="12" precision="0" type="FLOAT"/>
                   <column id="Core/AlgorithmInvocation/RESULT" name="RESULT" nullable="false" length="350" precision="0" type="STRING"/>
                   <column id="Core/AlgorithmInvocation/COMMENT_STRING" name="COMMENT_STRING" nullable="true" length="255" precision="0" type="STRING"/>
                </columns>
@@ -109,7 +109,7 @@
                   <column id="Core/AlgorithmParam/ALGORITHM_PARAM_ID" name="ALGORITHM_PARAM_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="Core/AlgorithmParam/ALGORITHM_PARAM_KEY_ID" name="ALGORITHM_PARAM_KEY_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
                   <column id="Core/AlgorithmParam/STRING_VALUE" name="STRING_VALUE" nullable="true" length="3000" precision="0" type="STRING"/>
-                  <column id="Core/AlgorithmParam/FLOAT_VALUE" name="FLOAT_VALUE" nullable="true" length="126" precision="0" type="FLOAT"/>
+                  <column id="Core/AlgorithmParam/FLOAT_VALUE" name="FLOAT_VALUE" nullable="true" length="12" precision="0" type="FLOAT"/>
                   <column id="Core/AlgorithmParam/INT_VALUE" name="INT_VALUE" nullable="true" length="12" precision="0" type="NUMBER"/>
                   <column id="Core/AlgorithmParam/BOOLEAN_VALUE" name="BOOLEAN_VALUE" nullable="true" length="1" precision="0" type="NUMBER"/>
                   <column id="Core/AlgorithmParam/TABLE_ID_VALUE" name="TABLE_ID_VALUE" nullable="true" length="5" precision="0" type="NUMBER"/>
@@ -367,7 +367,7 @@
             <table id="Core/DatabaseVersion" name="DatabaseVersion" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="null" updatable="true">
                <columns>
                   <column id="Core/DatabaseVersion/DATABASE_VERSION_ID" name="DATABASE_VERSION_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
-                  <column id="Core/DatabaseVersion/VERSION" name="VERSION" nullable="false" length="126" precision="0" type="FLOAT"/>
+                  <column id="Core/DatabaseVersion/VERSION" name="VERSION" nullable="false" length="12" precision="0" type="FLOAT"/>
                </columns>
                <indexes>
                   <index name="DATABASEVERSION_PK" tablespace="USERS" type="NORMAL">
@@ -13610,9 +13610,9 @@
                   <column id="Results/ReporterExpression/REPORTER_EXPRESSION_ID" name="REPORTER_EXPRESSION_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
                   <column id="Results/ReporterExpression/PROTOCOL_APP_NODE_ID" name="PROTOCOL_APP_NODE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="Results/ReporterExpression/REPORTER_ID" name="REPORTER_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
-                  <column id="Results/ReporterExpression/VALUE" name="VALUE" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/ReporterExpression/CONFIDENCE" name="CONFIDENCE" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/ReporterExpression/STANDARD_ERROR" name="STANDARD_ERROR" nullable="true" length="126" precision="0" type="FLOAT"/>
+                  <column id="Results/ReporterExpression/VALUE" name="VALUE" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/ReporterExpression/CONFIDENCE" name="CONFIDENCE" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/ReporterExpression/STANDARD_ERROR" name="STANDARD_ERROR" nullable="true" length="12" precision="0" type="FLOAT"/>
                   <column id="Results/ReporterExpression/CATEGORICAL_VALUE" name="CATEGORICAL_VALUE" nullable="true" length="100" precision="0" type="STRING"/>
                 </columns>
                <indexes>
@@ -13663,9 +13663,9 @@
                   <column id="Results/NAFeatureExpression/NA_FEAT_EXPRESSION_ID" name="NA_FEAT_EXPRESSION_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
                   <column id="Results/NAFeatureExpression/PROTOCOL_APP_NODE_ID" name="PROTOCOL_APP_NODE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="Results/NAFeatureExpression/NA_FEATURE_ID" name="NA_FEATURE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-                  <column id="Results/NAFeatureExpression/VALUE" name="VALUE" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/NAFeatureExpression/CONFIDENCE" name="CONFIDENCE" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/NAFeatureExpression/STANDARD_ERROR" name="STANDARD_ERROR" nullable="true" length="126" precision="0" type="FLOAT"/>
+                  <column id="Results/NAFeatureExpression/VALUE" name="VALUE" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/NAFeatureExpression/CONFIDENCE" name="CONFIDENCE" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/NAFeatureExpression/STANDARD_ERROR" name="STANDARD_ERROR" nullable="true" length="12" precision="0" type="FLOAT"/>
                   <column id="Results/NAFeatureExpression/CATEGORICAL_VALUE" name="CATEGORICAL_VALUE" nullable="true" length="100" precision="0" type="STRING"/>
                 </columns>
                <indexes>
@@ -13716,9 +13716,9 @@
                   <column id="Results/RnaExpression/RNA_EXPRESSION_ID" name="RNA_EXPRESSION_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
                   <column id="Results/RnaExpression/PROTOCOL_APP_NODE_ID" name="PROTOCOL_APP_NODE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="Results/RnaExpression/RNA_ID" name="RNA_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-                  <column id="Results/RnaExpression/VALUE" name="VALUE" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/RnaExpression/CONFIDENCE" name="CONFIDENCE" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/RnaExpression/STANDARD_ERROR" name="STANDARD_ERROR" nullable="true" length="126" precision="0" type="FLOAT"/>
+                  <column id="Results/RnaExpression/VALUE" name="VALUE" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/RnaExpression/CONFIDENCE" name="CONFIDENCE" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/RnaExpression/STANDARD_ERROR" name="STANDARD_ERROR" nullable="true" length="12" precision="0" type="FLOAT"/>
                   <column id="Results/RnaExpression/CATEGORICAL_VALUE" name="CATEGORICAL_VALUE" nullable="true" length="100" precision="0" type="STRING"/>
                 </columns>
                <indexes>
@@ -13769,9 +13769,9 @@
                   <column id="Results/GeneExpression/GENE_EXPRESSION_ID" name="GENE_EXPRESSION_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
                   <column id="Results/GeneExpression/PROTOCOL_APP_NODE_ID" name="PROTOCOL_APP_NODE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="Results/GeneExpression/GENE_ID" name="GENE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-                  <column id="Results/GeneExpression/VALUE" name="VALUE" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/GeneExpression/CONFIDENCE" name="CONFIDENCE" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/GeneExpression/STANDARD_ERROR" name="STANDARD_ERROR" nullable="true" length="126" precision="0" type="FLOAT"/>
+                  <column id="Results/GeneExpression/VALUE" name="VALUE" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/GeneExpression/CONFIDENCE" name="CONFIDENCE" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/GeneExpression/STANDARD_ERROR" name="STANDARD_ERROR" nullable="true" length="12" precision="0" type="FLOAT"/>
                   <column id="Results/GeneExpression/CATEGORICAL_VALUE" name="CATEGORICAL_VALUE" nullable="true" length="100" precision="0" type="STRING"/>
                 </columns>
                <indexes>
@@ -13822,9 +13822,9 @@
                   <column id="Results/FamilyExpression/FAMILY_EXPRESSION_ID" name="FAMILY_EXPRESSION_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
                   <column id="Results/FamilyExpression/PROTOCOL_APP_NODE_ID" name="PROTOCOL_APP_NODE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="Results/FamilyExpression/FAMILY_ID" name="FAMILY_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-                  <column id="Results/FamilyExpression/VALUE" name="VALUE" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/FamilyExpression/CONFIDENCE" name="CONFIDENCE" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/FamilyExpression/STANDARD_ERROR" name="STANDARD_ERROR" nullable="true" length="126" precision="0" type="FLOAT"/>
+                  <column id="Results/FamilyExpression/VALUE" name="VALUE" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/FamilyExpression/CONFIDENCE" name="CONFIDENCE" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/FamilyExpression/STANDARD_ERROR" name="STANDARD_ERROR" nullable="true" length="12" precision="0" type="FLOAT"/>
                   <column id="Results/FamilyExpression/CATEGORICAL_VALUE" name="CATEGORICAL_VALUE" nullable="true" length="100" precision="0" type="STRING"/>
                 </columns>
                <indexes>
@@ -13880,12 +13880,12 @@
                   <column id="Results/SegmentResult/ON_REVERSE_STRAND" name="ON_REVERSE_STRAND" nullable="true" length="1" precision="0" type="NUMBER"/>
                   <column id="Results/SegmentResult/NA_FEATURE_ID" name="NA_FEATURE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="Results/SegmentResult/GENETIC_LOCATION" name="GENETIC_LOCATION" nullable="true" length="30" precision="0" type="STRING"/>
-                  <column id="Results/SegmentResult/SCORE1" name="SCORE1" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/SegmentResult/SCORE2" name="SCORE2" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/SegmentResult/P_VALUE" name="P_VALUE" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/SegmentResult/FDR" name="FDR" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/SegmentResult/CONFIDENCE" name="CONFIDENCE" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/SegmentResult/STANDARD_ERROR" name="STANDARD_ERROR" nullable="true" length="126" precision="0" type="FLOAT"/>
+                  <column id="Results/SegmentResult/SCORE1" name="SCORE1" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/SegmentResult/SCORE2" name="SCORE2" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/SegmentResult/P_VALUE" name="P_VALUE" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/SegmentResult/FDR" name="FDR" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/SegmentResult/CONFIDENCE" name="CONFIDENCE" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/SegmentResult/STANDARD_ERROR" name="STANDARD_ERROR" nullable="true" length="12" precision="0" type="FLOAT"/>
                   <column id="Results/SegmentResult/CATEGORICAL_VALUE" name="CATEGORICAL_VALUE" nullable="true" length="100" precision="0" type="STRING"/>
                 </columns>
                <indexes>
@@ -13953,19 +13953,19 @@
                   <column id="Results/SegmentDiffResult/END" name="END" nullable="true" length="12" precision="0" type="NUMBER"/>
                   <column id="Results/SegmentDiffResult/ON_REVERSE_STRAND" name="ON_REVERSE_STRAND" nullable="true" length="1" precision="0" type="NUMBER"/>
                   <column id="Results/SegmentDiffResult/NA_FEATURE_ID" name="NA_FEATURE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
-                  <column id="Results/SegmentDiffResult/MEAN1" name="MEAN1" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/SegmentDiffResult/SD1" name="SD1" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/SegmentDiffResult/MEAN2" name="MEAN2" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/SegmentDiffResult/SD2" name="SD2" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/SegmentDiffResult/FDR" name="FDR" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/SegmentDiffResult/FOLD_CHANGE" name="FOLD_CHANGE" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/SegmentDiffResult/TEST_STATISTIC" name="TEST_STATISTIC" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/SegmentDiffResult/P_VALUE" name="P_VALUE" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/SegmentDiffResult/ADJ_P_VALUE" name="ADJ_P_VALUE" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/SegmentDiffResult/Q_VALUE" name="Q_VALUE" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/SegmentDiffResult/FDR" name="FDR" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/SegmentDiffResult/CONFIDENCE_UP" name="CONFIDENCE_UP" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/SegmentDiffResult/CONFIDENCE_DOWN" name="CONFIDENCE_DOWN" nullable="true" length="126" precision="0" type="FLOAT"/>
+                  <column id="Results/SegmentDiffResult/MEAN1" name="MEAN1" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/SegmentDiffResult/SD1" name="SD1" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/SegmentDiffResult/MEAN2" name="MEAN2" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/SegmentDiffResult/SD2" name="SD2" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/SegmentDiffResult/FDR" name="FDR" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/SegmentDiffResult/FOLD_CHANGE" name="FOLD_CHANGE" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/SegmentDiffResult/TEST_STATISTIC" name="TEST_STATISTIC" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/SegmentDiffResult/P_VALUE" name="P_VALUE" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/SegmentDiffResult/ADJ_P_VALUE" name="ADJ_P_VALUE" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/SegmentDiffResult/Q_VALUE" name="Q_VALUE" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/SegmentDiffResult/FDR" name="FDR" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/SegmentDiffResult/CONFIDENCE_UP" name="CONFIDENCE_UP" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/SegmentDiffResult/CONFIDENCE_DOWN" name="CONFIDENCE_DOWN" nullable="true" length="12" precision="0" type="FLOAT"/>
                 </columns>
                <indexes>
                   <index name="PK_SEGMENTDIFFRES" tablespace="USERS" type="NORMAL">
@@ -14033,8 +14033,8 @@
                   <column id="Results/EditingEvent/NA_FEATURE_ID" name="NA_FEATURE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="Results/EditingEvent/EDITING_TYPE_ID" name="EDITING_TYPE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="Results/EditingEvent/ALTERNATE_SEQUENCE" name="ALTERNATE_SEQUENCE" nullable="true" length="200" precision="0" type="STRING"/>
-                  <column id="Results/SegmentResult/FREQUENCY" name="FREQUENCY" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/SegmentResult/P_VALUE" name="P_VALUE" nullable="true" length="126" precision="0" type="FLOAT"/>
+                  <column id="Results/SegmentResult/FREQUENCY" name="FREQUENCY" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/SegmentResult/P_VALUE" name="P_VALUE" nullable="true" length="12" precision="0" type="FLOAT"/>
                   </columns>
                <indexes>
                   <index name="PK_EDITINGEVENT" tablespace="USERS" type="NORMAL">
@@ -14106,19 +14106,19 @@
                   <column id="Results/ReporterDiffResult/REPORTER_DIFF_RES_ID" name="REPORTER_DIFF_RES_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
                   <column id="Results/ReporterDiffResult/PROTOCOL_APP_NODE_ID" name="PROTOCOL_APP_NODE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="Results/ReporterDiffResult/REPORTER_ID" name="REPORTER_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
-                     <column id="Results/ReporterDiffResult/MEAN1" name="MEAN1" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/ReporterDiffResult/SD1" name="SD1" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/ReporterDiffResult/MEAN2" name="MEAN2" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/ReporterDiffResult/SD2" name="SD2" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/ReporterDiffResult/FDR" name="FDR" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/ReporterDiffResult/FOLD_CHANGE" name="FOLD_CHANGE" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/ReporterDiffResult/TEST_STATISTIC" name="TEST_STATISTIC" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/ReporterDiffResult/P_VALUE" name="P_VALUE" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/ReporterDiffResult/ADJ_P_VALUE" name="ADJ_P_VALUE" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/ReporterDiffResult/Q_VALUE" name="Q_VALUE" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/ReporterDiffResult/FDR" name="FDR" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/ReporterDiffResult/CONFIDENCE_UP" name="CONFIDENCE_UP" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/ReporterDiffResult/CONFIDENCE_DOWN" name="CONFIDENCE_DOWN" nullable="true" length="126" precision="0" type="FLOAT"/>
+                     <column id="Results/ReporterDiffResult/MEAN1" name="MEAN1" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/ReporterDiffResult/SD1" name="SD1" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/ReporterDiffResult/MEAN2" name="MEAN2" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/ReporterDiffResult/SD2" name="SD2" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/ReporterDiffResult/FDR" name="FDR" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/ReporterDiffResult/FOLD_CHANGE" name="FOLD_CHANGE" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/ReporterDiffResult/TEST_STATISTIC" name="TEST_STATISTIC" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/ReporterDiffResult/P_VALUE" name="P_VALUE" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/ReporterDiffResult/ADJ_P_VALUE" name="ADJ_P_VALUE" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/ReporterDiffResult/Q_VALUE" name="Q_VALUE" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/ReporterDiffResult/FDR" name="FDR" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/ReporterDiffResult/CONFIDENCE_UP" name="CONFIDENCE_UP" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/ReporterDiffResult/CONFIDENCE_DOWN" name="CONFIDENCE_DOWN" nullable="true" length="12" precision="0" type="FLOAT"/>
                 </columns>
                <indexes>
                   <index name="PK_REPORTERDIFFRES" tablespace="USERS" type="NORMAL">
@@ -14174,19 +14174,19 @@
                   <column id="Results/NAFeatureDiffResult/NA_FEAT_DIFF_RES_ID" name="NA_FEAT_DIFF_RES_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
                   <column id="Results/NAFeatureDiffResult/PROTOCOL_APP_NODE_ID" name="PROTOCOL_APP_NODE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="Results/NAFeatureDiffResult/NA_FEATURE_ID" name="NA_FEATURE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-                  <column id="Results/NAFeatureDiffResult/MEAN1" name="MEAN1" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/NAFeatureDiffResult/SD1" name="SD1" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/NAFeatureDiffResult/MEAN2" name="MEAN2" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/NAFeatureDiffResult/SD2" name="SD2" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/NAFeatureDiffResult/FDR" name="FDR" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/NAFeatureDiffResult/FOLD_CHANGE" name="FOLD_CHANGE" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/NAFeatureDiffResult/TEST_STATISTIC" name="TEST_STATISTIC" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/NAFeatureDiffResult/P_VALUE" name="P_VALUE" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/NAFeatureDiffResult/ADJ_P_VALUE" name="ADJ_P_VALUE" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/NAFeatureDiffResult/Q_VALUE" name="Q_VALUE" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/NAFeatureDiffResult/FDR" name="FDR" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/NAFeatureDiffResult/CONFIDENCE_UP" name="CONFIDENCE_UP" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/NAFeatureDiffResult/CONFIDENCE_DOWN" name="CONFIDENCE_DOWN" nullable="true" length="126" precision="0" type="FLOAT"/>
+                  <column id="Results/NAFeatureDiffResult/MEAN1" name="MEAN1" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/NAFeatureDiffResult/SD1" name="SD1" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/NAFeatureDiffResult/MEAN2" name="MEAN2" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/NAFeatureDiffResult/SD2" name="SD2" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/NAFeatureDiffResult/FDR" name="FDR" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/NAFeatureDiffResult/FOLD_CHANGE" name="FOLD_CHANGE" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/NAFeatureDiffResult/TEST_STATISTIC" name="TEST_STATISTIC" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/NAFeatureDiffResult/P_VALUE" name="P_VALUE" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/NAFeatureDiffResult/ADJ_P_VALUE" name="ADJ_P_VALUE" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/NAFeatureDiffResult/Q_VALUE" name="Q_VALUE" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/NAFeatureDiffResult/FDR" name="FDR" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/NAFeatureDiffResult/CONFIDENCE_UP" name="CONFIDENCE_UP" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/NAFeatureDiffResult/CONFIDENCE_DOWN" name="CONFIDENCE_DOWN" nullable="true" length="12" precision="0" type="FLOAT"/>
                 </columns>
                <indexes>
                   <index name="PK_NAFEATDIFFRES" tablespace="USERS" type="NORMAL">
@@ -14242,19 +14242,19 @@
                   <column id="Results/RnaDiffResult/RNA_DIFF_RES_ID" name="RNA_DIFF_RES_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
                   <column id="Results/RnaDiffResult/PROTOCOL_APP_NODE_ID" name="PROTOCOL_APP_NODE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="Results/RnaDiffResult/RNA_ID" name="RNA_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-                  <column id="Results/RnaDiffResult/MEAN1" name="MEAN1" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/RnaDiffResult/SD1" name="SD1" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/RnaDiffResult/MEAN2" name="MEAN2" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/RnaDiffResult/SD2" name="SD2" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/RnaDiffResult/FDR" name="FDR" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/RnaDiffResult/FOLD_CHANGE" name="FOLD_CHANGE" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/RnaDiffResult/TEST_STATISTIC" name="TEST_STATISTIC" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/RnaDiffResult/P_VALUE" name="P_VALUE" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/RnaDiffResult/ADJ_P_VALUE" name="ADJ_P_VALUE" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/RnaDiffResult/Q_VALUE" name="Q_VALUE" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/RnaDiffResult/FDR" name="FDR" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/RnaDiffResult/CONFIDENCE_UP" name="CONFIDENCE_UP" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/RnaDiffResult/CONFIDENCE_DOWN" name="CONFIDENCE_DOWN" nullable="true" length="126" precision="0" type="FLOAT"/>
+                  <column id="Results/RnaDiffResult/MEAN1" name="MEAN1" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/RnaDiffResult/SD1" name="SD1" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/RnaDiffResult/MEAN2" name="MEAN2" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/RnaDiffResult/SD2" name="SD2" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/RnaDiffResult/FDR" name="FDR" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/RnaDiffResult/FOLD_CHANGE" name="FOLD_CHANGE" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/RnaDiffResult/TEST_STATISTIC" name="TEST_STATISTIC" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/RnaDiffResult/P_VALUE" name="P_VALUE" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/RnaDiffResult/ADJ_P_VALUE" name="ADJ_P_VALUE" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/RnaDiffResult/Q_VALUE" name="Q_VALUE" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/RnaDiffResult/FDR" name="FDR" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/RnaDiffResult/CONFIDENCE_UP" name="CONFIDENCE_UP" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/RnaDiffResult/CONFIDENCE_DOWN" name="CONFIDENCE_DOWN" nullable="true" length="12" precision="0" type="FLOAT"/>
                 </columns>
                <indexes>
                   <index name="PK_RNADIFFRES" tablespace="USERS" type="NORMAL">
@@ -14310,19 +14310,19 @@
                   <column id="Results/GeneDiffResult/GENE_DIFF_RES_ID" name="GENE_DIFF_RES_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
                   <column id="Results/GeneDiffResult/PROTOCOL_APP_NODE_ID" name="PROTOCOL_APP_NODE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="Results/GeneDiffResult/GENE_ID" name="GENE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-                  <column id="Results/GeneDiffResult/MEAN1" name="MEAN1" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/GeneDiffResult/SD1" name="SD1" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/GeneDiffResult/MEAN2" name="MEAN2" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/GeneDiffResult/SD2" name="SD2" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/GeneDiffResult/FDR" name="FDR" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/GeneDiffResult/FOLD_CHANGE" name="FOLD_CHANGE" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/GeneDiffResult/TEST_STATISTIC" name="TEST_STATISTIC" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/GeneDiffResult/P_VALUE" name="P_VALUE" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/GeneDiffResult/ADJ_P_VALUE" name="ADJ_P_VALUE" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/GeneDiffResult/Q_VALUE" name="Q_VALUE" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/GeneDiffResult/FDR" name="FDR" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/GeneDiffResult/CONFIDENCE_UP" name="CONFIDENCE_UP" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/GeneDiffResult/CONFIDENCE_DOWN" name="CONFIDENCE_DOWN" nullable="true" length="126" precision="0" type="FLOAT"/>
+                  <column id="Results/GeneDiffResult/MEAN1" name="MEAN1" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/GeneDiffResult/SD1" name="SD1" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/GeneDiffResult/MEAN2" name="MEAN2" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/GeneDiffResult/SD2" name="SD2" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/GeneDiffResult/FDR" name="FDR" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/GeneDiffResult/FOLD_CHANGE" name="FOLD_CHANGE" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/GeneDiffResult/TEST_STATISTIC" name="TEST_STATISTIC" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/GeneDiffResult/P_VALUE" name="P_VALUE" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/GeneDiffResult/ADJ_P_VALUE" name="ADJ_P_VALUE" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/GeneDiffResult/Q_VALUE" name="Q_VALUE" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/GeneDiffResult/FDR" name="FDR" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/GeneDiffResult/CONFIDENCE_UP" name="CONFIDENCE_UP" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/GeneDiffResult/CONFIDENCE_DOWN" name="CONFIDENCE_DOWN" nullable="true" length="12" precision="0" type="FLOAT"/>
                 </columns>
                <indexes>
                   <index name="PK_GENEDIFFRES" tablespace="USERS" type="NORMAL">
@@ -14378,19 +14378,19 @@
                   <column id="Results/FamilyDiffResult/FAMILY_DIFF_RES_ID" name="FAMILY_DIFF_RES_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
                   <column id="Results/FamilyDiffResult/PROTOCOL_APP_NODE_ID" name="PROTOCOL_APP_NODE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="Results/FamilyDiffResult/FAMILY_ID" name="FAMILY_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-                  <column id="Results/FamilyDiffResult/MEAN1" name="MEAN1" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/FamilyDiffResult/SD1" name="SD1" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/FamilyDiffResult/MEAN2" name="MEAN2" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/FamilyDiffResult/SD2" name="SD2" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/FamilyDiffResult/FDR" name="FDR" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/FamilyDiffResult/FOLD_CHANGE" name="FOLD_CHANGE" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/FamilyDiffResult/TEST_STATISTIC" name="TEST_STATISTIC" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/FamilyDiffResult/P_VALUE" name="P_VALUE" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/FamilyDiffResult/ADJ_P_VALUE" name="ADJ_P_VALUE" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/FamilyDiffResult/Q_VALUE" name="Q_VALUE" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/FamilyDiffResult/FDR" name="FDR" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/FamilyDiffResult/CONFIDENCE_UP" name="CONFIDENCE_UP" nullable="true" length="126" precision="0" type="FLOAT"/>
-                  <column id="Results/FamilyDiffResult/CONFIDENCE_DOWN" name="CONFIDENCE_DOWN" nullable="true" length="126" precision="0" type="FLOAT"/>
+                  <column id="Results/FamilyDiffResult/MEAN1" name="MEAN1" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/FamilyDiffResult/SD1" name="SD1" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/FamilyDiffResult/MEAN2" name="MEAN2" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/FamilyDiffResult/SD2" name="SD2" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/FamilyDiffResult/FDR" name="FDR" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/FamilyDiffResult/FOLD_CHANGE" name="FOLD_CHANGE" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/FamilyDiffResult/TEST_STATISTIC" name="TEST_STATISTIC" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/FamilyDiffResult/P_VALUE" name="P_VALUE" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/FamilyDiffResult/ADJ_P_VALUE" name="ADJ_P_VALUE" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/FamilyDiffResult/Q_VALUE" name="Q_VALUE" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/FamilyDiffResult/FDR" name="FDR" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/FamilyDiffResult/CONFIDENCE_UP" name="CONFIDENCE_UP" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/FamilyDiffResult/CONFIDENCE_DOWN" name="CONFIDENCE_DOWN" nullable="true" length="12" precision="0" type="FLOAT"/>
                 </columns>
                <indexes>
                   <index name="PK_FAMILYDIFFRES" tablespace="USERS" type="NORMAL">
@@ -14447,7 +14447,7 @@
                   <column id="Results/GeneSimilarity/PROTOCOL_APP_NODE_ID" name="PROTOCOL_APP_NODE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="Results/GeneSimilarity/GENE1_ID" name="GENE1_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="Results/GeneSimilarity/GENE2_ID" name="GENE2_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-                  <column id="Results/GeneSimilarity/SIMILARITY" name="SIMILARITY" nullable="false" length="126" precision="0" type="FLOAT"/>
+                  <column id="Results/GeneSimilarity/SIMILARITY" name="SIMILARITY" nullable="false" length="12" precision="0" type="FLOAT"/>
                 </columns>
                <indexes>
                   <index name="PK_GENESIM" tablespace="USERS" type="NORMAL">
