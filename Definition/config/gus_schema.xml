@@ -11195,6 +11195,7 @@
                      </constrainedColumns>
                   </constraint>
                </constraints>
+            </table>
             <table id="SRes/OntologyRelationship" name="OntologyRelationship" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="Generic Ontology" updatable="true">
                <columns>
                   <column id="SRes/OntologyRelationship/ONTOLOGY_RELATIONSHIP_ID" name="ONTOLOGY_RELATIONSHIP_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
@@ -11896,6 +11897,7 @@
                         <column idref="SRes/BibliographicReference/BIBLIOGRAPHIC_REFERENCE_ID"/>
                      </referencedColumns>
                   </constraint>
+               </constraints>
             </table>
             <table id="Study/StudyDesign" name="StudyDesign" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Experimental Design" updatable="true">
                <columns>
@@ -11925,6 +11927,7 @@
                      <constrainedColumns>
                         <column idref="Study/StudyDesign/STUDY_DESIGN_ID"/>
                      </constrainedColumns>
+                  </constraint>
                   <constraint name="FK_STUDYDESIGN_STUDY" type="FOREIGN_KEY">
                      <constrainedColumns>
                         <column idref="Study/StudyDesign/STUDY_ID"/>
@@ -11943,6 +11946,7 @@
                         <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
                      </referencedColumns>
                   </constraint>
+               </constraints>
             </table>
             <table id="Study/StudyFactor" name="StudyFactor" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Experimental Design" updatable="true">
                <columns>
@@ -12173,11 +12177,12 @@
                      <constrainedColumns>
                         <column idref="Study/StudyLink/PROTOCOL_APP_NODE_ID"/>
                      </constrainedColumns>
-                     <referencedTable idref="Study/ProtocolAppNode/">
+                     <referencedTable idref="Study/ProtocolAppNode/"/>
                      <referencedColumns>
                         <column idref="Study/ProtocolAppNode/PROTOCOL_APP_NODE_ID"/>
                      </referencedColumns>
                   </constraint>
+               </constraints>
             </table>
             <table id="Study/Characteristic" name="Characteristic" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Experimental Design" updatable="true">
                <columns>
@@ -12275,7 +12280,6 @@
                         <column idref="Study/Protocol/PROTOCOL_TYPE_ID"/>
                      </columns>
                   </index>
-                  </index>
                   <index name="PROTOCOL_R01" tablespace="USERS" type="NORMAL">
                      <columns>
                         <column idref="Study/Protocol/BIBLIOGRAPHIC_REFERENCE_ID"/>
@@ -12367,7 +12371,6 @@
                         <column idref="Study/ProtocolParam/PROTOCOL_PARAM_ID"/>
                      </constrainedColumns>
                   </constraint>
-               </constraints>
                  <constraint name="FK_PROTOCOLPARAM_PROT" type="FOREIGN_KEY">
                      <constrainedColumns>
                         <column idref="Study/ProtocolParam/PROTOCOL_ID"/>
@@ -12421,6 +12424,7 @@
                         <column idref="Study/ProtocolSeries/PROTOCOL_SERIES_ID"/>
                      </constrainedColumns>
                   </constraint>
+               </constraints>
             </table>
             <table id="Study/ProtocolSeriesLink" name="ProtocolSeriesLink" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Experimental Design" updatable="true">
                <columns>
@@ -12465,11 +12469,12 @@
                      <constrainedColumns>
                         <column idref="Study/ProtocolSeriesLink/PROTOCOL_ID"/>
                      </constrainedColumns>
-                     <referencedTable idref="Study/Protocol/">
+                     <referencedTable idref="Study/Protocol"/>
                      <referencedColumns>
                         <column idref="Study/Protocol/PROTOCOL_ID"/>
                      </referencedColumns>
                   </constraint>
+               </constraints>
             </table>
            <table id="Study/ProtocolApp" name="ProtocolApp" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Experimental Design" updatable="true">
                <columns>
@@ -12514,11 +12519,12 @@
                      <constrainedColumns>
                         <column idref="Study/ProtocolApp/CONTACT_ID"/>
                      </constrainedColumns>
-                     <referencedTable idref="SRes/Contact/">
+                     <referencedTable idref="SRes/Contact"/>
                      <referencedColumns>
                         <column idref="SRes/Contact/CONTACT_ID"/>
                      </referencedColumns>
                   </constraint>
+               </constraints>
             </table>
             <table id="Study/ProtocolAppParam" name="ProtocolAppParam" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Experimental Design" updatable="true">
                <columns>
@@ -12557,7 +12563,6 @@
                         <column idref="Study/ProtocolAppParam/PROTOCOL_APP_PARAM_ID"/>
                      </constrainedColumns>
                   </constraint>
-               </constraints>
                  <constraint name="FK_PROTAPPPARAM_PROTAPP" type="FOREIGN_KEY">
                      <constrainedColumns>
                         <column idref="Study/ProtocolAppParam/PROTOCOL_APP_ID"/>
@@ -12629,11 +12634,12 @@
                      <constrainedColumns>
                         <column idref="Study/Input/PROTOCOL_APP_NODE_ID"/>
                      </constrainedColumns>
-                     <referencedTable idref="Study/ProtocolAppNode/">
+                     <referencedTable idref="Study/ProtocolAppNode"/>
                      <referencedColumns>
                         <column idref="Study/ProtocolAppNode/PROTOCOL_APP_NODE_ID"/>
                      </referencedColumns>
                   </constraint>
+               </constraints>
             </table>
             <table id="Study/Output" name="Output" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Experimental Design" updatable="true">
                <columns>
@@ -12677,11 +12683,12 @@
                      <constrainedColumns>
                         <column idref="Study/Output/PROTOCOL_APP_NODE_ID"/>
                      </constrainedColumns>
-                     <referencedTable idref="Study/ProtocolAppNode/">
+                     <referencedTable idref="Study/ProtocolAppNode"/>
                      <referencedColumns>
                         <column idref="Study/ProtocolAppNode/PROTOCOL_APP_NODE_ID"/>
                      </referencedColumns>
                   </constraint>
+               </constraints>
             </table>
          </tables>
       </schema>
@@ -12704,7 +12711,7 @@
                         <column idref="Platform/ReporterSet/NAME"/>
                      </columns>
                   </index>
-               </idexes> 
+               </indexes> 
                <constraints>
                   <constraint name="PK_REPORTERSETGRP" type="PRIMARY_KEY">
                      <constrainedColumns>
