@@ -4272,7 +4272,7 @@
                   <column id="DoTS/EST/CONTACT_ID" name="CONTACT_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
                   <column id="DoTS/EST/DBEST_ID_EST" name="DBEST_ID_EST" nullable="true" length="12" precision="0" type="NUMBER"/>
                   <column id="DoTS/EST/WASHU_ID" name="WASHU_ID" nullable="true" length="67" precision="0" type="STRING"/>
-                  <column id="DoTS/EST/ACCESSION" name="ACCESSION" nullable="true" length="20" precision="0" type="STRING"/>
+                  <column id="DoTS/EST/ACCESSION" name="ACCESSION" nullable="true" length="50" precision="0" type="STRING"/>
                   <column id="DoTS/EST/P_END" name="P_END" nullable="true" length="1" precision="0" type="CHARACTER"/>
                   <column id="DoTS/EST/QUALITY_START" name="QUALITY_START" nullable="false" length="12" precision="0" type="NUMBER"/>
                   <column id="DoTS/EST/QUALITY_STOP" name="QUALITY_STOP" nullable="true" length="12" precision="0" type="NUMBER"/>
@@ -6816,11 +6816,11 @@
                   <column id="DoTS/NAFeature/NA_FEATURE_ID" name="NA_FEATURE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/NAFeature/NA_SEQUENCE_ID" name="NA_SEQUENCE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/NAFeature/SUBCLASS_VIEW" name="SUBCLASS_VIEW" nullable="true" length="30" precision="0" type="STRING"/>
-                  <column id="DoTS/NAFeature/NAME" name="NAME" nullable="false" length="30" precision="0" type="STRING"/>
+                  <column id="DoTS/NAFeature/NAME" name="NAME" nullable="false" length="50" precision="0" type="STRING"/>
                   <column id="DoTS/NAFeature/SEQUENCE_ONTOLOGY_ID" name="SEQUENCE_ONTOLOGY_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/NAFeature/PARENT_ID" name="PARENT_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/NAFeature/EXTERNAL_DATABASE_RELEASE_ID" name="EXTERNAL_DATABASE_RELEASE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
-                  <column id="DoTS/NAFeature/SOURCE_ID" name="SOURCE_ID" nullable="true" length="50" precision="0" type="STRING"/>
+                  <column id="DoTS/NAFeature/SOURCE_ID" name="SOURCE_ID" nullable="true" length="80" precision="0" type="STRING"/>
                   <column id="DoTS/NAFeature/PREDICTION_ALGORITHM_ID" name="PREDICTION_ALGORITHM_ID" nullable="true" length="5" precision="0" type="NUMBER"/>
                   <column id="DoTS/NAFeature/IS_PREDICTED" name="IS_PREDICTED" nullable="true" length="1" precision="0" type="NUMBER"/>
                   <column id="DoTS/NAFeature/REVIEW_STATUS_ID" name="REVIEW_STATUS_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
@@ -11058,8 +11058,8 @@
                   <column id="SRes/DbRef/EXTERNAL_DATABASE_RELEASE_ID" name="EXTERNAL_DATABASE_RELEASE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="SRes/DbRef/PRIMARY_IDENTIFIER" name="PRIMARY_IDENTIFIER" nullable="true" length="100" precision="0" type="STRING"/>
                   <column id="SRes/DbRef/LOWERCASE_PRIMARY_IDENTIFIER" name="LOWERCASE_PRIMARY_IDENTIFIER" nullable="true" length="100" precision="0" type="STRING"/>
-                  <column id="SRes/DbRef/SECONDARY_IDENTIFIER" name="SECONDARY_IDENTIFIER" nullable="true" length="100" precision="0" type="STRING"/>
-                  <column id="SRes/DbRef/LOWERCASE_SECONDARY_IDENTIFIER" name="LOWERCASE_SECONDARY_IDENTIFIER" nullable="true" length="100" precision="0" type="STRING"/>
+                  <column id="SRes/DbRef/SECONDARY_IDENTIFIER" name="SECONDARY_IDENTIFIER" nullable="true" length="150" precision="0" type="STRING"/>
+                  <column id="SRes/DbRef/LOWERCASE_SECONDARY_IDENTIFIER" name="LOWERCASE_SECONDARY_IDENTIFIER" nullable="true" length="150" precision="0" type="STRING"/>
                   <column id="SRes/DbRef/GENE_SYMBOL" name="GENE_SYMBOL" nullable="true" length="50" precision="0" type="STRING"/>
                   <column id="SRes/DbRef/CHROMOSOME" name="CHROMOSOME" nullable="true" length="2" precision="0" type="STRING"/>
                   <column id="SRes/DbRef/CENTIMORGANS" name="CENTIMORGANS" nullable="true" length="22" precision="0" type="NUMBER"/>
@@ -11109,7 +11109,7 @@
             <table id="SRes/ExternalDatabase" name="ExternalDatabase" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="External Database" updatable="true">
                <columns>
                   <column id="SRes/ExternalDatabase/EXTERNAL_DATABASE_ID" name="EXTERNAL_DATABASE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-                  <column id="SRes/ExternalDatabase/NAME" name="NAME" nullable="false" length="80" precision="0" type="STRING"/>
+                  <column id="SRes/ExternalDatabase/NAME" name="NAME" nullable="false" length="150" precision="0" type="STRING"/>
                </columns>
                <indexes>
                   <index name="PK_EXTERNALDATABASE" tablespace="USERS" type="NORMAL">
