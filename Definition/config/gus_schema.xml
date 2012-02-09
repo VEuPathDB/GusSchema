@@ -870,7 +870,7 @@
                   <column id="DoTS/AAFeature/SOURCE_ID" name="SOURCE_ID" nullable="true" length="50" precision="0" type="STRING"/>
                   <column id="DoTS/AAFeature/PREDICTION_ALGORITHM_ID" name="PREDICTION_ALGORITHM_ID" nullable="true" length="5" precision="0" type="NUMBER"/>
                   <column id="DoTS/AAFeature/IS_PREDICTED" name="IS_PREDICTED" nullable="false" length="1" precision="0" type="NUMBER"/>
-                  <column id="DoTS/AAFeature/REVIEW_STATUS_ID" name="REVIEW_STATUS_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
+                  <column id="DoTS/AAFeature/REVIEW_STATUS_ID" name="REVIEW_STATUS_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                </columns>
                <subclasses>
                   <subclass id="DoTS/AAFeature/AASeqVariation" name="AASeqVariation" versioned="true" tablespace="USERS" categoryRef="AA Sequence Features" updatable="true">
@@ -1191,7 +1191,7 @@
                <columns>
                   <column id="DoTS/AAFeatureComment/AA_FEATURE_COMMENT_ID" name="AA_FEATURE_COMMENT_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/AAFeatureComment/AA_FEATURE_ID" name="AA_FEATURE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-                  <column id="DoTS/AAFeatureComment/COMMENT_NAME_ID" name="COMMENT_NAME_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
+                  <column id="DoTS/AAFeatureComment/COMMENT_NAME_ID" name="COMMENT_NAME_ID" nullable="true" length="4" precision="0" type="NUMBER"/>
                   <column id="DoTS/AAFeatureComment/COMMENT_STRING" name="COMMENT_STRING" nullable="false" length="0" precision="0" type="CLOB"/>
                </columns>
                <indexes>
@@ -1391,7 +1391,7 @@
                   <column id="DoTS/AAMotifGOTermRule/GO_TERM_ID" name="GO_TERM_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/AAMotifGOTermRule/NUMBER_OF_ANNOTATED_PROTEINS" name="NUMBER_OF_ANNOTATED_PROTEINS" nullable="false" length="12" precision="0" type="NUMBER"/>
                   <column id="DoTS/AAMotifGOTermRule/DEFINING" name="DEFINING" nullable="false" length="1" precision="0" type="NUMBER"/>
-                  <column id="DoTS/AAMotifGOTermRule/REVIEW_STATUS_ID" name="REVIEW_STATUS_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
+                  <column id="DoTS/AAMotifGOTermRule/REVIEW_STATUS_ID" name="REVIEW_STATUS_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/AAMotifGOTermRule/REVIEWER_ID" name="REVIEWER_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
                   <column id="DoTS/AAMotifGOTermRule/CONFIDENCE" name="CONFIDENCE" nullable="true" length="10" precision="0" type="STRING"/>
                </columns>
@@ -1487,7 +1487,7 @@
                   <column id="DoTS/AAMotifGOTermRuleSet/NUMBER_OF_ANNOTATED_PROTEINS" name="NUMBER_OF_ANNOTATED_PROTEINS" nullable="false" length="12" precision="0" type="NUMBER"/>
                   <column id="DoTS/AAMotifGOTermRuleSet/P_VALUE_THRESHOLD_MANT" name="P_VALUE_THRESHOLD_MANT" nullable="false" length="126" precision="0" type="FLOAT"/>
                   <column id="DoTS/AAMotifGOTermRuleSet/P_VALUE_THRESHOLD_EXP" name="P_VALUE_THRESHOLD_EXP" nullable="false" length="6" precision="0" type="NUMBER"/>
-                  <column id="DoTS/AAMotifGOTermRuleSet/REVIEW_STATUS_ID" name="REVIEW_STATUS_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
+                  <column id="DoTS/AAMotifGOTermRuleSet/REVIEW_STATUS_ID" name="REVIEW_STATUS_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/AAMotifGOTermRuleSet/REVIEWER_ID" name="REVIEWER_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
                   <column id="DoTS/AAMotifGOTermRuleSet/CONFIDENCE" name="CONFIDENCE" nullable="true" length="10" precision="0" type="STRING"/>
                </columns>
@@ -1806,11 +1806,11 @@
             <table id="DoTS/AASequenceEnzymeClass" name="AASequenceEnzymeClass" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="Enzymes Vocabulary" updatable="true">
                <columns>
                   <column id="DoTS/AASequenceEnzymeClass/AA_SEQUENCE_ENZYME_CLASS_ID" name="AA_SEQUENCE_ENZYME_CLASS_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
-                  <column id="DoTS/AASequenceEnzymeClass/AA_SEQUENCE_ID" name="AA_SEQUENCE_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
+                  <column id="DoTS/AASequenceEnzymeClass/AA_SEQUENCE_ID" name="AA_SEQUENCE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/AASequenceEnzymeClass/ENZYME_CLASS_ID" name="ENZYME_CLASS_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
                   <column id="DoTS/AASequenceEnzymeClass/EVIDENCE_CODE" name="EVIDENCE_CODE" nullable="false" length="255" precision="0" type="STRING"/>
                   <column id="DoTS/AASequenceEnzymeClass/EC_ASSIGNMENT_CONTACT_ID" name="EC_ASSIGNMENT_CONTACT_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
-                  <column id="DoTS/AASequenceEnzymeClass/REVIEW_STATUS_ID" name="REVIEW_STATUS_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
+                  <column id="DoTS/AASequenceEnzymeClass/REVIEW_STATUS_ID" name="REVIEW_STATUS_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                </columns>
                <indexes>
                   <index name="AASEQUENCEENZYMECLASS_AASEQ" tablespace="USERS" type="NORMAL">
@@ -2224,7 +2224,7 @@
                <columns>
                   <column id="DoTS/AASequenceTaxon/AA_SEQUENCE_TAXON_ID" name="AA_SEQUENCE_TAXON_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/AASequenceTaxon/AA_SEQUENCE_ID" name="AA_SEQUENCE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-                  <column id="DoTS/AASequenceTaxon/TAXON_ID" name="TAXON_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
+                  <column id="DoTS/AASequenceTaxon/TAXON_ID" name="TAXON_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                </columns>
                <indexes>
                   <index name="AASEQUENCETAXON_IND01" tablespace="USERS" type="NORMAL">
@@ -2342,7 +2342,7 @@
                   <column id="DoTS/AlleleComplementation/ALLELE_ID" name="ALLELE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/AlleleComplementation/COMPLEMENTATION_ID" name="COMPLEMENTATION_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/AlleleComplementation/TYPE" name="TYPE" nullable="false" length="40" precision="0" type="STRING"/>
-                  <column id="DoTS/AlleleComplementation/REVIEW_STATUS_ID" name="REVIEW_STATUS_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
+                  <column id="DoTS/AlleleComplementation/REVIEW_STATUS_ID" name="REVIEW_STATUS_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                </columns>
                <indexes>
                   <index name="ALLELECOMPLEMENTATION_IND01" tablespace="USERS" type="NORMAL">
@@ -2407,7 +2407,7 @@
                   <column id="DoTS/AlleleInstance/ALLELE_ID" name="ALLELE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/AlleleInstance/NA_FEATURE_ID" name="NA_FEATURE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/AlleleInstance/DESCRIPTION" name="DESCRIPTION" nullable="true" length="500" precision="0" type="STRING"/>
-                  <column id="DoTS/AlleleInstance/REVIEW_STATUS_ID" name="REVIEW_STATUS_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
+                  <column id="DoTS/AlleleInstance/REVIEW_STATUS_ID" name="REVIEW_STATUS_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                </columns>
                <indexes>
                   <index name="ALLELEINSTANCE_IND01" tablespace="USERS" type="NORMAL">
@@ -2470,8 +2470,8 @@
                <columns>
                   <column id="DoTS/AllelePhenotype/ALLELE_PHENOTYPE_ID" name="ALLELE_PHENOTYPE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/AllelePhenotype/ALLELE_ID" name="ALLELE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-                  <column id="DoTS/AllelePhenotype/PHENOTYPE_ID" name="PHENOTYPE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-                  <column id="DoTS/AllelePhenotype/REVIEW_STATUS_ID" name="REVIEW_STATUS_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
+                  <column id="DoTS/AllelePhenotype/PHENOTYPE_ID" name="PHENOTYPE_ID" nullable="false" length="8" precision="0" type="NUMBER"/>
+                  <column id="DoTS/AllelePhenotype/REVIEW_STATUS_ID" name="REVIEW_STATUS_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                </columns>
                <indexes>
                   <index name="ALLELEPHENOTYPE_IND01" tablespace="USERS" type="NORMAL">
@@ -2535,7 +2535,7 @@
                   <column id="DoTS/AllelePhenotypeClass/ALLELE_PHENOTYPE_CLASS_ID" name="ALLELE_PHENOTYPE_CLASS_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/AllelePhenotypeClass/ALLELE_ID" name="ALLELE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/AllelePhenotypeClass/PHENOTYPE_CLASS_ID" name="PHENOTYPE_CLASS_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-                  <column id="DoTS/AllelePhenotypeClass/REVIEW_STATUS_ID" name="REVIEW_STATUS_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
+                  <column id="DoTS/AllelePhenotypeClass/REVIEW_STATUS_ID" name="REVIEW_STATUS_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                </columns>
                <indexes>
                   <index name="ALLELEPHENOTYPECLASS_IND01" tablespace="USERS" type="NORMAL">
@@ -2659,7 +2659,7 @@
                <columns>
                   <column id="DoTS/AssemblyAnatomyPercent/ASSEMBLY_ANATOMY_PERCENT_ID" name="ASSEMBLY_ANATOMY_PERCENT_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/AssemblyAnatomyPercent/NA_SEQUENCE_ID" name="NA_SEQUENCE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-                  <column id="DoTS/AssemblyAnatomyPercent/TAXON_ID" name="TAXON_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
+                  <column id="DoTS/AssemblyAnatomyPercent/TAXON_ID" name="TAXON_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/AssemblyAnatomyPercent/ANATOMY_ID" name="ANATOMY_ID" nullable="false" length="4" precision="0" type="NUMBER"/>
                   <column id="DoTS/AssemblyAnatomyPercent/PERCENT" name="PERCENT" nullable="false" length="126" precision="0" type="FLOAT"/>
                   <column id="DoTS/AssemblyAnatomyPercent/ANATOMY_ESTS" name="ANATOMY_ESTS" nullable="false" length="5" precision="0" type="NUMBER"/>
@@ -2891,7 +2891,7 @@
             <table id="DoTS/Attribution" name="Attribution" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="Bibliographic" updatable="true">
                <columns>
                   <column id="DoTS/Attribution/ATTRIBUTION_ID" name="ATTRIBUTION_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-                  <column id="DoTS/Attribution/TABLE_ID" name="TABLE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+                  <column id="DoTS/Attribution/TABLE_ID" name="TABLE_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
                   <column id="DoTS/Attribution/ROW_ID" name="ROW_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/Attribution/CONTACT_ID" name="CONTACT_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
                </columns>
@@ -3409,7 +3409,7 @@
                <columns>
                   <column id="DoTS/Comments/COMMENTS_ID" name="COMMENTS_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/Comments/COMMENT_STRING" name="COMMENT_STRING" nullable="false" length="0" precision="0" type="CLOB"/>
-                  <column id="DoTS/Comments/REVIEW_STATUS_ID" name="REVIEW_STATUS_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
+                  <column id="DoTS/Comments/REVIEW_STATUS_ID" name="REVIEW_STATUS_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                </columns>
                <indexes>
                   <index name="COMMENTS_IND01" tablespace="USERS" type="NORMAL">
@@ -3445,11 +3445,11 @@
                   <column id="DoTS/Complementation/COMPLEMENTATION_ID" name="COMPLEMENTATION_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/Complementation/IS_EXTERNAL_REFERENCE" name="IS_EXTERNAL_REFERENCE" nullable="false" length="1" precision="0" type="NUMBER"/>
                   <column id="DoTS/Complementation/ENTITY_NAME" name="ENTITY_NAME" nullable="false" length="100" precision="0" type="STRING"/>
-                  <column id="DoTS/Complementation/TABLE_ID" name="TABLE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
+                  <column id="DoTS/Complementation/TABLE_ID" name="TABLE_ID" nullable="true" length="5" precision="0" type="NUMBER"/>
                   <column id="DoTS/Complementation/ENTRY_ID" name="ENTRY_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/Complementation/TAXON_ID" name="TAXON_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/Complementation/EXTERNAL_DATABASE_RELEASE_ID" name="EXTERNAL_DATABASE_RELEASE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
-                  <column id="DoTS/Complementation/REVIEW_STATUS_ID" name="REVIEW_STATUS_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
+                  <column id="DoTS/Complementation/REVIEW_STATUS_ID" name="REVIEW_STATUS_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                </columns>
                <indexes>
                   <index name="COMPLEMENTATION_IND01" tablespace="USERS" type="NORMAL">
@@ -3527,10 +3527,10 @@
                   <column id="DoTS/Complex/COMPLEX_ID" name="COMPLEX_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/Complex/NAME" name="NAME" nullable="true" length="80" precision="0" type="STRING"/>
                   <column id="DoTS/Complex/DESCRIPTION" name="DESCRIPTION" nullable="true" length="255" precision="0" type="STRING"/>
-                  <column id="DoTS/Complex/COMPLEX_TYPE_ID" name="COMPLEX_TYPE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+                  <column id="DoTS/Complex/COMPLEX_TYPE_ID" name="COMPLEX_TYPE_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
                   <column id="DoTS/Complex/EXTERNAL_DATABASE_RELEASE_ID" name="EXTERNAL_DATABASE_RELEASE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/Complex/SOURCE_ID" name="SOURCE_ID" nullable="true" length="32" precision="0" type="STRING"/>
-                  <column id="DoTS/Complex/REVIEW_STATUS_ID" name="REVIEW_STATUS_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
+                  <column id="DoTS/Complex/REVIEW_STATUS_ID" name="REVIEW_STATUS_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                </columns>
                <indexes>
                   <index name="COMPLEX_IND01" tablespace="USERS" type="NORMAL">
@@ -3594,7 +3594,7 @@
                   <column id="DoTS/ComplexAnatomy/COMPLEX_ANATOMY_ID" name="COMPLEX_ANATOMY_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/ComplexAnatomy/COMPLEX_ID" name="COMPLEX_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/ComplexAnatomy/ANATOMY_ID" name="ANATOMY_ID" nullable="false" length="4" precision="0" type="NUMBER"/>
-                  <column id="DoTS/ComplexAnatomy/REVIEW_STATUS_ID" name="REVIEW_STATUS_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
+                  <column id="DoTS/ComplexAnatomy/REVIEW_STATUS_ID" name="REVIEW_STATUS_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                </columns>
                <indexes>
                   <index name="COMPLEXANATOMY_IND01" tablespace="USERS" type="NORMAL">
@@ -4108,9 +4108,9 @@
                   <column id="DoTS/EndSequencePairMap/SOURCE_ID" name="SOURCE_ID" nullable="false" length="16" precision="0" type="STRING"/>
                   <column id="DoTS/EndSequencePairMap/SECONDARY_ID" name="SECONDARY_ID" nullable="true" length="300" precision="0" type="STRING"/>
                   <column id="DoTS/EndSequencePairMap/DESCRIPTION" name="DESCRIPTION" nullable="true" length="300" precision="0" type="STRING"/>
-                  <column id="DoTS/EndSequencePairMap/TAXON_ID" name="TAXON_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
-                  <column id="DoTS/EndSequencePairMap/NA_SEQUENCE_ID_1" name="NA_SEQUENCE_ID_1" nullable="false" length="12" precision="0" type="NUMBER"/>
-                  <column id="DoTS/EndSequencePairMap/NA_SEQUENCE_ID_2" name="NA_SEQUENCE_ID_2" nullable="false" length="12" precision="0" type="NUMBER"/>
+                  <column id="DoTS/EndSequencePairMap/TAXON_ID" name="TAXON_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
+                  <column id="DoTS/EndSequencePairMap/NA_SEQUENCE_ID_1" name="NA_SEQUENCE_ID_1" nullable="false" length="10" precision="0" type="NUMBER"/>
+                  <column id="DoTS/EndSequencePairMap/NA_SEQUENCE_ID_2" name="NA_SEQUENCE_ID_2" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/EndSequencePairMap/MIN_PRODUCT_LENGTH" name="MIN_PRODUCT_LENGTH" nullable="true" length="0" precision="0" type="NUMBER"/>
                   <column id="DoTS/EndSequencePairMap/MAX_PRODUCT_LENGTH" name="MAX_PRODUCT_LENGTH" nullable="true" length="0" precision="0" type="NUMBER"/>
                </columns>
@@ -4938,7 +4938,7 @@
                   <column id="DoTS/Gene/NAME" name="NAME" nullable="true" length="255" precision="0" type="STRING"/>
                   <column id="DoTS/Gene/GENE_SYMBOL" name="GENE_SYMBOL" nullable="true" length="50" precision="0" type="STRING"/>
                   <column id="DoTS/Gene/GENE_CATEGORY_ID" name="GENE_CATEGORY_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
-                  <column id="DoTS/Gene/REVIEW_STATUS_ID" name="REVIEW_STATUS_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
+                  <column id="DoTS/Gene/REVIEW_STATUS_ID" name="REVIEW_STATUS_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/Gene/DESCRIPTION" name="DESCRIPTION" nullable="true" length="500" precision="0" type="STRING"/>
                   <column id="DoTS/Gene/REVIEWER_SUMMARY" name="REVIEWER_SUMMARY" nullable="true" length="4000" precision="0" type="STRING"/>
                   <column id="DoTS/Gene/SEQUENCE_ONTOLOGY_ID" name="SEQUENCE_ONTOLOGY_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
@@ -5143,9 +5143,9 @@
             <table id="DoTS/GeneFeatureSAGETagLink" name="GeneFeatureSAGETagLink" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="Feature Relations" updatable="true">
                <columns>
                   <column id="DoTS/GeneFeatureSAGETagLink/GENE_FEATURE_SAGE_TAG_LINK_ID" name="GENE_FEATURE_SAGE_TAG_LINK_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
-                  <column id="DoTS/GeneFeatureSAGETagLink/GENOMIC_NA_SEQUENCE_ID" name="GENOMIC_NA_SEQUENCE_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
-                  <column id="DoTS/GeneFeatureSAGETagLink/GENE_NA_FEATURE_ID" name="GENE_NA_FEATURE_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
-                  <column id="DoTS/GeneFeatureSAGETagLink/TAG_NA_FEATURE_ID" name="TAG_NA_FEATURE_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
+                  <column id="DoTS/GeneFeatureSAGETagLink/GENOMIC_NA_SEQUENCE_ID" name="GENOMIC_NA_SEQUENCE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+                  <column id="DoTS/GeneFeatureSAGETagLink/GENE_NA_FEATURE_ID" name="GENE_NA_FEATURE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+                  <column id="DoTS/GeneFeatureSAGETagLink/TAG_NA_FEATURE_ID" name="TAG_NA_FEATURE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/GeneFeatureSAGETagLink/FIVE_PRIME_TAG_OFFSET" name="FIVE_PRIME_TAG_OFFSET" nullable="false" length="12" precision="0" type="NUMBER"/>
                   <column id="DoTS/GeneFeatureSAGETagLink/THREE_PRIME_TAG_OFFSET" name="THREE_PRIME_TAG_OFFSET" nullable="false" length="12" precision="0" type="NUMBER"/>
                   <column id="DoTS/GeneFeatureSAGETagLink/SAME_STRAND" name="SAME_STRAND" nullable="false" length="1" precision="0" type="NUMBER"/>
@@ -5219,13 +5219,13 @@
             <table id="DoTS/GeneFeatureSeqOverlap" name="GeneFeatureSeqOverlap" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="Misc Applications" updatable="true">
                <columns>
                   <column id="DoTS/GeneFeatureSeqOverlap/GENE_FEATURE_SEQ_OVERLAP_ID" name="GENE_FEATURE_SEQ_OVERLAP_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
-                  <column id="DoTS/GeneFeatureSeqOverlap/GENE_NA_FEATURE_ID" name="GENE_NA_FEATURE_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
-                  <column id="DoTS/GeneFeatureSeqOverlap/GENOMIC_NA_SEQUENCE_ID" name="GENOMIC_NA_SEQUENCE_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
-                  <column id="DoTS/GeneFeatureSeqOverlap/SEQ_NA_SEQUENCE_ID" name="SEQ_NA_SEQUENCE_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
+                  <column id="DoTS/GeneFeatureSeqOverlap/GENE_NA_FEATURE_ID" name="GENE_NA_FEATURE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+                  <column id="DoTS/GeneFeatureSeqOverlap/GENOMIC_NA_SEQUENCE_ID" name="GENOMIC_NA_SEQUENCE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+                  <column id="DoTS/GeneFeatureSeqOverlap/SEQ_NA_SEQUENCE_ID" name="SEQ_NA_SEQUENCE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/GeneFeatureSeqOverlap/END_SEQUENCE_PAIR_MAP_ID" name="END_SEQUENCE_PAIR_MAP_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
                   <column id="DoTS/GeneFeatureSeqOverlap/EPCR_ID" name="EPCR_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
                   <column id="DoTS/GeneFeatureSeqOverlap/SIMILARITY_ID" name="SIMILARITY_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
-                  <column id="DoTS/GeneFeatureSeqOverlap/BLAT_ALIGNMENT_ID" name="BLAT_ALIGNMENT_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
+                  <column id="DoTS/GeneFeatureSeqOverlap/BLAT_ALIGNMENT_ID" name="BLAT_ALIGNMENT_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/GeneFeatureSeqOverlap/GENE_OVERLAP" name="GENE_OVERLAP" nullable="false" length="12" precision="0" type="NUMBER"/>
                   <column id="DoTS/GeneFeatureSeqOverlap/GENE_CODING_OVERLAP" name="GENE_CODING_OVERLAP" nullable="false" length="12" precision="0" type="NUMBER"/>
                   <column id="DoTS/GeneFeatureSeqOverlap/GENE_LENGTH" name="GENE_LENGTH" nullable="false" length="12" precision="0" type="NUMBER"/>
@@ -5384,7 +5384,7 @@
                   <column id="DoTS/GeneInstance/DESCRIPTION" name="DESCRIPTION" nullable="true" length="255" precision="0" type="STRING"/>
                   <column id="DoTS/GeneInstance/REVIEWER_SUMMARY" name="REVIEWER_SUMMARY" nullable="true" length="4000" precision="0" type="STRING"/>
                   <column id="DoTS/GeneInstance/IS_REFERENCE" name="IS_REFERENCE" nullable="false" length="1" precision="0" type="NUMBER"/>
-                  <column id="DoTS/GeneInstance/REVIEW_STATUS_ID" name="REVIEW_STATUS_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
+                  <column id="DoTS/GeneInstance/REVIEW_STATUS_ID" name="REVIEW_STATUS_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                </columns>
                <indexes>
                   <index name="GENEINSTANCE_IND01" tablespace="USERS" type="NORMAL">
@@ -5554,7 +5554,7 @@
                   <column id="DoTS/GeneSynonym/GENE_SYNONYM_ID" name="GENE_SYNONYM_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/GeneSynonym/GENE_ID" name="GENE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/GeneSynonym/SYNONYM_NAME" name="SYNONYM_NAME" nullable="false" length="30" precision="0" type="STRING"/>
-                  <column id="DoTS/GeneSynonym/REVIEW_STATUS_ID" name="REVIEW_STATUS_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
+                  <column id="DoTS/GeneSynonym/REVIEW_STATUS_ID" name="REVIEW_STATUS_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/GeneSynonym/IS_OBSOLETE" name="IS_OBSOLETE" nullable="true" length="1" precision="0" type="NUMBER"/>
                </columns>
                <indexes>
@@ -5668,14 +5668,14 @@
             <table id="DoTS/GOAssociation" name="GOAssociation" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="GO Association" updatable="true">
                <columns>
                   <column id="DoTS/GOAssociation/GO_ASSOCIATION_ID" name="GO_ASSOCIATION_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-                  <column id="DoTS/GOAssociation/TABLE_ID" name="TABLE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+                  <column id="DoTS/GOAssociation/TABLE_ID" name="TABLE_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
                   <column id="DoTS/GOAssociation/ROW_ID" name="ROW_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/GOAssociation/GO_TERM_ID" name="GO_TERM_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/GOAssociation/IS_NOT" name="IS_NOT" nullable="false" length="1" precision="0" type="NUMBER"/>
                   <column id="DoTS/GOAssociation/IS_DEPRECATED" name="IS_DEPRECATED" nullable="false" length="1" precision="0" type="NUMBER"/>
                   <column id="DoTS/GOAssociation/DEFINING" name="DEFINING" nullable="false" length="1" precision="0" type="NUMBER"/>
                   <column id="DoTS/GOAssociation/GO_ASSOCIATION_DATE" name="GO_ASSOCIATION_DATE" nullable="true" length="0" precision="0" type="DATE"/>
-                  <column id="DoTS/GOAssociation/REVIEW_STATUS_ID" name="REVIEW_STATUS_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
+                  <column id="DoTS/GOAssociation/REVIEW_STATUS_ID" name="REVIEW_STATUS_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                </columns>
                <indexes>
                   <index name="GOASSOCIATION_BM_REVIEWSTATUS" tablespace="USERS" type="NORMAL">
@@ -5763,7 +5763,7 @@
                   <column id="DoTS/GOAssociationInstance/IS_NOT" name="IS_NOT" nullable="true" length="1" precision="0" type="NUMBER"/>
                   <column id="DoTS/GOAssociationInstance/IS_PRIMARY" name="IS_PRIMARY" nullable="false" length="1" precision="0" type="NUMBER"/>
                   <column id="DoTS/GOAssociationInstance/IS_DEPRECATED" name="IS_DEPRECATED" nullable="false" length="1" precision="0" type="NUMBER"/>
-                  <column id="DoTS/GOAssociationInstance/REVIEW_STATUS_ID" name="REVIEW_STATUS_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
+                  <column id="DoTS/GOAssociationInstance/REVIEW_STATUS_ID" name="REVIEW_STATUS_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/GOAssociationInstance/P_VALUE_RATIO" name="P_VALUE_RATIO" nullable="true" length="126" precision="0" type="FLOAT"/>
                </columns>
                <indexes>
@@ -5864,7 +5864,7 @@
                   <column id="DoTS/GOAssocInstEvidCode/GO_ASSOC_INST_EVID_CODE_ID" name="GO_ASSOC_INST_EVID_CODE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/GOAssocInstEvidCode/GO_EVIDENCE_CODE_ID" name="GO_EVIDENCE_CODE_ID" nullable="false" length="3" precision="0" type="NUMBER"/>
                   <column id="DoTS/GOAssocInstEvidCode/GO_ASSOCIATION_INSTANCE_ID" name="GO_ASSOCIATION_INSTANCE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-                  <column id="DoTS/GOAssocInstEvidCode/REVIEW_STATUS_ID" name="REVIEW_STATUS_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
+                  <column id="DoTS/GOAssocInstEvidCode/REVIEW_STATUS_ID" name="REVIEW_STATUS_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                </columns>
                <indexes>
                   <index name="GOASSOCINSTEVIDCODE_IND01" tablespace="USERS" type="NORMAL">
@@ -6099,7 +6099,7 @@
                   <column id="DoTS/Interaction/DIRECTION_IS_KNOWN" name="DIRECTION_IS_KNOWN" nullable="false" length="1" precision="0" type="NUMBER"/>
                   <column id="DoTS/Interaction/EXTERNAL_DATABASE_RELEASE_ID" name="EXTERNAL_DATABASE_RELEASE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/Interaction/SOURCE_ID" name="SOURCE_ID" nullable="true" length="32" precision="0" type="STRING"/>
-                  <column id="DoTS/Interaction/REVIEW_STATUS_ID" name="REVIEW_STATUS_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
+                  <column id="DoTS/Interaction/REVIEW_STATUS_ID" name="REVIEW_STATUS_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                </columns>
                <indexes>
                   <index name="INTERACTION_IND01" tablespace="USERS" type="NORMAL">
@@ -6399,7 +6399,7 @@
             <table id="DoTS/Library" name="Library" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="Clones" updatable="true">
                <columns>
                   <column id="DoTS/Library/LIBRARY_ID" name="LIBRARY_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
-                  <column id="DoTS/Library/TAXON_ID" name="TAXON_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
+                  <column id="DoTS/Library/TAXON_ID" name="TAXON_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/Library/ANATOMY_ID" name="ANATOMY_ID" nullable="true" length="4" precision="0" type="NUMBER"/>
                   <column id="DoTS/Library/DBEST_ID" name="DBEST_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
                   <column id="DoTS/Library/DBEST_NAME" name="DBEST_NAME" nullable="true" length="120" precision="0" type="STRING"/>
@@ -6527,7 +6527,7 @@
                   <column id="DoTS/MicroSatelliteMap/FORWARD_PRIMER" name="FORWARD_PRIMER" nullable="false" length="50" precision="0" type="STRING"/>
                   <column id="DoTS/MicroSatelliteMap/REVERSE_PRIMER" name="REVERSE_PRIMER" nullable="false" length="50" precision="0" type="STRING"/>
                   <column id="DoTS/MicroSatelliteMap/PRODUCT_LENGTH" name="PRODUCT_LENGTH" nullable="false" length="12" precision="0" type="NUMBER"/>
-                  <column id="DoTS/MicroSatelliteMap/TAXON_ID" name="TAXON_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
+                  <column id="DoTS/MicroSatelliteMap/TAXON_ID" name="TAXON_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/MicroSatelliteMap/OUTCROSS" name="OUTCROSS" nullable="false" length="30" precision="0" type="STRING"/>
                </columns>
                <indexes>
@@ -7907,7 +7907,7 @@
                   <column id="DoTS/NASequence/SUBCLASS_VIEW" name="SUBCLASS_VIEW" nullable="false" length="30" precision="0" type="STRING"/>
                   <column id="DoTS/NASequence/SEQUENCE_TYPE_ID" name="SEQUENCE_TYPE_ID" nullable="true" length="4" precision="0" type="NUMBER"/>
                   <column id="DoTS/NASequence/SEQUENCE_ONTOLOGY_ID" name="SEQUENCE_ONTOLOGY_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
-                  <column id="DoTS/NASequence/TAXON_ID" name="TAXON_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
+                  <column id="DoTS/NASequence/TAXON_ID" name="TAXON_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/NASequence/SEQUENCE" name="SEQUENCE" nullable="true" length="0" precision="0" type="CLOB"/>
                   <column id="DoTS/NASequence/LENGTH" name="LENGTH" nullable="true" length="12" precision="0" type="NUMBER"/>
                   <column id="DoTS/NASequence/A_COUNT" name="A_COUNT" nullable="true" length="12" precision="0" type="NUMBER"/>
@@ -8246,7 +8246,7 @@
                   <column id="DoTS/NRDBEntry/SEQUENCE_VERSION" name="SEQUENCE_VERSION" nullable="true" length="3" precision="0" type="NUMBER"/>
                   <column id="DoTS/NRDBEntry/EXTERNAL_DATABASE_RELEASE_ID" name="EXTERNAL_DATABASE_RELEASE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/NRDBEntry/DESCRIPTION" name="DESCRIPTION" nullable="true" length="255" precision="0" type="STRING"/>
-                  <column id="DoTS/NRDBEntry/TAXON_ID" name="TAXON_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
+                  <column id="DoTS/NRDBEntry/TAXON_ID" name="TAXON_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/NRDBEntry/IS_PREFERRED" name="IS_PREFERRED" nullable="false" length="1" precision="0" type="NUMBER"/>
                </columns>
                <indexes>
@@ -8326,7 +8326,7 @@
                   <column id="DoTS/OpticalMap/CHROMOSOME" name="CHROMOSOME" nullable="false" length="25" precision="0" type="STRING"/>
                   <column id="DoTS/OpticalMap/MAP_NAME" name="MAP_NAME" nullable="false" length="50" precision="0" type="STRING"/>
                   <column id="DoTS/OpticalMap/CHROMOSOME_ORIENTATION" name="CHROMOSOME_ORIENTATION" nullable="false" length="10" precision="0" type="STRING"/>
-                  <column id="DoTS/OpticalMap/TAXON_ID" name="TAXON_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
+                  <column id="DoTS/OpticalMap/TAXON_ID" name="TAXON_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                </columns>
                <indexes>
                   <index name="OPTICALMAP_IND01" tablespace="USERS" type="NORMAL">
@@ -8375,7 +8375,7 @@
                <columns>
                   <column id="DoTS/OpticalMapAlignment/OPTICAL_MAP_ALIGNMENT_ID" name="OPTICAL_MAP_ALIGNMENT_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
                   <column id="DoTS/OpticalMapAlignment/OPTICAL_MAP_ID" name="OPTICAL_MAP_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
-                  <column id="DoTS/OpticalMapAlignment/NA_SEQUENCE_ID" name="NA_SEQUENCE_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
+                  <column id="DoTS/OpticalMapAlignment/NA_SEQUENCE_ID" name="NA_SEQUENCE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/OpticalMapAlignment/SCORE" name="SCORE" nullable="true" length="126" precision="0" type="FLOAT"/>
                   <column id="DoTS/OpticalMapAlignment/P_VALUE" name="P_VALUE" nullable="false" length="126" precision="0" type="FLOAT"/>
                   <column id="DoTS/OpticalMapAlignment/START_FRAGMENT" name="START_FRAGMENT" nullable="false" length="5" precision="0" type="NUMBER"/>
@@ -8429,7 +8429,7 @@
                   <column id="DoTS/OpticalMapAlignmentSpan/OPTICAL_MAP_ALIGNMENT_SPAN_ID" name="OPTICAL_MAP_ALIGNMENT_SPAN_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
                   <column id="DoTS/OpticalMapAlignmentSpan/OPTICAL_MAP_ALIGNMENT_ID" name="OPTICAL_MAP_ALIGNMENT_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
                   <column id="DoTS/OpticalMapAlignmentSpan/OPTICAL_MAP_FRAGMENT_ID" name="OPTICAL_MAP_FRAGMENT_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
-                  <column id="DoTS/OpticalMapAlignmentSpan/NA_FEATURE_ID" name="NA_FEATURE_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
+                  <column id="DoTS/OpticalMapAlignmentSpan/NA_FEATURE_ID" name="NA_FEATURE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/OpticalMapAlignmentSpan/SCORE" name="SCORE" nullable="true" length="126" precision="0" type="FLOAT"/>
                   <column id="DoTS/OpticalMapAlignmentSpan/STATE_NAME" name="STATE_NAME" nullable="true" length="25" precision="0" type="STRING"/>
                   <column id="DoTS/OpticalMapAlignmentSpan/OPTICAL_MAP_LENGTH" name="OPTICAL_MAP_LENGTH" nullable="true" length="126" precision="0" type="FLOAT"/>
@@ -8870,7 +8870,7 @@
                   <column id="DoTS/Protein/PROTEIN_ID" name="PROTEIN_ID" nullable="false" length="18" precision="0" type="NUMBER"/>
                   <column id="DoTS/Protein/NAME" name="NAME" nullable="true" length="255" precision="0" type="STRING"/>
                   <column id="DoTS/Protein/RNA_ID" name="RNA_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-                  <column id="DoTS/Protein/REVIEW_STATUS_ID" name="REVIEW_STATUS_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
+                  <column id="DoTS/Protein/REVIEW_STATUS_ID" name="REVIEW_STATUS_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/Protein/DESCRIPTION" name="DESCRIPTION" nullable="true" length="500" precision="0" type="STRING"/>
                   <column id="DoTS/Protein/REVIEWER_SUMMARY" name="REVIEWER_SUMMARY" nullable="true" length="4000" precision="0" type="STRING"/>
                   <column id="DoTS/Protein/SEQUENCE_ONTOLOGY_ID" name="SEQUENCE_ONTOLOGY_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
@@ -8963,7 +8963,7 @@
                   <column id="DoTS/ProteinInstance/AA_FEATURE_ID" name="AA_FEATURE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/ProteinInstance/REVIEWER_SUMMARY" name="REVIEWER_SUMMARY" nullable="true" length="4000" precision="0" type="STRING"/>
                   <column id="DoTS/ProteinInstance/IS_REFERENCE" name="IS_REFERENCE" nullable="false" length="1" precision="0" type="NUMBER"/>
-                  <column id="DoTS/ProteinInstance/REVIEW_STATUS_ID" name="REVIEW_STATUS_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
+                  <column id="DoTS/ProteinInstance/REVIEW_STATUS_ID" name="REVIEW_STATUS_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                </columns>
                <indexes>
                   <index name="PK_PROTEININSTANCE" tablespace="USERS" type="NORMAL">
@@ -9237,7 +9237,7 @@
                   <column id="DoTS/ProteinSynonym/PROTEIN_SYNONYM_ID" name="PROTEIN_SYNONYM_ID" nullable="false" length="18" precision="0" type="NUMBER"/>
                   <column id="DoTS/ProteinSynonym/PROTEIN_ID" name="PROTEIN_ID" nullable="false" length="18" precision="0" type="NUMBER"/>
                   <column id="DoTS/ProteinSynonym/SYNONYM_NAME" name="SYNONYM_NAME" nullable="false" length="50" precision="0" type="STRING"/>
-                  <column id="DoTS/ProteinSynonym/REVIEW_STATUS_ID" name="REVIEW_STATUS_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
+                  <column id="DoTS/ProteinSynonym/REVIEW_STATUS_ID" name="REVIEW_STATUS_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                </columns>
                <indexes>
                   <index name="PK_PROTEINSYNONYM" tablespace="USERS" type="NORMAL">
@@ -9428,8 +9428,8 @@
                <columns>
                   <column id="DoTS/RHMap/RH_MAP_ID" name="RH_MAP_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
                   <column id="DoTS/RHMap/NAME" name="NAME" nullable="false" length="100" precision="0" type="STRING"/>
-                  <column id="DoTS/RHMap/TAXON_ID" name="TAXON_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
-                  <column id="DoTS/RHMap/EXTERNAL_DATABASE_RELEASE_ID" name="EXTERNAL_DATABASE_RELEASE_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
+                  <column id="DoTS/RHMap/TAXON_ID" name="TAXON_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+                  <column id="DoTS/RHMap/EXTERNAL_DATABASE_RELEASE_ID" name="EXTERNAL_DATABASE_RELEASE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/RHMap/SOURCE_ID" name="SOURCE_ID" nullable="true" length="32" precision="0" type="STRING"/>
                   <column id="DoTS/RHMap/LAB" name="LAB" nullable="true" length="200" precision="0" type="STRING"/>
                   <column id="DoTS/RHMap/DESCRIPTION" name="DESCRIPTION" nullable="true" length="4000" precision="0" type="STRING"/>
@@ -9545,7 +9545,7 @@
             <table id="DoTS/RHMarker" name="RHMarker" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="Mapping" updatable="true">
                <columns>
                   <column id="DoTS/RHMarker/RH_MARKER_ID" name="RH_MARKER_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
-                  <column id="DoTS/RHMarker/EXTERNAL_DATABASE_RELEASE_ID" name="EXTERNAL_DATABASE_RELEASE_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
+                  <column id="DoTS/RHMarker/EXTERNAL_DATABASE_RELEASE_ID" name="EXTERNAL_DATABASE_RELEASE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/RHMarker/SOURCE_ID" name="SOURCE_ID" nullable="true" length="30" precision="0" type="STRING"/>
                   <column id="DoTS/RHMarker/NAME" name="NAME" nullable="false" length="200" precision="0" type="STRING"/>
                   <column id="DoTS/RHMarker/PANEL" name="PANEL" nullable="true" length="20" precision="0" type="STRING"/>
@@ -9555,7 +9555,7 @@
                   <column id="DoTS/RHMarker/PRODUCT_LENGTH" name="PRODUCT_LENGTH" nullable="true" length="12" precision="0" type="NUMBER"/>
                   <column id="DoTS/RHMarker/MARKER_SEQUENCE" name="MARKER_SEQUENCE" nullable="true" length="0" precision="0" type="CLOB"/>
                   <column id="DoTS/RHMarker/DESCRIPTION" name="DESCRIPTION" nullable="true" length="500" precision="0" type="STRING"/>
-                  <column id="DoTS/RHMarker/TAXON_ID" name="TAXON_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
+                  <column id="DoTS/RHMarker/TAXON_ID" name="TAXON_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/RHMarker/TYPE" name="TYPE" nullable="true" length="8" precision="0" type="STRING"/>
                </columns>
                <indexes>
@@ -9605,7 +9605,7 @@
                <columns>
                   <column id="DoTS/RNA/RNA_ID" name="RNA_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/RNA/DESCRIPTION" name="DESCRIPTION" nullable="true" length="500" precision="0" type="STRING"/>
-                  <column id="DoTS/RNA/REVIEW_STATUS_ID" name="REVIEW_STATUS_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
+                  <column id="DoTS/RNA/REVIEW_STATUS_ID" name="REVIEW_STATUS_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/RNA/GENE_ID" name="GENE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/RNA/REVIEWER_SUMMARY" name="REVIEWER_SUMMARY" nullable="true" length="4000" precision="0" type="STRING"/>
                   <column id="DoTS/RNA/SEQUENCE_ONTOLOGY_ID" name="SEQUENCE_ONTOLOGY_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
@@ -9845,7 +9845,7 @@
                   <column id="DoTS/RNAIConstruct/RNA_ID" name="RNA_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/RNAIConstruct/DESCRIPTION" name="DESCRIPTION" nullable="true" length="1000" precision="0" type="STRING"/>
                   <column id="DoTS/RNAIConstruct/SEQUENCE" name="SEQUENCE" nullable="true" length="0" precision="0" type="CLOB"/>
-                  <column id="DoTS/RNAIConstruct/REVIEW_STATUS_ID" name="REVIEW_STATUS_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
+                  <column id="DoTS/RNAIConstruct/REVIEW_STATUS_ID" name="REVIEW_STATUS_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                </columns>
                <indexes>
                   <index name="PK_RNAICONSTRUCT" tablespace="USERS" type="NORMAL">
@@ -9897,7 +9897,7 @@
                   <column id="DoTS/RNAInstance/NA_FEATURE_ID" name="NA_FEATURE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/RNAInstance/REVIEWER_SUMMARY" name="REVIEWER_SUMMARY" nullable="true" length="4000" precision="0" type="STRING"/>
                   <column id="DoTS/RNAInstance/IS_REFERENCE" name="IS_REFERENCE" nullable="false" length="1" precision="0" type="NUMBER"/>
-                  <column id="DoTS/RNAInstance/REVIEW_STATUS_ID" name="REVIEW_STATUS_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
+                  <column id="DoTS/RNAInstance/REVIEW_STATUS_ID" name="REVIEW_STATUS_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/RNAInstance/RNA_INSTANCE_CATEGORY_ID" name="RNA_INSTANCE_CATEGORY_ID" nullable="true" length="3" precision="0" type="NUMBER"/>
                </columns>
                <indexes>
@@ -9996,8 +9996,8 @@
                <columns>
                   <column id="DoTS/RNAIPhenotype/RNAI_PHENOTYPE_ID" name="RNAI_PHENOTYPE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/RNAIPhenotype/RNAI_CONSTRUCT_ID" name="RNAI_CONSTRUCT_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-                  <column id="DoTS/RNAIPhenotype/PHENOTYPE_ID" name="PHENOTYPE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-                  <column id="DoTS/RNAIPhenotype/REVIEW_STATUS_ID" name="REVIEW_STATUS_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
+                  <column id="DoTS/RNAIPhenotype/PHENOTYPE_ID" name="PHENOTYPE_ID" nullable="false" length="8" precision="0" type="NUMBER"/>
+                  <column id="DoTS/RNAIPhenotype/REVIEW_STATUS_ID" name="REVIEW_STATUS_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                </columns>
                <indexes>
                   <index name="PK_RNAIPHENOTYPE" tablespace="USERS" type="NORMAL">
@@ -11902,7 +11902,7 @@
             <table id="Study/StudyDesign" name="StudyDesign" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Experimental Design" updatable="true">
                <columns>
                   <column id="Study/StudyDesign/STUDY_DESIGN_ID" name="STUDY_DESIGN_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
-                  <column id="Study/StudyDesign/STUDY_ID" name="STUDY_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
+                  <column id="Study/StudyDesign/STUDY_ID" name="STUDY_ID" nullable="false" length="4" precision="0" type="NUMBER"/>
                   <column id="Study/StudyDesign/STUDY_DESIGN_TYPE_ID" name="STUDY_DESIGN_TYPE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>                
                </columns>
                <indexes>
