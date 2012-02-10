@@ -12177,7 +12177,7 @@
                      <constrainedColumns>
                         <column idref="Study/StudyLink/PROTOCOL_APP_NODE_ID"/>
                      </constrainedColumns>
-                     <referencedTable idref="Study/ProtocolAppNode/"/>
+                     <referencedTable idref="Study/ProtocolAppNode"/>
                      <referencedColumns>
                         <column idref="Study/ProtocolAppNode/PROTOCOL_APP_NODE_ID"/>
                      </referencedColumns>
@@ -14373,9 +14373,9 @@
                      <constrainedColumns>
                         <column idref="Results/GeneDiffResult/GENE_ID"/>
                      </constrainedColumns>
-                     <referencedTable idref="DoTS/GENE"/>
+                     <referencedTable idref="DoTS/Gene"/>
                      <referencedColumns>
-                        <column idref="DoTS/GENE/GENE_ID"/>
+                        <column idref="DoTS/Gene/GENE_ID"/>
                      </referencedColumns>
                   </constraint>
                </constraints>
@@ -14488,18 +14488,18 @@
                      <constrainedColumns>
                         <column idref="Results/GeneSimilarity/GENE1_ID"/>
                      </constrainedColumns>
-                     <referencedTable idref="DoTS/GENE"/>
+                     <referencedTable idref="DoTS/Gene"/>
                      <referencedColumns>
-                        <column idref="DoTS/GENE/GENE_ID"/>
+                        <column idref="DoTS/Gene/GENE_ID"/>
                      </referencedColumns>
                   </constraint>
                  <constraint name="FK_GENESIM_GENE2" type="FOREIGN_KEY">
                      <constrainedColumns>
                         <column idref="Results/GeneSimilarity/GENE2_ID"/>
                      </constrainedColumns>
-                     <referencedTable idref="DoTS/GENE"/>
+                     <referencedTable idref="DoTS/Gene"/>
                      <referencedColumns>
-                        <column idref="DoTS/GENE/GENE_ID"/>
+                        <column idref="DoTS/Gene/GENE_ID"/>
                      </referencedColumns>
                   </constraint>
                </constraints>
