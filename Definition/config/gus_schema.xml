@@ -12242,7 +12242,7 @@
                      <constrainedColumns>
                         <column idref="Study/Characteristic/ONTOLOGY_TERM_ID"/>
                      </constrainedColumns>
-                     <referencedTable idref="SRes/OntologyTern"/>
+                     <referencedTable idref="SRes/OntologyTerm"/>
                      <referencedColumns>
                         <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
                      </referencedColumns>
