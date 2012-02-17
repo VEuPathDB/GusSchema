@@ -2594,134 +2594,134 @@
                   </constraint>
                </constraints>
             </table>
-            <table id="DoTS/AnatomyLibrary" name="AnatomyLibrary" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="Clones" updatable="true">
+            <table id="DoTS/OntologyTermLibrary" name="OntologyTermLibrary" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="Clones" updatable="true">
                <columns>
-                  <column id="DoTS/AnatomyLibrary/ANATOMY_LIBRARY_ID" name="ANATOMY_LIBRARY_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-                  <column id="DoTS/AnatomyLibrary/ANATOMY_ID" name="ANATOMY_ID" nullable="false" length="4" precision="0" type="NUMBER"/>
-                  <column id="DoTS/AnatomyLibrary/DBEST_LIBRARY_ID" name="DBEST_LIBRARY_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
+                  <column id="DoTS/OntologyTermLibrary/ONTOLOGY_TERM_LIBRARY_ID" name="ONTOLOGY_TERM_LIBRARY_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+                  <column id="DoTS/OntologyTermLibrary/ONTOLOGY_TERM_ID" name="ONTOLOGY_TERM_ID" nullable="false" length="4" precision="0" type="NUMBER"/>
+                  <column id="DoTS/OntologyTermLibrary/DBEST_LIBRARY_ID" name="DBEST_LIBRARY_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
                </columns>
                <indexes>
-                  <index name="ANATOMYLIBRARY_IND01" tablespace="USERS" type="NORMAL">
+                  <index name="ONTOLOGYTERMLIBRARY_IND01" tablespace="USERS" type="NORMAL">
                      <columns>
-                        <column idref="DoTS/AnatomyLibrary/ANATOMY_ID"/>
+                        <column idref="DoTS/OntologyTermLibrary/ONTOLOGY_TERM_ID"/>
                      </columns>
                   </index>
-                  <index name="ANATOMYLIBRARY_IND02" tablespace="USERS" type="NORMAL">
+                  <index name="ONTOLOGYTERMLIBRARY_IND02" tablespace="USERS" type="NORMAL">
                      <columns>
-                        <column idref="DoTS/AnatomyLibrary/DBEST_LIBRARY_ID"/>
+                        <column idref="DoTS/OntologyTermLibrary/DBEST_LIBRARY_ID"/>
                      </columns>
                   </index>
-                  <index name="PK_ANATOMYLIBRARY" tablespace="USERS" type="NORMAL">
+                  <index name="PK_ONTOLOGYTERMLIBRARY" tablespace="USERS" type="NORMAL">
                      <columns>
-                        <column idref="DoTS/AnatomyLibrary/ANATOMY_LIBRARY_ID"/>
+                        <column idref="DoTS/OntologyTermLibrary/ONTOLOGY_TERM_LIBRARY_ID"/>
                      </columns>
                   </index>
                </indexes>
                <constraints>
-                  <constraint name="ANATOMYLIBRARY_FK04" type="FOREIGN_KEY">
+                  <constraint name="ONTOLOGYTERMLIBRARY_FK04" type="FOREIGN_KEY">
                      <constrainedColumns>
-                        <column idref="DoTS/AnatomyLibrary/ANATOMY_ID"/>
+                        <column idref="DoTS/OntologyTermLibrary/ONTOLOGY_TERM_ID"/>
                      </constrainedColumns>
-                     <referencedTable idref="SRes/Anatomy"/>
+                     <referencedTable idref="SRes/OntologyTerm"/>
                      <referencedColumns>
-                        <column idref="SRes/Anatomy/ANATOMY_ID"/>
+                        <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
                      </referencedColumns>
                   </constraint>
-                  <constraint name="PK_ANATOMYLIBRARY" type="PRIMARY_KEY">
+                  <constraint name="PK_ONTOLOGYTERMLIBRARY" type="PRIMARY_KEY">
                      <constrainedColumns>
-                        <column idref="DoTS/AnatomyLibrary/ANATOMY_LIBRARY_ID"/>
+                        <column idref="DoTS/OntologyTermLibrary/ONTOLOGY_TERM_LIBRARY_ID"/>
                      </constrainedColumns>
                   </constraint>
                </constraints>
             </table>
-            <table id="DoTS/AnatomyLOE" name="AnatomyLOE" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="Clones" updatable="true">
+            <table id="DoTS/OntologyTermLOE" name="OntologyTermLOE" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="Clones" updatable="true">
                <columns>
-                  <column id="DoTS/AnatomyLOE/ANATOMY_LOE_ID" name="ANATOMY_LOE_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
-                  <column id="DoTS/AnatomyLOE/NAME" name="NAME" nullable="false" length="255" precision="0" type="STRING"/>
-                  <column id="DoTS/AnatomyLOE/DESCRIPTION" name="DESCRIPTION" nullable="true" length="500" precision="0" type="STRING"/>
+                  <column id="DoTS/OntologyTermLOE/ONTOLOGY_TERM_LOE_ID" name="ONTOLOGY_TERM_LOE_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
+                  <column id="DoTS/OntologyTermLOE/NAME" name="NAME" nullable="false" length="255" precision="0" type="STRING"/>
+                  <column id="DoTS/OntologyTermLOE/DESCRIPTION" name="DESCRIPTION" nullable="true" length="500" precision="0" type="STRING"/>
                </columns>
                <indexes>
-                  <index name="PK_ANATOMYLOE" tablespace="USERS" type="NORMAL">
+                  <index name="PK_ONTOLOGYTERMLOE" tablespace="USERS" type="NORMAL">
                      <columns>
-                        <column idref="DoTS/AnatomyLOE/ANATOMY_LOE_ID"/>
+                        <column idref="DoTS/OntologyTermLOE/ONTOLOGY_TERM_LOE_ID"/>
                      </columns>
                   </index>
                </indexes>
                <constraints>
-                  <constraint name="PK_ANATOMYLOE" type="PRIMARY_KEY">
+                  <constraint name="PK_ONTOLOGYTERMLOE" type="PRIMARY_KEY">
                      <constrainedColumns>
-                        <column idref="DoTS/AnatomyLOE/ANATOMY_LOE_ID"/>
+                        <column idref="DoTS/OntologyTermLOE/ONTOLOGY_TERM_LOE_ID"/>
                      </constrainedColumns>
                   </constraint>
                </constraints>
             </table>
-            <table id="DoTS/AssemblyAnatomyPercent" name="AssemblyAnatomyPercent" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="Assembly" updatable="true">
+            <table id="DoTS/AssemblyOntologyTermPercent" name="AssemblyOntologyTermPercent" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="Assembly" updatable="true">
                <columns>
-                  <column id="DoTS/AssemblyAnatomyPercent/ASSEMBLY_ANATOMY_PERCENT_ID" name="ASSEMBLY_ANATOMY_PERCENT_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-                  <column id="DoTS/AssemblyAnatomyPercent/NA_SEQUENCE_ID" name="NA_SEQUENCE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-                  <column id="DoTS/AssemblyAnatomyPercent/TAXON_ID" name="TAXON_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
-                  <column id="DoTS/AssemblyAnatomyPercent/ANATOMY_ID" name="ANATOMY_ID" nullable="false" length="4" precision="0" type="NUMBER"/>
-                  <column id="DoTS/AssemblyAnatomyPercent/PERCENT" name="PERCENT" nullable="false" length="126" precision="0" type="FLOAT"/>
-                  <column id="DoTS/AssemblyAnatomyPercent/ANATOMY_ESTS" name="ANATOMY_ESTS" nullable="false" length="5" precision="0" type="NUMBER"/>
-                  <column id="DoTS/AssemblyAnatomyPercent/EST_COUNT" name="EST_COUNT" nullable="false" length="5" precision="0" type="NUMBER"/>
+                  <column id="DoTS/AssemblyOntologyTermPercent/ASSEMBLY_ONTOLOGY_TERM_PERCENT_ID" name="ASSEMBLY_ONTOLOGY_TERM_PERCENT_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+                  <column id="DoTS/AssemblyOntologyTermPercent/NA_SEQUENCE_ID" name="NA_SEQUENCE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+                  <column id="DoTS/AssemblyOntologyTermPercent/TAXON_ID" name="TAXON_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
+                  <column id="DoTS/AssemblyOntologyTermPercent/ONTOLOGY_TERM_ID" name="ONTOLOGY_TERM_ID" nullable="false" length="4" precision="0" type="NUMBER"/>
+                  <column id="DoTS/AssemblyOntologyTermPercent/PERCENT" name="PERCENT" nullable="false" length="126" precision="0" type="FLOAT"/>
+                  <column id="DoTS/AssemblyOntologyTermPercent/ONTOLOGY_TERM_ESTS" name="ONTOLOGY_TERM_ESTS" nullable="false" length="5" precision="0" type="NUMBER"/>
+                  <column id="DoTS/AssemblyOntologyTermPercent/EST_COUNT" name="EST_COUNT" nullable="false" length="5" precision="0" type="NUMBER"/>
                </columns>
                <indexes>
-                  <index name="ASSEMBLYANATOMYPERCENT_IND01" tablespace="USERS" type="NORMAL">
+                  <index name="ASSEMBLYONTOLOGYTERMPERCENT_IND01" tablespace="USERS" type="NORMAL">
                      <columns>
-                        <column idref="DoTS/AssemblyAnatomyPercent/ANATOMY_ID"/>
-                        <column idref="DoTS/AssemblyAnatomyPercent/PERCENT"/>
-                        <column idref="DoTS/AssemblyAnatomyPercent/EST_COUNT"/>
-                        <column idref="DoTS/AssemblyAnatomyPercent/TAXON_ID"/>
-                        <column idref="DoTS/AssemblyAnatomyPercent/NA_SEQUENCE_ID"/>
+                        <column idref="DoTS/AssemblyOntologyTermPercent/ONTOLOGY_TERM_ID"/>
+                        <column idref="DoTS/AssemblyOntologyTermPercent/PERCENT"/>
+                        <column idref="DoTS/AssemblyOntologyTermPercent/EST_COUNT"/>
+                        <column idref="DoTS/AssemblyOntologyTermPercent/TAXON_ID"/>
+                        <column idref="DoTS/AssemblyOntologyTermPercent/NA_SEQUENCE_ID"/>
                      </columns>
                   </index>
-                  <index name="ASSEMBLYANATOMYPERCENT_IND02" tablespace="USERS" type="NORMAL">
+                  <index name="ASSEMBLYONTOLOGYTERMPERCENT_IND02" tablespace="USERS" type="NORMAL">
                      <columns>
-                        <column idref="DoTS/AssemblyAnatomyPercent/NA_SEQUENCE_ID"/>
+                        <column idref="DoTS/AssemblyOntologyTermPercent/NA_SEQUENCE_ID"/>
                      </columns>
                   </index>
-                  <index name="ASSEMBLYANATOMYPERCENT_IND03" tablespace="USERS" type="NORMAL">
+                  <index name="ASSEMBLYONTOLOGYTERMPERCENT_IND03" tablespace="USERS" type="NORMAL">
                      <columns>
-                        <column idref="DoTS/AssemblyAnatomyPercent/TAXON_ID"/>
+                        <column idref="DoTS/AssemblyOntologyTermPercent/TAXON_ID"/>
                      </columns>
                   </index>
-                  <index name="PK_ASSEMBLYANATOMYPERCENT" tablespace="USERS" type="NORMAL">
+                  <index name="PK_ASSEMBLYONTOLOGYTERMPERCENT" tablespace="USERS" type="NORMAL">
                      <columns>
-                        <column idref="DoTS/AssemblyAnatomyPercent/ASSEMBLY_ANATOMY_PERCENT_ID"/>
+                        <column idref="DoTS/AssemblyOntologyTermPercent/ASSEMBLY_ONTOLOGY_TERM_PERCENT_ID"/>
                      </columns>
                   </index>
                </indexes>
                <constraints>
-                  <constraint name="ASSEMBLYANATOMYPERCENT_FK01" type="FOREIGN_KEY">
+                  <constraint name="ASSEMBLYONTOLOGYTERMPERCENT_FK01" type="FOREIGN_KEY">
                      <constrainedColumns>
-                        <column idref="DoTS/AssemblyAnatomyPercent/NA_SEQUENCE_ID"/>
+                        <column idref="DoTS/AssemblyOntologyTermPercent/NA_SEQUENCE_ID"/>
                      </constrainedColumns>
                      <referencedTable idref="DoTS/NASequence"/>
                      <referencedColumns>
                         <column idref="DoTS/NASequence/NA_SEQUENCE_ID"/>
                      </referencedColumns>
                   </constraint>
-                  <constraint name="ASSEMBLYANATOMYPERCENT_FK02" type="FOREIGN_KEY">
+                  <constraint name="ASSEMBLYONTOLOGYTERMPERCENT_FK02" type="FOREIGN_KEY">
                      <constrainedColumns>
-                        <column idref="DoTS/AssemblyAnatomyPercent/TAXON_ID"/>
+                        <column idref="DoTS/AssemblyOntologyTermPercent/TAXON_ID"/>
                      </constrainedColumns>
                      <referencedTable idref="SRes/Taxon"/>
                      <referencedColumns>
                         <column idref="SRes/Taxon/TAXON_ID"/>
                      </referencedColumns>
                   </constraint>
-                  <constraint name="ASSEMBLYANATOMYPERCENT_FK03" type="FOREIGN_KEY">
+                  <constraint name="ASSEMBLYONTOLOGYTERMPERCENT_FK03" type="FOREIGN_KEY">
                      <constrainedColumns>
-                        <column idref="DoTS/AssemblyAnatomyPercent/ANATOMY_ID"/>
+                        <column idref="DoTS/AssemblyOntologyTermPercent/ONTOLOGY_TERM_ID"/>
                      </constrainedColumns>
-                     <referencedTable idref="SRes/Anatomy"/>
+                     <referencedTable idref="SRes/OntologyTerm"/>
                      <referencedColumns>
-                        <column idref="SRes/Anatomy/ANATOMY_ID"/>
+                        <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
                      </referencedColumns>
                   </constraint>
-                  <constraint name="PK_ASSEMBLYANATOMYPERCENT" type="PRIMARY_KEY">
+                  <constraint name="PK_ASSEMBLYONTOLOGYTERMPERCENT" type="PRIMARY_KEY">
                      <constrainedColumns>
-                        <column idref="DoTS/AssemblyAnatomyPercent/ASSEMBLY_ANATOMY_PERCENT_ID"/>
+                        <column idref="DoTS/AssemblyOntologyTermPercent/ASSEMBLY_ONTOLOGY_TERM_PERCENT_ID"/>
                      </constrainedColumns>
                   </constraint>
                </constraints>
@@ -3589,66 +3589,66 @@
                   </constraint>
                </constraints>
             </table>
-            <table id="DoTS/ComplexAnatomy" name="ComplexAnatomy" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="Interaction" updatable="true">
+            <table id="DoTS/ComplexOntologyTerm" name="ComplexOntologyTerm" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="Interaction" updatable="true">
                <columns>
-                  <column id="DoTS/ComplexAnatomy/COMPLEX_ANATOMY_ID" name="COMPLEX_ANATOMY_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-                  <column id="DoTS/ComplexAnatomy/COMPLEX_ID" name="COMPLEX_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-                  <column id="DoTS/ComplexAnatomy/ANATOMY_ID" name="ANATOMY_ID" nullable="false" length="4" precision="0" type="NUMBER"/>
-                  <column id="DoTS/ComplexAnatomy/REVIEW_STATUS_ID" name="REVIEW_STATUS_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
+                  <column id="DoTS/ComplexOntologyTerm/COMPLEX_ONTOLOGY_TERM_ID" name="COMPLEX_ONTOLOGY_TERM_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+                  <column id="DoTS/ComplexOntologyTerm/COMPLEX_ID" name="COMPLEX_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+                  <column id="DoTS/ComplexOntologyTerm/ONTOLOGY_TERM_ID" name="ONTOLOGY_TERM_ID" nullable="false" length="4" precision="0" type="NUMBER"/>
+                  <column id="DoTS/ComplexOntologyTerm/REVIEW_STATUS_ID" name="REVIEW_STATUS_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                </columns>
                <indexes>
-                  <index name="COMPLEXANATOMY_IND01" tablespace="USERS" type="NORMAL">
+                  <index name="COMPLEXONTOLOGYTERM_IND01" tablespace="USERS" type="NORMAL">
                      <columns>
-                        <column idref="DoTS/ComplexAnatomy/REVIEW_STATUS_ID"/>
+                        <column idref="DoTS/ComplexOntologyTerm/REVIEW_STATUS_ID"/>
                      </columns>
                   </index>
-                  <index name="COMPLEXANATOMY_IND02" tablespace="USERS" type="NORMAL">
+                  <index name="COMPLEXONTOLOGYTERM_IND02" tablespace="USERS" type="NORMAL">
                      <columns>
-                        <column idref="DoTS/ComplexAnatomy/ANATOMY_ID"/>
+                        <column idref="DoTS/ComplexOntologyTerm/ONTOLOGY_TERM_ID"/>
                      </columns>
                   </index>
-                  <index name="COMPLEXANATOMY_IND03" tablespace="USERS" type="NORMAL">
+                  <index name="COMPLEXONTOLOGYTERM_IND03" tablespace="USERS" type="NORMAL">
                      <columns>
-                        <column idref="DoTS/ComplexAnatomy/COMPLEX_ID"/>
+                        <column idref="DoTS/ComplexOntologyTerm/COMPLEX_ID"/>
                      </columns>
                   </index>
-                  <index name="PK_COMPLEXANATOMY" tablespace="USERS" type="NORMAL">
+                  <index name="PK_COMPLEXONTOLOGYTERM" tablespace="USERS" type="NORMAL">
                      <columns>
-                        <column idref="DoTS/ComplexAnatomy/COMPLEX_ANATOMY_ID"/>
+                        <column idref="DoTS/ComplexOntologyTerm/COMPLEX_ONTOLOGY_TERM_ID"/>
                      </columns>
                   </index>
                </indexes>
                <constraints>
-                  <constraint name="COMPLEXANATOMY_FK01" type="FOREIGN_KEY">
+                  <constraint name="COMPLEXONTOLOGYTERM_FK01" type="FOREIGN_KEY">
                      <constrainedColumns>
-                        <column idref="DoTS/ComplexAnatomy/REVIEW_STATUS_ID"/>
+                        <column idref="DoTS/ComplexOntologyTerm/REVIEW_STATUS_ID"/>
                      </constrainedColumns>
                      <referencedTable idref="SRes/ReviewStatus"/>
                      <referencedColumns>
                         <column idref="SRes/ReviewStatus/REVIEW_STATUS_ID"/>
                      </referencedColumns>
                   </constraint>
-                  <constraint name="COMPLEXANATOMY_FK02" type="FOREIGN_KEY">
+                  <constraint name="COMPLEXONTOLOGYTERM_FK02" type="FOREIGN_KEY">
                      <constrainedColumns>
-                        <column idref="DoTS/ComplexAnatomy/ANATOMY_ID"/>
+                        <column idref="DoTS/ComplexOntologyTerm/ONTOLOGY_TERM_ID"/>
                      </constrainedColumns>
-                     <referencedTable idref="SRes/Anatomy"/>
+                     <referencedTable idref="SRes/OntologyTerm"/>
                      <referencedColumns>
-                        <column idref="SRes/Anatomy/ANATOMY_ID"/>
+                        <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
                      </referencedColumns>
                   </constraint>
-                  <constraint name="COMPLEXANATOMY_FK03" type="FOREIGN_KEY">
+                  <constraint name="COMPLEXONTOLOGYTERM_FK03" type="FOREIGN_KEY">
                      <constrainedColumns>
-                        <column idref="DoTS/ComplexAnatomy/COMPLEX_ID"/>
+                        <column idref="DoTS/ComplexOntologyTerm/COMPLEX_ID"/>
                      </constrainedColumns>
                      <referencedTable idref="DoTS/Complex"/>
                      <referencedColumns>
                         <column idref="DoTS/Complex/COMPLEX_ID"/>
                      </referencedColumns>
                   </constraint>
-                  <constraint name="PK_COMPLEXANATOMY" type="PRIMARY_KEY">
+                  <constraint name="PK_COMPLEXONTOLOGYTERM" type="PRIMARY_KEY">
                      <constrainedColumns>
-                        <column idref="DoTS/ComplexAnatomy/COMPLEX_ANATOMY_ID"/>
+                        <column idref="DoTS/ComplexOntologyTerm/COMPLEX_ONTOLOGY_TERM_ID"/>
                      </constrainedColumns>
                   </constraint>
                </constraints>
@@ -6307,10 +6307,10 @@
                   </constraint>
                </constraints>
             </table>
-            <table id="DoTS/IsExpressed" name="IsExpressed" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="Anatomy Vocabulary" updatable="true">
+            <table id="DoTS/IsExpressed" name="IsExpressed" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="OntologyTerm Vocabulary" updatable="true">
                <columns>
                   <column id="DoTS/IsExpressed/IS_EXPRESSED_ID" name="IS_EXPRESSED_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-                  <column id="DoTS/IsExpressed/ANATOMY_ID" name="ANATOMY_ID" nullable="false" length="4" precision="0" type="NUMBER"/>
+                  <column id="DoTS/IsExpressed/ONTOLOGY_TERM_ID" name="ONTOLOGY_TERM_ID" nullable="false" length="4" precision="0" type="NUMBER"/>
                   <column id="DoTS/IsExpressed/TABLE_ID" name="TABLE_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
                   <column id="DoTS/IsExpressed/ROW_ID" name="ROW_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/IsExpressed/IS_CONFIRMED" name="IS_CONFIRMED" nullable="true" length="1" precision="0" type="NUMBER"/>
@@ -6324,7 +6324,7 @@
                   </index>
                   <index name="ISEXPRESSED_IND02" tablespace="USERS" type="NORMAL">
                      <columns>
-                        <column idref="DoTS/IsExpressed/ANATOMY_ID"/>
+                        <column idref="DoTS/IsExpressed/ONTOLOGY_TERM_ID"/>
                         <column idref="DoTS/IsExpressed/IS_CONFIRMED"/>
                      </columns>
                   </index>
@@ -6337,11 +6337,11 @@
                <constraints>
                   <constraint name="ISEXPRESSED_FK05" type="FOREIGN_KEY">
                      <constrainedColumns>
-                        <column idref="DoTS/IsExpressed/ANATOMY_ID"/>
+                        <column idref="DoTS/IsExpressed/ONTOLOGY_TERM_ID"/>
                      </constrainedColumns>
-                     <referencedTable idref="SRes/Anatomy"/>
+                     <referencedTable idref="SRes/OntologyTerm"/>
                      <referencedColumns>
-                        <column idref="SRes/Anatomy/ANATOMY_ID"/>
+                        <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
                      </referencedColumns>
                   </constraint>
                   <constraint name="ISEXPRESSED_FK06" type="FOREIGN_KEY">
@@ -6400,7 +6400,7 @@
                <columns>
                   <column id="DoTS/Library/LIBRARY_ID" name="LIBRARY_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
                   <column id="DoTS/Library/TAXON_ID" name="TAXON_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-                  <column id="DoTS/Library/ANATOMY_ID" name="ANATOMY_ID" nullable="true" length="4" precision="0" type="NUMBER"/>
+                  <column id="DoTS/Library/ONTOLOGY_TERM_ID" name="ONTOLOGY_TERM_ID" nullable="true" length="4" precision="0" type="NUMBER"/>
                   <column id="DoTS/Library/DBEST_ID" name="DBEST_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
                   <column id="DoTS/Library/DBEST_NAME" name="DBEST_NAME" nullable="true" length="120" precision="0" type="STRING"/>
                   <column id="DoTS/Library/IS_IMAGE" name="IS_IMAGE" nullable="false" length="1" precision="0" type="NUMBER"/>
@@ -6439,7 +6439,7 @@
                   </index>
                   <index name="LIBRARY_IND03" tablespace="USERS" type="NORMAL">
                      <columns>
-                        <column idref="DoTS/Library/ANATOMY_ID"/>
+                        <column idref="DoTS/Library/ONTOLOGY_TERM_ID"/>
                      </columns>
                   </index>
                   <index name="PK_LIBRARY" tablespace="USERS" type="NORMAL">
@@ -6460,11 +6460,11 @@
                   </constraint>
                   <constraint name="LIBRARY_FK03" type="FOREIGN_KEY">
                      <constrainedColumns>
-                        <column idref="DoTS/Library/ANATOMY_ID"/>
+                        <column idref="DoTS/Library/ONTOLOGY_TERM_ID"/>
                      </constrainedColumns>
-                     <referencedTable idref="SRes/Anatomy"/>
+                     <referencedTable idref="SRes/OntologyTerm"/>
                      <referencedColumns>
-                        <column idref="SRes/Anatomy/ANATOMY_ID"/>
+                        <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
                      </referencedColumns>
                   </constraint>
                   <constraint name="PK_LIBRARY" type="PRIMARY_KEY">
@@ -9668,50 +9668,50 @@
                   </constraint>
                </constraints>
             </table>
-            <table id="DoTS/RNAAnatomy" name="RNAAnatomy" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="Central Dogma" updatable="true">
+            <table id="DoTS/RNAOntologyTerm" name="RNAOntologyTerm" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="Central Dogma" updatable="true">
                <columns>
-                  <column id="DoTS/RNAAnatomy/RNA_ANATOMY_ID" name="RNA_ANATOMY_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-                  <column id="DoTS/RNAAnatomy/ANATOMY_ID" name="ANATOMY_ID" nullable="false" length="4" precision="0" type="NUMBER"/>
-                  <column id="DoTS/RNAAnatomy/RNA_ID" name="RNA_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-                  <column id="DoTS/RNAAnatomy/EST_NUMBER" name="EST_NUMBER" nullable="true" length="6" precision="0" type="NUMBER"/>
-                  <column id="DoTS/RNAAnatomy/RAD_CONFIRMED" name="RAD_CONFIRMED" nullable="false" length="1" precision="0" type="NUMBER"/>
-                  <column id="DoTS/RNAAnatomy/LITERATURE_CONFIRMED" name="LITERATURE_CONFIRMED" nullable="false" length="1" precision="0" type="NUMBER"/>
+                  <column id="DoTS/RNAOntologyTerm/RNA_ONTOLOGY_TERM_ID" name="RNA_ONTOLOGY_TERM_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+                  <column id="DoTS/RNAOntologyTerm/ONTOLOGY_TERM_ID" name="ONTOLOGY_TERM_ID" nullable="false" length="4" precision="0" type="NUMBER"/>
+                  <column id="DoTS/RNAOntologyTerm/RNA_ID" name="RNA_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+                  <column id="DoTS/RNAOntologyTerm/EST_NUMBER" name="EST_NUMBER" nullable="true" length="6" precision="0" type="NUMBER"/>
+                  <column id="DoTS/RNAOntologyTerm/RAD_CONFIRMED" name="RAD_CONFIRMED" nullable="false" length="1" precision="0" type="NUMBER"/>
+                  <column id="DoTS/RNAOntologyTerm/LITERATURE_CONFIRMED" name="LITERATURE_CONFIRMED" nullable="false" length="1" precision="0" type="NUMBER"/>
                </columns>
                <indexes>
-                  <index name="PK_RNAANATOMY" tablespace="USERS" type="NORMAL">
+                  <index name="PK_RNAONTOLOGYTERM" tablespace="USERS" type="NORMAL">
                      <columns>
-                        <column idref="DoTS/RNAAnatomy/RNA_ANATOMY_ID"/>
+                        <column idref="DoTS/RNAOntologyTerm/RNA_ONTOLOGY_TERM_ID"/>
                      </columns>
                   </index>
-                  <index name="RNAANATOMY_IND01" tablespace="USERS" type="NORMAL">
+                  <index name="RNAONTOLOGYTERM_IND01" tablespace="USERS" type="NORMAL">
                      <columns>
-                        <column idref="DoTS/RNAAnatomy/ANATOMY_ID"/>
+                        <column idref="DoTS/RNAOntologyTerm/ONTOLOGY_TERM_ID"/>
                      </columns>
                   </index>
-                  <index name="RNAANATOMY_IND02" tablespace="USERS" type="NORMAL">
+                  <index name="RNAONTOLOGYTERM_IND02" tablespace="USERS" type="NORMAL">
                      <columns>
-                        <column idref="DoTS/RNAAnatomy/RNA_ID"/>
+                        <column idref="DoTS/RNAOntologyTerm/RNA_ID"/>
                      </columns>
                   </index>
                </indexes>
                <constraints>
-                  <constraint name="PK_RNAANATOMY" type="PRIMARY_KEY">
+                  <constraint name="PK_RNAONTOLOGYTERM" type="PRIMARY_KEY">
                      <constrainedColumns>
-                        <column idref="DoTS/RNAAnatomy/RNA_ANATOMY_ID"/>
+                        <column idref="DoTS/RNAOntologyTerm/RNA_ONTOLOGY_TERM_ID"/>
                      </constrainedColumns>
                   </constraint>
-                  <constraint name="RNAANATOMY_FK04" type="FOREIGN_KEY">
+                  <constraint name="RNAONTOLOGYTERM_FK04" type="FOREIGN_KEY">
                      <constrainedColumns>
-                        <column idref="DoTS/RNAAnatomy/ANATOMY_ID"/>
+                        <column idref="DoTS/RNAOntologyTerm/ONTOLOGY_TERM_ID"/>
                      </constrainedColumns>
-                     <referencedTable idref="SRes/Anatomy"/>
+                     <referencedTable idref="SRes/OntologyTerm"/>
                      <referencedColumns>
-                        <column idref="SRes/Anatomy/ANATOMY_ID"/>
+                        <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
                      </referencedColumns>
                   </constraint>
-                  <constraint name="RNAANATOMY_FK05" type="FOREIGN_KEY">
+                  <constraint name="RNAONTOLOGYTERM_FK05" type="FOREIGN_KEY">
                      <constrainedColumns>
-                        <column idref="DoTS/RNAAnatomy/RNA_ID"/>
+                        <column idref="DoTS/RNAOntologyTerm/RNA_ID"/>
                      </constrainedColumns>
                      <referencedTable idref="DoTS/RNA"/>
                      <referencedColumns>
@@ -9720,51 +9720,51 @@
                   </constraint>
                </constraints>
             </table>
-            <table id="DoTS/RNAAnatomyLOE" name="RNAAnatomyLOE" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="Central Dogma" updatable="true">
+            <table id="DoTS/RNAOntologyTermLOE" name="RNAOntologyTermLOE" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="Central Dogma" updatable="true">
                <columns>
-                  <column id="DoTS/RNAAnatomyLOE/RNA_ANATOMY_LOE_ID" name="RNA_ANATOMY_LOE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-                  <column id="DoTS/RNAAnatomyLOE/RNA_ANATOMY_ID" name="RNA_ANATOMY_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-                  <column id="DoTS/RNAAnatomyLOE/ANATOMY_LOE_ID" name="ANATOMY_LOE_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
+                  <column id="DoTS/RNAOntologyTermLOE/RNA_ONTOLOGY_TERM_LOE_ID" name="RNA_ONTOLOGY_TERM_LOE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+                  <column id="DoTS/RNAOntologyTermLOE/RNA_ONTOLOGY_TERM_ID" name="RNA_ONTOLOGY_TERM_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+                  <column id="DoTS/RNAOntologyTermLOE/ONTOLOGY_TERM_LOE_ID" name="ONTOLOGY_TERM_LOE_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
                </columns>
                <indexes>
-                  <index name="PK_RNAANATOMYLOE" tablespace="USERS" type="NORMAL">
+                  <index name="PK_RNAONTOLOGYTERMLOE" tablespace="USERS" type="NORMAL">
                      <columns>
-                        <column idref="DoTS/RNAAnatomyLOE/RNA_ANATOMY_LOE_ID"/>
+                        <column idref="DoTS/RNAOntologyTermLOE/RNA_ONTOLOGY_TERM_LOE_ID"/>
                      </columns>
                   </index>
-                  <index name="RNAANATOMYLOE_IND01" tablespace="USERS" type="NORMAL">
+                  <index name="RNAONTOLOGYTERMLOE_IND01" tablespace="USERS" type="NORMAL">
                      <columns>
-                        <column idref="DoTS/RNAAnatomyLOE/ANATOMY_LOE_ID"/>
+                        <column idref="DoTS/RNAOntologyTermLOE/ONTOLOGY_TERM_LOE_ID"/>
                      </columns>
                   </index>
-                  <index name="RNAANATOMYLOE_IND02" tablespace="USERS" type="NORMAL">
+                  <index name="RNAONTOLOGYTERMLOE_IND02" tablespace="USERS" type="NORMAL">
                      <columns>
-                        <column idref="DoTS/RNAAnatomyLOE/RNA_ANATOMY_ID"/>
+                        <column idref="DoTS/RNAOntologyTermLOE/RNA_ONTOLOGY_TERM_ID"/>
                      </columns>
                   </index>
                </indexes>
                <constraints>
-                  <constraint name="PK_RNAANATOMYLOE" type="PRIMARY_KEY">
+                  <constraint name="PK_RNAONTOLOGYTERMLOE" type="PRIMARY_KEY">
                      <constrainedColumns>
-                        <column idref="DoTS/RNAAnatomyLOE/RNA_ANATOMY_LOE_ID"/>
+                        <column idref="DoTS/RNAOntologyTermLOE/RNA_ONTOLOGY_TERM_LOE_ID"/>
                      </constrainedColumns>
                   </constraint>
-                  <constraint name="RNAANATOMYLOE_FK04" type="FOREIGN_KEY">
+                  <constraint name="RNAONTOLOGYTERMLOE_FK04" type="FOREIGN_KEY">
                      <constrainedColumns>
-                        <column idref="DoTS/RNAAnatomyLOE/ANATOMY_LOE_ID"/>
+                        <column idref="DoTS/RNAOntologyTermLOE/ONTOLOGY_TERM_LOE_ID"/>
                      </constrainedColumns>
-                     <referencedTable idref="DoTS/AnatomyLOE"/>
+                     <referencedTable idref="DoTS/OntologyTermLOE"/>
                      <referencedColumns>
-                        <column idref="DoTS/AnatomyLOE/ANATOMY_LOE_ID"/>
+                        <column idref="DoTS/OntologyTermLOE/ONTOLOGY_TERM_LOE_ID"/>
                      </referencedColumns>
                   </constraint>
-                  <constraint name="RNAANATOMYLOE_FK05" type="FOREIGN_KEY">
+                  <constraint name="RNAONTOLOGYTERMLOE_FK05" type="FOREIGN_KEY">
                      <constrainedColumns>
-                        <column idref="DoTS/RNAAnatomyLOE/RNA_ANATOMY_ID"/>
+                        <column idref="DoTS/RNAOntologyTermLOE/RNA_ONTOLOGY_TERM_ID"/>
                      </constrainedColumns>
-                     <referencedTable idref="DoTS/RNAAnatomy"/>
+                     <referencedTable idref="DoTS/RNAOntologyTerm"/>
                      <referencedColumns>
-                        <column idref="DoTS/RNAAnatomy/RNA_ANATOMY_ID"/>
+                        <column idref="DoTS/RNAOntologyTerm/RNA_ONTOLOGY_TERM_ID"/>
                      </referencedColumns>
                   </constraint>
                </constraints>
@@ -11830,7 +11830,7 @@
                   <column id="SRes/Phenotype/PHENOTYPE_ID" name="PHENOTYPE_ID" nullable="false" length="8" precision="0" type="NUMBER"/>
                   <column id="SRes/Phenotype/PARENT_ID" name="PARENT_ID" nullable="true" length="8" precision="0" type="NUMBER"/>
                   <column id="SRes/Phenotype/PATO_ATTRIBUTE_ID" name="PATO_ATTRIBUTE_ID" nullable="true" length="8" precision="0" type="NUMBER"/>
-                  <column id="SRes/Phenotype/ANATOMY_ID" name="ANATOMY_ID" nullable="true" length="4" precision="0" type="NUMBER"/>
+                  <column id="SRes/Phenotype/ONTOLOGY_TERM_ID" name="ONTOLOGY_TERM_ID" nullable="true" length="4" precision="0" type="NUMBER"/>
                   <column id="SRes/Phenotype/CELL_TYPE_ID" name="CELL_TYPE_ID" nullable="true" length="4" precision="0" type="NUMBER"/>
                   <column id="SRes/Phenotype/DEVELOPMENTAL_STAGE_ID" name="DEVELOPMENTAL_STAGE_ID" nullable="true" length="4" precision="0" type="NUMBER"/>
                   <column id="SRes/Phenotype/DESCRIPTION" name="DESCRIPTION" nullable="true" length="500" precision="0" type="STRING"/>
@@ -11838,7 +11838,7 @@
                <indexes>
                   <index name="PHENOTYPE_IND01" tablespace="USERS" type="NORMAL">
                      <columns>
-                        <column idref="SRes/Phenotype/ANATOMY_ID"/>
+                        <column idref="SRes/Phenotype/ONTOLOGY_TERM_ID"/>
                      </columns>
                   </index>
                   <index name="PHENOTYPE_IND02" tablespace="USERS" type="NORMAL">
@@ -11870,20 +11870,20 @@
                <constraints>
                   <constraint name="FK_PHENOTYPE_ANAT01" type="FOREIGN_KEY">
                      <constrainedColumns>
-                        <column idref="SRes/Phenotype/ANATOMY_ID"/>
+                        <column idref="SRes/Phenotype/ONTOLOGY_TERM_ID"/>
                      </constrainedColumns>
-                     <referencedTable idref="SRes/Anatomy"/>
+                     <referencedTable idref="SRes/OntologyTerm"/>
                      <referencedColumns>
-                        <column idref="SRes/Anatomy/ANATOMY_ID"/>
+                        <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
                      </referencedColumns>
                   </constraint>
                   <constraint name="FK_PHENOTYPE_ANAT02" type="FOREIGN_KEY">
                      <constrainedColumns>
                         <column idref="SRes/Phenotype/CELL_TYPE_ID"/>
                      </constrainedColumns>
-                     <referencedTable idref="SRes/Anatomy"/>
+                     <referencedTable idref="SRes/OntologyTerm"/>
                      <referencedColumns>
-                        <column idref="SRes/Anatomy/ANATOMY_ID"/>
+                        <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
                      </referencedColumns>
                   </constraint>
                   <constraint name="FK_PHENOTYPE_DEVSTAGE01" type="FOREIGN_KEY">
@@ -13285,7 +13285,7 @@
                   <column id="Model/ModelContext/MODEL_CONTEXT_ID" name="MODEL_CONTEXT_ID" nullable="false" length="3" precision="0" type="NUMBER"/>
                   <column id="Model/ModelContext/NAME" name="NAME" nullable="false" length="50" precision="0" type="STRING"/>
                   <column id="Model/ModelContext/DESCRIPTION" name="DESCRIPTION" nullable="true" length="250" precision="0" type="STRING"/>
-                  <column id="Model/ModelContext/ANATOMY_ID" name="ANATOMY_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
+                  <column id="Model/ModelContext/ONTOLOGY_TERM_ID" name="ONTOLOGY_TERM_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="Model/ModelContext/BIOLOGICAL_PROCESS_ID" name="BIOLOGICAL_PROCESS_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="Model/ModelContext/DEVELOPMENTAL_STAGE_START_ID" name="DEVELOPMENTAL_STAGE_START_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="Model/ModelContext/DEVELOPMENTAL_STAGE_END_ID" name="DEVELOPMENTAL_STAGE_END_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
@@ -13305,7 +13305,7 @@
                   </constraint>
                   <constraint name="FK_MODELCONTEXT_OT1" type="FOREIGN_KEY">
                      <constrainedColumns>
-                        <column idref="Model/ModelContext/ANATOMY_ID"/>
+                        <column idref="Model/ModelContext/ONTOLOGY_TERM_ID"/>
                      </constrainedColumns>
                      <referencedTable idref="SRes/OntologyTerm"/>
                      <referencedColumns>
