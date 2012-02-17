@@ -11106,6 +11106,62 @@
                   </constraint>
                </constraints>
             </table>
+            <table id="SRes/EnzymeClass" name="EnzymeClass" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="Enzymes Vocabulary" updatable="true">
+               <columns>
+                  <column id="SRes/EnzymeClass/ENZYME_CLASS_ID" name="ENZYME_CLASS_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
+                  <column id="SRes/EnzymeClass/DEPTH" name="DEPTH" nullable="false" length="1" precision="0" type="NUMBER"/>
+                  <column id="SRes/EnzymeClass/EC_NUMBER" name="EC_NUMBER" nullable="false" length="16" precision="0" type="STRING"/>
+                  <column id="SRes/EnzymeClass/EC_NUMBER_1" name="EC_NUMBER_1" nullable="true" length="3" precision="0" type="NUMBER"/>
+                  <column id="SRes/EnzymeClass/EC_NUMBER_2" name="EC_NUMBER_2" nullable="true" length="3" precision="0" type="NUMBER"/>
+                  <column id="SRes/EnzymeClass/EC_NUMBER_3" name="EC_NUMBER_3" nullable="true" length="3" precision="0" type="NUMBER"/>
+                  <column id="SRes/EnzymeClass/EC_NUMBER_4" name="EC_NUMBER_4" nullable="true" length="3" precision="0" type="NUMBER"/>
+                  <column id="SRes/EnzymeClass/DESCRIPTION" name="DESCRIPTION" nullable="true" length="128" precision="0" type="STRING"/>
+                  <column id="SRes/EnzymeClass/PARENT_ID" name="PARENT_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
+                  <column id="SRes/EnzymeClass/EXTERNAL_DATABASE_RELEASE_ID" name="EXTERNAL_DATABASE_RELEASE_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
+               </columns>
+               <indexes>
+                  <index name="ENZYMECLASS_IND01" tablespace="USERS" type="NORMAL">
+                     <columns>
+                        <column idref="SRes/EnzymeClass/PARENT_ID"/>
+                     </columns>
+                  </index>
+                  <index name="ENZYMECLASS_IND02" tablespace="USERS" type="NORMAL">
+                     <columns>
+                        <column idref="SRes/EnzymeClass/EXTERNAL_DATABASE_RELEASE_ID"/>
+                     </columns>
+                  </index>
+                  <index name="ENZYMECLASS_PK" tablespace="USERS" type="NORMAL">
+                     <columns>
+                        <column idref="SRes/EnzymeClass/ENZYME_CLASS_ID"/>
+                     </columns>
+                  </index>
+               </indexes>
+               <constraints>
+                  <constraint name="ENZYMECLASS_FK01" type="FOREIGN_KEY">
+                     <constrainedColumns>
+                        <column idref="SRes/EnzymeClass/PARENT_ID"/>
+                     </constrainedColumns>
+                     <referencedTable idref="SRes/EnzymeClass"/>
+                     <referencedColumns>
+                        <column idref="SRes/EnzymeClass/ENZYME_CLASS_ID"/>
+                     </referencedColumns>
+                  </constraint>
+                  <constraint name="ENZYMECLASS_FK02" type="FOREIGN_KEY">
+                     <constrainedColumns>
+                        <column idref="SRes/EnzymeClass/EXTERNAL_DATABASE_RELEASE_ID"/>
+                     </constrainedColumns>
+                     <referencedTable idref="SRes/ExternalDatabaseRelease"/>
+                     <referencedColumns>
+                        <column idref="SRes/ExternalDatabaseRelease/EXTERNAL_DATABASE_RELEASE_ID"/>
+                     </referencedColumns>
+                  </constraint>
+                  <constraint name="ENZYMECLASS_PK" type="PRIMARY_KEY">
+                     <constrainedColumns>
+                        <column idref="SRes/EnzymeClass/ENZYME_CLASS_ID"/>
+                     </constrainedColumns>
+                  </constraint>
+               </constraints>
+            </table>
             <table id="SRes/ExternalDatabase" name="ExternalDatabase" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="External Database" updatable="true">
                <columns>
                   <column id="SRes/ExternalDatabase/EXTERNAL_DATABASE_ID" name="EXTERNAL_DATABASE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
@@ -11404,8 +11460,8 @@
             </table>
             <table id="SRes/OntologySynonym" name="OntologySynonym" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="General Ontology" updatable="true">
                <columns>
-		  <column id="SRes/OntologySynonym/ONTOLOGY_SYNONYM_ID" name="ONTOLOGY_SYNONYM_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-		  <column id="SRes/OntologySynonym/ONTOLOGY_TERM_ID" name="ONTOLOGY_TERM_ID" nullable="false" length="10" precision="0" type="NUMBER"/> 
+                  <column id="SRes/OntologySynonym/ONTOLOGY_SYNONYM_ID" name="ONTOLOGY_SYNONYM_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+                  <column id="SRes/OntologySynonym/ONTOLOGY_TERM_ID" name="ONTOLOGY_TERM_ID" nullable="false" length="10" precision="0" type="NUMBER"/> 
                   <column id="SRes/OntologySynonym/SYNONYM" name="SYNONYM" nullable="false" length="50" precision="0" type="STRING"/>
                   <column id="SRes/OntologySynonym/EXTERNAL_DATABASE_RELEASE_ID" name="EXTERNAL_DATABASE_RELEASE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="SRes/OntologySynonym/SOURCE_ID" name="SOURCE_ID" nullable="false" length="255" precision="0" type="STRING"/>
@@ -11766,6 +11822,101 @@
                      <referencedColumns>
                         <column idref="SRes/PathwayNode/PATHWAY_NODE_ID"/>
                      </referencedColumns>
+                  </constraint>
+               </constraints>
+            </table>
+            <table id="SRes/Phenotype" name="Phenotype" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="Phenotype Vocabulary" updatable="true">
+               <columns>
+                  <column id="SRes/Phenotype/PHENOTYPE_ID" name="PHENOTYPE_ID" nullable="false" length="8" precision="0" type="NUMBER"/>
+                  <column id="SRes/Phenotype/PARENT_ID" name="PARENT_ID" nullable="true" length="8" precision="0" type="NUMBER"/>
+                  <column id="SRes/Phenotype/PATO_ATTRIBUTE_ID" name="PATO_ATTRIBUTE_ID" nullable="true" length="8" precision="0" type="NUMBER"/>
+                  <column id="SRes/Phenotype/ANATOMY_ID" name="ANATOMY_ID" nullable="true" length="4" precision="0" type="NUMBER"/>
+                  <column id="SRes/Phenotype/CELL_TYPE_ID" name="CELL_TYPE_ID" nullable="true" length="4" precision="0" type="NUMBER"/>
+                  <column id="SRes/Phenotype/DEVELOPMENTAL_STAGE_ID" name="DEVELOPMENTAL_STAGE_ID" nullable="true" length="4" precision="0" type="NUMBER"/>
+                  <column id="SRes/Phenotype/DESCRIPTION" name="DESCRIPTION" nullable="true" length="500" precision="0" type="STRING"/>
+               </columns>
+               <indexes>
+                  <index name="PHENOTYPE_IND01" tablespace="USERS" type="NORMAL">
+                     <columns>
+                        <column idref="SRes/Phenotype/ANATOMY_ID"/>
+                     </columns>
+                  </index>
+                  <index name="PHENOTYPE_IND02" tablespace="USERS" type="NORMAL">
+                     <columns>
+                        <column idref="SRes/Phenotype/CELL_TYPE_ID"/>
+                     </columns>
+                  </index>
+                  <index name="PHENOTYPE_IND03" tablespace="USERS" type="NORMAL">
+                     <columns>
+                        <column idref="SRes/Phenotype/DEVELOPMENTAL_STAGE_ID"/>
+                     </columns>
+                  </index>
+                  <index name="PHENOTYPE_IND04" tablespace="USERS" type="NORMAL">
+                     <columns>
+                        <column idref="SRes/Phenotype/PARENT_ID"/>
+                     </columns>
+                  </index>
+                  <index name="PHENOTYPE_IND05" tablespace="USERS" type="NORMAL">
+                     <columns>
+                        <column idref="SRes/Phenotype/PATO_ATTRIBUTE_ID"/>
+                     </columns>
+                  </index>
+                  <index name="PK_PHENOTYPE" tablespace="USERS" type="NORMAL">
+                     <columns>
+                        <column idref="SRes/Phenotype/PHENOTYPE_ID"/>
+                     </columns>
+                  </index>
+               </indexes>
+               <constraints>
+                  <constraint name="FK_PHENOTYPE_ANAT01" type="FOREIGN_KEY">
+                     <constrainedColumns>
+                        <column idref="SRes/Phenotype/ANATOMY_ID"/>
+                     </constrainedColumns>
+                     <referencedTable idref="SRes/Anatomy"/>
+                     <referencedColumns>
+                        <column idref="SRes/Anatomy/ANATOMY_ID"/>
+                     </referencedColumns>
+                  </constraint>
+                  <constraint name="FK_PHENOTYPE_ANAT02" type="FOREIGN_KEY">
+                     <constrainedColumns>
+                        <column idref="SRes/Phenotype/CELL_TYPE_ID"/>
+                     </constrainedColumns>
+                     <referencedTable idref="SRes/Anatomy"/>
+                     <referencedColumns>
+                        <column idref="SRes/Anatomy/ANATOMY_ID"/>
+                     </referencedColumns>
+                  </constraint>
+                  <constraint name="FK_PHENOTYPE_DEVSTAGE01" type="FOREIGN_KEY">
+                     <constrainedColumns>
+                        <column idref="SRes/Phenotype/DEVELOPMENTAL_STAGE_ID"/>
+                     </constrainedColumns>
+                     <referencedTable idref="SRes/DevelopmentalStage"/>
+                     <referencedColumns>
+                        <column idref="SRes/DevelopmentalStage/DEVELOPMENTAL_STAGE_ID"/>
+                     </referencedColumns>
+                  </constraint>
+                  <constraint name="FK_PHENOTYPE_PARENT" type="FOREIGN_KEY">
+                     <constrainedColumns>
+                        <column idref="SRes/Phenotype/PARENT_ID"/>
+                     </constrainedColumns>
+                     <referencedTable idref="SRes/Phenotype"/>
+                     <referencedColumns>
+                        <column idref="SRes/Phenotype/PHENOTYPE_ID"/>
+                     </referencedColumns>
+                  </constraint>
+                  <constraint name="FK_PHENOTYPE_PATO" type="FOREIGN_KEY">
+                     <constrainedColumns>
+                        <column idref="SRes/Phenotype/PATO_ATTRIBUTE_ID"/>
+                     </constrainedColumns>
+                     <referencedTable idref="SRes/PATOAttribute"/>
+                     <referencedColumns>
+                        <column idref="SRes/PATOAttribute/PATO_ATTRIBUTE_ID"/>
+                     </referencedColumns>
+                  </constraint>
+                  <constraint name="PK_PHENOTYPE" type="PRIMARY_KEY">
+                     <constrainedColumns>
+                        <column idref="SRes/Phenotype/PHENOTYPE_ID"/>
+                     </constrainedColumns>
                   </constraint>
                </constraints>
             </table>
@@ -12194,7 +12345,7 @@
                </columns>
                <subclasses>
                   <subclass id="Study/BiomaterialCharacteristic" name="BiomaterialCharacteristic" versioned="false" tablespace="USERS" categoryRef="Experimental Design" updatable="true">
-		     <columns>
+                     <columns>
                         <column id="Study/BiomaterialCharacteristic/VALUE" name="VALUE" nullable="true" length="100" precision="0" type="STRING"/>
                      </columns>
                   </subclass>
