@@ -4013,53 +4013,53 @@
                   </constraint>
                </constraints>
             </table>
-            <table id="DoTS/DevStageLibrary" name="DevStageLibrary" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="Clones" updatable="true">
+            <table id="DoTS/OntologyTermLibrary" name="OntologyTermLibrary" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="Clones" updatable="true">
                <columns>
-                  <column id="DoTS/DevStageLibrary/DEV_STAGE_LIBRARY_ID" name="DEV_STAGE_LIBRARY_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-                  <column id="DoTS/DevStageLibrary/DEVELOPMENTAL_STAGE_ID" name="DEVELOPMENTAL_STAGE_ID" nullable="false" length="4" precision="0" type="NUMBER"/>
-                  <column id="DoTS/DevStageLibrary/LIBRARY_ID" name="LIBRARY_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
+                  <column id="DoTS/OntologyTermLibrary/DEV_STAGE_LIBRARY_ID" name="DEV_STAGE_LIBRARY_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+                  <column id="DoTS/OntologyTermLibrary/ONTOLOGY_TERM_ID" name="ONTOLOGY_TERM_ID" nullable="false" length="4" precision="0" type="NUMBER"/>
+                  <column id="DoTS/OntologyTermLibrary/LIBRARY_ID" name="LIBRARY_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
                </columns>
                <indexes>
-                  <index name="PK_DEVSTAGELIBRARY" tablespace="USERS" type="NORMAL">
+                  <index name="PK_ONTOLOGYTERMLIBRARY" tablespace="USERS" type="NORMAL">
                      <columns>
-                        <column idref="DoTS/DevStageLibrary/DEV_STAGE_LIBRARY_ID"/>
+                        <column idref="DoTS/OntologyTermLibrary/DEV_STAGE_LIBRARY_ID"/>
                      </columns>
                   </index>
-                  <index name="DEVSTAGELIBRARY_R03" tablespace="USERS" type="NORMAL">
+                  <index name="ONTOLOGYTERMLIBRARY_R03" tablespace="USERS" type="NORMAL">
                      <columns>
-                        <column idref="DoTS/DevStageLibrary/DEVELOPMENTAL_STAGE_ID"/>
-                        <column idref="DoTS/DevStageLibrary/DEV_STAGE_LIBRARY_ID"/>
+                        <column idref="DoTS/OntologyTermLibrary/ONTOLOGY_TERM_ID"/>
+                        <column idref="DoTS/OntologyTermLibrary/DEV_STAGE_LIBRARY_ID"/>
                      </columns>
                   </index>
-                  <index name="DEVSTAGELIBRARY_R04" tablespace="USERS" type="NORMAL">
+                  <index name="ONTOLOGYTERMLIBRARY_R04" tablespace="USERS" type="NORMAL">
                      <columns>
-                        <column idref="DoTS/DevStageLibrary/LIBRARY_ID"/>
-                        <column idref="DoTS/DevStageLibrary/DEV_STAGE_LIBRARY_ID"/>
+                        <column idref="DoTS/OntologyTermLibrary/LIBRARY_ID"/>
+                        <column idref="DoTS/OntologyTermLibrary/DEV_STAGE_LIBRARY_ID"/>
                      </columns>
                   </index>
                </indexes>
                <constraints>
-                  <constraint name="DEVSTAGELIBRARY_FK01" type="FOREIGN_KEY">
+                  <constraint name="ONTOLOGYTERMLIBRARY_FK01" type="FOREIGN_KEY">
                      <constrainedColumns>
-                        <column idref="DoTS/DevStageLibrary/LIBRARY_ID"/>
+                        <column idref="DoTS/OntologyTermLibrary/LIBRARY_ID"/>
                      </constrainedColumns>
                      <referencedTable idref="DoTS/Library"/>
                      <referencedColumns>
                         <column idref="DoTS/Library/LIBRARY_ID"/>
                      </referencedColumns>
                   </constraint>
-                  <constraint name="DEVSTAGELIBRARY_FK02" type="FOREIGN_KEY">
+                  <constraint name="ONTOLOGYTERMLIBRARY_FK02" type="FOREIGN_KEY">
                      <constrainedColumns>
-                        <column idref="DoTS/DevStageLibrary/DEVELOPMENTAL_STAGE_ID"/>
+                        <column idref="DoTS/OntologyTermLibrary/ONTOLOGY_TERM_ID"/>
                      </constrainedColumns>
-                     <referencedTable idref="SRes/DevelopmentalStage"/>
+                     <referencedTable idref="SRes/OntologyTerm"/>
                      <referencedColumns>
-                        <column idref="SRes/DevelopmentalStage/DEVELOPMENTAL_STAGE_ID"/>
+                        <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
                      </referencedColumns>
                   </constraint>
-                  <constraint name="PK_DEVSTAGELIBRARY" type="PRIMARY_KEY">
+                  <constraint name="PK_ONTOLOGYTERMLIBRARY" type="PRIMARY_KEY">
                      <constrainedColumns>
-                        <column idref="DoTS/DevStageLibrary/DEV_STAGE_LIBRARY_ID"/>
+                        <column idref="DoTS/OntologyTermLibrary/DEV_STAGE_LIBRARY_ID"/>
                      </constrainedColumns>
                   </constraint>
                </constraints>
@@ -11832,7 +11832,7 @@
                   <column id="SRes/Phenotype/PATO_ATTRIBUTE_ID" name="PATO_ATTRIBUTE_ID" nullable="true" length="8" precision="0" type="NUMBER"/>
                   <column id="SRes/Phenotype/ONTOLOGY_TERM_ID" name="ONTOLOGY_TERM_ID" nullable="true" length="4" precision="0" type="NUMBER"/>
                   <column id="SRes/Phenotype/CELL_TYPE_ID" name="CELL_TYPE_ID" nullable="true" length="4" precision="0" type="NUMBER"/>
-                  <column id="SRes/Phenotype/DEVELOPMENTAL_STAGE_ID" name="DEVELOPMENTAL_STAGE_ID" nullable="true" length="4" precision="0" type="NUMBER"/>
+                  <column id="SRes/Phenotype/ONTOLOGY_TERM_ID" name="ONTOLOGY_TERM_ID" nullable="true" length="4" precision="0" type="NUMBER"/>
                   <column id="SRes/Phenotype/DESCRIPTION" name="DESCRIPTION" nullable="true" length="500" precision="0" type="STRING"/>
                </columns>
                <indexes>
@@ -11848,7 +11848,7 @@
                   </index>
                   <index name="PHENOTYPE_IND03" tablespace="USERS" type="NORMAL">
                      <columns>
-                        <column idref="SRes/Phenotype/DEVELOPMENTAL_STAGE_ID"/>
+                        <column idref="SRes/Phenotype/ONTOLOGY_TERM_ID"/>
                      </columns>
                   </index>
                   <index name="PHENOTYPE_IND04" tablespace="USERS" type="NORMAL">
@@ -11886,13 +11886,13 @@
                         <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
                      </referencedColumns>
                   </constraint>
-                  <constraint name="FK_PHENOTYPE_DEVSTAGE01" type="FOREIGN_KEY">
+                  <constraint name="FK_PHENOTYPE_ONTOLOGYTERM01" type="FOREIGN_KEY">
                      <constrainedColumns>
-                        <column idref="SRes/Phenotype/DEVELOPMENTAL_STAGE_ID"/>
+                        <column idref="SRes/Phenotype/ONTOLOGY_TERM_ID"/>
                      </constrainedColumns>
-                     <referencedTable idref="SRes/DevelopmentalStage"/>
+                     <referencedTable idref="SRes/OntologyTerm"/>
                      <referencedColumns>
-                        <column idref="SRes/DevelopmentalStage/DEVELOPMENTAL_STAGE_ID"/>
+                        <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
                      </referencedColumns>
                   </constraint>
                   <constraint name="FK_PHENOTYPE_PARENT" type="FOREIGN_KEY">
