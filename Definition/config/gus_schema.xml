@@ -861,7 +861,7 @@
                   <column id="DoTS/AAFeature/PARENT_ID" name="PARENT_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/AAFeature/NA_FEATURE_ID" name="NA_FEATURE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/AAFeature/SUBCLASS_VIEW" name="SUBCLASS_VIEW" nullable="true" length="30" precision="0" type="STRING"/>
-                  <column id="DoTS/AAFeature/SEQUENCE_ONTOLOGY_ID" name="SEQUENCE_ONTOLOGY_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
+                  <column id="DoTS/AAFeature/ONTOLOGY_TERM_ID name="ONTOLOGY_TERM_ID nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/AAFeature/DESCRIPTION" name="DESCRIPTION" nullable="true" length="4000" precision="0" type="STRING"/>
                   <column id="DoTS/AAFeature/PFAM_ENTRY_ID" name="PFAM_ENTRY_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/AAFeature/MOTIF_AA_SEQUENCE_ID" name="MOTIF_AA_SEQUENCE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
@@ -1071,7 +1071,7 @@
                   </index>
                   <index name="AAFEATUREIMP_IND15" tablespace="USERS" type="NORMAL">
                      <columns>
-                        <column idref="DoTS/AAFeature/SEQUENCE_ONTOLOGY_ID"/>
+                        <column idref="DoTS/AAFeature/ONTOLOGY_TERM_ID/>
                      </columns>
                   </index>
                   <index name="PK_AAFEATUREIMP" tablespace="USERS" type="NORMAL">
@@ -1119,11 +1119,11 @@
                   </constraint>
                   <constraint name="AAFEATUREIMP_FK05" type="FOREIGN_KEY">
                      <constrainedColumns>
-                        <column idref="DoTS/AAFeature/SEQUENCE_ONTOLOGY_ID"/>
+                        <column idref="DoTS/AAFeature/ONTOLOGY_TERM_ID/>
                      </constrainedColumns>
-                     <referencedTable idref="SRes/SequenceOntology"/>
+                     <referencedTable idref="SRes/OntologyTerm"/>
                      <referencedColumns>
-                        <column idref="SRes/SequenceOntology/SEQUENCE_ONTOLOGY_ID"/>
+                        <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID/>
                      </referencedColumns>
                   </constraint>
                   <constraint name="AAFEATUREIMP_FK06" type="FOREIGN_KEY">
@@ -1607,7 +1607,7 @@
                   <column id="DoTS/AASequence/SOURCE_ID" name="SOURCE_ID" nullable="true" length="32" precision="0" type="STRING"/>
                   <column id="DoTS/AASequence/SOURCE_AA_SEQUENCE_ID" name="SOURCE_AA_SEQUENCE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/AASequence/SEQUENCE_TYPE_ID" name="SEQUENCE_TYPE_ID" nullable="true" length="4" precision="0" type="NUMBER"/>
-                  <column id="DoTS/AASequence/SEQUENCE_ONTOLOGY_ID" name="SEQUENCE_ONTOLOGY_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
+                  <column id="DoTS/AASequence/ONTOLOGY_TERM_ID name="ONTOLOGY_TERM_ID nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/AASequence/TAXON_ID" name="TAXON_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                </columns>
                <subclasses>
@@ -1696,7 +1696,7 @@
                   </index>
                   <index name="AASEQUENCE_R08" tablespace="USERS" type="NORMAL">
                      <columns>
-                        <column idref="DoTS/AASequence/SEQUENCE_ONTOLOGY_ID"/>
+                        <column idref="DoTS/AASequence/ONTOLOGY_TERM_ID/>
                         <column idref="DoTS/AASequence/AA_SEQUENCE_ID"/>
                      </columns>
                   </index>
@@ -1731,11 +1731,11 @@
                   </constraint>
                   <constraint name="AASEQUENCEIMP_FK07" type="FOREIGN_KEY">
                      <constrainedColumns>
-                        <column idref="DoTS/AASequence/SEQUENCE_ONTOLOGY_ID"/>
+                        <column idref="DoTS/AASequence/ONTOLOGY_TERM_ID/>
                      </constrainedColumns>
-                     <referencedTable idref="SRes/SequenceOntology"/>
+                     <referencedTable idref="SRes/OntologyTerm"/>
                      <referencedColumns>
-                        <column idref="SRes/SequenceOntology/SEQUENCE_ONTOLOGY_ID"/>
+                        <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID/>
                      </referencedColumns>
                   </constraint>
                   <constraint name="AASEQUENCEIMP_FK08" type="FOREIGN_KEY">
@@ -4941,7 +4941,7 @@
                   <column id="DoTS/Gene/REVIEW_STATUS_ID" name="REVIEW_STATUS_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/Gene/DESCRIPTION" name="DESCRIPTION" nullable="true" length="500" precision="0" type="STRING"/>
                   <column id="DoTS/Gene/REVIEWER_SUMMARY" name="REVIEWER_SUMMARY" nullable="true" length="4000" precision="0" type="STRING"/>
-                  <column id="DoTS/Gene/SEQUENCE_ONTOLOGY_ID" name="SEQUENCE_ONTOLOGY_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
+                  <column id="DoTS/Gene/ONTOLOGY_TERM_ID name="ONTOLOGY_TERM_ID nullable="true" length="10" precision="0" type="NUMBER"/>
                </columns>
                <indexes>
                   <index name="GENE_IND02" tablespace="USERS" type="NORMAL">
@@ -4971,7 +4971,7 @@
                   </index>
                   <index name="GENE_R05" tablespace="USERS" type="NORMAL">
                      <columns>
-                        <column idref="DoTS/Gene/SEQUENCE_ONTOLOGY_ID"/>
+                        <column idref="DoTS/Gene/ONTOLOGY_TERM_ID/>
                         <column idref="DoTS/Gene/GENE_ID"/>
                      </columns>
                   </index>
@@ -4997,11 +4997,11 @@
                   </constraint>
                   <constraint name="GENE_FK_06" type="FOREIGN_KEY">
                      <constrainedColumns>
-                        <column idref="DoTS/Gene/SEQUENCE_ONTOLOGY_ID"/>
+                        <column idref="DoTS/Gene/ONTOLOGY_TERM_ID/>
                      </constrainedColumns>
-                     <referencedTable idref="SRes/SequenceOntology"/>
+                     <referencedTable idref="SRes/OntologyTerm"/>
                      <referencedColumns>
-                        <column idref="SRes/SequenceOntology/SEQUENCE_ONTOLOGY_ID"/>
+                        <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID/>
                      </referencedColumns>
                   </constraint>
                   <constraint name="PK_GENE" type="PRIMARY_KEY">
@@ -6817,7 +6817,7 @@
                   <column id="DoTS/NAFeature/NA_SEQUENCE_ID" name="NA_SEQUENCE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/NAFeature/SUBCLASS_VIEW" name="SUBCLASS_VIEW" nullable="true" length="30" precision="0" type="STRING"/>
                   <column id="DoTS/NAFeature/NAME" name="NAME" nullable="false" length="50" precision="0" type="STRING"/>
-                  <column id="DoTS/NAFeature/SEQUENCE_ONTOLOGY_ID" name="SEQUENCE_ONTOLOGY_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
+                  <column id="DoTS/NAFeature/ONTOLOGY_TERM_ID name="ONTOLOGY_TERM_ID nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/NAFeature/PARENT_ID" name="PARENT_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/NAFeature/EXTERNAL_DATABASE_RELEASE_ID" name="EXTERNAL_DATABASE_RELEASE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/NAFeature/SOURCE_ID" name="SOURCE_ID" nullable="true" length="80" precision="0" type="STRING"/>
@@ -7389,7 +7389,7 @@
                   </index>
                   <index name="NAFEATUREIMP_IND11" tablespace="USERS" type="NORMAL">
                      <columns>
-                        <column idref="DoTS/NAFeature/SEQUENCE_ONTOLOGY_ID"/>
+                        <column idref="DoTS/NAFeature/ONTOLOGY_TERM_ID/>
                      </columns>
                   </index>
                   <index name="NAFEATUREIMP_IND12" tablespace="USERS" type="NORMAL">
@@ -7401,11 +7401,11 @@
                <constraints>
                   <constraint name="NAFEATUREIMP_FK03" type="FOREIGN_KEY">
                      <constrainedColumns>
-                        <column idref="DoTS/NAFeature/SEQUENCE_ONTOLOGY_ID"/>
+                        <column idref="DoTS/NAFeature/ONTOLOGY_TERM_ID/>
                      </constrainedColumns>
-                     <referencedTable idref="SRes/SequenceOntology"/>
+                     <referencedTable idref="SRes/OntologyTerm"/>
                      <referencedColumns>
-                        <column idref="SRes/SequenceOntology/SEQUENCE_ONTOLOGY_ID"/>
+                        <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID/>
                      </referencedColumns>
                   </constraint>
                   <constraint name="NAFEATUREIMP_FK04" type="FOREIGN_KEY">
@@ -7906,7 +7906,7 @@
                   <column id="DoTS/NASequence/SEQUENCE_VERSION" name="SEQUENCE_VERSION" nullable="false" length="3" precision="0" type="NUMBER"/>
                   <column id="DoTS/NASequence/SUBCLASS_VIEW" name="SUBCLASS_VIEW" nullable="false" length="30" precision="0" type="STRING"/>
                   <column id="DoTS/NASequence/SEQUENCE_TYPE_ID" name="SEQUENCE_TYPE_ID" nullable="true" length="4" precision="0" type="NUMBER"/>
-                  <column id="DoTS/NASequence/SEQUENCE_ONTOLOGY_ID" name="SEQUENCE_ONTOLOGY_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
+                  <column id="DoTS/NASequence/ONTOLOGY_TERM_ID name="ONTOLOGY_TERM_ID nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/NASequence/TAXON_ID" name="TAXON_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/NASequence/SEQUENCE" name="SEQUENCE" nullable="true" length="0" precision="0" type="CLOB"/>
                   <column id="DoTS/NASequence/LENGTH" name="LENGTH" nullable="true" length="12" precision="0" type="NUMBER"/>
@@ -8008,7 +8008,7 @@
                   </index>
                   <index name="NASEQUENCE_R08" tablespace="USERS" type="NORMAL">
                      <columns>
-                        <column idref="DoTS/NASequence/SEQUENCE_ONTOLOGY_ID"/>
+                        <column idref="DoTS/NASequence/ONTOLOGY_TERM_ID/>
                         <column idref="DoTS/NASequence/NA_SEQUENCE_ID"/>
                      </columns>
                   </index>
@@ -8022,11 +8022,11 @@
                <constraints>
                   <constraint name="NA_SEQ_ONTO_FK" type="FOREIGN_KEY">
                      <constrainedColumns>
-                        <column idref="DoTS/NASequence/SEQUENCE_ONTOLOGY_ID"/>
+                        <column idref="DoTS/NASequence/ONTOLOGY_TERM_ID/>
                      </constrainedColumns>
-                     <referencedTable idref="SRes/SequenceOntology"/>
+                     <referencedTable idref="SRes/OntologyTerm"/>
                      <referencedColumns>
-                        <column idref="SRes/SequenceOntology/SEQUENCE_ONTOLOGY_ID"/>
+                        <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID/>
                      </referencedColumns>
                   </constraint>
                   <constraint name="NASEQUENCEIMP_FK01" type="FOREIGN_KEY">
@@ -8873,7 +8873,7 @@
                   <column id="DoTS/Protein/REVIEW_STATUS_ID" name="REVIEW_STATUS_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/Protein/DESCRIPTION" name="DESCRIPTION" nullable="true" length="500" precision="0" type="STRING"/>
                   <column id="DoTS/Protein/REVIEWER_SUMMARY" name="REVIEWER_SUMMARY" nullable="true" length="4000" precision="0" type="STRING"/>
-                  <column id="DoTS/Protein/SEQUENCE_ONTOLOGY_ID" name="SEQUENCE_ONTOLOGY_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
+                  <column id="DoTS/Protein/ONTOLOGY_TERM_ID name="ONTOLOGY_TERM_ID nullable="true" length="10" precision="0" type="NUMBER"/>
                </columns>
                <indexes>
                   <index name="PROTEIN_IND01" tablespace="USERS" type="NORMAL">
@@ -8894,7 +8894,7 @@
                   </index>
                   <index name="PROTEIN_R04" tablespace="USERS" type="NORMAL">
                      <columns>
-                        <column idref="DoTS/Protein/SEQUENCE_ONTOLOGY_ID"/>
+                        <column idref="DoTS/Protein/ONTOLOGY_TERM_ID/>
                         <column idref="DoTS/Protein/PROTEIN_ID"/>
                      </columns>
                   </index>
@@ -8925,11 +8925,11 @@
                   </constraint>
                   <constraint name="PROTEIN_FK_07" type="FOREIGN_KEY">
                      <constrainedColumns>
-                        <column idref="DoTS/Protein/SEQUENCE_ONTOLOGY_ID"/>
+                        <column idref="DoTS/Protein/ONTOLOGY_TERM_ID/>
                      </constrainedColumns>
-                     <referencedTable idref="SRes/SequenceOntology"/>
+                     <referencedTable idref="SRes/OntologyTerm"/>
                      <referencedColumns>
-                        <column idref="SRes/SequenceOntology/SEQUENCE_ONTOLOGY_ID"/>
+                        <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID/>
                      </referencedColumns>
                   </constraint>
                </constraints>
@@ -9608,7 +9608,7 @@
                   <column id="DoTS/RNA/REVIEW_STATUS_ID" name="REVIEW_STATUS_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/RNA/GENE_ID" name="GENE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/RNA/REVIEWER_SUMMARY" name="REVIEWER_SUMMARY" nullable="true" length="4000" precision="0" type="STRING"/>
-                  <column id="DoTS/RNA/SEQUENCE_ONTOLOGY_ID" name="SEQUENCE_ONTOLOGY_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
+                  <column id="DoTS/RNA/ONTOLOGY_TERM_ID name="ONTOLOGY_TERM_ID nullable="true" length="10" precision="0" type="NUMBER"/>
                </columns>
                <indexes>
                   <index name="PK_RNA" tablespace="USERS" type="NORMAL">
@@ -9628,7 +9628,7 @@
                   </index>
                   <index name="RNA_R08" tablespace="USERS" type="NORMAL">
                      <columns>
-                        <column idref="DoTS/RNA/SEQUENCE_ONTOLOGY_ID"/>
+                        <column idref="DoTS/RNA/ONTOLOGY_TERM_ID/>
                         <column idref="DoTS/RNA/RNA_ID"/>
                      </columns>
                   </index>
@@ -9659,11 +9659,11 @@
                   </constraint>
                   <constraint name="RNA_FK_06" type="FOREIGN_KEY">
                      <constrainedColumns>
-                        <column idref="DoTS/RNA/SEQUENCE_ONTOLOGY_ID"/>
+                        <column idref="DoTS/RNA/ONTOLOGY_TERM_ID/>
                      </constrainedColumns>
-                     <referencedTable idref="SRes/SequenceOntology"/>
+                     <referencedTable idref="SRes/OntologyTerm"/>
                      <referencedColumns>
-                        <column idref="SRes/SequenceOntology/SEQUENCE_ONTOLOGY_ID"/>
+                        <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID/>
                      </referencedColumns>
                   </constraint>
                </constraints>
