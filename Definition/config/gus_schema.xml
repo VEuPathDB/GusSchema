@@ -2597,7 +2597,7 @@
             <table id="DoTS/OntologyTermLibrary" name="OntologyTermLibrary" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="Clones" updatable="true">
                <columns>
                   <column id="DoTS/OntologyTermLibrary/ONTOLOGY_TERM_LIBRARY_ID" name="ONTOLOGY_TERM_LIBRARY_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-                  <column id="DoTS/OntologyTermLibrary/ONTOLOGY_TERM_ID" name="ONTOLOGY_TERM_ID" nullable="false" length="4" precision="0" type="NUMBER"/>
+                  <column id="DoTS/OntologyTermLibrary/ONTOLOGY_TERM_ID" name="ONTOLOGY_TERM_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/OntologyTermLibrary/DBEST_LIBRARY_ID" name="DBEST_LIBRARY_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
                </columns>
                <indexes>
@@ -2660,7 +2660,7 @@
                   <column id="DoTS/AssemblyOntologyTermPercent/ASSEMBLY_ONTOLOGY_TERM_PERCENT_ID" name="ASSEMBLY_ONTOLOGY_TERM_PERCENT_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/AssemblyOntologyTermPercent/NA_SEQUENCE_ID" name="NA_SEQUENCE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/AssemblyOntologyTermPercent/TAXON_ID" name="TAXON_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
-                  <column id="DoTS/AssemblyOntologyTermPercent/ONTOLOGY_TERM_ID" name="ONTOLOGY_TERM_ID" nullable="false" length="4" precision="0" type="NUMBER"/>
+                  <column id="DoTS/AssemblyOntologyTermPercent/ONTOLOGY_TERM_ID" name="ONTOLOGY_TERM_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/AssemblyOntologyTermPercent/PERCENT" name="PERCENT" nullable="false" length="126" precision="0" type="FLOAT"/>
                   <column id="DoTS/AssemblyOntologyTermPercent/ONTOLOGY_TERM_ESTS" name="ONTOLOGY_TERM_ESTS" nullable="false" length="5" precision="0" type="NUMBER"/>
                   <column id="DoTS/AssemblyOntologyTermPercent/EST_COUNT" name="EST_COUNT" nullable="false" length="5" precision="0" type="NUMBER"/>
@@ -3593,7 +3593,7 @@
                <columns>
                   <column id="DoTS/ComplexOntologyTerm/COMPLEX_ONTOLOGY_TERM_ID" name="COMPLEX_ONTOLOGY_TERM_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/ComplexOntologyTerm/COMPLEX_ID" name="COMPLEX_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-                  <column id="DoTS/ComplexOntologyTerm/ONTOLOGY_TERM_ID" name="ONTOLOGY_TERM_ID" nullable="false" length="4" precision="0" type="NUMBER"/>
+                  <column id="DoTS/ComplexOntologyTerm/ONTOLOGY_TERM_ID" name="ONTOLOGY_TERM_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/ComplexOntologyTerm/REVIEW_STATUS_ID" name="REVIEW_STATUS_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                </columns>
                <indexes>
@@ -4016,7 +4016,7 @@
             <table id="DoTS/OntologyTermLibrary" name="OntologyTermLibrary" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="Clones" updatable="true">
                <columns>
                   <column id="DoTS/OntologyTermLibrary/DEV_STAGE_LIBRARY_ID" name="DEV_STAGE_LIBRARY_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-                  <column id="DoTS/OntologyTermLibrary/ONTOLOGY_TERM_ID" name="ONTOLOGY_TERM_ID" nullable="false" length="4" precision="0" type="NUMBER"/>
+                  <column id="DoTS/OntologyTermLibrary/ONTOLOGY_TERM_ID" name="ONTOLOGY_TERM_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/OntologyTermLibrary/LIBRARY_ID" name="LIBRARY_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
                </columns>
                <indexes>
@@ -5862,7 +5862,7 @@
             <table id="DoTS/GOAssocInstEvidCode" name="GOAssocInstEvidCode" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="GO Association" updatable="true">
                <columns>
                   <column id="DoTS/GOAssocInstEvidCode/GO_ASSOC_INST_EVID_CODE_ID" name="GO_ASSOC_INST_EVID_CODE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-                  <column id="DoTS/GOAssocInstEvidCode/ONTOLOGY_TERM_ID" name="ONTOLOGY_TERM_ID" nullable="false" length="3" precision="0" type="NUMBER"/>
+                  <column id="DoTS/GOAssocInstEvidCode/ONTOLOGY_TERM_ID" name="ONTOLOGY_TERM_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/GOAssocInstEvidCode/GO_ASSOCIATION_INSTANCE_ID" name="GO_ASSOCIATION_INSTANCE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/GOAssocInstEvidCode/REVIEW_STATUS_ID" name="REVIEW_STATUS_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                </columns>
@@ -6310,7 +6310,7 @@
             <table id="DoTS/IsExpressed" name="IsExpressed" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="OntologyTerm Vocabulary" updatable="true">
                <columns>
                   <column id="DoTS/IsExpressed/IS_EXPRESSED_ID" name="IS_EXPRESSED_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-                  <column id="DoTS/IsExpressed/ONTOLOGY_TERM_ID" name="ONTOLOGY_TERM_ID" nullable="false" length="4" precision="0" type="NUMBER"/>
+                  <column id="DoTS/IsExpressed/ONTOLOGY_TERM_ID" name="ONTOLOGY_TERM_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/IsExpressed/TABLE_ID" name="TABLE_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
                   <column id="DoTS/IsExpressed/ROW_ID" name="ROW_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/IsExpressed/IS_CONFIRMED" name="IS_CONFIRMED" nullable="true" length="1" precision="0" type="NUMBER"/>
@@ -6400,7 +6400,7 @@
                <columns>
                   <column id="DoTS/Library/LIBRARY_ID" name="LIBRARY_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
                   <column id="DoTS/Library/TAXON_ID" name="TAXON_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-                  <column id="DoTS/Library/ONTOLOGY_TERM_ID" name="ONTOLOGY_TERM_ID" nullable="true" length="4" precision="0" type="NUMBER"/>
+                  <column id="DoTS/Library/ONTOLOGY_TERM_ID" name="ONTOLOGY_TERM_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/Library/DBEST_ID" name="DBEST_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
                   <column id="DoTS/Library/DBEST_NAME" name="DBEST_NAME" nullable="true" length="120" precision="0" type="STRING"/>
                   <column id="DoTS/Library/IS_IMAGE" name="IS_IMAGE" nullable="false" length="1" precision="0" type="NUMBER"/>
@@ -9671,7 +9671,7 @@
             <table id="DoTS/RNAOntologyTerm" name="RNAOntologyTerm" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="Central Dogma" updatable="true">
                <columns>
                   <column id="DoTS/RNAOntologyTerm/RNA_ONTOLOGY_TERM_ID" name="RNA_ONTOLOGY_TERM_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-                  <column id="DoTS/RNAOntologyTerm/ONTOLOGY_TERM_ID" name="ONTOLOGY_TERM_ID" nullable="false" length="4" precision="0" type="NUMBER"/>
+                  <column id="DoTS/RNAOntologyTerm/ONTOLOGY_TERM_ID" name="ONTOLOGY_TERM_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/RNAOntologyTerm/RNA_ID" name="RNA_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/RNAOntologyTerm/EST_NUMBER" name="EST_NUMBER" nullable="true" length="6" precision="0" type="NUMBER"/>
                   <column id="DoTS/RNAOntologyTerm/RAD_CONFIRMED" name="RAD_CONFIRMED" nullable="false" length="1" precision="0" type="NUMBER"/>
@@ -11830,9 +11830,8 @@
                   <column id="SRes/Phenotype/PHENOTYPE_ID" name="PHENOTYPE_ID" nullable="false" length="8" precision="0" type="NUMBER"/>
                   <column id="SRes/Phenotype/PARENT_ID" name="PARENT_ID" nullable="true" length="8" precision="0" type="NUMBER"/>
                   <column id="SRes/Phenotype/PATO_ATTRIBUTE_ID" name="PATO_ATTRIBUTE_ID" nullable="true" length="8" precision="0" type="NUMBER"/>
-                  <column id="SRes/Phenotype/ONTOLOGY_TERM_ID" name="ONTOLOGY_TERM_ID" nullable="true" length="4" precision="0" type="NUMBER"/>
+                  <column id="SRes/Phenotype/ONTOLOGY_TERM_ID" name="ONTOLOGY_TERM_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="SRes/Phenotype/CELL_TYPE_ID" name="CELL_TYPE_ID" nullable="true" length="4" precision="0" type="NUMBER"/>
-                  <column id="SRes/Phenotype/ONTOLOGY_TERM_ID" name="ONTOLOGY_TERM_ID" nullable="true" length="4" precision="0" type="NUMBER"/>
                   <column id="SRes/Phenotype/DESCRIPTION" name="DESCRIPTION" nullable="true" length="500" precision="0" type="STRING"/>
                </columns>
                <indexes>
@@ -11844,11 +11843,6 @@
                   <index name="PHENOTYPE_IND02" tablespace="USERS" type="NORMAL">
                      <columns>
                         <column idref="SRes/Phenotype/CELL_TYPE_ID"/>
-                     </columns>
-                  </index>
-                  <index name="PHENOTYPE_IND03" tablespace="USERS" type="NORMAL">
-                     <columns>
-                        <column idref="SRes/Phenotype/ONTOLOGY_TERM_ID"/>
                      </columns>
                   </index>
                   <index name="PHENOTYPE_IND04" tablespace="USERS" type="NORMAL">
@@ -11868,15 +11862,6 @@
                   </index>
                </indexes>
                <constraints>
-                  <constraint name="FK_PHENOTYPE_ANAT01" type="FOREIGN_KEY">
-                     <constrainedColumns>
-                        <column idref="SRes/Phenotype/ONTOLOGY_TERM_ID"/>
-                     </constrainedColumns>
-                     <referencedTable idref="SRes/OntologyTerm"/>
-                     <referencedColumns>
-                        <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
-                     </referencedColumns>
-                  </constraint>
                   <constraint name="FK_PHENOTYPE_ANAT02" type="FOREIGN_KEY">
                      <constrainedColumns>
                         <column idref="SRes/Phenotype/CELL_TYPE_ID"/>
