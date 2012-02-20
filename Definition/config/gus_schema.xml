@@ -1175,9 +1175,9 @@
                      <constrainedColumns>
                         <column idref="DoTS/AAFeature/REVIEW_STATUS_ID"/>
                      </constrainedColumns>
-                     <referencedTable idref="SRes/ReviewStatus"/>
+                     <referencedTable idref="SRes/OntologyTerm"/>
                      <referencedColumns>
-                        <column idref="SRes/ReviewStatus/REVIEW_STATUS_ID"/>
+                        <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
                      </referencedColumns>
                   </constraint>
                   <constraint name="PK_AAFEATUREIMP" type="PRIMARY_KEY">
@@ -1457,9 +1457,9 @@
                      <constrainedColumns>
                         <column idref="DoTS/AAMotifGOTermRule/REVIEW_STATUS_ID"/>
                      </constrainedColumns>
-                     <referencedTable idref="SRes/ReviewStatus"/>
+                     <referencedTable idref="SRes/OntologyTerm"/>
                      <referencedColumns>
-                        <column idref="SRes/ReviewStatus/REVIEW_STATUS_ID"/>
+                        <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
                      </referencedColumns>
                   </constraint>
                   <constraint name="AAMOTIFGOTERMRULE_FK04" type="FOREIGN_KEY">
@@ -1541,9 +1541,9 @@
                      <constrainedColumns>
                         <column idref="DoTS/AAMotifGOTermRuleSet/REVIEW_STATUS_ID"/>
                      </constrainedColumns>
-                     <referencedTable idref="SRes/ReviewStatus"/>
+                     <referencedTable idref="SRes/OntologyTerm"/>
                      <referencedColumns>
-                        <column idref="SRes/ReviewStatus/REVIEW_STATUS_ID"/>
+                        <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
                      </referencedColumns>
                   </constraint>
                   <constraint name="AAMOTIFGOTERMRULESET_FK04" type="FOREIGN_KEY">
@@ -1864,9 +1864,9 @@
                      <constrainedColumns>
                         <column idref="DoTS/AASequenceEnzymeClass/REVIEW_STATUS_ID"/>
                      </constrainedColumns>
-                     <referencedTable idref="SRes/ReviewStatus"/>
+                     <referencedTable idref="SRes/OntologyTerm"/>
                      <referencedColumns>
-                        <column idref="SRes/ReviewStatus/REVIEW_STATUS_ID"/>
+                        <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
                      </referencedColumns>
                   </constraint>
                   <constraint name="ECASSIGN_CONTACT_FK" type="FOREIGN_KEY">
@@ -2306,9 +2306,9 @@
                      <constrainedColumns>
                         <column idref="DoTS/Allele/REVIEW_STATUS_ID"/>
                      </constrainedColumns>
-                     <referencedTable idref="SRes/ReviewStatus"/>
+                     <referencedTable idref="SRes/OntologyTerm"/>
                      <referencedColumns>
-                        <column idref="SRes/ReviewStatus/REVIEW_STATUS_ID"/>
+                        <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
                      </referencedColumns>
                   </constraint>
                   <constraint name="ALLELE_FK02" type="FOREIGN_KEY">
@@ -2389,9 +2389,9 @@
                      <constrainedColumns>
                         <column idref="DoTS/AlleleComplementation/REVIEW_STATUS_ID"/>
                      </constrainedColumns>
-                     <referencedTable idref="SRes/ReviewStatus"/>
+                     <referencedTable idref="SRes/OntologyTerm"/>
                      <referencedColumns>
-                        <column idref="SRes/ReviewStatus/REVIEW_STATUS_ID"/>
+                        <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
                      </referencedColumns>
                   </constraint>
                   <constraint name="PK_ALLELECOMPLEMENTATION" type="PRIMARY_KEY">
@@ -2454,9 +2454,9 @@
                      <constrainedColumns>
                         <column idref="DoTS/AlleleInstance/REVIEW_STATUS_ID"/>
                      </constrainedColumns>
-                     <referencedTable idref="SRes/ReviewStatus"/>
+                     <referencedTable idref="SRes/OntologyTerm"/>
                      <referencedColumns>
-                        <column idref="SRes/ReviewStatus/REVIEW_STATUS_ID"/>
+                        <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
                      </referencedColumns>
                   </constraint>
                   <constraint name="PK_ALLELEINSTANCE" type="PRIMARY_KEY">
@@ -2518,9 +2518,9 @@
                      <constrainedColumns>
                         <column idref="DoTS/AllelePhenotype/REVIEW_STATUS_ID"/>
                      </constrainedColumns>
-                     <referencedTable idref="SRes/ReviewStatus"/>
+                     <referencedTable idref="SRes/OntologyTerm"/>
                      <referencedColumns>
-                        <column idref="SRes/ReviewStatus/REVIEW_STATUS_ID"/>
+                        <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
                      </referencedColumns>
                   </constraint>
                   <constraint name="PK_ALLELEPHENOTYPE" type="PRIMARY_KEY">
@@ -2582,9 +2582,9 @@
                      <constrainedColumns>
                         <column idref="DoTS/AlleleOntologyTerm/REVIEW_STATUS_ID"/>
                      </constrainedColumns>
-                     <referencedTable idref="SRes/ReviewStatus"/>
+                     <referencedTable idref="SRes/OntologyTerm"/>
                      <referencedColumns>
-                        <column idref="SRes/ReviewStatus/REVIEW_STATUS_ID"/>
+                        <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
                      </referencedColumns>
                   </constraint>
                   <constraint name="PK_ALLELEONTOLOGYTERM" type="PRIMARY_KEY">
@@ -3428,9 +3428,9 @@
                      <constrainedColumns>
                         <column idref="DoTS/Comments/REVIEW_STATUS_ID"/>
                      </constrainedColumns>
-                     <referencedTable idref="SRes/ReviewStatus"/>
+                     <referencedTable idref="SRes/OntologyTerm"/>
                      <referencedColumns>
-                        <column idref="SRes/ReviewStatus/REVIEW_STATUS_ID"/>
+                        <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
                      </referencedColumns>
                   </constraint>
                   <constraint name="PK_COMMENTS" type="PRIMARY_KEY">
@@ -3510,9 +3510,9 @@
                      <constrainedColumns>
                         <column idref="DoTS/Complementation/REVIEW_STATUS_ID"/>
                      </constrainedColumns>
-                     <referencedTable idref="SRes/ReviewStatus"/>
+                     <referencedTable idref="SRes/OntologyTerm"/>
                      <referencedColumns>
-                        <column idref="SRes/ReviewStatus/REVIEW_STATUS_ID"/>
+                        <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
                      </referencedColumns>
                   </constraint>
                   <constraint name="PK_COMPLEMENTATION" type="PRIMARY_KEY">
@@ -3559,9 +3559,9 @@
                      <constrainedColumns>
                         <column idref="DoTS/Complex/REVIEW_STATUS_ID"/>
                      </constrainedColumns>
-                     <referencedTable idref="SRes/ReviewStatus"/>
+                     <referencedTable idref="SRes/OntologyTerm"/>
                      <referencedColumns>
-                        <column idref="SRes/ReviewStatus/REVIEW_STATUS_ID"/>
+                        <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
                      </referencedColumns>
                   </constraint>
                   <constraint name="COMPLEX_FK02" type="FOREIGN_KEY">
@@ -3623,9 +3623,9 @@
                      <constrainedColumns>
                         <column idref="DoTS/ComplexOntologyTerm/REVIEW_STATUS_ID"/>
                      </constrainedColumns>
-                     <referencedTable idref="SRes/ReviewStatus"/>
+                     <referencedTable idref="SRes/OntologyTerm"/>
                      <referencedColumns>
-                        <column idref="SRes/ReviewStatus/REVIEW_STATUS_ID"/>
+                        <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
                      </referencedColumns>
                   </constraint>
                   <constraint name="COMPLEXONTOLOGYTERM_FK02" type="FOREIGN_KEY">
@@ -4990,9 +4990,9 @@
                      <constrainedColumns>
                         <column idref="DoTS/Gene/REVIEW_STATUS_ID"/>
                      </constrainedColumns>
-                     <referencedTable idref="SRes/ReviewStatus"/>
+                     <referencedTable idref="SRes/OntologyTerm"/>
                      <referencedColumns>
-                        <column idref="SRes/ReviewStatus/REVIEW_STATUS_ID"/>
+                        <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
                      </referencedColumns>
                   </constraint>
                   <constraint name="GENE_FK_06" type="FOREIGN_KEY">
@@ -5418,9 +5418,9 @@
                      <constrainedColumns>
                         <column idref="DoTS/GeneInstance/REVIEW_STATUS_ID"/>
                      </constrainedColumns>
-                     <referencedTable idref="SRes/ReviewStatus"/>
+                     <referencedTable idref="SRes/OntologyTerm"/>
                      <referencedColumns>
-                        <column idref="SRes/ReviewStatus/REVIEW_STATUS_ID"/>
+                        <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
                      </referencedColumns>
                   </constraint>
                   <constraint name="GENEINSTANCE_FK06" type="FOREIGN_KEY">
@@ -5593,9 +5593,9 @@
                      <constrainedColumns>
                         <column idref="DoTS/GeneSynonym/REVIEW_STATUS_ID"/>
                      </constrainedColumns>
-                     <referencedTable idref="SRes/ReviewStatus"/>
+                     <referencedTable idref="SRes/OntologyTerm"/>
                      <referencedColumns>
-                        <column idref="SRes/ReviewStatus/REVIEW_STATUS_ID"/>
+                        <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
                      </referencedColumns>
                   </constraint>
                   <constraint name="PK_GENESYNONYM" type="PRIMARY_KEY">
@@ -5716,9 +5716,9 @@
                      <constrainedColumns>
                         <column idref="DoTS/GOAssociation/REVIEW_STATUS_ID"/>
                      </constrainedColumns>
-                     <referencedTable idref="SRes/ReviewStatus"/>
+                     <referencedTable idref="SRes/OntologyTerm"/>
                      <referencedColumns>
-                        <column idref="SRes/ReviewStatus/REVIEW_STATUS_ID"/>
+                        <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
                      </referencedColumns>
                   </constraint>
                   <constraint name="GOASSOCIATION_PK" type="PRIMARY_KEY">
@@ -5826,9 +5826,9 @@
                      <constrainedColumns>
                         <column idref="DoTS/GOAssociationInstance/REVIEW_STATUS_ID"/>
                      </constrainedColumns>
-                     <referencedTable idref="SRes/ReviewStatus"/>
+                     <referencedTable idref="SRes/OntologyTerm"/>
                      <referencedColumns>
-                        <column idref="SRes/ReviewStatus/REVIEW_STATUS_ID"/>
+                        <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
                      </referencedColumns>
                   </constraint>
                   <constraint name="GOASSOCIATIONINSTANCE_PK" type="PRIMARY_KEY">
@@ -5911,9 +5911,9 @@
                      <constrainedColumns>
                         <column idref="DoTS/GOAssocInstEvidCode/REVIEW_STATUS_ID"/>
                      </constrainedColumns>
-                     <referencedTable idref="SRes/ReviewStatus"/>
+                     <referencedTable idref="SRes/OntologyTerm"/>
                      <referencedColumns>
-                        <column idref="SRes/ReviewStatus/REVIEW_STATUS_ID"/>
+                        <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
                      </referencedColumns>
                   </constraint>
                   <constraint name="GOASSOCINSTEVIDCODE_PK" type="PRIMARY_KEY">
@@ -6188,9 +6188,9 @@
                      <constrainedColumns>
                         <column idref="DoTS/Interaction/REVIEW_STATUS_ID"/>
                      </constrainedColumns>
-                     <referencedTable idref="SRes/ReviewStatus"/>
+                     <referencedTable idref="SRes/OntologyTerm"/>
                      <referencedColumns>
-                        <column idref="SRes/ReviewStatus/REVIEW_STATUS_ID"/>
+                        <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
                      </referencedColumns>
                   </constraint>
                   <constraint name="PK_INTERACTION" type="PRIMARY_KEY">
@@ -7448,9 +7448,9 @@
                      <constrainedColumns>
                         <column idref="DoTS/NAFeature/REVIEW_STATUS_ID"/>
                      </constrainedColumns>
-                     <referencedTable idref="SRes/ReviewStatus"/>
+                     <referencedTable idref="SRes/OntologyTerm"/>
                      <referencedColumns>
-                        <column idref="SRes/ReviewStatus/REVIEW_STATUS_ID"/>
+                        <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
                      </referencedColumns>
                   </constraint>
                   <constraint name="PK_NAFEATUREIMP" type="PRIMARY_KEY">
@@ -8918,9 +8918,9 @@
                      <constrainedColumns>
                         <column idref="DoTS/Protein/REVIEW_STATUS_ID"/>
                      </constrainedColumns>
-                     <referencedTable idref="SRes/ReviewStatus"/>
+                     <referencedTable idref="SRes/OntologyTerm"/>
                      <referencedColumns>
-                        <column idref="SRes/ReviewStatus/REVIEW_STATUS_ID"/>
+                        <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
                      </referencedColumns>
                   </constraint>
                   <constraint name="PROTEIN_FK_07" type="FOREIGN_KEY">
@@ -9036,9 +9036,9 @@
                      <constrainedColumns>
                         <column idref="DoTS/ProteinInstance/REVIEW_STATUS_ID"/>
                      </constrainedColumns>
-                     <referencedTable idref="SRes/ReviewStatus"/>
+                     <referencedTable idref="SRes/OntologyTerm"/>
                      <referencedColumns>
-                        <column idref="SRes/ReviewStatus/REVIEW_STATUS_ID"/>
+                        <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
                      </referencedColumns>
                   </constraint>
                </constraints>
@@ -9146,9 +9146,9 @@
                      <constrainedColumns>
                         <column idref="DoTS/ProteinProperty/REVIEW_STATUS_ID"/>
                      </constrainedColumns>
-                     <referencedTable idref="SRes/ReviewStatus"/>
+                     <referencedTable idref="SRes/OntologyTerm"/>
                      <referencedColumns>
-                        <column idref="SRes/ReviewStatus/REVIEW_STATUS_ID"/>
+                        <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
                      </referencedColumns>
                   </constraint>
                   <constraint name="PROTEINPROPERTY_FK05" type="FOREIGN_KEY">
@@ -9275,9 +9275,9 @@
                      <constrainedColumns>
                         <column idref="DoTS/ProteinSynonym/REVIEW_STATUS_ID"/>
                      </constrainedColumns>
-                     <referencedTable idref="SRes/ReviewStatus"/>
+                     <referencedTable idref="SRes/OntologyTerm"/>
                      <referencedColumns>
-                        <column idref="SRes/ReviewStatus/REVIEW_STATUS_ID"/>
+                        <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
                      </referencedColumns>
                   </constraint>
                </constraints>
@@ -9643,9 +9643,9 @@
                      <constrainedColumns>
                         <column idref="DoTS/RNA/REVIEW_STATUS_ID"/>
                      </constrainedColumns>
-                     <referencedTable idref="SRes/ReviewStatus"/>
+                     <referencedTable idref="SRes/OntologyTerm"/>
                      <referencedColumns>
-                        <column idref="SRes/ReviewStatus/REVIEW_STATUS_ID"/>
+                        <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
                      </referencedColumns>
                   </constraint>
                   <constraint name="RNA_FK05" type="FOREIGN_KEY">
@@ -9883,9 +9883,9 @@
                      <constrainedColumns>
                         <column idref="DoTS/RNAIConstruct/REVIEW_STATUS_ID"/>
                      </constrainedColumns>
-                     <referencedTable idref="SRes/ReviewStatus"/>
+                     <referencedTable idref="SRes/OntologyTerm"/>
                      <referencedColumns>
-                        <column idref="SRes/ReviewStatus/REVIEW_STATUS_ID"/>
+                        <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
                      </referencedColumns>
                   </constraint>
                </constraints>
@@ -9946,9 +9946,9 @@
                      <constrainedColumns>
                         <column idref="DoTS/RNAInstance/REVIEW_STATUS_ID"/>
                      </constrainedColumns>
-                     <referencedTable idref="SRes/ReviewStatus"/>
+                     <referencedTable idref="SRes/OntologyTerm"/>
                      <referencedColumns>
-                        <column idref="SRes/ReviewStatus/REVIEW_STATUS_ID"/>
+                        <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
                      </referencedColumns>
                   </constraint>
                   <constraint name="RNAINSTANCE_FK04" type="FOREIGN_KEY">
@@ -10049,9 +10049,9 @@
                      <constrainedColumns>
                         <column idref="DoTS/RNAIPhenotype/REVIEW_STATUS_ID"/>
                      </constrainedColumns>
-                     <referencedTable idref="SRes/ReviewStatus"/>
+                     <referencedTable idref="SRes/OntologyTerm"/>
                      <referencedColumns>
-                        <column idref="SRes/ReviewStatus/REVIEW_STATUS_ID"/>
+                        <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
                      </referencedColumns>
                   </constraint>
                </constraints>
