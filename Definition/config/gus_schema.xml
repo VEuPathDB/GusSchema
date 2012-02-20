@@ -2594,46 +2594,6 @@
                   </constraint>
                </constraints>
             </table>
-            <table id="DoTS/OntologyTermLibrary" name="OntologyTermLibrary" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="Clones" updatable="true">
-               <columns>
-                  <column id="DoTS/OntologyTermLibrary/ONTOLOGY_TERM_LIBRARY_ID" name="ONTOLOGY_TERM_LIBRARY_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-                  <column id="DoTS/OntologyTermLibrary/ONTOLOGY_TERM_ID" name="ONTOLOGY_TERM_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-                  <column id="DoTS/OntologyTermLibrary/DBEST_LIBRARY_ID" name="DBEST_LIBRARY_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
-               </columns>
-               <indexes>
-                  <index name="ONTOLOGYTERMLIBRARY_IND01" tablespace="USERS" type="NORMAL">
-                     <columns>
-                        <column idref="DoTS/OntologyTermLibrary/ONTOLOGY_TERM_ID"/>
-                     </columns>
-                  </index>
-                  <index name="ONTOLOGYTERMLIBRARY_IND02" tablespace="USERS" type="NORMAL">
-                     <columns>
-                        <column idref="DoTS/OntologyTermLibrary/DBEST_LIBRARY_ID"/>
-                     </columns>
-                  </index>
-                  <index name="PK_ONTOLOGYTERMLIBRARY" tablespace="USERS" type="NORMAL">
-                     <columns>
-                        <column idref="DoTS/OntologyTermLibrary/ONTOLOGY_TERM_LIBRARY_ID"/>
-                     </columns>
-                  </index>
-               </indexes>
-               <constraints>
-                  <constraint name="ONTOLOGYTERMLIBRARY_FK04" type="FOREIGN_KEY">
-                     <constrainedColumns>
-                        <column idref="DoTS/OntologyTermLibrary/ONTOLOGY_TERM_ID"/>
-                     </constrainedColumns>
-                     <referencedTable idref="SRes/OntologyTerm"/>
-                     <referencedColumns>
-                        <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
-                     </referencedColumns>
-                  </constraint>
-                  <constraint name="PK_ONTOLOGYTERMLIBRARY" type="PRIMARY_KEY">
-                     <constrainedColumns>
-                        <column idref="DoTS/OntologyTermLibrary/ONTOLOGY_TERM_LIBRARY_ID"/>
-                     </constrainedColumns>
-                  </constraint>
-               </constraints>
-            </table>
             <table id="DoTS/OntologyTermLOE" name="OntologyTermLOE" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="Clones" updatable="true">
                <columns>
                   <column id="DoTS/OntologyTermLOE/ONTOLOGY_TERM_LOE_ID" name="ONTOLOGY_TERM_LOE_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
