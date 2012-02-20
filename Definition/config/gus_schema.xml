@@ -2122,51 +2122,51 @@
                   </constraint>
                </constraints>
             </table>
-            <table id="DoTS/AASequenceRef" name="AASequenceRef" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="GenBank Sequence Record" updatable="true">
+            <table id="DoTS/AASequenceOntologyTerm" name="AASequenceOntologyTerm" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="GenBank Sequence Record" updatable="true">
                <columns>
-                  <column id="DoTS/AASequenceRef/AA_SEQUENCE_REF_ID" name="AA_SEQUENCE_REF_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-                  <column id="DoTS/AASequenceRef/AA_SEQUENCE_ID" name="AA_SEQUENCE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-                  <column id="DoTS/AASequenceRef/REFERENCE_ID" name="REFERENCE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+                  <column id="DoTS/AASequenceOntologyTerm/AA_SEQUENCE_ONTOLOGY_TERM_ID" name="AA_SEQUENCE_ONTOLOGY_TERM_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+                  <column id="DoTS/AASequenceOntologyTerm/AA_SEQUENCE_ID" name="AA_SEQUENCE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+                  <column id="DoTS/AASequenceOntologyTerm/ONTOLOGY_TERM_ID" name="ONTOLOGY_TERM_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                </columns>
                <indexes>
-                  <index name="AASEQUENCEREF_IND01" tablespace="USERS" type="NORMAL">
+                  <index name="AASEQUENCEONTOLOGYTERM_IND01" tablespace="USERS" type="NORMAL">
                      <columns>
-                        <column idref="DoTS/AASequenceRef/AA_SEQUENCE_ID"/>
+                        <column idref="DoTS/AASequenceOntologyTerm/AA_SEQUENCE_ID"/>
                      </columns>
                   </index>
-                  <index name="AASEQUENCEREF_IND02" tablespace="USERS" type="NORMAL">
+                  <index name="AASEQUENCEONTOLOGYTERM_IND02" tablespace="USERS" type="NORMAL">
                      <columns>
-                        <column idref="DoTS/AASequenceRef/REFERENCE_ID"/>
+                        <column idref="DoTS/AASequenceOntologyTerm/ONTOLOGY_TERM_ID"/>
                      </columns>
                   </index>
-                  <index name="PK_AASEQUENCEREF" tablespace="USERS" type="NORMAL">
+                  <index name="PK_AASEQUENCEONTOLOGYTERM" tablespace="USERS" type="NORMAL">
                      <columns>
-                        <column idref="DoTS/AASequenceRef/AA_SEQUENCE_REF_ID"/>
+                        <column idref="DoTS/AASequenceOntologyTerm/AA_SEQUENCE_ONTOLOGY_TERM_ID"/>
                      </columns>
                   </index>
                </indexes>
                <constraints>
-                  <constraint name="AASEQUENCEREF_FK01" type="FOREIGN_KEY">
+                  <constraint name="AASEQUENCEONTOLOGYTERM_FK01" type="FOREIGN_KEY">
                      <constrainedColumns>
-                        <column idref="DoTS/AASequenceRef/REFERENCE_ID"/>
+                        <column idref="DoTS/AASequenceOntologyTerm/ONTOLOGY_TERM_ID"/>
                      </constrainedColumns>
-                     <referencedTable idref="SRes/Reference"/>
+                     <referencedTable idref="SRes/OntologyTerm"/>
                      <referencedColumns>
-                        <column idref="SRes/Reference/REFERENCE_ID"/>
+                        <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
                      </referencedColumns>
                   </constraint>
-                  <constraint name="AASEQUENCEREF_FK02" type="FOREIGN_KEY">
+                  <constraint name="AASEQUENCEONTOLOGYTERM_FK02" type="FOREIGN_KEY">
                      <constrainedColumns>
-                        <column idref="DoTS/AASequenceRef/AA_SEQUENCE_ID"/>
+                        <column idref="DoTS/AASequenceOntologyTerm/AA_SEQUENCE_ID"/>
                      </constrainedColumns>
                      <referencedTable idref="DoTS/AASequence"/>
                      <referencedColumns>
                         <column idref="DoTS/AASequence/AA_SEQUENCE_ID"/>
                      </referencedColumns>
                   </constraint>
-                  <constraint name="PK_AASEQUENCEREF" type="PRIMARY_KEY">
+                  <constraint name="PK_AASEQUENCEONTOLOGYTERM" type="PRIMARY_KEY">
                      <constrainedColumns>
-                        <column idref="DoTS/AASequenceRef/AA_SEQUENCE_REF_ID"/>
+                        <column idref="DoTS/AASequenceOntologyTerm/AA_SEQUENCE_ONTOLOGY_TERM_ID"/>
                      </constrainedColumns>
                   </constraint>
                </constraints>
@@ -8188,51 +8188,51 @@
                   </constraint>
                </constraints>
             </table>
-            <table id="DoTS/NASequenceRef" name="NASequenceRef" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="GenBank Sequence Record" updatable="true">
+            <table id="DoTS/NASequenceOntologyTerm" name="NASequenceOntologyTerm" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="GenBank Sequence Record" updatable="true">
                <columns>
-                  <column id="DoTS/NASequenceRef/NA_SEQUENCE_REF_ID" name="NA_SEQUENCE_REF_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-                  <column id="DoTS/NASequenceRef/NA_SEQUENCE_ID" name="NA_SEQUENCE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-                  <column id="DoTS/NASequenceRef/REFERENCE_ID" name="REFERENCE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+                  <column id="DoTS/NASequenceOntologyTerm/NA_SEQUENCE_ONTOLOGY_TERM_ID" name="NA_SEQUENCE_ONTOLOGY_TERM_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+                  <column id="DoTS/NASequenceOntologyTerm/NA_SEQUENCE_ID" name="NA_SEQUENCE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+                  <column id="DoTS/NASequenceOntologyTerm/ONTOLOGY_TERM_ID" name="ONTOLOGY_TERM_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                </columns>
                <indexes>
-                  <index name="NASEQUENCEREF_IND01" tablespace="USERS" type="NORMAL">
+                  <index name="NASEQUENCEONTOLOGYTERM_IND01" tablespace="USERS" type="NORMAL">
                      <columns>
-                        <column idref="DoTS/NASequenceRef/NA_SEQUENCE_ID"/>
+                        <column idref="DoTS/NASequenceOntologyTerm/NA_SEQUENCE_ID"/>
                      </columns>
                   </index>
-                  <index name="NASEQUENCEREF_IND02" tablespace="USERS" type="NORMAL">
+                  <index name="NASEQUENCEONTOLOGYTERM_IND02" tablespace="USERS" type="NORMAL">
                      <columns>
-                        <column idref="DoTS/NASequenceRef/REFERENCE_ID"/>
+                        <column idref="DoTS/NASequenceOntologyTerm/ONTOLOGY_TERM_ID"/>
                      </columns>
                   </index>
-                  <index name="PK_NASEQUENCEREF" tablespace="USERS" type="NORMAL">
+                  <index name="PK_NASEQUENCEONTOLOGYTERM" tablespace="USERS" type="NORMAL">
                      <columns>
-                        <column idref="DoTS/NASequenceRef/NA_SEQUENCE_REF_ID"/>
+                        <column idref="DoTS/NASequenceOntologyTerm/NA_SEQUENCE_ONTOLOGY_TERM_ID"/>
                      </columns>
                   </index>
                </indexes>
                <constraints>
-                  <constraint name="NASEQUENCEREF_FK01" type="FOREIGN_KEY">
+                  <constraint name="NASEQUENCEONTOLOGYTERM_FK01" type="FOREIGN_KEY">
                      <constrainedColumns>
-                        <column idref="DoTS/NASequenceRef/REFERENCE_ID"/>
+                        <column idref="DoTS/NASequenceOntologyTerm/ONTOLOGY_TERM_ID"/>
                      </constrainedColumns>
-                     <referencedTable idref="SRes/Reference"/>
+                     <referencedTable idref="SRes/OntologyTerm"/>
                      <referencedColumns>
-                        <column idref="SRes/Reference/REFERENCE_ID"/>
+                        <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
                      </referencedColumns>
                   </constraint>
-                  <constraint name="NASEQUENCEREF_FK05" type="FOREIGN_KEY">
+                  <constraint name="NASEQUENCEONTOLOGYTERM_FK05" type="FOREIGN_KEY">
                      <constrainedColumns>
-                        <column idref="DoTS/NASequenceRef/NA_SEQUENCE_ID"/>
+                        <column idref="DoTS/NASequenceOntologyTerm/NA_SEQUENCE_ID"/>
                      </constrainedColumns>
                      <referencedTable idref="DoTS/NASequence"/>
                      <referencedColumns>
                         <column idref="DoTS/NASequence/NA_SEQUENCE_ID"/>
                      </referencedColumns>
                   </constraint>
-                  <constraint name="PK_NASEQUENCEREF" type="PRIMARY_KEY">
+                  <constraint name="PK_NASEQUENCEONTOLOGYTERM" type="PRIMARY_KEY">
                      <constrainedColumns>
-                        <column idref="DoTS/NASequenceRef/NA_SEQUENCE_REF_ID"/>
+                        <column idref="DoTS/NASequenceOntologyTerm/NA_SEQUENCE_ONTOLOGY_TERM_ID"/>
                      </constrainedColumns>
                   </constraint>
                </constraints>
