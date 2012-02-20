@@ -5862,14 +5862,14 @@
             <table id="DoTS/GOAssocInstEvidCode" name="GOAssocInstEvidCode" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="GO Association" updatable="true">
                <columns>
                   <column id="DoTS/GOAssocInstEvidCode/GO_ASSOC_INST_EVID_CODE_ID" name="GO_ASSOC_INST_EVID_CODE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-                  <column id="DoTS/GOAssocInstEvidCode/GO_EVIDENCE_CODE_ID" name="GO_EVIDENCE_CODE_ID" nullable="false" length="3" precision="0" type="NUMBER"/>
+                  <column id="DoTS/GOAssocInstEvidCode/ONTOLOGY_TERM_ID" name="ONTOLOGY_TERM_ID" nullable="false" length="3" precision="0" type="NUMBER"/>
                   <column id="DoTS/GOAssocInstEvidCode/GO_ASSOCIATION_INSTANCE_ID" name="GO_ASSOCIATION_INSTANCE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/GOAssocInstEvidCode/REVIEW_STATUS_ID" name="REVIEW_STATUS_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                </columns>
                <indexes>
                   <index name="GOASSOCINSTEVIDCODE_IND01" tablespace="USERS" type="NORMAL">
                      <columns>
-                        <column idref="DoTS/GOAssocInstEvidCode/GO_EVIDENCE_CODE_ID"/>
+                        <column idref="DoTS/GOAssocInstEvidCode/ONTOLOGY_TERM_ID"/>
                      </columns>
                   </index>
                   <index name="GOASSOCINSTEVIDCODE_IND02" tablespace="USERS" type="NORMAL">
@@ -5891,11 +5891,11 @@
                <constraints>
                   <constraint name="GOASSOCINSTEVIDCODE_FK01" type="FOREIGN_KEY">
                      <constrainedColumns>
-                        <column idref="DoTS/GOAssocInstEvidCode/GO_EVIDENCE_CODE_ID"/>
+                        <column idref="DoTS/GOAssocInstEvidCode/ONTOLOGY_TERM_ID"/>
                      </constrainedColumns>
-                     <referencedTable idref="SRes/GOEvidenceCode"/>
+                     <referencedTable idref="SRes/OntologyTerm"/>
                      <referencedColumns>
-                        <column idref="SRes/GOEvidenceCode/GO_EVIDENCE_CODE_ID"/>
+                        <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
                      </referencedColumns>
                   </constraint>
                   <constraint name="GOASSOCINSTEVIDCODE_FK02" type="FOREIGN_KEY">
