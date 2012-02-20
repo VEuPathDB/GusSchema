@@ -1388,7 +1388,7 @@
                <columns>
                   <column id="DoTS/AAMotifGOTermRule/AA_MOTIF_GO_TERM_RULE_ID" name="AA_MOTIF_GO_TERM_RULE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/AAMotifGOTermRule/AA_MOTIF_GO_TERM_RULE_SET_ID" name="AA_MOTIF_GO_TERM_RULE_SET_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-                  <column id="DoTS/AAMotifGOTermRule/GO_TERM_ID" name="GO_TERM_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+                  <column id="DoTS/AAMotifGOTermRule/ONTOLOGY_TERM_ID" name="ONTOLOGY_TERM_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/AAMotifGOTermRule/NUMBER_OF_ANNOTATED_PROTEINS" name="NUMBER_OF_ANNOTATED_PROTEINS" nullable="false" length="12" precision="0" type="NUMBER"/>
                   <column id="DoTS/AAMotifGOTermRule/DEFINING" name="DEFINING" nullable="false" length="1" precision="0" type="NUMBER"/>
                   <column id="DoTS/AAMotifGOTermRule/REVIEW_STATUS_ID" name="REVIEW_STATUS_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
@@ -1403,7 +1403,7 @@
                   </index>
                   <index name="AAMOTIFGOTERMRULE_IND02" tablespace="USERS" type="NORMAL">
                      <columns>
-                        <column idref="DoTS/AAMotifGOTermRule/GO_TERM_ID"/>
+                        <column idref="DoTS/AAMotifGOTermRule/ONTOLOGY_TERM_ID"/>
                      </columns>
                   </index>
                   <index name="AAMOTIFGOTERMRULE_IND03" tablespace="USERS" type="NORMAL">
@@ -1446,11 +1446,11 @@
                   </constraint>
                   <constraint name="AAMOTIFGOTERMRULE_FK02" type="FOREIGN_KEY">
                      <constrainedColumns>
-                        <column idref="DoTS/AAMotifGOTermRule/GO_TERM_ID"/>
+                        <column idref="DoTS/AAMotifGOTermRule/ONTOLOGY_TERM_ID"/>
                      </constrainedColumns>
-                     <referencedTable idref="SRes/GOTerm"/>
+                     <referencedTable idref="SRes/OntologyTerm"/>
                      <referencedColumns>
-                        <column idref="SRes/GOTerm/GO_TERM_ID"/>
+                        <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
                      </referencedColumns>
                   </constraint>
                   <constraint name="AAMOTIFGOTERMRULE_FK03" type="FOREIGN_KEY">
@@ -5670,7 +5670,7 @@
                   <column id="DoTS/GOAssociation/GO_ASSOCIATION_ID" name="GO_ASSOCIATION_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/GOAssociation/TABLE_ID" name="TABLE_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
                   <column id="DoTS/GOAssociation/ROW_ID" name="ROW_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-                  <column id="DoTS/GOAssociation/GO_TERM_ID" name="GO_TERM_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+                  <column id="DoTS/GOAssociation/ONTOLOGY_TERM_ID" name="ONTOLOGY_TERM_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/GOAssociation/IS_NOT" name="IS_NOT" nullable="false" length="1" precision="0" type="NUMBER"/>
                   <column id="DoTS/GOAssociation/IS_DEPRECATED" name="IS_DEPRECATED" nullable="false" length="1" precision="0" type="NUMBER"/>
                   <column id="DoTS/GOAssociation/DEFINING" name="DEFINING" nullable="false" length="1" precision="0" type="NUMBER"/>
@@ -5685,7 +5685,7 @@
                   </index>
                   <index name="GOASSOCIATION_IND01" tablespace="USERS" type="NORMAL">
                      <columns>
-                        <column idref="DoTS/GOAssociation/GO_TERM_ID"/>
+                        <column idref="DoTS/GOAssociation/ONTOLOGY_TERM_ID"/>
                         <column idref="DoTS/GOAssociation/IS_DEPRECATED"/>
                         <column idref="DoTS/GOAssociation/REVIEW_STATUS_ID"/>
                      </columns>
@@ -5707,7 +5707,7 @@
                      <columns>
                         <column idref="DoTS/GOAssociation/TABLE_ID"/>
                         <column idref="DoTS/GOAssociation/ROW_ID"/>
-                        <column idref="DoTS/GOAssociation/GO_TERM_ID"/>
+                        <column idref="DoTS/GOAssociation/ONTOLOGY_TERM_ID"/>
                      </columns>
                   </index>
                </indexes>
@@ -5737,18 +5737,18 @@
                   </constraint>
                   <constraint name="GOSSOCIATION_FK02" type="FOREIGN_KEY">
                      <constrainedColumns>
-                        <column idref="DoTS/GOAssociation/GO_TERM_ID"/>
+                        <column idref="DoTS/GOAssociation/ONTOLOGY_TERM_ID"/>
                      </constrainedColumns>
-                     <referencedTable idref="SRes/GOTerm"/>
+                     <referencedTable idref="SRes/OntologyTerm"/>
                      <referencedColumns>
-                        <column idref="SRes/GOTerm/GO_TERM_ID"/>
+                        <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
                      </referencedColumns>
                   </constraint>
                   <constraint name="SYS_C0047304" type="UNIQUE">
                      <constrainedColumns>
                         <column idref="DoTS/GOAssociation/TABLE_ID"/>
                         <column idref="DoTS/GOAssociation/ROW_ID"/>
-                        <column idref="DoTS/GOAssociation/GO_TERM_ID"/>
+                        <column idref="DoTS/GOAssociation/ONTOLOGY_TERM_ID"/>
                      </constrainedColumns>
                   </constraint>
                </constraints>
