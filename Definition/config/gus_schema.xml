@@ -2530,66 +2530,66 @@
                   </constraint>
                </constraints>
             </table>
-            <table id="DoTS/AllelePhenotypeClass" name="AllelePhenotypeClass" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="Variation" updatable="true">
+            <table id="DoTS/AlleleOntologyTerm" name="AlleleOntologyTerm" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="Variation" updatable="true">
                <columns>
-                  <column id="DoTS/AllelePhenotypeClass/ALLELE_PHENOTYPE_CLASS_ID" name="ALLELE_PHENOTYPE_CLASS_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-                  <column id="DoTS/AllelePhenotypeClass/ALLELE_ID" name="ALLELE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-                  <column id="DoTS/AllelePhenotypeClass/PHENOTYPE_CLASS_ID" name="PHENOTYPE_CLASS_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-                  <column id="DoTS/AllelePhenotypeClass/REVIEW_STATUS_ID" name="REVIEW_STATUS_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
+                  <column id="DoTS/AlleleOntologyTerm/ALLELE_ONTOLOGY_TERM_ID" name="ALLELE_ONTOLOGY_TERM_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+                  <column id="DoTS/AlleleOntologyTerm/ALLELE_ID" name="ALLELE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+                  <column id="DoTS/AlleleOntologyTerm/ONTOLOGY_TERM_ID" name="ONTOLOGY_TERM_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+                  <column id="DoTS/AlleleOntologyTerm/REVIEW_STATUS_ID" name="REVIEW_STATUS_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                </columns>
                <indexes>
-                  <index name="ALLELEPHENOTYPECLASS_IND01" tablespace="USERS" type="NORMAL">
+                  <index name="ALLELEONTOLOGYTERM_IND01" tablespace="USERS" type="NORMAL">
                      <columns>
-                        <column idref="DoTS/AllelePhenotypeClass/PHENOTYPE_CLASS_ID"/>
+                        <column idref="DoTS/AlleleOntologyTerm/ONTOLOGY_TERM_ID"/>
                      </columns>
                   </index>
-                  <index name="ALLELEPHENOTYPECLASS_IND02" tablespace="USERS" type="NORMAL">
+                  <index name="ALLELEONTOLOGYTERM_IND02" tablespace="USERS" type="NORMAL">
                      <columns>
-                        <column idref="DoTS/AllelePhenotypeClass/ALLELE_ID"/>
+                        <column idref="DoTS/AlleleOntologyTerm/ALLELE_ID"/>
                      </columns>
                   </index>
-                  <index name="ALLELEPHENOTYPECLASS_IND03" tablespace="USERS" type="NORMAL">
+                  <index name="ALLELEONTOLOGYTERM_IND03" tablespace="USERS" type="NORMAL">
                      <columns>
-                        <column idref="DoTS/AllelePhenotypeClass/REVIEW_STATUS_ID"/>
+                        <column idref="DoTS/AlleleOntologyTerm/REVIEW_STATUS_ID"/>
                      </columns>
                   </index>
-                  <index name="PK_ALLELEPHENOTYPECLASS" tablespace="USERS" type="NORMAL">
+                  <index name="PK_ALLELEONTOLOGYTERM" tablespace="USERS" type="NORMAL">
                      <columns>
-                        <column idref="DoTS/AllelePhenotypeClass/ALLELE_PHENOTYPE_CLASS_ID"/>
+                        <column idref="DoTS/AlleleOntologyTerm/ALLELE_ONTOLOGY_TERM_ID"/>
                      </columns>
                   </index>
                </indexes>
                <constraints>
-                  <constraint name="ALLELEPHENOTYPECLASS_FK01" type="FOREIGN_KEY">
+                  <constraint name="ALLELEONTOLOGYTERM_FK01" type="FOREIGN_KEY">
                      <constrainedColumns>
-                        <column idref="DoTS/AllelePhenotypeClass/PHENOTYPE_CLASS_ID"/>
+                        <column idref="DoTS/AlleleOntologyTerm/ONTOLOGY_TERM_ID"/>
                      </constrainedColumns>
-                     <referencedTable idref="SRes/PhenotypeClass"/>
+                     <referencedTable idref="SRes/OntologyTerm"/>
                      <referencedColumns>
-                        <column idref="SRes/PhenotypeClass/PHENOTYPE_CLASS_ID"/>
+                        <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
                      </referencedColumns>
                   </constraint>
-                  <constraint name="ALLELEPHENOTYPECLASS_FK02" type="FOREIGN_KEY">
+                  <constraint name="ALLELEONTOLOGYTERM_FK02" type="FOREIGN_KEY">
                      <constrainedColumns>
-                        <column idref="DoTS/AllelePhenotypeClass/ALLELE_ID"/>
+                        <column idref="DoTS/AlleleOntologyTerm/ALLELE_ID"/>
                      </constrainedColumns>
                      <referencedTable idref="DoTS/Allele"/>
                      <referencedColumns>
                         <column idref="DoTS/Allele/ALLELE_ID"/>
                      </referencedColumns>
                   </constraint>
-                  <constraint name="ALLELEPHENOTYPECLASS_FK03" type="FOREIGN_KEY">
+                  <constraint name="ALLELEONTOLOGYTERM_FK03" type="FOREIGN_KEY">
                      <constrainedColumns>
-                        <column idref="DoTS/AllelePhenotypeClass/REVIEW_STATUS_ID"/>
+                        <column idref="DoTS/AlleleOntologyTerm/REVIEW_STATUS_ID"/>
                      </constrainedColumns>
                      <referencedTable idref="SRes/ReviewStatus"/>
                      <referencedColumns>
                         <column idref="SRes/ReviewStatus/REVIEW_STATUS_ID"/>
                      </referencedColumns>
                   </constraint>
-                  <constraint name="PK_ALLELEPHENOTYPECLASS" type="PRIMARY_KEY">
+                  <constraint name="PK_ALLELEONTOLOGYTERM" type="PRIMARY_KEY">
                      <constrainedColumns>
-                        <column idref="DoTS/AllelePhenotypeClass/ALLELE_PHENOTYPE_CLASS_ID"/>
+                        <column idref="DoTS/AlleleOntologyTerm/ALLELE_ONTOLOGY_TERM_ID"/>
                      </constrainedColumns>
                   </constraint>
                </constraints>
