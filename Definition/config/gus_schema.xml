@@ -2275,7 +2275,7 @@
                   <column id="DoTS/Allele/NAME" name="NAME" nullable="false" length="100" precision="0" type="STRING"/>
                   <column id="DoTS/Allele/GENE_ID" name="GENE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/Allele/IS_WILDTYPE" name="IS_WILDTYPE" nullable="true" length="1" precision="0" type="NUMBER"/>
-                  <column id="DoTS/Allele/MUTAGEN_ID" name="MUTAGEN_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
+                  <column id="DoTS/Allele/ONTOLOGY_TERM_ID" name="ONTOLOGY_TERM_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/Allele/MUTAGENESIS_DESCRIPTION" name="MUTAGENESIS_DESCRIPTION" nullable="true" length="1000" precision="0" type="STRING"/>
                   <column id="DoTS/Allele/REVIEW_STATUS_ID" name="REVIEW_STATUS_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                </columns>
@@ -2292,7 +2292,7 @@
                   </index>
                   <index name="ALLELE_IND03" tablespace="USERS" type="NORMAL">
                      <columns>
-                        <column idref="DoTS/Allele/MUTAGEN_ID"/>
+                        <column idref="DoTS/Allele/ONTOLOGY_TERM_ID"/>
                      </columns>
                   </index>
                   <index name="PK_ALLELE" tablespace="USERS" type="NORMAL">
@@ -2322,11 +2322,11 @@
                   </constraint>
                   <constraint name="ALLELE_FK03" type="FOREIGN_KEY">
                      <constrainedColumns>
-                        <column idref="DoTS/Allele/MUTAGEN_ID"/>
+                        <column idref="DoTS/Allele/ONTOLOGY_TERM_ID"/>
                      </constrainedColumns>
-                     <referencedTable idref="SRes/Mutagen"/>
+                     <referencedTable idref="SRes/OntologyTerm"/>
                      <referencedColumns>
-                        <column idref="SRes/Mutagen/MUTAGEN_ID"/>
+                        <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
                      </referencedColumns>
                   </constraint>
                   <constraint name="PK_ALLELE" type="PRIMARY_KEY">
