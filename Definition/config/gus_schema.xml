@@ -11462,7 +11462,7 @@
                <columns>
                   <column id="SRes/OntologySynonym/ONTOLOGY_SYNONYM_ID" name="ONTOLOGY_SYNONYM_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="SRes/OntologySynonym/ONTOLOGY_TERM_ID" name="ONTOLOGY_TERM_ID" nullable="false" length="10" precision="0" type="NUMBER"/> 
-                  <column id="SRes/OntologySynonym/SYNONYM" name="SYNONYM" nullable="false" length="50" precision="0" type="STRING"/>
+                  <column id="SRes/OntologySynonym/ONTOLOGY_SYNONYM" name="ONTOLOGY_SYNONYM" nullable="false" length="50" precision="0" type="STRING"/>
                   <column id="SRes/OntologySynonym/EXTERNAL_DATABASE_RELEASE_ID" name="EXTERNAL_DATABASE_RELEASE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="SRes/OntologySynonym/SOURCE_ID" name="SOURCE_ID" nullable="false" length="255" precision="0" type="STRING"/>
                </columns>
@@ -11829,7 +11829,7 @@
                <columns>
                   <column id="SRes/Phenotype/PHENOTYPE_ID" name="PHENOTYPE_ID" nullable="false" length="8" precision="0" type="NUMBER"/>
                   <column id="SRes/Phenotype/PARENT_ID" name="PARENT_ID" nullable="true" length="8" precision="0" type="NUMBER"/>
-                  <column id="SRes/Phenotype/PATO_ATTRIBUTE_ID" name="PATO_ATTRIBUTE_ID" nullable="true" length="8" precision="0" type="NUMBER"/>
+                  <column id="SRes/Phenotype/PATO_ATTRIBUTE_ID" name="PATO_ATTRIBUTE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="SRes/Phenotype/ANATOMY_ID" name="ANATOMY_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="SRes/Phenotype/CELL_TYPE_ID" name="CELL_TYPE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="SRes/Phenotype/DEVELOPMENTAL_STAGE_ID" name="DEVELOPMENTAL_STAGE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
@@ -11904,17 +11904,15 @@
                         <column idref="SRes/Phenotype/PHENOTYPE_ID"/>
                      </referencedColumns>
                   </constraint>
-<!-- we'll come back to this. SRes/Phenotype wasn't in GUS when I tested for dangling foreign keys.
                   <constraint name="FK_PHENOTYPE_PATO" type="FOREIGN_KEY">
                      <constrainedColumns>
                         <column idref="SRes/Phenotype/PATO_ATTRIBUTE_ID"/>
                      </constrainedColumns>
-                     <referencedTable idref="SRes/PATOAttribute"/>
+                     <referencedTable idref="SRes/OntologyTerm"/>
                      <referencedColumns>
-                        <column idref="SRes/PATOAttribute/PATO_ATTRIBUTE_ID"/>
+                        <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
                      </referencedColumns>
                   </constraint>
- -->
                   <constraint name="PK_PHENOTYPE" type="PRIMARY_KEY">
                      <constrainedColumns>
                         <column idref="SRes/Phenotype/PHENOTYPE_ID"/>
@@ -12686,7 +12684,7 @@
                   <column id="Study/ProtocolAppParam/PROTOCOL_PARAM_ID" name="PROTOCOL_PARAM_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="Study/ProtocolAppParam/VALUE" name="VALUE" nullable="false" length="100" precision="0" type="STRING"/>
                   <column id="Study/ProtocolAppParam/TABLE_ID" name="TABLE_ID" nullable="true" length="5" precision="0" type="NUMBER"/>
-                  <column id="Study/ProtocolAppParam/ROW" name="VALUE" nullable="true" length="12" precision="0" type="NUMBER"/>
+                  <column id="Study/ProtocolAppParam/TABLE_ROW" name="TABLE_ROW" nullable="true" length="12" precision="0" type="NUMBER"/>
                </columns>
                <indexes>
                   <index name="PK_PROTAPPPARAM" tablespace="USERS" type="NORMAL">
@@ -13097,7 +13095,7 @@
                         <column idref="Platform/Reporter/REPORTER_SET_ID"/>
                      </columns>
                   </index>
-                 <index name="REPORTERSET_R02" tablespace="USERS" type="NORMAL">
+                 <index name="REPORTER_R02" tablespace="USERS" type="NORMAL">
                      <columns>
                         <column idref="Platform/Reporter/REPORTER_SET_ID"/>
                         <column idref="Platform/Reporter/PHYSICAL_LOCATION"/>
@@ -13135,8 +13133,8 @@
                   <column id="Platform/ReporterLocation/REPORTER_LOCATION_ID" name="REPORTER_LOCATION_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
                   <column id="Platform/ReporterLocation/REPORTER_ID" name="REPORTER_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
                   <column id="Platform/ReporterLocation/NA_SEQUENCE_ID" name="NA_SEQUENCE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-                  <column id="Platform/ReporterLocation/START" name="START" nullable="false" length="12" precision="0" type="NUMBER"/>
-                  <column id="Platform/ReporterLocation/END" name="END" nullable="false" length="12" precision="0" type="NUMBER"/>
+                  <column id="Platform/ReporterLocation/REPORTER_START" name="REPORTER_START" nullable="false" length="12" precision="0" type="NUMBER"/>
+                  <column id="Platform/ReporterLocation/REPORTER_END" name="REPORTER_END" nullable="false" length="12" precision="0" type="NUMBER"/>
                   <column id="Platform/ReporterLocation/ON_REVERSE_STRAND" name="ON_REVERSE_STRAND" nullable="true" length="1" precision="0" type="NUMBER"/>
                </columns>
                <indexes>
@@ -13149,8 +13147,8 @@
                      <columns>
                          <column idref="Platform/ReporterLocation/REPORTER_ID"/>
                          <column idref="Platform/ReporterLocation/NA_SEQUENCE_ID"/>
-                         <column idref="Platform/ReporterLocation/START"/>
-                         <column idref="Platform/ReporterLocation/END"/>
+                         <column idref="Platform/ReporterLocation/REPORTER_START"/>
+                         <column idref="Platform/ReporterLocation/REPORTER_END"/>
                     </columns>
                   </index>
                </indexes>
@@ -14035,8 +14033,8 @@
                   <column id="Results/SegmentResult/SEGMENT_RESULT_ID" name="SEGMENT_RESULT_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
                   <column id="Results/SegmentResult/PROTOCOL_APP_NODE_ID" name="PROTOCOL_APP_NODE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="Results/SegmentResult/NA_SEQUENCE_ID" name="NA_SEQUENCE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
-                  <column id="Results/SegmentResult/START" name="START" nullable="true" length="12" precision="0" type="NUMBER"/>
-                  <column id="Results/SegmentResult/END" name="END" nullable="true" length="12" precision="0" type="NUMBER"/>
+                  <column id="Results/SegmentResult/SEGMENT_START" name="SEGMENT_START" nullable="true" length="12" precision="0" type="NUMBER"/>
+                  <column id="Results/SegmentResult/SEGMENT_END" name="SEGMENT_END" nullable="true" length="12" precision="0" type="NUMBER"/>
                   <column id="Results/SegmentResult/ON_REVERSE_STRAND" name="ON_REVERSE_STRAND" nullable="true" length="1" precision="0" type="NUMBER"/>
                   <column id="Results/SegmentResult/NA_FEATURE_ID" name="NA_FEATURE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="Results/SegmentResult/GENETIC_LOCATION" name="GENETIC_LOCATION" nullable="true" length="30" precision="0" type="STRING"/>
@@ -14058,8 +14056,8 @@
                      <columns>
                         <column idref="Results/SegmentResult/PROTOCOL_APP_NODE_ID"/>
                         <column idref="Results/SegmentResult/NA_SEQUENCE_ID"/>
-                        <column idref="Results/SegmentResult/START"/>
-                        <column idref="Results/SegmentResult/END"/>
+                        <column idref="Results/SegmentResult/SEGMENT_START"/>
+                        <column idref="Results/SegmentResult/SEGMENT_END"/>
                      </columns>
                   </index>
                  <index name="SEGMENTRESULT_R02" tablespace="USERS" type="NORMAL">
@@ -14109,8 +14107,8 @@
                   <column id="Results/SegmentDiffResult/SEGMENT_DIFF_RES_ID" name="SEGMENT_DIFF_RES_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
                   <column id="Results/SegmentDiffResult/PROTOCOL_APP_NODE_ID" name="PROTOCOL_APP_NODE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="Results/SegmentDiffResult/NA_SEQUENCE_ID" name="NA_SEQUENCE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
-                  <column id="Results/SegmentDiffResult/START" name="START" nullable="true" length="12" precision="0" type="NUMBER"/>
-                  <column id="Results/SegmentDiffResult/END" name="END" nullable="true" length="12" precision="0" type="NUMBER"/>
+                  <column id="Results/SegmentDiffResult/SEGMENT_START" name="SEGMENT_START" nullable="true" length="12" precision="0" type="NUMBER"/>
+                  <column id="Results/SegmentDiffResult/SEGMENT_END" name="SEGMENT_END" nullable="true" length="12" precision="0" type="NUMBER"/>
                   <column id="Results/SegmentDiffResult/ON_REVERSE_STRAND" name="ON_REVERSE_STRAND" nullable="true" length="1" precision="0" type="NUMBER"/>
                   <column id="Results/SegmentDiffResult/NA_FEATURE_ID" name="NA_FEATURE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="Results/SegmentDiffResult/MEAN1" name="MEAN1" nullable="true" length="12" precision="0" type="FLOAT"/>
@@ -14123,7 +14121,6 @@
                   <column id="Results/SegmentDiffResult/P_VALUE" name="P_VALUE" nullable="true" length="12" precision="0" type="FLOAT"/>
                   <column id="Results/SegmentDiffResult/ADJ_P_VALUE" name="ADJ_P_VALUE" nullable="true" length="12" precision="0" type="FLOAT"/>
                   <column id="Results/SegmentDiffResult/Q_VALUE" name="Q_VALUE" nullable="true" length="12" precision="0" type="FLOAT"/>
-                  <column id="Results/SegmentDiffResult/FDR" name="FDR" nullable="true" length="12" precision="0" type="FLOAT"/>
                   <column id="Results/SegmentDiffResult/CONFIDENCE_UP" name="CONFIDENCE_UP" nullable="true" length="12" precision="0" type="FLOAT"/>
                   <column id="Results/SegmentDiffResult/CONFIDENCE_DOWN" name="CONFIDENCE_DOWN" nullable="true" length="12" precision="0" type="FLOAT"/>
                 </columns>
@@ -14137,8 +14134,8 @@
                      <columns>
                         <column idref="Results/SegmentDiffResult/PROTOCOL_APP_NODE_ID"/>
                         <column idref="Results/SegmentDiffResult/NA_SEQUENCE_ID"/>
-                        <column idref="Results/SegmentDiffResult/START"/>
-                        <column idref="Results/SegmentDiffResult/END"/>
+                        <column idref="Results/SegmentDiffResult/SEGMENT_START"/>
+                        <column idref="Results/SegmentDiffResult/SEGMENT_END"/>
                      </columns>
                   </index>
                  <index name="SEGMENTDIFFRES_R02" tablespace="USERS" type="NORMAL">
@@ -14188,8 +14185,8 @@
                   <column id="Results/EditingEvent/EDITING_EVENT_ID" name="EDITING_EVENT_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
                   <column id="Results/EditingEvent/PROTOCOL_APP_NODE_ID" name="PROTOCOL_APP_NODE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="Results/EditingEvent/NA_SEQUENCE_ID" name="NA_SEQUENCE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
-                  <column id="Results/EditingEvent/START" name="START" nullable="true" length="12" precision="0" type="NUMBER"/>
-                  <column id="Results/EditingEvent/END" name="END" nullable="true" length="12" precision="0" type="NUMBER"/>
+                  <column id="Results/EditingEvent/EVENT_START" name="EVENT_START" nullable="true" length="12" precision="0" type="NUMBER"/>
+                  <column id="Results/EditingEvent/EVENT_END" name="EVENT_END" nullable="true" length="12" precision="0" type="NUMBER"/>
                   <column id="Results/EditingEvent/NA_FEATURE_ID" name="NA_FEATURE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="Results/EditingEvent/EDITING_TYPE_ID" name="EDITING_TYPE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="Results/EditingEvent/ALTERNATE_SEQUENCE" name="ALTERNATE_SEQUENCE" nullable="true" length="200" precision="0" type="STRING"/>
@@ -14206,8 +14203,8 @@
                      <columns>
                         <column idref="Results/EditingEvent/PROTOCOL_APP_NODE_ID"/>
                         <column idref="Results/EditingEvent/NA_SEQUENCE_ID"/>
-                        <column idref="Results/EditingEvent/START"/>
-                        <column idref="Results/EditingEvent/END"/>
+                        <column idref="Results/EditingEvent/EVENT_START"/>
+                        <column idref="Results/EditingEvent/EVENT_END"/>
                      </columns>
                   </index>
                  <index name="EDITINGEVENT_R02" tablespace="USERS" type="NORMAL">
@@ -14276,7 +14273,6 @@
                   <column id="Results/ReporterDiffResult/P_VALUE" name="P_VALUE" nullable="true" length="12" precision="0" type="FLOAT"/>
                   <column id="Results/ReporterDiffResult/ADJ_P_VALUE" name="ADJ_P_VALUE" nullable="true" length="12" precision="0" type="FLOAT"/>
                   <column id="Results/ReporterDiffResult/Q_VALUE" name="Q_VALUE" nullable="true" length="12" precision="0" type="FLOAT"/>
-                  <column id="Results/ReporterDiffResult/FDR" name="FDR" nullable="true" length="12" precision="0" type="FLOAT"/>
                   <column id="Results/ReporterDiffResult/CONFIDENCE_UP" name="CONFIDENCE_UP" nullable="true" length="12" precision="0" type="FLOAT"/>
                   <column id="Results/ReporterDiffResult/CONFIDENCE_DOWN" name="CONFIDENCE_DOWN" nullable="true" length="12" precision="0" type="FLOAT"/>
                 </columns>
@@ -14344,7 +14340,6 @@
                   <column id="Results/NAFeatureDiffResult/P_VALUE" name="P_VALUE" nullable="true" length="12" precision="0" type="FLOAT"/>
                   <column id="Results/NAFeatureDiffResult/ADJ_P_VALUE" name="ADJ_P_VALUE" nullable="true" length="12" precision="0" type="FLOAT"/>
                   <column id="Results/NAFeatureDiffResult/Q_VALUE" name="Q_VALUE" nullable="true" length="12" precision="0" type="FLOAT"/>
-                  <column id="Results/NAFeatureDiffResult/FDR" name="FDR" nullable="true" length="12" precision="0" type="FLOAT"/>
                   <column id="Results/NAFeatureDiffResult/CONFIDENCE_UP" name="CONFIDENCE_UP" nullable="true" length="12" precision="0" type="FLOAT"/>
                   <column id="Results/NAFeatureDiffResult/CONFIDENCE_DOWN" name="CONFIDENCE_DOWN" nullable="true" length="12" precision="0" type="FLOAT"/>
                 </columns>
@@ -14412,7 +14407,6 @@
                   <column id="Results/RnaDiffResult/P_VALUE" name="P_VALUE" nullable="true" length="12" precision="0" type="FLOAT"/>
                   <column id="Results/RnaDiffResult/ADJ_P_VALUE" name="ADJ_P_VALUE" nullable="true" length="12" precision="0" type="FLOAT"/>
                   <column id="Results/RnaDiffResult/Q_VALUE" name="Q_VALUE" nullable="true" length="12" precision="0" type="FLOAT"/>
-                  <column id="Results/RnaDiffResult/FDR" name="FDR" nullable="true" length="12" precision="0" type="FLOAT"/>
                   <column id="Results/RnaDiffResult/CONFIDENCE_UP" name="CONFIDENCE_UP" nullable="true" length="12" precision="0" type="FLOAT"/>
                   <column id="Results/RnaDiffResult/CONFIDENCE_DOWN" name="CONFIDENCE_DOWN" nullable="true" length="12" precision="0" type="FLOAT"/>
                 </columns>
@@ -14480,7 +14474,6 @@
                   <column id="Results/GeneDiffResult/P_VALUE" name="P_VALUE" nullable="true" length="12" precision="0" type="FLOAT"/>
                   <column id="Results/GeneDiffResult/ADJ_P_VALUE" name="ADJ_P_VALUE" nullable="true" length="12" precision="0" type="FLOAT"/>
                   <column id="Results/GeneDiffResult/Q_VALUE" name="Q_VALUE" nullable="true" length="12" precision="0" type="FLOAT"/>
-                  <column id="Results/GeneDiffResult/FDR" name="FDR" nullable="true" length="12" precision="0" type="FLOAT"/>
                   <column id="Results/GeneDiffResult/CONFIDENCE_UP" name="CONFIDENCE_UP" nullable="true" length="12" precision="0" type="FLOAT"/>
                   <column id="Results/GeneDiffResult/CONFIDENCE_DOWN" name="CONFIDENCE_DOWN" nullable="true" length="12" precision="0" type="FLOAT"/>
                 </columns>
@@ -14548,7 +14541,6 @@
                   <column id="Results/FamilyDiffResult/P_VALUE" name="P_VALUE" nullable="true" length="12" precision="0" type="FLOAT"/>
                   <column id="Results/FamilyDiffResult/ADJ_P_VALUE" name="ADJ_P_VALUE" nullable="true" length="12" precision="0" type="FLOAT"/>
                   <column id="Results/FamilyDiffResult/Q_VALUE" name="Q_VALUE" nullable="true" length="12" precision="0" type="FLOAT"/>
-                  <column id="Results/FamilyDiffResult/FDR" name="FDR" nullable="true" length="12" precision="0" type="FLOAT"/>
                   <column id="Results/FamilyDiffResult/CONFIDENCE_UP" name="CONFIDENCE_UP" nullable="true" length="12" precision="0" type="FLOAT"/>
                   <column id="Results/FamilyDiffResult/CONFIDENCE_DOWN" name="CONFIDENCE_DOWN" nullable="true" length="12" precision="0" type="FLOAT"/>
                 </columns>
