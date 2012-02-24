@@ -10901,7 +10901,7 @@
                </constraints>
             </table>
          </tables>
-               </schema>
+      </schema>
       <schema name="SRes">
           <tables>
             <table id="SRes/BibliographicReference" name="BibliographicReference" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Bibliographic" updatable="true">
@@ -11831,7 +11831,7 @@
                   <column id="SRes/Phenotype/PARENT_ID" name="PARENT_ID" nullable="true" length="8" precision="0" type="NUMBER"/>
                   <column id="SRes/Phenotype/PATO_ATTRIBUTE_ID" name="PATO_ATTRIBUTE_ID" nullable="true" length="8" precision="0" type="NUMBER"/>
                   <column id="SRes/Phenotype/ANATOMY_ID" name="ANATOMY_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
-                  <column id="SRes/Phenotype/CELL_TYPE_ID" name="CELL_TYPE_ID" nullable="true" length="4" precision="0" type="NUMBER"/>
+                  <column id="SRes/Phenotype/CELL_TYPE_ID" name="CELL_TYPE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="SRes/Phenotype/DEVELOPMENTAL_STAGE_ID" name="DEVELOPMENTAL_STAGE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="SRes/Phenotype/DESCRIPTION" name="DESCRIPTION" nullable="true" length="500" precision="0" type="STRING"/>
                </columns>
@@ -11904,6 +11904,7 @@
                         <column idref="SRes/Phenotype/PHENOTYPE_ID"/>
                      </referencedColumns>
                   </constraint>
+<!-- we'll come back to this. SRes/Phenotype wasn't in GUS when I tested for dangling foreign keys.
                   <constraint name="FK_PHENOTYPE_PATO" type="FOREIGN_KEY">
                      <constrainedColumns>
                         <column idref="SRes/Phenotype/PATO_ATTRIBUTE_ID"/>
@@ -11913,6 +11914,7 @@
                         <column idref="SRes/PATOAttribute/PATO_ATTRIBUTE_ID"/>
                      </referencedColumns>
                   </constraint>
+ -->
                   <constraint name="PK_PHENOTYPE" type="PRIMARY_KEY">
                      <constrainedColumns>
                         <column idref="SRes/Phenotype/PHENOTYPE_ID"/>
@@ -12053,7 +12055,7 @@
             <table id="Study/StudyDesign" name="StudyDesign" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Experimental Design" updatable="true">
                <columns>
                   <column id="Study/StudyDesign/STUDY_DESIGN_ID" name="STUDY_DESIGN_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
-                  <column id="Study/StudyDesign/STUDY_ID" name="STUDY_ID" nullable="false" length="4" precision="0" type="NUMBER"/>
+                  <column id="Study/StudyDesign/STUDY_ID" name="STUDY_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
                   <column id="Study/StudyDesign/STUDY_DESIGN_TYPE_ID" name="STUDY_DESIGN_TYPE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>                
                </columns>
                <indexes>
@@ -12161,12 +12163,12 @@
                <columns>
                   <column id="Study/ProtocolAppNode/PROTOCOL_APP_NODE_ID" name="PROTOCOL_APP_NODE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="Study/ProtocolAppNode/TYPE_ID" name="TYPE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
-                   <column id="Study/ProtocolAppNode/NAME" name="NAME" nullable="false" length="200" precision="0" type="STRING"/>
+                  <column id="Study/ProtocolAppNode/NAME" name="NAME" nullable="false" length="200" precision="0" type="STRING"/>
                   <column id="Study/ProtocolAppNode/DESCRIPTION" name="DESCRIPTION" nullable="true" length="1000" precision="0" type="STRING"/>
                   <column id="Study/ProtocolAppNode/uri" name="URI" nullable="true" length="300" precision="0" type="STRING"/>
                   <column id="Study/ProtocolAppNode/EXTERNAL_DATABASE_RELEASE_ID" name="EXTERNAL_DATABASE_RELEASE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="Study/ProtocolAppNode/SOURCE_ID" name="SOURCE_ID" nullable="true" length="100" precision="0" type="STRING"/>
-                  <column id="Study/ProtocolAppNode/SUBTYPE_ID" name="TYPE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
+                  <column id="Study/ProtocolAppNode/SUBTYPE_ID" name="SUBTYPE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                </columns>
                <indexes>
                   <index name="PK_PAN" tablespace="USERS" type="NORMAL">
@@ -12176,7 +12178,7 @@
                   </index>
                   <index name="PAN_IND01" tablespace="USERS" type="NORMAL">
                      <columns>
-                        <column idref="Study/ProtocoAppNode/TYPE_ID"/>
+                        <column idref="Study/ProtocolAppNode/TYPE_ID"/>
                      </columns>
                   </index>
                   <index name="PAN_IND02" tablespace="USERS" type="NORMAL">
@@ -12186,7 +12188,7 @@
                   </index>
                   <index name="PAN_IND03" tablespace="USERS" type="NORMAL">
                      <columns>
-                        <column idref="Study/ProtocoAppNode/SUBTYPE_ID"/>
+                        <column idref="Study/ProtocolAppNode/SUBTYPE_ID"/>
                      </columns>
                   </index>
                </indexes>
@@ -12386,7 +12388,7 @@
                      </constrainedColumns>
                      <referencedTable idref="Study/ProtocolAppNode"/>
                      <referencedColumns>
-                        <column idref="Study/ProtocolAppNode/PROTOCOL_APP_ID"/>
+                        <column idref="Study/ProtocolAppNode/PROTOCOL_APP_NODE_ID"/>
                      </referencedColumns>
                   </constraint>
                   <constraint name="FK_BMC_OT" type="FOREIGN_KEY">
@@ -12559,7 +12561,7 @@
             </table>      
             <table id="Study/ProtocolSeries" name="ProtocolSeries" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Experimental Design" updatable="true">
                <columns>
-                  <column id="Study/ProtocolSeries/PROTOCOL_SERIES_ID" name="PROTOCOL_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+                  <column id="Study/ProtocolSeries/PROTOCOL_SERIES_ID" name="PROTOCOL_SERIES_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="Study/ProtocolSeries/NAME" name="NAME" nullable="false" length="200" precision="0" type="STRING"/>
                </columns>
                <indexes>
@@ -12632,7 +12634,7 @@
                   <column id="Study/ProtocolApp/PROTOCOL_APP_ID" name="PROTOCOL_APP_ID" nullable="false" length="11" precision="0" type="NUMBER"/>
                   <column id="Study/ProtocolApp/PROTOCOL_SERIES_ID" name="PROTOCOL_SERIES_ID" nullable="false" length="10" precision="0" type="NUMBER"/>     
                   <column id="Study/ProtocolApp/PROTOCOL_APP_DATE" name="PROTOCOL_APP_DATE" nullable="true" length="0" precision="0" type="DATE"/>
-                  <column id="Study/ProtocolApp/CONTACT" name="CONTACT" nullable="true" length="12" precision="0" type="NUMBER"/>
+                  <column id="Study/ProtocolApp/CONTACT_ID" name="CONTACT_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
                </columns>
                <indexes>
                   <index name="PK_PROTAPP" tablespace="USERS" type="NORMAL">
@@ -12681,7 +12683,7 @@
                <columns>
                   <column id="Study/ProtocolAppParam/PROTOCOL_APP_PARAM_ID" name="PROTOCOL_APP_PARAM_ID" nullable="false" length="11" precision="0" type="NUMBER"/>
                   <column id="Study/ProtocolAppParam/PROTOCOL_APP_ID" name="PROTOCOL_APP_ID" nullable="false" length="11" precision="0" type="NUMBER"/>
-                  <column id="Study/ProtocolAppParam/PROTOCOL_PARAM_ID" name="NAME" nullable="false" length="10" precision="0" type="NUMBER"/>
+                  <column id="Study/ProtocolAppParam/PROTOCOL_PARAM_ID" name="PROTOCOL_PARAM_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="Study/ProtocolAppParam/VALUE" name="VALUE" nullable="false" length="100" precision="0" type="STRING"/>
                   <column id="Study/ProtocolAppParam/TABLE_ID" name="TABLE_ID" nullable="true" length="5" precision="0" type="NUMBER"/>
                   <column id="Study/ProtocolAppParam/ROW" name="VALUE" nullable="true" length="12" precision="0" type="NUMBER"/>
@@ -12854,7 +12856,7 @@
               <indexes>
                   <index name="PK_REPORTERSETGRP" tablespace="USERS" type="NORMAL">
                      <columns>
-                        <column idref="Platform/ReporterSetGroup/REPOTER_SET_GROUP_ID"/>
+                        <column idref="Platform/ReporterSetGroup/REPORTER_SET_GROUP_ID"/>
                      </columns>
                   </index>
                   <index name="REPORTERSETGRP_UQ1" tablespace="USERS" type="NORMAL">
@@ -12910,7 +12912,7 @@
                <indexes>
                   <index name="PK_REPORTERSET" tablespace="USERS" type="NORMAL">
                      <columns>
-                        <column idref="Platform/ReporterSet/REPOTER_SET_ID"/>
+                        <column idref="Platform/ReporterSet/REPORTER_SET_ID"/>
                      </columns>
                   </index>
                   <index name="REPORTERSET_IND01" tablespace="USERS" type="NORMAL">
@@ -13097,7 +13099,7 @@
                   </index>
                  <index name="REPORTERSET_R02" tablespace="USERS" type="NORMAL">
                      <columns>
-                        <column idref="Platform/Reporter/REPORTERSET_ID"/>
+                        <column idref="Platform/Reporter/REPORTER_SET_ID"/>
                         <column idref="Platform/Reporter/PHYSICAL_LOCATION"/>
                      </columns>
                   </index>
@@ -13146,7 +13148,7 @@
                  <index name="REPORTERLOCATION_R01" tablespace="USERS" type="NORMAL">
                      <columns>
                          <column idref="Platform/ReporterLocation/REPORTER_ID"/>
-                         <column idref="Platform/ReporterLocatioin/NA_SEQUENCE_ID"/>
+                         <column idref="Platform/ReporterLocation/NA_SEQUENCE_ID"/>
                          <column idref="Platform/ReporterLocation/START"/>
                          <column idref="Platform/ReporterLocation/END"/>
                     </columns>
@@ -13341,7 +13343,7 @@
                   </constraint>
                </constraints>
             </table>
-            <table id="Model/Network" name="ModelContext" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Model" updatable="true">
+            <table id="Model/Network" name="Network" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Model" updatable="true">
                <columns>
                   <column id="Model/Network/NETWORK_ID" name="NETWORK_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="Model/Network/NAME" name="NAME" nullable="false" length="100" precision="0" type="STRING"/>
@@ -13365,7 +13367,7 @@
             <table id="Model/NetworkNode" name="NetworkNode" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Model" updatable="true">
                <columns>
                   <column id="Model/NetworkNode/NETWORK_NODE_ID" name="NETWORK_NODE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-                  <column id="Model/NetworkNode/NODE_TYPE_ID" name="NAME" nullable="false" length="10" precision="0" type="NUMBER"/>
+                  <column id="Model/NetworkNode/NODE_TYPE_ID" name="NODE_TYPE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="Model/NetworkNode/TABLE_ID" name="TABLE_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
                   <column id="Model/NetworkNode/ROW_ID" name="ROW_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
                   <column id="Model/NetworkNode/DISPLAY_LABEL" name="DISPLAY_LABEL" nullable="true" length="25" precision="0" type="STRING"/>
@@ -13398,7 +13400,7 @@
                         <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
                      </referencedColumns>
                   </constraint>
-                  <constraint name="FK_NETWORKNODE_TABLE" type="FOREIGN_KEY">
+                  <constraint name="FK_NETWORKNODE_TAB" type="FOREIGN_KEY">
                      <constrainedColumns>
                         <column idref="Model/NetworkNode/TABLE_ID"/>
                      </constrainedColumns>
@@ -13483,7 +13485,7 @@
                         <column idref="Model/NetworkRelationshipType/NETWORK_RELATIONSHIP_TYPE_ID"/>
                      </columns>
                   </index>
-                  <index name="NETWORKREL_R01" tablespace="USERS" type="NORMAL">
+                  <index name="NETWORKRELTYPE_R01" tablespace="USERS" type="NORMAL">
                      <columns>
                         <column idref="Model/NetworkRelationshipType/RELATIONSHIP_TYPE_ID"/>
                         <column idref="Model/NetworkRelationshipType/DISPLAY_NAME"/>
@@ -13526,7 +13528,7 @@
                   <column id="Model/NetworkRelEvidence/SCORE1" name="SCORE1" nullable="true" length="12" precision="0" type="FLOAT"/>
                   <column id="Model/NetworkRelEvidence/SCORE1_TYPE_ID" name="SCORE1_TYPE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="Model/NetworkRelEvidence/SCORE2" name="SCORE2" nullable="true" length="12" precision="0" type="FLOAT"/>
-                  <column id="Model/NetworkRelEvidence/SCORE2_TYPE_ID" name="SCORE2_TYPE__ID" nullable="true" length="10" precision="0" type="NUMBER"/>
+                  <column id="Model/NetworkRelEvidence/SCORE2_TYPE_ID" name="SCORE2_TYPE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="Model/NetworkRelEvidence/TEXT_EVIDENCE" name="TEXT_EVIDENCe" nullable="true" length="250" precision="0" type="STRING"/>
                   <column id="Model/NetworkRelEvidence/GENOMIC_LOCATION" name="GENOMIC_LOCATION" nullable="true" length="50" precision="0" type="STRING"/>
                   <column id="Model/NetworkRelEvidence/DISPLAY_NAME" name="DISPLAY_NAME" nullable="true" length="500" precision="0" type="STRING"/>
@@ -13577,7 +13579,7 @@
                         <column idref="Model/NetworkRelEvidence/NETWORK_REL_EVIDENCE_ID"/>
                      </constrainedColumns>
                   </constraint>
-                 <constraint name="FK_NETWORKRELEVIDENCE_NETWORKRELCTX" type="FOREIGN_KEY">
+                 <constraint name="FK_NETWORKRELEV_CTX" type="FOREIGN_KEY">
                      <constrainedColumns>
                         <column idref="Model/NetworkRelEvidence/NETWORK_REL_CONTEXT_ID"/>
                      </constrainedColumns>
@@ -13674,7 +13676,7 @@
                         <column idref="Model/NetworkRelContext/NETWORK_REL_CONTEXT_ID"/>
                      </constrainedColumns>
                   </constraint>
-                  <constraint name="FK_NETWORKRELCTX_NETWORKREL" type="FOREIGN_KEY">
+                  <constraint name="FK_NETWORKREL" type="FOREIGN_KEY">
                      <constrainedColumns>
                         <column idref="Model/NetworkRelContext/NETWORK_RELATIONSHIP_ID"/>
                      </constrainedColumns>
@@ -13683,7 +13685,7 @@
                         <column idref="Model/NetworkRelationship/NETWORK_RELATIONSHIP_ID"/>
                      </referencedColumns>
                   </constraint>
-                  <constraint name="FK_NETWORKRELCTX_NETWORKRELTYPE" type="FOREIGN_KEY">
+                  <constraint name="FK_NETWORKRELTYP" type="FOREIGN_KEY">
                      <constrainedColumns>
                         <column idref="Model/NetworkRelContext/NETWORK_RELATIONSHIP_TYPE_ID"/>
                      </constrainedColumns>
@@ -13692,7 +13694,7 @@
                         <column idref="Model/NetworkRelationshipType/NETWORK_RELATIONSHIP_TYPE_ID"/>
                      </referencedColumns>
                   </constraint>
-                 <constraint name="FK_NETWORKRELCTX_MODELCTX" type="FOREIGN_KEY">
+                 <constraint name="FK_NETWORKRELCTX" type="FOREIGN_KEY">
                      <constrainedColumns>
                         <column idref="Model/NetworkRelContext/NETWORK_CONTEXT_ID"/>
                      </constrainedColumns>
@@ -13739,7 +13741,7 @@
                         <column idref="Model/NetworkRelContextLink/NETWORK_RC_LINK_ID"/>
                      </constrainedColumns>
                   </constraint>
-                  <constraint name="FK_NETWORKRELCTXLINK_NETWORK" type="FOREIGN_KEY">
+                  <constraint name="FK_NWKRELCTXLNK_NWK" type="FOREIGN_KEY">
                      <constrainedColumns>
                         <column idref="Model/NetworkRelContextLink/NETWORK_ID"/>
                      </constrainedColumns>
@@ -13748,7 +13750,7 @@
                         <column idref="Model/Network/NETWORK_ID"/>
                      </referencedColumns>
                   </constraint>
-                  <constraint name="FK_NETWORKRELCTXLINK_NETWORKRELCTX" type="FOREIGN_KEY">
+                  <constraint name="FK_NTWKRELCTXLNK_CTX" type="FOREIGN_KEY">
                      <constrainedColumns>
                         <column idref="Model/NetworkRelContextLink/NETWORK_REL_CONTEXT_ID"/>
                      </constrainedColumns>
@@ -13776,7 +13778,7 @@
                <indexes>
                   <index name="PK_REPORTEREXPR" tablespace="USERS" type="NORMAL">
                      <columns>
-                        <column idref="Results/ReporterExpression/REPOTER_EXPRESSION_ID"/>
+                        <column idref="Results/ReporterExpression/REPORTER_EXPRESSION_ID"/>
                      </columns>
                   </index>
                  <index name="REPORTEREXPR_IND01" tablespace="USERS" type="NORMAL">
