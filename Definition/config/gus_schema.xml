@@ -22,7 +22,7 @@
                         <column idref="Core/Algorithm/ALGORITHM_ID"/>
                      </constrainedColumns>
                   </constraint>
-                  </constraints>
+               </constraints>
             </table>
             <table id="Core/AlgorithmImplementation" name="AlgorithmImplementation" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="Algorithm" updatable="true">
                <columns>
@@ -698,7 +698,7 @@
                </constraints>
             </table>
          </tables>
-               </schema>
+      </schema>
       <schema name="DoTS">
           <tables>
             <table id="DoTS/AAComment" name="AAComment" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="GenBank Sequence Record" updatable="true">
@@ -984,14 +984,14 @@
                      </columns>
                   </subclass>
                   <subclass id="DoTS/AAFeature/TransMembraneAAFeature" name="TransMembraneAAFeature" versioned="true" tablespace="USERS" categoryRef="AA Sequence Features" updatable="true">
-                         <columns>
-                                 <column id="DoTS/TransMembraneAAFeature/LENGTH" name="LENGTH" nullable="true" length="12" precision="0" type="NUMBER"/>
-                            <column id="DoTS/TransMembraneAAFeature/EXPECTED_AA" name="EXPECTED_AA" nullable="true" length="4000" precision="0" type="STRING"/>
-                            <column id="DoTS/TransMembraneAAFeature/FIRST_60" name="FIRST_60" nullable="true" length="4000" precision="0" type="STRING"/>
-                                 <column id="DoTS/TransMembraneAAFeature/PREDICTED_HELICES" name="PREDICTED_HELICES" nullable="true" length="12" precision="0" type="NUMBER"/>
-                                 <column id="DoTS/TransMembraneAAFeature/TOPOLOGY" name="TOPOLOGY" nullable="true" length="12" precision="0" type="NUMBER"/>
-                         </columns>
-                   </subclass>
+                     <columns>
+                        <column id="DoTS/TransMembraneAAFeature/LENGTH" name="LENGTH" nullable="true" length="12" precision="0" type="NUMBER"/>
+                        <column id="DoTS/TransMembraneAAFeature/EXPECTED_AA" name="EXPECTED_AA" nullable="true" length="4000" precision="0" type="STRING"/>
+                        <column id="DoTS/TransMembraneAAFeature/FIRST_60" name="FIRST_60" nullable="true" length="4000" precision="0" type="STRING"/>
+                        <column id="DoTS/TransMembraneAAFeature/PREDICTED_HELICES" name="PREDICTED_HELICES" nullable="true" length="12" precision="0" type="NUMBER"/>
+                        <column id="DoTS/TransMembraneAAFeature/TOPOLOGY" name="TOPOLOGY" nullable="true" length="12" precision="0" type="NUMBER"/>
+                     </columns>
+                  </subclass>
                </subclasses>
                <indexes>
                   <index name="AAFEATUREIMP_IND01" tablespace="USERS" type="NORMAL">
@@ -2174,7 +2174,7 @@
             <table id="DoTS/AASequenceSequenceGroup" name="AASequenceSequenceGroup" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="AA Ortholog" updatable="true">
                <columns>
                   <column id="DoTS/AASequenceSequenceGroup/AA_SEQUENCE_SEQUENCE_GROUP_ID" name="AA_SEQUENCE_SEQUENCE_GROUP_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
-                  <column id="DoTS/AASequenceSequenceGroup/AA_SEQUENCE_ID" name="AA_SEQUENCE_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
+                  <column id="DoTS/AASequenceSequenceGroup/AA_SEQUENCE_ID" name="AA_SEQUENCE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/AASequenceSequenceGroup/AA_SEQUENCE_GROUP_ID" name="AA_SEQUENCE_GROUP_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
                </columns>
                <indexes>
@@ -10985,6 +10985,7 @@
                   <column id="SRes/Contact/CONTACT_ID" name="CONTACT_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
                   <column id="SRes/Contact/AFFILIATION_ID" name="AFFILIATION_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
                   <column id="SRes/Contact/EXTERNAL_DATABASE_RELEASE_ID" name="EXTERNAL_DATABASE_RELEASE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
+                  <column id="SRes/Contact/TYPE_ID" name="TYPE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="SRes/Contact/SOURCE_ID" name="SOURCE_ID" nullable="true" length="255" precision="0" type="STRING"/>
                   <column id="SRes/Contact/NAME" name="NAME" nullable="true" length="255" precision="0" type="STRING"/>
                   <column id="SRes/Contact/FIRST" name="FIRST" nullable="true" length="255" precision="0" type="STRING"/>
@@ -11043,6 +11044,15 @@
                      <referencedTable idref="SRes/ExternalDatabaseRelease"/>
                      <referencedColumns>
                         <column idref="SRes/ExternalDatabaseRelease/EXTERNAL_DATABASE_RELEASE_ID"/>
+                     </referencedColumns>
+                  </constraint>
+                  <constraint name="FK_CONTACT_TYPE" type="FOREIGN_KEY">
+                     <constrainedColumns>
+                        <column idref="SRes/Contact/TYPE_ID"/>
+                     </constrainedColumns>
+                     <referencedTable idref="SRes/OntologyTerm"/>
+                     <referencedColumns>
+                        <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
                      </referencedColumns>
                   </constraint>
                   <constraint name="CONTACT_NAME_UQ" type="UNIQUE">
@@ -11461,7 +11471,7 @@
             <table id="SRes/OntologySynonym" name="OntologySynonym" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="General Ontology" updatable="true">
                <columns>
                   <column id="SRes/OntologySynonym/ONTOLOGY_SYNONYM_ID" name="ONTOLOGY_SYNONYM_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-                  <column id="SRes/OntologySynonym/ONTOLOGY_TERM_ID" name="ONTOLOGY_TERM_ID" nullable="false" length="10" precision="0" type="NUMBER"/> 
+                  <column id="SRes/OntologySynonym/ONTOLOGY_TERM_ID" name="ONTOLOGY_TERM_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="SRes/OntologySynonym/ONTOLOGY_SYNONYM" name="ONTOLOGY_SYNONYM" nullable="false" length="50" precision="0" type="STRING"/>
                   <column id="SRes/OntologySynonym/EXTERNAL_DATABASE_RELEASE_ID" name="EXTERNAL_DATABASE_RELEASE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="SRes/OntologySynonym/SOURCE_ID" name="SOURCE_ID" nullable="false" length="255" precision="0" type="STRING"/>
@@ -11923,16 +11933,19 @@
          </tables>
       </schema>
       <schema name="Study">
-         <tables> 
+         <tables>
             <table id="Study/Study" name="Study" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Experimental Design" updatable="true">
                <columns>
                   <column id="Study/Study/STUDY_ID" name="STUDY_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
                   <column id="Study/Study/INVESTIGATION_ID" name="INVESTIGATION_ID" nullable="true" length="5" precision="0" type="NUMBER"/>
                   <column id="Study/Study/NAME" name="NAME" nullable="false" length="200" precision="0" type="STRING"/>
                   <column id="Study/Study/DESCRIPTION" name="DESCRIPTION" nullable="true" length="4000" precision="0" type="STRING"/>
-                  <column id="Study/Study/CONTACT_ID" name="CONTACT_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
                   <column id="Study/Study/EXTERNAL_DATABASE_RELEASE_ID" name="EXTERNAL_DATABASE_RELEASE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="Study/Study/SOURCE_ID" name="SOURCE_ID" nullable="true" length="100" precision="0" type="STRING"/>
+                  <column id="Study/Study/GOAL" name="GOAL" nullable="true" length="4000" precision="0" type="STRING"/>
+                  <column id="Study/Study/APPROACHES" name="APPROACHES" nullable="true" length="4000" precision="0" type="STRING"/>
+                  <column id="Study/Study/RESULTS" name="RESULTS" nullable="true" length="4000" precision="0" type="STRING"/>
+                  <column id="Study/Study/CONCLUSIONS" name="CONCLUSIONS" nullable="true" length="4000" precision="0" type="STRING"/>
                </columns>
                <indexes>
                   <index name="PK_STUDY" tablespace="USERS" type="NORMAL">
@@ -11948,11 +11961,6 @@
                   <index name="STUDY_IND01" tablespace="USERS" type="NORMAL">
                      <columns>
                         <column idref="Study/Study/INVESTIGATION_ID"/>
-                     </columns>
-                  </index>
-                 <index name="STUDY_IND02" tablespace="USERS" type="NORMAL">
-                     <columns>
-                        <column idref="Study/Study/CONTACT_ID"/>
                      </columns>
                   </index>
                   <index name="STUDY_IND03" tablespace="USERS" type="NORMAL">
@@ -11976,15 +11984,6 @@
                         <column idref="Study/Study/STUDY_ID"/>
                      </referencedColumns>
                   </constraint>
-                 <constraint name="FK_STUDY_CONTACT" type="FOREIGN_KEY">
-                     <constrainedColumns>
-                        <column idref="Study/Study/CONTACT_ID"/>
-                     </constrainedColumns>
-                     <referencedTable idref="SRes/Contact"/>
-                     <referencedColumns>
-                        <column idref="SRes/Contact/CONTACT_ID"/>
-                     </referencedColumns>
-                  </constraint>
                   <constraint name="FK_STUDY_EXTDBRLS" type="FOREIGN_KEY">
                      <constrainedColumns>
                         <column idref="Study/Study/EXTERNAL_DATABASE_RELEASE_ID"/>
@@ -12004,7 +12003,7 @@
             <table id="Study/StudyBibRef" name="StudyBibRef" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Experimental Design" updatable="true">
                <columns>
                   <column id="Study/StudyBibRef/STUDY_BIB_REF_ID" name="STUDY_BIB_REF_ID" nullable="false" length="4" precision="0" type="NUMBER"/>
-                  <column id="Study/StudyBibRef/STUDY_ID" name="STUDY_ID" nullable="false" length="5" precision="0" type="NUMBER"/>                
+                  <column id="Study/StudyBibRef/STUDY_ID" name="STUDY_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
                   <column id="Study/StudyBibRef/BIBLIOGRAPHIC_REFERENCE_ID" name="BIBLIOGRAPHIC_REFERENCE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                </columns>
                <indexes>
@@ -12050,11 +12049,60 @@
                   </constraint>
                </constraints>
             </table>
+            <table id="Study/StudyContact" name="StudyContact" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Experimental Design" updatable="true">
+               <columns>
+                  <column id="Study/StudyContact/STUDY_CONTACT_ID" name="STUDY_CONTACT_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
+                  <column id="Study/StudyContact/STUDY_ID" name="STUDY_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
+                  <column id="Study/StudyContact/CONTACT_ID" name="CONTACT_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
+                  <column id="Study/StudyContact/ROLE_ID" name="ROLE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
+               </columns>
+               <indexes>
+                  <index name="PK_STUDCON" tablespace="USERS" type="NORMAL">
+                     <columns>
+                        <column idref="Study/StudyContact/STUDY_CONTACT_ID"/>
+                     </columns>
+                  </index>
+               </indexes>
+               <constraints>
+                  <constraint name="PK_STUDCON" type="PRIMARY_KEY">
+                     <constrainedColumns>
+                        <column idref="Study/StudyContact/STUDY_CONTACT_ID"/>
+                     </constrainedColumns>
+                  </constraint>
+                  <constraint name="FK_STUDCON_STUDY" type="FOREIGN_KEY">
+                     <constrainedColumns>
+                        <column idref="Study/StudyContact/STUDY_ID"/>
+                     </constrainedColumns>
+                     <referencedTable idref="Study/Study"/>
+                     <referencedColumns>
+                        <column idref="Study/Study/STUDY_ID"/>
+                     </referencedColumns>
+                  </constraint>
+                  <constraint name="FK_STUDCON_CONTACT" type="FOREIGN_KEY">
+                     <constrainedColumns>
+                        <column idref="Study/StudyContact/CONTACT_ID"/>
+                     </constrainedColumns>
+                     <referencedTable idref="SRes/Contact"/>
+                     <referencedColumns>
+                        <column idref="SRes/Contact/CONTACT_ID"/>
+                     </referencedColumns>
+                  </constraint>
+                  <constraint name="FK_STUDCON_ROLE" type="FOREIGN_KEY">
+                     <constrainedColumns>
+                        <column idref="Study/StudyContact/ROLE_ID"/>
+                     </constrainedColumns>
+                     <referencedTable idref="SRes/OntologyTerm"/>
+                     <referencedColumns>
+                        <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
+                     </referencedColumns>
+                  </constraint>
+               </constraints>
+            </table>
             <table id="Study/StudyDesign" name="StudyDesign" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Experimental Design" updatable="true">
                <columns>
                   <column id="Study/StudyDesign/STUDY_DESIGN_ID" name="STUDY_DESIGN_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
                   <column id="Study/StudyDesign/STUDY_ID" name="STUDY_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
-                  <column id="Study/StudyDesign/STUDY_DESIGN_TYPE_ID" name="STUDY_DESIGN_TYPE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>                
+                  <column id="Study/StudyDesign/STUDY_DESIGN_TYPE_ID" name="STUDY_DESIGN_TYPE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                </columns>
                <indexes>
                   <index name="PK_STUDYDESIGN" tablespace="USERS" type="NORMAL">
@@ -12163,10 +12211,11 @@
                   <column id="Study/ProtocolAppNode/TYPE_ID" name="TYPE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="Study/ProtocolAppNode/NAME" name="NAME" nullable="false" length="200" precision="0" type="STRING"/>
                   <column id="Study/ProtocolAppNode/DESCRIPTION" name="DESCRIPTION" nullable="true" length="1000" precision="0" type="STRING"/>
-                  <column id="Study/ProtocolAppNode/uri" name="URI" nullable="true" length="300" precision="0" type="STRING"/>
+                  <column id="Study/ProtocolAppNode/URI" name="URI" nullable="true" length="300" precision="0" type="STRING"/>
                   <column id="Study/ProtocolAppNode/EXTERNAL_DATABASE_RELEASE_ID" name="EXTERNAL_DATABASE_RELEASE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="Study/ProtocolAppNode/SOURCE_ID" name="SOURCE_ID" nullable="true" length="100" precision="0" type="STRING"/>
                   <column id="Study/ProtocolAppNode/SUBTYPE_ID" name="SUBTYPE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
+                  <column id="Study/ProtocolAppNode/TAXON_ID" name="TAXON_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                </columns>
                <indexes>
                   <index name="PK_PAN" tablespace="USERS" type="NORMAL">
@@ -12221,6 +12270,15 @@
                      <referencedTable idref="SRes/OntologyTerm"/>
                      <referencedColumns>
                         <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
+                     </referencedColumns>
+                  </constraint>
+                  <constraint name="FK_PAN_TAX" type="FOREIGN_KEY">
+                     <constrainedColumns>
+                        <column idref="Study/ProtocolAppNode/TAXON_ID"/>
+                     </constrainedColumns>
+                     <referencedTable idref="SRes/Taxon"/>
+                     <referencedColumns>
+                        <column idref="SRes/Taxon/TAXON_ID"/>
                      </referencedColumns>
                   </constraint>
                </constraints>
@@ -12338,20 +12396,11 @@
             <table id="Study/Characteristic" name="Characteristic" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Experimental Design" updatable="true">
                <columns>
                   <column id="Study/Characteristic/CHARACTERISTIC_ID" name="CHARACTERISTIC_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
-                  <column id="Study/Characteristic/SUBCLASS_VIEW" name="SUBCLASS_VIEW" nullable="false" length="30" precision="0" type="STRING"/>
                   <column id="Study/Characteristic/PROTOCOL_APP_NODE_ID" name="PROTOCOL_APP_NODE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="Study/Characteristic/ONTOLOGY_TERM_ID" name="ONTOLOGY_TERM_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-                  <column id="Study/DataCharacteristic/TABLE_ID" name="TABLE_ID" nullable="true" length="5" precision="0" type="NUMBER"/>
+                  <column id="Study/Characteristic/TABLE_ID" name="TABLE_ID" nullable="true" length="5" precision="0" type="NUMBER"/>
+                  <column id="Study/Characteristic/ROW_ID" name="ROW_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
                </columns>
-               <subclasses>
-                  <subclass id="Study/BiomaterialCharacteristic" name="BiomaterialCharacteristic" versioned="false" tablespace="USERS" categoryRef="Experimental Design" updatable="true">
-                     <columns>
-                        <column id="Study/BiomaterialCharacteristic/VALUE" name="VALUE" nullable="true" length="100" precision="0" type="STRING"/>
-                     </columns>
-                  </subclass>
-                  <subclass id="Study/DataCharacteristic" name="DataCharacteristic" versioned="false" tablespace="USERS" categoryRef="Experimental Design" updatable="true">
-                  </subclass>
-              </subclasses>
               <indexes>
                   <index name="PK_CHAR" tablespace="USERS" type="NORMAL">
                      <columns>
@@ -12372,7 +12421,7 @@
                      <columns>
                         <column idref="Study/Characteristic/TABLE_ID"/>
                      </columns>
-                  </index> 
+                  </index>
               </indexes>
                <constraints>
                  <constraint name="PK_CHAR" type="PRIMARY_KEY">
@@ -12407,7 +12456,7 @@
                         <column idref="Core/TableInfo/TABLE_ID"/>
                      </referencedColumns>
                   </constraint>
-                </constraints>
+               </constraints>
             </table>
             <table id="Study/Protocol" name="Protocol" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Experimental Design" updatable="true">
                <columns>
@@ -12556,7 +12605,7 @@
                      </constrainedColumns>
                   </constraint>
                </constraints>
-            </table>      
+            </table>
             <table id="Study/ProtocolSeries" name="ProtocolSeries" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Experimental Design" updatable="true">
                <columns>
                   <column id="Study/ProtocolSeries/PROTOCOL_SERIES_ID" name="PROTOCOL_SERIES_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
@@ -12627,12 +12676,11 @@
                   </constraint>
                </constraints>
             </table>
-           <table id="Study/ProtocolApp" name="ProtocolApp" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Experimental Design" updatable="true">
+            <table id="Study/ProtocolApp" name="ProtocolApp" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Experimental Design" updatable="true">
                <columns>
                   <column id="Study/ProtocolApp/PROTOCOL_APP_ID" name="PROTOCOL_APP_ID" nullable="false" length="11" precision="0" type="NUMBER"/>
-                  <column id="Study/ProtocolApp/PROTOCOL_SERIES_ID" name="PROTOCOL_SERIES_ID" nullable="false" length="10" precision="0" type="NUMBER"/>     
+                  <column id="Study/ProtocolApp/PROTOCOL_SERIES_ID" name="PROTOCOL_SERIES_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="Study/ProtocolApp/PROTOCOL_APP_DATE" name="PROTOCOL_APP_DATE" nullable="true" length="0" precision="0" type="DATE"/>
-                  <column id="Study/ProtocolApp/CONTACT_ID" name="CONTACT_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
                </columns>
                <indexes>
                   <index name="PK_PROTAPP" tablespace="USERS" type="NORMAL">
@@ -12643,11 +12691,6 @@
                   <index name="PROTAPP_IND01" tablespace="USERS" type="NORMAL">
                      <columns>
                         <column idref="Study/ProtocolApp/PROTOCOL_SERIES_ID"/>
-                     </columns>
-                  </index>
-                  <index name="PROTAPP_IND02" tablespace="USERS" type="NORMAL">
-                     <columns>
-                        <column idref="Study/ProtocolApp/CONTACT_ID"/>
                      </columns>
                   </index>
                </indexes>
@@ -12666,13 +12709,53 @@
                         <column idref="Study/ProtocolSeries/PROTOCOL_SERIES_ID"/>
                      </referencedColumns>
                   </constraint>
-                  <constraint name="FK_PROTAPP_CONTACT" type="FOREIGN_KEY">
+               </constraints>
+            </table>
+            <table id="Study/ProtocolAppContact" name="ProtocolAppContact" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Experimental Design" updatable="true">
+               <columns>
+                  <column id="Study/ProtocolAppContact/PROTOCOL_APP_CONTACT_ID" name="PROTOCOL_APP_CONTACT_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
+                  <column id="Study/ProtocolAppContact/PROTOCOL_APP_ID" name="PROTOCOL_APP_ID" nullable="false" length="11" precision="0" type="NUMBER"/>
+                  <column id="Study/ProtocolAppContact/CONTACT_ID" name="CONTACT_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
+                  <column id="Study/ProtocolAppContact/ROLE_ID" name="ROLE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
+               </columns>
+               <indexes>
+                  <index name="PK_PROTAPPCON" tablespace="USERS" type="NORMAL">
+                     <columns>
+                        <column idref="Study/ProtocolAppContact/PROTOCOL_APP_CONTACT_ID"/>
+                     </columns>
+                  </index>
+               </indexes>
+               <constraints>
+                  <constraint name="PK_PROTAPPCON" type="PRIMARY_KEY">
                      <constrainedColumns>
-                        <column idref="Study/ProtocolApp/CONTACT_ID"/>
+                        <column idref="Study/ProtocolAppContact/PROTOCOL_APP_CONTACT_ID"/>
+                     </constrainedColumns>
+                  </constraint>
+                  <constraint name="FK_PROTAPPCON_PROTAPP" type="FOREIGN_KEY">
+                     <constrainedColumns>
+                        <column idref="Study/ProtocolAppContact/PROTOCOL_APP_ID"/>
+                     </constrainedColumns>
+                     <referencedTable idref="Study/ProtocolApp"/>
+                     <referencedColumns>
+                        <column idref="Study/ProtocolApp/PROTOCOL_APP_ID"/>
+                     </referencedColumns>
+                  </constraint>
+                  <constraint name="FK_PROTAPPCON_CONTACT" type="FOREIGN_KEY">
+                     <constrainedColumns>
+                        <column idref="Study/ProtocolAppContact/CONTACT_ID"/>
                      </constrainedColumns>
                      <referencedTable idref="SRes/Contact"/>
                      <referencedColumns>
                         <column idref="SRes/Contact/CONTACT_ID"/>
+                     </referencedColumns>
+                  </constraint>
+                  <constraint name="FK_PROTAPPCON_ROLE" type="FOREIGN_KEY">
+                     <constrainedColumns>
+                        <column idref="Study/ProtocolAppContact/ROLE_ID"/>
+                     </constrainedColumns>
+                     <referencedTable idref="SRes/OntologyTerm"/>
+                     <referencedColumns>
+                        <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
                      </referencedColumns>
                   </constraint>
                </constraints>
@@ -12742,7 +12825,76 @@
                      </referencedColumns>
                   </constraint>
                </constraints>
-            </table>      
+            </table>
+            <table id="Study/Funding" name="Funding" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Experimental Design" updatable="true">
+               <columns>
+                  <column id="Study/Funding/FUNDING_ID" name="FUNDING_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
+                  <column id="Study/Funding/CONTACT_ID" name="CONTACT_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
+                  <column id="Study/Funding/GRANT_ID" name="GRANT_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+               </columns>
+               <indexes>
+                  <index name="PK_FUNDING" tablespace="USERS" type="NORMAL">
+                     <columns>
+                        <column idref="Study/Funding/FUNDING_ID"/>
+                     </columns>
+                  </index>
+               </indexes>
+               <constraints>
+                  <constraint name="PK_FUNDING" type="PRIMARY_KEY">
+                     <constrainedColumns>
+                        <column idref="Study/Funding/FUNDING_ID"/>
+                     </constrainedColumns>
+                  </constraint>
+                  <constraint name="FK_FUNDING_CONTACT" type="FOREIGN_KEY">
+                     <constrainedColumns>
+                        <column idref="Study/Funding/CONTACT_ID"/>
+                     </constrainedColumns>
+                     <referencedTable idref="SRes/Contact"/>
+                     <referencedColumns>
+                        <column idref="SRes/Contact/CONTACT_ID"/>
+                     </referencedColumns>
+                  </constraint>
+               </constraints>
+            </table>
+            <table id="Study/StudyFunding" name="StudyFunding" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Experimental Design" updatable="true">
+               <columns>
+                  <column id="Study/StudyFunding/STUDY_FUNDING_ID" name="STUDY_FUNDING_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
+                  <column id="Study/StudyFunding/STUDY_ID" name="STUDY_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
+                  <column id="Study/StudyFunding/FUNDING_ID" name="FUNDING_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
+               </columns>
+               <indexes>
+                  <index name="PK_STUDYFUND" tablespace="USERS" type="NORMAL">
+                     <columns>
+                        <column idref="Study/StudyFunding/STUDY_FUNDING_ID"/>
+                     </columns>
+                  </index>
+               </indexes>
+               <constraints>
+                  <constraint name="PK_STUDFUND" type="PRIMARY_KEY">
+                     <constrainedColumns>
+                        <column idref="Study/StudyFunding/STUDY_FUNDING_ID"/>
+                     </constrainedColumns>
+                  </constraint>
+                  <constraint name="FK_STUDFUND_STUDY" type="FOREIGN_KEY">
+                     <constrainedColumns>
+                        <column idref="Study/StudyFunding/STUDY_ID"/>
+                     </constrainedColumns>
+                     <referencedTable idref="Study/Study"/>
+                     <referencedColumns>
+                        <column idref="Study/Study/STUDY_ID"/>
+                     </referencedColumns>
+                  </constraint>
+                  <constraint name="FK_STUDFUND_FUNDING" type="FOREIGN_KEY">
+                     <constrainedColumns>
+                        <column idref="Study/StudyFunding/FUNDING_ID"/>
+                     </constrainedColumns>
+                     <referencedTable idref="Study/Funding"/>
+                     <referencedColumns>
+                        <column idref="Study/Funding/FUNDING_ID"/>
+                     </referencedColumns>
+                  </constraint>
+               </constraints>
+            </table>
             <table id="Study/Input" name="Input" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Experimental Design" updatable="true">
                <columns>
                   <column id="Study/Input/INPUT_ID" name="INPUT_ID" nullable="false" length="11" precision="0" type="NUMBER"/>
@@ -12844,13 +12996,13 @@
          </tables>
       </schema>
       <schema name="Platform">
-         <tables> 
+         <tables>
             <table id="Platform/ReporterSetGroup" name="ReporterSetGroup" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Platform" updatable="true">
                <columns>
                   <column id="Platform/ReporterSetGroup/REPORTER_SET_GROUP_ID" name="REPORTER_SET_GROUP_ID" nullable="false" length="3" precision="0" type="NUMBER"/>
                  <column id="Platform/ReporterSetGroup/NAME" name="NAME" nullable="false" length="100" precision="0" type="STRING"/>
                   <column id="Platform/ReporterSetGroup/DESCRIPTION" name="DESCRIPTION" nullable="true" length="500" precision="0" type="STRING"/>
-               </columns> 
+               </columns>
               <indexes>
                   <index name="PK_REPORTERSETGRP" tablespace="USERS" type="NORMAL">
                      <columns>
@@ -12862,7 +13014,7 @@
                         <column idref="Platform/ReporterSet/NAME"/>
                      </columns>
                   </index>
-               </indexes> 
+               </indexes>
                <constraints>
                   <constraint name="PK_REPORTERSETGRP" type="PRIMARY_KEY">
                      <constrainedColumns>
@@ -12872,14 +13024,14 @@
                   <constraint name="REPORTERSETGRP_UQ1" type="UNIQUE">
                      <constrainedColumns>
                         <column idref="Platform/ReporterSet/NAME"/>
-                      </constrainedColumns>
+                     </constrainedColumns>
                   </constraint>
-              </constraints>   
-           </table>
+               </constraints>
+            </table>
             <table id="Platform/ReporterSet" name="ReporterSet" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Platform" updatable="true">
                <columns>
                   <column id="Platform/ReporterSet/REPORTER_SET_ID" name="REPORTER_SET_ID" nullable="false" length="4" precision="0" type="NUMBER"/>
-                  <column id="Platform/ReporterSet/SUBCLASS_VIEW" name="SUBCLASS_VIEW" nullable="false" length="30" precision="0" type="STRING"/>                 
+                  <column id="Platform/ReporterSet/SUBCLASS_VIEW" name="SUBCLASS_VIEW" nullable="false" length="30" precision="0" type="STRING"/>
                   <column id="Platform/ReporterSet/REPORTER_SET_GROUP_ID" name="REPORTER_SET_GROUP_ID" nullable="true" length="3" precision="0" type="NUMBER"/>
                  <column id="Platform/ReporterSet/NAME" name="NAME" nullable="false" length="100" precision="0" type="STRING"/>
                   <column id="Platform/ReporterSet/VERSION" name="VERSION" nullable="true" length="20" precision="0" type="STRING"/>
@@ -12894,15 +13046,15 @@
                </columns>
                <subclasses>
                   <subclass id="Platform/ReporterSet/ArrayDesign" name="ArrayDesign" versioned="false" tablespace="USERS" categoryRef="Platform" updatable="true">
-                     <columns> 
-                        <column id="Platform/ArrayDesign/ARRAY_DIMENSIONS" name="ARRAY_DIMENSIONS" nullable="true" length="50" precision="0" type="STRING"/>  
-                        <column id="Platform/ArrayDesign/ELEMENT_DIMENSIONS" name="ELEMENT_DIMENSIONS" nullable="true" length="50" precision="0" type="STRING"/>   
-                        <column id="Platform/ArrayDesign/NUMBER_OF_ELEMENTS" name="NUMBER_OF_ELEMENTS" nullable="true" length="10" precision="0" type="NUMBER"/> 
-                        <column id="Platform/ArrayDesign/NUMBER_ARRAY_ROWS" name="NUMBER_ARRAY_ROWS" nullable="true" length="3" precision="0" type="NUMBER"/> 
-                        <column id="Platform/ArrayDesign/NUMBER_ARRAY_COLUMNS" name="NUMBER_ARRAY_COLUMNS" nullable="true" length="3" precision="0" type="NUMBER"/> 
-                        <column id="Platform/ArrayDesign/NUMBER_GRID_ROWS" name="NUMBER_GRID_ROWS" nullable="true" length="3" precision="0" type="NUMBER"/> 
-                        <column id="Platform/ArrayDesign/NUMBER_GRID_COLUMNS" name="NUMBER_GRID_COLUMNS" nullable="true" length="3" precision="0" type="NUMBER"/> 
-                        <column id="Platform/ArrayDesign/NUMBER_SUB_ROWS" name="NUMBER_SUB_ROWS" nullable="true" length="6" precision="0" type="NUMBER"/> 
+                     <columns>
+                        <column id="Platform/ArrayDesign/ARRAY_DIMENSIONS" name="ARRAY_DIMENSIONS" nullable="true" length="50" precision="0" type="STRING"/>
+                        <column id="Platform/ArrayDesign/ELEMENT_DIMENSIONS" name="ELEMENT_DIMENSIONS" nullable="true" length="50" precision="0" type="STRING"/>
+                        <column id="Platform/ArrayDesign/NUMBER_OF_ELEMENTS" name="NUMBER_OF_ELEMENTS" nullable="true" length="10" precision="0" type="NUMBER"/>
+                        <column id="Platform/ArrayDesign/NUMBER_ARRAY_ROWS" name="NUMBER_ARRAY_ROWS" nullable="true" length="3" precision="0" type="NUMBER"/>
+                        <column id="Platform/ArrayDesign/NUMBER_ARRAY_COLUMNS" name="NUMBER_ARRAY_COLUMNS" nullable="true" length="3" precision="0" type="NUMBER"/>
+                        <column id="Platform/ArrayDesign/NUMBER_GRID_ROWS" name="NUMBER_GRID_ROWS" nullable="true" length="3" precision="0" type="NUMBER"/>
+                        <column id="Platform/ArrayDesign/NUMBER_GRID_COLUMNS" name="NUMBER_GRID_COLUMNS" nullable="true" length="3" precision="0" type="NUMBER"/>
+                        <column id="Platform/ArrayDesign/NUMBER_SUB_ROWS" name="NUMBER_SUB_ROWS" nullable="true" length="6" precision="0" type="NUMBER"/>
                         <column id="Platform/ArrayDesign/NUMBER_SUB_COLUMNS" name="NUMBER_SUB_COLUMNS" nullable="true" length="6" precision="0" type="NUMBER"/>
                      </columns>
                   </subclass>
@@ -13074,7 +13226,7 @@
                   </constraint>
                </constraints>
             </table>
-           <table id="Platform/Reporter" name="Reporter" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Platform" updatable="true">
+            <table id="Platform/Reporter" name="Reporter" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Platform" updatable="true">
                <columns>
                   <column id="Platform/Reporter/REPORTER_ID" name="REPORTER_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
                   <column id="Platform/Reporter/REPORTER_SET_ID" name="REPORTER_SET_ID" nullable="false" length="4" precision="0" type="NUMBER"/>
@@ -13128,7 +13280,7 @@
                   </constraint>
                </constraints>
             </table>
-           <table id="Platform/ReporterLocation" name="ReporterLocation" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Platform" updatable="true">
+            <table id="Platform/ReporterLocation" name="ReporterLocation" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Platform" updatable="true">
                <columns>
                   <column id="Platform/ReporterLocation/REPORTER_LOCATION_ID" name="REPORTER_LOCATION_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
                   <column id="Platform/ReporterLocation/REPORTER_ID" name="REPORTER_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
@@ -13178,7 +13330,7 @@
                   </constraint>
                </constraints>
             </table>
-          <table id="Platform/ReporterGene" name="ReporterGene" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Platform" updatable="true">
+            <table id="Platform/ReporterGene" name="ReporterGene" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Platform" updatable="true">
                <columns>
                   <column id="Platform/ReporterGene/REPORTER_GENE_ID" name="REPORTER_GENE_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
                   <column id="Platform/ReporterGene/REPORTER_ID" name="REPORTER_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
@@ -13227,7 +13379,7 @@
                   </constraint>
                </constraints>
             </table>
-          <table id="Platform/ReporterNAFeature" name="ReporterNaFeature" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Platform" updatable="true">
+            <table id="Platform/ReporterNAFeature" name="ReporterNaFeature" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Platform" updatable="true">
                <columns>
                   <column id="Platform/ReporterNAFeature/REPORTER_NA_FEAT_ID" name="REPORTER_NA_FEAT_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
                   <column id="Platform/ReporterNAFeature/REPORTER_ID" name="REPORTER_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
@@ -14028,7 +14180,7 @@
                   </constraint>
                </constraints>
             </table>
-           <table id="Results/SegmentResult" name="SegmentResult" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Results" updatable="true">
+            <table id="Results/SegmentResult" name="SegmentResult" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Results" updatable="true">
                <columns>
                   <column id="Results/SegmentResult/SEGMENT_RESULT_ID" name="SEGMENT_RESULT_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
                   <column id="Results/SegmentResult/PROTOCOL_APP_NODE_ID" name="PROTOCOL_APP_NODE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
@@ -14102,7 +14254,7 @@
                   </constraint>
                </constraints>
             </table>
-           <table id="Results/SegmentDiffResult" name="SegmentDiffResult" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Results" updatable="true">
+            <table id="Results/SegmentDiffResult" name="SegmentDiffResult" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Results" updatable="true">
                <columns>
                   <column id="Results/SegmentDiffResult/SEGMENT_DIFF_RES_ID" name="SEGMENT_DIFF_RES_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
                   <column id="Results/SegmentDiffResult/PROTOCOL_APP_NODE_ID" name="PROTOCOL_APP_NODE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
@@ -14180,7 +14332,7 @@
                   </constraint>
                </constraints>
             </table>
-           <table id="Results/EditingEvent" name="EditingEvent" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Results" updatable="true">
+            <table id="Results/EditingEvent" name="EditingEvent" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Results" updatable="true">
                <columns>
                   <column id="Results/EditingEvent/EDITING_EVENT_ID" name="EDITING_EVENT_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
                   <column id="Results/EditingEvent/PROTOCOL_APP_NODE_ID" name="PROTOCOL_APP_NODE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
@@ -14258,7 +14410,7 @@
                   </constraint>
                </constraints>
             </table>
-          <table id="Results/ReporterDiffResult" name="ReporterDiffResult" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Results" updatable="true">
+            <table id="Results/ReporterDiffResult" name="ReporterDiffResult" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Results" updatable="true">
                <columns>
                   <column id="Results/ReporterDiffResult/REPORTER_DIFF_RES_ID" name="REPORTER_DIFF_RES_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
                   <column id="Results/ReporterDiffResult/PROTOCOL_APP_NODE_ID" name="PROTOCOL_APP_NODE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
@@ -14325,7 +14477,7 @@
                   </constraint>
                </constraints>
             </table>
-           <table id="Results/NAFeatureDiffResult" name="NAFeatureDiffResult" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Results" updatable="true">
+            <table id="Results/NAFeatureDiffResult" name="NAFeatureDiffResult" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Results" updatable="true">
                <columns>
                   <column id="Results/NAFeatureDiffResult/NA_FEAT_DIFF_RES_ID" name="NA_FEAT_DIFF_RES_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
                   <column id="Results/NAFeatureDiffResult/PROTOCOL_APP_NODE_ID" name="PROTOCOL_APP_NODE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
@@ -14392,7 +14544,7 @@
                   </constraint>
                </constraints>
             </table>
-           <table id="Results/RnaDiffResult" name="RnaDiffResult" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Results" updatable="true">
+            <table id="Results/RnaDiffResult" name="RnaDiffResult" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Results" updatable="true">
                <columns>
                   <column id="Results/RnaDiffResult/RNA_DIFF_RES_ID" name="RNA_DIFF_RES_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
                   <column id="Results/RnaDiffResult/PROTOCOL_APP_NODE_ID" name="PROTOCOL_APP_NODE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
@@ -14459,7 +14611,7 @@
                   </constraint>
                </constraints>
             </table>
-          <table id="Results/GeneDiffResult" name="GeneDiffResult" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Results" updatable="true">
+            <table id="Results/GeneDiffResult" name="GeneDiffResult" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Results" updatable="true">
                <columns>
                   <column id="Results/GeneDiffResult/GENE_DIFF_RES_ID" name="GENE_DIFF_RES_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
                   <column id="Results/GeneDiffResult/PROTOCOL_APP_NODE_ID" name="PROTOCOL_APP_NODE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
@@ -14526,7 +14678,7 @@
                   </constraint>
                </constraints>
             </table>
-         <table id="Results/FamilyDiffResult" name="FamilyDiffResult" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Results" updatable="true">
+            <table id="Results/FamilyDiffResult" name="FamilyDiffResult" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Results" updatable="true">
                <columns>
                   <column id="Results/FamilyDiffResult/FAMILY_DIFF_RES_ID" name="FAMILY_DIFF_RES_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
                   <column id="Results/FamilyDiffResult/PROTOCOL_APP_NODE_ID" name="PROTOCOL_APP_NODE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
@@ -14593,7 +14745,7 @@
                   </constraint>
                </constraints>
             </table>
-         <table id="Results/GeneSimilarity" name="GeneSimilarity" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Results" updatable="true">
+            <table id="Results/GeneSimilarity" name="GeneSimilarity" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Results" updatable="true">
                <columns>
                   <column id="Results/GeneSimilarity/GENE_SIMILARITY_ID" name="GENE_SIMILARITY_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
                   <column id="Results/GeneSimilarity/PROTOCOL_APP_NODE_ID" name="PROTOCOL_APP_NODE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
@@ -14649,7 +14801,7 @@
                   </constraint>
                </constraints>
             </table>
-        </tables>
+         </tables>
       </schema>
    </schemas>
 </database>
