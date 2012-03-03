@@ -12715,6 +12715,7 @@
                <columns>
                   <column id="Study/ProtocolAppContact/PROTOCOL_APP_CONTACT_ID" name="PROTOCOL_APP_CONTACT_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
                   <column id="Study/ProtocolAppContact/PROTOCOL_APP_ID" name="PROTOCOL_APP_ID" nullable="false" length="11" precision="0" type="NUMBER"/>
+                  <column id="Study/ProtocolAppContact/ORDER_NUM" name="ORDER_NUM" nullable="true" length="2" precision="0" type="NUMBER"/>
                   <column id="Study/ProtocolAppContact/CONTACT_ID" name="CONTACT_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
                   <column id="Study/ProtocolAppContact/ROLE_ID" name="ROLE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                </columns>
@@ -12765,7 +12766,11 @@
                   <column id="Study/ProtocolAppParam/PROTOCOL_APP_PARAM_ID" name="PROTOCOL_APP_PARAM_ID" nullable="false" length="11" precision="0" type="NUMBER"/>
                   <column id="Study/ProtocolAppParam/PROTOCOL_APP_ID" name="PROTOCOL_APP_ID" nullable="false" length="11" precision="0" type="NUMBER"/>
                   <column id="Study/ProtocolAppParam/PROTOCOL_PARAM_ID" name="PROTOCOL_PARAM_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-                  <column id="Study/ProtocolAppParam/VALUE" name="VALUE" nullable="false" length="100" precision="0" type="STRING"/>
+                  <column id="Study/ProtocolAppParam/STRING_VALUE" name="STRING_VALUE" nullable="true" length="3000" precision="0" type="STRING"/>
+                  <column id="Study/ProtocolAppParam/FLOAT_VALUE" name="FLOAT_VALUE" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Study/ProtocolAppParam/INT_VALUE" name="INT_VALUE" nullable="true" length="12" precision="0" type="NUMBER"/>
+                  <column id="Study/ProtocolAppParam/BOOLEAN_VALUE" name="BOOLEAN_VALUE" nullable="true" length="1" precision="0" type="NUMBER"/>
+                  <column id="Study/ProtocolAppParam/DATE_VALUE" name="DATE_VALUE" nullable="true" length="0" precision="0" type="DATE"/>
                   <column id="Study/ProtocolAppParam/TABLE_ID" name="TABLE_ID" nullable="true" length="5" precision="0" type="NUMBER"/>
                   <column id="Study/ProtocolAppParam/TABLE_ROW" name="TABLE_ROW" nullable="true" length="12" precision="0" type="NUMBER"/>
                </columns>
