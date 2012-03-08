@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<database name="null">
+<database name="GUS" version="4.0" patchLevel="0">
    <schemas>
       <schema name="Core">
          <tables>
