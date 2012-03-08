@@ -5,6 +5,12 @@
 
     <element name="database">
       <attribute name="name" />
+      <optional>
+        <attribute name="version" />
+      </optional>
+      <optional>
+        <attribute name="patchLevel" />
+      </optional>
 
       <element name="schemas">
 
