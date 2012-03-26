@@ -1044,11 +1044,6 @@
                         <column idref="DoTS/AAFeature/EXTERNAL_DATABASE_RELEASE_ID"/>
                      </columns>
                   </index>
-                  <index name="AAFEATUREIMP_IND10" tablespace="USERS" type="NORMAL">
-                     <columns>
-                        <column idref="DoTS/AAFeature/PFAM_ENTRY_ID"/>
-                     </columns>
-                  </index>
                   <index name="AAFEATUREIMP_IND11" tablespace="USERS" type="NORMAL">
                      <columns>
                         <column idref="DoTS/AAFeature/MOTIF_AA_SEQUENCE_ID"/>
@@ -1128,7 +1123,7 @@
                   </constraint>
                   <constraint name="AAFEATUREIMP_FK06" type="FOREIGN_KEY">
                      <constrainedColumns>
-                        <column idref="DoTS/AAFeature/PFAM_ENTRY_ID"/>
+                        <column idref="DoTS/DomainFeature/PFAM_ENTRY_ID"/>
                      </constrainedColumns>
                      <referencedTable idref="DoTS/PfamEntry"/>
                      <referencedColumns>
