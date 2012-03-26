@@ -1044,14 +1044,19 @@
                         <column idref="DoTS/AAFeature/EXTERNAL_DATABASE_RELEASE_ID"/>
                      </columns>
                   </index>
+                  <index name="AAFEATUREIMP_IND10" tablespace="USERS" type="NORMAL">
+                     <columns>
+                        <column idref="DoTS/DomainFeature/PFAM_ENTRY_ID"/>
+                     </columns>
+                  </index>
                   <index name="AAFEATUREIMP_IND11" tablespace="USERS" type="NORMAL">
                      <columns>
-                        <column idref="DoTS/AAFeature/MOTIF_AA_SEQUENCE_ID"/>
+                        <column idref="DoTS/DomainFeature/MOTIF_AA_SEQUENCE_ID"/>
                      </columns>
                   </index>
                   <index name="AAFEATUREIMP_IND12" tablespace="USERS" type="NORMAL">
                      <columns>
-                        <column idref="DoTS/AAFeature/REPEAT_TYPE_ID"/>
+                        <column idref="DoTS/RepeatRegionAAFeature/REPEAT_TYPE_ID"/>
                      </columns>
                   </index>
                   <index name="AAFEATUREIMP_IND13" tablespace="USERS" type="NORMAL">
@@ -1132,7 +1137,7 @@
                   </constraint>
                   <constraint name="AAFEATUREIMP_FK07" type="FOREIGN_KEY">
                      <constrainedColumns>
-                        <column idref="DoTS/AAFeature/MOTIF_AA_SEQUENCE_ID"/>
+                        <column idref="DoTS/DomainFeature/MOTIF_AA_SEQUENCE_ID"/>
                      </constrainedColumns>
                      <referencedTable idref="DoTS/AASequence"/>
                      <referencedColumns>
@@ -1141,7 +1146,7 @@
                   </constraint>
                   <constraint name="AAFEATUREIMP_FK08" type="FOREIGN_KEY">
                      <constrainedColumns>
-                        <column idref="DoTS/AAFeature/REPEAT_TYPE_ID"/>
+                        <column idref="DoTS/RepeatRegionAAFeature/REPEAT_TYPE_ID"/>
                      </constrainedColumns>
                      <referencedTable idref="DoTS/RepeatType"/>
                      <referencedColumns>
@@ -7912,6 +7917,8 @@
                   <column id="DoTS/NASequence/EXTERNAL_DATABASE_RELEASE_ID" name="EXTERNAL_DATABASE_RELEASE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/NASequence/SEQUENCING_CENTER_CONTACT_ID" name="SEQUENCING_CENTER_CONTACT_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
                   <column id="DoTS/NASequence/SOURCE_ID" name="SOURCE_ID" nullable="true" length="80" precision="0" type="STRING"/>
+                  <column id="DoTS/NASequence/SOURCE_NA_SEQUENCE_ID" name="SOURCE_NA_SEQUENCE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
+                  <column id="DoTS/NASequence/SEQUENCE_PIECE_ID" name="SEQUENCE_PIECE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                </columns>
                <subclasses>
                   <subclass id="DoTS/NASequence/Assembly" name="Assembly" versioned="true" tablespace="USERS" categoryRef="NA Sequence" updatable="true">
