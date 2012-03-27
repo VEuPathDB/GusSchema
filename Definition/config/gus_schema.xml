@@ -863,6 +863,9 @@
                   <column id="DoTS/AAFeature/SUBCLASS_VIEW" name="SUBCLASS_VIEW" nullable="true" length="30" precision="0" type="STRING"/>
                   <column id="DoTS/AAFeature/SEQUENCE_ONTOLOGY_ID" name="SEQUENCE_ONTOLOGY_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/AAFeature/DESCRIPTION" name="DESCRIPTION" nullable="true" length="4000" precision="0" type="STRING"/>
+                  <column id="DoTS/AAFeature/PFAM_ENTRY_ID" name="PFAM_ENTRY_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
+                  <column id="DoTS/AAFeature/MOTIF_AA_SEQUENCE_ID" name="MOTIF_AA_SEQUENCE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
+                  <column id="DoTS/AAFeature/REPEAT_TYPE_ID" name="REPEAT_TYPE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/AAFeature/EXTERNAL_DATABASE_RELEASE_ID" name="EXTERNAL_DATABASE_RELEASE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/AAFeature/SOURCE_ID" name="SOURCE_ID" nullable="true" length="50" precision="0" type="STRING"/>
                   <column id="DoTS/AAFeature/PREDICTION_ALGORITHM_ID" name="PREDICTION_ALGORITHM_ID" nullable="true" length="5" precision="0" type="NUMBER"/>
@@ -891,8 +894,6 @@
                         <column id="DoTS/DomainFeature/E_VALUE" name="E_VALUE" nullable="true" length="126" precision="0" type="FLOAT"/>
                         <column id="DoTS/DomainFeature/PROBABILITY" name="PROBABILITY" nullable="true" length="126" precision="0" type="FLOAT"/>
                         <column id="DoTS/DomainFeature/NUMBER_OF_DOMAINS" name="NUMBER_OF_DOMAINS" nullable="true" length="12" precision="0" type="NUMBER"/>
-                        <column id="DoTS/DomainFeature/PFAM_ENTRY_ID" name="PFAM_ENTRY_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
-                        <column id="DoTS/DomainFeature/MOTIF_AA_SEQUENCE_ID" name="MOTIF_AA_SEQUENCE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                      </columns>
                   </subclass>
                   <subclass id="DoTS/AAFeature/EpitopeFeature" name="EpitopeFeature" versioned="true" tablespace="USERS" categoryRef="AA Sequence Features" updatable="true">
@@ -935,7 +936,6 @@
                         <column id="DoTS/RepeatRegionAAFeature/SCORE" name="SCORE" nullable="true" length="126" precision="0" type="FLOAT"/>
                         <column id="DoTS/RepeatRegionAAFeature/CONSENSUS" name="CONSENSUS" nullable="true" length="4000" precision="0" type="STRING"/>
                         <column id="DoTS/RepeatRegionAAFeature/ALGORITHM_NAME" name="ALGORITHM_NAME" nullable="true" length="4000" precision="0" type="STRING"/>
-                        <column id="DoTS/RepeatRegionAAFeature/REPEAT_TYPE_ID" name="REPEAT_TYPE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                      </columns>
                   </subclass>
                   <subclass id="DoTS/AAFeature/SecondaryStructureAAFeature" name="SecondaryStructureAAFeature" versioned="true" tablespace="USERS" categoryRef="AA Sequence Features" updatable="true">
@@ -1046,17 +1046,17 @@
                   </index>
                   <index name="AAFEATUREIMP_IND10" tablespace="USERS" type="NORMAL">
                      <columns>
-                        <column idref="DoTS/DomainFeature/PFAM_ENTRY_ID"/>
+                        <column idref="DoTS/AAFeature/PFAM_ENTRY_ID"/>
                      </columns>
                   </index>
                   <index name="AAFEATUREIMP_IND11" tablespace="USERS" type="NORMAL">
                      <columns>
-                        <column idref="DoTS/DomainFeature/MOTIF_AA_SEQUENCE_ID"/>
+                        <column idref="DoTS/AAFeature/MOTIF_AA_SEQUENCE_ID"/>
                      </columns>
                   </index>
                   <index name="AAFEATUREIMP_IND12" tablespace="USERS" type="NORMAL">
                      <columns>
-                        <column idref="DoTS/RepeatRegionAAFeature/REPEAT_TYPE_ID"/>
+                        <column idref="DoTS/AAFeature/REPEAT_TYPE_ID"/>
                      </columns>
                   </index>
                   <index name="AAFEATUREIMP_IND13" tablespace="USERS" type="NORMAL">
@@ -1128,7 +1128,7 @@
                   </constraint>
                   <constraint name="AAFEATUREIMP_FK06" type="FOREIGN_KEY">
                      <constrainedColumns>
-                        <column idref="DoTS/DomainFeature/PFAM_ENTRY_ID"/>
+                        <column idref="DoTS/AAFeature/PFAM_ENTRY_ID"/>
                      </constrainedColumns>
                      <referencedTable idref="DoTS/PfamEntry"/>
                      <referencedColumns>
@@ -1137,7 +1137,7 @@
                   </constraint>
                   <constraint name="AAFEATUREIMP_FK07" type="FOREIGN_KEY">
                      <constrainedColumns>
-                        <column idref="DoTS/DomainFeature/MOTIF_AA_SEQUENCE_ID"/>
+                        <column idref="DoTS/AAFeature/MOTIF_AA_SEQUENCE_ID"/>
                      </constrainedColumns>
                      <referencedTable idref="DoTS/AASequence"/>
                      <referencedColumns>
@@ -1146,7 +1146,7 @@
                   </constraint>
                   <constraint name="AAFEATUREIMP_FK08" type="FOREIGN_KEY">
                      <constrainedColumns>
-                        <column idref="DoTS/RepeatRegionAAFeature/REPEAT_TYPE_ID"/>
+                        <column idref="DoTS/AAFeature/REPEAT_TYPE_ID"/>
                      </constrainedColumns>
                      <referencedTable idref="DoTS/RepeatType"/>
                      <referencedColumns>
