@@ -14345,8 +14345,8 @@
                   <column id="Results/EditingEvent/NA_FEATURE_ID" name="NA_FEATURE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="Results/EditingEvent/EDITING_TYPE_ID" name="EDITING_TYPE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="Results/EditingEvent/ALTERNATE_SEQUENCE" name="ALTERNATE_SEQUENCE" nullable="true" length="200" precision="0" type="STRING"/>
-                  <column id="Results/SegmentResult/FREQUENCY" name="FREQUENCY" nullable="true" length="12" precision="0" type="FLOAT"/>
-                  <column id="Results/SegmentResult/P_VALUE" name="P_VALUE" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/EditingEvent/FREQUENCY" name="FREQUENCY" nullable="true" length="12" precision="0" type="FLOAT"/>
+                  <column id="Results/EditingEvent/P_VALUE" name="P_VALUE" nullable="true" length="12" precision="0" type="FLOAT"/>
                   </columns>
                <indexes>
                   <index name="PK_EDITINGEVENT" tablespace="USERS" type="NORMAL">
