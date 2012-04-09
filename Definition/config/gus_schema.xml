@@ -11339,7 +11339,7 @@
                   </constraint>
                </constraints>
             </table>
-            <table id="SRes/OntologyRelationshipType" name="OntologyRelationshipType" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="General Ontology" updatable="true">
+            <table id="SRes/OntologyRelationshipType" name="OntologyRelationshipType" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="Generic Ontology" updatable="true">
                <columns>
                   <column id="SRes/OntologyRelationshipType/ONTOLOGY_RELATIONSHIP_TYPE_ID" name="ONTOLOGY_RELATIONSHIP_TYPE_ID" nullable="false" length="4" precision="0" type="NUMBER"/>
                   <column id="SRes/OntologyRelationshipType/IS_NATIVE" name="IS_NATIVE" nullable="false" length="1" precision="0" type="NUMBER"/>
@@ -11445,7 +11445,7 @@
                   </constraint>
                </constraints>
             </table>
-            <table id="SRes/OntologyTermType" name="OntologyTermType" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="General Ontology" updatable="true">
+            <table id="SRes/OntologyTermType" name="OntologyTermType" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="Generic Ontology" updatable="true">
                <columns>
                   <column id="SRes/OntologyTermType/ONTOLOGY_TERM_TYPE_ID" name="ONTOLOGY_TERM_TYPE_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
                   <column id="SRes/OntologyTermType/NAME" name="NAME" nullable="false" length="50" precision="0" type="STRING"/>
@@ -11466,7 +11466,7 @@
                   </constraint>
                </constraints>
             </table>
-            <table id="SRes/OntologySynonym" name="OntologySynonym" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="General Ontology" updatable="true">
+            <table id="SRes/OntologySynonym" name="OntologySynonym" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="Generic Ontology" updatable="true">
                <columns>
                   <column id="SRes/OntologySynonym/ONTOLOGY_SYNONYM_ID" name="ONTOLOGY_SYNONYM_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="SRes/OntologySynonym/ONTOLOGY_TERM_ID" name="ONTOLOGY_TERM_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
