@@ -12397,7 +12397,6 @@
                   <column id="Study/Characteristic/PROTOCOL_APP_NODE_ID" name="PROTOCOL_APP_NODE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="Study/Characteristic/ONTOLOGY_TERM_ID" name="ONTOLOGY_TERM_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="Study/Characteristic/TABLE_ID" name="TABLE_ID" nullable="true" length="5" precision="0" type="NUMBER"/>
-                  <column id="Study/Characteristic/ROW_ID" name="ROW_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
                </columns>
               <indexes>
                   <index name="PK_CHAR" tablespace="USERS" type="NORMAL">
@@ -12538,7 +12537,7 @@
                   <column id="Study/ProtocolParam/NAME" name="NAME" nullable="false" length="100" precision="0" type="STRING"/>
                   <column id="Study/ProtocolParam/DATA_TYPE_ID" name="DATA_TYPE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="Study/ProtocolParam/UNIT_TYPE_ID" name="UNIT_TYPE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
-                  <column id="Study/ProtocolParam/DEFAULT_VALUE" name="VALUE" nullable="true" length="100" precision="0" type="STRING"/>
+                  <column id="Study/ProtocolParam/DEFAULT_VALUE" name="DEFAULT_VALUE" nullable="true" length="100" precision="0" type="STRING"/>
                   <column id="Study/ProtocolParam/IS_USER_SPECIFIED" name="IS_USER_SPECIFIED" nullable="true" length="1" precision="0" type="NUMBER"/>
                </columns>
                <indexes>
@@ -12770,7 +12769,7 @@
                   <column id="Study/ProtocolAppParam/BOOLEAN_VALUE" name="BOOLEAN_VALUE" nullable="true" length="1" precision="0" type="NUMBER"/>
                   <column id="Study/ProtocolAppParam/DATE_VALUE" name="DATE_VALUE" nullable="true" length="0" precision="0" type="DATE"/>
                   <column id="Study/ProtocolAppParam/TABLE_ID" name="TABLE_ID" nullable="true" length="5" precision="0" type="NUMBER"/>
-                  <column id="Study/ProtocolAppParam/TABLE_ROW" name="TABLE_ROW" nullable="true" length="12" precision="0" type="NUMBER"/>
+                  <column id="Study/ProtocolAppParam/ROW_ID" name="ROW_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
                </columns>
                <indexes>
                   <index name="PK_PROTAPPPARAM" tablespace="USERS" type="NORMAL">
