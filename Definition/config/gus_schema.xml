@@ -12603,26 +12603,6 @@
                   </constraint>
                </constraints>
             </table>
-            <table id="Study/ProtocolSeries" name="ProtocolSeries" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Experimental Design" updatable="true">
-               <columns>
-                  <column id="Study/ProtocolSeries/PROTOCOL_SERIES_ID" name="PROTOCOL_SERIES_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-                  <column id="Study/ProtocolSeries/NAME" name="NAME" nullable="false" length="200" precision="0" type="STRING"/>
-               </columns>
-               <indexes>
-                  <index name="PK_PROTSERIES" tablespace="USERS" type="NORMAL">
-                     <columns>
-                        <column idref="Study/ProtocolSeries/PROTOCOL_SERIES_ID"/>
-                     </columns>
-                  </index>
-               </indexes>
-               <constraints>
-                  <constraint name="PK_PROTSERIES" type="PRIMARY_KEY">
-                     <constrainedColumns>
-                        <column idref="Study/ProtocolSeries/PROTOCOL_SERIES_ID"/>
-                     </constrainedColumns>
-                  </constraint>
-               </constraints>
-            </table>
             <table id="Study/ProtocolSeriesLink" name="ProtocolSeriesLink" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Experimental Design" updatable="true">
                <columns>
                   <column id="Study/ProtocolSeriesLink/PROTOCOL_SERIES_LINK_ID" name="PROTOCOL_SERIES_LINK_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
@@ -12657,9 +12637,9 @@
                      <constrainedColumns>
                         <column idref="Study/ProtocolSeriesLink/PROTOCOL_SERIES_ID"/>
                      </constrainedColumns>
-                     <referencedTable idref="Study/ProtocolSeries"/>
+                     <referencedTable idref="Study/Protocol"/>
                      <referencedColumns>
-                        <column idref="Study/ProtocolSeries/PROTOCOL_SERIES_ID"/>
+                        <column idref="Study/Protocol/PROTOCOL_ID"/>
                      </referencedColumns>
                   </constraint>
                   <constraint name="FK_PSL_PROTOCOL" type="FOREIGN_KEY">
@@ -12676,7 +12656,7 @@
             <table id="Study/ProtocolApp" name="ProtocolApp" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Experimental Design" updatable="true">
                <columns>
                   <column id="Study/ProtocolApp/PROTOCOL_APP_ID" name="PROTOCOL_APP_ID" nullable="false" length="11" precision="0" type="NUMBER"/>
-                  <column id="Study/ProtocolApp/PROTOCOL_SERIES_ID" name="PROTOCOL_SERIES_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+                  <column id="Study/ProtocolApp/PROTOCOL_ID" name="PROTOCOL_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="Study/ProtocolApp/PROTOCOL_APP_DATE" name="PROTOCOL_APP_DATE" nullable="true" length="0" precision="0" type="DATE"/>
                </columns>
                <indexes>
@@ -12687,7 +12667,7 @@
                   </index>
                   <index name="PROTAPP_IND01" tablespace="USERS" type="NORMAL">
                      <columns>
-                        <column idref="Study/ProtocolApp/PROTOCOL_SERIES_ID"/>
+                        <column idref="Study/ProtocolApp/PROTOCOL_ID"/>
                      </columns>
                   </index>
                </indexes>
@@ -12699,11 +12679,11 @@
                   </constraint>
                   <constraint name="FK_PROTAPP_PROTSERIES" type="FOREIGN_KEY">
                      <constrainedColumns>
-                        <column idref="Study/ProtocolApp/PROTOCOL_SERIES_ID"/>
+                        <column idref="Study/ProtocolApp/PROTOCOL_ID"/>
                      </constrainedColumns>
-                     <referencedTable idref="Study/ProtocolSeries"/>
+                     <referencedTable idref="Study/Protocol"/>
                      <referencedColumns>
-                        <column idref="Study/ProtocolSeries/PROTOCOL_SERIES_ID"/>
+                        <column idref="Study/Protocol/PROTOCOL_ID"/>
                      </referencedColumns>
                   </constraint>
                </constraints>
@@ -12763,11 +12743,7 @@
                   <column id="Study/ProtocolAppParam/PROTOCOL_APP_PARAM_ID" name="PROTOCOL_APP_PARAM_ID" nullable="false" length="11" precision="0" type="NUMBER"/>
                   <column id="Study/ProtocolAppParam/PROTOCOL_APP_ID" name="PROTOCOL_APP_ID" nullable="false" length="11" precision="0" type="NUMBER"/>
                   <column id="Study/ProtocolAppParam/PROTOCOL_PARAM_ID" name="PROTOCOL_PARAM_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-                  <column id="Study/ProtocolAppParam/STRING_VALUE" name="STRING_VALUE" nullable="true" length="3000" precision="0" type="STRING"/>
-                  <column id="Study/ProtocolAppParam/FLOAT_VALUE" name="FLOAT_VALUE" nullable="true" length="12" precision="0" type="FLOAT"/>
-                  <column id="Study/ProtocolAppParam/INT_VALUE" name="INT_VALUE" nullable="true" length="12" precision="0" type="NUMBER"/>
-                  <column id="Study/ProtocolAppParam/BOOLEAN_VALUE" name="BOOLEAN_VALUE" nullable="true" length="1" precision="0" type="NUMBER"/>
-                  <column id="Study/ProtocolAppParam/DATE_VALUE" name="DATE_VALUE" nullable="true" length="0" precision="0" type="DATE"/>
+                  <column id="Study/ProtocolAppParam/VALUE" name="VALUE" nullable="true" length="100" precision="0" type="STRING"/>
                   <column id="Study/ProtocolAppParam/TABLE_ID" name="TABLE_ID" nullable="true" length="5" precision="0" type="NUMBER"/>
                   <column id="Study/ProtocolAppParam/ROW_ID" name="ROW_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
                </columns>
