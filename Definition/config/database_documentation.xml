@@ -1,0 +1,4683 @@
+<Core::DatabaseDocumentation>
+<table>Core.AlgorithmParamKey</table>
+<attribute_name>description</attribute_name>
+<html_documentation>Contains a short hint of what the parameter controls.
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.AlgorithmParamKey</table>
+<attribute_name>is_list_valued</attribute_name>
+<html_documentation>When set to true, the parameters takes a list of values.
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.AlgorithmParamKey</table>
+<html_documentation>This table stores descriptions of the parameters for an Core::AlgorithmImplementation.
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.DatabaseDocumentation</table>
+<attribute_name>attribute_name</attribute_name>
+<html_documentation>Column name that is being documented.  If this is null, then the documentation applies to the table.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.DatabaseDocumentation</table>
+<attribute_name>database_documentation_id</attribute_name>
+<html_documentation>Primary key</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.DatabaseDocumentation</table>
+<attribute_name>html_documentation</attribute_name>
+<html_documentation>Documentation for the "attribute_name" describing the intended use of the attribute. This documentation can be written using HTML tags.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.DatabaseDocumentation</table>
+<attribute_name>table_id</attribute_name>
+<html_documentation>Foreign key to Core.TableInfo.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.DatabaseDocumentation</table>
+<html_documentation>Stores documentation describing the intended use of tables and attributes in the GUS schema</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.Workflow</table>
+<attribute_name>default_alg_invocation_id</attribute_name>
+<html_documentation>Default algorithm_invocation_id for this Workflow.  All workflows must have a corresponding Algorithm, AlgorithmImplementation, and AlgorithmInvocation entry.  This identifier is used to obtain and define the parameters to this workflow upon startup.  The default_alg_invocation_id is determined computationally when the workflow is loaded.  This assignment is based on the algorithm name defined in the XML for the workflow graph.
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.Workflow</table>
+<attribute_name>description</attribute_name>
+<html_documentation>Description of this Workflow
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.Workflow</table>
+<attribute_name>name</attribute_name>
+<html_documentation>Name of this Workflow
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.Workflow</table>
+<attribute_name>workflow_id</attribute_name>
+<html_documentation>Primary key, used to uniquely identify a workflow
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.Workflow</table>
+<html_documentation>Table used to hold high level information for a workflow graph.  See the Workflow Technical Report document for more details on the workflow system.
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowBlackboard</table>
+<attribute_name>edge_id</attribute_name>
+<html_documentation>The primary key (workflow_edge_id) of the edge that is responsible for adding this row to WorkflowBlackboard.
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowBlackboard</table>
+<attribute_name>edge_invocation_id</attribute_name>
+<html_documentation>The edge invocation id (assigned by the workflow engine) of this edge.
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowBlackboard</table>
+<attribute_name>item_id</attribute_name>
+<html_documentation>The primary key of the row in the table specified by table_id that  this blackboard entry refers to.
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowBlackboard</table>
+<attribute_name>secondary_row_id</attribute_name>
+<html_documentation>The primary key of the row in the table specified by secondary_table_id that this blackboard entry refers to.  (the second element in the pair)
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowBlackboard</table>
+<attribute_name>secondary_table_id</attribute_name>
+<html_documentation>The table_id (from TableInfo) that secondary_id is from.
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowBlackboard</table>
+<attribute_name>set_name</attribute_name>
+<html_documentation>The name of the data set this row is a part of  same as the set_name of the edge specified by edge_id.
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowBlackboard</table>
+<attribute_name>status</attribute_name>
+<html_documentation>The status of this blackboard entry.  Valid status values include S: Start, P: In Progress, C: Complete.
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowBlackboard</table>
+<attribute_name>table_id</attribute_name>
+<html_documentation>The table_id (from TableInfo) that item_id is from.
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowBlackboard</table>
+<attribute_name>workflow_alg_invocation_id</attribute_name>
+<html_documentation>The algorithm invocation id for this execution of the workflow specified by workflow_id
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowBlackboard</table>
+<attribute_name>workflow_blackboard_id</attribute_name>
+<html_documentation>Primary key, used as unique identifier for this WorkflowBlackboard object
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowBlackboard</table>
+<attribute_name>workflow_id</attribute_name>
+<html_documentation>Foreign key to Workflow, defines the workflow  that this WorkflowInit object  is associated with.
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowBlackboard</table>
+<html_documentation>Table used as a blackboard by the workflow engine.  Only the workflow engine and ga should ever write to this table.  This table can be used to aid in the restarting of a workflow in the event of a crash
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowConditionalNode</table>
+<attribute_name>description</attribute_name>
+<html_documentation>Description of this WorkfllowConditionalNode
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowConditionalNode</table>
+<attribute_name>is_and</attribute_name>
+<html_documentation>Boolean, indicates whether nodes requires a logical AND to be performed on all incoming edges prior to start of node.  If set to 0, workflow engine assumes a logical OR of the incoming edges.
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowConditionalNode</table>
+<attribute_name>is_start</attribute_name>
+<html_documentation>Boolean, indicates whether node is start node in workflow
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowConditionalNode</table>
+<attribute_name>name</attribute_name>
+<html_documentation>Name of this WorkflowConditionalNode
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowConditionalNode</table>
+<attribute_name>sql</attribute_name>
+<html_documentation>SQL for SELECT statement
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowConditionalNode</table>
+<attribute_name>subclass_view</attribute_name>
+<html_documentation>Name of this view, always WorkflowNoOpNode
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowConditionalNode</table>
+<attribute_name>workflow_id</attribute_name>
+<html_documentation>Foreign key to Workflow, defines the workflow that this node is a part of
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowConditionalNode</table>
+<attribute_name>workflow_node_id</attribute_name>
+<html_documentation>Primary key, used as unique identifier for this WorkflowConditionalNode
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowConditionalNode</table>
+<html_documentation>View on WorkflowNodeImp used to represent nodes within a workflow that execute SQL queries.  If one or more rows are returned, value of node output is true; otherwise node outputs false.
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowEdge</table>
+<attribute_name>from_node_id</attribute_name>
+<html_documentation>Foreign key to WorkflowNodeImp, defines the node that this edge is an outgoing edge for.
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowEdge</table>
+<attribute_name>is_true</attribute_name>
+<html_documentation>Boolean activation value.  If true, this edge is activated when the return value of the from_node_id is greater than 1.  If false, this edge is activated when the return value of the to_node_id is less than or equal to 0.
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowEdge</table>
+<attribute_name>to_node_id</attribute_name>
+<html_documentation>Foreign key to WorkflowNodeImp, defines the node that this is an incoming edge for.
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowEdge</table>
+<attribute_name>workflow_edge_id</attribute_name>
+<html_documentation>Primary key, used as unique identifier for this WorkflowEdge
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowEdge</table>
+<attribute_name>workflow_id</attribute_name>
+<html_documentation>Foreign key to Workflow, defines the workflow that this edge is a part of
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowEdge</table>
+<html_documentation>Table used to store information for each edge in a workflow graph.
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowEdgeSQL</table>
+<attribute_name>set_name</attribute_name>
+<html_documentation>A unique name assigned to the identifiers selected by the SQL statement.
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowEdgeSQL</table>
+<attribute_name>sql</attribute_name>
+<html_documentation>A SELECT statement that selects single attribute primary keys and optionally a secondary identifier to be used.  These primary keys are inserted into the WorkflowBlackboard table at runtime to be processed by the workflow.
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowEdgeSQL</table>
+<attribute_name>workflow_edge_id</attribute_name>
+<html_documentation>Foreign key to WorkflowEdge, defines the workflow edge that this sql is a associated with.
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowEdgeSQL</table>
+<attribute_name>workflow_edge_sql_id</attribute_name>
+<html_documentation>Primary key, used as unique identifier for this WorkflowEdgeSQL
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowEdgeSQL</table>
+<html_documentation>Table used to hold SQL associated with an edge within a workflow graph.  This SQL is executed when its edge is activated
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowInit</table>
+<attribute_name>item_id</attribute_name>
+<html_documentation>The primary key of the row in the table specified by table_id that this row represents.  This is part of the initial data set of the workflow.
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowInit</table>
+<attribute_name>table_id</attribute_name>
+<html_documentation>The table_id (from TableInfo) from which the item_ids (primary identifiers) are selected from.
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowInit</table>
+<attribute_name>workflow_id</attribute_name>
+<html_documentation>Foreign key to Workflow, defines the workflow  that this WorkflowInit object is associated with.
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowInit</table>
+<attribute_name>workflow_init_id</attribute_name>
+<html_documentation>Primary key, used as unique identifier for this WorkflowInit object
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowInit</table>
+<html_documentation>Table used to hold initial values for any Workflow level parameters within a workflow graph.  See the Workflow Technical Report document for more details.
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowNoOpNode</table>
+<attribute_name>description</attribute_name>
+<html_documentation>Description of this WorkfllowNoOpNode
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowNoOpNode</table>
+<attribute_name>is_and</attribute_name>
+<html_documentation>Boolean, indicates whether nodes requires a logical AND to be performed on all incoming edges prior to start of node.  If set to 0, workflow engine assumes a logical OR of the incoming edges.
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowNoOpNode</table>
+<attribute_name>is_start</attribute_name>
+<html_documentation>Boolean, indicates whether node is start node in workflow
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowNoOpNode</table>
+<attribute_name>name</attribute_name>
+<html_documentation>Name of this WorkflowNoOpNode
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowNoOpNode</table>
+<attribute_name>subclass_view</attribute_name>
+<html_documentation>Name of this view, always WorkflowNoOpNode
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowNoOpNode</table>
+<attribute_name>workflow_id</attribute_name>
+<html_documentation>Foreign key to Workflow, defines the workflow that this node is a part of
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowNoOpNode</table>
+<attribute_name>workflow_node_id</attribute_name>
+<html_documentation>Primary key, used as unique identifier for this WorkflowNoOpNode
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowNoOpNode</table>
+<html_documentation>View on WorkflowNodeImp used to represent nodes within a workflow that do not perform any action but are used to form loops in workflow graphs
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowNodeImp</table>
+<html_documentation>Implementation table used for nodes within a workflow graph
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowPluginNode</table>
+<attribute_name>algorithm_invocation_id</attribute_name>
+<html_documentation>Default Algorithm_invocation_id for this WorkflowPluginNode.  This identifier is used to obtain and define the parameters to this node during execution.  The algorithm_invocation_id is determined computationally when workflow is loaded based on the algorithm name defined in the XML for the workflow graph.
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowPluginNode</table>
+<attribute_name>description</attribute_name>
+<html_documentation>Description of this WorkflowPluginNode
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowPluginNode</table>
+<attribute_name>is_and</attribute_name>
+<html_documentation>Boolean, indicates whether nodes requires a logical AND to be performed on all incoming edges prior to start of node.  If set to 0, workflow engine assumes a logical OR of the incoming edges.
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowPluginNode</table>
+<attribute_name>is_start</attribute_name>
+<html_documentation>Boolean, indicates whether node is start node in workflow
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowPluginNode</table>
+<attribute_name>name</attribute_name>
+<html_documentation>Name of this WorkflowPluginNode
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowPluginNode</table>
+<attribute_name>subclass_view</attribute_name>
+<html_documentation>Name of this view, always WorkflowPluginNode
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowPluginNode</table>
+<attribute_name>workflow_id</attribute_name>
+<html_documentation>Foreign key to Workflow, defines the workflow that this node is a part of
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowPluginNode</table>
+<attribute_name>workflow_node_id</attribute_name>
+<html_documentation>Primary key, used as unique identifier for this WorkflowPluginNode
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowPluginNode</table>
+<html_documentation>View on WorkflowNodeImp used to represent plugin nodes in a workflow
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowStatus</table>
+<attribute_name>end_time</attribute_name>
+<html_documentation>End time of the workflow item
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowStatus</table>
+<attribute_name>item_id</attribute_name>
+<html_documentation>The primary key of the row in the table/view specified by item_type that this row represents.  (i.e., the node or edge id)
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowStatus</table>
+<attribute_name>item_invocation_id</attribute_name>
+<html_documentation>The algorithm invocation id if this is a plug-in node; otherwise, the invocation id assigned by the workflow engine
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowStatus</table>
+<attribute_name>item_type</attribute_name>
+<html_documentation>The table/object that this workflow item is from. For example, WorkflowEdge, WorkflowPluginNode, etc.
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowStatus</table>
+<attribute_name>reload_workflow</attribute_name>
+<html_documentation>If 1, indicates that workflow engine should reload the workflow from the database; otherwise, engine will used the cached version of the workflow
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowStatus</table>
+<attribute_name>return_value</attribute_name>
+<html_documentation>Return value if this is a workflow node; otherwise, null
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowStatus</table>
+<attribute_name>start_time</attribute_name>
+<html_documentation>Start time of the workflow item
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowStatus</table>
+<attribute_name>workflow_alg_invocation_id</attribute_name>
+<html_documentation>The algorithm invocation id for this execution of the workflow specified by workflow_id
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowStatus</table>
+<attribute_name>workflow_id</attribute_name>
+<html_documentation>Foreign key to Workflow, defines the workflow  that this WorkflowInit object  is associated with.
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowStatus</table>
+<attribute_name>workflow_status_id</attribute_name>
+<html_documentation>Primary key, used as unique identifier for this WorkflowStatus object
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowStatus</table>
+<html_documentation>Table used to track the status of workflows that are executing.  Only the workflow engine and ga should ever write to this table.  This table can be used to aid in the restarting of a workflow in the event of a crash.
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowSystemNode</table>
+<attribute_name>command</attribute_name>
+<html_documentation>UNIX system command to be executed
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowSystemNode</table>
+<attribute_name>description</attribute_name>
+<html_documentation>Description of this WorkflowSystemNode
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowSystemNode</table>
+<attribute_name>is_and</attribute_name>
+<html_documentation>Boolean, indicates whether nodes requires a logical AND to be performed on all incoming edges prior to start of node.  If set to 0, workflow engine assumes a logical OR of the incoming edges.
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowSystemNode</table>
+<attribute_name>is_start</attribute_name>
+<html_documentation>Boolean, indicates whether node is start node in workflow
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowSystemNode</table>
+<attribute_name>name</attribute_name>
+<html_documentation>Name of this WorkflowSystemNode
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowSystemNode</table>
+<attribute_name>subclass_view</attribute_name>
+<html_documentation>Name of this view, always WorkflowSystemNode
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowSystemNode</table>
+<attribute_name>workflow_id</attribute_name>
+<html_documentation>Foreign key to Workflow, defines the workflow that this node is a part of
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowSystemNode</table>
+<attribute_name>workflow_node_id</attribute_name>
+<html_documentation>Primary key, used as unique identifier for this WorkflowSystemNode
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Core.WorkflowSystemNode</table>
+<html_documentation>View on WorkflowNodeImp used to represent nodes that perform system calls within a workflow
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.AAComment</table>
+<attribute_name>aa_sequence_id</attribute_name>
+<html_documentation> Foreign key to AASequenceImp table
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.AAComment</table>
+<attribute_name>comment_name_id</attribute_name>
+<html_documentation> Foreign key to CommentName
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.AAComment</table>
+<attribute_name>comment_string</attribute_name>
+<html_documentation> Description of amino acid sequence
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.AAComment</table>
+<attribute_name>more_comment</attribute_name>
+<html_documentation> Any further description of amino acid sequence
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.AAComment</table>
+<html_documentation>Comments about protein
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.AAFamilyExperiment</table>
+<attribute_name>aa_ortholog_experment_id</attribute_name>
+<html_documentation>Foreign key to AAOrthologExperiment,where the experiment of computing ortholog groups are stored
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.AAFamilyExperiment</table>
+<attribute_name>aa_paralog_experiment_id</attribute_name>
+<html_documentation>Foreign key to AAParalogExperiment,where the experiment of computing paralogs groups are stored
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.AAFamilyExperiment</table>
+<attribute_name>description</attribute_name>
+<html_documentation>Description about the experiment to compute protein sequene family
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.AAFamilyExperiment</table>
+<html_documentation>Experiments to compute protein sequence families
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.AASeqGroupExperimentImp</table>
+<attribute_name>description</attribute_name>
+<html_documentation>Description of the experiment
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.AASeqGroupExperimentImp</table>
+<attribute_name>percent_identity</attribute_name>
+<html_documentation>Cut-off percent of identity over total match length from similarity search
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.AASeqGroupExperimentImp</table>
+<attribute_name>pvalue_exp</attribute_name>
+<html_documentation>Exponent part of the cut-off pvalue from similarity search
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.AASeqGroupExperimentImp</table>
+<attribute_name>pvalue_mant</attribute_name>
+<html_documentation>Mantissa part of the cut-off pvalue from similarity search
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.AASeqGroupExperimentImp</table>
+<attribute_name>sequence_source</attribute_name>
+<html_documentation>What protein sequences were used in the experiment
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.AASeqGroupExperimentImp</table>
+<html_documentation>percent_match</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.AASequenceGroupImp</table>
+<attribute_name>name</attribute_name>
+<html_documentation>Name of the sequence group
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.AASequenceGroupImp</table>
+<html_documentation>Protein sequence groups (ortholog,paralog)
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.AnatomyLOE</table>
+<attribute_name>anatomy_loe_id</attribute_name>
+<html_documentation>primary key</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.AnatomyLOE</table>
+<attribute_name>description</attribute_name>
+<html_documentation>a definition of the type of experiment performed</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.AnatomyLOE</table>
+<attribute_name>name</attribute_name>
+<html_documentation>"experiment type (e.g., microarray)"</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.AnatomyLOE</table>
+<html_documentation>A controlled vocabulary describing the experiment type used as a line of evidence in the RNAAnatomy assignment</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.AnatomyLibrary</table>
+<attribute_name>anatomy_id</attribute_name>
+<html_documentation> The anatomy term identifier
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.AnatomyLibrary</table>
+<attribute_name>anatomy_library_id</attribute_name>
+<html_documentation> primary key
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.AnatomyLibrary</table>
+<attribute_name>dbest_library_id</attribute_name>
+<html_documentation> The dbest library identifer
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.AnatomyLibrary</table>
+<html_documentation>Table containing the anatomy_id from the anatomy controlled vocabulary that has been assigned to a library from dbest using its dbest_library_id
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Assembly</table>
+<attribute_name>assembly_consistency</attribute_name>
+<html_documentation>Consistency of the assembly by scoring each column where consistency = number of majority nucleotide / total number in columnnormalized over length of assembly where depth > 1</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Assembly</table>
+<attribute_name>contains_mrna</attribute_name>
+<html_documentation>set to 1 if >= 1 contained AssemblySequence is of sequence type "mRNA"</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Assembly</table>
+<attribute_name>description</attribute_name>
+<html_documentation>Computationally assigned description  based on similarity of the consensus sequence to GenBank NR protein database</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Assembly</table>
+<attribute_name>gapped_consensus</attribute_name>
+<html_documentation>consensus sequence including the gaps inserted by cap4</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Assembly</table>
+<attribute_name>length</attribute_name>
+<html_documentation>Length of the Assembly consensus sequence</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Assembly</table>
+<attribute_name>na_sequence_id</attribute_name>
+<html_documentation>primary key</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Assembly</table>
+<attribute_name>number_of_contained_sequences</attribute_name>
+<html_documentation>The number of sequences contained in the Assembly</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Assembly</table>
+<attribute_name>quality_values</attribute_name>
+<html_documentation>string of quality values assigned by cap4</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Assembly</table>
+<attribute_name>sequence</attribute_name>
+<html_documentation>consensus sequence of this Assembly</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Assembly</table>
+<attribute_name>sequence_type_id</attribute_name>
+<html_documentation>indicates the type of sequence from the SequenceType table...always 5 (ss-RNA) for Assemblies</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Assembly</table>
+<attribute_name>sequence_version</attribute_name>
+<html_documentation>Indicates the version number for this assembly</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Assembly</table>
+<attribute_name>taxon_id</attribute_name>
+<html_documentation>identifier indicating the taxon</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Assembly</table>
+<html_documentation>The Assembly view of NASequenceImp stores information and consensus sequences generated by assembling EST and mRNA sequences using the cap4 algorithm (by Paracel).</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.AssemblyAnatomyPercent</table>
+<attribute_name>anatomy_id</attribute_name>
+<html_documentation>FK to the Anatomy table</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.AssemblyAnatomyPercent</table>
+<attribute_name>assembly_anatomy_percent_id</attribute_name>
+<html_documentation>primary key</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.AssemblyAnatomyPercent</table>
+<attribute_name>est_count</attribute_name>
+<html_documentation>number of informative sequences (have a library anatomy assignment) in this assembly</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.AssemblyAnatomyPercent</table>
+<attribute_name>na_sequence_id</attribute_name>
+<html_documentation>FK to the Assembly</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.AssemblyAnatomyPercent</table>
+<attribute_name>percent</attribute_name>
+<html_documentation>Percent of informative AssemblySequences that come from this anatomy</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.AssemblyAnatomyPercent</table>
+<html_documentation>Materialized view that maps Assemblies to the Anatomy ontology based on source library of the contained sequences</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.AssemblySNP</table>
+<attribute_name>assembly_depth</attribute_name>
+<html_documentation>depth (number of sequences at this position
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.AssemblySNP</table>
+<attribute_name>assembly_position</attribute_name>
+<html_documentation>position in the assembly (including gaps) of this SNP
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.AssemblySNP</table>
+<attribute_name>assembly_snp_id</attribute_name>
+<html_documentation>primary_key
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.AssemblySNP</table>
+<attribute_name>consensus_position</attribute_name>
+<html_documentation>position in the consensus sequence of this SNP
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.AssemblySNP</table>
+<attribute_name>fraction_nuc_1</attribute_name>
+<html_documentation>fraction that represents the most prevalent nucleotide (number most prevalent / Assembly depth)
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.AssemblySNP</table>
+<attribute_name>na_sequence_id</attribute_name>
+<html_documentation>relation to the Assembly table
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.AssemblySNP</table>
+<attribute_name>nuc_1</attribute_name>
+<html_documentation>predominant nucleotide (ACGTN)
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.AssemblySNP</table>
+<attribute_name>nuc_2</attribute_name>
+<html_documentation>second most prevalent nucleotide
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.AssemblySNP</table>
+<attribute_name>nuc_3</attribute_name>
+<html_documentation>third most prevalent nucleotide
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.AssemblySNP</table>
+<attribute_name>nuc_4</attribute_name>
+<html_documentation>fourth most prevalent nucleotide
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.AssemblySNP</table>
+<attribute_name>num_a</attribute_name>
+<html_documentation>number of A bases in this column
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.AssemblySNP</table>
+<attribute_name>num_c</attribute_name>
+<html_documentation>number of C bases in this column
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.AssemblySNP</table>
+<attribute_name>num_distinct_acgt</attribute_name>
+<html_documentation>number of distinct different nuclotides at this position
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.AssemblySNP</table>
+<attribute_name>num_g</attribute_name>
+<html_documentation>number of G bases in this column
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.AssemblySNP</table>
+<attribute_name>num_nuc_1</attribute_name>
+<html_documentation>number of most prevalent nucleotide
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.AssemblySNP</table>
+<attribute_name>num_nuc_2</attribute_name>
+<html_documentation>number of second most prevalent nucleotide
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.AssemblySNP</table>
+<attribute_name>num_nuc_3</attribute_name>
+<html_documentation>number of third most prevalent nucleotide
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.AssemblySNP</table>
+<attribute_name>num_nuc_4</attribute_name>
+<html_documentation>number of fourth most prevalent nucleotide
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.AssemblySNP</table>
+<attribute_name>num_other</attribute_name>
+<html_documentation>numbe of other bases (such as N) in this column
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.AssemblySNP</table>
+<attribute_name>num_t</attribute_name>
+<html_documentation>number of T bases in this column
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.AssemblySNP</table>
+<html_documentation>Table to record information about SNPs found in Assemblies
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.AssemblySequence</table>
+<attribute_name>assembly_na_sequence_id</attribute_name>
+<html_documentation>foreign key to the Assembly table</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.AssemblySequence</table>
+<attribute_name>assembly_offset</attribute_name>
+<html_documentation>position in the assembly where this AssemblySequence begins</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.AssemblySequence</table>
+<attribute_name>assembly_sequence_id</attribute_name>
+<html_documentation>Primary key</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.AssemblySequence</table>
+<attribute_name>assembly_strand</attribute_name>
+<html_documentation>Orientation of this AssemblySequence in the Assembly (0|1)</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.AssemblySequence</table>
+<attribute_name>have_processed</attribute_name>
+<html_documentation>This sequence has been processed for assembly</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.AssemblySequence</table>
+<attribute_name>na_sequence_id</attribute_name>
+<html_documentation>foreign key to the ExternalNASequence table...identifies the input sequence</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.AssemblySequence</table>
+<attribute_name>processed_category</attribute_name>
+<html_documentation>Category of this processed sequence ('repeat','chimera','low_quality') if not included in an Assembly</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.AssemblySequence</table>
+<attribute_name>quality_end</attribute_name>
+<html_documentation>position in the ExternalNASequence where the cap4 determines the quality sequence ends</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.AssemblySequence</table>
+<attribute_name>quality_start</attribute_name>
+<html_documentation>position in the ExternalNASequence where the cap4 determines the quality sequence starts</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.AssemblySequence</table>
+<attribute_name>sequence_end</attribute_name>
+<html_documentation>position in the ExternalNASequence where the AssemblySequence ends</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.AssemblySequence</table>
+<attribute_name>sequence_gaps</attribute_name>
+<html_documentation>Sequence string containing gaps representing this AssemblySequence in the Assembly</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.AssemblySequence</table>
+<attribute_name>sequence_start</attribute_name>
+<html_documentation>position in the ExternalNASequence where the AssemblySequence starts</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.AssemblySequence</table>
+<html_documentation>Table to hold the specific information about sequences contained in Assemblies</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.AssemblySequenceSNP</table>
+<attribute_name>assembly_sequence_id</attribute_name>
+<html_documentation>foreign key to AssemblySequence
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.AssemblySequenceSNP</table>
+<attribute_name>assembly_sequence_snp_id</attribute_name>
+<html_documentation>primary_key
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.AssemblySequenceSNP</table>
+<attribute_name>assembly_snp_id</attribute_name>
+<html_documentation>foreign key to AssemblySNP
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.AssemblySequenceSNP</table>
+<attribute_name>gapped_location</attribute_name>
+<html_documentation>position in the gapped AssemblySequence of this SNP
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.AssemblySequenceSNP</table>
+<attribute_name>na_sequence_location</attribute_name>
+<html_documentation>position in the NASequence from which this AssemblySequence is derived of this SNP
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.AssemblySequenceSNP</table>
+<attribute_name>sequence_character</attribute_name>
+<html_documentation>the character at this position in this sequence.  Intended to facilitate haplotype identification.
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.AssemblySequenceSNP</table>
+<html_documentation>table that records the specifics of the putative SNP in this AssemblySequence
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Clone</table>
+<attribute_name>clone_id</attribute_name>
+<html_documentation>Primary key</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Clone</table>
+<attribute_name>dbest_clone_uid</attribute_name>
+<html_documentation>Parsed string from dbEST e_uid. Not gaurenteed to be unique or useful (such as an IMAGE id)</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Clone</table>
+<attribute_name>dbest_length</attribute_name>
+<html_documentation>Parse value from dbEST EST.length</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Clone</table>
+<attribute_name>gdb_id</attribute_name>
+<html_documentation>GDB identifier</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Clone</table>
+<attribute_name>image_id</attribute_name>
+<html_documentation>IMAGE clone id (just the integer bit)</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Clone</table>
+<attribute_name>image_name</attribute_name>
+<html_documentation>The name of the clone according to IMAGE Consortium</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Clone</table>
+<attribute_name>library_id</attribute_name>
+<html_documentation>Foreign key to Library table</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Clone</table>
+<attribute_name>mgi_id</attribute_name>
+<html_documentation>MGI identifier</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Clone</table>
+<attribute_name>washu_length</attribute_name>
+<html_documentation>The length of the clone insert according to WashU sequencing center</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Clone</table>
+<attribute_name>washu_name</attribute_name>
+<html_documentation>The name of the clone according to the WashU sequencing center</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Clone</table>
+<html_documentation>Tracks clone information (e.g. IMAGE clone id)</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.CloneInSet</table>
+<attribute_name>clone_id</attribute_name>
+<html_documentation>FK to Clone</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.CloneInSet</table>
+<attribute_name>clone_in_set_id</attribute_name>
+<html_documentation>Primary key</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.CloneInSet</table>
+<attribute_name>clone_set_id</attribute_name>
+<html_documentation>FK to CloneSet</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.CloneInSet</table>
+<html_documentation>Relates entries in the Clone table to some CloneSet (e.g. the EPConDB clone set 1.0)</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.CloneSet</table>
+<attribute_name>cbil_name</attribute_name>
+<html_documentation>Alternate name specific to CBIL</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.CloneSet</table>
+<attribute_name>clone_set_id</attribute_name>
+<html_documentation>PK</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.CloneSet</table>
+<attribute_name>contact_id</attribute_name>
+<html_documentation>FK to Contact</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.CloneSet</table>
+<attribute_name>date_in</attribute_name>
+<html_documentation>Date the clone set was entered into GUS</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.CloneSet</table>
+<attribute_name>description</attribute_name>
+<html_documentation>Describes the clone set</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.CloneSet</table>
+<attribute_name>external_name</attribute_name>
+<html_documentation>Alternate name</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.CloneSet</table>
+<attribute_name>name</attribute_name>
+<html_documentation>the name of the clone set</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.CloneSet</table>
+<html_documentation>Describes a set of clones (e.g. the EPConDB clone set 1.0)</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Complex</table>
+<attribute_name>complex_id</attribute_name>
+<html_documentation>Primary key, used to uniquely identify a complex
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Complex</table>
+<attribute_name>complex_type_id</attribute_name>
+<html_documentation>Foreign key to ComplexType; specifies the type of the complex
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Complex</table>
+<attribute_name>description</attribute_name>
+<html_documentation>Description of the complex
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Complex</table>
+<attribute_name>external_database_release_id</attribute_name>
+<html_documentation>Foreign key to SRes::ExternalDatabaseRelease; this attribute is used when the complex has been loaded from an external source
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Complex</table>
+<attribute_name>name</attribute_name>
+<html_documentation>Name of the complex
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Complex</table>
+<attribute_name>review_status</attribute_name>
+<html_documentation>Foreign key to SRes::ReviewStatus; specifies the review status of the complex
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Complex</table>
+<attribute_name>source_id</attribute_name>
+<html_documentation>The primary identifier of the complex in the external database specified by external_database_release_id
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Complex</table>
+<html_documentation>Table used to specify a complex.  A complex consists of many ComplexComponents
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.ComplexAnatomy</table>
+<attribute_name>anatomy_id</attribute_name>
+<html_documentation>Foreign key to SRes::Anatomy, specifies an anatomy where the complex is found
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.ComplexAnatomy</table>
+<attribute_name>complex_anatomy_id</attribute_name>
+<html_documentation>Primary key, used to uniquely identify a ComplexAnatomy
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.ComplexAnatomy</table>
+<attribute_name>complex_id</attribute_name>
+<html_documentation>Foreign key to Complex, specifies the complex that is associated with the anatomy_id
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.ComplexAnatomy</table>
+<attribute_name>review_status</attribute_name>
+<html_documentation>Foreign key to SRes::ReviewStatus; specified the review status of the ComplexAnatomy entry
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.ComplexAnatomy</table>
+<html_documentation>Many to many table used to relate Complex to Anatomy
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.ComplexComponent</table>
+<attribute_name>complex_component_id</attribute_name>
+<html_documentation>Primary key, used to uniquely identify a ComplexComponent
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.ComplexComponent</table>
+<attribute_name>complex_id</attribute_name>
+<html_documentation>Foreign key to Complex; specifies which complex the component belongs to
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.ComplexComponent</table>
+<attribute_name>row_id</attribute_name>
+<html_documentation>The single attribute primary key of the row in the table specified by table_id that is a member of the complex specified by complex_id
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.ComplexComponent</table>
+<attribute_name>table_id</attribute_name>
+<html_documentation>Foreign key to CORE::TableInfo, specifies the table id of the component of the complex specified by complex_id
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.ComplexComponent</table>
+<html_documentation>A many to many table used to relate any row in the database to a complex.  The ComplexComponent then becomes part of the Complex
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.CpgIslandNAFeature</table>
+<attribute_name>algorithm_invocation_id</attribute_name>
+<html_documentation>a link to the parameters of the prediction algorithm</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.CpgIslandNAFeature</table>
+<attribute_name>cg_count</attribute_name>
+<html_documentation>number of C and G nucleotides in the island</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.CpgIslandNAFeature</table>
+<attribute_name>cg_fraction</attribute_name>
+<html_documentation>fraction of nucleotides that are C or G</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.CpgIslandNAFeature</table>
+<attribute_name>cpg_count</attribute_name>
+<html_documentation>number of CG dinucleotides</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.CpgIslandNAFeature</table>
+<attribute_name>cpg_fraction</attribute_name>
+<html_documentation>fraction dinucleotides that are CG</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.CpgIslandNAFeature</table>
+<attribute_name>cpg_observed_to_expected_ratio</attribute_name>
+<html_documentation>ratio of number of observed CG dinucleotidess to the expected number of CG dinucleotides</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.CpgIslandNAFeature</table>
+<html_documentation>A region rich in C or G nucleotides with 'many' CG dinucleotides</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.DbRefNAFeature</table>
+<html_documentation>Links DbRef to NAFeature entries.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.DbRefNASequence</table>
+<html_documentation>Links DbRef to NASequence entries</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Evidence</table>
+<attribute_name>attribute_name</attribute_name>
+<html_documentation>name of the attribute in the target table to which this evidence may apply...if null then to the entire entry
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Evidence</table>
+<attribute_name>best_evidence</attribute_name>
+<html_documentation>if true this constitutes the best evidence fact for this target
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Evidence</table>
+<attribute_name>evidence_group_id</attribute_name>
+<html_documentation>groups evidence facts together if there are multiple lines of evidence associated with the same fact
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Evidence</table>
+<attribute_name>evidence_id</attribute_name>
+<html_documentation>primary_key
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Evidence</table>
+<attribute_name>fact_id</attribute_name>
+<html_documentation>row_id in the fact table
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Evidence</table>
+<attribute_name>fact_table_id</attribute_name>
+<html_documentation>table_id of the table that is the fact (or evidence) for the target
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Evidence</table>
+<attribute_name>target_id</attribute_name>
+<html_documentation>row_id in the target table
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Evidence</table>
+<attribute_name>target_table_id</attribute_name>
+<html_documentation>table_id of the table that is the target of this evidence
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Evidence</table>
+<html_documentation>Many many relation to any two tuples in the database to allow linking an evidence fact to it's target
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.FeatureName</table>
+<attribute_name>feature_category</attribute_name>
+<html_documentation>If the feature has a catagory place it here</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.FeatureName</table>
+<attribute_name>feature_name_id</attribute_name>
+<html_documentation>Primary key column</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.FeatureName</table>
+<attribute_name>name</attribute_name>
+<html_documentation>The name of the feature</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.FeatureName</table>
+<html_documentation>GenBank feature names</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Gene</table>
+<attribute_name>description</attribute_name>
+<html_documentation>A description of the gene
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Gene</table>
+<attribute_name>gene_category_id</attribute_name>
+<html_documentation>The identifier of a gene category that has been assigned to the gene
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Gene</table>
+<attribute_name>gene_id</attribute_name>
+<html_documentation>primary key
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Gene</table>
+<attribute_name>gene_symbol</attribute_name>
+<html_documentation>"The HUGO or MGI approved abbreviated gene name or symbol (e.g., Kit)"
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Gene</table>
+<attribute_name>name</attribute_name>
+<html_documentation>The HUGO approved full gene name for human genes or the MGI approved full gene name for mouse genes
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Gene</table>
+<attribute_name>review_status_id</attribute_name>
+<html_documentation>The identifier of the review status that has been assigned to the gene
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Gene</table>
+<attribute_name>reviewer_summary</attribute_name>
+<html_documentation>Annotator comments regarding the gene
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Gene</table>
+<html_documentation>A central dogma (GENE->RNA->PROTEIN) table containing gene information for the genes in GUS
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.GeneAlias</table>
+<attribute_name>gene_alias_id</attribute_name>
+<html_documentation> primary key
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.GeneAlias</table>
+<attribute_name>gene_alias_name</attribute_name>
+<html_documentation>" The alias for the gene (e.g., dominant spotting)"
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.GeneAlias</table>
+<attribute_name>gene_id</attribute_name>
+<html_documentation> The identifier of the gene that the gene alias has been assigned to
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.GeneAlias</table>
+<html_documentation>A table containing the full gene name aliases for a gene
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.GeneCategory</table>
+<attribute_name>definition</attribute_name>
+<html_documentation>A definition of the category
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.GeneCategory</table>
+<attribute_name>gene_category_id</attribute_name>
+<html_documentation>primary key
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.GeneCategory</table>
+<attribute_name>term</attribute_name>
+<html_documentation>"A category (e.g., pseudogene) that could be assigned to a gene"
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.GeneCategory</table>
+<html_documentation>A controlled vocabulary of the gene categories that could be assigned to a gene
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.GeneSynonym</table>
+<attribute_name>gene_id</attribute_name>
+<html_documentation> The identifier of the gene that has been assigned the gene symbol
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.GeneSynonym</table>
+<attribute_name>gene_synonym_id</attribute_name>
+<html_documentation>primary key
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.GeneSynonym</table>
+<attribute_name>is_obsolete</attribute_name>
+<html_documentation>Indicates if this synonym is no longer used
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.GeneSynonym</table>
+<attribute_name>review_status_id</attribute_name>
+<html_documentation>The identifer of the review status</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.GeneSynonym</table>
+<attribute_name>synonym_name</attribute_name>
+<html_documentation>The gene symbol
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.GeneSynonym</table>
+<attribute_name>synonym_name The gene symbol</attribute_name>
+<html_documentation>
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.GeneSynonym</table>
+<html_documentation>This table stores gene synonym.
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.IndexWord</table>
+<attribute_name>description</attribute_name>
+<html_documentation>a description of the word (in most cases will be null)
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.IndexWord</table>
+<attribute_name>index_word_id</attribute_name>
+<html_documentation>primary_key
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.IndexWord</table>
+<attribute_name>word</attribute_name>
+<html_documentation>the word that has been indexed
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.IndexWord</table>
+<html_documentation>Table of words that have been indexed
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.IndexWordLink</table>
+<attribute_name>index_word_id</attribute_name>
+<html_documentation>foreign  key to IndexWord
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.IndexWordLink</table>
+<attribute_name>index_word_link_id</attribute_name>
+<html_documentation>primary_key
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.IndexWordLink</table>
+<attribute_name>target_id</attribute_name>
+<html_documentation>row_id  in the target table
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.IndexWordLink</table>
+<attribute_name>target_table_id</attribute_name>
+<html_documentation>table_id of the table that this relation joins
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.IndexWordLink</table>
+<html_documentation>Relation between an IndexWord and the tuple that has been indexed
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.IndexWordSimLink</table>
+<attribute_name>best_p_value_exp</attribute_name>
+<html_documentation>P value exponent of the best Similarity with this word
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.IndexWordSimLink</table>
+<attribute_name>best_p_value_mant</attribute_name>
+<html_documentation>P value mantissa of the best Similarity with this word
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.IndexWordSimLink</table>
+<attribute_name>best_score</attribute_name>
+<html_documentation>score of the best Similarity with this word
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.IndexWordSimLink</table>
+<attribute_name>best_similarity_id</attribute_name>
+<html_documentation>similarity_id of the Similarity with the best P Value that has this word
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.IndexWordSimLink</table>
+<attribute_name>index_word_id</attribute_name>
+<html_documentation>foreigh key to IndexWord
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.IndexWordSimLink</table>
+<attribute_name>index_word_sim_link_id</attribute_name>
+<html_documentation>primary_key
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.IndexWordSimLink</table>
+<attribute_name>similarity_table_id</attribute_name>
+<html_documentation>table_id of the table that contains the IndexWord (via Similarity)
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.IndexWordSimLink</table>
+<attribute_name>target_id</attribute_name>
+<html_documentation>row_id in the target table
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.IndexWordSimLink</table>
+<attribute_name>target_table_id</attribute_name>
+<html_documentation>table_id of the table that this relation joins
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.IndexWordSimLink</table>
+<html_documentation>Table to allow the linking of an index word to a target via a Similarity
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Interaction</table>
+<attribute_name>direction_is_known</attribute_name>
+<html_documentation>Set to 1 if the direction of the interaction is known; 0 otherwise.
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Interaction</table>
+<attribute_name>effector_id</attribute_name>
+<html_documentation>Specifies the single attribute primary key value in the effector_table_id for this member of the interaction
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Interaction</table>
+<attribute_name>effector_table_id</attribute_name>
+<html_documentation>Foreign key to CORE::TableInfo, specifies the table id of the effector in the interaction (assuming direction is known)
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Interaction</table>
+<attribute_name>external_database_release_id</attribute_name>
+<html_documentation>Foreign key to SRes::ExternalDatabaseRelease; this attribute is used when the interaction has been loaded from an external source
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Interaction</table>
+<attribute_name>interaction_id</attribute_name>
+<html_documentation>Primary key, used to uniquely identify an interaction
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Interaction</table>
+<attribute_name>interaction_type_id</attribute_name>
+<html_documentation>Foreign key to InteractionType, specifies the type of interaction
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Interaction</table>
+<attribute_name>review_status</attribute_name>
+<html_documentation>Foreign key to SRes::ReviewStatus; specifies the review status of the interaction
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Interaction</table>
+<attribute_name>source_id</attribute_name>
+<html_documentation>The primary identifier of the interaction in the external database specified by external_db_release_id
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Interaction</table>
+<attribute_name>target_id</attribute_name>
+<html_documentation>Specifies the single attribute primary key value in the target_table_id for this member of the interaction
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Interaction</table>
+<attribute_name>target_table_id</attribute_name>
+<html_documentation>Foreign key to CORE::TableInfo, specifies the table id of the target in the interaction (assuming direction is known)
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Interaction</table>
+<html_documentation>Table used to hold interactions
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.InteractionInteractionLOE</table>
+<attribute_name>interaction_id</attribute_name>
+<html_documentation>foreign key to interaction</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.InteractionInteractionLOE</table>
+<attribute_name>interaction_interaction_loe_id</attribute_name>
+<html_documentation>primary key</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.InteractionInteractionLOE</table>
+<attribute_name>interaction_loe_id</attribute_name>
+<html_documentation> foreign key to interactionLOE</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.InteractionInteractionLOE</table>
+<html_documentation>Table to associate the line of evidence with the Interaction assignments</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.InteractionLOE</table>
+<attribute_name>description</attribute_name>
+<html_documentation>a definition of the type of experiment performed</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.InteractionLOE</table>
+<attribute_name>interaction_loe_id</attribute_name>
+<html_documentation>primary key</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.InteractionLOE</table>
+<attribute_name>name</attribute_name>
+<html_documentation>"experiment type (e.g., yeast 2-hybrid)"</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.InteractionLOE</table>
+<html_documentation>A controlled vocabulary describing the experiment type used as a line of evidence in the interaction assignment</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.IsExpressed</table>
+<attribute_name>anatomy_id</attribute_name>
+<html_documentation>FK to Anatomy CV table
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.IsExpressed</table>
+<attribute_name>is_confirmed</attribute_name>
+<html_documentation>More than one line of evidence was found that this sequence is expressed in tissue X.
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.IsExpressed</table>
+<attribute_name>is_expressed_id</attribute_name>
+<html_documentation>Primary Key column
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.IsExpressed</table>
+<attribute_name>row_id</attribute_name>
+<html_documentation>The primary key id for the table refered by table_id
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.IsExpressed</table>
+<attribute_name>table_id</attribute_name>
+<html_documentation>The table id that this tissue expression evidence is for (e.g Assembly, ExternalNASequence).
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.IsExpressed</table>
+<html_documentation>Materialized view of sequences that are expressed in some tissue type.
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Library</table>
+<attribute_name>anatomy_id</attribute_name>
+<html_documentation>FK to Anatomy (Parsed from dbEST.LIBRARY.organ)
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Library</table>
+<attribute_name>cell_line</attribute_name>
+<html_documentation>Name of cell line (dbEST.LIBRARY.cell_line)
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Library</table>
+<attribute_name>cell_type</attribute_name>
+<html_documentation>Cell type (dbEST.LIBRARY.cell_type)
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Library</table>
+<attribute_name>comment_string</attribute_name>
+<html_documentation>
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Library</table>
+<attribute_name>cultivar</attribute_name>
+<html_documentation>Plant cultivar (dbEST.LIBRARY.cultivar)
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Library</table>
+<attribute_name>dbest_id</attribute_name>
+<html_documentation>The dbEST library id (dbEST.LIBRARY.id_lib)
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Library</table>
+<attribute_name>dbest_name</attribute_name>
+<html_documentation>The name according to dbEST (dbEST.LIBRARY.name)
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Library</table>
+<attribute_name>dbest_organ</attribute_name>
+<html_documentation>We store dbEST.LIBRARY.organ for debugging
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Library</table>
+<attribute_name>dbest_organism</attribute_name>
+<html_documentation>We store dbEST.LIBRARY.organism for debugging
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Library</table>
+<attribute_name>gdb_id</attribute_name>
+<html_documentation>GDB library id
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Library</table>
+<attribute_name>gdb_name</attribute_name>
+<html_documentation>The name according to GDB
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Library</table>
+<attribute_name>host</attribute_name>
+<html_documentation>Name of the host
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Library</table>
+<attribute_name>image_id</attribute_name>
+<html_documentation>The IMAGE Consortium library id
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Library</table>
+<attribute_name>is_image</attribute_name>
+<html_documentation>Whether this is an IMAGE library
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Library</table>
+<attribute_name>library_id</attribute_name>
+<html_documentation>Primary key column
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Library</table>
+<attribute_name>llnl_name</attribute_name>
+<html_documentation>The name according to LLNL
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Library</table>
+<attribute_name>normalized</attribute_name>
+<html_documentation>Whether the library was normalized
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Library</table>
+<attribute_name>re_1</attribute_name>
+<html_documentation>Restriction enzyme at site1 of vector (dbEST.LIBRARY.re_1)
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Library</table>
+<attribute_name>re_2</attribute_name>
+<html_documentation>Restriction enzyme at site2 of vector (dbEST.LIBRARY.re_2)
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Library</table>
+<attribute_name>sex</attribute_name>
+<html_documentation>Sex of organism (female, male, hermaphrodite) (parsed from dbEST.LIBRARY.sex) (values are currently = [S,-,?,B,M,F,n])
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Library</table>
+<attribute_name>stage</attribute_name>
+<html_documentation>Developmental stage (dbEST.LIBRARY.stage)
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Library</table>
+<attribute_name>strain</attribute_name>
+<html_documentation>Organism strain (dbEST.LIBRARY.strain)
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Library</table>
+<attribute_name>taxon_id</attribute_name>
+<html_documentation>FK to Taxon (Parsed from dbEST.LIBRARY.organism)
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Library</table>
+<attribute_name>tissue_type</attribute_name>
+<html_documentation>The tissue type of the library (dbEST.LIBRARY.tissue_type)
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Library</table>
+<attribute_name>vector</attribute_name>
+<html_documentation>Name of the vector (dbEST.LIBRARY.vector)
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Library</table>
+<attribute_name>vector_type</attribute_name>
+<html_documentation>Type of the vector (dbEST.LIBRARY.v_type)
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Library</table>
+<attribute_name>washu_name</attribute_name>
+<html_documentation>The name according to WashU
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Library</table>
+<html_documentation>clone library information</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.MergeSplit</table>
+<attribute_name>is_merge</attribute_name>
+<html_documentation>"if true then is a merge, Not a split"
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.MergeSplit</table>
+<attribute_name>merge_split_group_id</attribute_name>
+<html_documentation>"if multiple entries are merged in a single event, this serves to group them  together"
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.MergeSplit</table>
+<attribute_name>merge_split_id</attribute_name>
+<html_documentation>primary_key
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.MergeSplit</table>
+<attribute_name>new_id</attribute_name>
+<html_documentation>new identifier in this table
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.MergeSplit</table>
+<attribute_name>old_id</attribute_name>
+<html_documentation>old identifier in this table
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.MergeSplit</table>
+<attribute_name>table_id</attribute_name>
+<html_documentation>table_id of entries that have merged/split
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.MergeSplit</table>
+<html_documentation>Table to record when entries (primarily Assemblies or RNAs) merge or split due to Assembly updates
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Miscellaneous</table>
+<attribute_name>bound_moiety</attribute_name>
+<html_documentation>GenBank qualifier
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Miscellaneous</table>
+<attribute_name>citation</attribute_name>
+<html_documentation>GenBank qualifier
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Miscellaneous</table>
+<attribute_name>evidence</attribute_name>
+<html_documentation>GenBank qualifier
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Miscellaneous</table>
+<attribute_name>function</attribute_name>
+<html_documentation>GenBank qualifier
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Miscellaneous</table>
+<attribute_name>gene</attribute_name>
+<html_documentation>GenBank qualifier
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Miscellaneous</table>
+<attribute_name>is_partial</attribute_name>
+<html_documentation>Bit to say if this a partial sequence
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Miscellaneous</table>
+<attribute_name>is_pseudo</attribute_name>
+<html_documentation>Bit to say if this a pseudo sequence
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Miscellaneous</table>
+<attribute_name>label</attribute_name>
+<html_documentation>GenBank qualifier
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Miscellaneous</table>
+<attribute_name>map</attribute_name>
+<html_documentation>GenBank qualifier
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Miscellaneous</table>
+<attribute_name>na_feature_id</attribute_name>
+<html_documentation>PK column
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Miscellaneous</table>
+<attribute_name>na_sequence_id</attribute_name>
+<html_documentation>FK to the NASequence this feature belongs to
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Miscellaneous</table>
+<attribute_name>name</attribute_name>
+<html_documentation>The GenBank name of the feature
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Miscellaneous</table>
+<attribute_name>num</attribute_name>
+<html_documentation>GenBank qualifier
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Miscellaneous</table>
+<attribute_name>parent_id</attribute_name>
+<html_documentation>The parent of this feature if it has any (FK to NAFeatureImp)
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Miscellaneous</table>
+<attribute_name>partial</attribute_name>
+<html_documentation>GenBank qualifier
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Miscellaneous</table>
+<attribute_name>pcr_conditions</attribute_name>
+<html_documentation>GenBank qualifier
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Miscellaneous</table>
+<attribute_name>phenotype</attribute_name>
+<html_documentation>GenBank qualifier
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Miscellaneous</table>
+<attribute_name>product</attribute_name>
+<html_documentation>GenBank qualifier
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Miscellaneous</table>
+<attribute_name>pseudo</attribute_name>
+<html_documentation>GenBank qualifier
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Miscellaneous</table>
+<attribute_name>standard_name</attribute_name>
+<html_documentation>GenBank qualifier
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Miscellaneous</table>
+<attribute_name>usedin</attribute_name>
+<html_documentation>GenBank qualifier
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Miscellaneous</table>
+<html_documentation>Miscellaneous GenBank features go here
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.NAFeature</table>
+<html_documentation>Superclass view from NAFeature views
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.NAFeatureImp</table>
+<html_documentation>NAFeature implementation table
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.NAGene</table>
+<attribute_name>NA_GENE_ID</attribute_name>
+<html_documentation>primary key</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.NAGene</table>
+<attribute_name>ROW_ALG_INVOCATION_ID</attribute_name>
+<html_documentation>algorithm_invocation_id for the row</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.NASequence</table>
+<attribute_name>NA_SEQUENCE_ID</attribute_name>
+<html_documentation>Primary Key</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Pathway</table>
+<attribute_name>description</attribute_name>
+<html_documentation>A description of the pathway
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Pathway</table>
+<attribute_name>external_database_release_id</attribute_name>
+<html_documentation>Foreign key to SRes::ExternalDatabaseRelease; this attribute is used when the pathway has been loaded from an external source
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Pathway</table>
+<attribute_name>name</attribute_name>
+<html_documentation>A name for the pathway
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Pathway</table>
+<attribute_name>pathway_id</attribute_name>
+<html_documentation>Primary key, used to uniquely identify a pathway
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Pathway</table>
+<attribute_name>source_id</attribute_name>
+<html_documentation>The primary identifier of the pathway in the external database specified by external_database_release_id
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Pathway</table>
+<html_documentation>Table used to hold pathway information.  A pathway is defined by its interactions through the use of the PathwayInteraction relation table
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.PathwayInteraction</table>
+<attribute_name>interaction_id</attribute_name>
+<html_documentation>Foreign key to Interaction, specifies the interaction that is part of the pathway specified by pathway_id
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.PathwayInteraction</table>
+<attribute_name>pathway_id</attribute_name>
+<html_documentation>Foreign key to Pathway, the interaction specified by interaction_id will become part of this pathway
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.PathwayInteraction</table>
+<attribute_name>pathway_interaction_id</attribute_name>
+<html_documentation>Primary key, used to uniquely identify an interaction
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.PathwayInteraction</table>
+<html_documentation>Many to Many table used to relate Interactions and Pathways
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.PfamEntry</table>
+<attribute_name>ACCESSION</attribute_name>
+<html_documentation>accession number</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.PfamEntry</table>
+<html_documentation>Pfam entry</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.ProjectLink</table>
+<attribute_name>id</attribute_name>
+<html_documentation>Primary key of the row indicated by the table_id.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.ProjectLink</table>
+<attribute_name>project_id</attribute_name>
+<html_documentation>Foreign key to Core.Projectinfo.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.ProjectLink</table>
+<attribute_name>project_link_id</attribute_name>
+<html_documentation>Primary key.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.ProjectLink</table>
+<attribute_name>table_id</attribute_name>
+<html_documentation>Foreign key to Core.TableInfo.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.ProjectLink</table>
+<html_documentation>Used to link rows from a table indicated by the table_id to a project indicated by the project_id.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Protein</table>
+<attribute_name>description</attribute_name>
+<html_documentation> A description of the protein
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Protein</table>
+<attribute_name>name</attribute_name>
+<html_documentation>"The name of a protein (e.g., P450 monooxygenase)"
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Protein</table>
+<attribute_name>protein_id</attribute_name>
+<html_documentation>primary key
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Protein</table>
+<attribute_name>review_status_id</attribute_name>
+<html_documentation> The identifier of the review status
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Protein</table>
+<attribute_name>reviewer_summary</attribute_name>
+<html_documentation> Annotator comments regarding the Protein
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Protein</table>
+<attribute_name>rna_id</attribute_name>
+<html_documentation>The identifier of the rna which results in the protein entry
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Protein</table>
+<html_documentation>A central dogma (GENE->RNA->PROTEIN) table containing Protein information for GUS proteins
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.ProteinCategory</table>
+<attribute_name>definition</attribute_name>
+<html_documentation>A definition of the category
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.ProteinCategory</table>
+<attribute_name>protein_category_id</attribute_name>
+<html_documentation>primary key
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.ProteinCategory</table>
+<attribute_name>term</attribute_name>
+<html_documentation>"A category (e.g., phosphorylated) that could be assigned to a protein"
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.ProteinCategory</table>
+<html_documentation>A controlled vocabulary of the protein categories that could be assigned to a protein
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.ProteinProteinCategory</table>
+<attribute_name>protein_category_id</attribute_name>
+<html_documentation>The identifier for the protein category assignment
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.ProteinProteinCategory</table>
+<attribute_name>protein_id</attribute_name>
+<html_documentation>The identifier for the protein
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.ProteinProteinCategory</table>
+<attribute_name>protein_protein_category_id</attribute_name>
+<html_documentation>primary key
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.ProteinProteinCategory</table>
+<html_documentation>Linking table for storing Protein_ids and their Protein_category_id assignments
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.ProteinSynonym</table>
+<attribute_name>protein_id</attribute_name>
+<html_documentation> The identifier of the protein that has been assigned the protein name
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.ProteinSynonym</table>
+<attribute_name>protein_synonym_id</attribute_name>
+<html_documentation> primary key
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.ProteinSynonym</table>
+<attribute_name>review_status_id</attribute_name>
+<html_documentation> The identifier of the review status
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.ProteinSynonym</table>
+<attribute_name>synonym_name</attribute_name>
+<html_documentation> The protein name
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.ProteinSynonym</table>
+<html_documentation>A table which contains protein names that have been assigned to a protein if multiple protein names exist for the protein entry
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.RNA</table>
+<attribute_name>description</attribute_name>
+<html_documentation>The description of the RNA
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.RNA</table>
+<attribute_name>gene_id</attribute_name>
+<html_documentation>The identifier of the gene to which the RNA has been assigned
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.RNA</table>
+<attribute_name>review_status_id</attribute_name>
+<html_documentation>The identifier of the review status that has been assigned to the RNA
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.RNA</table>
+<attribute_name>reviewer_summary</attribute_name>
+<html_documentation>Annotator comments regarding the RNA
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.RNA</table>
+<attribute_name>rna_id</attribute_name>
+<html_documentation>primary key
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.RNA</table>
+<html_documentation>A central dogma (GENE->RNA->PROTEIN) table containing RNA information for the RNAs in GUS
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.RNAAnatomy</table>
+<attribute_name>anatomy_id</attribute_name>
+<html_documentation> The identifier of an anatomy term that has been assigned to the RNA
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.RNAAnatomy</table>
+<attribute_name>est_number</attribute_name>
+<html_documentation> The number of ESTs that have been assigned that anatomy term and are represented in the RNA</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.RNAAnatomy</table>
+<attribute_name>literature_confirmed</attribute_name>
+<html_documentation>  True (1) if an experiment described in the literature can confirm the expression of the RNA in the assigned anatomy</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.RNAAnatomy</table>
+<attribute_name>rad_confirmed</attribute_name>
+<html_documentation> True (1) if an experiment in RAD (i.e., microarray) can confirm the expression of the RNA in the assigned anatomy</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.RNAAnatomy</table>
+<attribute_name>rna_anatomy_id</attribute_name>
+<html_documentation> primary key
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.RNAAnatomy</table>
+<attribute_name>rna_id</attribute_name>
+<html_documentation> The identifier of the RNA</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.RNAAnatomy</table>
+<html_documentation>A table to store the assignments of an anatomy term to a RNA
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.RNAAnatomyLOE</table>
+<attribute_name>anatomy_loe_id</attribute_name>
+<html_documentation> foreign key to AnatomyLOE</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.RNAAnatomyLOE</table>
+<attribute_name>rna_anatomy_id</attribute_name>
+<html_documentation> foreign key to RNAAnatomy</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.RNAAnatomyLOE</table>
+<attribute_name>rna_anatomy_loe_id</attribute_name>
+<html_documentation>primary key</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.RNAAnatomyLOE</table>
+<html_documentation>Table to associate the lines of evidence with the RNAAnatomy assignments</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.RNACategory</table>
+<attribute_name>definition</attribute_name>
+<html_documentation>A definition of the category
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.RNACategory</table>
+<attribute_name>rna_category_id</attribute_name>
+<html_documentation>primary key
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.RNACategory</table>
+<attribute_name>term</attribute_name>
+<html_documentation>"A category (e.g., exon skipped) that could be assigned to a RNA"
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.RNACategory</table>
+<html_documentation>A controlled vocabulary of the RNA cateogories that could be assigned to a RNA
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.RNARNACategory</table>
+<attribute_name>rna_category_id</attribute_name>
+<html_documentation>The identifier of the RNA category assignment
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.RNARNACategory</table>
+<attribute_name>rna_id</attribute_name>
+<html_documentation>The identifier for the RNA
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.RNARNACategory</table>
+<attribute_name>rna_rna_category_id</attribute_name>
+<html_documentation>primary key
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.RestrictionFragmentFeature</table>
+<attribute_name>type_of_cut</attribute_name>
+<html_documentation>The type of cut, sticky or blunt.
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.RestrictionFragmentFeature</table>
+<html_documentation>This view of NAFeatureImp is for restriction enzyme fragment.
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.SignalPeptideFeature</table>
+<attribute_name>anchor_probability</attribute_name>
+<html_documentation>probability given by SignalP software
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.SignalPeptideFeature</table>
+<attribute_name>cleavage_site_probability</attribute_name>
+<html_documentation>probability given by SignalP software
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.SignalPeptideFeature</table>
+<attribute_name>signal_peptide_probability</attribute_name>
+<html_documentation>probability given by SignalP software
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.SignalPeptideFeature</table>
+<attribute_name>targetting</attribute_name>
+<html_documentation>Curated free text information about the target and the targetting process.
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.SignalPeptideFeature</table>
+<html_documentation>This view of AAFeatureImp stores predicted and annotated signal peptides.
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Similarity</table>
+<attribute_name>is_reversed</attribute_name>
+<html_documentation>matches on the reverse strand
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Similarity</table>
+<attribute_name>max_query_end</attribute_name>
+<html_documentation>maximum location in the query of the match
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Similarity</table>
+<attribute_name>max_subject_end</attribute_name>
+<html_documentation>maximum location in the subject of the match
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Similarity</table>
+<attribute_name>min_query_start</attribute_name>
+<html_documentation>minimum location in the query of the match
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Similarity</table>
+<attribute_name>min_subject_start</attribute_name>
+<html_documentation>minimum location in the subject of the match
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Similarity</table>
+<attribute_name>number_identical</attribute_name>
+<html_documentation>total number of identical matches
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Similarity</table>
+<attribute_name>number_of_matches</attribute_name>
+<html_documentation>number of spans (HSPs for BLAST) that are involved in this similarity
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Similarity</table>
+<attribute_name>number_positive</attribute_name>
+<html_documentation>total number of positives (conservative replacements)
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Similarity</table>
+<attribute_name>pvalue_exp</attribute_name>
+<html_documentation>P value exponent
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Similarity</table>
+<attribute_name>pvalue_mant</attribute_name>
+<html_documentation>P value mantissa
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Similarity</table>
+<attribute_name>query_id</attribute_name>
+<html_documentation>row_id of the query
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Similarity</table>
+<attribute_name>query_table_id</attribute_name>
+<html_documentation>table_id  of the query part of the similarity
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Similarity</table>
+<attribute_name>reading_frame</attribute_name>
+<html_documentation>reading frame of this Similarity if relevant (BLASTX etc)
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Similarity</table>
+<attribute_name>score</attribute_name>
+<html_documentation>score of the similarity
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Similarity</table>
+<attribute_name>similarity_id</attribute_name>
+<html_documentation>primary_key
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Similarity</table>
+<attribute_name>subject_id</attribute_name>
+<html_documentation>row_id of the subject
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Similarity</table>
+<attribute_name>subject_table_id</attribute_name>
+<html_documentation>"table_id of the subject part of the similarity (ie, the entry from the database)"
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Similarity</table>
+<attribute_name>total_match_length</attribute_name>
+<html_documentation>total length of all the matches
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.Similarity</table>
+<html_documentation>"Table to record Similarities between two identifers in the database (BLAST, FASTA, SIM4 etc)"
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.SimilaritySpan</table>
+<attribute_name>is_reversed</attribute_name>
+<html_documentation>if true then this match is on the reverse strand
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.SimilaritySpan</table>
+<attribute_name>match_length</attribute_name>
+<html_documentation>length of the match
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.SimilaritySpan</table>
+<attribute_name>number_identical</attribute_name>
+<html_documentation>number of identical matches
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.SimilaritySpan</table>
+<attribute_name>number_positive</attribute_name>
+<html_documentation>number of postives allowing for conservative replacements
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.SimilaritySpan</table>
+<attribute_name>pvalue_exp</attribute_name>
+<html_documentation>P value exponent
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.SimilaritySpan</table>
+<attribute_name>pvalue_mant</attribute_name>
+<html_documentation>P value mantissa
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.SimilaritySpan</table>
+<attribute_name>query_end</attribute_name>
+<html_documentation>position in query there this match ends
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.SimilaritySpan</table>
+<attribute_name>query_start</attribute_name>
+<html_documentation>position in query where this match starts
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.SimilaritySpan</table>
+<attribute_name>reading_frame</attribute_name>
+<html_documentation>reading frame of the match if relevant (BLASTX etc)
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.SimilaritySpan</table>
+<attribute_name>score</attribute_name>
+<html_documentation>score of this span
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.SimilaritySpan</table>
+<attribute_name>similarity_id</attribute_name>
+<html_documentation>foreign key to Similarity
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.SimilaritySpan</table>
+<attribute_name>similarity_span_id</attribute_name>
+<html_documentation>primary_key
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.SimilaritySpan</table>
+<attribute_name>subject_end</attribute_name>
+<html_documentation>position in subject where this match ends
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.SimilaritySpan</table>
+<attribute_name>subject_start</attribute_name>
+<html_documentation>position in subject where this match starts
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.SimilaritySpan</table>
+<html_documentation>Table to record the specifics for each span (HSP) in a similarity
+</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.TranslatedAAFeature</table>
+<attribute_name>aa_feature_id</attribute_name>
+<html_documentation>primary key id</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.TranslatedAAFeature</table>
+<attribute_name>aa_sequence_id</attribute_name>
+<html_documentation>sequence reference</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.TranslatedAAFeature</table>
+<attribute_name>na_feature_id</attribute_name>
+<html_documentation>key for the linking with na_feature</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.TranslatedAAFeature</table>
+<attribute_name>translation_start</attribute_name>
+<html_documentation>Start of the translation in nucleic acid sequence</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.TranslatedAAFeature</table>
+<attribute_name>translation_stop</attribute_name>
+<html_documentation>end of the translation in nucleic acid sequence</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>DoTS.TranslatedAAFeature</table>
+<html_documentation>the table for translated na_sequence</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Model.ModelContext</table>
+<attribute_name>anatomy_id</attribute_name>
+<html_documentation>FK to SRes.OntologyTerm to indicate the anatomical structure associated with the model context.  May be nullable.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Model.ModelContext</table>
+<attribute_name>biological_process_id</attribute_name>
+<html_documentation>FK to SRes.OntologyTerm to indicate the bioloical process associated with the model context.  May be nullable.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Model.ModelContext</table>
+<attribute_name>description</attribute_name>
+<html_documentation>A detailed textual description of the model context, may be used for display in model visualizations.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Model.ModelContext</table>
+<attribute_name>developmental_stage_end_id</attribute_name>
+<html_documentation>FK to SRes.OntologyTerm that along with developmental_stage_start_id indicates a developmental time span associated with the model context.  May be nullable.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Model.ModelContext</table>
+<attribute_name>developmental_stage_start_id</attribute_name>
+<html_documentation>FK to SRes.OntologyTerm that along with developmental_stage_end_id indicates a developmental time span associated with the model context.  May be nullable.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Model.ModelContext</table>
+<attribute_name>name</attribute_name>
+<html_documentation>The context name, may be used for display in model visualizations.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Model.ModelContext</table>
+<html_documentation>This table stores the biological context in which a model is valid.  This includes one or more of the following: anatomical structure, biological process, or developmental stage.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Model.Network</table>
+<attribute_name>description</attribute_name>
+<html_documentation>A detailed textual description of the network, may be used for display in model visualizations.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Model.Network</table>
+<attribute_name>name</attribute_name>
+<html_documentation>The name of the network; may be used for display in visualizations.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Model.Network</table>
+<html_documentation>This table stores information (name and description) about networks, or lists of related or connected relationships.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Model.NetworkNode</table>
+<attribute_name>display_label</attribute_name>
+<html_documentation>Display label for the network node in a visualization.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Model.NetworkNode</table>
+<attribute_name>node_type_id</attribute_name>
+<html_documentation>FK to SRes.OntologyTerm to indicate the type of network node, e.g., gene, protein, small molecule, complex, etc.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Model.NetworkNode</table>
+<attribute_name>row_id</attribute_name>
+<html_documentation>When the value of a network node corresponds to an entry in this database, this points to the entry in the relevant table. For example, if the network node is a gene, this can point to the entry in DoTS.Gene corresponding to that gene.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Model.NetworkNode</table>
+<attribute_name>table_id</attribute_name>
+<html_documentation>When the value of a network node corresponds to an entry in this database, this points to the table (FK to Core.TableInfo) storing that entry. For example, if the network node is a gene, this can point to the DoTS.Gene table.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Model.NetworkNode</table>
+<html_documentation>This table stores information about nodes, or connection points between edges in a network visualization, in a network.  Different attributes corresponding to different network node types can be associated with a node by pointing to an entry in the database with the soft key (table_id, row_id).</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Model.NetworkRelContext</table>
+<attribute_name>network_context_id</attribute_name>
+<html_documentation>FK to Model.ModelContext pointing to biological context for which the relationship is valid.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Model.NetworkRelContext</table>
+<attribute_name>network_relationship_id</attribute_name>
+<html_documentation>FK to Model.NetworkRelationship pointing to the abstraction of the relationship.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Model.NetworkRelContext</table>
+<attribute_name>network_relationship_type_id</attribute_name>
+<html_documentation>FK to Model.NetworkRelationshipType pointing to the type of the network relationship.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Model.NetworkRelContext</table>
+<attribute_name>source_node</attribute_name>
+<html_documentation>When the relationship is directed (i.e., a source and target node can be specified), this attribute should be assigned a value of 1 (node pointed to by Model.NetworkRelationship node_id is the source) or 2 (node pointed to by Model.NetworkRelationship associated_node_id is the source).  When the relationship is undirected, this attribute should be NULL.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Model.NetworkRelContext</table>
+<attribute_name>weight</attribute_name>
+<html_documentation>When applicable, a weight or confidence associated with a particular instance (defined by context, type, and directionality) of a network relationship.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Model.NetworkRelContext</table>
+<html_documentation>This table stores specific instances of abstract relationships defined in Model.NetworkRelationship.  An instance links a relationship to a relationship type and a model context and indicates the directionality of the relationship, when relevant.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Model.NetworkRelContextLink</table>
+<html_documentation>This table links specific instances of network relationships (stored in Model.NetworkRelContext) to networks (stored in Model.Network).</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Model.NetworkRelEvidence</table>
+<attribute_name>category_id</attribute_name>
+<html_documentation>FK to SRes.OntologyTerm that points to a descriptive categorization of the type of evidence for visualization purposes.  One category may be associated with multiple evidence codes (pointed to by the evidence_code_id).</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Model.NetworkRelEvidence</table>
+<attribute_name>display_name</attribute_name>
+<html_documentation>Descriptive text that summarizes the evidence for display in visualizations of the associated relationship instance.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Model.NetworkRelEvidence</table>
+<attribute_name>evidence_code_id</attribute_name>
+<html_documentation>FK to SRes.OntologyTerm that points to the formal evidence code identifying the type of evidence supporting the relationship instance.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Model.NetworkRelEvidence</table>
+<attribute_name>fact_row_id</attribute_name>
+<html_documentation>When the source of the evidence corresponds to an entry in the this database, this points to the entry in the relevant table.  For example, if the evidence is a traceable author statement, this would point to the entry in SRes.BibliographicReference corresponding to the relevant publication.  If the evidence is the result of an analysis, this would point to the entry in Study.ProtocolAppNode corresponding to the analysis.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Model.NetworkRelEvidence</table>
+<attribute_name>fact_table_id</attribute_name>
+<html_documentation>When the source of the evidence corresponds to an entry in the this database, this points to the table (FK to Core.TableInfo) storing that entry.  For example, if the evidence is a traceable author statement, this would point to the SRes.BibliographicReference table.  Alternatively, if the evidence is the result of an analysis, this would point to the Study.ProtocolAppNode table.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Model.NetworkRelEvidence</table>
+<attribute_name>fdr</attribute_name>
+<html_documentation>When applicable, a fdr associated with this evidence.  This may be a value stored elsewhere in the Results schema in this database.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Model.NetworkRelEvidence</table>
+<attribute_name>genomic_location</attribute_name>
+<html_documentation>When applicable, a specific genomic location (in the form chr:start-stop:strand or taxon_chr:start-stop:strand) associated with the relationship instance.  For example, if the evidence for the relationship instance is predicted transcription factor binding based upon sequence similarity between the chromosome and a consensus sequence, the genomic location may record the location of the best match.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Model.NetworkRelEvidence</table>
+<attribute_name>network_rel_context_id</attribute_name>
+<html_documentation>FK to Model.NetworkRelContext pointing the specific instance of a network relationship supported by the associated evidence.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Model.NetworkRelEvidence</table>
+<attribute_name>p_value</attribute_name>
+<html_documentation>When applicable, a p-value associated with this evidence. This may be a value stored elsewhere in the Results schema in this database.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Model.NetworkRelEvidence</table>
+<attribute_name>score1</attribute_name>
+<html_documentation>When applicable, a score associated with this evidence.  This may be a value stored elsewhere in the Results schema in this database.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Model.NetworkRelEvidence</table>
+<attribute_name>score1_type_id</attribute_name>
+<html_documentation>FK to SRes.OntologyTerm pointing to the type of score associated with score1.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Model.NetworkRelEvidence</table>
+<attribute_name>score2</attribute_name>
+<html_documentation>When applicable, a secondary score associated with this evidence. This may be a value stored elsewhere in the Results schema in this database.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Model.NetworkRelEvidence</table>
+<attribute_name>score2_type_id</attribute_name>
+<html_documentation>FK to SRes.OntologyTerm pointing to the type of score associated with score2.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Model.NetworkRelEvidence</table>
+<attribute_name>text_evidence</attribute_name>
+<html_documentation>When applicable, textual annotation for the relationship instance.  For example, if the evidence for the relationship instance is predicted transcription factor binding based upon sequence similarity between the chromosome and a consensus sequence, text_evidence may store the consensus sequence.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Model.NetworkRelEvidence</table>
+<html_documentation>This table links specific instances of network relationships (stored in Model.NetworkRelContext) to the evidence or support for that instance which may be stored elsewhere as an entry in the database and linked via a soft key (fact_table_id, fact_row_id).</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Model.NetworkRelationship</table>
+<attribute_name>associated_node_id</attribute_name>
+<html_documentation>FK to Model.NetworkNode to indicate a second network node involved in the network relationship. This attribute is nullable; when left NULL the relationship is interpreted as an association between the network node (pointed to by node_id) and a biological context (stored in Model.ModelContext) linked in a specific instance of the abstract relationship defined via Model.NetworkRelContext.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Model.NetworkRelationship</table>
+<attribute_name>node_id</attribute_name>
+<html_documentation>FK to Model.NetworkNode to indicate a network node involved in the network relationship.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Model.NetworkRelationship</table>
+<attribute_name>weight</attribute_name>
+<html_documentation>When applicable, a weight or confidence associated with the abstract network relationship.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Model.NetworkRelationship</table>
+<html_documentation>This table stores abstract associations or relationships that define edges linking one or more network node(s).</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Model.NetworkRelationshipType</table>
+<attribute_name>display_name</attribute_name>
+<html_documentation>Display label for relationships of this type in visualizations of the network.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Model.NetworkRelationshipType</table>
+<attribute_name>relationship_type_id</attribute_name>
+<html_documentation>FK to SRes.OntologyTerm that indicates the type of relationship, e.g., binds, activates, expresses, inhibits, required for, etc.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Model.NetworkRelationshipType</table>
+<html_documentation>This table provides details about network relationship types to facilitate model visualization by linking types to display labels, as relationships of the same fundametal type (e.g., "is_a", "connects", "binds", "activates") may have model-specific interpretations.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Platform.Reporter</table>
+<attribute_name>external_database_release_id</attribute_name>
+<html_documentation>This points to the manufacturer release for this reporter set (e.g. a particular Affymetrix array) as a FK to SRes.ExternalDatabaseRelease.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Platform.Reporter</table>
+<attribute_name>physical_location</attribute_name>
+<html_documentation>When applicable, this stores the location of the reporter within the reporter set (e.g. block, row, column coordinates for a apotted microarray, etc.).</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Platform.Reporter</table>
+<attribute_name>source_id</attribute_name>
+<html_documentation>This denotes the unique identifier for this reporter from the manufacturer (e.g. a probe set id for an Affymetrix array).</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Platform.Reporter</table>
+<html_documentation>This table stores information about individual reporters in a reporter set (stored in Platform.ReporterSetImp), e.g. if the reporter set is an Affymetrix microarray, this tables stores information about each of its probe sets, if the reporter set is a spotted array, this table stores information about each of its spots.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Platform.ReporterGene</table>
+<html_documentation>This table links reporters (stored in Platform.Reporter) to genes (stored in DoTS.gene) represented by those reporters.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Platform.ReporterLocation</table>
+<html_documentation>When applicable, this table stores the location of reporter sequences in the genome.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Platform.ReporterNaFeature</table>
+<html_documentation>This table links reporters (stored in Platform.Reporter) to nucleid acid features (stored in DoTS.NAFeatureImp) represented by those reporters.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Platform.ReporterSet</table>
+<attribute_name>external_database_release_id</attribute_name>
+<html_documentation>If this reporter set is in another repository (e.g. it represents a microarray stored in a public repository like ArrayExpress or GEO), this points to the appropriate release of such a repository (FK to SRes.ExternalDatabaseRelease), else this is to be left null.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Platform.ReporterSet</table>
+<attribute_name>manufacturer_id</attribute_name>
+<html_documentation>FK to SRes.Contact to indicate the manufacturer for this reporter set.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Platform.ReporterSet</table>
+<attribute_name>name</attribute_name>
+<html_documentation>The name of the reporter set, e.g. 'Affymetrix HG_U95A'.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Platform.ReporterSet</table>
+<attribute_name>protocol_id</attribute_name>
+<html_documentation>FK to Study.Protocol to indicate the protocol used to assemble this reporter set.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Platform.ReporterSet</table>
+<attribute_name>reporter_set_group_id</attribute_name>
+<html_documentation>If this is part of a group of reporter sets (e.g. a collection of microarrays which together cover a given set of genes, like the Agilent Human 1 cDNA Microarray), this points to such a group via a FK to Platform.ReporterSetGroup.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Platform.ReporterSet</table>
+<attribute_name>source_id</attribute_name>
+<html_documentation>If this reporter set is in another repository (e.g. it represents a microarray stored in a public repository like ArrayExpress or GEO), this denotes the unique identifier for this reporter set in such a repository, else this is to be left null.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Platform.ReporterSet</table>
+<attribute_name>substrate_type_id</attribute_name>
+<html_documentation>When applicable, FK to SRes.OntologyTerm to indicate the substrate, e.g. 'glass' for certain microarrays, etc.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Platform.ReporterSet</table>
+<attribute_name>surface_type_id</attribute_name>
+<html_documentation>When applicable, FK to SRes.OntologyTerm to indicate the type of surface for this reporter set, e.g. 'polylysine'.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Platform.ReporterSet</table>
+<attribute_name>technology_type_id</attribute_name>
+<html_documentation>FK to SRes.OntologyTerm to indicate the type of technology for this reporter set, e.g. 'RT-PCR', 'Serial Analysis', 'in_situ_oligo_features', etc.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Platform.ReporterSet</table>
+<attribute_name>version</attribute_name>
+<html_documentation>When applicable, the version of the reporter set, e.g. for Affymetrix HG_U95A, this  could be 'v2'.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Platform.ReporterSet</table>
+<html_documentation>This table stores information about sets of reporters such as: microarrays, RT-PCR sets, SAGE tags, etc. It is an Imp table so that appropriate subclass views can be created to this end. For example, if the reporter set is a microarray the numberN attributes can be used to denote number of grid rows, number of grid columns, number of sub rows, number of subcolumns, etc.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Platform.ReporterSetAnnotation</table>
+<html_documentation>This tables is used to store additional annotation about a reporter set if not all can be accomodated in Platform.ReporterSetImp. Annotation is in the free form (name, value), where name indicates the type of annotation (e.g. 'probe_type') and value is the corresponding value (e.g. '36-mer').</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Platform.ReporterSetGroup</table>
+<html_documentation>This table is used to store groups of reporter sets, e.g. a collection of microarrays which together cover a given set of genes, like the Agilent Human 1 cDNA Microarray. The name and the description for the group can be accomodated in here.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Results.EditingEvent</table>
+<html_documentation>This table stores editing events. Genomic segments can either be indicated by a FK to DoTS.NAFeatureImp or by directly storing in this table a pointer to a sequence (FK to DoTS.NASequenceImp), together with event_start and event_end relative to that sequence.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Results.FamilyDiffResult</table>
+<html_documentation>This table stores results for pairwise comparisons of gene families (e.g. homologenes) between two conditions, e.g. differential expression results or differential binding sites results, etc. The attributes mean1, sd1, mean2, sd2, fdr, fold_change, test_statistic, p_value, adj_p_value, q_value, confidence_up, and  confidence-down are used in the same way as the analogous attributes in Results.ReporterDiffResult. </html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Results.FamilyExpression</table>
+<html_documentation>This table stores expression results associated to gene families (e.g. homologenes, etc.). The attributes value, confidence, standard_error, and  categorical_value are used in the same way as the analogous attributes in Results.ReporterExpression.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Results.GeneDiffResult</table>
+<html_documentation>This table stores results for pairwise comparisons of genes between two conditions, e.g. differential expression results or differential TFBS results, etc. The attributes mean1, sd1, mean2, sd2, fdr, fold_change, test_statistic, p_value, adj_p_value, q_value, confidence_up, and  confidence-down are used in the same way as the analogous attributes in Results.ReporterDiffResult. </html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Results.GeneExpression</table>
+<html_documentation>This table stores expression results associated to genes (e.g. derived from their representative reporter expression values in a microarray experiments or from quantification in an RNA-Seq experiment based on a given gene model). The attributes value, confidence, standard_error, and  categorical_value are used in the same way as the analogous attributes in Results.ReporterExpression.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Results.GeneSimilarity</table>
+<html_documentation>This table stores similarity measures between pairs of genes from a given protocol application node (analysis).</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Results.NAFeatureDiffResult</table>
+<html_documentation>This table stores results for pairwise comparisons of nucleid acid features between two conditions, e.g. differential expression results or differential TFBS results, etc. The attributes mean1, sd1, mean2, sd2, fdr, fold_change, test_statistic, p_value, adj_p_value, q_value, confidence_up, and  confidence-down are used in the same way as the analogous attributes in Results.ReporterDiffResult. </html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Results.NAFeatureExpression</table>
+<html_documentation>This table stores expression results associated to nucleic acid features (e.g. derived from their representative reporter expression values in a microarray experiments or from quantification in an RNA-Seq experiment based on a given gene model). The attributes value, confidence, standard_error, and  categorical_value are used in the same way as the analogous attributes in Results.ReporterExpression.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Results.ReporterDiffResult</table>
+<attribute_name>adj_p_value</attribute_name>
+<html_documentation>When applicable, an adjusted p-value (e.g. for multiple testing) for this reporter's differential behavior between the two conditions.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Results.ReporterDiffResult</table>
+<attribute_name>confidence_down</attribute_name>
+<html_documentation>When applicable, a confidence value for down-regulation of this reporter in one condition as compared to the other. </html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Results.ReporterDiffResult</table>
+<attribute_name>confidence_up</attribute_name>
+<html_documentation>When applicable, a confidence value for up-regulation of this reporter in one condition as compared to the other. </html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Results.ReporterDiffResult</table>
+<attribute_name>fdr</attribute_name>
+<html_documentation>When applicable, a fdr for this reporter's differential behavior between the two conditions.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Results.ReporterDiffResult</table>
+<attribute_name>fold_change</attribute_name>
+<html_documentation>When applicable, the fold change for a measurement of interest (e.g. expression) for this reporter between the two conditions.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Results.ReporterDiffResult</table>
+<attribute_name>mean1</attribute_name>
+<html_documentation>When applicable, the mean of a measurement of interest (e.g. expression) for this reporter in condition 1.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Results.ReporterDiffResult</table>
+<attribute_name>mean2</attribute_name>
+<html_documentation>When applicable, the mean of a measurement of interest (e.g. expression) for this reporter in condition 2.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Results.ReporterDiffResult</table>
+<attribute_name>p_value</attribute_name>
+<html_documentation>When applicable, a p-value for this reporter's differential behavior between the two conditions.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Results.ReporterDiffResult</table>
+<attribute_name>protocol_app_node_id</attribute_name>
+<html_documentation>Points to the protocol application node (in Study.ProtocolAppNode) representing what yielded these results (e.g. an analysis).</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Results.ReporterDiffResult</table>
+<attribute_name>q_value</attribute_name>
+<html_documentation>When applicable, a q-value for this reporter's differential behavior between the two conditions.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Results.ReporterDiffResult</table>
+<attribute_name>sd1</attribute_name>
+<html_documentation>When applicable, the standard deviation of a measurement of interest (e.g. expression) for this reporter in condition 1.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Results.ReporterDiffResult</table>
+<attribute_name>sd2</attribute_name>
+<html_documentation>When applicable, the standard deviation of a measurement of interest (e.g. expression) for this reporter in condition 2.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Results.ReporterDiffResult</table>
+<attribute_name>test_statistic</attribute_name>
+<html_documentation>When applicable, the value of the test stastic used to measure this reporter's differential behavior between the two conditions.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Results.ReporterDiffResult</table>
+<html_documentation>This table stores results for pairwise comparisons of reporters between two conditions, e.g. differential expression results or differential TFBS results, etc.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Results.ReporterExpression</table>
+<attribute_name>categorical_value</attribute_name>
+<html_documentation>This can be used to store non-quantitative or semi-quantitative expression values (e.g. present/absent, etc.).</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Results.ReporterExpression</table>
+<attribute_name>confidence</attribute_name>
+<html_documentation>When applicable, this can be used to store a confidence measure for the expression value.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Results.ReporterExpression</table>
+<attribute_name>protocol_app_node_id</attribute_name>
+<html_documentation>Points to the protocol application node (in Study.ProtocolAppNode) representing what yielded these results (e.g. a quantification, or an analysis, etc.).</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Results.ReporterExpression</table>
+<attribute_name>standard_error</attribute_name>
+<html_documentation>When applicable, this can be used to store a standard error for the expression value.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Results.ReporterExpression</table>
+<attribute_name>value</attribute_name>
+<html_documentation>This is the expression value.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Results.ReporterExpression</table>
+<html_documentation>This table stores expression results for reporters in a reporter set. These could be raw or processed expression values, depending on the type of protocol application node (e.g. quantification or analysis) that they are coming from.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Results.RnaDiffResult</table>
+<html_documentation>This table stores results for pairwise comparisons of transcripts between two conditions, e.g. differential expression results or differential TFBS results, etc. The attributes mean1, sd1, mean2, sd2, fdr, fold_change, test_statistic, p_value, adj_p_value, q_value, confidence_up, and  confidence-down are used in the same way as the analogous attributes in Results.ReporterDiffResult. </html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Results.RnaExpression</table>
+<html_documentation>This table stores expression results associated to transcrips (e.g. derived from their representative reporter expression values in a microarray experiments or from quantification in an RNA-Seq experiment based on a given gene model). The attributes value, confidence, standard_error, and  categorical_value are used in the same way as the analogous attributes in Results.ReporterExpression.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Results.SegmentDiffResult</table>
+<html_documentation>This table stores results for pairwise comparisons of genomic segments between two conditions. Genomic segments and their strand can either be indicated by a FK to DoTS.NAFeatureImp or by directly storing in this table a pointer to a sequence (FK to DoTS.NASequenceImp), together with segment_start and segment_end relative to that sequence, as well as strand information (0 if on the + strand, 1 if on the reverse strand). The attributes mean1, sd1, mean2, sd2, fdr, fold_change, test_statistic, p_value, adj_p_value, q_value, confidence_up, and  confidence-down are used in the same way as the analogous attributes in Results.ReporterDiffResult.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Results.SegmentResult</table>
+<attribute_name>categorical_value</attribute_name>
+<html_documentation>This can be used to store non-quantitative or semi-quantitative values associated to this result.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Results.SegmentResult</table>
+<attribute_name>confidence</attribute_name>
+<html_documentation>When applicable, a confidence associated to this result.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Results.SegmentResult</table>
+<attribute_name>fdr</attribute_name>
+<html_documentation>When applicable, a fdr associated to this result.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Results.SegmentResult</table>
+<attribute_name>genetic_location</attribute_name>
+<html_documentation>The genetic location of this segment, when applicable.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Results.SegmentResult</table>
+<attribute_name>p_value</attribute_name>
+<html_documentation>When applicable, a p-value associated to this result.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Results.SegmentResult</table>
+<attribute_name>protocol_app_node_id</attribute_name>
+<html_documentation>Points to the protocol application node (in Study.ProtocolAppNode) representing what yielded these results (e.g. an analysis).</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Results.SegmentResult</table>
+<attribute_name>score1</attribute_name>
+<html_documentation>Can be used to store any kind of score attached to this genomic segment result, such as the coverage if the results represent a coverage plot, or a ratio if the results represent peak calls obtained by comparing to a control, etc.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Results.SegmentResult</table>
+<attribute_name>score2</attribute_name>
+<html_documentation>Additional score holder, to be used as score1.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Results.SegmentResult</table>
+<attribute_name>standard_error</attribute_name>
+<html_documentation>When applicable, a standard_error associated to this result.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Results.SegmentResult</table>
+<html_documentation>This table stores results that are of the form of genomics segments with possibly associated scores (e.g. coverage plots or peak calls from a High-Throughput-Sequencing experiment). Genomic segments and their strands can either be indicated by a FK to DoTS.NAFeatureImp or by directly storing in this table a pointer to a sequence (FK to DoTS.NASequenceImp), together with segment_start and segment_end relative to that sequence, as well as strand information (0 if on the + strand, 1 if on the reverse strand).</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.Anatomy</table>
+<attribute_name>anatomy_id</attribute_name>
+<html_documentation>Primary key</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.Anatomy</table>
+<attribute_name>description</attribute_name>
+<html_documentation>An optional description of the anatomy term.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.Anatomy</table>
+<attribute_name>hier_level</attribute_name>
+<html_documentation>The number of steps from a root node of the anatomy tree.  For example, "1" indicates that a row is a root node.  "2" is a child of a root node.  The parent of a row with <b>hier_level</b> of 2 has a <b>hier_level</b> of 1</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.Anatomy</table>
+<attribute_name>level_1</attribute_name>
+<html_documentation>Each level up to the <b>hier_level</b> of an entry contains the <b>name</b> attribute of that level of the hierarchy.  For example, lymphatic vessel has a <b>hier_level</b> of 3, <b>level_1</b> = organ system, <b>level_2</b> = cardiovascular system, <b>level_3</b> = lymphatic vessel.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.Anatomy</table>
+<attribute_name>name</attribute_name>
+<html_documentation>Anatomy term as determined by the <b>source<b/>.  Most commonly an organ, tissue, or cell type.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.Anatomy</table>
+<attribute_name>parent_id</attribute_name>
+<html_documentation>The primary key of a row in the same table that is one <b>hier_level</b> closer to 1.  This attribute is key for the hierarchical structure of this table as it allows for distinguishing parent-child relationships between anatomy entries.  The <b>parent_id</b> of a root node is 0 for <b>organism</b></html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.Anatomy</table>
+<attribute_name>source</attribute_name>
+<html_documentation>Source of the anatomy term. Sources from which terms were drawn include: GXD (Jackson Labs Mouse Gene Expression Database), GRAYS (Gray's Anatomy, 37th edtition), STEDMAN (Stedman's Medical Dictionary, 24th edition), CBIL (Computational Biology and Informatics Laboratory, UPENN), NISSANOV (Dr. Jonathan Nissanov, Drexel University)</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.Anatomy</table>
+<html_documentation>Stores anatomy terms in a hierarchical manner through the use of the <b>parent_id</b>, which refers to a row in the same table that is one level closer to the root of the tree</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.BibRefType</table>
+<attribute_name>bib_ref_type_id</attribute_name>
+<html_documentation>Primary key.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.BibRefType</table>
+<attribute_name>description</attribute_name>
+<html_documentation>A brief description for this reference type.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.BibRefType</table>
+<attribute_name>external_database_release_id</attribute_name>
+<html_documentation>FK to Sres.ExternalDatabaseRelease. The id of the source, if it is an external database.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.BibRefType</table>
+<attribute_name>name</attribute_name>
+<html_documentation>The name identifying the reference type to which this entry refers.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.BibRefType</table>
+<attribute_name>source</attribute_name>
+<html_documentation>The name of the source from which the definition of this reference type was taken.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.BibRefType</table>
+<attribute_name>source_id</attribute_name>
+<html_documentation>The id of this reference type in the original source from which its definition was taken.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.BibRefType</table>
+<html_documentation>Each entry in this table represents a type of bibliographic reference, e.g. an abstract, a book, journal article, or techical report, etc.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.BibliographicReference</table>
+<attribute_name>authors</attribute_name>
+<html_documentation>The names of the authors.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.BibliographicReference</table>
+<attribute_name>bib_ref_type_id</attribute_name>
+<html_documentation>FK to Sres.BibRefType. The id of the type of this bibliographic reference.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.BibliographicReference</table>
+<attribute_name>bibliographic_reference_id</attribute_name>
+<html_documentation>Primary key.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.BibliographicReference</table>
+<attribute_name>contact_id</attribute_name>
+<html_documentation>FK to Contact. The id of the person to contact regarding this reference.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.BibliographicReference</table>
+<attribute_name>editor</attribute_name>
+<html_documentation>The name of the editor.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.BibliographicReference</table>
+<attribute_name>issue</attribute_name>
+<html_documentation>The issue number of the journal in which this reference was published.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.BibliographicReference</table>
+<attribute_name>medline_id</attribute_name>
+<html_documentation>The medline ID for this reference.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.BibliographicReference</table>
+<attribute_name>pages</attribute_name>
+<html_documentation>The page numbers of this reference in the journal.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.BibliographicReference</table>
+<attribute_name>publication</attribute_name>
+<html_documentation>The name of the journal in which this reference was published.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.BibliographicReference</table>
+<attribute_name>pubmed_id</attribute_name>
+<html_documentation>The pubmed ID for this reference.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.BibliographicReference</table>
+<attribute_name>title</attribute_name>
+<html_documentation>The title of the reference.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.BibliographicReference</table>
+<attribute_name>uri</attribute_name>
+<html_documentation>The URI for this reference.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.BibliographicReference</table>
+<attribute_name>volume</attribute_name>
+<html_documentation>The volume number of the journal in which this reference was published.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.BibliographicReference</table>
+<attribute_name>year</attribute_name>
+<html_documentation>The year this reference was published.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.BibliographicReference</table>
+<html_documentation>Each entry in this table represents a reference to an article, book, or other publication.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.Contact</table>
+<attribute_name>address1</attribute_name>
+<html_documentation>Street address of the Contact or Affiliation.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.Contact</table>
+<attribute_name>address2</attribute_name>
+<html_documentation>Additional street address information of the Contact or Affiliation.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.Contact</table>
+<attribute_name>affiliation_id</attribute_name>
+<html_documentation>Pointer to SRes.Conact for the entry containing contact information for the affiliation of the contact.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.Contact</table>
+<attribute_name>city</attribute_name>
+<html_documentation>City used in the mailing address for the Contact or Affiliation.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.Contact</table>
+<attribute_name>contact_id</attribute_name>
+<html_documentation>Primary key.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.Contact</table>
+<attribute_name>country</attribute_name>
+<html_documentation>Country used in the mailing address for the Contact or Affiliation.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.Contact</table>
+<attribute_name>email</attribute_name>
+<html_documentation>Email address of the Contact or Affiliation.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.Contact</table>
+<attribute_name>external_database_release_id</attribute_name>
+<html_documentation>Foreign key to SRES.ExternalDatabaseRelease.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.Contact</table>
+<attribute_name>fax</attribute_name>
+<html_documentation>Fax number of the Contact or Affiliation.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.Contact</table>
+<attribute_name>first</attribute_name>
+<html_documentation>First name of the Contact.  If Affiliation, leave null.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.Contact</table>
+<attribute_name>last</attribute_name>
+<html_documentation>Last name of the Contact.  If Affiliation, leave null.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.Contact</table>
+<attribute_name>name</attribute_name>
+<html_documentation>Complete name (first, middle initial and last name) of the Contact or the name of the Affiliation.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.Contact</table>
+<attribute_name>phone</attribute_name>
+<html_documentation>Phone number of the Contact or Affiliation.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.Contact</table>
+<attribute_name>source_id</attribute_name>
+<html_documentation>the unique identifier of the entry in the external database</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.Contact</table>
+<attribute_name>state</attribute_name>
+<html_documentation>State used in the mailing address for the Contact or Affiliation.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.Contact</table>
+<attribute_name>zip</attribute_name>
+<html_documentation>Zip code used in the mailing address for the Contact or Affiliation.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.Contact</table>
+<html_documentation>Holds contact information (e.g. name, email address, phone number).</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.DbRef</table>
+<attribute_name>additional_remark</attribute_name>
+<html_documentation>Continuation of the comment (if longer than 255 chars)</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.DbRef</table>
+<attribute_name>db_ref_id</attribute_name>
+<html_documentation>Primary key column</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.DbRef</table>
+<attribute_name>external_db_id</attribute_name>
+<html_documentation>FK to ExternalDatabase</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.DbRef</table>
+<attribute_name>primary_identifier</attribute_name>
+<html_documentation>Primary identification string for the entry</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.DbRef</table>
+<attribute_name>remark</attribute_name>
+<html_documentation>A comment</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.DbRef</table>
+<attribute_name>secondary_identifier</attribute_name>
+<html_documentation>The secondary identification string for the entry</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.DbRef</table>
+<html_documentation>External reference entries</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.DevelopmentalStage</table>
+<attribute_name>definition</attribute_name>
+<html_documentation>Definition of the developmental stage <b>name</b> as determined by the <b>source</b>.  For example, the definition of Theiler Stage 12 is: "1-4 somites, allantois extends, 1st brancial arch, heart starts to form, foregut pocket visible, preotic sulcus (at 2-3 somite stage), Days post conception (range): 8 (7.5-8.75 )."</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.DevelopmentalStage</table>
+<attribute_name>developmental_stage_id</attribute_name>
+<html_documentation>Primary key</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.DevelopmentalStage</table>
+<attribute_name>level_1</attribute_name>
+<html_documentation>Each level contains the <b>name</b> attribute of that level of the hierarchy. The highest level that is entered should represent the name of the selected row.  For example, trophozoite has <b>level_1</b> = blood phase and <b>level_2</b> = trophozoite.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.DevelopmentalStage</table>
+<attribute_name>name</attribute_name>
+<html_documentation>The name of the developmental stage as determined by the <b>source</b>.  For example, Theiler Stage 12.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.DevelopmentalStage</table>
+<attribute_name>parent_id</attribute_name>
+<html_documentation>Allows for the hierarchical structure of this table by indicating the primary key (<b>developmental_stage_id</b>) of the row in this same table that is one step closer to the root of the tree.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.DevelopmentalStage</table>
+<attribute_name>source</attribute_name>
+<html_documentation>Indicates the source of the developmental stage <b>name</b>.  Example: "Bard et al. An internet-accessible database of mouse developmental anatomy based on a systematic nomenclature. Mechanisms of Development 74:111-120."</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.DevelopmentalStage</table>
+<attribute_name>taxon_id</attribute_name>
+<html_documentation>Foreign key to the SRes::Taxon table indicating the organism to which the developmental stage refers.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.DevelopmentalStage</table>
+<html_documentation>Describes the developmental stage of organisms that have such stages</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.Disease</table>
+<attribute_name>definition</attribute_name>
+<html_documentation>Optional definition of the disease.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.Disease</table>
+<attribute_name>disease_id</attribute_name>
+<html_documentation>Primary key</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.Disease</table>
+<attribute_name>level_1</attribute_name>
+<html_documentation>Each level contains the <b>name</b> attribute of that level of the hierarchy. The highest level that is entered should represent the name of the selected row.  For example, disease name Isolated tracheal or broncial tuberculosis has <b>level_1</b> = INFECTIOUS AND PARASITIC DISEASES and <b>level_2</b> = TUBERCULOSIS</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.Disease</table>
+<attribute_name>name</attribute_name>
+<html_documentation>The name of the disease as determined by the <b>source</b>.  For example, "Isolated tracheal or broncial tuberculosis".</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.Disease</table>
+<attribute_name>parent_id</attribute_name>
+<html_documentation>Allows for the hierarchical structure of this table by indicating the primary key (<b>disease_id</b>) of the row in this same table that is one step closer to the root of the tree.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.Disease</table>
+<attribute_name>source</attribute_name>
+<html_documentation>Indicates the source of the disease <b>name</b> and <b>definition</b>. For example, "CDC ICD-9 (KEGG version)"</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.Disease</table>
+<html_documentation>Describes a disease process</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.EnzymeClass</table>
+<html_documentation>Special table for Enzyme Classification (EC) numbers organized to aid queries as each number position represents a level of classification.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.ExternalDatabase</table>
+<html_documentation>Holds the name of the resource where datasets, ontology terms, identifiers, pathways, etc. were obtained. Can refer to local resources as external is meant to denote anything besides the GUS instance in which this table resides.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.ExternalDatabaseRelease</table>
+<html_documentation>Describes specific version and source location of imported resources.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.GeneticCode</table>
+<html_documentation>Associated with NCBI taxon table to describe alternative genetic codes used by some species.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.MGEDOntologyRelationship</table>
+<attribute_name>mged_ontology_relationship_id</attribute_name>
+<html_documentation>Primary key</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.MGEDOntologyRelationship</table>
+<attribute_name>object_term_id</attribute_name>
+<html_documentation>Pointer to SRes.OntologyTerm.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.MGEDOntologyRelationship</table>
+<attribute_name>ontology_relationship_type_id</attribute_name>
+<html_documentation>Pointer to SRes.OntologyRelationshipType.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.MGEDOntologyRelationship</table>
+<attribute_name>predicate_term_id</attribute_name>
+<html_documentation>Pointer to SRes.OntologyTerm.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.MGEDOntologyRelationship</table>
+<attribute_name>subject_term_id</attribute_name>
+<html_documentation>Pointer to SRes.OntologyTerm.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.MGEDOntologyRelationship</table>
+<html_documentation>Represents relationships between terms in the MGED Ontology in the form of Subject Predicate Object tuples and what type of relationship the terms have (e.g subclass of, instance of).</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.MGEDOntologyTerm</table>
+<attribute_name>definition</attribute_name>
+<html_documentation>definition of the term</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.MGEDOntologyTerm</table>
+<attribute_name>external_database_release_id</attribute_name>
+<html_documentation>Foreign key to SRes.ExternalDatabaseRelease.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.MGEDOntologyTerm</table>
+<attribute_name>mged_ontology_term_id</attribute_name>
+<html_documentation>Primary key.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.MGEDOntologyTerm</table>
+<attribute_name>name</attribute_name>
+<html_documentation>text descriptor for the entry</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.MGEDOntologyTerm</table>
+<attribute_name>ontology_term_type_id</attribute_name>
+<html_documentation>Foreign key to SRes.OntologyTermType.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.MGEDOntologyTerm</table>
+<attribute_name>source_id</attribute_name>
+<html_documentation>the unique identifier of the entry in the external database</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.MGEDOntologyTerm</table>
+<attribute_name>uri</attribute_name>
+<html_documentation>pointer to a web site or a system file</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.MGEDOntologyTerm</table>
+<html_documentation>Holds terms found in the MGED Ontology.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.OntologyRelationship</table>
+<html_documentation>Relationships between ontology terms are captured as a triple of subject, predicate, object as attributes with foreign keys to OntologyTerm. The type of relationship is a foreign key to OntologyRelationshipType.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.OntologyRelationshipType</table>
+<attribute_name>name</attribute_name>
+<html_documentation>text descriptor for the entry</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.OntologyRelationshipType</table>
+<attribute_name>ontology_relationship_type_id</attribute_name>
+<html_documentation>Primary key.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.OntologyRelationshipType</table>
+<html_documentation>Describes the type of relationship formed by the terms in the RDF triple.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.OntologySynonym</table>
+<html_documentation>Provides synonyms where available for terms in OntologyTerm table.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.OntologyTerm</table>
+<attribute_name>SOURCE_ID</attribute_name>
+<html_documentation>The unique identifier of the term within the resource (MGED Ontology).</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.OntologyTerm</table>
+<html_documentation>Table for all terms from ontologies (e.g., GO, MO, SO), controlled vocabularies, enumerated lists, etc. except for Taxon and EC numbers.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.OntologyTermType</table>
+<attribute_name>description</attribute_name>
+<html_documentation>text description of the entry</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.OntologyTermType</table>
+<attribute_name>name</attribute_name>
+<html_documentation>text descriptor for the entry</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.OntologyTermType</table>
+<attribute_name>ontology_term_type_id</attribute_name>
+<html_documentation>Primary key.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.OntologyTermType</table>
+<html_documentation>Describes the type of the term (e.g. Class, Individual).</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.Pathway</table>
+<html_documentation>Pathways include metabolic, signaling, and other types imported form sources such as KEGG.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.PathwayNode</table>
+<html_documentation>Provides soft links to the table and row describing the node (e.g., entry in Gene table). Also provides helpful information on type and location for visualization.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.PathwayRelationship</table>
+<attribute_name>associated_node_id</attribute_name>
+<html_documentation>Foreign key to downstream PathwayNode for directed relationships. If undirected then arbitrary which is node vs associated node.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.PathwayRelationship</table>
+<attribute_name>relationship_type_id</attribute_name>
+<html_documentation>Foreign key to OntologyTerm table for type of edge (relationship) between nodes.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.PathwayRelationship</table>
+<html_documentation>Linkages (edges) between pathway entities (nodes) such as proteins, metabolites, genes, etc. typically imported an external database such as KEGG. Node and associated node are specified in the PathwayNode table.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.Phenotype</table>
+<html_documentation>Phenotypes are defined in the PATO ontology stored in OntologyTerm and associated with anatomy, cells, and developmental stage specified with foreign keys to OntologyTerm.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.Taxon</table>
+<attribute_name>genetic_code_id</attribute_name>
+<html_documentation>Foreign key to SRes.GeneticCode</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.Taxon</table>
+<attribute_name>mitochondrial_genetic_code_id</attribute_name>
+<html_documentation>Foreign key to SRes.GeneticCode, refers to mitochondrial genome</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.Taxon</table>
+<attribute_name>ncbi_tax_id</attribute_name>
+<html_documentation>Primary taxon identifier used by NCBI.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.Taxon</table>
+<attribute_name>parent_id</attribute_name>
+<html_documentation>Pointer to SRes.Taxon.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.Taxon</table>
+<attribute_name>rank</attribute_name>
+<html_documentation>Scientific classification category e.g.species, genus, kindom, etc.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.Taxon</table>
+<attribute_name>taxon_id</attribute_name>
+<html_documentation>Primary key.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.Taxon</table>
+<html_documentation>Holds information from the NCBI Taxonomy.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.TaxonName</table>
+<attribute_name>name</attribute_name>
+<html_documentation>text descriptor for the entry</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.TaxonName</table>
+<attribute_name>name_class</attribute_name>
+<html_documentation>Type of name e.g. scientific name, synonym, mispelling</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.TaxonName</table>
+<attribute_name>taxon_id</attribute_name>
+<html_documentation>Foreign key to SRes.Taxon.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.TaxonName</table>
+<attribute_name>taxon_name_id</attribute_name>
+<html_documentation>Primary key.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.TaxonName</table>
+<attribute_name>unique_name_variant</attribute_name>
+<html_documentation>The unique variant of this name if name not unique</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>SRes.TaxonName</table>
+<html_documentation>Holds information about the name of the taxon referred to by the taxon_id.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Study.Characteristic</table>
+<attribute_name>ROW_ID</attribute_name>
+<html_documentation>We're going to drop this column</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Study.Characteristic</table>
+<html_documentation>This table attaches annotation to protocol application nodes. For example, if the node is a biomaterial, annotations such as cell type, strain or line, developmental stage can be stored using this table and pointing to relevant entries in SRes.OntologyTerm. If the protocol application node instead yields a dataset (e.g. the node type is a quantification, analysis, etc.) the FK to Core.TableInfo can be used to indicate which table in the database stores the dataset itself (e.g. Results.GeneExpression).</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Study.Funding</table>
+<html_documentation>This table lists grants and points to their main contacts (stored in SRes.Contact).</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Study.Input</table>
+<html_documentation>Links inputs (stored in Study.ProtocolAppNode) to protocol applications (stored in Study.ProtocolApp).</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Study.Output</table>
+<html_documentation>Links oututs (stored in Study.ProtocolAppNode) to protocol applications (stored in Study.ProtocolApp).</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Study.Protocol</table>
+<attribute_name>bibliographic_reference_id</attribute_name>
+<html_documentation>If this protocol is described in a publication or other reference this attribute points to it, as a FK to SRes.BibliographicReference.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Study.Protocol</table>
+<attribute_name>external_database_release_id</attribute_name>
+<html_documentation>If the protocol is in another repository (e.g. a public repository like ArrayExpress or GEO), this points to the appropriate release of such a repository (FK to SRes.ExternalDatabaseRelease), else this is to be left null.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Study.Protocol</table>
+<attribute_name>protocol_type_id</attribute_name>
+<html_documentation>FK to SRes.OntologyTerm which points to the type of protocols, e.g. hybridization, labeling, feature_extraction, etc.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Study.Protocol</table>
+<attribute_name>source_id</attribute_name>
+<html_documentation>If the protocol is in another repository (e.g. a public repository like ArrayExpress or GEO), this denotes the unique identifier for this protocol in such a repository, else this is to be left null.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Study.Protocol</table>
+<attribute_name>uri</attribute_name>
+<html_documentation>When applicable, a Uniform Resource Identifier for this protocol. For example, to denote the location of a file with the protocol information.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Study.Protocol</table>
+<html_documentation>This table stores protocols, experimental or computational.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Study.ProtocolApp</table>
+<html_documentation>Stores particular applications of protocol series.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Study.ProtocolAppContact</table>
+<attribute_name>contact_id</attribute_name>
+<html_documentation>Points to the operator (FK to SRes.Contact) for the order_num-th protocol in the series.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Study.ProtocolAppContact</table>
+<attribute_name>order_num</attribute_name>
+<html_documentation>The order_num of the protocol in the protocol application which was carried out by this operator.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Study.ProtocolAppContact</table>
+<html_documentation>Stores the operators for each of the protocols in a protocol application.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Study.ProtocolAppNode</table>
+<attribute_name>external_database_release_id</attribute_name>
+<html_documentation>If the node corresponds to an entity present in another repository (e.g. an assay in GEO), this points to the appropriate release of such a repository (FK to SRes.ExternalDatabaseRelease), else this is to be left null.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Study.ProtocolAppNode</table>
+<attribute_name>source_id</attribute_name>
+<html_documentation>If the node corresponds to an entity present in another repository (e.g. an assay in GEO), this denotes the unique identifier for this entity in such a repository, else this is to be left null.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Study.ProtocolAppNode</table>
+<attribute_name>taxon_id</attribute_name>
+<html_documentation>Points to the taxon associated to this node (FK to SRes.Taxon).</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Study.ProtocolAppNode</table>
+<attribute_name>type_id</attribute_name>
+<html_documentation>This points to the type of protocol application node e.g.: biosource, biosample, labeled extract, assay, acquisition, quantification, analysis, etc. It is a FK to SRes.OntologyTerm.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Study.ProtocolAppNode</table>
+<attribute_name>uri</attribute_name>
+<html_documentation>When applicable, a Uniform Resource Identifier for this node. For example, if the node represents an acquisition, this could provide the location for the associated image file; if the node represents a quantification, this could provide the location for the associated raw data file, etc.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Study.ProtocolAppNode</table>
+<html_documentation>This table stores the entities that represent nodes of the experimental diagram for a study. These entities are inputs and/or outputs of applications of experimental or computational protocols. </html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Study.ProtocolAppParam</table>
+<attribute_name>row_id</attribute_name>
+<html_documentation>For a parameter whose value corresponds to an entry in this database, indicates the primary key of that entry in the table pointed to by Study.ProtocolApp.Param.table_id.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Study.ProtocolAppParam</table>
+<attribute_name>table_id</attribute_name>
+<html_documentation>For a parameter whose value corresponds to an entry in this database, indicates the table containing that entry.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Study.ProtocolAppParam</table>
+<html_documentation>This table stores the values of a given protocol parameter in a protocol application. Different attributes corresponding to different value data types can be used or one can point to an entry in the database with the soft key (table_id, row_id).</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Study.ProtocolParam</table>
+<attribute_name>data_type_id</attribute_name>
+<html_documentation>Points to the data type for the parameter, e.g. string, integer, etc., as stored in SRes.OntologyTerm.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Study.ProtocolParam</table>
+<attribute_name>default_value</attribute_name>
+<html_documentation>The default value for this parameter, if any.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Study.ProtocolParam</table>
+<attribute_name>is_user_specified</attribute_name>
+<html_documentation>Set to 1 if this parameter can be set by the user, set to 0 if it is computed and set automatically.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Study.ProtocolParam</table>
+<attribute_name>name</attribute_name>
+<html_documentation>The parameter name, e.g. 'amount amplified', or 'software version'.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Study.ProtocolParam</table>
+<attribute_name>unit_type_id</attribute_name>
+<html_documentation>When applicable points to the units of measurement for the parameter values, e.g. microgram, meter, etc. as stored in SRes.OntologyTerm.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Study.ProtocolParam</table>
+<html_documentation>This table stores the parameters that apply to a protocol (stored in Study.Protocol), both those that a user can set when running the protocol and those whose (optimal) values are determined and set automatically during the application of the protocol.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Study.ProtocolSeries</table>
+<html_documentation>A collection of one or more protocols applied serially. Sometimes, when multiple protocols are serially applied, not all intermediate inputs/outputs need to be stored Study.ProtocolAppNode. In this case it is useful to group those protocols into a series.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Study.ProtocolSeriesLink</table>
+<attribute_name>order_num</attribute_name>
+<html_documentation>The order of this protocol in the protocol series.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Study.ProtocolSeriesLink</table>
+<html_documentation>Links protocol series (stored in Study.ProtocolSeries) to the protocols (stored in Study.Protocol) that comprise them, in order.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Study.Study</table>
+<attribute_name>external_database_release_id</attribute_name>
+<html_documentation>If the study is in another repository (e.g. a public repository like ArrayExpress or GEO), this points to the appropriate release of such a repository (FK to SRes.ExternalDatabaseRelease), else this is to be left null.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Study.Study</table>
+<attribute_name>investigation_id</attribute_name>
+<html_documentation>If the study is part of an investigation, this points to the investigation (FK to Study.Study), else this is to be left null.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Study.Study</table>
+<attribute_name>source_id</attribute_name>
+<html_documentation>If the study is in another repository (e.g. a public repository like ArrayExpress or GEO), this denotes the unique identifier for this study in such a repository, else this is to be left null.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Study.Study</table>
+<html_documentation>This table stores information about studies or investigations (an investigation is a collection of studies). This includes a name (or title), description, goal, approaches, results and conclusions.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Study.StudyBibRef</table>
+<html_documentation>This table links studies/investigations (stored in Study.Study) to all relevant bibliographic references (stored in SRes.BibliographifReference).</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Study.StudyContact</table>
+<attribute_name>role_id</attribute_name>
+<html_documentation>This points to the role (e.g. submitter) of a given contact in a study/investigation, FK to SRes.OntologyTerm.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Study.StudyContact</table>
+<html_documentation>This table links studies/investigations (stored in Study.Study) to all relevant contacts (stored in SRes.Contact).</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Study.StudyDesign</table>
+<html_documentation>This table lists all design types (FK to SRes.OntologyTerm) that are applicable to a study/investigation (stored in Study.Study).</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Study.StudyFactor</table>
+<attribute_name>study_factor_type_id</attribute_name>
+<html_documentation>This attribute points to the type of the study factor as stored in SRes.OntologyTerm.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Study.StudyFactor</table>
+<html_documentation>This table lists all factors/covariates of interest in a study (stored in Study.Study). For example a study might comprise assays that involve samples from different tissues, in which case tissue would typically be a factor of interest.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Study.StudyFactorValue</table>
+<attribute_name>row_id</attribute_name>
+<html_documentation>When the value of a study factor at a protocol application node corresponds to an entry in this database, this points to the entry in the relevant table. For example, if the protocol application node is a microarray assay and the array used is a value of interest, this can point the entry in Platform.ReporterSetImp corresponding that array.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Study.StudyFactorValue</table>
+<attribute_name>table_id</attribute_name>
+<html_documentation>When the value of a study factor at a protocol application node corresponds to an entry in this database, this points to the table (FK to Core.TableInfo) storing that entry. For example, if the protocol application node is a microarray assay and the array used is a value of interest, this can point to the Platform.ReporterSetImp table.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Study.StudyFactorValue</table>
+<attribute_name>value</attribute_name>
+<html_documentation>Stores the value of the study factor at this protocol application node.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Study.StudyFactorValue</table>
+<html_documentation>This table links study factors (stored in Study.StudyFactor) to protocol application nodes (stored in Study.ProtocolAppNode), providing the value of the factor for that node. For example if the factor is tissue and a protocol application node is a biomaterial such as a liver sample, liver is the value of this factor for that node. One has the option to associate the value of a factor only to the first node in the graph to which it applies, or to associate it also to all subsequent nodes.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Study.StudyFunding</table>
+<html_documentation>This table links studies/investigations (stored in Study.Study) to fundings (stored in Study.Funding).</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Study.StudyLink</table>
+<html_documentation>This table links studies/investigations (stored in Study.Study) to protocol application nodes (stored in Study.ProtocolAppNode).</html_documentation>
+</Core::DatabaseDocumentation>
