@@ -11206,6 +11206,7 @@
                   <column id="SRes/ExternalDatabaseRelease/FILE_MD5" name="FILE_MD5" nullable="true" length="32" precision="0" type="STRING"/>
                   <column id="SRes/ExternalDatabaseRelease/BLAST_FILE" name="BLAST_FILE" nullable="true" length="255" precision="0" type="STRING"/>
                   <column id="SRes/ExternalDatabaseRelease/BLAST_FILE_MD5" name="BLAST_FILE_MD5" nullable="true" length="32" precision="0" type="STRING"/>
+                  <column id="SRes/ExternalDatabaseRelease/ID_IS_ALIAS" name="ID_IS_ALIAS" nullable="true" length="1" precision="0" type="NUMBER"/>
                </columns>
                <indexes>
                   <index name="PK_EXTDBRLS" tablespace="USERS" type="NORMAL">
