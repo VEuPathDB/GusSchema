@@ -558,7 +558,7 @@
                         <column idref="Core/UserGroup/USER_GROUP_ID"/>
                      </columns>
                   </index>
-                  <index name="SYS_C0047061" tablespace="USERS" type="NORMAL">
+                  <index name="USERGROUP_IND02" tablespace="USERS" type="NORMAL">
                      <columns>
                         <column idref="Core/UserGroup/USER_ID"/>
                         <column idref="Core/UserGroup/GROUP_ID"/>
@@ -576,7 +576,7 @@
                         <column idref="Core/UserGroup/USER_GROUP_ID"/>
                      </constrainedColumns>
                   </constraint>
-                  <constraint name="SYS_C0047061" type="UNIQUE">
+                  <constraint name="USERGROUP_FK01" type="UNIQUE">
                      <constrainedColumns>
                         <column idref="Core/UserGroup/USER_ID"/>
                         <column idref="Core/UserGroup/GROUP_ID"/>
@@ -653,13 +653,13 @@
                         <column idref="Core/UserProject/USER_PROJECT_ID"/>
                      </columns>
                   </index>
-                  <index name="SYS_C0047065" tablespace="USERS" type="NORMAL">
+                  <index name="USERPROJECT_IND01" tablespace="USERS" type="NORMAL">
                      <columns>
                         <column idref="Core/UserProject/USER_ID"/>
                         <column idref="Core/UserProject/PROJECT_ID"/>
                      </columns>
                   </index>
-                  <index name="USERPROJECT_IND01" tablespace="USERS" type="NORMAL">
+                  <index name="USERPROJECT_IND02" tablespace="USERS" type="NORMAL">
                      <columns>
                         <column idref="Core/UserProject/PROJECT_ID"/>
                      </columns>
@@ -671,13 +671,13 @@
                         <column idref="Core/UserProject/USER_PROJECT_ID"/>
                      </constrainedColumns>
                   </constraint>
-                  <constraint name="SYS_C0047065" type="UNIQUE">
+                  <constraint name="USERPROJECT_FK01" type="UNIQUE">
                      <constrainedColumns>
                         <column idref="Core/UserProject/USER_ID"/>
                         <column idref="Core/UserProject/PROJECT_ID"/>
                      </constrainedColumns>
                   </constraint>
-                  <constraint name="USERPROJECT_FK05" type="FOREIGN_KEY">
+                  <constraint name="USERPROJECT_FK02" type="FOREIGN_KEY">
                      <constrainedColumns>
                         <column idref="Core/UserProject/USER_ID"/>
                      </constrainedColumns>
@@ -686,7 +686,7 @@
                         <column idref="Core/UserInfo/USER_ID"/>
                      </referencedColumns>
                   </constraint>
-                  <constraint name="USERPROJECT_FK06" type="FOREIGN_KEY">
+                  <constraint name="USERPROJECT_FK03" type="FOREIGN_KEY">
                      <constrainedColumns>
                         <column idref="Core/UserProject/PROJECT_ID"/>
                      </constrainedColumns>
@@ -5703,7 +5703,7 @@
                         <column idref="DoTS/GOAssociation/GO_ASSOCIATION_ID"/>
                      </columns>
                   </index>
-                  <index name="SYS_C0047304" tablespace="USERS" type="NORMAL">
+                  <index name="GOASSOCIATION_IND03" tablespace="USERS" type="NORMAL">
                      <columns>
                         <column idref="DoTS/GOAssociation/TABLE_ID"/>
                         <column idref="DoTS/GOAssociation/ROW_ID"/>
@@ -5744,7 +5744,7 @@
                         <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
                      </referencedColumns>
                   </constraint>
-                  <constraint name="SYS_C0047304" type="UNIQUE">
+                  <constraint name="GOSSOCIATION_FK03" type="UNIQUE">
                      <constrainedColumns>
                         <column idref="DoTS/GOAssociation/TABLE_ID"/>
                         <column idref="DoTS/GOAssociation/ROW_ID"/>
@@ -11019,6 +11019,11 @@
                         <column idref="SRes/Contact/EXTERNAL_DATABASE_RELEASE_ID"/>
                      </columns>
                   </index>
+                  <index name="CONTACT_IND04" tablespace="USERS" type="NORMAL">
+                     <columns>
+                        <column idref="SRes/Contact/TYPE_ID"/>
+                     </columns>
+                  </index>
                </indexes>
                <constraints>
                   <constraint name="PK_CONTACT" type="PRIMARY_KEY">
@@ -11408,6 +11413,13 @@
                         <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
                      </columns>
                   </index>
+                  <index name="ONTOLOGYTERM_R0" tablespace="USERS" type="NORMAL">
+                     <columns>
+                        <column idref="SRes/OntologyTerm/TAXON_ID"/>
+                        <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
+                     </columns>
+                  </index>
+
                </indexes>
                <constraints>
                  <constraint name="PK_ONTOLOGYTERM" type="PRIMARY_KEY">
@@ -11709,7 +11721,26 @@
                   </index>
                   <index name="PATHWAYNODE_IND01" tablespace="USERS" type="NORMAL">
                      <columns>
-                        <column idref="SRes/PathwayNODE/PATHWAY_NODE_TYPE_ID"/>
+                        <column idref="SRes/PathwayNode/PATHWAY_NODE_TYPE_ID"/>
+                        <column idref="SRes/PathwayNode/PATHWAY_NODE_ID"/>
+                     </columns>
+                  </index>
+                  <index name="PATHWAYNODE_IND02" tablespace="USERS" type="NORMAL">
+                     <columns>
+                        <column idref="SRes/PathwayNode/GLYPH_TYPE_ID"/>
+                        <column idref="SRes/PathwayNode/PATHWAY_NODE_ID"/>
+                     </columns>
+                  </index>
+                  <index name="PATHWAYNODE_IND03" tablespace="USERS" type="NORMAL">
+                     <columns>
+                        <column idref="SRes/PathwayNode/PARENT_ID"/>
+                        <column idref="SRes/PathwayNode/PATHWAY_NODE_ID"/>
+                     </columns>
+                  </index>
+                  <index name="PATHWAYNODE_IND04" tablespace="USERS" type="NORMAL">
+                     <columns>
+                        <column idref="SRes/PathwayNode/TABLE_ID"/>
+                        <column idref="SRes/PathwayNode/PATHWAY_NODE_ID"/>
                      </columns>
                   </index>
                </indexes>
@@ -12068,6 +12099,24 @@
                         <column idref="Study/StudyContact/STUDY_CONTACT_ID"/>
                      </columns>
                   </index>
+                  <index name="STUDYCONTACT_R01" tablespace="USERS" type="NORMAL">
+                     <columns>
+                        <column idref="Study/StudyContact/CONTACT_ID"/>
+                        <column idref="Study/StudyContact/STUDY_CONTACT_ID"/>
+                     </columns>
+                  </index>
+                  <index name="STUDYCONTACT_R02" tablespace="USERS" type="NORMAL">
+                     <columns>
+                        <column idref="Study/StudyContact/ROLE_ID"/>
+                        <column idref="Study/StudyContact/STUDY_CONTACT_ID"/>
+                     </columns>
+                  </index>
+                  <index name="STUDYCONTACT_R03" tablespace="USERS" type="NORMAL">
+                     <columns>
+                        <column idref="Study/StudyContact/STUDY_ID"/>
+                        <column idref="Study/StudyContact/STUDY_CONTACT_ID"/>
+                     </columns>
+                  </index>
                </indexes>
                <constraints>
                   <constraint name="PK_STUDCON" type="PRIMARY_KEY">
@@ -12244,6 +12293,12 @@
                         <column idref="Study/ProtocolAppNode/SUBTYPE_ID"/>
                      </columns>
                   </index>
+                  <index name="PAN_IND04" tablespace="USERS" type="NORMAL">
+                     <columns>
+                        <column idref="Study/ProtocolAppNode/TAXON_ID"/>
+                        <column idref="Study/ProtocolAppNode/PROTOCOL_APP_NODE_ID"/>
+                     </columns>
+                  </index>
                </indexes>
                <constraints>
                   <constraint name="PK_PAN" type="PRIMARY_KEY">
@@ -12312,6 +12367,12 @@
                   <index name="STUDYFCTRVAL_IND02" tablespace="USERS" type="NORMAL">
                      <columns>
                         <column idref="Study/StudyFactorValue/TABLE_ID"/>
+                     </columns>
+                  </index>
+                  <index name="STUDYFACTORVALUE_IND03" tablespace="USERS" type="NORMAL">
+                     <columns>
+                        <column idref="Study/StudyFactorValue/PROTOCOL_APP_NODE_ID"/>
+                        <column idref="Study/StudyFactorValue/STUDY_FACTOR_VALUE_ID"/>
                      </columns>
                   </index>
                </indexes>
@@ -12710,6 +12771,24 @@
                         <column idref="Study/ProtocolAppContact/PROTOCOL_APP_CONTACT_ID"/>
                      </columns>
                   </index>
+                  <index name="PROTOCOLAPPCONTACT_R01" tablespace="USERS" type="NORMAL">
+                     <columns>
+                        <column idref="Study/ProtocolAppContact/CONTACT_ID"/>
+                        <column idref="Study/ProtocolAppContact/PROTOCOL_APP_CONTACT_ID"/>
+                     </columns>
+                  </index>
+                  <index name="PROTOCOLAPPCONTACT_R02" tablespace="USERS" type="NORMAL">
+                     <columns>
+                        <column idref="Study/ProtocolAppContact/PROTOCOL_APP_ID"/>
+                        <column idref="Study/ProtocolAppContact/PROTOCOL_APP_CONTACT_ID"/>
+                     </columns>
+                  </index>
+                  <index name="ProtocolAppContact_R03" tablespace="USERS" type="NORMAL">
+                     <columns>
+                        <column idref="Study/ProtocolAppContact/ROLE_ID"/>
+                        <column idref="Study/ProtocolAppContact/PROTOCOL_APP_CONTACT_ID"/>
+                     </columns>
+                  </index>
                </indexes>
                <constraints>
                   <constraint name="PK_PROTAPPCON" type="PRIMARY_KEY">
@@ -12824,6 +12903,11 @@
                         <column idref="Study/Funding/FUNDING_ID"/>
                      </columns>
                   </index>
+                  <index name="FUNDING_IND01" tablespace="USERS" type="NORMAL">
+                     <columns>
+                        <column idref="Study/Funding/CONTACT_ID"/>
+                     </columns>
+                  </index>
                </indexes>
                <constraints>
                   <constraint name="PK_FUNDING" type="PRIMARY_KEY">
@@ -12851,6 +12935,18 @@
                <indexes>
                   <index name="PK_STUDYFUND" tablespace="USERS" type="NORMAL">
                      <columns>
+                        <column idref="Study/StudyFunding/STUDY_FUNDING_ID"/>
+                     </columns>
+                  </index>
+                  <index name="STUDYFUNDING_IND04" tablespace="USERS" type="NORMAL">
+                     <columns>
+                        <column idref="Study/StudyFunding/FUNDING_ID"/>
+                        <column idref="Study/StudyFunding/STUDY_FUNDING_ID"/>
+                     </columns>
+                  </index>
+                  <index name="STUDYFUNDING_R0" tablespace="USERS" type="NORMAL">
+                     <columns>
+                        <column idref="Study/StudyFunding/STUDY_ID"/>
                         <column idref="Study/StudyFunding/STUDY_FUNDING_ID"/>
                      </columns>
                   </index>
@@ -13289,6 +13385,12 @@
                          <column idref="Platform/ReporterLocation/REPORTER_END"/>
                     </columns>
                   </index>
+                  <index name="REPORTERLOCATION_R0" tablespace="USERS" type="NORMAL">
+                     <columns>
+                        <column idref="Platform/ReporterLocation/NA_SEQUENCE_ID"/>
+                        <column idref="Platform/ReporterLocation/REPORTER_LOCATION_ID"/>
+                     </columns>
+                  </index>
                </indexes>
                <constraints>
                   <constraint name="PK_REPORTERLOCATION" type="PRIMARY_KEY">
@@ -13434,6 +13536,30 @@
                         <column idref="Model/ModelContext/MODEL_CONTEXT_ID"/>
                      </columns>
                   </index>
+                  <index name="MODELCONTEXT_IND01" tablespace="USERS" type="NORMAL">
+                     <columns>
+                        <column idref="Model/ModelContext/ANATOMY_ID"/>
+                        <column idref="Model/ModelContext/MODEL_CONTEXT_ID"/>
+                     </columns>
+                  </index>
+                  <index name="MODELCONTEXT_IND02" tablespace="USERS" type="NORMAL">
+                     <columns>
+                        <column idref="Model/ModelContext/BIOLOGICAL_PROCESS_ID"/>
+                        <column idref="Model/ModelContext/MODEL_CONTEXT_ID"/>
+                     </columns>
+                  </index>
+                  <index name="MODELCONTEXT_IND03" tablespace="USERS" type="NORMAL">
+                     <columns>
+                        <column idref="Model/ModelContext/DEVELOPMENTAL_STAGE_END_ID"/>
+                        <column idref="Model/ModelContext/MODEL_CONTEXT_ID"/>
+                     </columns>
+                  </index>
+                  <index name="MODELCONTEXT_IND04" tablespace="USERS" type="NORMAL">
+                     <columns>
+                        <column idref="Model/ModelContext/DEVELOPMENTAL_STAGE_START_ID"/>
+                        <column idref="Model/ModelContext/MODEL_CONTEXT_ID"/>
+                     </columns>
+                  </index>
                 </indexes>
                <constraints>
                   <constraint name="PK_MODELCONTEXT" type="PRIMARY_KEY">
@@ -13518,6 +13644,12 @@
                      <columns>
                         <column idref="Model/NetworkNode/TABLE_ID"/>
                         <column idref="Model/NetworkNode/ROW_ID"/>
+                     </columns>
+                  </index>
+                  <index name="NETWORKNODE_R02" tablespace="USERS" type="NORMAL">
+                     <columns>
+                        <column idref="Model/NetworkNode/NODE_TYPE_ID"/>
+                        <column idref="Model/NetworkNode/NETWORK_NODE_ID"/>
                      </columns>
                   </index>
                 </indexes>
@@ -13708,6 +13840,16 @@
                         <column idref="Model/NetworkRelEvidence/SCORE2"/>
                      </columns>
                   </index>
+                  <index name="NETWORKRELEVIDENCE_IND" tablespace="USERS" type="NORMAL">
+                     <columns>
+                        <column idref="Model/NetworkRelEvidence/SCORE1_TYPE_ID"/>
+                     </columns>
+                  </index>
+                  <index name="NETWORKRELEVIDENCE_IND" tablespace="USERS" type="NORMAL">
+                     <columns>
+                        <column idref="Model/NetworkRelEvidence/SCORE2_TYPE_ID"/>
+                     </columns>
+                  </index>
                 </indexes>
                <constraints>
                   <constraint name="PK_NETWORKRELEVIDENCE" type="PRIMARY_KEY">
@@ -13803,6 +13945,12 @@
                         <column idref="Model/NetworkRelContext/NETWORK_CONTEXT_ID"/>
                         <column idref="Model/NetworkRelContext/NETWORK_RELATIONSHIP_ID"/>
                         <column idref="Model/NetworkRelContext/NETWORK_RELATIONSHIP_TYPE_ID"/>
+                     </columns>
+                  </index>
+                  <index name="NETWORKRELCONTEXT_R04" tablespace="USERS" type="NORMAL">
+                     <columns>
+                        <column idref="Model/NetworkRelContext/NETWORK_RELATIONSHIP_TYPE_ID"/>
+                        <column idref="Model/NetworkRelContext/NETWORK_REL_CONTEXT_ID"/>
                      </columns>
                   </index>
                 </indexes>
@@ -14204,6 +14352,18 @@
                         <column idref="Results/SegmentResult/NA_FEATURE_ID"/>
                        </columns>
                   </index>
+                  <index name="SEGMENTRESULT_R03" tablespace="USERS" type="NORMAL">
+                     <columns>
+                        <column idref="Results/SegmentResult/NA_FEATURE_ID"/>
+                        <column idref="Results/SegmentResult/SEGMENT_RESULT_ID"/>
+                     </columns>
+                  </index>
+                  <index name="SEGMENTRESULT_R04" tablespace="USERS" type="NORMAL">
+                     <columns>
+                        <column idref="Results/SegmentResult/NA_SEQUENCE_ID"/>
+                        <column idref="Results/SegmentResult/SEGMENT_RESULT_ID"/>
+                     </columns>
+                  </index>
                 </indexes>
                <constraints>
                   <constraint name="PK_SEGMENTRESULT" type="PRIMARY_KEY">
@@ -14282,6 +14442,18 @@
                         <column idref="Results/SegmentDiffResult/NA_FEATURE_ID"/>
                        </columns>
                   </index>
+                  <index name="SEGMENTDIFFRESULT_R03" tablespace="USERS" type="NORMAL">
+                     <columns>
+                        <column idref="Results/SegmentDiffResult/NA_FEATURE_ID"/>
+                        <column idref="Results/SegmentDiffResult/SEGMENT_DIFF_RES_ID"/>
+                     </columns>
+                  </index>
+                  <index name="SEGMENTDIFFRESULT_R04" tablespace="USERS" type="NORMAL">
+                     <columns>
+                        <column idref="Results/SegmentDiffResult/NA_SEQUENCE_ID"/>
+                        <column idref="Results/SegmentDiffResult/SEGMENT_DIFF_RES_ID"/>
+                     </columns>
+                  </index>
                 </indexes>
                <constraints>
                   <constraint name="PK_SEGMENTDIFFRESULT" type="PRIMARY_KEY">
@@ -14350,6 +14522,24 @@
                         <column idref="Results/EditingEvent/PROTOCOL_APP_NODE_ID"/>
                         <column idref="Results/EditingEvent/NA_FEATURE_ID"/>
                        </columns>
+                  </index>
+                  <index name="EDITINGEVENT_R03" tablespace="USERS" type="NORMAL">
+                     <columns>
+                        <column idref="Results/EditingEvent/EDITING_TYPE_ID"/>
+                        <column idref="Results/EditingEvent/EDITING_EVENT_ID"/>
+                     </columns>
+                  </index>
+                  <index name="EDITINGEVENT_R04" tablespace="USERS" type="NORMAL">
+                     <columns>
+                        <column idref="Results/EditingEvent/NA_FEATURE_ID"/>
+                        <column idref="Results/EditingEvent/EDITING_EVENT_ID"/>
+                     </columns>
+                  </index>
+                  <index name="EDITINGEVENT_R05" tablespace="USERS" type="NORMAL">
+                     <columns>
+                        <column idref="Results/EditingEvent/NA_SEQUENCE_ID"/>
+                        <column idref="Results/EditingEvent/EDITING_EVENT_ID"/>
+                     </columns>
                   </index>
                 </indexes>
                <constraints>
@@ -14749,6 +14939,16 @@
                      <columns>
                         <column idref="Results/GeneSimilarity/GENE1_ID"/>
                         <column idref="Results/GeneSimilarity/GENE2_ID"/>
+                     </columns>
+                  </index>
+                  <index name="GENESIMILARITY_R02" tablespace="USERS" type="NORMAL">
+                     <columns>
+                        <column idref="Results/GeneSimilarity/GENE2_ID"/>
+                     </columns>
+                  </index>
+                  <index name="GENESIMILARITY_R03" tablespace="USERS" type="NORMAL">
+                     <columns>
+                        <column idref="Results/GeneSimilarity/PROTOCOL_APP_NODE_ID"/>
                      </columns>
                   </index>
                 </indexes>
