@@ -2470,7 +2470,7 @@
                <columns>
                   <column id="DoTS/AllelePhenotype/ALLELE_PHENOTYPE_ID" name="ALLELE_PHENOTYPE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/AllelePhenotype/ALLELE_ID" name="ALLELE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-                  <column id="DoTS/AllelePhenotype/PHENOTYPE_ID" name="PHENOTYPE_ID" nullable="false" length="8" precision="0" type="NUMBER"/>
+                  <column id="DoTS/AllelePhenotype/PHENOTYPE_ID" name="PHENOTYPE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/AllelePhenotype/REVIEW_STATUS_ID" name="REVIEW_STATUS_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                </columns>
                <indexes>
@@ -2500,9 +2500,9 @@
                      <constrainedColumns>
                         <column idref="DoTS/AllelePhenotype/PHENOTYPE_ID"/>
                      </constrainedColumns>
-                     <referencedTable idref="SRes/Phenotype"/>
+                     <referencedTable idref="SRes/OntologyTerm"/>
                      <referencedColumns>
-                        <column idref="SRes/Phenotype/PHENOTYPE_ID"/>
+                        <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
                      </referencedColumns>
                   </constraint>
                   <constraint name="ALLELEPHENOTYPE_FK02" type="FOREIGN_KEY">
@@ -7111,31 +7111,6 @@
                         <column id="DoTS/ScaffoldGapFeature/RIGHT_CONTIG" name="RIGHT_CONTIG" nullable="true" length="4000" precision="0" type="STRING"/>
                      </columns>
                   </subclass>
-                  <subclass id="DoTS/NAFeature/SeqVariation" name="SeqVariation" versioned="true" tablespace="USERS" categoryRef="NA Sequence Features" updatable="true">
-                     <columns>
-                        <column id="DoTS/SeqVariation/CITATION" name="CITATION" nullable="true" length="4000" precision="0" type="STRING"/>
-                        <column id="DoTS/SeqVariation/CLONE" name="CLONE" nullable="true" length="4000" precision="0" type="STRING"/>
-                        <column id="DoTS/SeqVariation/EVIDENCE" name="EVIDENCE" nullable="true" length="4000" precision="0" type="STRING"/>
-                        <column id="DoTS/SeqVariation/FUNCTION" name="FUNCTION" nullable="true" length="4000" precision="0" type="STRING"/>
-                        <column id="DoTS/SeqVariation/GENE" name="GENE" nullable="true" length="4000" precision="0" type="STRING"/>
-                        <column id="DoTS/SeqVariation/LABEL" name="LABEL" nullable="true" length="4000" precision="0" type="STRING"/>
-                        <column id="DoTS/SeqVariation/MAP" name="MAP" nullable="true" length="4000" precision="0" type="STRING"/>
-                        <column id="DoTS/SeqVariation/ORGANISM" name="ORGANISM" nullable="true" length="4000" precision="0" type="STRING"/>
-                        <column id="DoTS/SeqVariation/STRAIN" name="STRAIN" nullable="true" length="4000" precision="0" type="STRING"/>
-                        <column id="DoTS/SeqVariation/PARTIAL" name="PARTIAL" nullable="true" length="4000" precision="0" type="STRING"/>
-                        <column id="DoTS/SeqVariation/PHENOTYPE" name="PHENOTYPE" nullable="true" length="4000" precision="0" type="STRING"/>
-                        <column id="DoTS/SeqVariation/PRODUCT" name="PRODUCT" nullable="true" length="4000" precision="0" type="STRING"/>
-                        <column id="DoTS/SeqVariation/STANDARD_NAME" name="STANDARD_NAME" nullable="true" length="4000" precision="0" type="STRING"/>
-                        <column id="DoTS/SeqVariation/SUBSTITUTE" name="SUBSTITUTE" nullable="true" length="4000" precision="0" type="STRING"/>
-                        <column id="DoTS/SeqVariation/NUM" name="NUM" nullable="true" length="4000" precision="0" type="STRING"/>
-                        <column id="DoTS/SeqVariation/USEDIN" name="USEDIN" nullable="true" length="4000" precision="0" type="STRING"/>
-                        <column id="DoTS/SeqVariation/MOD_BASE" name="MOD_BASE" nullable="true" length="4000" precision="0" type="STRING"/>
-                        <column id="DoTS/SeqVariation/IS_PARTIAL" name="IS_PARTIAL" nullable="true" length="1" precision="0" type="NUMBER"/>
-                        <column id="DoTS/SeqVariation/FREQUENCY" name="FREQUENCY" nullable="true" length="126" precision="0" type="FLOAT"/>
-                        <column id="DoTS/SeqVariation/ALLELE" name="ALLELE" nullable="true" length="4000" precision="0" type="STRING"/>
-                        <column id="DoTS/SeqVariation/MATCHES_REFERENCE" name="MATCHES_REFERENCE" nullable="true" length="1" precision="0" type="NUMBER"/>
-                     </columns>
-                  </subclass>
                   <subclass id="DoTS/NAFeature/Source" name="Source" versioned="true" tablespace="USERS" categoryRef="NA Sequence Features" updatable="true">
                      <columns>
                         <column id="DoTS/Source/CELL_LINE" name="CELL_LINE" nullable="true" length="4000" precision="0" type="STRING"/>
@@ -9994,7 +9969,7 @@
                <columns>
                   <column id="DoTS/RNAIPhenotype/RNAI_PHENOTYPE_ID" name="RNAI_PHENOTYPE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/RNAIPhenotype/RNAI_CONSTRUCT_ID" name="RNAI_CONSTRUCT_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-                  <column id="DoTS/RNAIPhenotype/PHENOTYPE_ID" name="PHENOTYPE_ID" nullable="false" length="8" precision="0" type="NUMBER"/>
+                  <column id="DoTS/RNAIPhenotype/PHENOTYPE_ID" name="PHENOTYPE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/RNAIPhenotype/REVIEW_STATUS_ID" name="REVIEW_STATUS_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                </columns>
                <indexes>
@@ -10038,9 +10013,9 @@
                      <constrainedColumns>
                         <column idref="DoTS/RNAIPhenotype/PHENOTYPE_ID"/>
                      </constrainedColumns>
-                     <referencedTable idref="SRes/Phenotype"/>
+                     <referencedTable idref="SRes/OntologyTerm"/>
                      <referencedColumns>
-                        <column idref="SRes/Phenotype/PHENOTYPE_ID"/>
+                        <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
                      </referencedColumns>
                   </constraint>
                   <constraint name="RNAIPHENOTYPE_FK03" type="FOREIGN_KEY">
@@ -10905,7 +10880,7 @@
             <table id="SRes/BibliographicReference" name="BibliographicReference" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Bibliographic" updatable="true">
                <columns>
                   <column id="SRes/BibliographicReference/BIBLIOGRAPHIC_REFERENCE_ID" name="BIBLIOGRAPHIC_REFERENCE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-                  <column id="SRes/BibliographicReference/BIB_REF_TYPE_ID" name="BIB_REF_TYPE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+                  <column id="SRes/BibliographicReference/BIB_REF_TYPE_ID" name="BIB_REF_TYPE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="SRes/BibliographicReference/TITLE" name="TITLE" nullable="false" length="255" precision="0" type="STRING"/>
                   <column id="SRes/BibliographicReference/ABSTRACT" name="ABSTRACT" nullable="true" length="0" precision="0" type="CLOB"/>
                   <column id="SRes/BibliographicReference/AUTHOR_LIST" name="AUTHORS" nullable="true" length="500" precision="0" type="STRING"/>
@@ -11272,7 +11247,7 @@
                   <column id="SRes/OntologyRelationship/SUBJECT_TERM_ID" name="SUBJECT_TERM_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="SRes/OntologyRelationship/PREDICATE_TERM_ID" name="PREDICATE_TERM_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="SRes/OntologyRelationship/OBJECT_TERM_ID" name="OBJECT_TERM_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-                  <column id="SRes/OntologyRelationship/ONTOLOGY_RELATIONSHIP_TYPE_ID" name="ONTOLOGY_RELATIONSHIP_TYPE_ID" nullable="false" length="4" precision="0" type="NUMBER"/>
+                  <column id="SRes/OntologyRelationship/ONTOLOGY_RELATIONSHIP_TYPE_ID" name="ONTOLOGY_RELATIONSHIP_TYPE_ID" nullable="true" length="4" precision="0" type="NUMBER"/>
                </columns>
                <indexes>
                  <index name="PK_ONTOLOGYRELATIONSHIP" tablespace="USERS" type="NORMAL">
@@ -11311,9 +11286,9 @@
                      <constrainedColumns>
                         <column idref="SRes/OntologyRelationship/ONTOLOGY_RELATIONSHIP_TYPE_ID"/>
                      </constrainedColumns>
-                     <referencedTable idref="SRes/OntologyRelationshipType"/>
+                     <referencedTable idref="SRes/OntologyTerm"/>
                      <referencedColumns>
-                        <column idref="SRes/OntologyRelationshipType/ONTOLOGY_RELATIONSHIP_TYPE_ID"/>
+                        <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
                      </referencedColumns>
                   </constraint>
                   <constraint name="FK_ONTOREL_OT_O" type="FOREIGN_KEY">
@@ -11342,27 +11317,6 @@
                      <referencedColumns>
                         <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
                      </referencedColumns>
-                  </constraint>
-               </constraints>
-            </table>
-            <table id="SRes/OntologyRelationshipType" name="OntologyRelationshipType" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="Generic Ontology" updatable="true">
-               <columns>
-                  <column id="SRes/OntologyRelationshipType/ONTOLOGY_RELATIONSHIP_TYPE_ID" name="ONTOLOGY_RELATIONSHIP_TYPE_ID" nullable="false" length="4" precision="0" type="NUMBER"/>
-                  <column id="SRes/OntologyRelationshipType/IS_NATIVE" name="IS_NATIVE" nullable="true" length="1" precision="0" type="NUMBER"/>
-                  <column id="SRes/OntologyRelationshipType/NAME" name="NAME" nullable="false" length="255" precision="0" type="STRING"/>
-               </columns>
-               <indexes>
-                  <index name="PK_ONTOLOGYRELATIONSHIPTYPE" tablespace="USERS" type="NORMAL">
-                     <columns>
-                        <column idref="SRes/OntologyRelationshipType/ONTOLOGY_RELATIONSHIP_TYPE_ID"/>
-                     </columns>
-                  </index>
-               </indexes>
-               <constraints>
-                  <constraint name="PK_ONTOLOGYRELATIONSHIPTYPE" type="PRIMARY_KEY">
-                     <constrainedColumns>
-                        <column idref="SRes/OntologyRelationshipType/ONTOLOGY_RELATIONSHIP_TYPE_ID"/>
-                     </constrainedColumns>
                   </constraint>
                </constraints>
             </table>
@@ -11668,7 +11622,7 @@
                   <column id="SRes/Pathway/DESCRIPTION" name="DESCRIPTION" nullable="true" length="255" precision="0" type="STRING"/>
                   <column id="SRes/Pathway/EXTERNAL_DATABASE_RELEASE_ID" name="EXTERNAL_DATABASE_RELEASE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="SRes/Pathway/SOURCE_ID" name="SOURCE_ID" nullable="false" length="50" precision="0" type="STRING"/>
-                  <column id="SRes/Pathway/URL" name="URL" nullable="false" length="255" precision="0" type="STRING"/>
+                  <column id="SRes/Pathway/URL" name="URL" nullable="true" length="255" precision="0" type="STRING"/>
                </columns>
                <indexes>
                   <index name="PK_PATHWAY" tablespace="USERS" type="NORMAL">
@@ -11793,7 +11747,7 @@
                   <column id="SRes/PathwayRelationship/PATHWAY_RELATIONSHIP_ID" name="PATHWAY_RELATIONSHIP_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
                   <column id="SRes/PathwayRelationship/PATHWAY_ID" name="PATHWAY_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
                   <column id="SRes/PathwayRelationship/RELATIONSHIP_TYPE_ID" name="RELATIONSHIP_TYPE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-                  <column id="SRes/PathwayRelationship/RELATIONSHIP_SUBTYPE_ID" name="RELATIONSHIP_SUBTYPE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+                  <column id="SRes/PathwayRelationship/RELATIONSHIP_SUBTYPE_ID" name="RELATIONSHIP_SUBTYPE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="SRes/PathwayRelationship/NODE_ID" name="NODE_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
                   <column id="SRes/PathwayRelationship/ASSOCIATED_NODE_ID" name="ASSOCIATED_NODE_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
                </columns>
@@ -11872,98 +11826,56 @@
                   </constraint>
                </constraints>
             </table>
-            <table id="SRes/Phenotype" name="Phenotype" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="Phenotype Vocabulary" updatable="true">
+            <table id="SRes/PhenotypeComposition" name="PhenotypeComposition" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="Phenotype Vocabulary" updatable="true">
                <columns>
-                  <column id="SRes/Phenotype/PHENOTYPE_ID" name="PHENOTYPE_ID" nullable="false" length="8" precision="0" type="NUMBER"/>
-                  <column id="SRes/Phenotype/PARENT_ID" name="PARENT_ID" nullable="true" length="8" precision="0" type="NUMBER"/>
-                  <column id="SRes/Phenotype/PATO_ATTRIBUTE_ID" name="PATO_ATTRIBUTE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
-                  <column id="SRes/Phenotype/ANATOMY_ID" name="ANATOMY_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
-                  <column id="SRes/Phenotype/CELL_TYPE_ID" name="CELL_TYPE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
-                  <column id="SRes/Phenotype/DEVELOPMENTAL_STAGE_ID" name="DEVELOPMENTAL_STAGE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
-                  <column id="SRes/Phenotype/DESCRIPTION" name="DESCRIPTION" nullable="true" length="500" precision="0" type="STRING"/>
+                  <column id="SRes/PhenotypeComposition/PHENOTYPE_COMPOSITION_ID" name="PHENOTYPE_COMPOSITION_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+                  <column id="SRes/PhenotypeComposition/PHENOTYPE_ID" name="PHENOTYPE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+                  <column id="SRes/PhenotypeComposition/QUALITY_ID" name="QUALITY_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
+                  <column id="SRes/PhenotypeComposition/BIOLOGICAL_ENTITY_ID" name="BIOLOGICAL_ENTITY_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                </columns>
                <indexes>
-                  <index name="PHENOTYPE_IND01" tablespace="USERS" type="NORMAL">
+                  <index name="PK_PHENOTYPECOMP" tablespace="USERS" type="NORMAL">
                      <columns>
-                        <column idref="SRes/Phenotype/ANATOMY_ID"/>
-                     </columns>
-                  </index>
-                  <index name="PHENOTYPE_IND02" tablespace="USERS" type="NORMAL">
-                     <columns>
-                        <column idref="SRes/Phenotype/CELL_TYPE_ID"/>
-                     </columns>
-                  </index>
-                  <index name="PHENOTYPE_IND03" tablespace="USERS" type="NORMAL">
-                     <columns>
-                        <column idref="SRes/Phenotype/DEVELOPMENTAL_STAGE_ID"/>
-                     </columns>
-                  </index>
-                  <index name="PHENOTYPE_IND04" tablespace="USERS" type="NORMAL">
-                     <columns>
-                        <column idref="SRes/Phenotype/PARENT_ID"/>
-                     </columns>
-                  </index>
-                  <index name="PHENOTYPE_IND05" tablespace="USERS" type="NORMAL">
-                     <columns>
-                        <column idref="SRes/Phenotype/PATO_ATTRIBUTE_ID"/>
-                     </columns>
-                  </index>
-                  <index name="PK_PHENOTYPE" tablespace="USERS" type="NORMAL">
-                     <columns>
-                        <column idref="SRes/Phenotype/PHENOTYPE_ID"/>
+                        <column idref="SRes/PhenotypeComposition/PHENOTYPE_COMPOSITION_ID"/>
                      </columns>
                   </index>
                </indexes>
                <constraints>
-                  <constraint name="FK_PHENOTYPE_ANAT01" type="FOREIGN_KEY">
+                  <constraint name="FK_PHENOTYPECOMP_FK01" type="FOREIGN_KEY">
                      <constrainedColumns>
-                        <column idref="SRes/Phenotype/ANATOMY_ID"/>
+                        <column idref="SRes/PhenotypeComposition/PHENOTYPE_ID"/>
                      </constrainedColumns>
                      <referencedTable idref="SRes/OntologyTerm"/>
                      <referencedColumns>
                         <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
                      </referencedColumns>
                   </constraint>
-                  <constraint name="FK_PHENOTYPE_ANAT02" type="FOREIGN_KEY">
+                  <constraint name="FK_PHENOTYPECOMP_FK03" type="FOREIGN_KEY">
                      <constrainedColumns>
-                        <column idref="SRes/Phenotype/CELL_TYPE_ID"/>
+                        <column idref="SRes/PhenotypeComposition/QUALITY_ID"/>
                      </constrainedColumns>
                      <referencedTable idref="SRes/OntologyTerm"/>
                      <referencedColumns>
                         <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
                      </referencedColumns>
                   </constraint>
-                  <constraint name="FK_PHENOTYPE_DEVSTAGE01" type="FOREIGN_KEY">
+                  <constraint name="FK_PHENOTYPECOMP_FK03" type="FOREIGN_KEY">
                      <constrainedColumns>
-                        <column idref="SRes/Phenotype/DEVELOPMENTAL_STAGE_ID"/>
+                        <column idref="SRes/PhenotypeComposition/BIOLOGICAL_ENTITY_ID"/>
                      </constrainedColumns>
                      <referencedTable idref="SRes/OntologyTerm"/>
                      <referencedColumns>
                         <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
                      </referencedColumns>
                   </constraint>
-                  <constraint name="FK_PHENOTYPE_PARENT" type="FOREIGN_KEY">
+                  <constraint name="PK_PHENOTYPECOMP" type="PRIMARY_KEY">
                      <constrainedColumns>
-                        <column idref="SRes/Phenotype/PARENT_ID"/>
-                     </constrainedColumns>
-                     <referencedTable idref="SRes/Phenotype"/>
-                     <referencedColumns>
-                        <column idref="SRes/Phenotype/PHENOTYPE_ID"/>
-                     </referencedColumns>
-                  </constraint>
-                  <constraint name="FK_PHENOTYPE_PATO" type="FOREIGN_KEY">
-                     <constrainedColumns>
-                        <column idref="SRes/Phenotype/PATO_ATTRIBUTE_ID"/>
+                        <column idref="SRes/PhenotypeComposition/PHENOTYPE_COMPOSITION_ID"/>
                      </constrainedColumns>
                      <referencedTable idref="SRes/OntologyTerm"/>
                      <referencedColumns>
                         <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
                      </referencedColumns>
-                  </constraint>
-                  <constraint name="PK_PHENOTYPE" type="PRIMARY_KEY">
-                     <constrainedColumns>
-                        <column idref="SRes/Phenotype/PHENOTYPE_ID"/>
-                     </constrainedColumns>
                   </constraint>
                </constraints>
             </table>
@@ -12464,7 +12376,7 @@
                <columns>
                   <column id="Study/Characteristic/CHARACTERISTIC_ID" name="CHARACTERISTIC_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
                   <column id="Study/Characteristic/PROTOCOL_APP_NODE_ID" name="PROTOCOL_APP_NODE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-                  <column id="Study/Characteristic/ONTOLOGY_TERM_ID" name="ONTOLOGY_TERM_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+                  <column id="Study/Characteristic/ONTOLOGY_TERM_ID" name="ONTOLOGY_TERM_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="Study/Characteristic/TABLE_ID" name="TABLE_ID" nullable="true" length="5" precision="0" type="NUMBER"/>
                </columns>
               <indexes>
@@ -14983,6 +14895,102 @@
                      <referencedTable idref="DoTS/Gene"/>
                      <referencedColumns>
                         <column idref="DoTS/Gene/GENE_ID"/>
+                     </referencedColumns>
+                  </constraint>
+               </constraints>
+            </table>
+            <table id="Results/SeqVariation" name="SeqVariation" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Results" updatable="true">
+               <columns>
+                  <column id="Results/SeqVariation/SEQ_VARIATION_ID" name="SEQ_VARIATION_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
+                  <column id="Results/SeqVariation/PROTOCOL_APP_NODE_ID" name="PROTOCOL_APP_NODE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+                  <column id="Results/SeqVariation/SNP_NA_FEATURE_ID" name="SNP_NA_FEATURE_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
+                  <column id="Results/SeqVariation/SEQUENCE_ONTOLOGY_ID" name="SEQUENCE_ONTOLOGY_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
+                  <column id="Results/SeqVariation/CITATION" name="CITATION" nullable="true" length="200" precision="0" type="STRING"/>
+                  <column id="Results/SeqVariation/CLONE" name="CLONE" nullable="true" length="200" precision="0" type="STRING"/>
+                  <column id="Results/SeqVariation/EVIDENCE" name="EVIDENCE" nullable="true" length="400" precision="0" type="STRING"/>
+                  <column id="Results/SeqVariation/FUNCTION" name="FUNCTION" nullable="true" length="200" precision="0" type="STRING"/>
+                  <column id="Results/SeqVariation/GENE" name="GENE" nullable="true" length="100" precision="0" type="STRING"/>
+                  <column id="Results/SeqVariation/LABEL" name="LABEL" nullable="true" length="100" precision="0" type="STRING"/>
+                  <column id="Results/SeqVariation/MAP" name="MAP" nullable="true" length="100" precision="0" type="STRING"/>
+                  <column id="Results/SeqVariation/ORGANISM" name="ORGANISM" nullable="true" length="80" precision="0" type="STRING"/>
+                  <column id="Results/SeqVariation/STRAIN" name="STRAIN" nullable="true" length="80" precision="0" type="STRING"/>
+                  <column id="Results/SeqVariation/PARTIAL" name="PARTIAL" nullable="true" length="100" precision="0" type="STRING"/>
+                  <column id="Results/SeqVariation/PHENOTYPE_ID" name="PHENOTYPE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
+                  <column id="Results/SeqVariation/PRODUCT" name="PRODUCT" nullable="true" length="8" precision="0" type="STRING"/>
+                  <column id="Results/SeqVariation/STANDARD_NAME" name="STANDARD_NAME" nullable="true" length="100" precision="0" type="STRING"/>
+                  <column id="Results/SeqVariation/SUBSTITUTE" name="SUBSTITUTE" nullable="true" length="200" precision="0" type="STRING"/>
+                  <column id="Results/SeqVariation/NUM" name="NUM" nullable="true" length="200" precision="0" type="STRING"/>
+                  <column id="Results/SeqVariation/USEDIN" name="USEDIN" nullable="true" length="200" precision="0" type="STRING"/>
+                  <column id="Results/SeqVariation/MOD_BASE" name="MOD_BASE" nullable="true" length="200" precision="0" type="STRING"/>
+                  <column id="Results/SeqVariation/IS_PARTIAL" name="IS_PARTIAL" nullable="true" length="1" precision="0" type="NUMBER"/>
+                  <column id="Results/SeqVariation/FREQUENCY" name="FREQUENCY" nullable="true" length="126" precision="0" type="FLOAT"/>
+                  <column id="Results/SeqVariation/ALLELE" name="ALLELE" nullable="true" length="1" precision="0" type="STRING"/>
+                  <column id="Results/SeqVariation/MATCHES_REFERENCE" name="MATCHES_REFERENCE" nullable="true" length="1" precision="0" type="NUMBER"/>
+                  <column id="Results/SeqVariation/ODDS_RATIO" name="ODDS_RATIO" nullable="true" length="126" precision="0" type="FLOAT"/>
+                  <column id="Results/SeqVariation/P_VALUE" name="P_VALUE" nullable="true" length="126" precision="0" type="FLOAT"/>
+                  <column id="Results/SeqVariation/ALLELE_PERCENT" name="ALLELE_PERCENT" nullable="true" length="126" precision="0" type="FLOAT"/>
+                  <column id="Results/SeqVariation/COVERAGE" name="COVERAGE" nullable="true" length="12" precision="0" type="NUMBER"/>
+                  <column id="Results/SeqVariation/QUALITY" name="QUALITY" nullable="true" length="12" precision="0" type="NUMBER"/>
+               </columns>
+               <indexes>
+                  <index name="PK_SEQVAR" tablespace="USERS" type="NORMAL">
+                     <columns>
+                        <column idref="Results/SeqVariation/SEQ_VARIATION_ID"/>
+                     </columns>
+                  </index>
+                 <index name="SEQVAR_IND01" tablespace="USERS" type="NORMAL">
+                     <columns>
+                        <column idref="Results/SeqVariation/PROTOCOL_APP_NODE_ID"/>
+                        <column idref="Results/SeqVariation/SEQ_VARIATION_ID"/>
+                     </columns>
+                  </index>
+                  <index name="SEQVAR_IND02" tablespace="USERS" type="NORMAL">
+                     <columns>
+                        <column idref="Results/SeqVariation/SNP_NA_FEATURE_ID"/>
+                        <column idref="Results/SeqVariation/SEQ_VARIATION_ID"/>
+                     </columns>
+                  </index>
+                </indexes>
+               <constraints>
+                  <constraint name="PK_SEQVAR" type="PRIMARY_KEY">
+                     <constrainedColumns>
+                        <column idref="Results/SeqVariation/SEQ_VARIATION_ID"/>
+                     </constrainedColumns>
+                  </constraint>
+                  <constraint name="SEQVAR_FK01" type="FOREIGN_KEY">
+                     <constrainedColumns>
+                        <column idref="Results/SeqVariation/PROTOCOL_APP_NODE_ID"/>
+                     </constrainedColumns>
+                     <referencedTable idref="Study/ProtocolAppNode"/>
+                     <referencedColumns>
+                        <column idref="Study/ProtocolAppNode/PROTOCOL_APP_NODE_ID"/>
+                     </referencedColumns>
+                  </constraint>
+                  <constraint name="SEQVAR_FK02" type="FOREIGN_KEY">
+                     <constrainedColumns>
+                        <column idref="Results/SeqVariation/SNP_NA_FEATURE_ID"/>
+                     </constrainedColumns>
+                     <referencedTable idref="DoTS/NAFeature"/>
+                     <referencedColumns>
+                        <column idref="DoTS/NAFeature/NA_FEATURE_ID"/>
+                     </referencedColumns>
+                  </constraint>
+                  <constraint name="SEQVAR_FK03" type="FOREIGN_KEY">
+                     <constrainedColumns>
+                        <column idref="Results/SeqVariation/SEQUENCE_ONTOLOGY_ID"/>
+                     </constrainedColumns>
+                     <referencedTable idref="SRes/OntologyTerm"/>
+                     <referencedColumns>
+                        <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
+                     </referencedColumns>
+                  </constraint>
+                  <constraint name="SEQVAR_FK04" type="FOREIGN_KEY">
+                     <constrainedColumns>
+                        <column idref="Results/SeqVariation/PHENOTYPE_ID"/>
+                     </constrainedColumns>
+                     <referencedTable idref="SRes/OntologyTerm"/>
+                     <referencedColumns>
+                        <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
                      </referencedColumns>
                   </constraint>
                </constraints>
