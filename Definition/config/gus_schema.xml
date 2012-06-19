@@ -14234,7 +14234,6 @@
                   <column id="Results/SegmentResult/SEGMENT_START" name="SEGMENT_START" nullable="true" length="12" precision="0" type="NUMBER"/>
                   <column id="Results/SegmentResult/SEGMENT_END" name="SEGMENT_END" nullable="true" length="12" precision="0" type="NUMBER"/>
                   <column id="Results/SegmentResult/ON_REVERSE_STRAND" name="ON_REVERSE_STRAND" nullable="true" length="1" precision="0" type="NUMBER"/>
-                  <column id="Results/SegmentResult/NA_FEATURE_ID" name="NA_FEATURE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="Results/SegmentResult/GENETIC_LOCATION" name="GENETIC_LOCATION" nullable="true" length="30" precision="0" type="STRING"/>
                   <column id="Results/SegmentResult/SCORE1" name="SCORE1" nullable="true" length="12" precision="0" type="FLOAT"/>
                   <column id="Results/SegmentResult/SCORE2" name="SCORE2" nullable="true" length="12" precision="0" type="FLOAT"/>
@@ -14261,14 +14260,8 @@
                  <index name="SEGMENTRESULT_R02" tablespace="USERS" type="NORMAL">
                      <columns>
                         <column idref="Results/SegmentResult/PROTOCOL_APP_NODE_ID"/>
-                        <column idref="Results/SegmentResult/NA_FEATURE_ID"/>
-                       </columns>
-                  </index>
-                  <index name="SEGMENTRESULT_R03" tablespace="USERS" type="NORMAL">
-                     <columns>
-                        <column idref="Results/SegmentResult/NA_FEATURE_ID"/>
                         <column idref="Results/SegmentResult/SEGMENT_RESULT_ID"/>
-                     </columns>
+                       </columns>
                   </index>
                   <index name="SEGMENTRESULT_R04" tablespace="USERS" type="NORMAL">
                      <columns>
@@ -14301,15 +14294,6 @@
                         <column idref="DoTS/NASequence/NA_SEQUENCE_ID"/>
                      </referencedColumns>
                   </constraint>
-                  <constraint name="FK_SEGMENTRES_NAFEAT" type="FOREIGN_KEY">
-                     <constrainedColumns>
-                        <column idref="Results/SegmentResult/NA_FEATURE_ID"/>
-                     </constrainedColumns>
-                     <referencedTable idref="DoTS/NAFeature"/>
-                     <referencedColumns>
-                        <column idref="DoTS/NAFeature/NA_FEATURE_ID"/>
-                     </referencedColumns>
-                  </constraint>
                </constraints>
             </table>
             <table id="Results/SegmentDiffResult" name="SegmentDiffResult" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Results" updatable="true">
@@ -14320,7 +14304,6 @@
                   <column id="Results/SegmentDiffResult/SEGMENT_START" name="SEGMENT_START" nullable="true" length="12" precision="0" type="NUMBER"/>
                   <column id="Results/SegmentDiffResult/SEGMENT_END" name="SEGMENT_END" nullable="true" length="12" precision="0" type="NUMBER"/>
                   <column id="Results/SegmentDiffResult/ON_REVERSE_STRAND" name="ON_REVERSE_STRAND" nullable="true" length="1" precision="0" type="NUMBER"/>
-                  <column id="Results/SegmentDiffResult/NA_FEATURE_ID" name="NA_FEATURE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="Results/SegmentDiffResult/MEAN1" name="MEAN1" nullable="true" length="12" precision="0" type="FLOAT"/>
                   <column id="Results/SegmentDiffResult/SD1" name="SD1" nullable="true" length="12" precision="0" type="FLOAT"/>
                   <column id="Results/SegmentDiffResult/MEAN2" name="MEAN2" nullable="true" length="12" precision="0" type="FLOAT"/>
@@ -14351,14 +14334,8 @@
                  <index name="SEGMENTDIFFRES_R02" tablespace="USERS" type="NORMAL">
                      <columns>
                         <column idref="Results/SegmentDiffResult/PROTOCOL_APP_NODE_ID"/>
-                        <column idref="Results/SegmentDiffResult/NA_FEATURE_ID"/>
-                       </columns>
-                  </index>
-                  <index name="SEGMENTDIFFRESULT_R03" tablespace="USERS" type="NORMAL">
-                     <columns>
-                        <column idref="Results/SegmentDiffResult/NA_FEATURE_ID"/>
                         <column idref="Results/SegmentDiffResult/SEGMENT_DIFF_RES_ID"/>
-                     </columns>
+                       </columns>
                   </index>
                   <index name="SEGMENTDIFFRESULT_R04" tablespace="USERS" type="NORMAL">
                      <columns>
@@ -14391,15 +14368,6 @@
                         <column idref="DoTS/NASequence/NA_SEQUENCE_ID"/>
                      </referencedColumns>
                   </constraint>
-                  <constraint name="FK_SEGMENTDIFFRES_NAFEAT" type="FOREIGN_KEY">
-                     <constrainedColumns>
-                        <column idref="Results/SegmentDiffResult/NA_FEATURE_ID"/>
-                     </constrainedColumns>
-                     <referencedTable idref="DoTS/NAFeature"/>
-                     <referencedColumns>
-                        <column idref="DoTS/NAFeature/NA_FEATURE_ID"/>
-                     </referencedColumns>
-                  </constraint>
                </constraints>
             </table>
             <table id="Results/EditingEvent" name="EditingEvent" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Results" updatable="true">
@@ -14409,7 +14377,6 @@
                   <column id="Results/EditingEvent/NA_SEQUENCE_ID" name="NA_SEQUENCE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="Results/EditingEvent/EVENT_START" name="EVENT_START" nullable="true" length="12" precision="0" type="NUMBER"/>
                   <column id="Results/EditingEvent/EVENT_END" name="EVENT_END" nullable="true" length="12" precision="0" type="NUMBER"/>
-                  <column id="Results/EditingEvent/NA_FEATURE_ID" name="NA_FEATURE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="Results/EditingEvent/EDITING_TYPE_ID" name="EDITING_TYPE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="Results/EditingEvent/ALTERNATE_SEQUENCE" name="ALTERNATE_SEQUENCE" nullable="true" length="200" precision="0" type="STRING"/>
                   <column id="Results/EditingEvent/FREQUENCY" name="FREQUENCY" nullable="true" length="12" precision="0" type="FLOAT"/>
@@ -14432,18 +14399,12 @@
                  <index name="EDITINGEVENT_R02" tablespace="USERS" type="NORMAL">
                      <columns>
                         <column idref="Results/EditingEvent/PROTOCOL_APP_NODE_ID"/>
-                        <column idref="Results/EditingEvent/NA_FEATURE_ID"/>
+                        <column idref="Results/EditingEvent/EDITING_EVENT_ID"/>
                        </columns>
                   </index>
                   <index name="EDITINGEVENT_R03" tablespace="USERS" type="NORMAL">
                      <columns>
                         <column idref="Results/EditingEvent/EDITING_TYPE_ID"/>
-                        <column idref="Results/EditingEvent/EDITING_EVENT_ID"/>
-                     </columns>
-                  </index>
-                  <index name="EDITINGEVENT_R04" tablespace="USERS" type="NORMAL">
-                     <columns>
-                        <column idref="Results/EditingEvent/NA_FEATURE_ID"/>
                         <column idref="Results/EditingEvent/EDITING_EVENT_ID"/>
                      </columns>
                   </index>
@@ -14476,15 +14437,6 @@
                      <referencedTable idref="DoTS/NASequence"/>
                      <referencedColumns>
                         <column idref="DoTS/NASequence/NA_SEQUENCE_ID"/>
-                     </referencedColumns>
-                  </constraint>
-                  <constraint name="FK_EDITINGEVENT_NAFEAT" type="FOREIGN_KEY">
-                     <constrainedColumns>
-                        <column idref="Results/EditingEvent/NA_FEATURE_ID"/>
-                     </constrainedColumns>
-                     <referencedTable idref="DoTS/NAFeature"/>
-                     <referencedColumns>
-                        <column idref="DoTS/NAFeature/NA_FEATURE_ID"/>
                      </referencedColumns>
                   </constraint>
                   <constraint name="FK_EDITINGEVENT_OT" type="FOREIGN_KEY">
