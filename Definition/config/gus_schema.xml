@@ -11247,7 +11247,7 @@
                   <column id="SRes/OntologyRelationship/SUBJECT_TERM_ID" name="SUBJECT_TERM_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="SRes/OntologyRelationship/PREDICATE_TERM_ID" name="PREDICATE_TERM_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="SRes/OntologyRelationship/OBJECT_TERM_ID" name="OBJECT_TERM_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-                  <column id="SRes/OntologyRelationship/ONTOLOGY_RELATIONSHIP_TYPE_ID" name="ONTOLOGY_RELATIONSHIP_TYPE_ID" nullable="true" length="4" precision="0" type="NUMBER"/>
+                  <column id="SRes/OntologyRelationship/ONTOLOGY_RELATIONSHIP_TYPE_ID" name="ONTOLOGY_RELATIONSHIP_TYPE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                </columns>
                <indexes>
                  <index name="PK_ONTOLOGYRELATIONSHIP" tablespace="USERS" type="NORMAL">
