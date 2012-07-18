@@ -13441,6 +13441,7 @@
                   <column id="Model/ModelContext/BIOLOGICAL_PROCESS_ID" name="BIOLOGICAL_PROCESS_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="Model/ModelContext/DEVELOPMENTAL_STAGE_START_ID" name="DEVELOPMENTAL_STAGE_START_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="Model/ModelContext/DEVELOPMENTAL_STAGE_END_ID" name="DEVELOPMENTAL_STAGE_END_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
+                  <column id="Model/ModelContext/TAXON_ID" name="TAXON_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                </columns>
                <indexes>
                   <index name="PK_MODELCONTEXT" tablespace="USERS" type="NORMAL">
@@ -13515,6 +13516,15 @@
                         <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
                      </referencedColumns>
                   </constraint>
+                  <constraint name="FK_MODELCONTEXT_OT5" type="FOREIGN_KEY">
+                     <constrainedColumns>
+                        <column idref="Model/ModelContext/TAXON_ID"/>
+                     </constrainedColumns>
+                     <referencedTable idref="SRes/Taxon"/>
+                     <referencedColumns>
+                        <column idref="SRes/Taxon/TAXON_ID"/>
+                     </referencedColumns>
+                  </constraint>
                </constraints>
             </table>
             <table id="Model/Network" name="Network" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Model" updatable="true">
@@ -13544,6 +13554,7 @@
                   <column id="Model/NetworkNode/NODE_TYPE_ID" name="NODE_TYPE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="Model/NetworkNode/TABLE_ID" name="TABLE_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
                   <column id="Model/NetworkNode/ROW_ID" name="ROW_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
+                  <column id="Model/NetworkNode/PARENT_ID" name="PARENT_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="Model/NetworkNode/DISPLAY_LABEL" name="DISPLAY_LABEL" nullable="true" length="25" precision="0" type="STRING"/>
                </columns>
                <indexes>
@@ -13587,6 +13598,15 @@
                      <referencedTable idref="Core/TableInfo"/>
                      <referencedColumns>
                         <column idref="Core/TableInfo/TABLE_ID"/>
+                     </referencedColumns>
+                  </constraint>
+                  <constraint name="FK_NETWORKNODE_PRNT" type="FOREIGN_KEY">
+                     <constrainedColumns>
+                        <column idref="Model/NetworkNode/PARENT_ID"/>
+                     </constrainedColumns>
+                     <referencedTable idref="Model/NetworkNode"/>
+                     <referencedColumns>
+                        <column idref="Model/NetworkNode/NETWORK_NODE_ID"/>
                      </referencedColumns>
                   </constraint>
                </constraints>
