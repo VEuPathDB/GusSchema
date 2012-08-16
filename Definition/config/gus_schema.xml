@@ -10919,7 +10919,7 @@
                   </index>
                </indexes>
                <constraints>
-                 <constraint name="PK_BIBLIOGRAPHICREFERENCE" type="PRIMARY_KEY">
+                  <constraint name="PK_BIBLIOGRAPHICREFERENCE" type="PRIMARY_KEY">
                      <constrainedColumns>
                         <column idref="SRes/BibliographicReference/BIBLIOGRAPHIC_REFERENCE_ID"/>
                      </constrainedColumns>
@@ -11376,7 +11376,7 @@
 
                </indexes>
                <constraints>
-                 <constraint name="PK_ONTOLOGYTERM" type="PRIMARY_KEY">
+                  <constraint name="PK_ONTOLOGYTERM" type="PRIMARY_KEY">
                      <constrainedColumns>
                         <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
                      </constrainedColumns>
@@ -11399,7 +11399,7 @@
                         <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
                      </referencedColumns>
                   </constraint>
-                 <constraint name="FK_OT_TAXON" type="FOREIGN_KEY">
+                  <constraint name="FK_OT_TAXON" type="FOREIGN_KEY">
                      <constrainedColumns>
                         <column idref="SRes/OntologyTerm/TAXON_ID"/>
                      </constrainedColumns>
@@ -11408,7 +11408,7 @@
                         <column idref="SRes/Taxon/TAXON_ID"/>
                      </referencedColumns>
                   </constraint>
-                 <constraint name="FK_OT_OTT" type="FOREIGN_KEY">
+                  <constraint name="FK_OT_OTT" type="FOREIGN_KEY">
                      <constrainedColumns>
                         <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_TYPE_ID"/>
                      </constrainedColumns>
@@ -11637,7 +11637,7 @@
                   </index>
                </indexes>
                <constraints>
-                 <constraint name="PK_PATHWAY" type="PRIMARY_KEY">
+                  <constraint name="PK_PATHWAY" type="PRIMARY_KEY">
                      <constrainedColumns>
                         <column idref="SRes/Pathway/PATHWAY_ID"/>
                      </constrainedColumns>
@@ -11722,7 +11722,7 @@
                         <column idref="Core/TableInfo/TABLE_ID"/>
                      </referencedColumns>
                   </constraint>
-                 <constraint name="FK_PATHWAYNODE_PATHWAYNODE" type="FOREIGN_KEY">
+                  <constraint name="FK_PATHWAYNODE_PATHWAYNODE" type="FOREIGN_KEY">
                      <constrainedColumns>
                         <column idref="SRes/PathwayNode/PARENT_ID"/>
                      </constrainedColumns>
@@ -11731,7 +11731,7 @@
                         <column idref="SRes/PathwayNode/PATHWAY_NODE_ID"/>
                      </referencedColumns>
                   </constraint>
-                 <constraint name="FK_PATHWAYNODE_OT2" type="FOREIGN_KEY">
+                  <constraint name="FK_PATHWAYNODE_OT2" type="FOREIGN_KEY">
                      <constrainedColumns>
                         <column idref="SRes/PathwayNode/GLYPH_TYPE_ID"/>
                      </constrainedColumns>
@@ -11797,7 +11797,7 @@
                         <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
                      </referencedColumns>
                   </constraint>
-                 <constraint name="FK_PATHWAYREL_OT2" type="FOREIGN_KEY">
+                  <constraint name="FK_PATHWAYREL_OT2" type="FOREIGN_KEY">
                      <constrainedColumns>
                         <column idref="SRes/PathwayRelationship/RELATIONSHIP_SUBTYPE_ID"/>
                      </constrainedColumns>
@@ -11806,7 +11806,7 @@
                         <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
                      </referencedColumns>
                   </constraint>
-                 <constraint name="FK_PATHWAYREL_PATHWAYNODE1" type="FOREIGN_KEY">
+                  <constraint name="FK_PATHWAYREL_PATHWAYNODE1" type="FOREIGN_KEY">
                      <constrainedColumns>
                         <column idref="SRes/PathwayRelationship/NODE_ID"/>
                      </constrainedColumns>
@@ -11815,7 +11815,7 @@
                         <column idref="SRes/PathwayNode/PATHWAY_NODE_ID"/>
                      </referencedColumns>
                   </constraint>
-                 <constraint name="FK_PATHWAYREL_PATHWAYNODE2" type="FOREIGN_KEY">
+                  <constraint name="FK_PATHWAYREL_PATHWAYNODE2" type="FOREIGN_KEY">
                      <constrainedColumns>
                         <column idref="SRes/PathwayRelationship/ASSOCIATED_NODE_ID"/>
                      </constrainedColumns>
@@ -11841,6 +11841,11 @@
                   </index>
                </indexes>
                <constraints>
+                  <constraint name="PK_PHENOTYPECOMP" type="PRIMARY_KEY">
+                     <constrainedColumns>
+                        <column idref="SRes/PhenotypeComposition/PHENOTYPE_COMPOSITION_ID"/>
+                     </constrainedColumns>
+                  </constraint>
                   <constraint name="FK_PHENOTYPECOMP_FK01" type="FOREIGN_KEY">
                      <constrainedColumns>
                         <column idref="SRes/PhenotypeComposition/PHENOTYPE_ID"/>
@@ -11862,15 +11867,6 @@
                   <constraint name="FK_PHENOTYPECOMP_FK03" type="FOREIGN_KEY">
                      <constrainedColumns>
                         <column idref="SRes/PhenotypeComposition/BIOLOGICAL_ENTITY_ID"/>
-                     </constrainedColumns>
-                     <referencedTable idref="SRes/OntologyTerm"/>
-                     <referencedColumns>
-                        <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
-                     </referencedColumns>
-                  </constraint>
-                  <constraint name="PK_PHENOTYPECOMP" type="PRIMARY_KEY">
-                     <constrainedColumns>
-                        <column idref="SRes/PhenotypeComposition/PHENOTYPE_COMPOSITION_ID"/>
                      </constrainedColumns>
                      <referencedTable idref="SRes/OntologyTerm"/>
                      <referencedColumns>
@@ -12402,12 +12398,12 @@
                   </index>
               </indexes>
                <constraints>
-                 <constraint name="PK_CHAR" type="PRIMARY_KEY">
+                  <constraint name="PK_CHAR" type="PRIMARY_KEY">
                      <constrainedColumns>
                         <column idref="Study/Characteristic/CHARACTERISTIC_ID"/>
                      </constrainedColumns>
                   </constraint>
-                 <constraint name="FK_CHAR_PAN" type="FOREIGN_KEY">
+                  <constraint name="FK_CHAR_PAN" type="FOREIGN_KEY">
                      <constrainedColumns>
                         <column idref="Study/Characteristic/PROTOCOL_APP_NODE_ID"/>
                      </constrainedColumns>
@@ -12477,7 +12473,7 @@
                         <column idref="Study/Protocol/PROTOCOL_ID"/>
                      </constrainedColumns>
                   </constraint>
-                 <constraint name="FK_PROTOCOL_OT" type="FOREIGN_KEY">
+                  <constraint name="FK_PROTOCOL_OT" type="FOREIGN_KEY">
                      <constrainedColumns>
                         <column idref="Study/Protocol/PROTOCOL_TYPE_ID"/>
                      </constrainedColumns>
@@ -12549,7 +12545,7 @@
                         <column idref="Study/ProtocolParam/PROTOCOL_PARAM_ID"/>
                      </constrainedColumns>
                   </constraint>
-                 <constraint name="FK_PROTOCOLPARAM_PROT" type="FOREIGN_KEY">
+                  <constraint name="FK_PROTOCOLPARAM_PROT" type="FOREIGN_KEY">
                      <constrainedColumns>
                         <column idref="Study/ProtocolParam/PROTOCOL_ID"/>
                      </constrainedColumns>
@@ -12774,7 +12770,7 @@
                         <column idref="Study/ProtocolAppParam/PROTOCOL_APP_PARAM_ID"/>
                      </constrainedColumns>
                   </constraint>
-                 <constraint name="FK_PROTAPPPARAM_PROTAPP" type="FOREIGN_KEY">
+                  <constraint name="FK_PROTAPPPARAM_PROTAPP" type="FOREIGN_KEY">
                      <constrainedColumns>
                         <column idref="Study/ProtocolAppParam/PROTOCOL_APP_ID"/>
                      </constrainedColumns>
@@ -13137,7 +13133,7 @@
                         <column idref="SRes/Contact/CONTACT_ID"/>
                      </referencedColumns>
                   </constraint>
-                 <constraint name="FK_REPORTERSET_PROT" type="FOREIGN_KEY">
+                  <constraint name="FK_REPORTERSET_PROT" type="FOREIGN_KEY">
                      <constrainedColumns>
                         <column idref="Platform/ReporterSet/PROTOCOL_ID"/>
                      </constrainedColumns>
@@ -13789,7 +13785,7 @@
                         <column idref="Model/NetworkRelEvidence/NETWORK_REL_EVIDENCE_ID"/>
                      </constrainedColumns>
                   </constraint>
-                 <constraint name="FK_NETWORKRELEV_CTX" type="FOREIGN_KEY">
+                  <constraint name="FK_NETWORKRELEV_CTX" type="FOREIGN_KEY">
                      <constrainedColumns>
                         <column idref="Model/NetworkRelEvidence/NETWORK_REL_CONTEXT_ID"/>
                      </constrainedColumns>
@@ -13910,7 +13906,7 @@
                         <column idref="Model/NetworkRelationshipType/NETWORK_RELATIONSHIP_TYPE_ID"/>
                      </referencedColumns>
                   </constraint>
-                 <constraint name="FK_NETWORKRELCTX" type="FOREIGN_KEY">
+                  <constraint name="FK_NETWORKRELCTX" type="FOREIGN_KEY">
                      <constrainedColumns>
                         <column idref="Model/NetworkRelContext/NETWORK_CONTEXT_ID"/>
                      </constrainedColumns>
@@ -14860,7 +14856,7 @@
                         <column idref="DoTS/Gene/GENE_ID"/>
                      </referencedColumns>
                   </constraint>
-                 <constraint name="FK_GENESIM_GENE2" type="FOREIGN_KEY">
+                  <constraint name="FK_GENESIM_GENE2" type="FOREIGN_KEY">
                      <constrainedColumns>
                         <column idref="Results/GeneSimilarity/GENE2_ID"/>
                      </constrainedColumns>
