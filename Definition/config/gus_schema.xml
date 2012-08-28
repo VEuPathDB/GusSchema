@@ -12436,7 +12436,7 @@
                <columns>
                   <column id="Study/Protocol/PROTOCOL_ID" name="PROTOCOL_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="Study/Protocol/NAME" name="NAME" nullable="false" length="200" precision="0" type="STRING"/>
-                  <column id="Study/Protocol/DESCRIPTION" name="PROTOCOL_DESCRIPTION" nullable="true" length="4000" precision="0" type="STRING"/>
+                  <column id="Study/Protocol/DESCRIPTION" name="DESCRIPTION" nullable="true" length="4000" precision="0" type="STRING"/>
                   <column id="Study/Protocol/PROTOCOL_TYPE_ID" name="PROTOCOL_TYPE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="Study/Protocol/BIBLIOGRAPHIC_REFERENCE_ID" name="BIBLIOGRAPHIC_REFERENCE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="Study/Protocol/EXTERNAL_DATABASE_RELEASE_ID" name="EXTERNAL_DATABASE_RELEASE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
