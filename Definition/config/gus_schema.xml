@@ -16642,6 +16642,7 @@
 						<index name="EXTERNALDATABASERELEASE_IND01" tablespace="USERS" type="NORMAL">
 							<columns>
 								<column idref="SRes/ExternalDatabaseRelease/EXTERNAL_DATABASE_ID"/>
+								<column idref="SRes/ExternalDatabaseRelease/EXTERNAL_DATABASE_RELEASE_ID"/>
 							</columns>
 						</index>
 						<index name="PK_EXTERNALDATABASERELEASE" tablespace="USERS" type="NORMAL">
