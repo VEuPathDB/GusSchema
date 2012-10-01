@@ -11197,6 +11197,7 @@
                   <index name="EXTDBRLS_IND01" tablespace="USERS" type="NORMAL">
                      <columns>
                         <column idref="SRes/ExternalDatabaseRelease/EXTERNAL_DATABASE_ID"/>
+                        <column idref="SRes/ExternalDatabaseRelease/EXTERNAL_DATABASE_RELEASE_ID"/>
                      </columns>
                   </index>
                </indexes>
