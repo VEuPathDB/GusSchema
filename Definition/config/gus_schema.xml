@@ -9768,6 +9768,9 @@
                   <column id="DoTS/RNAFeatureExon/RNA_FEATURE_EXON_ID" name="RNA_FEATURE_EXON_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/RNAFeatureExon/RNA_FEATURE_ID" name="RNA_FEATURE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/RNAFeatureExon/EXON_FEATURE_ID" name="EXON_FEATURE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+                  <column id="DoTS/RNAFeatureExon/ORDER_NUMBER" name="ORDER_NUMBER" nullable="true" length="4" precision="0" type="NUMBER"/>
+                  <column id="DoTS/RNAFeatureExon/IS_INITIAL_EXON" name="IS_INITIAL_EXON" nullable="true" length="1" precision="0" type="NUMBER"/>
+                  <column id="DoTS/RNAFeatureExon/IS_FINAL_EXON" name="IS_FINAL_EXON" nullable="true" length="1" precision="0" type="NUMBER"/>
                </columns>
                <indexes>
                   <index name="PK_RNAFEATUREEXON" tablespace="USERS" type="NORMAL">
