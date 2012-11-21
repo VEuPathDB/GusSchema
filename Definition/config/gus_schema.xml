@@ -4937,11 +4937,13 @@
                   <column id="DoTS/Gene/GENE_ID" name="GENE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/Gene/NAME" name="NAME" nullable="true" length="255" precision="0" type="STRING"/>
                   <column id="DoTS/Gene/GENE_SYMBOL" name="GENE_SYMBOL" nullable="true" length="50" precision="0" type="STRING"/>
+                  <column id="DoTS/Gene/SOURCE_ID" name="SOURCE_ID" nullable="true" length="32" precision="0" type="STRING"/>
                   <column id="DoTS/Gene/GENE_CATEGORY_ID" name="GENE_CATEGORY_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/Gene/REVIEW_STATUS_ID" name="REVIEW_STATUS_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/Gene/DESCRIPTION" name="DESCRIPTION" nullable="true" length="500" precision="0" type="STRING"/>
                   <column id="DoTS/Gene/REVIEWER_SUMMARY" name="REVIEWER_SUMMARY" nullable="true" length="4000" precision="0" type="STRING"/>
                   <column id="DoTS/Gene/SEQUENCE_ONTOLOGY_ID" name="SEQUENCE_ONTOLOGY_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
+                  <column id="DoTS/Gene/EXTERNAL_DATABASE_RELEASE_ID" name="EXTERNAL_DATABASE_RELEASE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                </columns>
                <indexes>
                   <index name="GENE_IND02" tablespace="USERS" type="NORMAL">
@@ -5002,6 +5004,15 @@
                      <referencedTable idref="SRes/OntologyTerm"/>
                      <referencedColumns>
                         <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
+                     </referencedColumns>
+                  </constraint>
+                  <constraint name="GENE_FK07" type="FOREIGN_KEY">
+                     <constrainedColumns>
+                        <column idref="DoTS/Gene/EXTERNAL_DATABASE_RELEASE_ID"/>
+                     </constrainedColumns>
+                     <referencedTable idref="SRes/ExternalDatabaseRelease"/>
+                     <referencedColumns>
+                        <column idref="SRes/ExternalDatabaseRelease/EXTERNAL_DATABASE_RELEASE_ID"/>
                      </referencedColumns>
                   </constraint>
                   <constraint name="PK_GENE" type="PRIMARY_KEY">
