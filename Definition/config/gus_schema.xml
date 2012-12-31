@@ -6910,7 +6910,7 @@
                   </subclass>
                   <subclass id="DoTS/NAFeature/GeneFeature" name="GeneFeature" versioned="true" tablespace="USERS" categoryRef="NA Sequence Features" updatable="true">
                      <columns>
-                        <column id="DoTS/GeneFeature/GENE_TYPE" name="GENE_TYPE" nullable="true" length="4000" precision="0" type="STRING"/>
+                        <column id="DoTS/GeneFeature/GENE_TYPE" name="GENE_TYPE" nullable="true" length="40" precision="0" type="STRING"/>
                         <column id="DoTS/GeneFeature/CONFIRMED_BY_SIMILARITY" name="CONFIRMED_BY_SIMILARITY" nullable="true" length="12" precision="0" type="NUMBER"/>
                         <column id="DoTS/GeneFeature/PREDICTION_NUMBER" name="PREDICTION_NUMBER" nullable="true" length="12" precision="0" type="NUMBER"/>
                         <column id="DoTS/GeneFeature/NUMBER_OF_EXONS" name="NUMBER_OF_EXONS" nullable="true" length="12" precision="0" type="NUMBER"/>
@@ -6920,17 +6920,17 @@
                         <column id="DoTS/GeneFeature/SECONDARY_SCORE" name="SECONDARY_SCORE" nullable="true" length="126" precision="0" type="FLOAT"/>
                         <column id="DoTS/GeneFeature/IS_PSEUDO" name="IS_PSEUDO" nullable="true" length="12" precision="0" type="NUMBER"/>
                         <column id="DoTS/GeneFeature/IS_PARTIAL" name="IS_PARTIAL" nullable="true" length="12" precision="0" type="NUMBER"/>
-                        <column id="DoTS/GeneFeature/ALLELE" name="ALLELE" nullable="true" length="4000" precision="0" type="STRING"/>
-                        <column id="DoTS/GeneFeature/CITATION" name="CITATION" nullable="true" length="4000" precision="0" type="STRING"/>
-                        <column id="DoTS/GeneFeature/EVIDENCE" name="EVIDENCE" nullable="true" length="4000" precision="0" type="STRING"/>
-                        <column id="DoTS/GeneFeature/FUNCTION" name="FUNCTION" nullable="true" length="4000" precision="0" type="STRING"/>
-                        <column id="DoTS/GeneFeature/GENE" name="GENE" nullable="true" length="4000" precision="0" type="STRING"/>
-                        <column id="DoTS/GeneFeature/LABEL" name="LABEL" nullable="true" length="4000" precision="0" type="STRING"/>
-                        <column id="DoTS/GeneFeature/MAP" name="MAP" nullable="true" length="4000" precision="0" type="STRING"/>
-                        <column id="DoTS/GeneFeature/PHENOTYPE" name="PHENOTYPE" nullable="true" length="4000" precision="0" type="STRING"/>
-                        <column id="DoTS/GeneFeature/PRODUCT" name="PRODUCT" nullable="true" length="4000" precision="0" type="STRING"/>
-                        <column id="DoTS/GeneFeature/STANDARD_NAME" name="STANDARD_NAME" nullable="true" length="4000" precision="0" type="STRING"/>
-                        <column id="DoTS/GeneFeature/USEDIN" name="USEDIN" nullable="true" length="4000" precision="0" type="STRING"/>
+                        <column id="DoTS/GeneFeature/ALLELE" name="ALLELE" nullable="true" length="80" precision="0" type="STRING"/>
+                        <column id="DoTS/GeneFeature/CITATION" name="CITATION" nullable="true" length="40" precision="0" type="STRING"/>
+                        <column id="DoTS/GeneFeature/EVIDENCE" name="EVIDENCE" nullable="true" length="80" precision="0" type="STRING"/>
+                        <column id="DoTS/GeneFeature/FUNCTION" name="FUNCTION" nullable="true" length="40" precision="0" type="STRING"/>
+                        <column id="DoTS/GeneFeature/GENE" name="GENE" nullable="true" length="400" precision="0" type="STRING"/>
+                        <column id="DoTS/GeneFeature/LABEL" name="LABEL" nullable="true" length="80" precision="0" type="STRING"/>
+                        <column id="DoTS/GeneFeature/MAP" name="MAP" nullable="true" length="100" precision="0" type="STRING"/>
+                        <column id="DoTS/GeneFeature/PHENOTYPE" name="PHENOTYPE" nullable="true" length="80" precision="0" type="STRING"/>
+                        <column id="DoTS/GeneFeature/PRODUCT" name="PRODUCT" nullable="true" length="400" precision="0" type="STRING"/>
+                        <column id="DoTS/GeneFeature/STANDARD_NAME" name="STANDARD_NAME" nullable="true" length="80" precision="0" type="STRING"/>
+                        <column id="DoTS/GeneFeature/USEDIN" name="USEDIN" nullable="true" length="40" precision="0" type="STRING"/>
                      </columns>
                   </subclass>
                   <subclass id="DoTS/NAFeature/HexamerFeature" name="HexamerFeature" versioned="true" tablespace="USERS" categoryRef="NA Sequence Features" updatable="true">
