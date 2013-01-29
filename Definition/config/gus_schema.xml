@@ -11340,7 +11340,7 @@
                   <column id="SRes/OntologyTerm/ONTOLOGY_TERM_ID" name="ONTOLOGY_TERM_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="SRes/OntologyTerm/ONTOLOGY_TERM_TYPE_ID" name="ONTOLOGY_TERM_TYPE_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
                   <column id="SRes/OntologyTerm/NAME" name="NAME" nullable="false" length="255" precision="0" type="STRING"/>
-                  <column id="SRes/OntologyTerm/DEFINITION" name="DEFINITION" nullable="true" length="2000" precision="0" type="STRING"/>
+                  <column id="SRes/OntologyTerm/DEFINITION" name="DEFINITION" nullable="true" length="4000" precision="0" type="STRING"/>
                   <column id="SRes/OntologyTerm/EXTERNAL_DATABASE_RELEASE_ID" name="EXTERNAL_DATABASE_RELEASE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="SRes/OntologyTerm/SOURCE_ID" name="SOURCE_ID" nullable="true" length="255" precision="0" type="STRING"/>
                   <column id="SRes/OntologyTerm/CATEGORY" name="CATEGORY" nullable="true" length="100" precision="0" type="STRING"/>
@@ -11459,7 +11459,7 @@
                <columns>
                   <column id="SRes/OntologySynonym/ONTOLOGY_SYNONYM_ID" name="ONTOLOGY_SYNONYM_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="SRes/OntologySynonym/ONTOLOGY_TERM_ID" name="ONTOLOGY_TERM_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-                  <column id="SRes/OntologySynonym/ONTOLOGY_SYNONYM" name="ONTOLOGY_SYNONYM" nullable="false" length="400" precision="0" type="STRING"/>
+                  <column id="SRes/OntologySynonym/ONTOLOGY_SYNONYM" name="ONTOLOGY_SYNONYM" nullable="false" length="1500" precision="0" type="STRING"/>
                   <column id="SRes/OntologySynonym/EXTERNAL_DATABASE_RELEASE_ID" name="EXTERNAL_DATABASE_RELEASE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="SRes/OntologySynonym/SOURCE_ID" name="SOURCE_ID" nullable="true" length="255" precision="0" type="STRING"/>
                </columns>
