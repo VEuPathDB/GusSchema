@@ -10971,9 +10971,6 @@
                <columns>
                   <column id="SRes/Contact/CONTACT_ID" name="CONTACT_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
                   <column id="SRes/Contact/AFFILIATION_ID" name="AFFILIATION_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
-                  <column id="SRes/Contact/EXTERNAL_DATABASE_RELEASE_ID" name="EXTERNAL_DATABASE_RELEASE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
-                  <column id="SRes/Contact/TYPE_ID" name="TYPE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
-                  <column id="SRes/Contact/SOURCE_ID" name="SOURCE_ID" nullable="true" length="255" precision="0" type="STRING"/>
                   <column id="SRes/Contact/NAME" name="NAME" nullable="true" length="255" precision="0" type="STRING"/>
                   <column id="SRes/Contact/FIRST" name="FIRST" nullable="true" length="255" precision="0" type="STRING"/>
                   <column id="SRes/Contact/LAST" name="LAST" nullable="true" length="255" precision="0" type="STRING"/>
@@ -11003,16 +11000,6 @@
                         <column idref="SRes/Contact/AFFILIATION_ID"/>
                      </columns>
                   </index>
-                  <index name="CONTACT_IND03" tablespace="USERS" type="NORMAL">
-                     <columns>
-                        <column idref="SRes/Contact/EXTERNAL_DATABASE_RELEASE_ID"/>
-                     </columns>
-                  </index>
-                  <index name="CONTACT_IND04" tablespace="USERS" type="NORMAL">
-                     <columns>
-                        <column idref="SRes/Contact/TYPE_ID"/>
-                     </columns>
-                  </index>
                </indexes>
                <constraints>
                   <constraint name="PK_CONTACT" type="PRIMARY_KEY">
@@ -11027,24 +11014,6 @@
                      <referencedTable idref="SRes/Contact"/>
                      <referencedColumns>
                         <column idref="SRes/Contact/CONTACT_ID"/>
-                     </referencedColumns>
-                  </constraint>
-                  <constraint name="FK_CONTACT_EXTDBRLS" type="FOREIGN_KEY">
-                     <constrainedColumns>
-                        <column idref="SRes/Contact/EXTERNAL_DATABASE_RELEASE_ID"/>
-                     </constrainedColumns>
-                     <referencedTable idref="SRes/ExternalDatabaseRelease"/>
-                     <referencedColumns>
-                        <column idref="SRes/ExternalDatabaseRelease/EXTERNAL_DATABASE_RELEASE_ID"/>
-                     </referencedColumns>
-                  </constraint>
-                  <constraint name="FK_CONTACT_TYPE" type="FOREIGN_KEY">
-                     <constrainedColumns>
-                        <column idref="SRes/Contact/TYPE_ID"/>
-                     </constrainedColumns>
-                     <referencedTable idref="SRes/OntologyTerm"/>
-                     <referencedColumns>
-                        <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
                      </referencedColumns>
                   </constraint>
                   <constraint name="CONTACT_NAME_UQ" type="UNIQUE">
@@ -12457,6 +12426,7 @@
                   <column id="Study/Protocol/EXTERNAL_DATABASE_RELEASE_ID" name="EXTERNAL_DATABASE_RELEASE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="Study/Protocol/SOURCE_ID" name="SOURCE_ID" nullable="true" length="100" precision="0" type="STRING"/>
                   <column id="Study/Protocol/URI" name="URI" nullable="true" length="300" precision="0" type="STRING"/>
+                  <column id="Study/Protocol/CONTACT_ID" name="CONTACT_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
                </columns>
                <indexes>
                   <index name="PK_PROTOCOL" tablespace="USERS" type="NORMAL">
@@ -12478,6 +12448,12 @@
                   <index name="PROTOCOL_R02" tablespace="USERS" type="NORMAL">
                      <columns>
                         <column idref="Study/Protocol/EXTERNAL_DATABASE_RELEASE_ID"/>
+                        <column idref="Study/Protocol/PROTOCOL_ID"/>
+                     </columns>
+                  </index>
+                  <index name="PROTOCOL_R03" tablespace="USERS" type="NORMAL">
+                     <columns>
+                        <column idref="Study/Protocol/CONTACT_ID"/>
                         <column idref="Study/Protocol/PROTOCOL_ID"/>
                      </columns>
                   </index>
@@ -12513,6 +12489,15 @@
                      <referencedTable idref="SRes/ExternalDatabaseRelease"/>
                      <referencedColumns>
                         <column idref="SRes/ExternalDatabaseRelease/EXTERNAL_DATABASE_RELEASE_ID"/>
+                     </referencedColumns>
+                  </constraint>
+                  <constraint name="FK_PROTOCOL_CONTACT" type="FOREIGN_KEY">
+                     <constrainedColumns>
+                        <column idref="Study/Protocol/CONTACT_ID"/>
+                     </constrainedColumns>
+                     <referencedTable idref="SRes/Contact"/>
+                     <referencedColumns>
+                        <column idref="SRes/Contact/CONTACT_ID"/>
                      </referencedColumns>
                   </constraint>
                   <constraint name="Protocol_UQ" type="UNIQUE">
