@@ -5394,7 +5394,7 @@
                   <column id="DoTS/GeneInstance/NA_FEATURE_ID" name="NA_FEATURE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="DoTS/GeneInstance/DESCRIPTION" name="DESCRIPTION" nullable="true" length="255" precision="0" type="STRING"/>
                   <column id="DoTS/GeneInstance/REVIEWER_SUMMARY" name="REVIEWER_SUMMARY" nullable="true" length="4000" precision="0" type="STRING"/>
-                  <column id="DoTS/GeneInstance/IS_REFERENCE" name="IS_REFERENCE" nullable="false" length="1" precision="0" type="NUMBER"/>
+                  <column id="DoTS/GeneInstance/IS_REFERENCE" name="IS_REFERENCE" nullable="true" length="1" precision="0" type="NUMBER"/>
                   <column id="DoTS/GeneInstance/REVIEW_STATUS_ID" name="REVIEW_STATUS_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                </columns>
                <indexes>
@@ -12421,7 +12421,7 @@
                   <column id="Study/Protocol/PROTOCOL_ID" name="PROTOCOL_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="Study/Protocol/NAME" name="NAME" nullable="false" length="200" precision="0" type="STRING"/>
                   <column id="Study/Protocol/DESCRIPTION" name="DESCRIPTION" nullable="true" length="4000" precision="0" type="STRING"/>
-                  <column id="Study/Protocol/PROTOCOL_TYPE_ID" name="PROTOCOL_TYPE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+                  <column id="Study/Protocol/PROTOCOL_TYPE_ID" name="PROTOCOL_TYPE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="Study/Protocol/BIBLIOGRAPHIC_REFERENCE_ID" name="BIBLIOGRAPHIC_REFERENCE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="Study/Protocol/EXTERNAL_DATABASE_RELEASE_ID" name="EXTERNAL_DATABASE_RELEASE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="Study/Protocol/SOURCE_ID" name="SOURCE_ID" nullable="true" length="100" precision="0" type="STRING"/>
