@@ -7381,6 +7381,12 @@
                         <column idref="DoTS/NAFeature/PREDICTION_ALGORITHM_ID"/>
                      </columns>
                   </index>
+                  <index name="NAFEATUREIMP_IND13" tablespace="USERS" type="NORMAL">
+                     <columns>
+                        <column idref="DoTS/NAFeature/NAME"/>
+                        <column idref="DoTS/NAFeature/NA_FEATURE_ID"/>
+                     </columns>
+                  </index>
                </indexes>
                <constraints>
                   <constraint name="NAFEATUREIMP_FK03" type="FOREIGN_KEY">
