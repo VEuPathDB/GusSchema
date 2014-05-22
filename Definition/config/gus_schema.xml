@@ -11678,7 +11678,7 @@
                   <index name="PATHWAYNODE_IND03" tablespace="USERS" type="NORMAL">
                      <columns>
                         <column idref="SRes/PathwayNode/PARENT_ID"/>
-                        <column idref="SRes/Pathway/PATHWAY_NODE_ID"/>
+                        <column idref="SRes/PathwayNode/PATHWAY_NODE_ID"/>
                      </columns>
                   </index>
                   <index name="PATHWAYNODE_IND04" tablespace="USERS" type="NORMAL">
@@ -11716,9 +11716,9 @@
                      <constrainedColumns>
                         <column idref="SRes/PathwayNode/PARENT_ID"/>
                      </constrainedColumns>
-                     <referencedTable idref="SRes/PathwayNode"/>
+                     <referencedTable idref="SRes/Pathway"/>
                      <referencedColumns>
-                        <column idref="SRes/PathwayNode/PATHWAY_NODE_ID"/>
+                        <column idref="SRes/Pathway/PATHWAY_ID"/>
                      </referencedColumns>
                   </constraint>
                   <constraint name="FK_PATHWAYNODE_OT2" type="FOREIGN_KEY">
