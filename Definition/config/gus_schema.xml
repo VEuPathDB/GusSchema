@@ -11678,7 +11678,7 @@
                   <index name="PATHWAYNODE_IND03" tablespace="USERS" type="NORMAL">
                      <columns>
                         <column idref="SRes/PathwayNode/PARENT_ID"/>
-                        <column idref="SRes/PathwayNode/PATHWAY_NODE_ID"/>
+                        <column idref="SRes/Pathway/PATHWAY_ID"/>
                      </columns>
                   </index>
                   <index name="PATHWAYNODE_IND04" tablespace="USERS" type="NORMAL">
@@ -13555,10 +13555,11 @@
                <columns>
                   <column id="Model/NetworkNode/NETWORK_NODE_ID" name="NETWORK_NODE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
                   <column id="Model/NetworkNode/NODE_TYPE_ID" name="NODE_TYPE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-                  <column id="Model/NetworkNode/TABLE_ID" name="TABLE_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
-                  <column id="Model/NetworkNode/ROW_ID" name="ROW_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
+                  <column id="Model/NetworkNode/TABLE_ID" name="TABLE_ID" nullable="true" length="5" precision="0" type="NUMBER"/>
+                  <column id="Model/NetworkNode/ROW_ID" name="ROW_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
                   <column id="Model/NetworkNode/PARENT_ID" name="PARENT_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
                   <column id="Model/NetworkNode/DISPLAY_LABEL" name="DISPLAY_LABEL" nullable="true" length="25" precision="0" type="STRING"/>
+                  <column id="Model/NetworkNode/IDENTIFIER" name="IDENTIFIER" nullable="true" length="50" precision="0" type="STRING"/>
                </columns>
                <indexes>
                   <index name="PK_NETWORKNODE" tablespace="USERS" type="NORMAL">
