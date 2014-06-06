@@ -13558,7 +13558,7 @@
                   <column id="Model/NetworkNode/TABLE_ID" name="TABLE_ID" nullable="true" length="5" precision="0" type="NUMBER"/>
                   <column id="Model/NetworkNode/ROW_ID" name="ROW_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
                   <column id="Model/NetworkNode/PARENT_ID" name="PARENT_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
-                  <column id="Model/NetworkNode/DISPLAY_LABEL" name="DISPLAY_LABEL" nullable="true" length="25" precision="0" type="STRING"/>
+                  <column id="Model/NetworkNode/DISPLAY_LABEL" name="DISPLAY_LABEL" nullable="true" length="40" precision="0" type="STRING"/>
                   <column id="Model/NetworkNode/IDENTIFIER" name="IDENTIFIER" nullable="true" length="50" precision="0" type="STRING"/>
                </columns>
                <indexes>
