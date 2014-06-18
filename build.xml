@@ -59,6 +59,7 @@
       </classpath>
     </taskdef>
     <InstallSchema gusHome="${targetDir}"
+                   skipRoles="${skipRoles}"
                    schema="${projectsDir}/GusSchema/Definition/config/gus_schema.xml"/>
   </target>
 
