@@ -1054,16 +1054,6 @@
                 <column idref="DoTS/AAFeature/MOTIF_AA_SEQUENCE_ID"/>
               </columns>
             </index>
-            <index name="AAFEATUREIMP_IND12" tablespace="USERS" type="NORMAL">
-              <columns>
-                <column idref="DoTS/AAFeature/REPEAT_TYPE_ID"/>
-              </columns>
-            </index>
-            <index name="AAFEATUREIMP_IND13" tablespace="USERS" type="NORMAL">
-              <columns>
-                <column idref="DoTS/AAFeature/REVIEW_STATUS_ID"/>
-              </columns>
-            </index>
             <index name="AAFEATUREIMP_IND14" tablespace="USERS" type="NORMAL">
               <columns>
                 <column idref="DoTS/AAFeature/PARENT_ID"/>
@@ -1072,6 +1062,7 @@
             <index name="AAFEATUREIMP_IND15" tablespace="USERS" type="NORMAL">
               <columns>
                 <column idref="DoTS/AAFeature/SEQUENCE_ONTOLOGY_ID"/>
+                <column idref="DoTS/AAFeature/AA_FEATURE_ID"/>
               </columns>
             </index>
             <index name="PK_AAFEATUREIMP" tablespace="USERS" type="NORMAL">
@@ -6423,7 +6414,7 @@
             <column id="DoTS/Library/TISSUE_TYPE" name="TISSUE_TYPE" nullable="true" length="156" precision="0" type="STRING"/>
             <column id="DoTS/Library/STRAIN" name="STRAIN" nullable="true" length="156" precision="0" type="STRING"/>
             <column id="DoTS/Library/CULTIVAR" name="CULTIVAR" nullable="true" length="156" precision="0" type="STRING"/>
-            <column id="DoTS/Library/STAGE" name="STAGE" nullable="true" length="100" precision="0" type="STRING"/>
+            <column id="DoTS/Library/STAGE" name="STAGE" nullable="true" length="150" precision="0" type="STRING"/>
             <column id="DoTS/Library/SEX" name="SEX" nullable="true" length="1" precision="0" type="CHARACTER"/>
             <column id="DoTS/Library/CELL_TYPE" name="CELL_TYPE" nullable="true" length="156" precision="0" type="STRING"/>
             <column id="DoTS/Library/CELL_LINE" name="CELL_LINE" nullable="true" length="156" precision="0" type="STRING"/>
@@ -6827,7 +6818,7 @@
             <column id="DoTS/NAFeature/NA_FEATURE_ID" name="NA_FEATURE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
             <column id="DoTS/NAFeature/NA_SEQUENCE_ID" name="NA_SEQUENCE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
             <column id="DoTS/NAFeature/SUBCLASS_VIEW" name="SUBCLASS_VIEW" nullable="true" length="30" precision="0" type="STRING"/>
-            <column id="DoTS/NAFeature/NAME" name="NAME" nullable="false" length="50" precision="0" type="STRING"/>
+            <column id="DoTS/NAFeature/NAME" name="NAME" nullable="false" length="80" precision="0" type="STRING"/>
             <column id="DoTS/NAFeature/SEQUENCE_ONTOLOGY_ID" name="SEQUENCE_ONTOLOGY_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
             <column id="DoTS/NAFeature/PARENT_ID" name="PARENT_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
             <column id="DoTS/NAFeature/EXTERNAL_DATABASE_RELEASE_ID" name="EXTERNAL_DATABASE_RELEASE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
@@ -7752,8 +7743,10 @@
             </index>
             <index name="NALOCATION_IND02" tablespace="USERS" type="NORMAL">
               <columns>
+                <column idref="DoTS/NALocation/NA_FEATURE_ID"/>
                 <column idref="DoTS/NALocation/START_MIN"/>
                 <column idref="DoTS/NALocation/END_MAX"/>
+                <column idref="DoTS/NALocation/IS_REVERSED"/>
               </columns>
             </index>
             <index name="PK_NALOCATION" tablespace="USERS" type="NORMAL">
@@ -8007,6 +8000,13 @@
             <index name="NASEQUENCE_R09" tablespace="USERS" type="NORMAL">
               <columns>
                 <column idref="DoTS/NASequence/SOURCE_NA_SEQUENCE_ID"/>
+                <column idref="DoTS/NASequence/NA_SEQUENCE_ID"/>
+              </columns>
+            </index>
+            <index name="NASEQUENCEIMP_IND03" tablespace="USERS" type="NORMAL">
+              <columns>
+                <column idref="DoTS/NASequence/SUBCLASS_VIEW"/>
+                <column idref="DoTS/NASequence/SUBCLASS_VIEW"/>
                 <column idref="DoTS/NASequence/NA_SEQUENCE_ID"/>
               </columns>
             </index>
@@ -9800,11 +9800,15 @@
             <index name="RNAFEATUREEXON_IND01" tablespace="USERS" type="NORMAL">
               <columns>
                 <column idref="DoTS/RNAFeatureExon/EXON_FEATURE_ID"/>
+                <column idref="DoTS/RNAFeatureExon/RNA_FEATURE_ID"/>
+                <column idref="DoTS/RNAFeatureExon/ORDER_NUMBER"/>
               </columns>
             </index>
             <index name="RNAFEATUREEXON_IND02" tablespace="USERS" type="NORMAL">
               <columns>
                 <column idref="DoTS/RNAFeatureExon/RNA_FEATURE_ID"/>
+                <column idref="DoTS/RNAFeatureExon/EXON_FEATURE_ID"/>
+                <column idref="DoTS/RNAFeatureExon/ORDER_NUMBER"/>
               </columns>
             </index>
           </indexes>
@@ -10584,6 +10588,8 @@
             <column id="DoTS/SequencePiece/DISTANCE_FROM_LEFT" name="DISTANCE_FROM_LEFT" nullable="true" length="12" precision="0" type="NUMBER"/>
             <column id="DoTS/SequencePiece/UNCERTAINTY" name="UNCERTAINTY" nullable="true" length="126" precision="0" type="FLOAT"/>
             <column id="DoTS/SequencePiece/STRAND_ORIENTATION" name="STRAND_ORIENTATION" nullable="true" length="7" precision="0" type="STRING"/>
+            <column id="DoTS/SequencePiece/START_POSITION" name="START_POSITION" nullable="true" length="12" precision="0" type="NUMBER"/>
+            <column id="DoTS/SequencePiece/END_POSITION" name="END_POSITION" nullable="true" length="12" precision="0" type="NUMBER"/>
           </columns>
           <indexes>
             <index name="PK_SEQUENCEPIECE" tablespace="USERS" type="NORMAL">
@@ -11037,7 +11043,7 @@
             <column id="SRes/DbRef/EXTERNAL_DATABASE_RELEASE_ID" name="EXTERNAL_DATABASE_RELEASE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
             <column id="SRes/DbRef/PRIMARY_IDENTIFIER" name="PRIMARY_IDENTIFIER" nullable="true" length="100" precision="0" type="STRING"/>
             <column id="SRes/DbRef/LOWERCASE_PRIMARY_IDENTIFIER" name="LOWERCASE_PRIMARY_IDENTIFIER" nullable="true" length="100" precision="0" type="STRING"/>
-            <column id="SRes/DbRef/SECONDARY_IDENTIFIER" name="SECONDARY_IDENTIFIER" nullable="true" length="150" precision="0" type="STRING"/>
+            <column id="SRes/DbRef/SECONDARY_IDENTIFIER" name="SECONDARY_IDENTIFIER" nullable="true" length="200" precision="0" type="STRING"/>
             <column id="SRes/DbRef/LOWERCASE_SECONDARY_IDENTIFIER" name="LOWERCASE_SECONDARY_IDENTIFIER" nullable="true" length="150" precision="0" type="STRING"/>
             <column id="SRes/DbRef/GENE_SYMBOL" name="GENE_SYMBOL" nullable="true" length="50" precision="0" type="STRING"/>
             <column id="SRes/DbRef/CHROMOSOME" name="CHROMOSOME" nullable="true" length="2" precision="0" type="STRING"/>
@@ -11053,6 +11059,8 @@
             <index name="DBREF_IND01" tablespace="USERS" type="NORMAL">
               <columns>
                 <column idref="SRes/DbRef/EXTERNAL_DATABASE_RELEASE_ID"/>
+                <column idref="SRes/DbRef/DB_REF_ID"/>
+                <column idref="SRes/DbRef/PRIMARY_IDENTIFIER"/>
               </columns>
             </index>
             <index name="DBREF_IND02" tablespace="USERS" type="NORMAL">
@@ -11094,7 +11102,7 @@
             <column id="SRes/EnzymeClass/EC_NUMBER_2" name="EC_NUMBER_2" nullable="true" length="3" precision="0" type="NUMBER"/>
             <column id="SRes/EnzymeClass/EC_NUMBER_3" name="EC_NUMBER_3" nullable="true" length="3" precision="0" type="NUMBER"/>
             <column id="SRes/EnzymeClass/EC_NUMBER_4" name="EC_NUMBER_4" nullable="true" length="3" precision="0" type="NUMBER"/>
-            <column id="SRes/EnzymeClass/DESCRIPTION" name="DESCRIPTION" nullable="true" length="128" precision="0" type="STRING"/>
+            <column id="SRes/EnzymeClass/DESCRIPTION" name="DESCRIPTION" nullable="true" length="200" precision="0" type="STRING"/>
             <column id="SRes/EnzymeClass/PARENT_ID" name="PARENT_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
             <column id="SRes/EnzymeClass/EXTERNAL_DATABASE_RELEASE_ID" name="EXTERNAL_DATABASE_RELEASE_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
           </columns>
@@ -14937,6 +14945,21 @@
             </index>
             <index name="SEQVAR_IND02" tablespace="USERS" type="NORMAL">
               <columns>
+                <column idref="Results/SeqVariation/SNP_NA_FEATURE_ID"/>
+                <column idref="Results/SeqVariation/SEQ_VARIATION_ID"/>
+              </columns>
+            </index>
+            <index name="SEQVAR_IND03" tablespace="USERS" type="NORMAL">
+              <columns>
+                <column idref="Results/SeqVariation/SNP_NA_FEATURE_ID"/>
+                <column idref="Results/SeqVariation/STRAIN"/>
+                <column idref="Results/SeqVariation/ALLELE"/>
+                <column idref="Results/SeqVariation/SEQ_VARIATION_ID"/>
+              </columns>
+            </index>
+            <index name="SEQVAR_IND04" tablespace="USERS" type="NORMAL">
+              <columns>
+                <column idref="Results/SeqVariation/STRAIN"/>
                 <column idref="Results/SeqVariation/SNP_NA_FEATURE_ID"/>
                 <column idref="Results/SeqVariation/SEQ_VARIATION_ID"/>
               </columns>
