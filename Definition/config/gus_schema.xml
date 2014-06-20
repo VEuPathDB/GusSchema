@@ -12383,7 +12383,7 @@
         </table>
         <table id="Study/Characteristic" name="Characteristic" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Experimental Design" updatable="true">
           <columns>
-            <column id="Study/Characteristic/CHARACTERISTIC_ID" name="CHARACTERISTIC_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
+            <column id="Study/Characteristic/CHARACTERISTIC_ID" name="CHARACTERISTIC_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
             <column id="Study/Characteristic/PROTOCOL_APP_NODE_ID" name="PROTOCOL_APP_NODE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
             <column id="Study/Characteristic/ONTOLOGY_TERM_ID" name="ONTOLOGY_TERM_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
             <column id="Study/Characteristic/VALUE" name="VALUE" nullable="true" length="50" precision="0" type="STRING"/>
