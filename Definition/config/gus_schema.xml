@@ -862,7 +862,7 @@
             <column id="DoTS/AAFeature/NA_FEATURE_ID" name="NA_FEATURE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
             <column id="DoTS/AAFeature/SUBCLASS_VIEW" name="SUBCLASS_VIEW" nullable="true" length="30" precision="0" type="STRING"/>
             <column id="DoTS/AAFeature/SEQUENCE_ONTOLOGY_ID" name="SEQUENCE_ONTOLOGY_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
-            <column id="DoTS/AAFeature/DESCRIPTION" name="DESCRIPTION" nullable="true" length="4000" precision="0" type="STRING"/>
+            <column id="DoTS/AAFeature/DESCRIPTION" name="DESCRIPTION" nullable="true" length="400" precision="0" type="STRING"/>
             <column id="DoTS/AAFeature/PFAM_ENTRY_ID" name="PFAM_ENTRY_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
             <column id="DoTS/AAFeature/MOTIF_AA_SEQUENCE_ID" name="MOTIF_AA_SEQUENCE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
             <column id="DoTS/AAFeature/REPEAT_TYPE_ID" name="REPEAT_TYPE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
@@ -879,17 +879,17 @@
                 <column id="DoTS/AASeqVariation/IS_STOP" name="IS_STOP" nullable="true" length="12" precision="0" type="NUMBER"/>
                 <column id="DoTS/AASeqVariation/ORIGINAL" name="ORIGINAL" nullable="true" length="4000" precision="0" type="STRING"/>
                 <column id="DoTS/AASeqVariation/SUBSTITUTE" name="SUBSTITUTE" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/AASeqVariation/SPECIES" name="SPECIES" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/AASeqVariation/STRAIN" name="STRAIN" nullable="true" length="4000" precision="0" type="STRING"/>
+                <column id="DoTS/AASeqVariation/SPECIES" name="SPECIES" nullable="true" length="100" precision="0" type="STRING"/>
+                <column id="DoTS/AASeqVariation/STRAIN" name="STRAIN" nullable="true" length="80" precision="0" type="STRING"/>
                 <column id="DoTS/AASeqVariation/GENOMIC_LOCN" name="GENOMIC_LOCN" nullable="true" length="12" precision="0" type="NUMBER"/>
-                <column id="DoTS/AASeqVariation/NA_ORIGINAL" name="NA_ORIGINAL" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/AASeqVariation/NA_SUBSTITUTE" name="NA_SUBSTITUTE" nullable="true" length="4000" precision="0" type="STRING"/>
+                <column id="DoTS/AASeqVariation/NA_ORIGINAL" name="NA_ORIGINAL" nullable="true" length="3" precision="0" type="STRING"/>
+                <column id="DoTS/AASeqVariation/NA_SUBSTITUTE" name="NA_SUBSTITUTE" nullable="true" length="3" precision="0" type="STRING"/>
               </columns>
             </subclass>
             <subclass id="DoTS/AAFeature/DomainFeature" name="DomainFeature" versioned="true" tablespace="USERS" categoryRef="AA Sequence Features" updatable="true">
               <columns>
-                <column id="DoTS/DomainFeature/NAME" name="NAME" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/DomainFeature/ALGORITHM_NAME" name="ALGORITHM_NAME" nullable="true" length="4000" precision="0" type="STRING"/>
+                <column id="DoTS/DomainFeature/NAME" name="NAME" nullable="true" length="40" precision="0" type="STRING"/>
+                <column id="DoTS/DomainFeature/ALGORITHM_NAME" name="ALGORITHM_NAME" nullable="true" length="40" precision="0" type="STRING"/>
                 <column id="DoTS/DomainFeature/SCORE" name="SCORE" nullable="true" length="126" precision="0" type="FLOAT"/>
                 <column id="DoTS/DomainFeature/E_VALUE" name="E_VALUE" nullable="true" length="126" precision="0" type="FLOAT"/>
                 <column id="DoTS/DomainFeature/PROBABILITY" name="PROBABILITY" nullable="true" length="126" precision="0" type="FLOAT"/>
@@ -898,8 +898,8 @@
             </subclass>
             <subclass id="DoTS/AAFeature/EpitopeFeature" name="EpitopeFeature" versioned="true" tablespace="USERS" categoryRef="AA Sequence Features" updatable="true">
               <columns>
-                <column id="DoTS/EpitopeFeature/HAPLOTYPE" name="HAPLOTYPE" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/EpitopeFeature/TYPE" name="TYPE" nullable="true" length="4000" precision="0" type="STRING"/>
+                <column id="DoTS/EpitopeFeature/HAPLOTYPE" name="HAPLOTYPE" nullable="true" length="40" precision="0" type="STRING"/>
+                <column id="DoTS/EpitopeFeature/TYPE" name="TYPE" nullable="true" length="80" precision="0" type="STRING"/>
                 <column id="DoTS/EpitopeFeature/SCORE" name="SCORE" nullable="true" length="126" precision="0" type="FLOAT"/>
                 <column id="DoTS/EpitopeFeature/MAX_SCORE" name="MAX_SCORE" nullable="true" length="126" precision="0" type="FLOAT"/>
                 <column id="DoTS/EpitopeFeature/WIDTH" name="WIDTH" nullable="true" length="12" precision="0" type="NUMBER"/>
@@ -909,20 +909,20 @@
             </subclass>
             <subclass id="DoTS/AAFeature/MassSpecFeature" name="MassSpecFeature" versioned="true" tablespace="USERS" categoryRef="AA Sequence Features" updatable="true">
               <columns>
-                <column id="DoTS/MassSpecFeature/DEVELOPMENTAL_STAGE" name="DEVELOPMENTAL_STAGE" nullable="true" length="4000" precision="0" type="STRING"/>
+                <column id="DoTS/MassSpecFeature/DEVELOPMENTAL_STAGE" name="DEVELOPMENTAL_STAGE" nullable="true" length="40" precision="0" type="STRING"/>
               </columns>
             </subclass>
             <subclass id="DoTS/AAFeature/PlasmoAPFeature" name="PlasmoAPFeature" versioned="true" tablespace="USERS" categoryRef="AA Sequence Features" updatable="true">
             </subclass>
             <subclass id="DoTS/AAFeature/PostTranslationalModFeature" name="PostTranslationalModFeature" versioned="true" tablespace="USERS" categoryRef="AA Sequence Features" updatable="true">
               <columns>
-                <column id="DoTS/PostTranslationalModFeature/NAME" name="NAME" nullable="true" length="4000" precision="0" type="STRING"/>
+                <column id="DoTS/PostTranslationalModFeature/NAME" name="NAME" nullable="true" length="400" precision="0" type="STRING"/>
               </columns>
             </subclass>
             <subclass id="DoTS/AAFeature/PredictedAAFeature" name="PredictedAAFeature" versioned="true" tablespace="USERS" categoryRef="AA Sequence Features" updatable="true">
               <columns>
-                <column id="DoTS/PredictedAAFeature/NAME" name="NAME" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/PredictedAAFeature/ALGORITHM_NAME" name="ALGORITHM_NAME" nullable="true" length="4000" precision="0" type="STRING"/>
+                <column id="DoTS/PredictedAAFeature/NAME" name="NAME" nullable="true" length="60" precision="0" type="STRING"/>
+                <column id="DoTS/PredictedAAFeature/ALGORITHM_NAME" name="ALGORITHM_NAME" nullable="true" length="100" precision="0" type="STRING"/>
                 <column id="DoTS/PredictedAAFeature/SCORE" name="SCORE" nullable="true" length="126" precision="0" type="FLOAT"/>
               </columns>
             </subclass>
@@ -935,19 +935,19 @@
                 <column id="DoTS/RepeatRegionAAFeature/PERCENT_INDEL" name="PERCENT_INDEL" nullable="true" length="12" precision="0" type="NUMBER"/>
                 <column id="DoTS/RepeatRegionAAFeature/SCORE" name="SCORE" nullable="true" length="126" precision="0" type="FLOAT"/>
                 <column id="DoTS/RepeatRegionAAFeature/CONSENSUS" name="CONSENSUS" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/RepeatRegionAAFeature/ALGORITHM_NAME" name="ALGORITHM_NAME" nullable="true" length="4000" precision="0" type="STRING"/>
+                <column id="DoTS/RepeatRegionAAFeature/ALGORITHM_NAME" name="ALGORITHM_NAME" nullable="true" length="100" precision="0" type="STRING"/>
               </columns>
             </subclass>
             <subclass id="DoTS/AAFeature/SecondaryStructureAAFeature" name="SecondaryStructureAAFeature" versioned="true" tablespace="USERS" categoryRef="AA Sequence Features" updatable="true">
               <columns>
-                <column id="DoTS/SecondaryStructureAAFeature/NAME" name="NAME" nullable="true" length="4000" precision="0" type="STRING"/>
+                <column id="DoTS/SecondaryStructureAAFeature/NAME" name="NAME" nullable="true" length="200" precision="0" type="STRING"/>
                 <column id="DoTS/SecondaryStructureAAFeature/SCORE" name="SCORE" nullable="true" length="126" precision="0" type="FLOAT"/>
               </columns>
             </subclass>
             <subclass id="DoTS/AAFeature/SignalPeptideFeature" name="SignalPeptideFeature" versioned="true" tablespace="USERS" categoryRef="AA Sequence Features" updatable="true">
               <columns>
-                <column id="DoTS/SignalPeptideFeature/NAME" name="NAME" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/SignalPeptideFeature/ALGORITHM_NAME" name="ALGORITHM_NAME" nullable="true" length="4000" precision="0" type="STRING"/>
+                <column id="DoTS/SignalPeptideFeature/NAME" name="NAME" nullable="true" length="100" precision="0" type="STRING"/>
+                <column id="DoTS/SignalPeptideFeature/ALGORITHM_NAME" name="ALGORITHM_NAME" nullable="true" length="100" precision="0" type="STRING"/>
                 <column id="DoTS/SignalPeptideFeature/MAXY_SCORE" name="MAXY_SCORE" nullable="true" length="126" precision="0" type="FLOAT"/>
                 <column id="DoTS/SignalPeptideFeature/MAXY_CONCLUSION" name="MAXY_CONCLUSION" nullable="true" length="12" precision="0" type="NUMBER"/>
                 <column id="DoTS/SignalPeptideFeature/MAXC_SCORE" name="MAXC_SCORE" nullable="true" length="126" precision="0" type="FLOAT"/>
@@ -963,7 +963,7 @@
             </subclass>
             <subclass id="DoTS/AAFeature/TertiaryStructureAAFeature" name="TertiaryStructureAAFeature" versioned="true" tablespace="USERS" categoryRef="AA Sequence Features" updatable="true">
               <columns>
-                <column id="DoTS/TertiaryStructureAAFeature/NAME" name="NAME" nullable="true" length="4000" precision="0" type="STRING"/>
+                <column id="DoTS/TertiaryStructureAAFeature/NAME" name="NAME" nullable="true" length="100" precision="0" type="STRING"/>
                 <column id="DoTS/TertiaryStructureAAFeature/SCORE" name="SCORE" nullable="true" length="126" precision="0" type="FLOAT"/>
               </columns>
             </subclass>
@@ -974,7 +974,7 @@
                 <column id="DoTS/TranslatedAAFeature/IS_SIMPLE" name="IS_SIMPLE" nullable="true" length="12" precision="0" type="NUMBER"/>
                 <column id="DoTS/TranslatedAAFeature/CODON_TABLE" name="CODON_TABLE" nullable="true" length="4000" precision="0" type="STRING"/>
                 <column id="DoTS/TranslatedAAFeature/TRANSLATION_SCORE" name="TRANSLATION_SCORE" nullable="true" length="126" precision="0" type="FLOAT"/>
-                <column id="DoTS/TranslatedAAFeature/TRANSLATION_MODEL" name="TRANSLATION_MODEL" nullable="true" length="4000" precision="0" type="STRING"/>
+                <column id="DoTS/TranslatedAAFeature/TRANSLATION_MODEL" name="TRANSLATION_MODEL" nullable="true" length="400" precision="0" type="STRING"/>
                 <column id="DoTS/TranslatedAAFeature/NUMBER_OF_SEGMENTS" name="NUMBER_OF_SEGMENTS" nullable="true" length="12" precision="0" type="NUMBER"/>
                 <column id="DoTS/TranslatedAAFeature/DIANA_ATG_SCORE" name="DIANA_ATG_SCORE" nullable="true" length="126" precision="0" type="FLOAT"/>
                 <column id="DoTS/TranslatedAAFeature/DIANA_ATG_POSITION" name="DIANA_ATG_POSITION" nullable="true" length="12" precision="0" type="NUMBER"/>
@@ -986,8 +986,8 @@
             <subclass id="DoTS/AAFeature/TransMembraneAAFeature" name="TransMembraneAAFeature" versioned="true" tablespace="USERS" categoryRef="AA Sequence Features" updatable="true">
               <columns>
                 <column id="DoTS/TransMembraneAAFeature/LENGTH" name="LENGTH" nullable="true" length="12" precision="0" type="NUMBER"/>
-                <column id="DoTS/TransMembraneAAFeature/EXPECTED_AA" name="EXPECTED_AA" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/TransMembraneAAFeature/FIRST_60" name="FIRST_60" nullable="true" length="4000" precision="0" type="STRING"/>
+                <column id="DoTS/TransMembraneAAFeature/EXPECTED_AA" name="EXPECTED_AA" nullable="true" length="80" precision="0" type="STRING"/>
+                <column id="DoTS/TransMembraneAAFeature/FIRST_60" name="FIRST_60" nullable="true" length="120" precision="0" type="STRING"/>
                 <column id="DoTS/TransMembraneAAFeature/PREDICTED_HELICES" name="PREDICTED_HELICES" nullable="true" length="12" precision="0" type="NUMBER"/>
                 <column id="DoTS/TransMembraneAAFeature/TOPOLOGY" name="TOPOLOGY" nullable="true" length="12" precision="0" type="NUMBER"/>
               </columns>
@@ -3036,7 +3036,7 @@
             <column id="DoTS/BLATAlignment/SCORE" name="SCORE" nullable="false" length="126" precision="0" type="FLOAT"/>
             <column id="DoTS/BLATAlignment/IS_BEST_ALIGNMENT" name="IS_BEST_ALIGNMENT" nullable="false" length="1" precision="0" type="NUMBER"/>
             <column id="DoTS/BLATAlignment/BLAT_ALIGNMENT_QUALITY_ID" name="BLAT_ALIGNMENT_QUALITY_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
-            <column id="DoTS/BLATAlignment/BLOCKSIZES" name="BLOCKSIZES" nullable="false" length="4000" precision="0" type="STRING"/>
+            <column id="DoTS/BLATAlignment/BLOCKSIZES" name="BLOCKSIZES" nullable="false" length="1200" precision="0" type="STRING"/>
             <column id="DoTS/BLATAlignment/QSTARTS" name="QSTARTS" nullable="false" length="4000" precision="0" type="STRING"/>
             <column id="DoTS/BLATAlignment/TSTARTS" name="TSTARTS" nullable="false" length="4000" precision="0" type="STRING"/>
           </columns>
@@ -3196,8 +3196,8 @@
         <table id="DoTS/BLATAlignmentQuality" name="BLATAlignmentQuality" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Similarity" updatable="true">
           <columns>
             <column id="DoTS/BLATAlignmentQuality/BLAT_ALIGNMENT_QUALITY_ID" name="BLAT_ALIGNMENT_QUALITY_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
-            <column id="DoTS/BLATAlignmentQuality/NAME" name="NAME" nullable="false" length="30" precision="0" type="STRING"/>
-            <column id="DoTS/BLATAlignmentQuality/DESCRIPTION" name="DESCRIPTION" nullable="false" length="4000" precision="0" type="STRING"/>
+            <column id="DoTS/BLATAlignmentQuality/NAME" name="NAME" nullable="false" length="40" precision="0" type="STRING"/>
+            <column id="DoTS/BLATAlignmentQuality/DESCRIPTION" name="DESCRIPTION" nullable="false" length="400" precision="0" type="STRING"/>
           </columns>
           <indexes>
             <index name="PK_BLATALIGNMENTQUALITY" tablespace="USERS" type="NORMAL">
@@ -6856,9 +6856,9 @@
               <columns>
                 <column id="DoTS/DNARegulatory/CITATION" name="CITATION" nullable="true" length="4000" precision="0" type="STRING"/>
                 <column id="DoTS/DNARegulatory/EVIDENCE" name="EVIDENCE" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/DNARegulatory/FUNCTION" name="FUNCTION" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/DNARegulatory/GENE" name="GENE" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/DNARegulatory/LABEL" name="LABEL" nullable="true" length="4000" precision="0" type="STRING"/>
+                <column id="DoTS/DNARegulatory/FUNCTION" name="FUNCTION" nullable="true" length="200" precision="0" type="STRING"/>
+                <column id="DoTS/DNARegulatory/GENE" name="GENE" nullable="true" length="80" precision="0" type="STRING"/>
+                <column id="DoTS/DNARegulatory/LABEL" name="LABEL" nullable="true" length="200" precision="0" type="STRING"/>
                 <column id="DoTS/DNARegulatory/MAP" name="MAP" nullable="true" length="4000" precision="0" type="STRING"/>
                 <column id="DoTS/DNARegulatory/PARTIAL" name="PARTIAL" nullable="true" length="4000" precision="0" type="STRING"/>
                 <column id="DoTS/DNARegulatory/PHENOTYPE" name="PHENOTYPE" nullable="true" length="4000" precision="0" type="STRING"/>
@@ -6872,14 +6872,14 @@
                 <column id="DoTS/DNAStructure/CITATION" name="CITATION" nullable="true" length="4000" precision="0" type="STRING"/>
                 <column id="DoTS/DNAStructure/DIRECTION" name="DIRECTION" nullable="true" length="4000" precision="0" type="STRING"/>
                 <column id="DoTS/DNAStructure/EVIDENCE" name="EVIDENCE" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/DNAStructure/FUNCTION" name="FUNCTION" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/DNAStructure/GENE" name="GENE" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/DNAStructure/LABEL" name="LABEL" nullable="true" length="4000" precision="0" type="STRING"/>
+                <column id="DoTS/DNAStructure/FUNCTION" name="FUNCTION" nullable="true" length="100" precision="0" type="STRING"/>
+                <column id="DoTS/DNAStructure/GENE" name="GENE" nullable="true" length="80" precision="0" type="STRING"/>
+                <column id="DoTS/DNAStructure/LABEL" name="LABEL" nullable="true" length="120" precision="0" type="STRING"/>
                 <column id="DoTS/DNAStructure/MAP" name="MAP" nullable="true" length="4000" precision="0" type="STRING"/>
                 <column id="DoTS/DNAStructure/PARTIAL" name="PARTIAL" nullable="true" length="4000" precision="0" type="STRING"/>
                 <column id="DoTS/DNAStructure/PCR_CONDITIONS" name="PCR_CONDITIONS" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/DNAStructure/STANDARD_NAME" name="STANDARD_NAME" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/DNAStructure/USEDIN" name="USEDIN" nullable="true" length="4000" precision="0" type="STRING"/>
+                <column id="DoTS/DNAStructure/STANDARD_NAME" name="STANDARD_NAME" nullable="true" length="80" precision="0" type="STRING"/>
+                <column id="DoTS/DNAStructure/USEDIN" name="USEDIN" nullable="true" length="100" precision="0" type="STRING"/>
                 <column id="DoTS/DNAStructure/IS_PARTIAL" name="IS_PARTIAL" nullable="true" length="12" precision="0" type="NUMBER"/>
               </columns>
             </subclass>
@@ -6888,7 +6888,7 @@
                 <column id="DoTS/ExonFeature/IS_ONE_OF" name="IS_ONE_OF" nullable="true" length="12" precision="0" type="NUMBER"/>
                 <column id="DoTS/ExonFeature/IS_OPTIONAL" name="IS_OPTIONAL" nullable="true" length="12" precision="0" type="NUMBER"/>
                 <column id="DoTS/ExonFeature/ORDER_NUMBER" name="ORDER_NUMBER" nullable="true" length="12" precision="0" type="NUMBER"/>
-                <column id="DoTS/ExonFeature/VERSION" name="VERSION" nullable="true" length="4000" precision="0" type="STRING"/>
+                <column id="DoTS/ExonFeature/VERSION" name="VERSION" nullable="true" length="80" precision="0" type="STRING"/>
                 <column id="DoTS/ExonFeature/NUMBER_OF_ALTERNATES" name="NUMBER_OF_ALTERNATES" nullable="true" length="12" precision="0" type="NUMBER"/>
                 <column id="DoTS/ExonFeature/IS_INITIAL_EXON" name="IS_INITIAL_EXON" nullable="true" length="12" precision="0" type="NUMBER"/>
                 <column id="DoTS/ExonFeature/IS_FINAL_EXON" name="IS_FINAL_EXON" nullable="true" length="12" precision="0" type="NUMBER"/>
@@ -6915,7 +6915,7 @@
                 <column id="DoTS/GeneFeature/CITATION" name="CITATION" nullable="true" length="40" precision="0" type="STRING"/>
                 <column id="DoTS/GeneFeature/EVIDENCE" name="EVIDENCE" nullable="true" length="80" precision="0" type="STRING"/>
                 <column id="DoTS/GeneFeature/FUNCTION" name="FUNCTION" nullable="true" length="40" precision="0" type="STRING"/>
-                <column id="DoTS/GeneFeature/GENE" name="GENE" nullable="true" length="400" precision="0" type="STRING"/>
+                <column id="DoTS/GeneFeature/GENE" name="GENE" nullable="true" length="80" precision="0" type="STRING"/>
                 <column id="DoTS/GeneFeature/LABEL" name="LABEL" nullable="true" length="80" precision="0" type="STRING"/>
                 <column id="DoTS/GeneFeature/MAP" name="MAP" nullable="true" length="100" precision="0" type="STRING"/>
                 <column id="DoTS/GeneFeature/PHENOTYPE" name="PHENOTYPE" nullable="true" length="80" precision="0" type="STRING"/>
@@ -6931,21 +6931,21 @@
             </subclass>
             <subclass id="DoTS/NAFeature/Immunoglobulin" name="Immunoglobulin" versioned="true" tablespace="USERS" categoryRef="NA Sequence Features" updatable="true">
               <columns>
-                <column id="DoTS/Immunoglobulin/CITATION" name="CITATION" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/Immunoglobulin/CODON" name="CODON" nullable="true" length="4000" precision="0" type="STRING"/>
+                <column id="DoTS/Immunoglobulin/CITATION" name="CITATION" nullable="true" length="200" precision="0" type="STRING"/>
+                <column id="DoTS/Immunoglobulin/CODON" name="CODON" nullable="true" length="40" precision="0" type="STRING"/>
                 <column id="DoTS/Immunoglobulin/CODON_START" name="CODON_START" nullable="true" length="12" precision="0" type="NUMBER"/>
-                <column id="DoTS/Immunoglobulin/EVIDENCE" name="EVIDENCE" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/Immunoglobulin/GENE" name="GENE" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/Immunoglobulin/LABEL" name="LABEL" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/Immunoglobulin/MAP" name="MAP" nullable="true" length="4000" precision="0" type="STRING"/>
+                <column id="DoTS/Immunoglobulin/EVIDENCE" name="EVIDENCE" nullable="true" length="100" precision="0" type="STRING"/>
+                <column id="DoTS/Immunoglobulin/GENE" name="GENE" nullable="true" length="80" precision="0" type="STRING"/>
+                <column id="DoTS/Immunoglobulin/LABEL" name="LABEL" nullable="true" length="80" precision="0" type="STRING"/>
+                <column id="DoTS/Immunoglobulin/MAP" name="MAP" nullable="true" length="200" precision="0" type="STRING"/>
                 <column id="DoTS/Immunoglobulin/PARTIAL" name="PARTIAL" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/Immunoglobulin/PRODUCT" name="PRODUCT" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/Immunoglobulin/PSEUDO" name="PSEUDO" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/Immunoglobulin/TRANSL_EXCEPT" name="TRANSL_EXCEPT" nullable="true" length="4000" precision="0" type="STRING"/>
+                <column id="DoTS/Immunoglobulin/PRODUCT" name="PRODUCT" nullable="true" length="80" precision="0" type="STRING"/>
+                <column id="DoTS/Immunoglobulin/PSEUDO" name="PSEUDO" nullable="true" length="100" precision="0" type="STRING"/>
+                <column id="DoTS/Immunoglobulin/TRANSL_EXCEPT" name="TRANSL_EXCEPT" nullable="true" length="800" precision="0" type="STRING"/>
                 <column id="DoTS/Immunoglobulin/TRANSLATION" name="TRANSLATION" nullable="true" length="0" precision="0" type="CLOB"/>
                 <column id="DoTS/Immunoglobulin/TRANSL_TABLE" name="TRANSL_TABLE" nullable="true" length="12" precision="0" type="NUMBER"/>
-                <column id="DoTS/Immunoglobulin/STANDARD_NAME" name="STANDARD_NAME" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/Immunoglobulin/USEDIN" name="USEDIN" nullable="true" length="4000" precision="0" type="STRING"/>
+                <column id="DoTS/Immunoglobulin/STANDARD_NAME" name="STANDARD_NAME" nullable="true" length="80" precision="0" type="STRING"/>
+                <column id="DoTS/Immunoglobulin/USEDIN" name="USEDIN" nullable="true" length="200" precision="0" type="STRING"/>
                 <column id="DoTS/Immunoglobulin/IS_PARTIAL" name="IS_PARTIAL" nullable="true" length="12" precision="0" type="NUMBER"/>
                 <column id="DoTS/Immunoglobulin/IS_PSEUDO" name="IS_PSEUDO" nullable="true" length="12" precision="0" type="NUMBER"/>
               </columns>
@@ -6968,19 +6968,19 @@
             </subclass>
             <subclass id="DoTS/NAFeature/Miscellaneous" name="Miscellaneous" versioned="true" tablespace="USERS" categoryRef="NA Sequence Features" updatable="true">
               <columns>
-                <column id="DoTS/Miscellaneous/BOUND_MOIETY" name="BOUND_MOIETY" nullable="true" length="4000" precision="0" type="STRING"/>
+                <column id="DoTS/Miscellaneous/BOUND_MOIETY" name="BOUND_MOIETY" nullable="true" length="80" precision="0" type="STRING"/>
                 <column id="DoTS/Miscellaneous/CITATION" name="CITATION" nullable="true" length="4000" precision="0" type="STRING"/>
                 <column id="DoTS/Miscellaneous/EVIDENCE" name="EVIDENCE" nullable="true" length="4000" precision="0" type="STRING"/>
                 <column id="DoTS/Miscellaneous/FUNCTION" name="FUNCTION" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/Miscellaneous/GENE" name="GENE" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/Miscellaneous/LABEL" name="LABEL" nullable="true" length="4000" precision="0" type="STRING"/>
+                <column id="DoTS/Miscellaneous/GENE" name="GENE" nullable="true" length="80" precision="0" type="STRING"/>
+                <column id="DoTS/Miscellaneous/LABEL" name="LABEL" nullable="true" length="100" precision="0" type="STRING"/>
                 <column id="DoTS/Miscellaneous/MAP" name="MAP" nullable="true" length="4000" precision="0" type="STRING"/>
                 <column id="DoTS/Miscellaneous/PARTIAL" name="PARTIAL" nullable="true" length="4000" precision="0" type="STRING"/>
                 <column id="DoTS/Miscellaneous/PCR_CONDITIONS" name="PCR_CONDITIONS" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/Miscellaneous/PHENOTYPE" name="PHENOTYPE" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/Miscellaneous/PRODUCT" name="PRODUCT" nullable="true" length="4000" precision="0" type="STRING"/>
+                <column id="DoTS/Miscellaneous/PHENOTYPE" name="PHENOTYPE" nullable="true" length="40" precision="0" type="STRING"/>
+                <column id="DoTS/Miscellaneous/PRODUCT" name="PRODUCT" nullable="true" length="40" precision="0" type="STRING"/>
                 <column id="DoTS/Miscellaneous/PSEUDO" name="PSEUDO" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/Miscellaneous/STANDARD_NAME" name="STANDARD_NAME" nullable="true" length="4000" precision="0" type="STRING"/>
+                <column id="DoTS/Miscellaneous/STANDARD_NAME" name="STANDARD_NAME" nullable="true" length="80" precision="0" type="STRING"/>
                 <column id="DoTS/Miscellaneous/USEDIN" name="USEDIN" nullable="true" length="4000" precision="0" type="STRING"/>
                 <column id="DoTS/Miscellaneous/IS_PARTIAL" name="IS_PARTIAL" nullable="true" length="12" precision="0" type="NUMBER"/>
                 <column id="DoTS/Miscellaneous/IS_PSEUDO" name="IS_PSEUDO" nullable="true" length="12" precision="0" type="NUMBER"/>
@@ -7000,18 +7000,18 @@
             <subclass id="DoTS/NAFeature/ProteinFeature" name="ProteinFeature" versioned="true" tablespace="USERS" categoryRef="NA Sequence Features" updatable="true">
               <columns>
                 <column id="DoTS/ProteinFeature/CITATION" name="CITATION" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/ProteinFeature/CLONE" name="CLONE" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/ProteinFeature/CODON" name="CODON" nullable="true" length="4000" precision="0" type="STRING"/>
+                <column id="DoTS/ProteinFeature/CLONE" name="CLONE" nullable="true" length="400" precision="0" type="STRING"/>
+                <column id="DoTS/ProteinFeature/CODON" name="CODON" nullable="true" length="40" precision="0" type="STRING"/>
                 <column id="DoTS/ProteinFeature/CODON_START" name="CODON_START" nullable="true" length="12" precision="0" type="NUMBER"/>
-                <column id="DoTS/ProteinFeature/EC_NUMBER" name="EC_NUMBER" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/ProteinFeature/EVIDENCE" name="EVIDENCE" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/ProteinFeature/FUNCTION" name="FUNCTION" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/ProteinFeature/GENE" name="GENE" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/ProteinFeature/LABEL" name="LABEL" nullable="true" length="4000" precision="0" type="STRING"/>
+                <column id="DoTS/ProteinFeature/EC_NUMBER" name="EC_NUMBER" nullable="true" length="80" precision="0" type="STRING"/>
+                <column id="DoTS/ProteinFeature/EVIDENCE" name="EVIDENCE" nullable="true" length="400" precision="0" type="STRING"/>
+                <column id="DoTS/ProteinFeature/FUNCTION" name="FUNCTION" nullable="true" length="400" precision="0" type="STRING"/>
+                <column id="DoTS/ProteinFeature/GENE" name="GENE" nullable="true" length="80" precision="0" type="STRING"/>
+                <column id="DoTS/ProteinFeature/LABEL" name="LABEL" nullable="true" length="80" precision="0" type="STRING"/>
                 <column id="DoTS/ProteinFeature/MAP" name="MAP" nullable="true" length="4000" precision="0" type="STRING"/>
                 <column id="DoTS/ProteinFeature/PARTIAL" name="PARTIAL" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/ProteinFeature/PRODUCT" name="PRODUCT" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/ProteinFeature/STANDARD_NAME" name="STANDARD_NAME" nullable="true" length="4000" precision="0" type="STRING"/>
+                <column id="DoTS/ProteinFeature/PRODUCT" name="PRODUCT" nullable="true" length="60" precision="0" type="STRING"/>
+                <column id="DoTS/ProteinFeature/STANDARD_NAME" name="STANDARD_NAME" nullable="true" length="80" precision="0" type="STRING"/>
                 <column id="DoTS/ProteinFeature/TRANSL_EXCEPT" name="TRANSL_EXCEPT" nullable="true" length="4000" precision="0" type="STRING"/>
                 <column id="DoTS/ProteinFeature/USEDIN" name="USEDIN" nullable="true" length="4000" precision="0" type="STRING"/>
                 <column id="DoTS/ProteinFeature/IS_PARTIAL" name="IS_PARTIAL" nullable="true" length="12" precision="0" type="NUMBER"/>
@@ -7019,17 +7019,17 @@
             </subclass>
             <subclass id="DoTS/NAFeature/Repeats" name="Repeats" versioned="true" tablespace="USERS" categoryRef="NA Sequence Features" updatable="true">
               <columns>
-                <column id="DoTS/Repeats/CITATION" name="CITATION" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/Repeats/EVIDENCE" name="EVIDENCE" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/Repeats/FUNCTION" name="FUNCTION" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/Repeats/GENE" name="GENE" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/Repeats/LABEL" name="LABEL" nullable="true" length="4000" precision="0" type="STRING"/>
+                <column id="DoTS/Repeats/CITATION" name="CITATION" nullable="true" length="400" precision="0" type="STRING"/>
+                <column id="DoTS/Repeats/EVIDENCE" name="EVIDENCE" nullable="true" length="400" precision="0" type="STRING"/>
+                <column id="DoTS/Repeats/FUNCTION" name="FUNCTION" nullable="true" length="400" precision="0" type="STRING"/>
+                <column id="DoTS/Repeats/GENE" name="GENE" nullable="true" length="80" precision="0" type="STRING"/>
+                <column id="DoTS/Repeats/LABEL" name="LABEL" nullable="true" length="80" precision="0" type="STRING"/>
                 <column id="DoTS/Repeats/MAP" name="MAP" nullable="true" length="4000" precision="0" type="STRING"/>
                 <column id="DoTS/Repeats/PARTIAL" name="PARTIAL" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/Repeats/RPT_FAMILY" name="RPT_FAMILY" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/Repeats/RPT_TYPE" name="RPT_TYPE" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/Repeats/RPT_UNIT" name="RPT_UNIT" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/Repeats/STANDARD_NAME" name="STANDARD_NAME" nullable="true" length="4000" precision="0" type="STRING"/>
+                <column id="DoTS/Repeats/RPT_FAMILY" name="RPT_FAMILY" nullable="true" length="40" precision="0" type="STRING"/>
+                <column id="DoTS/Repeats/RPT_TYPE" name="RPT_TYPE" nullable="true" length="100" precision="0" type="STRING"/>
+                <column id="DoTS/Repeats/RPT_UNIT" name="RPT_UNIT" nullable="true" length="1000" precision="0" type="STRING"/>
+                <column id="DoTS/Repeats/STANDARD_NAME" name="STANDARD_NAME" nullable="true" length="80" precision="0" type="STRING"/>
                 <column id="DoTS/Repeats/USEDIN" name="USEDIN" nullable="true" length="4000" precision="0" type="STRING"/>
                 <column id="DoTS/Repeats/IS_PARTIAL" name="IS_PARTIAL" nullable="true" length="12" precision="0" type="NUMBER"/>
               </columns>
@@ -7041,7 +7041,7 @@
             </subclass>
             <subclass id="DoTS/NAFeature/RestrictionFragmentFeature" name="RestrictionFragmentFeature" versioned="true" tablespace="USERS" categoryRef="NA Sequence Features" updatable="true">
               <columns>
-                <column id="DoTS/RestrictionFragmentFeature/ENZYME_NAME" name="ENZYME_NAME" nullable="true" length="4000" precision="0" type="STRING"/>
+                <column id="DoTS/RestrictionFragmentFeature/ENZYME_NAME" name="ENZYME_NAME" nullable="true" length="100" precision="0" type="STRING"/>
                 <column id="DoTS/RestrictionFragmentFeature/TYPE_OF_CUT" name="TYPE_OF_CUT" nullable="true" length="4000" precision="0" type="STRING"/>
               </columns>
             </subclass>
@@ -7055,7 +7055,7 @@
             <subclass id="DoTS/NAFeature/RNARegulatoryFeature" name="RNARegulatoryFeature" versioned="true" tablespace="USERS" categoryRef="NA Sequence Features" updatable="true">
               <columns>
                 <column id="DoTS/RNARegulatoryFeature/SCORE" name="SCORE" nullable="true" length="126" precision="0" type="FLOAT"/>
-                <column id="DoTS/RNARegulatoryFeature/FUNCTION" name="FUNCTION" nullable="true" length="4000" precision="0" type="STRING"/>
+                <column id="DoTS/RNARegulatoryFeature/FUNCTION" name="FUNCTION" nullable="true" length="100" precision="0" type="STRING"/>
               </columns>
             </subclass>
             <subclass id="DoTS/NAFeature/RNASecondaryStructure" name="RNASecondaryStructure" versioned="true" tablespace="USERS" categoryRef="Central Dogma" updatable="true">
@@ -7066,32 +7066,32 @@
             <subclass id="DoTS/NAFeature/RNAStructure" name="RNAStructure" versioned="true" tablespace="USERS" categoryRef="NA Sequence Features" updatable="true">
               <columns>
                 <column id="DoTS/RNAStructure/CITATION" name="CITATION" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/RNAStructure/EVIDENCE" name="EVIDENCE" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/RNAStructure/FUNCTION" name="FUNCTION" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/RNAStructure/GENE" name="GENE" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/RNAStructure/LABEL" name="LABEL" nullable="true" length="4000" precision="0" type="STRING"/>
+                <column id="DoTS/RNAStructure/EVIDENCE" name="EVIDENCE" nullable="true" length="400" precision="0" type="STRING"/>
+                <column id="DoTS/RNAStructure/FUNCTION" name="FUNCTION" nullable="true" length="400" precision="0" type="STRING"/>
+                <column id="DoTS/RNAStructure/GENE" name="GENE" nullable="true" length="800" precision="0" type="STRING"/>
+                <column id="DoTS/RNAStructure/LABEL" name="LABEL" nullable="true" length="1000" precision="0" type="STRING"/>
                 <column id="DoTS/RNAStructure/MAP" name="MAP" nullable="true" length="4000" precision="0" type="STRING"/>
                 <column id="DoTS/RNAStructure/PARTIAL" name="PARTIAL" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/RNAStructure/PRODUCT" name="PRODUCT" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/RNAStructure/STANDARD_NAME" name="STANDARD_NAME" nullable="true" length="4000" precision="0" type="STRING"/>
+                <column id="DoTS/RNAStructure/PRODUCT" name="PRODUCT" nullable="true" length="80" precision="0" type="STRING"/>
+                <column id="DoTS/RNAStructure/STANDARD_NAME" name="STANDARD_NAME" nullable="true" length="80" precision="0" type="STRING"/>
                 <column id="DoTS/RNAStructure/USEDIN" name="USEDIN" nullable="true" length="4000" precision="0" type="STRING"/>
                 <column id="DoTS/RNAStructure/IS_PARTIAL" name="IS_PARTIAL" nullable="true" length="12" precision="0" type="NUMBER"/>
               </columns>
             </subclass>
             <subclass id="DoTS/NAFeature/RNAType" name="RNAType" versioned="true" tablespace="USERS" categoryRef="NA Sequence Features" updatable="true">
               <columns>
-                <column id="DoTS/RNAType/ANTICODON" name="ANTICODON" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/RNAType/CITATION" name="CITATION" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/RNAType/CODON" name="CODON" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/RNAType/EVIDENCE" name="EVIDENCE" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/RNAType/FUNCTION" name="FUNCTION" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/RNAType/GENE" name="GENE" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/RNAType/LABEL" name="LABEL" nullable="true" length="4000" precision="0" type="STRING"/>
+                <column id="DoTS/RNAType/ANTICODON" name="ANTICODON" nullable="true" length="40" precision="0" type="STRING"/>
+                <column id="DoTS/RNAType/CITATION" name="CITATION" nullable="true" length="100" precision="0" type="STRING"/>
+                <column id="DoTS/RNAType/CODON" name="CODON" nullable="true" length="40" precision="0" type="STRING"/>
+                <column id="DoTS/RNAType/EVIDENCE" name="EVIDENCE" nullable="true" length="400" precision="0" type="STRING"/>
+                <column id="DoTS/RNAType/FUNCTION" name="FUNCTION" nullable="true" length="400" precision="0" type="STRING"/>
+                <column id="DoTS/RNAType/GENE" name="GENE" nullable="true" length="80" precision="0" type="STRING"/>
+                <column id="DoTS/RNAType/LABEL" name="LABEL" nullable="true" length="80" precision="0" type="STRING"/>
                 <column id="DoTS/RNAType/MAP" name="MAP" nullable="true" length="4000" precision="0" type="STRING"/>
                 <column id="DoTS/RNAType/PARTIAL" name="PARTIAL" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/RNAType/PRODUCT" name="PRODUCT" nullable="true" length="4000" precision="0" type="STRING"/>
+                <column id="DoTS/RNAType/PRODUCT" name="PRODUCT" nullable="true" length="80" precision="0" type="STRING"/>
                 <column id="DoTS/RNAType/PSEUDO" name="PSEUDO" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/RNAType/STANDARD_NAME" name="STANDARD_NAME" nullable="true" length="4000" precision="0" type="STRING"/>
+                <column id="DoTS/RNAType/STANDARD_NAME" name="STANDARD_NAME" nullable="true" length="80" precision="0" type="STRING"/>
                 <column id="DoTS/RNAType/USEDIN" name="USEDIN" nullable="true" length="4000" precision="0" type="STRING"/>
                 <column id="DoTS/RNAType/IS_PARTIAL" name="IS_PARTIAL" nullable="true" length="12" precision="0" type="NUMBER"/>
                 <column id="DoTS/RNAType/IS_PSEUDO" name="IS_PSEUDO" nullable="true" length="12" precision="0" type="NUMBER"/>
@@ -7099,7 +7099,7 @@
             </subclass>
             <subclass id="DoTS/NAFeature/SAGETagFeature" name="SAGETagFeature" versioned="true" tablespace="USERS" categoryRef="NA Sequence Features" updatable="true">
               <columns>
-                <column id="DoTS/SAGETagFeature/RESTRICTION_ENZYME" name="RESTRICTION_ENZYME" nullable="true" length="4000" precision="0" type="STRING"/>
+                <column id="DoTS/SAGETagFeature/RESTRICTION_ENZYME" name="RESTRICTION_ENZYME" nullable="true" length="80" precision="0" type="STRING"/>
                 <column id="DoTS/SAGETagFeature/BINDING_LOCATION_ID" name="BINDING_LOCATION_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
                 <column id="DoTS/SAGETagFeature/TRAILER_LOCATION_ID" name="TRAILER_LOCATION_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
                 <column id="DoTS/SAGETagFeature/TAG_LOCATION_ID" name="TAG_LOCATION_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
@@ -7109,55 +7109,55 @@
               <columns>
                 <column id="DoTS/ScaffoldGapFeature/MIN_SIZE" name="MIN_SIZE" nullable="true" length="12" precision="0" type="NUMBER"/>
                 <column id="DoTS/ScaffoldGapFeature/MAX_SIZE" name="MAX_SIZE" nullable="true" length="12" precision="0" type="NUMBER"/>
-                <column id="DoTS/ScaffoldGapFeature/LEFT_CONTIG" name="LEFT_CONTIG" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/ScaffoldGapFeature/RIGHT_CONTIG" name="RIGHT_CONTIG" nullable="true" length="4000" precision="0" type="STRING"/>
+                <column id="DoTS/ScaffoldGapFeature/LEFT_CONTIG" name="LEFT_CONTIG" nullable="true" length="100" precision="0" type="STRING"/>
+                <column id="DoTS/ScaffoldGapFeature/RIGHT_CONTIG" name="RIGHT_CONTIG" nullable="true" length="100" precision="0" type="STRING"/>
               </columns>
             </subclass>
             <subclass id="DoTS/NAFeature/Source" name="Source" versioned="true" tablespace="USERS" categoryRef="NA Sequence Features" updatable="true">
               <columns>
-                <column id="DoTS/Source/CELL_LINE" name="CELL_LINE" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/Source/CELL_TYPE" name="CELL_TYPE" nullable="true" length="4000" precision="0" type="STRING"/>
+                <column id="DoTS/Source/CELL_LINE" name="CELL_LINE" nullable="true" length="100" precision="0" type="STRING"/>
+                <column id="DoTS/Source/CELL_TYPE" name="CELL_TYPE" nullable="true" length="400" precision="0" type="STRING"/>
                 <column id="DoTS/Source/CHROMOPLAST" name="CHROMOPLAST" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/Source/CHROMOSOME" name="CHROMOSOME" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/Source/CLONE" name="CLONE" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/Source/CLONE_LIB" name="CLONE_LIB" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/Source/CULTIVAR" name="CULTIVAR" nullable="true" length="4000" precision="0" type="STRING"/>
+                <column id="DoTS/Source/CHROMOSOME" name="CHROMOSOME" nullable="true" length="100" precision="0" type="STRING"/>
+                <column id="DoTS/Source/CLONE" name="CLONE" nullable="true" length="100" precision="0" type="STRING"/>
+                <column id="DoTS/Source/CLONE_LIB" name="CLONE_LIB" nullable="true" length="100" precision="0" type="STRING"/>
+                <column id="DoTS/Source/CULTIVAR" name="CULTIVAR" nullable="true" length="100" precision="0" type="STRING"/>
                 <column id="DoTS/Source/CYANELLE" name="CYANELLE" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/Source/DEV_STAGE" name="DEV_STAGE" nullable="true" length="4000" precision="0" type="STRING"/>
+                <column id="DoTS/Source/DEV_STAGE" name="DEV_STAGE" nullable="true" length="200" precision="0" type="STRING"/>
                 <column id="DoTS/Source/FOCUS" name="FOCUS" nullable="true" length="4000" precision="0" type="STRING"/>
                 <column id="DoTS/Source/FREQUENCY" name="FREQUENCY" nullable="true" length="4000" precision="0" type="STRING"/>
                 <column id="DoTS/Source/GERMLINE" name="GERMLINE" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/Source/HAPLOTYPE" name="HAPLOTYPE" nullable="true" length="4000" precision="0" type="STRING"/>
+                <column id="DoTS/Source/HAPLOTYPE" name="HAPLOTYPE" nullable="true" length="100" precision="0" type="STRING"/>
                 <column id="DoTS/Source/INSERTION_SEQ" name="INSERTION_SEQ" nullable="true" length="0" precision="0" type="CLOB"/>
-                <column id="DoTS/Source/ISOLATE" name="ISOLATE" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/Source/KINETOPLAST" name="KINETOPLAST" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/Source/LAB_HOST" name="LAB_HOST" nullable="true" length="4000" precision="0" type="STRING"/>
+                <column id="DoTS/Source/ISOLATE" name="ISOLATE" nullable="true" length="80" precision="0" type="STRING"/>
+                <column id="DoTS/Source/KINETOPLAST" name="KINETOPLAST" nullable="true" length="80" precision="0" type="STRING"/>
+                <column id="DoTS/Source/LAB_HOST" name="LAB_HOST" nullable="true" length="100" precision="0" type="STRING"/>
                 <column id="DoTS/Source/MACRONUCLEAR" name="MACRONUCLEAR" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/Source/ORGANELLE" name="ORGANELLE" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/Source/POP_VARIANT" name="POP_VARIANT" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/Source/PLASMID" name="PLASMID" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/Source/PROVIRAL" name="PROVIRAL" nullable="true" length="4000" precision="0" type="STRING"/>
+                <column id="DoTS/Source/ORGANELLE" name="ORGANELLE" nullable="true" length="80" precision="0" type="STRING"/>
+                <column id="DoTS/Source/POP_VARIANT" name="POP_VARIANT" nullable="true" length="100" precision="0" type="STRING"/>
+                <column id="DoTS/Source/PLASMID" name="PLASMID" nullable="true" length="200" precision="0" type="STRING"/>
+                <column id="DoTS/Source/PROVIRAL" name="PROVIRAL" nullable="true" length="400" precision="0" type="STRING"/>
                 <column id="DoTS/Source/REARRANGED" name="REARRANGED" nullable="true" length="4000" precision="0" type="STRING"/>
                 <column id="DoTS/Source/SEQUENCED_MOL" name="SEQUENCED_MOL" nullable="true" length="4000" precision="0" type="STRING"/>
                 <column id="DoTS/Source/SEROTYPE" name="SEROTYPE" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/Source/SEX" name="SEX" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/Source/SPECIFIC_HOST" name="SPECIFIC_HOST" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/Source/STRAIN" name="STRAIN" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/Source/SUB_CLONE" name="SUB_CLONE" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/Source/SUB_SPECIES" name="SUB_SPECIES" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/Source/SUB_STRAIN" name="SUB_STRAIN" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/Source/TISSUE_LIB" name="TISSUE_LIB" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/Source/TRANSPOSON" name="TRANSPOSON" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/Source/VARIETY" name="VARIETY" nullable="true" length="4000" precision="0" type="STRING"/>
+                <column id="DoTS/Source/SEX" name="SEX" nullable="true" length="20" precision="0" type="STRING"/>
+                <column id="DoTS/Source/SPECIFIC_HOST" name="SPECIFIC_HOST" nullable="true" length="80" precision="0" type="STRING"/>
+                <column id="DoTS/Source/STRAIN" name="STRAIN" nullable="true" length="100" precision="0" type="STRING"/>
+                <column id="DoTS/Source/SUB_CLONE" name="SUB_CLONE" nullable="true" length="40" precision="0" type="STRING"/>
+                <column id="DoTS/Source/SUB_SPECIES" name="SUB_SPECIES" nullable="true" length="80" precision="0" type="STRING"/>
+                <column id="DoTS/Source/SUB_STRAIN" name="SUB_STRAIN" nullable="true" length="100" precision="0" type="STRING"/>
+                <column id="DoTS/Source/TISSUE_LIB" name="TISSUE_LIB" nullable="true" length="400" precision="0" type="STRING"/>
+                <column id="DoTS/Source/TRANSPOSON" name="TRANSPOSON" nullable="true" length="400" precision="0" type="STRING"/>
+                <column id="DoTS/Source/VARIETY" name="VARIETY" nullable="true" length="400" precision="0" type="STRING"/>
                 <column id="DoTS/Source/VIRION" name="VIRION" nullable="true" length="4000" precision="0" type="STRING"/>
                 <column id="DoTS/Source/CHLOROPLAST" name="CHLOROPLAST" nullable="true" length="4000" precision="0" type="STRING"/>
                 <column id="DoTS/Source/CITATION" name="CITATION" nullable="true" length="4000" precision="0" type="STRING"/>
                 <column id="DoTS/Source/MAP" name="MAP" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/Source/ORGANISM" name="ORGANISM" nullable="true" length="4000" precision="0" type="STRING"/>
+                <column id="DoTS/Source/ORGANISM" name="ORGANISM" nullable="true" length="80" precision="0" type="STRING"/>
                 <column id="DoTS/Source/SPECIMEN_VOUCHER" name="SPECIMEN_VOUCHER" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/Source/TISSUE_TYPE" name="TISSUE_TYPE" nullable="true" length="4000" precision="0" type="STRING"/>
+                <column id="DoTS/Source/TISSUE_TYPE" name="TISSUE_TYPE" nullable="true" length="200" precision="0" type="STRING"/>
                 <column id="DoTS/Source/USEDIN" name="USEDIN" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/Source/LABEL" name="LABEL" nullable="true" length="4000" precision="0" type="STRING"/>
+                <column id="DoTS/Source/LABEL" name="LABEL" nullable="true" length="400" precision="0" type="STRING"/>
               </columns>
             </subclass>
             <subclass id="DoTS/NAFeature/SpliceSiteFeature" name="SpliceSiteFeature" versioned="true" tablespace="USERS" categoryRef="NA Sequence Features" updatable="true">
@@ -7169,8 +7169,8 @@
               <columns>
                 <column id="DoTS/STS/CITATION" name="CITATION" nullable="true" length="4000" precision="0" type="STRING"/>
                 <column id="DoTS/STS/EVIDENCE" name="EVIDENCE" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/STS/GENE" name="GENE" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/STS/LABEL" name="LABEL" nullable="true" length="4000" precision="0" type="STRING"/>
+                <column id="DoTS/STS/GENE" name="GENE" nullable="true" length="80" precision="0" type="STRING"/>
+                <column id="DoTS/STS/LABEL" name="LABEL" nullable="true" length="80" precision="0" type="STRING"/>
                 <column id="DoTS/STS/MAP" name="MAP" nullable="true" length="4000" precision="0" type="STRING"/>
                 <column id="DoTS/STS/PARTIAL" name="PARTIAL" nullable="true" length="4000" precision="0" type="STRING"/>
                 <column id="DoTS/STS/STANDARD_NAME" name="STANDARD_NAME" nullable="true" length="4000" precision="0" type="STRING"/>
@@ -7198,21 +7198,21 @@
               <columns>
                 <column id="DoTS/Transcript/CITATION" name="CITATION" nullable="true" length="4000" precision="0" type="STRING"/>
                 <column id="DoTS/Transcript/CLONE" name="CLONE" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/Transcript/CODON" name="CODON" nullable="true" length="4000" precision="0" type="STRING"/>
+                <column id="DoTS/Transcript/CODON" name="CODON" nullable="true" length="40" precision="0" type="STRING"/>
                 <column id="DoTS/Transcript/CODON_START" name="CODON_START" nullable="true" length="12" precision="0" type="NUMBER"/>
-                <column id="DoTS/Transcript/CONS_SPLICE" name="CONS_SPLICE" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/Transcript/EC_NUMBER" name="EC_NUMBER" nullable="true" length="4000" precision="0" type="STRING"/>
+                <column id="DoTS/Transcript/CONS_SPLICE" name="CONS_SPLICE" nullable="true" length="200" precision="0" type="STRING"/>
+                <column id="DoTS/Transcript/EC_NUMBER" name="EC_NUMBER" nullable="true" length="80" precision="0" type="STRING"/>
                 <column id="DoTS/Transcript/EVIDENCE" name="EVIDENCE" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/Transcript/FUNCTION" name="FUNCTION" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/Transcript/GENE" name="GENE" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/Transcript/LABEL" name="LABEL" nullable="true" length="4000" precision="0" type="STRING"/>
+                <column id="DoTS/Transcript/FUNCTION" name="FUNCTION" nullable="true" length="80" precision="0" type="STRING"/>
+                <column id="DoTS/Transcript/GENE" name="GENE" nullable="true" length="80" precision="0" type="STRING"/>
+                <column id="DoTS/Transcript/LABEL" name="LABEL" nullable="true" length="100" precision="0" type="STRING"/>
                 <column id="DoTS/Transcript/MAP" name="MAP" nullable="true" length="4000" precision="0" type="STRING"/>
                 <column id="DoTS/Transcript/NUM" name="NUM" nullable="true" length="4000" precision="0" type="STRING"/>
                 <column id="DoTS/Transcript/PARTIAL" name="PARTIAL" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/Transcript/PRODUCT" name="PRODUCT" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/Transcript/PROTEIN_ID" name="PROTEIN_ID" nullable="true" length="4000" precision="0" type="STRING"/>
+                <column id="DoTS/Transcript/PRODUCT" name="PRODUCT" nullable="true" length="100" precision="0" type="STRING"/>
+                <column id="DoTS/Transcript/PROTEIN_ID" name="PROTEIN_ID" nullable="true" length="80" precision="0" type="STRING"/>
                 <column id="DoTS/Transcript/PSEUDO" name="PSEUDO" nullable="true" length="4000" precision="0" type="STRING"/>
-                <column id="DoTS/Transcript/STANDARD_NAME" name="STANDARD_NAME" nullable="true" length="4000" precision="0" type="STRING"/>
+                <column id="DoTS/Transcript/STANDARD_NAME" name="STANDARD_NAME" nullable="true" length="80" precision="0" type="STRING"/>
                 <column id="DoTS/Transcript/TRANSLATION" name="TRANSLATION" nullable="true" length="0" precision="0" type="CLOB"/>
                 <column id="DoTS/Transcript/TRANSL_EXCEPT" name="TRANSL_EXCEPT" nullable="true" length="4000" precision="0" type="STRING"/>
                 <column id="DoTS/Transcript/TRANSL_TABLE" name="TRANSL_TABLE" nullable="true" length="12" precision="0" type="NUMBER"/>
@@ -7228,7 +7228,7 @@
             </subclass>
             <subclass id="DoTS/NAFeature/IsolateFeature" name="IsolateFeature" versioned="true" tablespace="USERS" categoryRef="NA Sequence Features" updatable="true">
               <columns>
-                <column id="DoTS/IsolateFeature/GENE_TYPE" name="GENE_TYPE" nullable="true" length="4000" precision="0" type="STRING"/>
+                <column id="DoTS/IsolateFeature/GENE_TYPE" name="GENE_TYPE" nullable="true" length="40" precision="0" type="STRING"/>
                 <column id="DoTS/IsolateFeature/CONFIRMED_BY_SIMILARITY" name="CONFIRMED_BY_SIMILARITY" nullable="true" length="12" precision="0" type="NUMBER"/>
                 <column id="DoTS/IsolateFeature/PREDICTION_NUMBER" name="PREDICTION_NUMBER" nullable="true" length="12" precision="0" type="NUMBER"/>
                 <column id="DoTS/IsolateFeature/NUMBER_OF_EXONS" name="NUMBER_OF_EXONS" nullable="true" length="12" precision="0" type="NUMBER"/>
