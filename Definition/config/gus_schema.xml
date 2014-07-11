@@ -11149,6 +11149,42 @@
             </constraint>
           </constraints>
         </table>
+        <table id="SRes/EnzymeClassAttribute" name="EnzymeClassAttribute" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="Enzymes Vocabulary" updatable="true">
+          <columns>
+            <column id="SRes/EnzymeClassAttribute/ENZYME_CLASS_ATTRIBUTE_ID" name="ENZYME_CLASS_ATTRIBUTE_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
+            <column id="SRes/EnzymeClassAttribute/ENZYME_CLASS_ID" name="ENZYME_CLASS_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
+            <column id="SRes/EnzymeClassAttribute/ATTRIBUTE_NAME" name="ATTRIBUTE_NAME" nullable="false" length="32" precision="0" type="STRING"/>
+            <column id="SRes/EnzymeClassAttribute/ATTRIBUTE_VALUE" name="ATTRIBUTE_VALUE" nullable="false" length="4000" precision="0" type="STRING"/>
+          </columns>
+          <indexes>
+            <index name="ENZYMECLASSATTRIBUTE_IND01" tablespace="USERS" type="NORMAL">
+              <columns>
+                <column idref="SRes/EnzymeClassAttribute/ENZYME_CLASS_ID"/>
+              </columns>
+            </index>
+            <index name="ENZYMECLASSATTRIBUTE_PK" tablespace="USERS" type="NORMAL">
+              <columns>
+                <column idref="SRes/EnzymeClassAttribute/ENZYME_CLASS_ATTRIBUTE_ID"/>
+              </columns>
+            </index>
+          </indexes>
+          <constraints>
+            <constraint name="ENZYMECLASSATTRIBUTE_FK01" type="FOREIGN_KEY">
+              <constrainedColumns>
+                <column idref="SRes/EnzymeClassAttribute/ENZYME_CLASS_ID"/>
+              </constrainedColumns>
+              <referencedTable idref="SRes/EnzymeClass"/>
+              <referencedColumns>
+                <column idref="SRes/EnzymeClass/ENZYME_CLASS_ID"/>
+              </referencedColumns>
+            </constraint>
+            <constraint name="ENZYMECLASSATTRIBUTE_PK" type="PRIMARY_KEY">
+              <constrainedColumns>
+                <column idref="SRes/EnzymeClassAttribute/ENZYME_CLASS_ATTRIBUTE_ID"/>
+              </constrainedColumns>
+            </constraint>
+          </constraints>
+        </table>
         <table id="SRes/ExternalDatabase" name="ExternalDatabase" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="External Database" updatable="true">
           <columns>
             <column id="SRes/ExternalDatabase/EXTERNAL_DATABASE_ID" name="EXTERNAL_DATABASE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
