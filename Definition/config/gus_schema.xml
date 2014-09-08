@@ -2141,9 +2141,9 @@
               <constrainedColumns>
                 <column idref="DoTS/AASequenceRef/REFERENCE_ID"/>
               </constrainedColumns>
-              <referencedTable idref="SRes/OntologyTerm"/>
+              <referencedTable idref="SRes/BibliographicReference"/>
               <referencedColumns>
-                <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
+                <column idref="SRes/BibliographicReference/BIBLIOGRAPHIC_REFERENCE_ID"/>
               </referencedColumns>
             </constraint>
             <constraint name="AASEQUENCEREF_FK02" type="FOREIGN_KEY">
@@ -8208,9 +8208,9 @@
               <constrainedColumns>
                 <column idref="DoTS/NASequenceRef/REFERENCE_ID"/>
               </constrainedColumns>
-              <referencedTable idref="SRes/OntologyTerm"/>
+              <referencedTable idref="SRes/BibliographicReference"/>
               <referencedColumns>
-                <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
+                <column idref="SRes/BibliographicReference/BIBLIOGRAPHIC_REFERENCE_ID"/>
               </referencedColumns>
             </constraint>
             <constraint name="NASEQUENCEREF_FK05" type="FOREIGN_KEY">
