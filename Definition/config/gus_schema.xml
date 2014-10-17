@@ -11725,7 +11725,7 @@
             <column id="SRes/PathwayNode/PATHWAY_NODE_TYPE_ID" name="PATHWAY_NODE_TYPE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
             <column id="SRes/PathwayNode/TABLE_ID" name="TABLE_ID" nullable="true" length="5" precision="0" type="NUMBER"/>
             <column id="SRes/PathwayNode/ROW_ID" name="ROW_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
-            <column id="SRes/PathwayNode/PARENT_ID" name="PARENT_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
+            <column id="SRes/PathwayNode/PATHWAY_ID" name="PATHWAY_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
             <column id="SRes/PathwayNode/GLYPH_TYPE_ID" name="GLYPH_TYPE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
             <column id="SRes/PathwayNode/X" name="X" nullable="true" length="10" precision="0" type="NUMBER"/>
             <column id="SRes/PathwayNode/Y" name="Y" nullable="true" length="10" precision="0" type="NUMBER"/>
@@ -11752,7 +11752,7 @@
             </index>
             <index name="PATHWAYNODE_IND03" tablespace="USERS" type="NORMAL">
               <columns>
-                <column idref="SRes/PathwayNode/PARENT_ID"/>
+                <column idref="SRes/PathwayNode/PATHWAY_ID"/>
                 <column idref="SRes/PathwayNode/PATHWAY_NODE_ID"/>
               </columns>
             </index>
@@ -11789,7 +11789,7 @@
             </constraint>
             <constraint name="FK_PATHWAYNODE_PATHWAYNODE" type="FOREIGN_KEY">
               <constrainedColumns>
-                <column idref="SRes/PathwayNode/PARENT_ID"/>
+                <column idref="SRes/PathwayNode/PATHWAY_ID"/>
               </constrainedColumns>
               <referencedTable idref="SRes/Pathway"/>
               <referencedColumns>
@@ -11810,7 +11810,6 @@
         <table id="SRes/PathwayRelationship" name="PathwayRelationship" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="Pathway Vocabulary" updatable="true">
           <columns>
             <column id="SRes/PathwayRelationship/PATHWAY_RELATIONSHIP_ID" name="PATHWAY_RELATIONSHIP_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
-            <column id="SRes/PathwayRelationship/PATHWAY_ID" name="PATHWAY_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
             <column id="SRes/PathwayRelationship/RELATIONSHIP_TYPE_ID" name="RELATIONSHIP_TYPE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
             <column id="SRes/PathwayRelationship/RELATIONSHIP_SUBTYPE_ID" name="RELATIONSHIP_SUBTYPE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
             <column id="SRes/PathwayRelationship/NODE_ID" name="NODE_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
@@ -11820,11 +11819,6 @@
             <index name="PK_PATHWAYREL" tablespace="USERS" type="NORMAL">
               <columns>
                 <column idref="SRes/PathwayRelationship/PATHWAY_RELATIONSHIP_ID"/>
-              </columns>
-            </index>
-            <index name="PATHWAYREL_IND01" tablespace="USERS" type="NORMAL">
-              <columns>
-                <column idref="SRes/PathwayRelationship/PATHWAY_ID"/>
               </columns>
             </index>
             <index name="PATHWAYREL_IND02" tablespace="USERS" type="NORMAL">
@@ -11843,15 +11837,6 @@
               <constrainedColumns>
                 <column idref="SRes/PathwayRelationship/PATHWAY_RELATIONSHIP_ID"/>
               </constrainedColumns>
-            </constraint>
-            <constraint name="FK_PATHWAYREL_PATHWAY" type="FOREIGN_KEY">
-              <constrainedColumns>
-                <column idref="SRes/PathwayRelationship/PATHWAY_ID"/>
-              </constrainedColumns>
-              <referencedTable idref="SRes/Pathway"/>
-              <referencedColumns>
-                <column idref="SRes/Pathway/PATHWAY_ID"/>
-              </referencedColumns>
             </constraint>
             <constraint name="FK_PATHWAYREL_OT1" type="FOREIGN_KEY">
               <constrainedColumns>
