@@ -11933,7 +11933,7 @@
           <columns>
             <column id="Study/Study/STUDY_ID" name="STUDY_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
             <column id="Study/Study/INVESTIGATION_ID" name="INVESTIGATION_ID" nullable="true" length="5" precision="0" type="NUMBER"/>
-            <column id="Study/Study/NAME" name="NAME" nullable="false" length="200" precision="0" type="STRING"/>
+            <column id="Study/Study/NAME" name="NAME" nullable="false" length="300" precision="0" type="STRING"/>
             <column id="Study/Study/DESCRIPTION" name="DESCRIPTION" nullable="true" length="4000" precision="0" type="STRING"/>
             <column id="Study/Study/EXTERNAL_DATABASE_RELEASE_ID" name="EXTERNAL_DATABASE_RELEASE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
             <column id="Study/Study/SOURCE_ID" name="SOURCE_ID" nullable="true" length="100" precision="0" type="STRING"/>
@@ -11997,7 +11997,7 @@
         </table>
         <table id="Study/StudyBibRef" name="StudyBibRef" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Experimental Design" updatable="true">
           <columns>
-            <column id="Study/StudyBibRef/STUDY_BIB_REF_ID" name="STUDY_BIB_REF_ID" nullable="false" length="4" precision="0" type="NUMBER"/>
+            <column id="Study/StudyBibRef/STUDY_BIB_REF_ID" name="STUDY_BIB_REF_ID" nullable="false" length="6" precision="0" type="NUMBER"/>
             <column id="Study/StudyBibRef/STUDY_ID" name="STUDY_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
             <column id="Study/StudyBibRef/BIBLIOGRAPHIC_REFERENCE_ID" name="BIBLIOGRAPHIC_REFERENCE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
           </columns>
