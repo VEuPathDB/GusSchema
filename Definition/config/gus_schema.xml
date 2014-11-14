@@ -9782,6 +9782,63 @@
             </constraint>
           </constraints>
         </table>
+        <table id="DoTS/AAFeatureExon" name="AAFeatureExon" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="Feature Relations" updatable="true">
+          <columns>
+            <column id="DoTS/AAFeatureExon/AA_FEATURE_EXON_ID" name="AA_FEATURE_EXON_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+            <column id="DoTS/AAFeatureExon/AA_FEATURE_ID" name="AA_FEATURE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+            <column id="DoTS/AAFeatureExon/EXON_FEATURE_ID" name="EXON_FEATURE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+            <column id="DoTS/AAFeatureExon/CODING_START" name="CODING_START" nullable="true" length="12" precision="0" type="NUMBER"/>
+            <column id="DoTS/AAFeatureExon/CODING_END" name="CODING_END" nullable="true" length="12" precision="0" type="NUMBER"/>
+          </columns>
+          <indexes>
+            <index name="PK_AAFEATUREEXON" tablespace="USERS" type="NORMAL">
+              <columns>
+                <column idref="DoTS/AAFeatureExon/AA_FEATURE_EXON_ID"/>
+              </columns>
+            </index>
+            <index name="AAFEATUREEXON_IND01" tablespace="USERS" type="NORMAL">
+              <columns>
+                <column idref="DoTS/AAFeatureExon/EXON_FEATURE_ID"/>
+                <column idref="DoTS/AAFeatureExon/AA_FEATURE_ID"/>
+                <column idref="DoTS/AAFeatureExon/CODING_START"/>
+                <column idref="DoTS/AAFeatureExon/CODING_END"/>
+              </columns>
+            </index>
+            <index name="AAFEATUREEXON_IND02" tablespace="USERS" type="NORMAL">
+              <columns>
+                <column idref="DoTS/AAFeatureExon/AA_FEATURE_ID"/>
+                <column idref="DoTS/AAFeatureExon/EXON_FEATURE_ID"/>
+                <column idref="DoTS/AAFeatureExon/CODING_START"/>
+                <column idref="DoTS/AAFeatureExon/CODING_END"/>
+              </columns>
+            </index>
+          </indexes>
+          <constraints>
+            <constraint name="PK_AAFEATUREEXON" type="PRIMARY_KEY">
+              <constrainedColumns>
+                <column idref="DoTS/AAFeatureExon/AA_FEATURE_EXON_ID"/>
+              </constrainedColumns>
+            </constraint>
+            <constraint name="AAFEATUREEXON_FK01" type="FOREIGN_KEY">
+              <constrainedColumns>
+                <column idref="DoTS/AAFeatureExon/AA_FEATURE_ID"/>
+              </constrainedColumns>
+              <referencedTable idref="DoTS/AAFeature"/>
+              <referencedColumns>
+                <column idref="DoTS/AAFeature/AA_FEATURE_ID"/>
+              </referencedColumns>
+            </constraint>
+            <constraint name="AAFEATUREEXON_FK02" type="FOREIGN_KEY">
+              <constrainedColumns>
+                <column idref="DoTS/AAFeatureExon/EXON_FEATURE_ID"/>
+              </constrainedColumns>
+              <referencedTable idref="DoTS/NAFeature"/>
+              <referencedColumns>
+                <column idref="DoTS/NAFeature/NA_FEATURE_ID"/>
+              </referencedColumns>
+            </constraint>
+          </constraints>
+        </table>
         <table id="DoTS/RNAFeatureExon" name="RNAFeatureExon" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="Feature Relations" updatable="true">
           <columns>
             <column id="DoTS/RNAFeatureExon/RNA_FEATURE_EXON_ID" name="RNA_FEATURE_EXON_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
