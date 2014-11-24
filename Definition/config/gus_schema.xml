@@ -128,6 +128,7 @@
             <index name="ALGORITHMPARAM_IND02" tablespace="USERS" type="NORMAL">
               <columns>
                 <column idref="Core/AlgorithmParam/ALGORITHM_PARAM_KEY_ID"/>
+                <column idref="Core/AlgorithmParam/ALGORITHM_PARAM_ID"/>
               </columns>
             </index>
             <index name="PK_ALGORITHMPARAM" tablespace="USERS" type="NORMAL">
@@ -175,6 +176,7 @@
             <index name="ALGORITHMPARAMKEY_IND01" tablespace="USERS" type="NORMAL">
               <columns>
                 <column idref="Core/AlgorithmParamKey/ALGORITHM_IMPLEMENTATION_ID"/>
+                <column idref="Core/AlgorithmParamKey/ALGORITHM_PARAM_KEY_ID"/>
               </columns>
             </index>
             <index name="ALGORITHMPARAMKEY_IND02" tablespace="USERS" type="NORMAL">
@@ -997,6 +999,7 @@
             <index name="AAFEATUREIMP_IND01" tablespace="USERS" type="NORMAL">
               <columns>
                 <column idref="DoTS/AAFeature/AA_SEQUENCE_ID"/>
+                <column idref="DoTS/AAFeature/AA_FEATURE_ID"/>
               </columns>
             </index>
             <index name="AAFEATUREIMP_IND02" tablespace="USERS" type="NORMAL">
@@ -1019,6 +1022,7 @@
             <index name="AAFEATUREIMP_IND05" tablespace="USERS" type="NORMAL">
               <columns>
                 <column idref="DoTS/AAFeature/SUBCLASS_VIEW"/>
+                <column idref="DoTS/AAFeature/AA_FEATURE_ID"/>
               </columns>
             </index>
             <index name="AAFEATUREIMP_IND06" tablespace="USERS" type="NORMAL">
@@ -1032,16 +1036,19 @@
               <columns>
                 <column idref="DoTS/AAFeature/AA_SEQUENCE_ID"/>
                 <column idref="DoTS/AAFeature/SUBCLASS_VIEW"/>
+                <column idref="DoTS/AAFeature/AA_FEATURE_ID"/>
               </columns>
             </index>
             <index name="AAFEATUREIMP_IND08" tablespace="USERS" type="NORMAL">
               <columns>
                 <column idref="DoTS/AAFeature/PREDICTION_ALGORITHM_ID"/>
+                <column idref="DoTS/AAFeature/AA_FEATURE_ID"/>
               </columns>
             </index>
             <index name="AAFEATUREIMP_IND09" tablespace="USERS" type="NORMAL">
               <columns>
                 <column idref="DoTS/AAFeature/EXTERNAL_DATABASE_RELEASE_ID"/>
+                <column idref="DoTS/AAFeature/AA_FEATURE_ID"/>
               </columns>
             </index>
             <index name="AAFEATUREIMP_IND10" tablespace="USERS" type="NORMAL">
@@ -1057,6 +1064,7 @@
             <index name="AAFEATUREIMP_IND14" tablespace="USERS" type="NORMAL">
               <columns>
                 <column idref="DoTS/AAFeature/PARENT_ID"/>
+                <column idref="DoTS/AAFeature/AA_FEATURE_ID"/>
               </columns>
             </index>
             <index name="AAFEATUREIMP_IND15" tablespace="USERS" type="NORMAL">
@@ -1067,6 +1075,18 @@
             </index>
             <index name="PK_AAFEATUREIMP" tablespace="USERS" type="NORMAL">
               <columns>
+                <column idref="DoTS/AAFeature/AA_FEATURE_ID"/>
+              </columns>
+            </index>
+            <index name="AAFEATUREIMP_IND16" tablespace="USERS" type="NORMAL">
+              <columns>
+                <column idref="DoTS/AAFeature/REPEAT_TYPE_ID"/>
+                <column idref="DoTS/AAFeature/AA_FEATURE_ID"/>
+              </columns>
+            </index>
+            <index name="AAFEATUREIMP_IND17" tablespace="USERS" type="NORMAL">
+              <columns>
+                <column idref="DoTS/AAFeature/REVIEW_STATUS_ID"/>
                 <column idref="DoTS/AAFeature/AA_FEATURE_ID"/>
               </columns>
             </index>
@@ -1647,6 +1667,7 @@
               <columns>
                 <column idref="DoTS/AASequence/EXTERNAL_DATABASE_RELEASE_ID"/>
                 <column idref="DoTS/AASequence/SUBCLASS_VIEW"/>
+                <column idref="DoTS/AASequence/AA_SEQUENCE_ID"/>
               </columns>
             </index>
             <index name="AASEQUENCEIMP_IND03" tablespace="USERS" type="NORMAL">
@@ -1659,6 +1680,7 @@
                 <column idref="DoTS/AASequence/SUBCLASS_VIEW"/>
                 <column idref="DoTS/AASequence/SOURCE_ID"/>
                 <column idref="DoTS/AASequence/EXTERNAL_DATABASE_RELEASE_ID"/>
+                <column idref="DoTS/AASequence/AA_SEQUENCE_ID"/>
               </columns>
             </index>
             <index name="AASEQUENCEIMP_IND06" tablespace="USERS" type="NORMAL">
@@ -3044,11 +3066,13 @@
             <index name="BLATALIGNMENT_IND01" tablespace="USERS" type="NORMAL">
               <columns>
                 <column idref="DoTS/BLATAlignment/QUERY_NA_SEQUENCE_ID"/>
+                <column idref="DoTS/BLATAlignment/BLAT_ALIGNMENT_ID"/>
               </columns>
             </index>
             <index name="BLATALIGNMENT_IND02" tablespace="USERS" type="NORMAL">
               <columns>
                 <column idref="DoTS/BLATAlignment/TARGET_NA_SEQUENCE_ID"/>
+                <column idref="DoTS/BLATAlignment/BLAT_ALIGNMENT_ID"/>
               </columns>
             </index>
             <index name="BLATALIGNMENT_IND03" tablespace="USERS" type="NORMAL">
@@ -3057,6 +3081,7 @@
                 <column idref="DoTS/BLATAlignment/QUERY_TABLE_ID"/>
                 <column idref="DoTS/BLATAlignment/IS_CONSISTENT"/>
                 <column idref="DoTS/BLATAlignment/QUERY_NA_SEQUENCE_ID"/>
+                <column idref="DoTS/BLATAlignment/BLAT_ALIGNMENT_ID"/>
               </columns>
             </index>
             <index name="BLATALIGNMENT_IND04" tablespace="USERS" type="NORMAL">
@@ -3070,16 +3095,19 @@
               <columns>
                 <column idref="DoTS/BLATAlignment/QUERY_TABLE_ID"/>
                 <column idref="DoTS/BLATAlignment/QUERY_TAXON_ID"/>
+                <column idref="DoTS/BLATAlignment/BLAT_ALIGNMENT_ID"/>
               </columns>
             </index>
             <index name="BLATALIGNMENT_IND06" tablespace="USERS" type="NORMAL">
               <columns>
                 <column idref="DoTS/BLATAlignment/TARGET_TAXON_ID"/>
+                <column idref="DoTS/BLATAlignment/BLAT_ALIGNMENT_ID"/>
               </columns>
             </index>
             <index name="BLATALIGNMENT_IND07" tablespace="USERS" type="NORMAL">
               <columns>
                 <column idref="DoTS/BLATAlignment/TARGET_EXTERNAL_DB_RELEASE_ID"/>
+                <column idref="DoTS/BLATAlignment/BLAT_ALIGNMENT_ID"/>
               </columns>
             </index>
             <index name="BLATALIGNMENT_IND09" tablespace="USERS" type="NORMAL">
@@ -3090,6 +3118,7 @@
             <index name="BLATALIGNMENT_IND10" tablespace="USERS" type="NORMAL">
               <columns>
                 <column idref="DoTS/BLATAlignment/TARGET_TABLE_ID"/>
+                <column idref="DoTS/BLATAlignment/BLAT_ALIGNMENT_ID"/>
               </columns>
             </index>
             <index name="PK_BLATALIGNMENT" tablespace="USERS" type="NORMAL">
@@ -3230,11 +3259,15 @@
             <index name="CLONE_IND01" tablespace="USERS" type="NORMAL">
               <columns>
                 <column idref="DoTS/Clone/DBEST_CLONE_UID"/>
+                <column idref="DoTS/Clone/LIBRARY_ID"/>
+                <column idref="DoTS/Clone/CLONE_ID"/>
               </columns>
             </index>
             <index name="CLONE_IND02" tablespace="USERS" type="NORMAL">
               <columns>
                 <column idref="DoTS/Clone/LIBRARY_ID"/>
+                <column idref="DoTS/Clone/DBEST_CLONE_UID"/>
+                <column idref="DoTS/Clone/CLONE_ID"/>
               </columns>
             </index>
             <index name="CLONE_IND03" tablespace="USERS" type="NORMAL">
@@ -3251,6 +3284,8 @@
               <columns>
                 <column idref="DoTS/Clone/DBEST_CLONE_UID"/>
                 <column idref="DoTS/Clone/WASHU_NAME"/>
+                <column idref="DoTS/Clone/LIBRARY_ID"/>
+                <column idref="DoTS/Clone/CLONE_ID"/>
               </columns>
             </index>
             <index name="PK_CLONE" tablespace="USERS" type="NORMAL">
@@ -4968,6 +5003,12 @@
                 <column idref="DoTS/Gene/GENE_ID"/>
               </columns>
             </index>
+            <index name="GENE_R06" tablespace="USERS" type="NORMAL">
+              <columns>
+                <column idref="DoTS/Gene/EXTERNAL_DATABASE_RELEASE_ID"/>
+                <column idref="DoTS/Gene/GENE_ID"/>
+              </columns>
+            </index>
           </indexes>
           <constraints>
             <constraint name="GENE_FK04" type="FOREIGN_KEY">
@@ -5772,22 +5813,46 @@
             <index name="GOASSOCIATIONINSTANCE_IND01" tablespace="USERS" type="NORMAL">
               <columns>
                 <column idref="DoTS/GOAssociationInstance/GO_ASSOCIATION_ID"/>
+                <column idref="DoTS/GOAssociationInstance/SOURCE_ID"/>
+                <column idref="DoTS/GOAssociationInstance/IS_NOT"/>
+                <column idref="DoTS/GOAssociationInstance/IS_DEPRECATED"/>
+                <column idref="DoTS/GOAssociationInstance/GO_ASSOC_INST_LOE_ID"/>
+                <column idref="DoTS/GOAssociationInstance/EXTERNAL_DATABASE_RELEASE_ID"/>
+                <column idref="DoTS/GOAssociationInstance/GO_ASSOCIATION_INSTANCE_ID"/>
               </columns>
             </index>
             <index name="GOASSOCIATIONINSTANCE_IND02" tablespace="USERS" type="NORMAL">
               <columns>
                 <column idref="DoTS/GOAssociationInstance/GO_ASSOC_INST_LOE_ID"/>
+                <column idref="DoTS/GOAssociationInstance/GO_ASSOCIATION_ID"/>
+                <column idref="DoTS/GOAssociationInstance/SOURCE_ID"/>
+                <column idref="DoTS/GOAssociationInstance/IS_NOT"/>
+                <column idref="DoTS/GOAssociationInstance/IS_DEPRECATED"/>
+                <column idref="DoTS/GOAssociationInstance/EXTERNAL_DATABASE_RELEASE_ID"/>
+                <column idref="DoTS/GOAssociationInstance/GO_ASSOCIATION_INSTANCE_ID"/>
               </columns>
             </index>
             <index name="GOASSOCIATIONINSTANCE_IND03" tablespace="USERS" type="NORMAL">
               <columns>
                 <column idref="DoTS/GOAssociationInstance/EXTERNAL_DATABASE_RELEASE_ID"/>
+                <column idref="DoTS/GOAssociationInstance/GO_ASSOC_INST_LOE_ID"/>
+                <column idref="DoTS/GOAssociationInstance/GO_ASSOCIATION_ID"/>
+                <column idref="DoTS/GOAssociationInstance/SOURCE_ID"/>
+                <column idref="DoTS/GOAssociationInstance/IS_NOT"/>
+                <column idref="DoTS/GOAssociationInstance/IS_DEPRECATED"/>
+                <column idref="DoTS/GOAssociationInstance/GO_ASSOCIATION_INSTANCE_ID"/>
               </columns>
             </index>
             <index name="GOASSOCIATIONINSTANCE_IND06" tablespace="USERS" type="NORMAL">
               <columns>
                 <column idref="DoTS/GOAssociationInstance/REVIEW_STATUS_ID"/>
                 <column idref="DoTS/GOAssociationInstance/IS_DEPRECATED"/>
+                <column idref="DoTS/GOAssociationInstance/EXTERNAL_DATABASE_RELEASE_ID"/>
+                <column idref="DoTS/GOAssociationInstance/GO_ASSOC_INST_LOE_ID"/>
+                <column idref="DoTS/GOAssociationInstance/GO_ASSOCIATION_ID"/>
+                <column idref="DoTS/GOAssociationInstance/SOURCE_ID"/>
+                <column idref="DoTS/GOAssociationInstance/IS_NOT"/>
+                <column idref="DoTS/GOAssociationInstance/GO_ASSOCIATION_INSTANCE_ID"/>
               </columns>
             </index>
             <index name="GOASSOCIATIONINSTANCE_PK" tablespace="USERS" type="NORMAL">
@@ -5872,20 +5937,29 @@
             <index name="GOASSOCINSTEVIDCODE_IND01" tablespace="USERS" type="NORMAL">
               <columns>
                 <column idref="DoTS/GOAssocInstEvidCode/GO_EVIDENCE_CODE_ID"/>
+                <column idref="DoTS/GOAssocInstEvidCode/GO_ASSOCIATION_INSTANCE_ID"/>
+                <column idref="DoTS/GOAssocInstEvidCode/REVIEW_STATUS_ID"/>
+                <column idref="DoTS/GOAssocInstEvidCode/GO_ASSOC_INST_EVID_CODE_ID"/>
               </columns>
             </index>
             <index name="GOASSOCINSTEVIDCODE_IND02" tablespace="USERS" type="NORMAL">
               <columns>
                 <column idref="DoTS/GOAssocInstEvidCode/GO_ASSOCIATION_INSTANCE_ID"/>
+                <column idref="DoTS/GOAssocInstEvidCode/GO_EVIDENCE_CODE_ID"/>
+                <column idref="DoTS/GOAssocInstEvidCode/REVIEW_STATUS_ID"/>
+                <column idref="DoTS/GOAssocInstEvidCode/GO_ASSOC_INST_EVID_CODE_ID"/>
+              </columns>
+            </index>
+            <index name="GOASSOCINSTEVIDCODE_PK" tablespace="USERS" type="NORMAL">
+              <columns>
+                <column idref="DoTS/GOAssocInstEvidCode/GO_ASSOC_INST_EVID_CODE_ID"/>
               </columns>
             </index>
             <index name="GOASSOCINSTEVIDCODE_IND03" tablespace="USERS" type="NORMAL">
               <columns>
                 <column idref="DoTS/GOAssocInstEvidCode/REVIEW_STATUS_ID"/>
-              </columns>
-            </index>
-            <index name="GOASSOCINSTEVIDCODE_PK" tablespace="USERS" type="NORMAL">
-              <columns>
+                <column idref="DoTS/GOAssocInstEvidCode/GO_ASSOCIATION_INSTANCE_ID"/>
+                <column idref="DoTS/GOAssocInstEvidCode/GO_EVIDENCE_CODE_ID"/>
                 <column idref="DoTS/GOAssocInstEvidCode/GO_ASSOC_INST_EVID_CODE_ID"/>
               </columns>
             </index>
@@ -7333,6 +7407,8 @@
             <index name="NAFEATUREIMP_IND03" tablespace="USERS" type="NORMAL">
               <columns>
                 <column idref="DoTS/NAFeature/SOURCE_ID"/>
+                <column idref="DoTS/NAFeature/SUBCLASS_VIEW"/>
+                <column idref="DoTS/NAFeature/NA_FEATURE_ID"/>
               </columns>
             </index>
             <index name="NAFEATUREIMP_IND04" tablespace="USERS" type="NORMAL">
@@ -7368,6 +7444,7 @@
             <index name="NAFEATUREIMP_IND11" tablespace="USERS" type="NORMAL">
               <columns>
                 <column idref="DoTS/NAFeature/SEQUENCE_ONTOLOGY_ID"/>
+                <column idref="DoTS/NAFeature/NA_FEATURE_ID"/>
               </columns>
             </index>
             <index name="NAFEATUREIMP_IND12" tablespace="USERS" type="NORMAL">
@@ -7978,6 +8055,7 @@
             <index name="NASEQUENCEIMP_IND16" tablespace="USERS" type="NORMAL">
               <columns>
                 <column idref="DoTS/NASequence/TAXON_ID"/>
+                <column idref="DoTS/NASequence/EXTERNAL_DATABASE_RELEASE_ID"/>
                 <column idref="DoTS/NASequence/NA_SEQUENCE_ID"/>
               </columns>
             </index>
@@ -8000,13 +8078,6 @@
             <index name="NASEQUENCE_R09" tablespace="USERS" type="NORMAL">
               <columns>
                 <column idref="DoTS/NASequence/SOURCE_NA_SEQUENCE_ID"/>
-                <column idref="DoTS/NASequence/NA_SEQUENCE_ID"/>
-              </columns>
-            </index>
-            <index name="NASEQUENCEIMP_IND03" tablespace="USERS" type="NORMAL">
-              <columns>
-                <column idref="DoTS/NASequence/SUBCLASS_VIEW"/>
-                <column idref="DoTS/NASequence/SUBCLASS_VIEW"/>
                 <column idref="DoTS/NASequence/NA_SEQUENCE_ID"/>
               </columns>
             </index>
@@ -8092,11 +8163,13 @@
             <index name="NASEQUENCEKEYWORD_IND01" tablespace="USERS" type="NORMAL">
               <columns>
                 <column idref="DoTS/NASequenceKeyword/KEYWORD_ID"/>
+                <column idref="DoTS/NASequenceKeyword/NA_SEQUENCE_ID"/>
               </columns>
             </index>
             <index name="NASEQUENCEKEYWORD_IND02" tablespace="USERS" type="NORMAL">
               <columns>
                 <column idref="DoTS/NASequenceKeyword/NA_SEQUENCE_ID"/>
+                <column idref="DoTS/NASequenceKeyword/KEYWORD_ID"/>
               </columns>
             </index>
             <index name="PK_NASEQUENCEKEYWORD" tablespace="USERS" type="NORMAL">
@@ -8557,7 +8630,7 @@
                 <column idref="DoTS/Pathway/EXTERNAL_DATABASE_RELEASE_ID"/>
               </columns>
             </index>
-            <index name="PK_PATHWAY" tablespace="USERS" type="NORMAL">
+            <index name="PK_DOTSPATHWAY" tablespace="USERS" type="NORMAL">
               <columns>
                 <column idref="DoTS/Pathway/PATHWAY_ID"/>
               </columns>
@@ -8573,7 +8646,7 @@
                 <column idref="SRes/ExternalDatabaseRelease/EXTERNAL_DATABASE_RELEASE_ID"/>
               </referencedColumns>
             </constraint>
-            <constraint name="PK_PATHWAY" type="PRIMARY_KEY">
+            <constraint name="PK_DOTSPATHWAY" type="PRIMARY_KEY">
               <constrainedColumns>
                 <column idref="DoTS/Pathway/PATHWAY_ID"/>
               </constrainedColumns>
@@ -10567,6 +10640,7 @@
             <index name="SEQUENCEGROUPIMP_IND01" tablespace="USERS" type="NORMAL">
               <columns>
                 <column idref="DoTS/SequenceGroup/SEQUENCE_GROUP_EXPERIMENT_ID"/>
+                <column idref="DoTS/SequenceGroup/SEQUENCE_GROUP_ID"/>
               </columns>
             </index>
           </indexes>
@@ -10706,11 +10780,22 @@
             </index>
             <index name="SEQUENCESEQUENCEGROUP_IND01" tablespace="USERS" type="NORMAL">
               <columns>
+                <column idref="DoTS/SequenceSequenceGroup/SEQUENCE_GROUP_ID"/>
+                <column idref="DoTS/SequenceSequenceGroup/SEQUENCE_ID"/>
                 <column idref="DoTS/SequenceSequenceGroup/SOURCE_TABLE_ID"/>
               </columns>
             </index>
             <index name="SEQUENCESEQUENCEGROUP_IND02" tablespace="USERS" type="NORMAL">
               <columns>
+                <column idref="DoTS/SequenceSequenceGroup/SEQUENCE_ID"/>
+                <column idref="DoTS/SequenceSequenceGroup/SEQUENCE_GROUP_ID"/>
+                <column idref="DoTS/SequenceSequenceGroup/SOURCE_TABLE_ID"/>
+              </columns>
+            </index>
+            <index name="SEQUENCESEQUENCEGROUP_IND03" tablespace="USERS" type="NORMAL">
+              <columns>
+                <column idref="DoTS/SequenceSequenceGroup/SOURCE_TABLE_ID"/>
+                <column idref="DoTS/SequenceSequenceGroup/SEQUENCE_ID"/>
                 <column idref="DoTS/SequenceSequenceGroup/SEQUENCE_GROUP_ID"/>
               </columns>
             </index>
@@ -10812,8 +10897,8 @@
             <index name="SIMILARITY_IND01" tablespace="USERS" type="NORMAL">
               <columns>
                 <column idref="DoTS/Similarity/QUERY_ID"/>
-                <column idref="DoTS/Similarity/PVALUE_EXP"/>
                 <column idref="DoTS/Similarity/PVALUE_MANT"/>
+                <column idref="DoTS/Similarity/PVALUE_EXP"/>
                 <column idref="DoTS/Similarity/SUBJECT_ID"/>
               </columns>
             </index>
@@ -10823,6 +10908,10 @@
                 <column idref="DoTS/Similarity/SUBJECT_ID"/>
                 <column idref="DoTS/Similarity/MIN_SUBJECT_START"/>
                 <column idref="DoTS/Similarity/MAX_SUBJECT_END"/>
+                <column idref="DoTS/Similarity/QUERY_ID"/>
+                <column idref="DoTS/Similarity/QUERY_TABLE_ID"/>
+                <column idref="DoTS/Similarity/PVALUE_EXP"/>
+                <column idref="DoTS/Similarity/PVALUE_MANT"/>
               </columns>
             </index>
             <index name="SIMILARITY_IND04" tablespace="USERS" type="NORMAL">
@@ -10836,11 +10925,29 @@
             <index name="SIMILARITY_IND05" tablespace="USERS" type="NORMAL">
               <columns>
                 <column idref="DoTS/Similarity/QUERY_ID"/>
+                <column idref="DoTS/Similarity/SUBJECT_ID"/>
+                <column idref="DoTS/Similarity/QUERY_TABLE_ID"/>
+                <column idref="DoTS/Similarity/SUBJECT_TABLE_ID"/>
+                <column idref="DoTS/Similarity/PVALUE_MANT"/>
+                <column idref="DoTS/Similarity/PVALUE_EXP"/>
+                <column idref="DoTS/Similarity/MIN_SUBJECT_START"/>
+                <column idref="DoTS/Similarity/MAX_SUBJECT_END"/>
+                <column idref="DoTS/Similarity/MIN_QUERY_START"/>
+                <column idref="DoTS/Similarity/MAX_QUERY_END"/>
               </columns>
             </index>
             <index name="SIMILARITY_IND06" tablespace="USERS" type="NORMAL">
               <columns>
                 <column idref="DoTS/Similarity/SUBJECT_ID"/>
+                <column idref="DoTS/Similarity/QUERY_ID"/>
+                <column idref="DoTS/Similarity/SUBJECT_TABLE_ID"/>
+                <column idref="DoTS/Similarity/QUERY_TABLE_ID"/>
+                <column idref="DoTS/Similarity/PVALUE_MANT"/>
+                <column idref="DoTS/Similarity/PVALUE_EXP"/>
+                <column idref="DoTS/Similarity/MIN_SUBJECT_START"/>
+                <column idref="DoTS/Similarity/MAX_SUBJECT_END"/>
+                <column idref="DoTS/Similarity/MIN_QUERY_START"/>
+                <column idref="DoTS/Similarity/MAX_QUERY_END"/>
               </columns>
             </index>
           </indexes>
@@ -11140,12 +11247,21 @@
               <columns>
                 <column idref="SRes/DbRef/EXTERNAL_DATABASE_RELEASE_ID"/>
                 <column idref="SRes/DbRef/PRIMARY_IDENTIFIER"/>
+                <column idref="SRes/DbRef/DB_REF_ID"/>
               </columns>
             </index>
             <index name="DBREF_IND03" tablespace="USERS" type="NORMAL">
               <columns>
+                <column idref="SRes/DbRef/PRIMARY_IDENTIFIER"/>
+                <column idref="SRes/DbRef/DB_REF_ID"/>
                 <column idref="SRes/DbRef/EXTERNAL_DATABASE_RELEASE_ID"/>
-                <column idref="SRes/DbRef/LOWERCASE_PRIMARY_IDENTIFIER"/>
+              </columns>
+            </index>
+            <index name="DBREF_IND04" tablespace="USERS" type="NORMAL">
+              <columns>
+                <column idref="SRes/DbRef/DB_REF_ID"/>
+                <column idref="SRes/DbRef/PRIMARY_IDENTIFIER"/>
+                <column idref="SRes/DbRef/EXTERNAL_DATABASE_RELEASE_ID"/>
               </columns>
             </index>
           </indexes>
@@ -11183,10 +11299,24 @@
             <index name="ENZYMECLASS_IND01" tablespace="USERS" type="NORMAL">
               <columns>
                 <column idref="SRes/EnzymeClass/PARENT_ID"/>
+                <column idref="SRes/EnzymeClass/ENZYME_CLASS_ID"/>
+                <column idref="SRes/EnzymeClass/EC_NUMBER"/>
+                <column idref="SRes/EnzymeClass/EXTERNAL_DATABASE_RELEASE_ID"/>
               </columns>
             </index>
             <index name="ENZYMECLASS_IND02" tablespace="USERS" type="NORMAL">
               <columns>
+                <column idref="SRes/EnzymeClass/EXTERNAL_DATABASE_RELEASE_ID"/>
+                <column idref="SRes/EnzymeClass/ENZYME_CLASS_ID"/>
+                <column idref="SRes/EnzymeClass/EC_NUMBER"/>
+                <column idref="SRes/EnzymeClass/PARENT_ID"/>
+              </columns>
+            </index>
+            <index name="ENZYMECLASS_IND03" tablespace="USERS" type="NORMAL">
+              <columns>
+                <column idref="SRes/EnzymeClass/ENZYME_CLASS_ID"/>
+                <column idref="SRes/EnzymeClass/EC_NUMBER"/>
+                <column idref="SRes/EnzymeClass/PARENT_ID"/>
                 <column idref="SRes/EnzymeClass/EXTERNAL_DATABASE_RELEASE_ID"/>
               </columns>
             </index>
@@ -11380,21 +11510,37 @@
             <index name="ONTOLOGYRELATIONSHIP_IND01" tablespace="USERS" type="NORMAL">
               <columns>
                 <column idref="SRes/OntologyRelationship/OBJECT_TERM_ID"/>
+                <column idref="SRes/OntologyRelationship/PREDICATE_TERM_ID"/>
+                <column idref="SRes/OntologyRelationship/SUBJECT_TERM_ID"/>
+                <column idref="SRes/OntologyRelationship/ONTOLOGY_RELATIONSHIP_TYPE_ID"/>
+                <column idref="SRes/OntologyRelationship/ONTOLOGY_RELATIONSHIP_ID"/>
               </columns>
             </index>
             <index name="ONTOLOGYRELATIONSHIP_IND02" tablespace="USERS" type="NORMAL">
               <columns>
                 <column idref="SRes/OntologyRelationship/SUBJECT_TERM_ID"/>
+                <column idref="SRes/OntologyRelationship/PREDICATE_TERM_ID"/>
+                <column idref="SRes/OntologyRelationship/OBJECT_TERM_ID"/>
+                <column idref="SRes/OntologyRelationship/ONTOLOGY_RELATIONSHIP_TYPE_ID"/>
+                <column idref="SRes/OntologyRelationship/ONTOLOGY_RELATIONSHIP_ID"/>
               </columns>
             </index>
             <index name="ONTOLOGYRELATIONSHIP_IND03" tablespace="USERS" type="NORMAL">
               <columns>
                 <column idref="SRes/OntologyRelationship/ONTOLOGY_RELATIONSHIP_TYPE_ID"/>
+                <column idref="SRes/OntologyRelationship/PREDICATE_TERM_ID"/>
+                <column idref="SRes/OntologyRelationship/SUBJECT_TERM_ID"/>
+                <column idref="SRes/OntologyRelationship/OBJECT_TERM_ID"/>
+                <column idref="SRes/OntologyRelationship/ONTOLOGY_RELATIONSHIP_ID"/>
               </columns>
             </index>
             <index name="ONTOLOGYRELATIONSHIP_IND04" tablespace="USERS" type="NORMAL">
               <columns>
                 <column idref="SRes/OntologyRelationship/PREDICATE_TERM_ID"/>
+                <column idref="SRes/OntologyRelationship/SUBJECT_TERM_ID"/>
+                <column idref="SRes/OntologyRelationship/OBJECT_TERM_ID"/>
+                <column idref="SRes/OntologyRelationship/ONTOLOGY_RELATIONSHIP_TYPE_ID"/>
+                <column idref="SRes/OntologyRelationship/ONTOLOGY_RELATIONSHIP_ID"/>
               </columns>
             </index>
           </indexes>
@@ -11470,11 +11616,18 @@
             <index name="ONTOLOGYTERM_IND01" tablespace="USERS" type="NORMAL">
               <columns>
                 <column idref="SRes/OntologyTerm/EXTERNAL_DATABASE_RELEASE_ID"/>
+                <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
+                <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_TYPE_ID"/>
+                <column idref="SRes/OntologyTerm/NAME"/>
+                <column idref="SRes/OntologyTerm/SOURCE_ID"/>
               </columns>
             </index>
             <index name="ONTOLOGYTERM_IND02" tablespace="USERS" type="NORMAL">
               <columns>
                 <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_TYPE_ID"/>
+                <column idref="SRes/OntologyTerm/EXTERNAL_DATABASE_RELEASE_ID"/>
+                <column idref="SRes/OntologyTerm/NAME"/>
+                <column idref="SRes/OntologyTerm/SOURCE_ID"/>
                 <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
               </columns>
             </index>
@@ -11489,13 +11642,21 @@
                 <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
               </columns>
             </index>
+            <index name="ONTOLOGYTERM_IND05" tablespace="USERS" type="NORMAL">
+              <columns>
+                <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
+                <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_TYPE_ID"/>
+                <column idref="SRes/OntologyTerm/EXTERNAL_DATABASE_RELEASE_ID"/>
+                <column idref="SRes/OntologyTerm/NAME"/>
+                <column idref="SRes/OntologyTerm/SOURCE_ID"/>
+              </columns>
+            </index>
             <index name="ONTOLOGYTERM_R0" tablespace="USERS" type="NORMAL">
               <columns>
                 <column idref="SRes/OntologyTerm/TAXON_ID"/>
                 <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
               </columns>
             </index>
-
           </indexes>
           <constraints>
             <constraint name="PK_ONTOLOGYTERM" type="PRIMARY_KEY">
@@ -11573,17 +11734,34 @@
           <indexes>
             <index name="PK_ONTOLOGYSYNONYM" tablespace="USERS" type="NORMAL">
               <columns>
-                <column idref="SRes/OntologyTermType/ONTOLOGY_TERM_TYPE_ID"/>
+                <column idref="SRes/OntologySynonym/ONTOLOGY_SYNONYM_ID"/>
               </columns>
             </index>
             <index name="ONTOLOGYSYNONYM_IND01" tablespace="USERS" type="NORMAL">
               <columns>
                 <column idref="SRes/OntologySynonym/ONTOLOGY_TERM_ID"/>
+                <column idref="SRes/OntologySynonym/ONTOLOGY_SYNONYM"/>
+                <column idref="SRes/OntologySynonym/EXTERNAL_DATABASE_RELEASE_ID"/>
               </columns>
             </index>
             <index name="ONTOLOGYSYNONYM_IND02" tablespace="USERS" type="NORMAL">
               <columns>
                 <column idref="SRes/OntologySynonym/EXTERNAL_DATABASE_RELEASE_ID"/>
+                <column idref="SRes/OntologySynonym/ONTOLOGY_TERM_ID"/>
+                <column idref="SRes/OntologySynonym/ONTOLOGY_SYNONYM"/>
+              </columns>
+            </index>
+            <index name="ONTOLOGYSYNONYM_IND03" tablespace="USERS" type="NORMAL">
+              <columns>
+                <column idref="SRes/OntologySynonym/ONTOLOGY_SYNONYM"/>
+                <column idref="SRes/OntologySynonym/ONTOLOGY_TERM_ID"/>
+                <column idref="SRes/OntologySynonym/EXTERNAL_DATABASE_RELEASE_ID"/>
+              </columns>
+            </index>
+            <index name="ONTOLOGYSYNONYM_IND04" tablespace="USERS" type="NORMAL">
+              <columns>
+                <column idref="SRes/OntologySynonym/ONTOLOGY_SYNONYM"/>
+                <column idref="SRes/OntologySynonym/ONTOLOGY_TERM_ID"/>
               </columns>
             </index>
           </indexes>
@@ -11631,20 +11809,30 @@
             <index name="TAXON_IND01" tablespace="USERS" type="NORMAL">
               <columns>
                 <column idref="SRes/Taxon/NCBI_TAX_ID"/>
+                <column idref="SRes/Taxon/TAXON_ID"/>
               </columns>
             </index>
             <index name="TAXON_IND02" tablespace="USERS" type="NORMAL">
               <columns>
                 <column idref="SRes/Taxon/GENETIC_CODE_ID"/>
+                <column idref="SRes/Taxon/TAXON_ID"/>
               </columns>
             </index>
             <index name="TAXON_IND03" tablespace="USERS" type="NORMAL">
               <columns>
                 <column idref="SRes/Taxon/MITOCHONDRIAL_GENETIC_CODE_ID"/>
+                <column idref="SRes/Taxon/TAXON_ID"/>
               </columns>
             </index>
             <index name="TAXON_IND04" tablespace="USERS" type="NORMAL">
               <columns>
+                <column idref="SRes/Taxon/PARENT_ID"/>
+                <column idref="SRes/Taxon/TAXON_ID"/>
+              </columns>
+            </index>
+            <index name="TAXON_IND05" tablespace="USERS" type="NORMAL">
+              <columns>
+                <column idref="SRes/Taxon/TAXON_ID"/>
                 <column idref="SRes/Taxon/PARENT_ID"/>
               </columns>
             </index>
@@ -11701,10 +11889,7 @@
             <index name="TAXONNAME_IND01" tablespace="USERS" type="NORMAL">
               <columns>
                 <column idref="SRes/TaxonName/TAXON_ID"/>
-              </columns>
-            </index>
-            <index name="TAXONNAME_IND02" tablespace="USERS" type="NORMAL">
-              <columns>
+                <column idref="SRes/TaxonName/NAME_CLASS"/>
                 <column idref="SRes/TaxonName/NAME"/>
               </columns>
             </index>
@@ -11712,11 +11897,14 @@
               <columns>
                 <column idref="SRes/TaxonName/NAME"/>
                 <column idref="SRes/TaxonName/NAME_CLASS"/>
+                <column idref="SRes/TaxonName/TAXON_ID"/>
               </columns>
             </index>
             <index name="TAXONNAME_IND04" tablespace="USERS" type="NORMAL">
               <columns>
                 <column idref="SRes/TaxonName/NAME_CLASS"/>
+                <column idref="SRes/TaxonName/TAXON_ID"/>
+                <column idref="SRes/TaxonName/NAME"/>
               </columns>
             </index>
           </indexes>
@@ -11752,7 +11940,7 @@
                 <column idref="SRes/Pathway/PATHWAY_ID"/>
               </columns>
             </index>
-            <index name="PATHWAY_IND01" tablespace="USERS" type="NORMAL">
+            <index name="PATHWAY_IND02" tablespace="USERS" type="NORMAL">
               <columns>
                 <column idref="SRes/Pathway/EXTERNAL_DATABASE_RELEASE_ID"/>
               </columns>
@@ -11888,6 +12076,19 @@
                 <column idref="SRes/PathwayRelationship/ASSOCIATED_NODE_ID"/>
               </columns>
             </index>
+            <index name="PATHWAYREL_IND05" tablespace="USERS" type="NORMAL">
+              <columns>
+                <column idref="SRes/PathwayRelationship/RELATIONSHIP_TYPE_ID"/>
+                <column idref="SRes/PathwayRelationship/RELATIONSHIP_SUBTYPE_ID"/>
+                <column idref="SRes/PathwayRelationship/PATHWAY_RELATIONSHIP_ID"/>
+              </columns>
+            </index>
+            <index name="PATHWAYREL_IND04" tablespace="USERS" type="NORMAL">
+              <columns>
+                <column idref="SRes/PathwayRelationship/RELATIONSHIP_SUBTYPE_ID"/>
+                <column idref="SRes/PathwayRelationship/PATHWAY_RELATIONSHIP_ID"/>
+              </columns>
+            </index>
           </indexes>
           <constraints>
             <constraint name="PK_PATHWAYREL" type="PRIMARY_KEY">
@@ -11943,6 +12144,18 @@
           <indexes>
             <index name="PK_PHENOTYPECOMP" tablespace="USERS" type="NORMAL">
               <columns>
+                <column idref="SRes/PhenotypeComposition/PHENOTYPE_COMPOSITION_ID"/>
+              </columns>
+            </index>
+            <index name="PHENOTYPECOMP_IND01" tablespace="USERS" type="NORMAL">
+              <columns>
+                <column idref="SRes/PhenotypeComposition/PHENOTYPE_ID"/>
+                <column idref="SRes/PhenotypeComposition/PHENOTYPE_COMPOSITION_ID"/>
+              </columns>
+            </index>
+            <index name="PHENOTYPECOMP_IND02" tablespace="USERS" type="NORMAL">
+              <columns>
+                <column idref="SRes/PhenotypeComposition/QUALITY_ID"/>
                 <column idref="SRes/PhenotypeComposition/PHENOTYPE_COMPOSITION_ID"/>
               </columns>
             </index>
@@ -13593,6 +13806,12 @@
                 <column idref="Model/ModelContext/MODEL_CONTEXT_ID"/>
               </columns>
             </index>
+            <index name="MODELCONTEXT_IND05" tablespace="USERS" type="NORMAL">
+              <columns>
+                <column idref="Model/ModelContext/TAXON_ID"/>
+                <column idref="Model/ModelContext/MODEL_CONTEXT_ID"/>
+              </columns>
+            </index>
           </indexes>
           <constraints>
             <constraint name="PK_MODELCONTEXT" type="PRIMARY_KEY">
@@ -13693,6 +13912,12 @@
             <index name="NETWORKNODE_R02" tablespace="USERS" type="NORMAL">
               <columns>
                 <column idref="Model/NetworkNode/NODE_TYPE_ID"/>
+                <column idref="Model/NetworkNode/NETWORK_NODE_ID"/>
+              </columns>
+            </index>
+            <index name="NETWORKNODE_R03" tablespace="USERS" type="NORMAL">
+              <columns>
+                <column idref="Model/NetworkNode/PARENT_ID"/>
                 <column idref="Model/NetworkNode/NETWORK_NODE_ID"/>
               </columns>
             </index>
@@ -13864,11 +14089,13 @@
             <index name="NETWORKRELEVIDENCE_IND01" tablespace="USERS" type="NORMAL">
               <columns>
                 <column idref="Model/NetworkRelEvidence/NETWORK_REL_CONTEXT_ID"/>
+                <column idref="Model/NetworkRelEvidence/NETWORK_REL_EVIDENCE_ID"/>
               </columns>
             </index>
             <index name="NETWORKRELEVIDENCE_IND02" tablespace="USERS" type="NORMAL">
               <columns>
                 <column idref="Model/NetworkRelEvidence/EVIDENCE_CODE_ID"/>
+                <column idref="Model/NetworkRelEvidence/NETWORK_REL_EVIDENCE_ID"/>
               </columns>
             </index>
             <index name="NETWORKRELEVIDENCE_R01" tablespace="USERS" type="NORMAL">
@@ -13883,6 +14110,7 @@
                 <column idref="Model/NetworkRelEvidence/FDR"/>
                 <column idref="Model/NetworkRelEvidence/P_VALUE"/>
                 <column idref="Model/NetworkRelEvidence/SCORE1"/>
+                <column idref="Model/NetworkRelEvidence/NETWORK_REL_EVIDENCE_ID"/>
               </columns>
             </index>
             <index name="NETWORKRELEVIDENCE_R03" tablespace="USERS" type="NORMAL">
@@ -13891,16 +14119,19 @@
                 <column idref="Model/NetworkRelEvidence/FDR"/>
                 <column idref="Model/NetworkRelEvidence/P_VALUE"/>
                 <column idref="Model/NetworkRelEvidence/SCORE2"/>
+                <column idref="Model/NetworkRelEvidence/NETWORK_REL_EVIDENCE_ID"/>
               </columns>
             </index>
-            <index name="NETWORKRELEVIDENCE_IND" tablespace="USERS" type="NORMAL">
+            <index name="NETWORKRELEVIDENCE_IND03" tablespace="USERS" type="NORMAL">
               <columns>
                 <column idref="Model/NetworkRelEvidence/SCORE1_TYPE_ID"/>
+                <column idref="Model/NetworkRelEvidence/NETWORK_REL_EVIDENCE_ID"/>
               </columns>
             </index>
-            <index name="NETWORKRELEVIDENCE_IND" tablespace="USERS" type="NORMAL">
+            <index name="NETWORKRELEVIDENCE_IND04" tablespace="USERS" type="NORMAL">
               <columns>
                 <column idref="Model/NetworkRelEvidence/SCORE2_TYPE_ID"/>
+                <column idref="Model/NetworkRelEvidence/NETWORK_REL_EVIDENCE_ID"/>
               </columns>
             </index>
           </indexes>
@@ -15055,6 +15286,18 @@
               <columns>
                 <column idref="Results/SeqVariation/STRAIN"/>
                 <column idref="Results/SeqVariation/SNP_NA_FEATURE_ID"/>
+                <column idref="Results/SeqVariation/SEQ_VARIATION_ID"/>
+              </columns>
+            </index>
+            <index name="SEQVAR_IND05" tablespace="USERS" type="NORMAL">
+              <columns>
+                <column idref="Results/SeqVariation/SEQUENCE_ONTOLOGY_ID"/>
+                <column idref="Results/SeqVariation/SEQ_VARIATION_ID"/>
+              </columns>
+            </index>
+            <index name="SEQVAR_IND06" tablespace="USERS" type="NORMAL">
+              <columns>
+                <column idref="Results/SeqVariation/PHENOTYPE_ID"/>
                 <column idref="Results/SeqVariation/SEQ_VARIATION_ID"/>
               </columns>
             </index>
