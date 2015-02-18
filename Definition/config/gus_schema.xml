@@ -15350,7 +15350,7 @@
           <columns>
             <column id="Results/NaFeaturePhenotypeComp/NA_FEATURE_PHENOTYPE_COMP_ID" name="NA_FEATURE_PHENOTYPE_COMP_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
             <column id="Results/NaFeaturePhenotypeComp/NA_FEATURE_ID" name="NA_FEATURE_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
-            <column id="Results/NaFeaturePhenotypeComp/PHENOTYPE_COMP_ID" name="PHENOTYPE_COMP_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
+            <column id="Results/NaFeaturePhenotypeComp/PHENOTYPE_COMPOSITION_ID" name="PHENOTYPE_COMPOSITION_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
             <column id="Results/NaFeaturePhenotypeComp/PROTOCOL_APP_NODE_ID" name="PROTOCOL_APP_NODE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
           </columns>
           <indexes>
@@ -15358,21 +15358,21 @@
               <columns>
                 <column idref="Results/NaFeaturePhenotypeComp/NA_FEATURE_PHENOTYPE_COMP_ID"/>
                 <column idref="Results/NaFeaturePhenotypeComp/NA_FEATURE_ID"/>
-                <column idref="Results/NaFeaturePhenotypeComp/PHENOTYPE_COMP_ID"/>
+                <column idref="Results/NaFeaturePhenotypeComp/PHENOTYPE_COMPOSITION_ID"/>
                 <column idref="Results/NaFeaturePhenotypeComp/PROTOCOL_APP_NODE_ID"/>
               </columns>
             </index>
             <index name="FEATPHEN_IND02" tablespace="USERS" type="NORMAL">
               <columns>
                 <column idref="Results/NaFeaturePhenotypeComp/NA_FEATURE_ID"/>
-                <column idref="Results/NaFeaturePhenotypeComp/PHENOTYPE_COMP_ID"/>
+                <column idref="Results/NaFeaturePhenotypeComp/PHENOTYPE_COMPOSITION_ID"/>
                 <column idref="Results/NaFeaturePhenotypeComp/PROTOCOL_APP_NODE_ID"/>
                 <column idref="Results/NaFeaturePhenotypeComp/NA_FEATURE_PHENOTYPE_COMP_ID"/>
               </columns>
             </index>
             <index name="FEATPHEN_IND03" tablespace="USERS" type="NORMAL">
               <columns>
-                <column idref="Results/NaFeaturePhenotypeComp/PHENOTYPE_COMP_ID"/>
+                <column idref="Results/NaFeaturePhenotypeComp/PHENOTYPE_COMPOSITION_ID"/>
                 <column idref="Results/NaFeaturePhenotypeComp/PROTOCOL_APP_NODE_ID"/>
                 <column idref="Results/NaFeaturePhenotypeComp/NA_FEATURE_PHENOTYPE_COMP_ID"/>
                 <column idref="Results/NaFeaturePhenotypeComp/NA_FEATURE_ID"/>
@@ -15383,7 +15383,7 @@
                 <column idref="Results/NaFeaturePhenotypeComp/PROTOCOL_APP_NODE_ID"/>
                 <column idref="Results/NaFeaturePhenotypeComp/NA_FEATURE_PHENOTYPE_COMP_ID"/>
                 <column idref="Results/NaFeaturePhenotypeComp/NA_FEATURE_ID"/>
-                <column idref="Results/NaFeaturePhenotypeComp/PHENOTYPE_COMP_ID"/>
+                <column idref="Results/NaFeaturePhenotypeComp/PHENOTYPE_COMPOSITION_ID"/>
               </columns>
             </index>
           </indexes>
@@ -15413,7 +15413,7 @@
             </constraint>
             <constraint name="FEATPHEN_FK03" type="FOREIGN_KEY">
               <constrainedColumns>
-                <column idref="Results/NaFeaturePhenotypeComp/PHENOTYPE_COMP_ID"/>
+                <column idref="Results/NaFeaturePhenotypeComp/PHENOTYPE_COMPOSITION_ID"/>
               </constrainedColumns>
               <referencedTable idref="SRes/PhenotypeComposition"/>
               <referencedColumns>
