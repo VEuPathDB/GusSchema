@@ -13558,7 +13558,7 @@
             <column id="Platform/Reporter/REPORTER_ID" name="REPORTER_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
             <column id="Platform/Reporter/REPORTER_SET_ID" name="REPORTER_SET_ID" nullable="false" length="4" precision="0" type="NUMBER"/>
             <column id="Platform/Reporter/EXTERNAL_DATABASE_RELEASE_ID" name="EXTERNAL_DATABASE_RELEASE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-            <column id="Platform/Reporter/SOURCE_ID" name="SOURCE_ID" nullable="false" length="30" precision="0" type="STRING"/>
+            <column id="Platform/Reporter/SOURCE_ID" name="SOURCE_ID" nullable="false" length="50" precision="0" type="STRING"/>
             <column id="Platform/Reporter/PHYSICAL_LOCATION" name="PHYSICAL_LOCATION" nullable="true" length="100" precision="0" type="STRING"/>
             <column id="Platform/Reporter/SEQUENCE" name="SEQUENCE" nullable="true" length="2000" precision="0" type="STRING"/>
           </columns>
