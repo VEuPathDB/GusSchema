@@ -7526,6 +7526,7 @@
             <column id="DoTS/NAFeatureComment/NA_FEATURE_COMMENT_ID" name="NA_FEATURE_COMMENT_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
             <column id="DoTS/NAFeatureComment/NA_FEATURE_ID" name="NA_FEATURE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
             <column id="DoTS/NAFeatureComment/COMMENT_STRING" name="COMMENT_STRING" nullable="false" length="0" precision="0" type="CLOB"/>
+            <column id="DoTS/NAFeatureComment/COMMENT_DATE" name="COMMENT_DATE" nullable="true" length="0" precision="0" type="DATE"/>
           </columns>
           <indexes>
             <index name="NAFEATURECOMMENT_IND01" tablespace="USERS" type="NORMAL">
