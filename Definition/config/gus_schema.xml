@@ -17696,7 +17696,7 @@
 						<column id="Study/BioMaterialCharacteristic/BIO_MATERIAL_CHARACTERISTIC_ID" name="BIO_MATERIAL_CHARACTERISTIC_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
 						<column id="Study/BioMaterialCharacteristic/BIO_MATERIAL_ID" name="BIO_MATERIAL_ID" nullable="false" length="8" precision="0" type="NUMBER"/>
 						<column id="Study/BioMaterialCharacteristic/ONTOLOGY_ENTRY_ID" name="ONTOLOGY_ENTRY_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-						<column id="Study/BioMaterialCharacteristic/VALUE" name="VALUE" nullable="true" length="100" precision="0" type="STRING"/>
+						<column id="Study/BioMaterialCharacteristic/VALUE" name="VALUE" nullable="true" length="150" precision="0" type="STRING"/>
 					</columns>
 					<indexes>
 						<index name="BIOMATCHARACTERISTIC_IND01" tablespace="USERS" type="NORMAL">
