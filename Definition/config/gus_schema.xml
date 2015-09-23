@@ -1615,7 +1615,7 @@
             <column id="DoTS/AASequence/LENGTH" name="LENGTH" nullable="true" length="12" precision="0" type="NUMBER"/>
             <column id="DoTS/AASequence/DESCRIPTION" name="DESCRIPTION" nullable="true" length="2000" precision="0" type="STRING"/>
             <column id="DoTS/AASequence/EXTERNAL_DATABASE_RELEASE_ID" name="EXTERNAL_DATABASE_RELEASE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
-            <column id="DoTS/AASequence/SOURCE_ID" name="SOURCE_ID" nullable="true" length="32" precision="0" type="STRING"/>
+            <column id="DoTS/AASequence/SOURCE_ID" name="SOURCE_ID" nullable="true" length="40" precision="0" type="STRING"/>
             <column id="DoTS/AASequence/SOURCE_AA_SEQUENCE_ID" name="SOURCE_AA_SEQUENCE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
             <column id="DoTS/AASequence/SEQUENCE_TYPE_ID" name="SEQUENCE_TYPE_ID" nullable="true" length="4" precision="0" type="NUMBER"/>
             <column id="DoTS/AASequence/SEQUENCE_ONTOLOGY_ID" name="SEQUENCE_ONTOLOGY_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
