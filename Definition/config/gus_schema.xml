@@ -15551,6 +15551,24 @@
 								<column idref="RAD/StudyFactorValue/STUDY_FACTOR_VALUE_ID"/>
 							</columns>
 						</index>
+						<index name="STUDYFACTORVALUE_R1" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="RAD/StudyFactorValue/STUDY_FACTOR_ID"/>
+								<column idref="RAD/StudyFactorValue/STUDY_FACTOR_VALUE_ID"/>
+							</columns>
+						</index>
+						<index name="STUDYFACTORVALUE_R2" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="RAD/StudyFactorValue/ASSAY_ID"/>
+								<column idref="RAD/StudyFactorValue/STUDY_FACTOR_VALUE_ID"/>
+							</columns>
+						</index>
+						<index name="STUDYFACTORVALUE_R3" tablespace="USERS" type="NORMAL">
+							<columns>
+								<column idref="RAD/StudyFactorValue/VALUE_ONTOLOGY_ENTRY_ID"/>
+								<column idref="RAD/StudyFactorValue/STUDY_FACTOR_VALUE_ID"/>
+							</columns>
+						</index>
 					</indexes>
 					<constraints>
 						<constraint name="FK_CHANNEL_ID" type="FOREIGN_KEY">
