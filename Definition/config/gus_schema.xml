@@ -12696,6 +12696,7 @@
             <column id="Study/Characteristic/ONTOLOGY_TERM_ID" name="ONTOLOGY_TERM_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
             <column id="Study/Characteristic/VALUE" name="VALUE" nullable="true" length="1000" precision="0" type="STRING"/>
             <column id="Study/Characteristic/TABLE_ID" name="TABLE_ID" nullable="true" length="5" precision="0" type="NUMBER"/>
+            <column id="Study/Characteristic/UNIT_ID" name="UNIT_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
           </columns>
           <indexes>
             <index name="PK_CHAR" tablespace="USERS" type="NORMAL">
@@ -12718,6 +12719,11 @@
                 <column idref="Study/Characteristic/TABLE_ID"/>
               </columns>
             </index>
+            <index name="CHAR_IND04" tablespace="USERS" type="NORMAL">
+              <columns>
+                <column idref="Study/Characteristic/UNIT_ID"/>
+              </columns>
+            </index>
           </indexes>
           <constraints>
             <constraint name="PK_CHAR" type="PRIMARY_KEY">
@@ -12737,6 +12743,15 @@
             <constraint name="FK_BMC_OT" type="FOREIGN_KEY">
               <constrainedColumns>
                 <column idref="Study/Characteristic/ONTOLOGY_TERM_ID"/>
+              </constrainedColumns>
+              <referencedTable idref="SRes/OntologyTerm"/>
+              <referencedColumns>
+                <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
+              </referencedColumns>
+            </constraint>
+            <constraint name="FK_C_U" type="FOREIGN_KEY">
+              <constrainedColumns>
+                <column idref="Study/Characteristic/UNIT_ID"/>
               </constrainedColumns>
               <referencedTable idref="SRes/OntologyTerm"/>
               <referencedColumns>
