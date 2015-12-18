@@ -11501,6 +11501,7 @@
             <column id="SRes/OntologyRelationship/PREDICATE_TERM_ID" name="PREDICATE_TERM_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
             <column id="SRes/OntologyRelationship/OBJECT_TERM_ID" name="OBJECT_TERM_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
             <column id="SRes/OntologyRelationship/ONTOLOGY_RELATIONSHIP_TYPE_ID" name="ONTOLOGY_RELATIONSHIP_TYPE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
+            <column id="SRes/OntologyTerm/EXTERNAL_DATABASE_RELEASE_ID" name="EXTERNAL_DATABASE_RELEASE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
           </columns>
           <indexes>
             <index name="PK_ONTOLOGYRELATIONSHIP" tablespace="USERS" type="NORMAL">
@@ -11510,6 +11511,7 @@
             </index>
             <index name="ONTOLOGYRELATIONSHIP_IND01" tablespace="USERS" type="NORMAL">
               <columns>
+                <column idref="SRes/OntologyRelationship/EXTERNAL_DATABASE_RELEASE_ID"/>
                 <column idref="SRes/OntologyRelationship/OBJECT_TERM_ID"/>
                 <column idref="SRes/OntologyRelationship/PREDICATE_TERM_ID"/>
                 <column idref="SRes/OntologyRelationship/SUBJECT_TERM_ID"/>
@@ -11519,6 +11521,7 @@
             </index>
             <index name="ONTOLOGYRELATIONSHIP_IND02" tablespace="USERS" type="NORMAL">
               <columns>
+                <column idref="SRes/OntologyRelationship/EXTERNAL_DATABASE_RELEASE_ID"/>
                 <column idref="SRes/OntologyRelationship/SUBJECT_TERM_ID"/>
                 <column idref="SRes/OntologyRelationship/PREDICATE_TERM_ID"/>
                 <column idref="SRes/OntologyRelationship/OBJECT_TERM_ID"/>
@@ -11528,6 +11531,7 @@
             </index>
             <index name="ONTOLOGYRELATIONSHIP_IND03" tablespace="USERS" type="NORMAL">
               <columns>
+                <column idref="SRes/OntologyRelationship/EXTERNAL_DATABASE_RELEASE_ID"/>
                 <column idref="SRes/OntologyRelationship/ONTOLOGY_RELATIONSHIP_TYPE_ID"/>
                 <column idref="SRes/OntologyRelationship/PREDICATE_TERM_ID"/>
                 <column idref="SRes/OntologyRelationship/SUBJECT_TERM_ID"/>
@@ -11537,6 +11541,7 @@
             </index>
             <index name="ONTOLOGYRELATIONSHIP_IND04" tablespace="USERS" type="NORMAL">
               <columns>
+                <column idref="SRes/OntologyRelationship/EXTERNAL_DATABASE_RELEASE_ID"/>
                 <column idref="SRes/OntologyRelationship/PREDICATE_TERM_ID"/>
                 <column idref="SRes/OntologyRelationship/SUBJECT_TERM_ID"/>
                 <column idref="SRes/OntologyRelationship/OBJECT_TERM_ID"/>
@@ -11550,6 +11555,15 @@
               <constrainedColumns>
                 <column idref="SRes/OntologyRelationship/ONTOLOGY_RELATIONSHIP_ID"/>
               </constrainedColumns>
+            </constraint>
+            <constraint name="FK_OR_EXTDBRLS" type="FOREIGN_KEY">
+              <constrainedColumns>
+                <column idref="SRes/OntologyRelationship/EXTERNAL_DATABASE_RELEASE_ID"/>
+              </constrainedColumns>
+              <referencedTable idref="SRes/ExternalDatabaseRelease"/>
+              <referencedColumns>
+                <column idref="SRes/ExternalDatabaseRelease/EXTERNAL_DATABASE_RELEASE_ID"/>
+              </referencedColumns>
             </constraint>
             <constraint name="FK_ONTOREL_ONTORELTYPE" type="FOREIGN_KEY">
               <constrainedColumns>
