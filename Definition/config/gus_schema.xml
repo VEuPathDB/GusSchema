@@ -7380,6 +7380,9 @@
                 <column id="DoTS/SnpFeature/POSITION_IN_PROTEIN" name="POSITION_IN_PROTEIN" nullable="true" length="4" precision="0" type="NUMBER"/>
                 <column id="DoTS/SnpFeature/HAS_NONSYNONYMOUS_ALLELE" name="HAS_NONSYNONYMOUS_ALLELE" nullable="true" length="1" precision="0" type="NUMBER"/>
                 <column id="DoTS/SnpFeature/MAJOR_ALLELE_COUNT" name="MAJOR_ALLELE_COUNT" nullable="true" length="3" precision="0" type="NUMBER"/>
+                <column id="DoTS/SnpFeature/POSITIONS_IN_CDS_FULL" name="POSITIONS_IN_CDS_FULL" nullable="true" length="4000" precision="0" type="STRING"/>
+                <column id="DoTS/SnpFeature/POSITIONS_IN_PROTEIN_FULL" name="POSITIONS_IN_PROTEIN_FULL" nullable="true" length="4000" precision="0" type="STRING"/>
+                <column id="DoTS/SnpFeature/REFERENCE_AA_FULL" name="REFERENCE_AA_FULL" nullable="true" length="4000" precision="0" type="STRING"/>
               </columns>
             </subclass>
             <subclass id="DoTS/NAFeature/ArrayElementFeature" name="ArrayElementFeature" versioned="true" tablespace="USERS" categoryRef="NA Sequence Features" updatable="true">
@@ -15318,6 +15321,8 @@
             <column id="Results/SeqVariation/ALLELE_PERCENT" name="ALLELE_PERCENT" nullable="true" length="126" precision="0" type="FLOAT"/>
             <column id="Results/SeqVariation/COVERAGE" name="COVERAGE" nullable="true" length="12" precision="0" type="NUMBER"/>
             <column id="Results/SeqVariation/QUALITY" name="QUALITY" nullable="true" length="12" precision="0" type="NUMBER"/>
+            <column id="Results/SeqVariation/PRODUCTS_FULL" name="PRODUCTS_FULL" nullable="true" length="2500" precision="0" type="STRING"/>
+            <column id="Results/SeqVariation/DIFF_FROM_ADJACENT_SNP" name="DIFF_FROM_ADJACENT_SNP" nullable="true" length="1" precision="0" type="NUMBER"/>
           </columns>
           <indexes>
             <index name="PK_SEQVAR" tablespace="USERS" type="NORMAL">
