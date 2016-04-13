@@ -11611,7 +11611,7 @@
             <column id="SRes/OntologyTerm/ONTOLOGY_TERM_ID" name="ONTOLOGY_TERM_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
             <column id="SRes/OntologyTerm/ONTOLOGY_TERM_TYPE_ID" name="ONTOLOGY_TERM_TYPE_ID" nullable="true" length="5" precision="0" type="NUMBER"/>
             <column id="SRes/OntologyTerm/NAME" name="NAME" nullable="false" length="400" precision="0" type="STRING"/>
-            <column id="SRes/OntologyTerm/DEFINITION" name="DEFINITION" nullable="true" length="0" precision="0" type="CLOB"/>
+            <column id="SRes/OntologyTerm/DEFINITION" name="DEFINITION" nullable="true" length="4000" precision="0" type="STRING"/>
             <column id="SRes/OntologyTerm/EXTERNAL_DATABASE_RELEASE_ID" name="EXTERNAL_DATABASE_RELEASE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
             <column id="SRes/OntologyTerm/SOURCE_ID" name="SOURCE_ID" nullable="true" length="255" precision="0" type="STRING"/>
             <column id="SRes/OntologyTerm/CATEGORY" name="CATEGORY" nullable="true" length="100" precision="0" type="STRING"/>
