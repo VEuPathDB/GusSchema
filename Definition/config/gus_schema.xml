@@ -13123,7 +13123,7 @@
             <column id="Study/ProtocolAppParam/PROTOCOL_APP_PARAM_ID" name="PROTOCOL_APP_PARAM_ID" nullable="false" length="11" precision="0" type="NUMBER"/>
             <column id="Study/ProtocolAppParam/PROTOCOL_APP_ID" name="PROTOCOL_APP_ID" nullable="false" length="11" precision="0" type="NUMBER"/>
             <column id="Study/ProtocolAppParam/PROTOCOL_PARAM_ID" name="PROTOCOL_PARAM_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-            <column id="Study/ProtocolAppParam/VALUE" name="VALUE" nullable="true" length="100" precision="0" type="STRING"/>
+            <column id="Study/ProtocolAppParam/VALUE" name="VALUE" nullable="true" length="120" precision="0" type="STRING"/>
             <column id="Study/ProtocolAppParam/TABLE_ID" name="TABLE_ID" nullable="true" length="5" precision="0" type="NUMBER"/>
             <column id="Study/ProtocolAppParam/ROW_ID" name="ROW_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
             <column id="Study/ProtocolAppParam/UNIT_ID" name="UNIT_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
