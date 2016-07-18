@@ -12720,7 +12720,7 @@
             <column id="Study/Characteristic/PROTOCOL_APP_NODE_ID" name="PROTOCOL_APP_NODE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
             <column id="Study/Characteristic/QUALIFIER_ID" name="QUALIFIER_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
             <column id="Study/Characteristic/ONTOLOGY_TERM_ID" name="ONTOLOGY_TERM_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
-            <column id="Study/Characteristic/VALUE" name="VALUE" nullable="true" length="1200" precision="0" type="STRING"/>
+            <column id="Study/Characteristic/VALUE" name="VALUE" nullable="true" length="2000" precision="0" type="STRING"/>
             <column id="Study/Characteristic/TABLE_ID" name="TABLE_ID" nullable="true" length="5" precision="0" type="NUMBER"/>
             <column id="Study/Characteristic/UNIT_ID" name="UNIT_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
           </columns>
