@@ -1,0 +1,3 @@
+If in index name is re-used in the GUS definition (that is, the XML contains
+multiple <index> elements with the same "name=" attributes), the GUS install
+will silently fail to create all but one.
