@@ -3733,7 +3733,7 @@
 </Core::DatabaseDocumentation>
 
 <Core::DatabaseDocumentation>
-<table>Study.ProtocolSeries</table>
+<table>Study.ProtocolSeriesLink</table>
 <html_documentation>A collection of one or more protocols applied serially. Sometimes, when multiple protocols are serially applied, not all intermediate inputs/outputs need to be stored Study.ProtocolAppNode. In this case it is useful to group those protocols into a series.</html_documentation>
 </Core::DatabaseDocumentation>
 
