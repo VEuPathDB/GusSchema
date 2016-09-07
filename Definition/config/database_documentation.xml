@@ -3731,6 +3731,72 @@
 </Core::DatabaseDocumentation>
 
 <Core::DatabaseDocumentation>
+<table>Results.SnpLinkage</table>
+<html_documentation>This table stores linkage-disequilibrium results between two loci (SNPs).</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Results.SnpLinkage</table>
+<attribute_name>protocol_app_node_id</attribute_name>
+<html_documentation>Points to the protocol application node (in Study.ProtocolAppNode) representing the analysis that yielded these results.</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Results.SnpLinkage</table>
+<attribute_name>snp1_position</attribute_name>
+<html_documentation>position of the first SNP; e.g., chr:pos</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Results.SnpLinkage</table>
+<attribute_name>snp2_position</attribute_name>
+<html_documentation>position of the second SNP; e.g., chr:pos</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Results.SnpLinkage</table>
+<attribute_name>snp1_source_id</attribute_name>
+<html_documentation>The ID of the first SNP in the original source from which its definition was taken</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Results.SnpLinkage</table>
+<attribute_name>snp2_source_id</attribute_name>
+<html_documentation>The ID of the second SNP in the original source from which its definition was taken</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Results.SnpLinkage</table>
+<attribute_name>r_squared</attribute_name>
+<html_documentation>linkage r-squared (r^2) value</html_documentation>
+</Core::DatabaseDocumentation>
+
+
+<Core::DatabaseDocumentation>
+<table>Results.SnpLinkage</table>
+<attribute_name>d_prime</attribute_name>
+<html_documentation>normalized coefficient of linkage disequilibrium (D')</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Results.SnpLinkage</table>
+<attribute_name>lod_score</attribute_name>
+<html_documentation>log odds of linkage disequilibrium between two loci</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Results.SnpLinkage</table>
+<attribute_name>score1</attribute_name>
+<html_documentation>any additional score (e.g., p-value, bin)</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
+<table>Results.SnpLinkage</table>
+<attribute_name>score2</attribute_name>
+<html_documentation>any additional score (e.g., p-value, bin)</html_documentation>
+</Core::DatabaseDocumentation>
+
+<Core::DatabaseDocumentation>
 <table>SRes.Anatomy</table>
 <attribute_name>anatomy_id</attribute_name>
 <html_documentation>Primary key</html_documentation>
@@ -4681,3 +4747,4 @@
 <table>Study.StudyLink</table>
 <html_documentation>This table links studies/investigations (stored in Study.Study) to protocol application nodes (stored in Study.ProtocolAppNode).</html_documentation>
 </Core::DatabaseDocumentation>
+
