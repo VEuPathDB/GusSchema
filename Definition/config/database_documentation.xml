@@ -784,47 +784,6 @@
 </Core::DatabaseDocumentation>
 
 <Core::DatabaseDocumentation>
-<table>DoTS.CpgIslandNAFeature</table>
-<attribute_name>algorithm_invocation_id</attribute_name>
-<html_documentation>a link to the parameters of the prediction algorithm</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>DoTS.CpgIslandNAFeature</table>
-<attribute_name>cg_count</attribute_name>
-<html_documentation>number of C and G nucleotides in the island</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>DoTS.CpgIslandNAFeature</table>
-<attribute_name>cg_fraction</attribute_name>
-<html_documentation>fraction of nucleotides that are C or G</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>DoTS.CpgIslandNAFeature</table>
-<attribute_name>cpg_count</attribute_name>
-<html_documentation>number of CG dinucleotides</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>DoTS.CpgIslandNAFeature</table>
-<attribute_name>cpg_fraction</attribute_name>
-<html_documentation>fraction dinucleotides that are CG</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>DoTS.CpgIslandNAFeature</table>
-<attribute_name>cpg_observed_to_expected_ratio</attribute_name>
-<html_documentation>ratio of number of observed CG dinucleotidess to the expected number of CG dinucleotides</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>DoTS.CpgIslandNAFeature</table>
-<html_documentation>A region rich in C or G nucleotides with 'many' CG dinucleotides</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
 <table>DoTS.DbRefNAFeature</table>
 <html_documentation>Links DbRef to NAFeature entries.</html_documentation>
 </Core::DatabaseDocumentation>
@@ -955,29 +914,6 @@
 <Core::DatabaseDocumentation>
 <table>DoTS.Gene</table>
 <html_documentation>A central dogma (GENE->RNA->PROTEIN) table containing gene information for the genes in GUS</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>DoTS.GeneAlias</table>
-<attribute_name>gene_alias_id</attribute_name>
-<html_documentation>primary key</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>DoTS.GeneAlias</table>
-<attribute_name>gene_alias_name</attribute_name>
-<html_documentation>" The alias for the gene (e.g., dominant spotting)"</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>DoTS.GeneAlias</table>
-<attribute_name>gene_id</attribute_name>
-<html_documentation>The identifier of the gene that the gene alias has been assigned to</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>DoTS.GeneAlias</table>
-<html_documentation>A table containing the full gene name aliases for a gene</html_documentation>
 </Core::DatabaseDocumentation>
 
 <Core::DatabaseDocumentation>
