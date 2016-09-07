@@ -45,496 +45,27 @@
 </Core::DatabaseDocumentation>
 
 <Core::DatabaseDocumentation>
-<table>Core.Workflow</table>
-<attribute_name>default_alg_invocation_id</attribute_name>
-<html_documentation>Default algorithm_invocation_id for this Workflow.  All workflows must have a corresponding Algorithm, AlgorithmImplementation, and AlgorithmInvocation entry.  This identifier is used to obtain and define the parameters to this workflow upon startup.  The default_alg_invocation_id is determined computationally when the workflow is loaded.  This assignment is based on the algorithm name defined in the XML for the workflow graph.</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.Workflow</table>
-<attribute_name>description</attribute_name>
-<html_documentation>Description of this Workflow</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.Workflow</table>
-<attribute_name>name</attribute_name>
-<html_documentation>Name of this Workflow</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.Workflow</table>
-<attribute_name>workflow_id</attribute_name>
-<html_documentation>Primary key, used to uniquely identify a workflow</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.Workflow</table>
-<html_documentation>Table used to hold high level information for a workflow graph.  See the Workflow Technical Report document for more details on the workflow system.</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowBlackboard</table>
-<attribute_name>edge_id</attribute_name>
-<html_documentation>The primary key (workflow_edge_id) of the edge that is responsible for adding this row to WorkflowBlackboard.</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowBlackboard</table>
-<attribute_name>edge_invocation_id</attribute_name>
-<html_documentation>The edge invocation id (assigned by the workflow engine) of this edge.</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowBlackboard</table>
-<attribute_name>item_id</attribute_name>
-<html_documentation>The primary key of the row in the table specified by table_id that this blackboard entry refers to.</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowBlackboard</table>
-<attribute_name>secondary_row_id</attribute_name>
-<html_documentation>The primary key of the row in the table specified by secondary_table_id that this blackboard entry refers to.  (the second element in the pair)</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowBlackboard</table>
-<attribute_name>secondary_table_id</attribute_name>
-<html_documentation>The table_id (from TableInfo) that secondary_id is from.</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowBlackboard</table>
-<attribute_name>set_name</attribute_name>
-<html_documentation>The name of the data set this row is a part of  same as the set_name of the edge specified by edge_id.</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowBlackboard</table>
-<attribute_name>status</attribute_name>
-<html_documentation>The status of this blackboard entry.  Valid status values include S: Start, P: In Progress, C: Complete.</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowBlackboard</table>
-<attribute_name>table_id</attribute_name>
-<html_documentation>The table_id (from TableInfo) that item_id is from.</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowBlackboard</table>
-<attribute_name>workflow_alg_invocation_id</attribute_name>
-<html_documentation>The algorithm invocation id for this execution of the workflow specified by workflow_id</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowBlackboard</table>
-<attribute_name>workflow_blackboard_id</attribute_name>
-<html_documentation>Primary key, used as unique identifier for this WorkflowBlackboard object</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowBlackboard</table>
-<attribute_name>workflow_id</attribute_name>
-<html_documentation>Foreign key to Workflow, defines the workflow  that this WorkflowInit object  is associated with.</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowBlackboard</table>
-<html_documentation>Table used as a blackboard by the workflow engine.  Only the workflow engine and ga should ever write to this table.  This table can be used to aid in the restarting of a workflow in the event of a crash</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowConditionalNode</table>
-<attribute_name>description</attribute_name>
-<html_documentation>Description of this WorkfllowConditionalNode</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowConditionalNode</table>
-<attribute_name>is_and</attribute_name>
-<html_documentation>Boolean, indicates whether nodes requires a logical AND to be performed on all incoming edges prior to start of node.  If set to 0, workflow engine assumes a logical OR of the incoming edges.</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowConditionalNode</table>
-<attribute_name>is_start</attribute_name>
-<html_documentation>Boolean, indicates whether node is start node in workflow</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowConditionalNode</table>
-<attribute_name>name</attribute_name>
-<html_documentation>Name of this WorkflowConditionalNode</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowConditionalNode</table>
-<attribute_name>sql</attribute_name>
-<html_documentation>SQL for SELECT statement</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowConditionalNode</table>
-<attribute_name>subclass_view</attribute_name>
-<html_documentation>Name of this view, always WorkflowNoOpNode</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowConditionalNode</table>
-<attribute_name>workflow_id</attribute_name>
-<html_documentation>Foreign key to Workflow, defines the workflow that this node is a part of</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowConditionalNode</table>
-<attribute_name>workflow_node_id</attribute_name>
-<html_documentation>Primary key, used as unique identifier for this WorkflowConditionalNode</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowConditionalNode</table>
-<html_documentation>View on WorkflowNodeImp used to represent nodes within a workflow that execute SQL queries.  If one or more rows are returned, value of node output is true; otherwise node outputs false.</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowEdge</table>
-<attribute_name>from_node_id</attribute_name>
-<html_documentation>Foreign key to WorkflowNodeImp, defines the node that this edge is an outgoing edge for.</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowEdge</table>
-<attribute_name>is_true</attribute_name>
-<html_documentation>Boolean activation value.  If true, this edge is activated when the return value of the from_node_id is greater than 1.  If false, this edge is activated when the return value of the to_node_id is less than or equal to 0.</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowEdge</table>
-<attribute_name>to_node_id</attribute_name>
-<html_documentation>Foreign key to WorkflowNodeImp, defines the node that this is an incoming edge for.</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowEdge</table>
-<attribute_name>workflow_edge_id</attribute_name>
-<html_documentation>Primary key, used as unique identifier for this WorkflowEdge</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowEdge</table>
-<attribute_name>workflow_id</attribute_name>
-<html_documentation>Foreign key to Workflow, defines the workflow that this edge is a part of</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowEdge</table>
-<html_documentation>Table used to store information for each edge in a workflow graph.</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowEdgeSQL</table>
-<attribute_name>set_name</attribute_name>
-<html_documentation>A unique name assigned to the identifiers selected by the SQL statement.</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowEdgeSQL</table>
-<attribute_name>sql</attribute_name>
-<html_documentation>A SELECT statement that selects single attribute primary keys and optionally a secondary identifier to be used.  These primary keys are inserted into the WorkflowBlackboard table at runtime to be processed by the workflow.</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowEdgeSQL</table>
-<attribute_name>workflow_edge_id</attribute_name>
-<html_documentation>Foreign key to WorkflowEdge, defines the workflow edge that this sql is a associated with.</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowEdgeSQL</table>
-<attribute_name>workflow_edge_sql_id</attribute_name>
-<html_documentation>Primary key, used as unique identifier for this WorkflowEdgeSQL</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowEdgeSQL</table>
-<html_documentation>Table used to hold SQL associated with an edge within a workflow graph.  This SQL is executed when its edge is activated</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowInit</table>
-<attribute_name>item_id</attribute_name>
-<html_documentation>The primary key of the row in the table specified by table_id that this row represents.  This is part of the initial data set of the workflow.</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowInit</table>
-<attribute_name>table_id</attribute_name>
-<html_documentation>The table_id (from TableInfo) from which the item_ids (primary identifiers) are selected from.</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowInit</table>
-<attribute_name>workflow_id</attribute_name>
-<html_documentation>Foreign key to Workflow, defines the workflow  that this WorkflowInit object is associated with.</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowInit</table>
-<attribute_name>workflow_init_id</attribute_name>
-<html_documentation>Primary key, used as unique identifier for this WorkflowInit object</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowInit</table>
-<html_documentation>Table used to hold initial values for any Workflow level parameters within a workflow graph.  See the Workflow Technical Report document for more details.</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowNoOpNode</table>
-<attribute_name>description</attribute_name>
-<html_documentation>Description of this WorkfllowNoOpNode</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowNoOpNode</table>
-<attribute_name>is_and</attribute_name>
-<html_documentation>Boolean, indicates whether nodes requires a logical AND to be performed on all incoming edges prior to start of node.  If set to 0, workflow engine assumes a logical OR of the incoming edges.</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowNoOpNode</table>
-<attribute_name>is_start</attribute_name>
-<html_documentation>Boolean, indicates whether node is start node in workflow</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowNoOpNode</table>
-<attribute_name>name</attribute_name>
-<html_documentation>Name of this WorkflowNoOpNode</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowNoOpNode</table>
-<attribute_name>subclass_view</attribute_name>
-<html_documentation>Name of this view, always WorkflowNoOpNode</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowNoOpNode</table>
-<attribute_name>workflow_id</attribute_name>
-<html_documentation>Foreign key to Workflow, defines the workflow that this node is a part of</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowNoOpNode</table>
-<attribute_name>workflow_node_id</attribute_name>
-<html_documentation>Primary key, used as unique identifier for this WorkflowNoOpNode</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowNoOpNode</table>
-<html_documentation>View on WorkflowNodeImp used to represent nodes within a workflow that do not perform any action but are used to form loops in workflow graphs</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowNodeImp</table>
-<html_documentation>Implementation table used for nodes within a workflow graph</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowPluginNode</table>
-<attribute_name>algorithm_invocation_id</attribute_name>
-<html_documentation>Default Algorithm_invocation_id for this WorkflowPluginNode.  This identifier is used to obtain and define the parameters to this node during execution.  The algorithm_invocation_id is determined computationally when workflow is loaded based on the algorithm name defined in the XML for the workflow graph.</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowPluginNode</table>
-<attribute_name>description</attribute_name>
-<html_documentation>Description of this WorkflowPluginNode</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowPluginNode</table>
-<attribute_name>is_and</attribute_name>
-<html_documentation>Boolean, indicates whether nodes requires a logical AND to be performed on all incoming edges prior to start of node.  If set to 0, workflow engine assumes a logical OR of the incoming edges.</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowPluginNode</table>
-<attribute_name>is_start</attribute_name>
-<html_documentation>Boolean, indicates whether node is start node in workflow</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowPluginNode</table>
-<attribute_name>name</attribute_name>
-<html_documentation>Name of this WorkflowPluginNode</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowPluginNode</table>
-<attribute_name>subclass_view</attribute_name>
-<html_documentation>Name of this view, always WorkflowPluginNode</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowPluginNode</table>
-<attribute_name>workflow_id</attribute_name>
-<html_documentation>Foreign key to Workflow, defines the workflow that this node is a part of</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowPluginNode</table>
-<attribute_name>workflow_node_id</attribute_name>
-<html_documentation>Primary key, used as unique identifier for this WorkflowPluginNode</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowPluginNode</table>
-<html_documentation>View on WorkflowNodeImp used to represent plugin nodes in a workflow</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowStatus</table>
-<attribute_name>end_time</attribute_name>
-<html_documentation>End time of the workflow item</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowStatus</table>
-<attribute_name>item_id</attribute_name>
-<html_documentation>The primary key of the row in the table/view specified by item_type that this row represents.  (i.e., the node or edge id)</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowStatus</table>
-<attribute_name>item_invocation_id</attribute_name>
-<html_documentation>The algorithm invocation id if this is a plug-in node; otherwise, the invocation id assigned by the workflow engine</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowStatus</table>
-<attribute_name>item_type</attribute_name>
-<html_documentation>The table/object that this workflow item is from. For example, WorkflowEdge, WorkflowPluginNode, etc.</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowStatus</table>
-<attribute_name>reload_workflow</attribute_name>
-<html_documentation>If 1, indicates that workflow engine should reload the workflow from the database; otherwise, engine will used the cached version of the workflow</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowStatus</table>
-<attribute_name>return_value</attribute_name>
-<html_documentation>Return value if this is a workflow node; otherwise, null</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowStatus</table>
-<attribute_name>start_time</attribute_name>
-<html_documentation>Start time of the workflow item</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowStatus</table>
-<attribute_name>workflow_alg_invocation_id</attribute_name>
-<html_documentation>The algorithm invocation id for this execution of the workflow specified by workflow_id</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowStatus</table>
-<attribute_name>workflow_id</attribute_name>
-<html_documentation>Foreign key to Workflow, defines the workflow  that this WorkflowInit object  is associated with.</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowStatus</table>
-<attribute_name>workflow_status_id</attribute_name>
-<html_documentation>Primary key, used as unique identifier for this WorkflowStatus object</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowStatus</table>
-<html_documentation>Table used to track the status of workflows that are executing.  Only the workflow engine and ga should ever write to this table.  This table can be used to aid in the restarting of a workflow in the event of a crash.</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowSystemNode</table>
-<attribute_name>command</attribute_name>
-<html_documentation>UNIX system command to be executed</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowSystemNode</table>
-<attribute_name>description</attribute_name>
-<html_documentation>Description of this WorkflowSystemNode</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowSystemNode</table>
-<attribute_name>is_and</attribute_name>
-<html_documentation>Boolean, indicates whether nodes requires a logical AND to be performed on all incoming edges prior to start of node.  If set to 0, workflow engine assumes a logical OR of the incoming edges.</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowSystemNode</table>
-<attribute_name>is_start</attribute_name>
-<html_documentation>Boolean, indicates whether node is start node in workflow</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowSystemNode</table>
-<attribute_name>name</attribute_name>
-<html_documentation>Name of this WorkflowSystemNode</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowSystemNode</table>
-<attribute_name>subclass_view</attribute_name>
-<html_documentation>Name of this view, always WorkflowSystemNode</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowSystemNode</table>
-<attribute_name>workflow_id</attribute_name>
-<html_documentation>Foreign key to Workflow, defines the workflow that this node is a part of</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowSystemNode</table>
-<attribute_name>workflow_node_id</attribute_name>
-<html_documentation>Primary key, used as unique identifier for this WorkflowSystemNode</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>Core.WorkflowSystemNode</table>
-<html_documentation>View on WorkflowNodeImp used to represent nodes that perform system calls within a workflow</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
 <table>DoTS.AAComment</table>
 <attribute_name>aa_sequence_id</attribute_name>
-<html_documentation> Foreign key to AASequenceImp table</html_documentation>
+<html_documentation>Foreign key to AASequenceImp table</html_documentation>
 </Core::DatabaseDocumentation>
 
 <Core::DatabaseDocumentation>
 <table>DoTS.AAComment</table>
 <attribute_name>comment_name_id</attribute_name>
-<html_documentation> Foreign key to CommentName</html_documentation>
+<html_documentation>Foreign key to CommentName</html_documentation>
 </Core::DatabaseDocumentation>
 
 <Core::DatabaseDocumentation>
 <table>DoTS.AAComment</table>
 <attribute_name>comment_string</attribute_name>
-<html_documentation> Description of amino acid sequence</html_documentation>
+<html_documentation>Description of amino acid sequence</html_documentation>
 </Core::DatabaseDocumentation>
 
 <Core::DatabaseDocumentation>
 <table>DoTS.AAComment</table>
 <attribute_name>more_comment</attribute_name>
-<html_documentation> Any further description of amino acid sequence</html_documentation>
+<html_documentation>Any further description of amino acid sequence</html_documentation>
 </Core::DatabaseDocumentation>
 
 <Core::DatabaseDocumentation>
@@ -637,19 +168,19 @@
 <Core::DatabaseDocumentation>
 <table>DoTS.AnatomyLibrary</table>
 <attribute_name>anatomy_id</attribute_name>
-<html_documentation> The anatomy term identifier</html_documentation>
+<html_documentation>The anatomy term identifier</html_documentation>
 </Core::DatabaseDocumentation>
 
 <Core::DatabaseDocumentation>
 <table>DoTS.AnatomyLibrary</table>
 <attribute_name>anatomy_library_id</attribute_name>
-<html_documentation> primary key</html_documentation>
+<html_documentation>primary key</html_documentation>
 </Core::DatabaseDocumentation>
 
 <Core::DatabaseDocumentation>
 <table>DoTS.AnatomyLibrary</table>
 <attribute_name>dbest_library_id</attribute_name>
-<html_documentation> The dbest library identifer</html_documentation>
+<html_documentation>The dbest library identifer</html_documentation>
 </Core::DatabaseDocumentation>
 
 <Core::DatabaseDocumentation>
@@ -1429,7 +960,7 @@
 <Core::DatabaseDocumentation>
 <table>DoTS.GeneAlias</table>
 <attribute_name>gene_alias_id</attribute_name>
-<html_documentation> primary key</html_documentation>
+<html_documentation>primary key</html_documentation>
 </Core::DatabaseDocumentation>
 
 <Core::DatabaseDocumentation>
@@ -1441,7 +972,7 @@
 <Core::DatabaseDocumentation>
 <table>DoTS.GeneAlias</table>
 <attribute_name>gene_id</attribute_name>
-<html_documentation> The identifier of the gene that the gene alias has been assigned to</html_documentation>
+<html_documentation>The identifier of the gene that the gene alias has been assigned to</html_documentation>
 </Core::DatabaseDocumentation>
 
 <Core::DatabaseDocumentation>
@@ -1475,7 +1006,7 @@
 <Core::DatabaseDocumentation>
 <table>DoTS.GeneSynonym</table>
 <attribute_name>gene_id</attribute_name>
-<html_documentation> The identifier of the gene that has been assigned the gene symbol</html_documentation>
+<html_documentation>The identifier of the gene that has been assigned the gene symbol</html_documentation>
 </Core::DatabaseDocumentation>
 
 <Core::DatabaseDocumentation>
@@ -1704,7 +1235,7 @@
 <Core::DatabaseDocumentation>
 <table>DoTS.InteractionInteractionLOE</table>
 <attribute_name>interaction_loe_id</attribute_name>
-<html_documentation> foreign key to interactionLOE</html_documentation>
+<html_documentation>foreign key to interactionLOE</html_documentation>
 </Core::DatabaseDocumentation>
 
 <Core::DatabaseDocumentation>
@@ -2238,7 +1769,7 @@
 <Core::DatabaseDocumentation>
 <table>DoTS.Protein</table>
 <attribute_name>description</attribute_name>
-<html_documentation> A description of the protein</html_documentation>
+<html_documentation>A description of the protein</html_documentation>
 </Core::DatabaseDocumentation>
 
 <Core::DatabaseDocumentation>
@@ -2256,13 +1787,13 @@
 <Core::DatabaseDocumentation>
 <table>DoTS.Protein</table>
 <attribute_name>review_status_id</attribute_name>
-<html_documentation> The identifier of the review status</html_documentation>
+<html_documentation>The identifier of the review status</html_documentation>
 </Core::DatabaseDocumentation>
 
 <Core::DatabaseDocumentation>
 <table>DoTS.Protein</table>
 <attribute_name>reviewer_summary</attribute_name>
-<html_documentation> Annotator comments regarding the Protein</html_documentation>
+<html_documentation>Annotator comments regarding the Protein</html_documentation>
 </Core::DatabaseDocumentation>
 
 <Core::DatabaseDocumentation>
@@ -2325,25 +1856,25 @@
 <Core::DatabaseDocumentation>
 <table>DoTS.ProteinSynonym</table>
 <attribute_name>protein_id</attribute_name>
-<html_documentation> The identifier of the protein that has been assigned the protein name</html_documentation>
+<html_documentation>The identifier of the protein that has been assigned the protein name</html_documentation>
 </Core::DatabaseDocumentation>
 
 <Core::DatabaseDocumentation>
 <table>DoTS.ProteinSynonym</table>
 <attribute_name>protein_synonym_id</attribute_name>
-<html_documentation> primary key</html_documentation>
+<html_documentation>primary key</html_documentation>
 </Core::DatabaseDocumentation>
 
 <Core::DatabaseDocumentation>
 <table>DoTS.ProteinSynonym</table>
 <attribute_name>review_status_id</attribute_name>
-<html_documentation> The identifier of the review status</html_documentation>
+<html_documentation>The identifier of the review status</html_documentation>
 </Core::DatabaseDocumentation>
 
 <Core::DatabaseDocumentation>
 <table>DoTS.ProteinSynonym</table>
 <attribute_name>synonym_name</attribute_name>
-<html_documentation> The protein name</html_documentation>
+<html_documentation>The protein name</html_documentation>
 </Core::DatabaseDocumentation>
 
 <Core::DatabaseDocumentation>
@@ -2389,37 +1920,37 @@
 <Core::DatabaseDocumentation>
 <table>DoTS.RNAAnatomy</table>
 <attribute_name>anatomy_id</attribute_name>
-<html_documentation> The identifier of an anatomy term that has been assigned to the RNA</html_documentation>
+<html_documentation>The identifier of an anatomy term that has been assigned to the RNA</html_documentation>
 </Core::DatabaseDocumentation>
 
 <Core::DatabaseDocumentation>
 <table>DoTS.RNAAnatomy</table>
 <attribute_name>est_number</attribute_name>
-<html_documentation> The number of ESTs that have been assigned that anatomy term and are represented in the RNA</html_documentation>
+<html_documentation>The number of ESTs that have been assigned that anatomy term and are represented in the RNA</html_documentation>
 </Core::DatabaseDocumentation>
 
 <Core::DatabaseDocumentation>
 <table>DoTS.RNAAnatomy</table>
 <attribute_name>literature_confirmed</attribute_name>
-<html_documentation>  True (1) if an experiment described in the literature can confirm the expression of the RNA in the assigned anatomy</html_documentation>
+<html_documentation> True (1) if an experiment described in the literature can confirm the expression of the RNA in the assigned anatomy</html_documentation>
 </Core::DatabaseDocumentation>
 
 <Core::DatabaseDocumentation>
 <table>DoTS.RNAAnatomy</table>
 <attribute_name>rad_confirmed</attribute_name>
-<html_documentation> True (1) if an experiment in RAD (i.e., microarray) can confirm the expression of the RNA in the assigned anatomy</html_documentation>
+<html_documentation>True (1) if an experiment in RAD (i.e., microarray) can confirm the expression of the RNA in the assigned anatomy</html_documentation>
 </Core::DatabaseDocumentation>
 
 <Core::DatabaseDocumentation>
 <table>DoTS.RNAAnatomy</table>
 <attribute_name>rna_anatomy_id</attribute_name>
-<html_documentation> primary key</html_documentation>
+<html_documentation>primary key</html_documentation>
 </Core::DatabaseDocumentation>
 
 <Core::DatabaseDocumentation>
 <table>DoTS.RNAAnatomy</table>
 <attribute_name>rna_id</attribute_name>
-<html_documentation> The identifier of the RNA</html_documentation>
+<html_documentation>The identifier of the RNA</html_documentation>
 </Core::DatabaseDocumentation>
 
 <Core::DatabaseDocumentation>
@@ -2430,13 +1961,13 @@
 <Core::DatabaseDocumentation>
 <table>DoTS.RNAAnatomyLOE</table>
 <attribute_name>anatomy_loe_id</attribute_name>
-<html_documentation> foreign key to AnatomyLOE</html_documentation>
+<html_documentation>foreign key to AnatomyLOE</html_documentation>
 </Core::DatabaseDocumentation>
 
 <Core::DatabaseDocumentation>
 <table>DoTS.RNAAnatomyLOE</table>
 <attribute_name>rna_anatomy_id</attribute_name>
-<html_documentation> foreign key to RNAAnatomy</html_documentation>
+<html_documentation>foreign key to RNAAnatomy</html_documentation>
 </Core::DatabaseDocumentation>
 
 <Core::DatabaseDocumentation>
