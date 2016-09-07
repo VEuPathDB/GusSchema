@@ -3159,23 +3159,6 @@
 </Core::DatabaseDocumentation>
 
 <Core::DatabaseDocumentation>
-<table>SRes.OntologyRelationshipType</table>
-<attribute_name>name</attribute_name>
-<html_documentation>text descriptor for the entry</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>SRes.OntologyRelationshipType</table>
-<attribute_name>ontology_relationship_type_id</attribute_name>
-<html_documentation>Primary key.</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>SRes.OntologyRelationshipType</table>
-<html_documentation>Describes the type of relationship formed by the terms in the RDF triple.</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
 <table>SRes.OntologySynonym</table>
 <html_documentation>Provides synonyms where available for terms in OntologyTerm table.</html_documentation>
 </Core::DatabaseDocumentation>
@@ -3239,11 +3222,6 @@
 <Core::DatabaseDocumentation>
 <table>SRes.PathwayRelationship</table>
 <html_documentation>Linkages (edges) between pathway entities (nodes) such as proteins, metabolites, genes, etc. typically imported an external database such as KEGG. Node and associated node are specified in the PathwayNode table.</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>SRes.Phenotype</table>
-<html_documentation>Phenotypes are defined in the PATO ontology stored in OntologyTerm and associated with anatomy, cells, and developmental stage specified with foreign keys to OntologyTerm.</html_documentation>
 </Core::DatabaseDocumentation>
 
 <Core::DatabaseDocumentation>
