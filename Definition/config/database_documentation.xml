@@ -971,12 +971,6 @@
 
 <Core::DatabaseDocumentation>
 <table>DoTS.GeneSynonym</table>
-<attribute_name>synonym_name The gene symbol</attribute_name>
-<html_documentation></html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>DoTS.GeneSynonym</table>
 <html_documentation>This table stores gene synonym.</html_documentation>
 </Core::DatabaseDocumentation>
 
@@ -1253,12 +1247,6 @@
 <table>DoTS.Library</table>
 <attribute_name>cell_type</attribute_name>
 <html_documentation>Cell type (dbEST.LIBRARY.cell_type)</html_documentation>
-</Core::DatabaseDocumentation>
-
-<Core::DatabaseDocumentation>
-<table>DoTS.Library</table>
-<attribute_name>comment_string</attribute_name>
-<html_documentation></html_documentation>
 </Core::DatabaseDocumentation>
 
 <Core::DatabaseDocumentation>
