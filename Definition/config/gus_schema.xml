@@ -15247,6 +15247,8 @@
             <column id="Results/GeneSimilarity/GENE1_ID" name="GENE1_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
             <column id="Results/GeneSimilarity/GENE2_ID" name="GENE2_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
             <column id="Results/GeneSimilarity/SIMILARITY" name="SIMILARITY" nullable="false" length="12" precision="0" type="FLOAT"/>
+	    <column id="Results/GeneSimilarity/P_VALUE" name="P_VALUE" nullable="true" length="12" precision="0" type="FLOAT"/>
+	    <column id="Results/GeneSimilarity/FDR" name="FDR" nullable="true" length="12" precision="0" type="FLOAT"/>
           </columns>
           <indexes>
             <index name="PK_GENESIM" tablespace="USERS" type="NORMAL">
@@ -15306,6 +15308,80 @@
             </constraint>
           </constraints>
         </table>
+	<table id="Results/SnpLinkage" name="SnpLinkage" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Results" updatable="true">
+          <columns>
+            <column id="Results/SnpLinkage/SNP_LINKAGE_ID" name="SNP_LINKAGE_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
+	    <column id="Results/SnpLinkage/PROTOCOL_APP_NODE_ID" name="PROTOCOL_APP_NODE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+            <column id="Results/SnpLinkage/SNP1_NA_FEATURE_ID" name="SNP1_NA_FEATURE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+	    <column id="Results/SnpLinkage/SNP2_NA_FEATURE_ID" name="SNP2_NA_FEATURE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
+	    <column id="Results/SnpLinkage/SNP1_POSITION" name="SNP1_POSITION" nullable="true" length="100" precision="0" type="STRING"/>
+	    <column id="Results/SnpLinkage/SNP2_POSITION" name="SNP2_POSITION" nullable="true" length="100" precision="0" type="STRING"/>
+	    <column id="Results/SnpLinkage/SNP1_SOURCE_ID" name="SNP1_SOURCE_ID" nullable="true" length="80" precision="0" type="STRING"/>
+	    <column id="Results/SnpLinkage/SNP2_SOURCE_ID" name="SNP2_SOURCE_ID" nullable="true" length="80" precision="0" type="STRING"/>
+            <column id="Results/SnpLinkage/R_SQUARED" name="R_SQUARED" nullable="false" length="126" precision="0" type="FLOAT"/>
+	    <column id="Results/SnpLinkage/D_PRIME" name="D_PRIME" nullable="true" length="126" precision="0" type="FLOAT"/>
+	    <column id="Results/SnpLinkage/LOD_SCORE" name="LOD_SCORE" nullable="true" length="126" precision="0" type="FLOAT"/>
+	    <column id="Results/SnpLinkage/SCORE1" name="SCORE1" nullable="true" length="126" precision="0" type="FLOAT"/>
+	    <column id="Results/SnpLinkage/SCORE2" name="SCORE2" nullable="true" length="126" precision="0" type="FLOAT"/>
+	  </columns>
+	  <indexes>
+            <index name="PK_SNPLINKAGE" tablespace="USERS" type="NORMAL">
+              <columns>
+                <column idref="Results/SnpLinkage/SNP_LINKAGE_ID"/>
+              </columns>
+            </index>
+	      <index name="SNPLINKAGE_R01" tablespace="USERS" type="NORMAL">
+              <columns>
+                <column idref="Results/SnpLinkage/SNP1_NA_FEATURE_ID"/>
+                <column idref="Results/SnpLinkage/SNP2_NA_FEATURE_ID"/>
+              </columns>
+            </index>
+            <index name="SNPLINKAGE_R02" tablespace="USERS" type="NORMAL">
+              <columns>
+                <column idref="Results/SnpLinkage/SNP2_NA_FEATURE_ID"/>
+              </columns>
+            </index>
+            <index name="SNPLINKAGE_R03" tablespace="USERS" type="NORMAL">
+              <columns>
+                <column idref="Results/SnpLinkage/PROTOCOL_APP_NODE_ID"/>
+              </columns>
+            </index>
+	  </indexes>
+	  <constraints>
+            <constraint name="PK_SNPLINKAGE" type="PRIMARY_KEY">
+              <constrainedColumns>
+                <column idref="Results/SnpLinkage/SNP_LINKAGE_ID"/>
+              </constrainedColumns>
+            </constraint>
+            <constraint name="FK_SNPLINKAGE_PROTAPPNODE" type="FOREIGN_KEY">
+              <constrainedColumns>
+                <column idref="Results/SnpLinkage/PROTOCOL_APP_NODE_ID"/>
+              </constrainedColumns>
+              <referencedTable idref="Study/ProtocolAppNode"/>
+              <referencedColumns>
+                <column idref="Study/ProtocolAppNode/PROTOCOL_APP_NODE_ID"/>
+              </referencedColumns>
+            </constraint>
+            <constraint name="FK_SNPLINKAGE_SNP1" type="FOREIGN_KEY">
+              <constrainedColumns>
+                <column idref="Results/SnpLinkage/SNP1_NA_FEATURE_ID"/>
+              </constrainedColumns>
+              <referencedTable idref="DoTS/NaFeature"/>
+              <referencedColumns>
+                <column idref="DoTS/NaFeature/NA_FEATURE_ID"/>
+              </referencedColumns>
+            </constraint>
+            <constraint name="FK_SNPLINKAGE_SNP2" type="FOREIGN_KEY">
+              <constrainedColumns>
+                <column idref="Results/SnpLinkage/SNP2_NA_FEATURE_ID"/>
+              </constrainedColumns>
+              <referencedTable idref="DoTS/NaFeature"/>
+              <referencedColumns>
+                <column idref="DoTS/NaFeature/NA_FEATURE_ID"/>
+              </referencedColumns>
+            </constraint>
+          </constraints>
+	</table>
         <table id="Results/SeqVariation" name="SeqVariation" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Results" updatable="true">
           <columns>
             <column id="Results/SeqVariation/SEQ_VARIATION_ID" name="SEQ_VARIATION_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
@@ -15323,7 +15399,7 @@
             <column id="Results/SeqVariation/STRAIN" name="STRAIN" nullable="true" length="80" precision="0" type="STRING"/>
             <column id="Results/SeqVariation/PARTIAL" name="PARTIAL" nullable="true" length="100" precision="0" type="STRING"/>
             <column id="Results/SeqVariation/PHENOTYPE_ID" name="PHENOTYPE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
-            <column id="Results/SeqVariation/PRODUCT" name="PRODUCT" nullable="true" length="8" precision="0" type="STRING"/>
+            <column id="Results/SeqVariation/PRODUCT" name="PRODUCT" nullable="true" length="100" precision="0" type="STRING"/>
             <column id="Results/SeqVariation/STANDARD_NAME" name="STANDARD_NAME" nullable="true" length="100" precision="0" type="STRING"/>
             <column id="Results/SeqVariation/SUBSTITUTE" name="SUBSTITUTE" nullable="true" length="200" precision="0" type="STRING"/>
             <column id="Results/SeqVariation/NUM" name="NUM" nullable="true" length="200" precision="0" type="STRING"/>
@@ -15331,10 +15407,12 @@
             <column id="Results/SeqVariation/MOD_BASE" name="MOD_BASE" nullable="true" length="200" precision="0" type="STRING"/>
             <column id="Results/SeqVariation/IS_PARTIAL" name="IS_PARTIAL" nullable="true" length="1" precision="0" type="NUMBER"/>
             <column id="Results/SeqVariation/FREQUENCY" name="FREQUENCY" nullable="true" length="126" precision="0" type="FLOAT"/>
-            <column id="Results/SeqVariation/ALLELE" name="ALLELE" nullable="true" length="1" precision="0" type="STRING"/>
+            <column id="Results/SeqVariation/ALLELE" name="ALLELE" nullable="true" length="10" precision="0" type="STRING"/>
             <column id="Results/SeqVariation/MATCHES_REFERENCE" name="MATCHES_REFERENCE" nullable="true" length="1" precision="0" type="NUMBER"/>
             <column id="Results/SeqVariation/ODDS_RATIO" name="ODDS_RATIO" nullable="true" length="126" precision="0" type="FLOAT"/>
             <column id="Results/SeqVariation/P_VALUE" name="P_VALUE" nullable="true" length="126" precision="0" type="FLOAT"/>
+	    <column id="Results/SeqVariation/PVALUE_MANT" name="PVALUE_MANT" nullable="true" length="126" precision="0" type="FLOAT"/>
+	    <column id="Results/SeqVariation/PVALUE_EXP" name="PVALUE_EXP" nullable="true" length="126" precision="0" type="FLOAT"/>
             <column id="Results/SeqVariation/ALLELE_PERCENT" name="ALLELE_PERCENT" nullable="true" length="126" precision="0" type="FLOAT"/>
             <column id="Results/SeqVariation/COVERAGE" name="COVERAGE" nullable="true" length="12" precision="0" type="NUMBER"/>
             <column id="Results/SeqVariation/QUALITY" name="QUALITY" nullable="true" length="12" precision="0" type="NUMBER"/>
