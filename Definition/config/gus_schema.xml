@@ -14989,6 +14989,8 @@
             <column id="Results/NAFeatureDiffResult/Q_VALUE" name="Q_VALUE" nullable="true" length="12" precision="0" type="FLOAT"/>
             <column id="Results/NAFeatureDiffResult/CONFIDENCE_UP" name="CONFIDENCE_UP" nullable="true" length="12" precision="0" type="FLOAT"/>
             <column id="Results/NAFeatureDiffResult/CONFIDENCE_DOWN" name="CONFIDENCE_DOWN" nullable="true" length="12" precision="0" type="FLOAT"/>
+            <column id="Results/NAFeatureDiffResult/Z_SCORE" name="Z_SCORE" nullable="true" length="12" precision="0" type="FLOAT"/>
+	    <column id="Results/SeqVariation/IS_SIGNIFICANT" name="IS_SIGNIFICANT" nullable="true" length="1" precision="0" type="NUMBER"/>
           </columns>
           <indexes>
             <index name="PK_NAFEATDIFFRES" tablespace="USERS" type="NORMAL">
