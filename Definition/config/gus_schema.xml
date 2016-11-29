@@ -583,7 +583,7 @@
                 <column idref="Core/UserGroup/USER_GROUP_ID"/>
               </constrainedColumns>
             </constraint>
-            <constraint name="USERGROUP_FK01" type="UNIQUE">
+            <constraint name="USERGROUP_UQ" type="UNIQUE">
               <constrainedColumns>
                 <column idref="Core/UserGroup/USER_ID"/>
                 <column idref="Core/UserGroup/GROUP_ID"/>
@@ -678,7 +678,7 @@
                 <column idref="Core/UserProject/USER_PROJECT_ID"/>
               </constrainedColumns>
             </constraint>
-            <constraint name="USERPROJECT_FK01" type="UNIQUE">
+            <constraint name="USERPROJECT_UQ" type="UNIQUE">
               <constrainedColumns>
                 <column idref="Core/UserProject/USER_ID"/>
                 <column idref="Core/UserProject/PROJECT_ID"/>
@@ -5792,11 +5792,12 @@
                 <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
               </referencedColumns>
             </constraint>
-            <constraint name="GOSSOCIATION_FK03" type="UNIQUE">
+            <constraint name="GOSSOCIATION_UQ" type="UNIQUE">
               <constrainedColumns>
                 <column idref="DoTS/GOAssociation/TABLE_ID"/>
                 <column idref="DoTS/GOAssociation/ROW_ID"/>
                 <column idref="DoTS/GOAssociation/GO_TERM_ID"/>
+                <column idref="DoTS/GOAssociation/IS_NOT"/>
               </constrainedColumns>
             </constraint>
           </constraints>
