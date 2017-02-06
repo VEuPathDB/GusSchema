@@ -12007,7 +12007,7 @@
         <table id="SRes/PathwayNode" name="PathwayNode" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="Pathway Vocabulary" updatable="true">
           <columns>
             <column id="SRes/PathwayNode/PATHWAY_NODE_ID" name="PATHWAY_NODE_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
-            <column id="SRes/PathwayNode/DISPLAY_LABEL" name="DISPLAY_LABEL" nullable="false" length="350" precision="0" type="STRING"/>
+            <column id="SRes/PathwayNode/DISPLAY_LABEL" name="DISPLAY_LABEL" nullable="false" length="1000" precision="0" type="STRING"/>
             <column id="SRes/PathwayNode/PATHWAY_NODE_TYPE_ID" name="PATHWAY_NODE_TYPE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
             <column id="SRes/PathwayNode/TABLE_ID" name="TABLE_ID" nullable="true" length="5" precision="0" type="NUMBER"/>
             <column id="SRes/PathwayNode/ROW_ID" name="ROW_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
