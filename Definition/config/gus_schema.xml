@@ -11771,6 +11771,7 @@
             <column id="SRes/OntologySynonym/ONTOLOGY_SYNONYM" name="ONTOLOGY_SYNONYM" nullable="false" length="1500" precision="0" type="STRING"/>
             <column id="SRes/OntologySynonym/EXTERNAL_DATABASE_RELEASE_ID" name="EXTERNAL_DATABASE_RELEASE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
             <column id="SRes/OntologySynonym/SOURCE_ID" name="SOURCE_ID" nullable="true" length="255" precision="0" type="STRING"/>
+            <column id="SRes/OntologySynonym/IS_PREFERRED" name="IS_PREFERRED" nullable="true" length="1" precision="0" type="NUMBER"/>
           </columns>
           <indexes>
             <index name="PK_ONTOLOGYSYNONYM" tablespace="USERS" type="NORMAL">
