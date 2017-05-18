@@ -11566,6 +11566,30 @@
                 <column idref="SRes/OntologyRelationship/ONTOLOGY_RELATIONSHIP_ID"/>
               </columns>
             </index>
+            <index name="ONTOLOGYRELATIONSHIP_IND05" tablespace="USERS" type="NORMAL">
+              <columns>
+                <column idref="SRes/OntologyRelationship/OBJECT_TERM_ID"/>
+                <column idref="SRes/OntologyRelationship/ONTOLOGY_RELATIONSHIP_ID"/>
+              </columns>
+            </index>
+            <index name="ONTOLOGYRELATIONSHIP_IND06" tablespace="USERS" type="NORMAL">
+              <columns>
+                <column idref="SRes/OntologyRelationship/ONTOLOGY_RELATIONSHIP_TYPE_ID"/>
+                <column idref="SRes/OntologyRelationship/ONTOLOGY_RELATIONSHIP_ID"/>
+              </columns>
+            </index>
+            <index name="ONTOLOGYRELATIONSHIP_IND07" tablespace="USERS" type="NORMAL">
+              <columns>
+                <column idref="SRes/OntologyRelationship/PREDICATE_TERM_ID"/>
+                <column idref="SRes/OntologyRelationship/ONTOLOGY_RELATIONSHIP_ID"/>
+              </columns>
+            </index>
+            <index name="ONTOLOGYRELATIONSHIP_IND08" tablespace="USERS" type="NORMAL">
+              <columns>
+                <column idref="SRes/OntologyRelationship/SUBJECT_TERM_ID"/>
+                <column idref="SRes/OntologyRelationship/ONTOLOGY_RELATIONSHIP_ID"/>
+              </columns>
+            </index>
           </indexes>
           <constraints>
             <constraint name="PK_ONTOLOGYRELATIONSHIP" type="PRIMARY_KEY">
