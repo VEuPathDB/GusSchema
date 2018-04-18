@@ -12794,6 +12794,7 @@
             <index name="CHAR_IND05" tablespace="USERS" type="NORMAL">
               <columns>
                 <column idref="Study/Characteristic/QUALIFIER_ID"/>
+                <column idref="Study/Characteristic/CHARACTERISTIC_ID"/>
               </columns>
             </index>
           </indexes>
