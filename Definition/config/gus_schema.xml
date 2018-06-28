@@ -427,11 +427,6 @@
                 <column idref="Core/ProjectInfo/PROJECT_ID"/>
               </constrainedColumns>
             </constraint>
-            <constraint name="PROJECTINFO_NAME_UQ" type="UNIQUE">
-              <constrainedColumns>
-                <column idref="Core/ProjectInfo/NAME"/>
-              </constrainedColumns>
-            </constraint>
           </constraints>
         </table>
         <table id="Core/TableCategory" name="TableCategory" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="Meta Info" updatable="true">
