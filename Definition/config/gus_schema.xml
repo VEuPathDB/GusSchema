@@ -7996,7 +7996,6 @@
             <column id="DoTS/NASequence/SEQUENCING_CENTER_CONTACT_ID" name="SEQUENCING_CENTER_CONTACT_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
             <column id="DoTS/NASequence/SOURCE_ID" name="SOURCE_ID" nullable="true" length="80" precision="0" type="STRING"/>
             <column id="DoTS/NASequence/SOURCE_NA_SEQUENCE_ID" name="SOURCE_NA_SEQUENCE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
-            <column id="DoTS/NASequence/SEQUENCE_PIECE_ID" name="SEQUENCE_PIECE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
           </columns>
           <subclasses>
             <subclass id="DoTS/NASequence/Assembly" name="Assembly" versioned="true" tablespace="USERS" categoryRef="NA Sequence" updatable="true">
@@ -8044,11 +8043,6 @@
                 <column idref="DoTS/NASequence/SUBCLASS_VIEW"/>
                 <column idref="DoTS/NASequence/TAXON_ID"/>
                 <column idref="DoTS/NASequence/NA_SEQUENCE_ID"/>
-              </columns>
-            </index>
-            <index name="NASEQUENCEIMP_IND05" tablespace="USERS" type="NORMAL">
-              <columns>
-                <column idref="DoTS/NASequence/SEQUENCE_PIECE_ID"/>
               </columns>
             </index>
             <index name="NASEQUENCEIMP_IND08" tablespace="USERS" type="NORMAL">
@@ -8130,15 +8124,6 @@
               <referencedTable idref="SRes/ExternalDatabaseRelease"/>
               <referencedColumns>
                 <column idref="SRes/ExternalDatabaseRelease/EXTERNAL_DATABASE_RELEASE_ID"/>
-              </referencedColumns>
-            </constraint>
-            <constraint name="NASEQUENCEIMP_FK05" type="FOREIGN_KEY">
-              <constrainedColumns>
-                <column idref="DoTS/NASequence/SEQUENCE_PIECE_ID"/>
-              </constrainedColumns>
-              <referencedTable idref="DoTS/SequencePiece"/>
-              <referencedColumns>
-                <column idref="DoTS/SequencePiece/SEQUENCE_PIECE_ID"/>
               </referencedColumns>
             </constraint>
             <constraint name="NASEQUENCEIMP_FK06" type="FOREIGN_KEY">
