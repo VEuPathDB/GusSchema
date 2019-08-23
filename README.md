@@ -1,9 +1,8 @@
 Gus Schema
 ==========
 
-Please check these figures: 
-<img alt="GUS4Schema-1.pdf" src="images/GUS4-1.pdf" width=50/> 
-<img alt="GUS4Schema-2.pdf" src="images/GUS4-2.pdf" width=50/> 
-<img alt="GUS4Schema-3.pdf" src="images/GUS4-3.pdf" width=50/> 
+These figures describe the 'sres' and 'study' schemas:
+<br><img alt="GUS4 sres schema" src="images/GUS4-1.pdf" width=50/> 
+<br><img alt="GUS4 study schema" src="images/GUS4-3.pdf" width=50/> 
 
 
