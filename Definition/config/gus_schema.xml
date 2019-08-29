@@ -6489,7 +6489,7 @@
             <column id="DoTS/Library/TISSUE_TYPE" name="TISSUE_TYPE" nullable="true" length="156" precision="0" type="STRING"/>
             <column id="DoTS/Library/STRAIN" name="STRAIN" nullable="true" length="156" precision="0" type="STRING"/>
             <column id="DoTS/Library/CULTIVAR" name="CULTIVAR" nullable="true" length="156" precision="0" type="STRING"/>
-            <column id="DoTS/Library/STAGE" name="STAGE" nullable="true" length="150" precision="0" type="STRING"/>
+            <column id="DoTS/Library/STAGE" name="STAGE" nullable="true" length="200" precision="0" type="STRING"/>
             <column id="DoTS/Library/SEX" name="SEX" nullable="true" length="1" precision="0" type="CHARACTER"/>
             <column id="DoTS/Library/CELL_TYPE" name="CELL_TYPE" nullable="true" length="156" precision="0" type="STRING"/>
             <column id="DoTS/Library/CELL_LINE" name="CELL_LINE" nullable="true" length="156" precision="0" type="STRING"/>
