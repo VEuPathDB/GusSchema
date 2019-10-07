@@ -1,0 +1,217 @@
+#!/usr/bin/perl
+
+# generate XML file describing tables, columns, primary keys, and foreign keys
+# of the GUS schema
+#
+# usage: generateDatabaseSchemaXml > gusSchemaDefinitions.xml
+
+use strict;
+use lib "$ENV{GUS_HOME}/lib/perl";
+use Getopt::Long;
+use DBI;
+use CBIL::Util::PropertySet;
+
+my $gusConfigFile;
+
+&GetOptions('gus_config=s' => \$gusConfigFile,
+            );
+unless(-e $gusConfigFile) {
+  $gusConfigFile = $ENV{GUS_HOME} ."/config/gus.config";
+  print STDERR "using default GUS config file $gusConfigFile\n";
+}
+
+my @properties = ();
+my $gusconfig = CBIL::Util::PropertySet->new($gusConfigFile, \@properties, 1);
+
+my $u = $gusconfig->{props}->{databaseLogin};
+my $pw = $gusconfig->{props}->{databasePassword};
+my $dsn = $gusconfig->{props}->{dbiDsn};
+
+my $dbh = DBI->connect($dsn, $u, $pw) or die DBI::errstr;
+
+my $dbh = DBI->connect("dbi:Oracle:plas-inc", "apidb", "po34weep")
+  or die DBI->errstr;
+
+my $viewQuery = $dbh->prepare(<<SQL) or die $dbh->errstr;
+      select table_di.name as table_owner, table_ti.name as table_name,
+             view_di.name as view_owner,
+             view_ti.name as view_name,
+             table_column.column_name as table_column,
+             view_column.column_name as view_column,
+             view_column.data_type, view_column.data_length, view_column.nullable,
+             fk.parent_owner, fk.parent_table, fk.parent_column,
+             pk.primary_key
+      from core.TableInfo view_ti, core.DatabaseInfo view_di,
+           core.TableInfo table_ti, core.DatabaseInfo table_di,
+           all_views av, all_tab_columns table_column, all_tab_columns view_column,
+           (select fk.owner as table_owner, fk.table_name as table_name,
+                   fk_col.column_name as column_name,
+                   pk.owner as parent_owner, pk.table_name as parent_table,
+                   pk_col.column_name as parent_column
+            from all_constraints fk, all_cons_columns fk_col,
+                 all_constraints pk, all_cons_columns pk_col
+            where fk.constraint_type = 'R'
+              and fk.owner = fk_col.owner
+              and fk.constraint_name = fk_col.constraint_name
+              and fk_col.position = 1
+              and fk.r_owner = pk.owner
+              and fk.r_constraint_name = pk.constraint_name
+              and pk.owner = pk_col.owner
+              and pk.constraint_name = pk_col.constraint_name
+              and pk_col.position = 1
+           ) fk,
+           (select owner, table_name,
+                   listagg(column_name, ',') within group (order by position) as primary_key
+            from all_cons_columns
+            where (owner, constraint_name)
+                  in (select owner, constraint_name
+                      from all_constraints
+                      where constraint_type = 'P')
+            group by owner, table_name) pk
+      where view_ti.database_id = view_di.database_id
+        and view_ti.view_on_table_id = table_ti.table_id
+        and table_ti.database_id = table_di.database_id
+        and table_di.name not like '%Ver'
+        and table_column.owner = upper(table_di.name)
+        and table_column.table_name = upper(table_ti.name)
+        and view_column.owner = upper(view_di.name)
+        and view_column.table_name = upper(view_ti.name)
+        and av.owner = upper(view_di.name)
+        and av.view_name = upper(view_ti.name)
+        and table_column.column_name
+            not in ('MODIFICATION_DATE', 'USER_READ', 'USER_WRITE', 'GROUP_READ',
+                    'GROUP_WRITE', 'OTHER_READ', 'OTHER_WRITE', 'ROW_USER_ID', 'ROW_GROUP_ID',
+                    'ROW_PROJECT_ID', 'ROW_ALG_INVOCATION_ID')
+        and ( (table_column.column_name = view_column.column_name
+               and upper(replace(av.text_vc, ',', ' ')) like '%SELECT %' || table_column.column_name || ' %FROM%'
+              )
+             or
+              (upper(regexp_replace(av.text_vc, '[, ]+', ' ')) like '%SELECT% ' || table_column.column_name || ' AS ' || view_column.column_name || ' %FROM%'
+              )
+            )
+-- AND VIEW_TI.NAME = 'GeneFeature' -- for testing
+        and table_column.owner = fk.table_owner(+)
+        and table_column.table_name = fk.table_name(+)
+        and table_column.column_name = fk.column_name(+)
+        and table_column.owner = pk.owner(+)
+        and table_column.table_name = pk.table_name(+)
+      order by view_di.name, view_ti.name, view_column.column_id
+SQL
+
+print "<tables>\n";
+
+print "\n<!-- subclass views -->\n";
+
+$viewQuery->execute();
+my $lastView;
+while (my ($tableOwner, $tableName, $viewOwner, $viewName, $tableColumn,
+	   $viewColumn, $dataType, $dataLength, $nullable,
+           $parentOwner, $parentTable, $parentColumn, $primaryKey)
+       = $viewQuery->fetchrow_array()) {
+  if ($viewName ne $lastView) {
+    if ($lastView) {
+      print "</table>\n\n";
+    }
+    $lastView = $viewName;
+    print "<table owner=\"$viewOwner\" name=\"$viewName\" ";
+    print "impTable=\"$tableOwner.$tableName\"";
+    print " primaryKey=\"$primaryKey\"" if $primaryKey;
+    print ">\n";
+  }
+  print "  <column name=\"$viewColumn\"";
+  print " impColumn=\"$tableColumn\"" if $tableColumn ne $viewColumn;
+  print " type=\"$dataType\"";
+  print " length=\"$dataLength\"" if $dataLength;
+  print " nullable=\"$nullable\"";
+  print " parent=\"$parentOwner.$parentTable.$parentColumn\"" if $parentColumn;
+  print " />\n";
+}
+
+if ($lastView) {
+  print "</table>\n";
+}
+
+$viewQuery->finish();
+
+
+print "\n<!-- non-view tables -->\n";
+
+
+my $tableQuery = $dbh->prepare(<<SQL) or die $dbh->errstr;
+      select di.name as table_owner, ti.name table_name,
+             atc.column_name,
+             atc.data_type, atc.data_length, atc.nullable,
+             fk.parent_owner, fk.parent_table, fk.parent_column, pk.primary_key
+      from core.TableInfo ti, core.DatabaseInfo di,
+           all_tab_columns atc,
+           (select fk.owner as table_owner, fk.table_name as table_name,
+                   fk_col.column_name as column_name,
+                   pk.owner as parent_owner, pk.table_name as parent_table,
+                   pk_col.column_name as parent_column
+            from all_constraints fk, all_cons_columns fk_col,
+                 all_constraints pk, all_cons_columns pk_col
+            where fk.constraint_type = 'R'
+              and fk.owner = fk_col.owner
+              and fk.constraint_name = fk_col.constraint_name
+              and fk_col.position = 1
+              and fk.r_owner = pk.owner
+              and fk.r_constraint_name = pk.constraint_name
+              and pk.owner = pk_col.owner
+              and pk.constraint_name = pk_col.constraint_name
+              and pk_col.position = 1
+           ) fk,
+           (select owner, table_name,
+                   listagg(column_name, ',') within group (order by position) as primary_key
+            from all_cons_columns
+            where (owner, constraint_name)
+                  in (select owner, constraint_name
+                      from all_constraints
+                      where constraint_type = 'P')
+            group by owner, table_name) pk
+      where ti.database_id = di.database_id
+        and ti.view_on_table_id is null
+        and di.name not like '%Ver'
+        and atc.owner = upper(di.name)
+        and atc.table_name = upper(ti.name)
+        and atc.column_name
+            not in ('MODIFICATION_DATE', 'USER_READ', 'USER_WRITE', 'GROUP_READ',
+                    'GROUP_WRITE', 'OTHER_READ', 'OTHER_WRITE', 'ROW_USER_ID', 'ROW_GROUP_ID',
+                    'ROW_PROJECT_ID', 'ROW_ALG_INVOCATION_ID')
+--      AND TI.NAME = 'Taxon' -- for testing
+        and atc.owner = fk.table_owner(+)
+        and atc.table_name = fk.table_name(+)
+        and atc.column_name = fk.column_name(+)
+        and atc.owner = pk.owner(+)
+        and atc.table_name = pk.table_name(+)
+      order by di.name, ti.name, atc.column_id
+SQL
+
+$tableQuery->execute();
+my $lastTable;
+while (my ($tableOwner, $tableName, $columnName,
+	   $dataType, $dataLength, $nullable,
+           $parentOwner, $parentTable, $parentColumn, $primaryKey)
+       = $tableQuery->fetchrow_array()) {
+  if ($tableName ne $lastTable) {
+    if ($lastTable) {
+      print "</table>\n\n";
+    }
+    $lastTable = $tableName;
+    print "<table owner=\"$tableOwner\" name=\"$tableName\"";
+    print " primaryKey=\"$primaryKey\"" if $primaryKey;
+    print ">\n";
+  }
+  print "  <column name=\"$columnName\"";
+  print " type=\"$dataType\"";
+  print " length=\"$dataLength\"" if $dataLength;
+  print " nullable=\"$nullable\"";
+  print " parent=\"$parentOwner.$parentTable.$parentColumn\"" if $parentColumn;
+  print " />\n";
+}
+if ($lastTable) {
+  print "</table>\n";
+}
+
+$tableQuery->finish();
+
+print "</tables>\n";
