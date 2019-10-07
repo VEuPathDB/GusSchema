@@ -113,7 +113,7 @@ while (my ($tableOwner, $tableName, $viewOwner, $viewName, $tableColumn,
       print "</table>\n\n";
     }
     $lastView = $viewName;
-    print "<table owner=\"$viewOwner\" name=\"$viewName\" ";
+    print "<table name=\"$viewOwner.$viewName\" ";
     print "impTable=\"$tableOwner.$tableName\"";
     print " primaryKey=\"$primaryKey\"" if $primaryKey;
     print ">\n";
@@ -197,7 +197,7 @@ while (my ($tableOwner, $tableName, $columnName,
       print "</table>\n\n";
     }
     $lastTable = $tableName;
-    print "<table owner=\"$tableOwner\" name=\"$tableName\"";
+    print "<table name=\"$tableOwner.$tableName\"";
     print " primaryKey=\"$primaryKey\"" if $primaryKey;
     print ">\n";
   }
