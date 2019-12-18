@@ -81,7 +81,7 @@ my $viewQuery = $dbh->prepare(<<SQL) or die $dbh->errstr;
         and table_column.column_name
             not in ('MODIFICATION_DATE', 'USER_READ', 'USER_WRITE', 'GROUP_READ',
                     'GROUP_WRITE', 'OTHER_READ', 'OTHER_WRITE', 'ROW_USER_ID', 'ROW_GROUP_ID',
-                    'ROW_PROJECT_ID', 'ROW_ALG_INVOCATION_ID')
+                    'ROW_ALG_INVOCATION_ID')
         and ( (table_column.column_name = view_column.column_name
                and upper(replace(av.text_vc, ',', ' ')) like '%SELECT %' || table_column.column_name || ' %FROM%'
               )
@@ -176,7 +176,7 @@ my $tableQuery = $dbh->prepare(<<SQL) or die $dbh->errstr;
         and atc.column_name
             not in ('MODIFICATION_DATE', 'USER_READ', 'USER_WRITE', 'GROUP_READ',
                     'GROUP_WRITE', 'OTHER_READ', 'OTHER_WRITE', 'ROW_USER_ID', 'ROW_GROUP_ID',
-                    'ROW_PROJECT_ID', 'ROW_ALG_INVOCATION_ID')
+                    'ROW_ALG_INVOCATION_ID')
 --      AND TI.NAME = 'Taxon' -- for testing
         and atc.owner = fk.table_owner(+)
         and atc.table_name = fk.table_name(+)
