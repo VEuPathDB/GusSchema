@@ -38,7 +38,8 @@ my $viewQuery = $dbh->prepare(<<SQL) or die $dbh->errstr;
              view_ti.name as view_name,
              table_column.column_name as table_column,
              view_column.column_name as view_column,
-             view_column.data_type, view_column.data_length, view_column.nullable,
+             view_column.data_type, view_column.data_length,
+             view_column.data_precision, view_column.nullable,
              fk.parent_owner, fk.parent_table, fk.parent_column,
              pk.primary_key
       from core.TableInfo view_ti, core.DatabaseInfo view_di,
@@ -105,7 +106,7 @@ print "\n<!-- subclass views -->\n";
 $viewQuery->execute();
 my $lastView;
 while (my ($tableOwner, $tableName, $viewOwner, $viewName, $tableColumn,
-	   $viewColumn, $dataType, $dataLength, $nullable,
+	   $viewColumn, $dataType, $dataLength, $dataPrecision, $nullable,
            $parentOwner, $parentTable, $parentColumn, $primaryKey)
        = $viewQuery->fetchrow_array()) {
   if ($viewName ne $lastView) {
@@ -121,7 +122,13 @@ while (my ($tableOwner, $tableName, $viewOwner, $viewName, $tableColumn,
   print "  <column name=\"$viewColumn\"";
   print " impColumn=\"$tableColumn\"" if $tableColumn ne $viewColumn;
   print " type=\"$dataType\"";
-  print " length=\"$dataLength\"" if $dataLength;
+
+  if ($dataType eq "NUMBER" or $dataType eq "FLOAT") {
+    print " length=\"$dataPrecision\"" if $dataPrecision;
+  } else {
+    print " length=\"$dataLength\"" if $dataLength;
+  }
+
   print " nullable=\"$nullable\"";
   print " parent=\"$parentOwner.$parentTable.$parentColumn\"" if $parentColumn;
   print " />\n";
@@ -140,7 +147,7 @@ print "\n<!-- non-view tables -->\n";
 my $tableQuery = $dbh->prepare(<<SQL) or die $dbh->errstr;
       select di.name as table_owner, ti.name table_name,
              atc.column_name,
-             atc.data_type, atc.data_length, atc.nullable,
+             atc.data_type, atc.data_length, atc.data_precision, atc.nullable,
              fk.parent_owner, fk.parent_table, fk.parent_column, pk.primary_key
       from core.TableInfo ti, core.DatabaseInfo di,
            all_tab_columns atc,
@@ -189,7 +196,7 @@ SQL
 $tableQuery->execute();
 my $lastTable;
 while (my ($tableOwner, $tableName, $columnName,
-	   $dataType, $dataLength, $nullable,
+	   $dataType, $dataLength, $dataPrecision, $nullable,
            $parentOwner, $parentTable, $parentColumn, $primaryKey)
        = $tableQuery->fetchrow_array()) {
   if ($tableName ne $lastTable) {
@@ -203,7 +210,13 @@ while (my ($tableOwner, $tableName, $columnName,
   }
   print "  <column name=\"$columnName\"";
   print " type=\"$dataType\"";
-  print " length=\"$dataLength\"" if $dataLength;
+
+  if ($dataType eq "NUMBER" or $dataType eq "FLOAT") {
+    print " length=\"$dataPrecision\"" if $dataPrecision;
+  } else {
+    print " length=\"$dataLength\"" if $dataLength;
+  }
+
   print " nullable=\"$nullable\"";
   print " parent=\"$parentOwner.$parentTable.$parentColumn\"" if $parentColumn;
   print " />\n";
