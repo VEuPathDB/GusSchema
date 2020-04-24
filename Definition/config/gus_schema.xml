@@ -11777,7 +11777,7 @@
             <column id="SRes/OntologySynonym/SOURCE_ID" name="SOURCE_ID" nullable="true" length="255" precision="0" type="STRING"/>
             <column id="SRes/OntologySynonym/IS_PREFERRED" name="IS_PREFERRED" nullable="true" length="1" precision="0" type="NUMBER"/>
             <column id="SRes/OntologySynonym/DEFINITION" name="DEFINITION" nullable="true" length="4000" precision="0" type="STRING"/>
-            <column id="SRes/OntologySynonym/VARIABLE" name="VARIABLE" nullable="true" length="1500" precision="0" type="NUMBER"/>
+            <column id="SRes/OntologySynonym/VARIABLE" name="VARIABLE" nullable="true" length="1500" precision="0" type="STRING"/>
             <column id="SRes/OntologySynonym/DISPLAY_ORDER" name="DISPLAY_ORDER" nullable="true" length="6" precision="0" type="NUMBER"/>
           </columns>
           <indexes>
