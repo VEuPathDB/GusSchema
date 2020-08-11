@@ -29,8 +29,7 @@ my $dsn = $gusconfig->{props}->{dbiDsn};
 
 my $dbh = DBI->connect($dsn, $u, $pw) or die DBI::errstr;
 
-my $dbh = DBI->connect("dbi:Oracle:plas-inc", "apidb", "po34weep")
-  or die DBI->errstr;
+#my $dbh = DBI->connect("dbi:Oracle:plas-inc", "apidb", "po34weep") or die DBI->errstr;
 
 my $viewQuery = $dbh->prepare(<<SQL) or die $dbh->errstr;
       select table_di.name as table_owner, table_ti.name as table_name,
