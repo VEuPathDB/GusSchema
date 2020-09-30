@@ -13,8 +13,7 @@ definition files for a relational database schema that has been deployed in Orac
 
 ** Operating instructions.
 
-   + the standard GUS schemas: CORE, DoTS, SRes, etc.
-   + the GUS Perl and Java object layers (objects that represent the standard GUS tables)
+   + changes to the GUS schema requires the rebuild of the GUS Perl and Java object layers (objects that represent the standard GUS tables)
 
 ** Manifest
 
