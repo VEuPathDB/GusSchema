@@ -9,7 +9,7 @@ definition files for a relational database schema that has been deployed in Orac
 
 ** Installation instructions.
 
-   + [[https://docs.google.com/document/d/1w8DJPMoNh31cTSStuDjlNoZDFj3A4SfX6z0eNH0TsNw/edit#heading=h.hs6rwi3xu3ea][EuPathDB-DevTools | Installing the GUS and ApiDB Schemas]]
+   + [[https://docs.google.com/document/u/1/d/1w8DJPMoNh31cTSStuDjlNoZDFj3A4SfX6z0eNH0TsNw/pub][Installing the GUS and ApiDB Schemas]]
 
 ** Operating instructions.
 
