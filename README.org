@@ -1,6 +1,6 @@
 * Gus Schema
 
-definition files for a relational database schema that has been deployed in Oracle and PostgreSQL
+definition files for a relational database schema for storing genomic data types (sequence, structural and functional annotation) that has been deployed in Oracle and PostgreSQL.
 
 ** Dependencies
 
