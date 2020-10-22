@@ -1,0 +1,23 @@
+* Gus Schema
+
+definition files for a relational database schema that has been deployed in Oracle and PostgreSQL
+
+** Dependencies
+
+   + yarn / npm / ant
+   + environment variables for GUS_HOME and PROJECT_HOME
+
+** Installation instructions.
+
+   + [[https://docs.google.com/document/u/1/d/1w8DJPMoNh31cTSStuDjlNoZDFj3A4SfX6z0eNH0TsNw/pub][Installing the GUS and ApiDB Schemas]]
+
+** Operating instructions.
+
+   + changes to the GUS schema requires the rebuild of the GUS Perl and Java object layers (objects that represent the standard GUS tables)
+
+** Manifest
+
+   + Definition/bin :: scripts to generate XML files that can be used with LoadGusXml plugin or describing tables, columns, primary keys, and foreign keys
+   + Definition/config :: GUS schema definition files
+   + images :: diagrams of standard GUS schemas 
+
