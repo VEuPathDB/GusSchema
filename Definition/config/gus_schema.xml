@@ -12599,7 +12599,7 @@
             <column id="Study/ProtocolAppNode/PROTOCOL_APP_NODE_ID" name="PROTOCOL_APP_NODE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
             <column id="Study/ProtocolAppNode/TYPE_ID" name="TYPE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
             <column id="Study/ProtocolAppNode/NAME" name="NAME" nullable="false" length="200" precision="0" type="STRING"/>
-            <column id="Study/ProtocolAppNode/DESCRIPTION" name="DESCRIPTION" nullable="true" length="1000" precision="0" type="STRING"/>
+            <column id="Study/ProtocolAppNode/DESCRIPTION" name="DESCRIPTION" nullable="true" length="2000" precision="0" type="STRING"/>
             <column id="Study/ProtocolAppNode/URI" name="URI" nullable="true" length="300" precision="0" type="STRING"/>
             <column id="Study/ProtocolAppNode/EXTERNAL_DATABASE_RELEASE_ID" name="EXTERNAL_DATABASE_RELEASE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
             <column id="Study/ProtocolAppNode/SOURCE_ID" name="SOURCE_ID" nullable="true" length="100" precision="0" type="STRING"/>
