@@ -11073,7 +11073,7 @@
             <column id="SRes/BibliographicReference/BIB_REF_TYPE_ID" name="BIB_REF_TYPE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
             <column id="SRes/BibliographicReference/TITLE" name="TITLE" nullable="false" length="350" precision="0" type="STRING"/>
             <column id="SRes/BibliographicReference/ABSTRACT" name="ABSTRACT" nullable="true" length="0" precision="0" type="CLOB"/>
-            <column id="SRes/BibliographicReference/AUTHOR_LIST" name="AUTHORS" nullable="true" length="1400" precision="0" type="STRING"/>
+            <column id="SRes/BibliographicReference/AUTHOR_LIST" name="AUTHORS" nullable="true" length="2000" precision="0" type="STRING"/>
             <column id="SRes/BibliographicReference/PUBLICATION" name="PUBLICATION" nullable="true" length="255" precision="0" type="STRING"/>
             <column id="SRes/BibliographicReference/EDITOR" name="EDITOR" nullable="true" length="255" precision="0" type="STRING"/>
             <column id="SRes/BibliographicReference/YEAR" name="YEAR" nullable="true" length="5" precision="0" type="NUMBER"/>
