@@ -14564,6 +14564,24 @@
                 <column idref="Results/NAFeatureExpression/NA_FEATURE_ID"/>
               </columns>
             </index>
+            <index name="NAFEATEXPR_IND03" tablespace="USERS" type="NORMAL">
+              <columns>
+                <column idref="Results/NAFeatureExpression/NA_FEATURE_ID"/>
+                <column idref="Results/NAFeatureExpression/PROTOCOL_APP_NODE_ID"/>
+                <column idref="Results/NAFeatureExpression/VALUE"/>
+                <column idref="Results/NAFeatureExpression/CONFIDENCE"/>
+                <column idref="Results/NAFeatureExpression/STANDARD_ERROR"/>
+              </columns>
+            </index>
+            <index name="NAFEATEXPR_IND04" tablespace="USERS" type="NORMAL">
+              <columns>
+                <column idref="Results/NAFeatureExpression/PROTOCOL_APP_NODE_ID"/>
+                <column idref="Results/NAFeatureExpression/NA_FEATURE_ID"/>
+                <column idref="Results/NAFeatureExpression/VALUE"/>
+                <column idref="Results/NAFeatureExpression/CONFIDENCE"/>
+                <column idref="Results/NAFeatureExpression/STANDARD_ERROR"/>
+              </columns>
+            </index>
           </indexes>
           <constraints>
             <constraint name="PK_NAFEATEXPR" type="PRIMARY_KEY">
