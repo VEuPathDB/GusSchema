@@ -1822,6 +1822,13 @@
             <column id="DoTS/AASequenceEnzymeClass/AA_SEQUENCE_ID" name="AA_SEQUENCE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
             <column id="DoTS/AASequenceEnzymeClass/ENZYME_CLASS_ID" name="ENZYME_CLASS_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
             <column id="DoTS/AASequenceEnzymeClass/EVIDENCE_CODE" name="EVIDENCE_CODE" nullable="false" length="255" precision="0" type="STRING"/>
+            <column id="DoTS/AASequenceEnzymeClass/NUM_PROTEIN_WITH_EC" name="NUM_PROTEIN_WITH_EC" nullable="true" length="5" precision="0" type="NUMBER"/>
+            <column id="DoTS/AASequenceEnzymeClass/NUM_PROTEIN_IN_GROUP" name="NUM_PROTEIN_IN_GROUP" nullable="true" length="5" precision="0" type="NUMBER"/>
+            <column id="DoTS/AASequenceEnzymeClass/NUM_GENERA_WITH_EC" name="NUM_GENERA_WITH_EC" nullable="true" length="5" precision="0" type="NUMBER"/>
+            <column id="DoTS/AASequenceEnzymeClass/NUM_GENERA_IN_GROUP" name="NUM_GENERA_IN_GROUP" nullable="true" length="5" precision="0" type="NUMBER"/>
+            <column id="DoTS/AASequenceEnzymeClass/LENGTH_SCORE" name="LENGTH_SCORE" nullable="true" length="2" precision="0" type="NUMBER"/>
+            <column id="DoTS/AASequenceEnzymeClass/BLAST_SCORE" name="BLAST_SCORE" nullable="true" length="2" precision="0" type="NUMBER"/>
+            <column id="DoTS/AASequenceEnzymeClass/DOMAIN_SCORE" name="DOMAIN_SCORE" nullable="true" length="2" precision="0" type="NUMBER"/>
             <column id="DoTS/AASequenceEnzymeClass/EC_ASSIGNMENT_CONTACT_ID" name="EC_ASSIGNMENT_CONTACT_ID" nullable="true" length="12" precision="0" type="NUMBER"/>
             <column id="DoTS/AASequenceEnzymeClass/REVIEW_STATUS_ID" name="REVIEW_STATUS_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
           </columns>
