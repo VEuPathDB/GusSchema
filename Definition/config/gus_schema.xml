@@ -11396,7 +11396,7 @@
         <table id="SRes/ExternalDatabase" name="ExternalDatabase" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="External Database" updatable="true">
           <columns>
             <column id="SRes/ExternalDatabase/EXTERNAL_DATABASE_ID" name="EXTERNAL_DATABASE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-            <column id="SRes/ExternalDatabase/NAME" name="NAME" nullable="false" length="150" precision="0" type="STRING"/>
+            <column id="SRes/ExternalDatabase/NAME" name="NAME" nullable="false" length="200" precision="0" type="STRING"/>
           </columns>
           <indexes>
             <index name="PK_EXTERNALDATABASE" tablespace="USERS" type="NORMAL">
