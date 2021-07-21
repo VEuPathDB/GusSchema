@@ -12258,7 +12258,7 @@
       <tables>
         <table id="Study/Study" name="Study" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Experimental Design" updatable="true">
           <columns>
-            <column id="Study/Study/STUDY_ID" name="STUDY_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
+            <column id="Study/Study/STUDY_ID" name="STUDY_ID" nullable="false" length="8" precision="0" type="NUMBER"/>
             <column id="Study/Study/INVESTIGATION_ID" name="INVESTIGATION_ID" nullable="true" length="5" precision="0" type="NUMBER"/>
             <column id="Study/Study/NAME" name="NAME" nullable="false" length="400" precision="0" type="STRING"/>
             <column id="Study/Study/DESCRIPTION" name="DESCRIPTION" nullable="true" length="4000" precision="0" type="STRING"/>
@@ -12325,7 +12325,7 @@
         <table id="Study/StudyBibRef" name="StudyBibRef" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Experimental Design" updatable="true">
           <columns>
             <column id="Study/StudyBibRef/STUDY_BIB_REF_ID" name="STUDY_BIB_REF_ID" nullable="false" length="6" precision="0" type="NUMBER"/>
-            <column id="Study/StudyBibRef/STUDY_ID" name="STUDY_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
+            <column id="Study/StudyBibRef/STUDY_ID" name="STUDY_ID" nullable="false" length="8" precision="0" type="NUMBER"/>
             <column id="Study/StudyBibRef/BIBLIOGRAPHIC_REFERENCE_ID" name="BIBLIOGRAPHIC_REFERENCE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
           </columns>
           <indexes>
@@ -12374,7 +12374,7 @@
         <table id="Study/StudyCharacteristic" name="StudyCharacteristic" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Study Characteristic" updatable="true">
           <columns>
             <column id="Study/StudyCharacteristic/STUDY_CHARACTERISTIC_ID" name="STUDY_CHARACTERISTIC_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
-            <column id="Study/StudyCharacteristic/STUDY_ID" name="STUDY_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
+            <column id="Study/StudyCharacteristic/STUDY_ID" name="STUDY_ID" nullable="false" length="8" precision="0" type="NUMBER"/>
             <column id="Study/StudyCharacteristic/QUALIFIER_ID" name="QUALIFIER_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
             <column id="Study/StudyCharacteristic/VALUE_ID" name="VALUE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
             <column id="Study/StudyCharacteristic/VALUE" name="VALUE" nullable="true" length="200" precision="0" type="STRING"/>
@@ -12431,7 +12431,7 @@
         <table id="Study/StudyContact" name="StudyContact" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Experimental Design" updatable="true">
           <columns>
             <column id="Study/StudyContact/STUDY_CONTACT_ID" name="STUDY_CONTACT_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
-            <column id="Study/StudyContact/STUDY_ID" name="STUDY_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
+            <column id="Study/StudyContact/STUDY_ID" name="STUDY_ID" nullable="false" length="8" precision="0" type="NUMBER"/>
             <column id="Study/StudyContact/CONTACT_ID" name="CONTACT_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
             <column id="Study/StudyContact/ROLE_ID" name="ROLE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
           </columns>
@@ -12498,7 +12498,7 @@
         <table id="Study/StudyDesign" name="StudyDesign" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Experimental Design" updatable="true">
           <columns>
             <column id="Study/StudyDesign/STUDY_DESIGN_ID" name="STUDY_DESIGN_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
-            <column id="Study/StudyDesign/STUDY_ID" name="STUDY_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
+            <column id="Study/StudyDesign/STUDY_ID" name="STUDY_ID" nullable="false" length="8" precision="0" type="NUMBER"/>
             <column id="Study/StudyDesign/STUDY_DESIGN_TYPE_ID" name="STUDY_DESIGN_TYPE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
           </columns>
           <indexes>
@@ -12547,7 +12547,7 @@
         <table id="Study/StudyFactor" name="StudyFactor" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Experimental Design" updatable="true">
           <columns>
             <column id="Study/StudyFactor/STUDY_FACTOR_ID" name="STUDY_FACTOR_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
-            <column id="Study/StudyFactor/STUDY_ID" name="STUDY_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
+            <column id="Study/StudyFactor/STUDY_ID" name="STUDY_ID" nullable="false" length="8" precision="0" type="NUMBER"/>
             <column id="Study/StudyFactor/STUDY_FACTOR_TYPE_ID" name="STUDY_FACTOR_TYPE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
             <column id="Study/StudyFactor/NAME" name="NAME" nullable="false" length="100" precision="0" type="STRING"/>
             <column id="Study/StudyFactor/DESCRIPTION" name="DESCRIPTION" nullable="true" length="1000" precision="0" type="STRING"/>
@@ -12756,7 +12756,7 @@
         <table id="Study/StudyLink" name="StudyLink" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Experimental Design" updatable="true">
           <columns>
             <column id="Study/StudyLink/STUDY_LINK_ID" name="STUDY_LINK_ID" nullable="false" length="11" precision="0" type="NUMBER"/>
-            <column id="Study/StudyLink/STUDY_ID" name="STUDY_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
+            <column id="Study/StudyLink/STUDY_ID" name="STUDY_ID" nullable="false" length="8" precision="0" type="NUMBER"/>
             <column id="Study/StudyLink/PROTOCOL_APP_NODE_ID" name="PROTOCOL_APP_NODE_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
           </columns>
           <indexes>
@@ -13334,7 +13334,7 @@
         <table id="Study/StudyFunding" name="StudyFunding" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Experimental Design" updatable="true">
           <columns>
             <column id="Study/StudyFunding/STUDY_FUNDING_ID" name="STUDY_FUNDING_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
-            <column id="Study/StudyFunding/STUDY_ID" name="STUDY_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
+            <column id="Study/StudyFunding/STUDY_ID" name="STUDY_ID" nullable="false" length="8" precision="0" type="NUMBER"/>
             <column id="Study/StudyFunding/FUNDING_ID" name="FUNDING_ID" nullable="false" length="12" precision="0" type="NUMBER"/>
           </columns>
           <indexes>
