@@ -12259,7 +12259,7 @@
         <table id="Study/Study" name="Study" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Experimental Design" updatable="true">
           <columns>
             <column id="Study/Study/STUDY_ID" name="STUDY_ID" nullable="false" length="8" precision="0" type="NUMBER"/>
-            <column id="Study/Study/INVESTIGATION_ID" name="INVESTIGATION_ID" nullable="true" length="5" precision="0" type="NUMBER"/>
+            <column id="Study/Study/INVESTIGATION_ID" name="INVESTIGATION_ID" nullable="true" length="8" precision="0" type="NUMBER"/>
             <column id="Study/Study/NAME" name="NAME" nullable="false" length="400" precision="0" type="STRING"/>
             <column id="Study/Study/DESCRIPTION" name="DESCRIPTION" nullable="true" length="4000" precision="0" type="STRING"/>
             <column id="Study/Study/EXTERNAL_DATABASE_RELEASE_ID" name="EXTERNAL_DATABASE_RELEASE_ID" nullable="true" length="10" precision="0" type="NUMBER"/>
