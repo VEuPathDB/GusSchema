@@ -1228,6 +1228,15 @@
                 <column idref="DoTS/CommentName/COMMENT_NAME_ID"/>
               </referencedColumns>
             </constraint>
+            <constraint name="AAFEATURECOMMENT_FK2" type="FOREIGN_KEY">
+              <constrainedColumns>
+                <column idref="DoTS/AAFeatureComment/AA_FEATURE_ID"/>
+              </constrainedColumns>
+              <referencedTable idref="DoTS/AAFeature"/>
+              <referencedColumns>
+                <column idref="DoTS/AAFeature/AA_FEATURE_ID"/>
+              </referencedColumns>
+            </constraint>
             <constraint name="AAFEATURECOMMENT_PK" type="PRIMARY_KEY">
               <constrainedColumns>
                 <column idref="DoTS/AAFeatureComment/AA_FEATURE_COMMENT_ID"/>
@@ -8832,6 +8841,15 @@
               <referencedTable idref="SRes/Taxon"/>
               <referencedColumns>
                 <column idref="SRes/Taxon/TAXON_ID"/>
+              </referencedColumns>
+            </constraint>
+            <constraint name="PHYLOGENETICPROFILEMEMBER_FK02" type="FOREIGN_KEY">
+              <constrainedColumns>
+                <column idref="DoTS/PhylogeneticProfileMember/PHYLOGENETIC_PROFILE_ID"/>
+              </constrainedColumns>
+              <referencedTable idref="DoTS/PhylogeneticProfile"/>
+              <referencedColumns>
+                <column idref="DoTS/PhylogeneticProfile/PHYLOGENETIC_PROFILE_ID"/>
               </referencedColumns>
             </constraint>
             <constraint name="PK_PHYLOGENETICPROFILEMEMBER" type="PRIMARY_KEY">
