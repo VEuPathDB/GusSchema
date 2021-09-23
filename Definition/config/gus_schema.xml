@@ -165,7 +165,7 @@
         </table>
         <table id="Core/AlgorithmParamKey" name="AlgorithmParamKey" housekeeping="true" versioned="true" tablespace="USERS" categoryRef="Algorithm" updatable="true">
           <columns>
-            <column id="Core/AlgorithmParamKey/ALGORITHM_PARAM_KEY_ID" name="ALGORITHM_PARAM_KEY_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
+            <column id="Core/AlgorithmParamKey/ALGORITHM_PARAM_KEY_ID" name="ALGORITHM_PARAM_KEY_ID" nullable="false" length="8" precision="0" type="NUMBER"/>
             <column id="Core/AlgorithmParamKey/ALGORITHM_IMPLEMENTATION_ID" name="ALGORITHM_IMPLEMENTATION_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
             <column id="Core/AlgorithmParamKey/ALGORITHM_PARAM_KEY" name="ALGORITHM_PARAM_KEY" nullable="false" length="60" precision="0" type="STRING"/>
             <column id="Core/AlgorithmParamKey/ALGORITHM_PARAM_KEY_TYPE_ID" name="ALGORITHM_PARAM_KEY_TYPE_ID" nullable="false" length="3" precision="0" type="NUMBER"/>
