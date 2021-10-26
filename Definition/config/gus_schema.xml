@@ -11727,6 +11727,13 @@
                 <column idref="SRes/OntologyTerm/EXTERNAL_DATABASE_RELEASE_ID"/>
               </columns>
             </index>
+            <index name="ONTOLOGYTERM_IND07" tablespace="USERS" type="NORMAL">
+              <columns>
+                <column idref="SRes/OntologyTerm/NAME"/>
+                <column idref="SRes/OntologyTerm/SOURCE_ID"/>
+                <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
+              </columns>
+            </index>
           </indexes>
           <constraints>
             <constraint name="PK_ONTOLOGYTERM" type="PRIMARY_KEY">
