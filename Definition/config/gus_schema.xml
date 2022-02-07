@@ -13813,11 +13813,16 @@
                 <column idref="Platform/ReporterLocation/NA_SEQUENCE_ID"/>
                 <column idref="Platform/ReporterLocation/REPORTER_START"/>
                 <column idref="Platform/ReporterLocation/REPORTER_END"/>
+                <column idref="Platform/ReporterLocation/ON_REVERSE_STRAND"/>
               </columns>
             </index>
             <index name="REPORTERLOCATION_R0" tablespace="USERS" type="NORMAL">
               <columns>
                 <column idref="Platform/ReporterLocation/NA_SEQUENCE_ID"/>
+                <column idref="Platform/ReporterLocation/REPORTER_START"/>
+                <column idref="Platform/ReporterLocation/REPORTER_END"/>
+                <column idref="Platform/ReporterLocation/ON_REVERSE_STRAND"/>
+                <column idref="Platform/ReporterLocation/REPORTER_ID"/>
                 <column idref="Platform/ReporterLocation/REPORTER_LOCATION_ID"/>
               </columns>
             </index>
