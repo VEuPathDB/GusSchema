@@ -3148,6 +3148,19 @@
                 <column idref="DoTS/BLATAlignment/BLAT_ALIGNMENT_ID"/>
               </columns>
             </index>
+            <index name="BLATALIGNMENT_IND13" tablespace="USERS" type="NORMAL">
+              <columns>
+                <column idref="DoTS/BLATAlignment/TARGET_NA_SEQUENCE_ID"/>
+                <column idref="DoTS/BLATAlignment/TARGET_START"/>
+                <column idref="DoTS/BLATAlignment/TARGET_END"/>
+                <column idref="DoTS/BLATAlignment/PERCENT_IDENTITY"/>
+                <column idref="DoTS/BLATAlignment/BLAT_ALIGNMENT_ID"/>
+                <column idref="DoTS/BLATAlignment/SCORE"/>
+                <column idref="DoTS/BLATAlignment/QUERY_NA_SEQUENCE_ID"/>
+                <column idref="DoTS/BLATAlignment/IS_BEST_ALIGNMENT"/>
+                <column idref="DoTS/BLATAlignment/NUMBER_OF_SPANS"/>
+              </columns>
+            </index>
           </indexes>
           <constraints>
             <constraint name="BLATALIGNMENT_FK01" type="FOREIGN_KEY">
