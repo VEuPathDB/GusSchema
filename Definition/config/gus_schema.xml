@@ -12679,6 +12679,16 @@
                 <column idref="Study/ProtocolAppNode/PROTOCOL_APP_NODE_ID"/>
               </columns>
             </index>
+            <index name="PAN_NAMED_IX" tablespace="USERS" type="NORMAL">
+              <columns>
+                <column idref="Study/ProtocolAppNode/NAME"/>
+                <column idref="Study/ProtocolAppNode/PROTOCOL_APP_NODE_ID"/>
+                <column idref="Study/ProtocolAppNode/TYPE_ID"/>
+                <column idref="Study/ProtocolAppNode/EXTERNAL_DATABASE_RELEASE_ID"/>
+                <column idref="Study/ProtocolAppNode/SOURCE_ID"/>
+                <column idref="Study/ProtocolAppNode/SUBTYPE_ID"/>
+              </columns>
+            </index>
           </indexes>
           <constraints>
             <constraint name="PK_PAN" type="PRIMARY_KEY">
