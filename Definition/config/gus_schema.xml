@@ -3161,6 +3161,14 @@
                 <column idref="DoTS/BLATAlignment/NUMBER_OF_SPANS"/>
               </columns>
             </index>
+            <index name="BLATALIGNMENT_IND14" tablespace="USERS" type="NORMAL">
+              <columns>
+                <column idref="DoTS/BLATAlignment/TARGET_NA_SEQUENCE_ID"/>
+                <column idref="DoTS/BLATAlignment/IS_BEST_ALIGNMENT"/>
+                <column idref="DoTS/BLATAlignment/TARGET_END"/>
+                <column idref="DoTS/BLATAlignment/TARGET_START"/>
+              </columns>
+            </index>
           </indexes>
           <constraints>
             <constraint name="BLATALIGNMENT_FK01" type="FOREIGN_KEY">
