@@ -11979,7 +11979,7 @@
           <columns>
             <column id="SRes/TaxonName/TAXON_NAME_ID" name="TAXON_NAME_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
             <column id="SRes/TaxonName/TAXON_ID" name="TAXON_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
-            <column id="SRes/TaxonName/NAME" name="NAME" nullable="false" length="255" precision="0" type="STRING"/>
+            <column id="SRes/TaxonName/NAME" name="NAME" nullable="false" length="400" precision="0" type="STRING"/>
             <column id="SRes/TaxonName/UNIQUE_NAME_VARIANT" name="UNIQUE_NAME_VARIANT" nullable="true" length="255" precision="0" type="STRING"/>
             <column id="SRes/TaxonName/NAME_CLASS" name="NAME_CLASS" nullable="true" length="255" precision="0" type="STRING"/>
           </columns>
