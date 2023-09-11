@@ -3165,6 +3165,8 @@
               <columns>
                 <column idref="DoTS/BLATAlignment/TARGET_NA_SEQUENCE_ID"/>
                 <column idref="DoTS/BLATAlignment/IS_BEST_ALIGNMENT"/>
+                <column idref="DoTS/BLATAlignment/NUMBER_OF_SPANS"/>
+                <column idref="DoTS/BLATAlignment/QUERY_NA_SEQUENCE_ID"/>
                 <column idref="DoTS/BLATAlignment/TARGET_END"/>
                 <column idref="DoTS/BLATAlignment/TARGET_START"/>
               </columns>
