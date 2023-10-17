@@ -12368,6 +12368,11 @@
                 <column idref="Study/Study/NAME"/>
               </constrainedColumns>
             </constraint>
+            <constraint name="OT_SID_UQ" type="UNIQUE">
+              <constrainedColumns>
+                <column idref="SRes/OntologyTerm/SOURCE_ID"/>
+              </constrainedColumns>
+            </constraint>
           </constraints>
         </table>
         <table id="Study/StudyBibRef" name="StudyBibRef" housekeeping="true" versioned="false" tablespace="USERS" categoryRef="Experimental Design" updatable="true">
