@@ -30,12 +30,8 @@
     <taskdef name="InstallSchema"
              classname="org.gusdb.dbadmin.util.InstallSchemaTask">
       <classpath>
-        <pathelement path="${projectsDir}/GUS/DBAdmin/classes" />
         <pathelement path="${projectsDir}/install" />
         <fileset dir="${targetDir}/lib/java/">
-          <include name="*.jar" />
-        </fileset>
-        <fileset dir="${targetDir}/lib/java/db_driver">
           <include name="*.jar" />
         </fileset>
       </classpath>
