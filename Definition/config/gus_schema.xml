@@ -11764,6 +11764,11 @@
                 <column idref="SRes/OntologyTerm/ONTOLOGY_TERM_ID"/>
               </constrainedColumns>
             </constraint>
+            <constraint name="OT_SID_UQ" type="UNIQUE">
+              <constrainedColumns>
+                <column idref="SRes/OntologyTerm/SOURCE_ID"/>
+              </constrainedColumns>
+            </constraint>
             <constraint name="FK_OT_EXTDBRLS" type="FOREIGN_KEY">
               <constrainedColumns>
                 <column idref="SRes/OntologyTerm/EXTERNAL_DATABASE_RELEASE_ID"/>
@@ -12366,11 +12371,6 @@
             <constraint name="STUDY_NAME_UQ" type="UNIQUE">
               <constrainedColumns>
                 <column idref="Study/Study/NAME"/>
-              </constrainedColumns>
-            </constraint>
-            <constraint name="OT_SID_UQ" type="UNIQUE">
-              <constrainedColumns>
-                <column idref="SRes/OntologyTerm/SOURCE_ID"/>
               </constrainedColumns>
             </constraint>
           </constraints>
