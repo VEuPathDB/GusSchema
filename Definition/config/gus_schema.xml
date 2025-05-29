@@ -108,7 +108,7 @@
           <columns>
             <column id="Core/AlgorithmParam/ALGORITHM_PARAM_ID" name="ALGORITHM_PARAM_ID" nullable="false" length="10" precision="0" type="NUMBER"/>
             <column id="Core/AlgorithmParam/ALGORITHM_PARAM_KEY_ID" name="ALGORITHM_PARAM_KEY_ID" nullable="false" length="5" precision="0" type="NUMBER"/>
-            <column id="Core/AlgorithmParam/STRING_VALUE" name="STRING_VALUE" nullable="true" length="3000" precision="0" type="STRING"/>
+            <column id="Core/AlgorithmParam/STRING_VALUE" name="STRING_VALUE" nullable="true" length="0" precision="0" type="CLOB"/>
             <column id="Core/AlgorithmParam/FLOAT_VALUE" name="FLOAT_VALUE" nullable="true" length="12" precision="0" type="FLOAT"/>
             <column id="Core/AlgorithmParam/INT_VALUE" name="INT_VALUE" nullable="true" length="12" precision="0" type="NUMBER"/>
             <column id="Core/AlgorithmParam/BOOLEAN_VALUE" name="BOOLEAN_VALUE" nullable="true" length="1" precision="0" type="NUMBER"/>
